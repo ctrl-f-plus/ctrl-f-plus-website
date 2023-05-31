@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { useState } from 'react';
@@ -190,7 +189,7 @@ export default function Landing() {
           onClose={setMobileMenuOpen}
         >
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-base1 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary1/10">
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary1/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
@@ -265,7 +264,7 @@ export default function Landing() {
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a
                     href="#"
-                    className="rounded-md bg-accent0 px-3.5 py-2.5 text-sm font-semibold text-base1 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
+                    className="rounded-md bg-accent0 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
                   >
                     Get started
                   </a>
@@ -360,10 +359,10 @@ export default function Landing() {
         {/* Feature section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-secondary1">
+            <h2 className="text-base font-semibold leading-7 text-accent0">
               Deploy faster
             </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-accent0 sm:text-4xl">
+            <p className="mt-2 text-3xl font-bold tracking-tight text-secondary1 sm:text-4xl">
               Everything you need to deploy your app
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -377,9 +376,9 @@ export default function Landing() {
               {features.map((feature) => (
                 <div key={feature.name} className="relative pl-16">
                   <dt className="text-base font-semibold leading-7 text-secondary1">
-                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary0">
+                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-accent0">
                       <feature.icon
-                        className="h-6 w-6 text-base0"
+                        className="h-6 w-6 text-white"
                         aria-hidden="true"
                       />
                     </div>
@@ -419,22 +418,22 @@ export default function Landing() {
               className="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"
               aria-hidden="true"
             >
-              <div
+              {/* <div
                 className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-25"
                 style={{
                   clipPath:
                     'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                 }}
-              />
+              /> */}
             </div>
             <div className="relative mx-auto max-w-2xl lg:mx-0">
               <img
                 className="h-12 w-auto"
-                src="https://tailwindui.com/img/logos/workcation-logo-base1.svg"
+                src="https://tailwindui.com/img/logos/workcation-logo-white.svg"
                 alt=""
               />
               <figure>
-                <blockquote className="mt-6 text-lg font-semibold text-base1 sm:text-xl sm:leading-8">
+                <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
                   <p>
                     “Amet amet eget scelerisque tellus sit neque faucibus non
                     eleifend. Integer eu praesent at a. Ornare arcu gravida
@@ -443,7 +442,7 @@ export default function Landing() {
                     lorem ac.”
                   </p>
                 </blockquote>
-                <figcaption className="mt-6 text-base text-base1">
+                <figcaption className="mt-6 text-base text-white">
                   <div className="font-semibold">Judith Black</div>
                   <div className="mt-1">CEO of Tuple</div>
                 </figcaption>
@@ -476,7 +475,7 @@ export default function Landing() {
                     tier.mostPopular ? 'lg:z-10 lg:rounded-b-none' : 'lg:mt-8',
                     tierIdx === 0 ? 'lg:rounded-r-none' : '',
                     tierIdx === tiers.length - 1 ? 'lg:rounded-l-none' : '',
-                    'flex flex-col justify-between rounded-3xl bg-base1 p-8 ring-1 ring-gray-200 xl:p-10'
+                    'flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10'
                   )}
                 >
                   <div>
@@ -527,7 +526,7 @@ export default function Landing() {
                     aria-describedby={tier.id}
                     className={classNames(
                       tier.mostPopular
-                        ? 'bg-accent0 text-base1 shadow-sm hover:bg-indigo-500'
+                        ? 'bg-accent0 text-white shadow-sm hover:bg-indigo-500'
                         : 'text-accent0 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
                       'mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0'
                     )}
@@ -591,7 +590,7 @@ export default function Landing() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-accent0 px-3.5 py-2.5 text-sm font-semibold text-base1 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
+                className="rounded-md bg-accent0 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
               >
                 Get started
               </a>
