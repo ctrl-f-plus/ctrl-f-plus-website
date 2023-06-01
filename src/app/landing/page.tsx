@@ -135,7 +135,7 @@ export default function Landing() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-base1">
+    <div className="bg-linen-500">
       {/* Header */}
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
@@ -190,7 +190,7 @@ export default function Landing() {
           onClose={setMobileMenuOpen}
         >
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-base1 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary1/10">
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-linen-500 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-secondary1/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
@@ -254,8 +254,30 @@ export default function Landing() {
           <div className="py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-secondary1 sm:text-6xl">
+                {/* <h1 className="text-4xl font-bold tracking-tight text-secondary1 sm:text-6xl">
                   Deploy to the cloud with confidence
+                </h1> */}
+                <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl ">
+                  Ctrl-F Plus:{' '}
+                  <span className="relative whitespace-nowrap ">
+                    {/* <svg
+                    aria-hidden="true"
+                    viewBox="0 0 418 42"
+                    className="absolute left-0 top-2/3 h-[0.58em] w-full fill-highlight "
+                    preserveAspectRatio="none"
+                  >
+                    <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
+                  </svg> */}
+                    {/* <img
+                    src="/Highlighter SVGs/SVG/Asset 14.svg"
+                    alt=""
+                    className=" mx-auto  h-64 w-full left-0 top-0 fill"
+                  /> */}
+                    <span className="relative">For the </span>
+                    <span className="relative bg-scarlet-400 text-[#010100] shadow-md rounded-lg px-2">
+                      Tab Hoarders
+                    </span>
+                  </span>
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
@@ -265,7 +287,7 @@ export default function Landing() {
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a
                     href="#"
-                    className="rounded-md bg-accent0 px-3.5 py-2.5 text-sm font-semibold text-base1 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
+                    className="rounded-md bg-base1 px-3.5 py-2.5 text-sm font-semibold text-linen-500 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
                   >
                     Get started
                   </a>
@@ -278,7 +300,7 @@ export default function Landing() {
                 </div>
               </div>
               <div className="mt-16 flow-root sm:mt-24">
-                <div className="-m-2 rounded-xl bg-secondary1/5 p-2 ring-1 ring-inset ring-secondary1/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                <div className="-m-2 rounded-xl bg-secondary1/5 p-2 ring-1 ring-inset ring-base1/50 lg:-m-4 lg:rounded-2xl lg:p-4">
                   <img
                     src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
                     alt="App screenshot"
@@ -430,11 +452,11 @@ export default function Landing() {
             <div className="relative mx-auto max-w-2xl lg:mx-0">
               <img
                 className="h-12 w-auto"
-                src="https://tailwindui.com/img/logos/workcation-logo-base1.svg"
+                src="https://tailwindui.com/img/logos/workcation-logo-linen-500.svg"
                 alt=""
               />
               <figure>
-                <blockquote className="mt-6 text-lg font-semibold text-base1 sm:text-xl sm:leading-8">
+                <blockquote className="mt-6 text-lg font-semibold text-linen-500 sm:text-xl sm:leading-8">
                   <p>
                     “Amet amet eget scelerisque tellus sit neque faucibus non
                     eleifend. Integer eu praesent at a. Ornare arcu gravida
@@ -443,7 +465,7 @@ export default function Landing() {
                     lorem ac.”
                   </p>
                 </blockquote>
-                <figcaption className="mt-6 text-base text-base1">
+                <figcaption className="mt-6 text-base text-linen-500">
                   <div className="font-semibold">Judith Black</div>
                   <div className="mt-1">CEO of Tuple</div>
                 </figcaption>
@@ -476,7 +498,7 @@ export default function Landing() {
                     tier.mostPopular ? 'lg:z-10 lg:rounded-b-none' : 'lg:mt-8',
                     tierIdx === 0 ? 'lg:rounded-r-none' : '',
                     tierIdx === tiers.length - 1 ? 'lg:rounded-l-none' : '',
-                    'flex flex-col justify-between rounded-3xl bg-base1 p-8 ring-1 ring-gray-200 xl:p-10'
+                    'flex flex-col justify-between rounded-3xl bg-linen-500 p-8 ring-1 ring-gray-200 xl:p-10'
                   )}
                 >
                   <div>
@@ -527,7 +549,7 @@ export default function Landing() {
                     aria-describedby={tier.id}
                     className={classNames(
                       tier.mostPopular
-                        ? 'bg-accent0 text-base1 shadow-sm hover:bg-indigo-500'
+                        ? 'bg-accent0 text-linen-500 shadow-sm hover:bg-indigo-500'
                         : 'text-accent0 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
                       'mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0'
                     )}
@@ -591,7 +613,7 @@ export default function Landing() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-accent0 px-3.5 py-2.5 text-sm font-semibold text-base1 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
+                className="rounded-md bg-accent0 px-3.5 py-2.5 text-sm font-semibold text-linen-500 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
               >
                 Get started
               </a>

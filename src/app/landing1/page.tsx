@@ -134,7 +134,7 @@ export default function Landing() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="bg-base1">
+    <div className="bg-white">
       {/* Header */}
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
