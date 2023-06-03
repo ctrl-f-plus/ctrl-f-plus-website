@@ -37,7 +37,7 @@ const FeatureDark0 = () => {
     <>
       {/* <div className="my-24"> */}
       {/* <div className="bg-gray-900 py-24 sm:py-32"> */}
-      <div className="bg-gray-900">
+      <div className="bg-gray-900 ">
         {/* Feature section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">

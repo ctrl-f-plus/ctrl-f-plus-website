@@ -9,10 +9,10 @@ import { useState } from 'react';
 import Container from '@/components/Container';
 
 const navigation = [
-  { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'How to Use', href: '#' },
+  { name: 'About', href: '#' },
+  { name: 'FAQ', href: '#' },
 ];
 
 function classNames(...classes: (string | false | undefined | null)[]) {
@@ -57,7 +57,7 @@ function MobileNavigation({
       <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-base1/10">
         <div className="flex items-center justify-between">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Ctrl-F Advanced</span>
             <img
               className="h-8 w-auto"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -137,11 +137,16 @@ function Navbar() {
         <div className="hidden lg:flex lg:gap-x-12">
           <Navigation
             items={navigation}
-            itemClassName={'text-sm font-semibold leading-6 text-base1'}
+            // itemClassName={'text-sm font-semibold leading-6 text-base1'}
+            itemClassName={'text-sm font-semibold leading-6 text-glacier-950'}
           />
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-base1">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-base1"> */}
+          <a
+            href="#"
+            className="text-sm font-semibold leading-6 text-highlight"
+          >
             Log in
           </a>
         </div>

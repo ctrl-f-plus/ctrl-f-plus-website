@@ -1,15 +1,31 @@
+'use client';
+import { useCallback } from 'react';
+import clsx from 'clsx';
+
 type ButtonProps = {
   children: React.ReactNode;
-  onClick: () => void;
+  // onClick?: () => void;
+  className: string;
+  url: string;
 };
 
-function Button({ children, onClick }: ButtonProps) {
+function Button({ children, url, className }: ButtonProps) {
+  const handleClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      window.open(url, '_blank');
+    },
+    [url]
+  );
+
+  className = clsx(
+    // baseStyles[variant],
+    // variantStyles[variant][color],
+    className
+  );
+
   return (
-    <button
-      type="button"
-      className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-      onClick={onClick}
-    >
+    <button type="button" className={className} onClick={handleClick}>
       {children}
     </button>
   );

@@ -33,6 +33,7 @@ function Hero() {
               </h1> */}
 
               <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl ">
+                {/* <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-glacier-950 sm:text-7xl "> */}
                 Ctrl-F Plus:{' '}
                 <span className="relative whitespace-nowrap ">
                   {/* <svg
@@ -58,27 +59,30 @@ function Hero() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#"
-                  className="rounded-md bg-secondary1 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-accent0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent0"
+                  className="rounded-md bg-glacier-950 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amaranth-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amaranth-400 "
                 >
-                  Add to Chrome
+                  Add to Chrome for free
                 </a>
                 <a
                   href="#"
-                  className="text-sm font-semibold leading-6 text-secondary00"
+                  className="text-sm font-semibold leading-6 text-glacier-600"
                 >
                   Learn more <span aria-hidden="true">→</span>
                 </a>
               </div>
             </div>
             <div className="mt-16 flow-root sm:mt-24">
-              <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+              <div className="relative -m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                {/* <div className="-m-2 rounded-xl bg-red-500 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4"> */}
+                {/* <div className="absolute w-full h-full bg-blue-500 rounded-md origin-tight -rotate-6"></div> */}
                 <img
                   // src="/https://tailwindui.com/img/component-images/project-app-screenshot.png/"
-                  src="/heroscreenshot.png"
+                  // src="/heroscreenshot.png"
+                  src="/DarkScreenShot.png"
                   alt="App screenshot"
                   width={2432}
                   height={1442}
-                  className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                  className="relative rounded-md shadow-2xl ring-1 ring-gray-900/10  "
                 />
               </div>
             </div>
@@ -101,3 +105,7 @@ function Hero() {
   );
 }
 export default Hero;
+
+// h2: font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl
+// font-display text-3xl tracking-tight text-slate-900 sm:text-4xl
+// h3: 'font-display text-lg leading-7 text-slate-900';

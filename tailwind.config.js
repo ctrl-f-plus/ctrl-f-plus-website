@@ -15,6 +15,21 @@ module.exports = {
       colors: {
         highlight: '#128da1',
         highlightFocus: '#05fdb4',
+        // highlightFocus: '#25FDAA',
+
+        glacier: {
+          50: '#edfefe',
+          100: '#d2fafb',
+          200: '#aaf3f7',
+          300: '#70e8f0',
+          400: '#2fd4e1',
+          500: '#13b7c7',
+          600: '#128da1',
+          700: '#167588',
+          800: '#1b606f',
+          900: '#1b505e',
+          950: '#0c3440',
+        },
 
         // orangy: '#ED4E32',
 
@@ -38,6 +53,21 @@ module.exports = {
         secondary11: '#7F1234',
         accent0: '#FE2001',
 
+        amaranth: {
+          DEFAULT: '#f4465b',
+          50: '#fef6f7',
+          100: '#feedef',
+          200: '#fcd1d6',
+          300: '#fbb5bd',
+          400: '#f77e8c',
+          500: '#f4465b',
+          600: '#dc3f52',
+          700: '#b73544',
+          800: '#922a37',
+          900: '#6e2029',
+          950: '#3d1217',
+        },
+
         linen: {
           50: '#fffefe',
           100: '#fffdfc',
@@ -54,7 +84,7 @@ module.exports = {
 
         peach: '#FBB984',
         peach: {
-          default: '#FBB984',
+          DEFAULT: '#FBB984',
           50: '#fffcf9',
           100: '#fff8f3',
           200: '#feeee0',
