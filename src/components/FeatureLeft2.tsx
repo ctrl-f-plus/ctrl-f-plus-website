@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 // import {
 //   CloudArrowUpIcon,
 //   LockClosedIcon,
@@ -94,7 +96,7 @@ import React from 'react';
 // import { SearchIcon } from '@heroicons/react/24/outline';
 // import { MagnifyingGlass } from '@heroicons/react/24/outline';
 
-function SearchIcon(props) {
+function SearchIcon(props: any) {
   return /*#__PURE__*/ React.createElement(
     'svg',
     Object.assign(
@@ -144,8 +146,8 @@ export default function FeatureLeft2() {
                 Simplicity at Your Fingertips
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                CTRL+SHIFT+F. So easy a caveman could do it. But don't worry,
-                you'll probably get the hang of it too.
+                {`CTRL+SHIFT+F. So easy a caveman could do it. But don't worry,
+                you'll probably get the hang of it too.`}
               </p>
             </div>
           </div>

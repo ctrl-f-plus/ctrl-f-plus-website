@@ -47,7 +47,7 @@ export default function CallToAction() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Think your tabs are out of control?
             <br />
-            Nah, they're just misunderstood.
+            {`Nah, they're just misunderstood.`}
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
             Get Ctrl-F Plus for Chrome and let your tabs run wild! After all,

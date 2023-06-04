@@ -36,9 +36,9 @@ function Hero() {
               </h1>
 
               <p className="relative mt-6 text-lg leading-8 text-gray-600">
-                Tab hoarders, your time has come. Ctrl-F Plus searches across
+                {`Tab hoarders, your time has come. Ctrl-F Plus searches across
                 all your precious tabs, not just the one you're currently
-                obsessing over
+                obsessing over`}
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a

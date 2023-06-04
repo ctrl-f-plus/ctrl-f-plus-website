@@ -11,8 +11,8 @@ export default function FeatureHeader() {
           Your Guiding Light in the Tab Chaos
         </h2>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          Tab overload? We've got your back. Unearth any word or phrase hidden
-          in the depths of your browser.
+          {`Tab overload? We've got your back. Unearth any word or phrase hidden
+          in the depths of your browser.`}
         </p>
       </div>
     </div>

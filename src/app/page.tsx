@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 'use client';
 /* eslint-disable @next/next/no-img-element */
 
@@ -126,9 +127,9 @@ export default function Home() {
                   </h1>
                   {/* text-gray-600 */}
                   <p className="relative mt-6 text-lg leading-8 text-white">
-                    Tab hoarders, your time has come. Ctrl-F Plus searches
+                    {`Tab hoarders, your time has come. Ctrl-F Plus searches
                     across all your precious tabs, not just the one you're
-                    currently obsessing over
+                    currently obsessing over`}
                   </p>
                   <div className="relative  mt-10 flex items-center justify-center gap-x-6">
                     <a

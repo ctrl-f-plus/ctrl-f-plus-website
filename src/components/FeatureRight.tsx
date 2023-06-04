@@ -41,8 +41,8 @@ export default function FeatureRight() {
                 Innovation with Coziness
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Just because we've revolutionized search doesn't mean we can't
-                be cozy. Slip into something comfortable.
+                {`Just because we've revolutionized search doesn't mean we can't
+                be cozy. Slip into something comfortable.`}
               </p>
             </div>
           </div>

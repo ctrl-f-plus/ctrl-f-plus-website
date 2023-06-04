@@ -66,9 +66,9 @@ export default function FeatureDark3() {
                 Love All Your Tabs Equally.
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-300">
-                Why show favoritism towards one tab when you've got dozens?
+                {`Why show favoritism towards one tab when you've got dozens?
                 Ctrl-F Plus doesn't judge, it just searches across all your
-                beloved tabs.
+                beloved tabs.`}
               </p>
             </div>
           </div>

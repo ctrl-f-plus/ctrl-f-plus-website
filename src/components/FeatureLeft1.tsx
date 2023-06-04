@@ -40,8 +40,8 @@ export default function FeatureLeft1() {
                 Upgrade from One-Tab Searches
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Your CTRL+F only searches one tab? That's cute. We prefer the
-                panoramic view.
+                {`Your CTRL+F only searches one tab? That's cute. We prefer the
+                panoramic view.`}
               </p>
             </div>
           </div>
