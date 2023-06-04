@@ -12,7 +12,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
     <div>
       <h1>Error</h1>
       <p>Something went wrong...</p>
-      <Button onClick={reset}>Try again</Button>
+      {/* <Button onClick={reset}>Try again</Button> */}
     </div>
   );
 }
