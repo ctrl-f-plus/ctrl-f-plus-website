@@ -103,7 +103,6 @@ function Navbar() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      {/* <Container className="bg-red-500"> */}
       <nav
         className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -111,13 +110,7 @@ function Navbar() {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              className="h-8 w-auto"
-              // src="https://tailwindui.com/img/logos/mark.svg?color=indigo&
-              // shade=600"
-              src="/TailwindLogo.svg"
-              alt=""
-            />
+            <img className="h-8 w-auto" src="/TailwindLogo.svg" alt="" />
           </a>
         </div>
 
@@ -142,10 +135,9 @@ function Navbar() {
           />
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {/* <a href="#" className="text-sm font-semibold leading-6 text-base1"> */}
           <a
             href="#"
-            className="text-sm font-semibold leading-6 text-highlight"
+            className="text-sm font-semibold leading-6 text-glacier-950"
           >
             Log in
           </a>
@@ -156,7 +148,6 @@ function Navbar() {
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />
-      {/* </Container> */}
     </header>
   );
 }

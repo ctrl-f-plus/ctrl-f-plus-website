@@ -1,34 +1,81 @@
 import {
   ArrowPathIcon,
   CloudArrowUpIcon,
+  Cog6ToothIcon,
   FingerPrintIcon,
   LockClosedIcon,
+  ServerIcon,
 } from '@heroicons/react/24/outline';
 
+// const features = [
+//   {
+//     name: 'Push to deploy',
+//     description:
+//       'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+//     icon: CloudArrowUpIcon,
+//   },
+//   {
+//     name: 'SSL certificates',
+//     description:
+//       'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+//     icon: LockClosedIcon,
+//   },
+//   {
+//     name: 'Simple queues',
+//     description:
+//       'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+//     icon: ArrowPathIcon,
+//   },
+//   {
+//     name: 'Advanced security',
+//     description:
+//       'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+//     icon: FingerPrintIcon,
+//   },
+// ];
+
 const features = [
+  // {
+  //   name: 'Text Search.',
+  //   description:
+  //     'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+  //   icon: Cog6ToothIcon,
+  // },
+  // {
+  //   name: 'Simple and Familiar.',
+  //   description:
+  //     'If you know how to use Ctrl-F, you know how to use Ctrl-F Plus. Just press Ctrl-Shift-F instead.',
+  //   icon: LockClosedIcon,
+  // },
+  // {
+  //   name: 'Search Across All Tabs.',
+  //   description:
+  //     'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commod.',
+  //   icon: CloudArrowUpIcon,
+  // },
   {
-    name: 'Push to deploy',
+    name: 'Separate your searches',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: 'SSL certificates',
-    description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
-  },
-  {
-    name: 'Simple queues',
-    description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      'Ctrl-F Plus keeps each search confined to the current window.',
     icon: ArrowPathIcon,
   },
   {
-    name: 'Advanced security',
+    name: 'Keyboard Navigation.',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
     icon: FingerPrintIcon,
+  },
+  {
+    name: 'Search Counter.',
+    description:
+      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
+    icon: ServerIcon,
+  },
+  {
+    name: 'Phrase Highlighting.',
+    description:
+      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
+    icon: ServerIcon,
   },
 ];
 
@@ -39,11 +86,11 @@ const Feature = () => {
       {/* <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8"> */}
       <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">
+          <h2 className="text-base font-semibold leading-7 text-glacier-600">
             Deploy faster
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to deploy your app
+            How to Make Ctrl-F Plus Your Partner in Crime
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
@@ -56,7 +103,7 @@ const Feature = () => {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-glacier-600">
                     <feature.icon
                       className="h-6 w-6 text-white"
                       aria-hidden="true"
