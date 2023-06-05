@@ -5,7 +5,6 @@ import {
   CTA_BUTTON_PRIMARY,
   CTA_BUTTON_SECONDARY,
   DESCRIPTION_FEATURE_HEADER,
-  HEADLINE_CALL_TO_ACTION,
   HEADLINE_FEATURE_HEADER,
   HEADLINE_HERO,
   HEADLINE_PT1_CALL_TO_ACTION,
@@ -13,9 +12,8 @@ import {
   SUBHEADLINE_FEATURE_HEADER,
   SUBHEADLINE_HERO,
 } from '@/copy';
-import { faqs, features, footerNavigation, navigation, tiers } from '@/data';
+import { faqs, features, footerNavigation, navigation } from '@/data';
 import { Dialog } from '@headlessui/react';
-import { CheckIcon } from '@heroicons/react/20/solid';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
