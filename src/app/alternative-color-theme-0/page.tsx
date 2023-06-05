@@ -339,7 +339,7 @@ export default function Landing() {
         </div>
 
         {/* Pricing section */}
-        {/* <div className="py-24 sm:pt-48">
+        <div className="py-24 sm:pt-48">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl text-center">
               <h2 className="text-base font-semibold leading-7 text-glacier-600">
@@ -426,7 +426,7 @@ export default function Landing() {
               ))}
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* FAQs */}
         <div className="mx-auto max-w-2xl divide-y divide-gray-900/10 px-6 pb-8 sm:pb-24 sm:pt-12 lg:max-w-7xl lg:px-8 lg:pb-32">
@@ -600,3 +600,4 @@ export default function Landing() {
     </div>
   );
 }
+https://ctrl-f-plus-chrome-extension-website.vercel.app/
