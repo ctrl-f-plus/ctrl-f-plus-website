@@ -1,18 +1,19 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 
 function Hero() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="">
       {/* Hero section */}
-      <div className="relative pt-14 ">
-        <div className="py-24 sm:py-32 ">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
-            <div className="relative w-full h-full flex items-center justify-center ">
-              <span className="w-1/2 h-auto flex items-center justify-center ">
-                {/* <img
+      <div className="relative pt-14">
+        <div className="py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="relative w-full h-full flex items-center justify-center">
+              <span className="w-1/2 h-auto flex items-center justify-center">
+                <img
                   src="/Asset 1.svg"
                   className="absolute left -top-24 w-3/5 h-auto rounded-md opacity-60 -rotate-12 "
-                /> */}
+                />
               </span>
             </div>
 
@@ -24,10 +25,10 @@ function Hero() {
                 </span>
               </h1> */}
 
-              <h1 className="relative mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl ">
-                {/* <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-glacier-950 sm:text-7xl "> */}
+              <h1 className="relative mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+                {/* <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-glacier-950 sm:text-7xl"> */}
                 Ctrl-F Plus:{' '}
-                <span className="relative whitespace-nowrap ">
+                <span className="relative whitespace-nowrap">
                   <span className="relative">For the </span>
                   <span className="relative bg-highlightFocus text-[#010100] shadow-md rounded-lg px-2">
                     Tab Hoarders
@@ -56,14 +57,14 @@ function Hero() {
               </div>
             </div>
             <div className="mt-16 flow-root sm:mt-24">
-              <div className="relative -m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+              <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                 {/* <div className="absolute w-full h-full bg-blue-500 rounded-md origin-tight -rotate-6"></div> */}
                 <img
                   src="/DarkScreenShot.png"
                   alt="App screenshot"
                   width={2432}
                   height={1442}
-                  className="relative rounded-md shadow-2xl ring-1 ring-gray-900/10  "
+                  className="rounded-md shadow-2xl ring-1 ring-gray-900/10  "
                 />
               </div>
             </div>

@@ -7,13 +7,7 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import Container from '@/components/Container';
-
-const navigation = [
-  { name: 'Features', href: '#' },
-  { name: 'How to Use', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'FAQ', href: '#' },
-];
+import { navigation } from '@/data';
 
 function classNames(...classes: (string | false | undefined | null)[]) {
   return classes.filter(Boolean).join(' ');
