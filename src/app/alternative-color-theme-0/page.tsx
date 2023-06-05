@@ -12,9 +12,9 @@ import {
   SUBHEADLINE_FEATURE_HEADER,
   SUBHEADLINE_HERO,
 } from '@/copy';
-import { faqs, features, footerNavigation, navigation } from '@/data';
+import { faqs, features, footerNavigation, navigation, tiers } from '@/data';
 import { Dialog } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
 function classNames(...classes: string[]) {
@@ -399,7 +399,7 @@ export default function Landing() {
                       role="list"
                       className="mt-8 space-y-3 text-sm leading-6 text-gray-600"
                     >
-                      {tier.features.map((feature) => (
+                      {tier.features.map((feature: any) => (
                         <li key={feature} className="flex gap-x-3">
                           <CheckIcon
                             className="h-6 w-5 flex-none text-glacier-600"
@@ -600,4 +600,3 @@ export default function Landing() {
     </div>
   );
 }
-https://ctrl-f-plus-chrome-extension-website.vercel.app/
