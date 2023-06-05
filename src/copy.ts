@@ -6,12 +6,12 @@
 
 export const COMPANY_NAME = 'Ctrl-F Advanced';
 
-export const HEADLINE_HERO = 'Ctrl-F Plus: For the Tab Horders';
+export const HEADLINE_HERO = 'Ctrl-F Plus: For the Tab Hoarders';
 export const SUBHEADLINE_HERO = `Tab hoarders, your time has come. Ctrl-F Plus searches across all your precious tabs, not just the one you're currently obsessing over`;
 
 // FEATURES
-export const HEADLINE_FEATURE_HEADER = `Your Guiding Light in the Tab Chaos`;
-export const SUBHEADLINE_FEATURE_HEADER = `Tab Junkie? Meet Your New Best Friend.`;
+export const SUBHEADLINE_FEATURE_HEADER = `Your Guiding Light in the Tab Chaos`;
+export const HEADLINE_FEATURE_HEADER = `Tab Junkie? Meet Your New Best Friend.`;
 export const DESCRIPTION_FEATURE_HEADER = `Tab overload? We've got your back. Unearth any word or phrase hidden in the depths of your browser.`;
 
 export const HEADLINE_FEATURE_ONE = `All-Tab Search: The Panoramic View`;
@@ -33,8 +33,10 @@ export const SUBHEADLINE_FEATURE_FOUR =
 export const DESCRIPTION_FEATURE_FOUR = `TODO:`;
 
 // CALL TO ACTION
-export const HEADLINE_CALL_TO_ACTION = 'Boost your productivity.\nAdd to Chrome for free.';
-export const DESCRIPTION_CALL_TO_ACTION = 'Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.';
+export const HEADLINE_PT1_CALL_TO_ACTION = 'Boost your productivity.';
+export const HEADLINE_PT2_CALL_TO_ACTION = 'Add to Chrome for free.';
+export const DESCRIPTION_CALL_TO_ACTION =
+  'Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.';
 
 // FOOTER
 const COPYRIGHT = `©2023 Your Company, Inc. All rights reserved.`;

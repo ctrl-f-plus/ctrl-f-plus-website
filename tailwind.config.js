@@ -36,8 +36,23 @@ module.exports = {
         accent0: '#FE2001',
 
         highlight: '#128da1',
-        highlightFocus: '#05fdb4',
+        // highlightFocus: '#05fdb4',
         // highlightFocus: '#25FDAA',
+
+        'highlight-focus': {
+          DEFAULT: '#05fdb4',
+          50: '#edfff9',
+          100: '#d6fff3',
+          200: '#afffe7',
+          300: '#71ffd6',
+          400: '#2dfbbe',
+          500: '#05fdb4',
+          600: '#00bf83',
+          700: '#00956a',
+          800: '#067555',
+          900: '#085f47',
+          950: '#003627',
+        },
 
         glacier: {
           DEFAULT: '#128da1',

@@ -20,7 +20,7 @@ function Hero() {
             <div className="relative mx-auto max-w-2xl text-center">
               {/* <h1 className="text-4xl font-bold tracking-tight text-secondary00 sm:text-6xl">
                 Ctrl-F Plus:{' '}
-                <span className="bg-highlightFocus text-[#010100] shadow-md rounded-lg px-2">
+                <span className="bg-highlight-focus text-[#010100] shadow-md rounded-lg px-2">
                   For the Tab Hoarders
                 </span>
               </h1> */}
@@ -30,7 +30,7 @@ function Hero() {
                 Ctrl-F Plus:{' '}
                 <span className="relative whitespace-nowrap">
                   <span className="relative">For the </span>
-                  <span className="relative bg-highlightFocus text-[#010100] shadow-md rounded-lg px-2">
+                  <span className="relative bg-highlight-focus text-[#010100] shadow-md rounded-lg px-2">
                     Tab Hoarders
                   </span>
                 </span>

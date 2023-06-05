@@ -10,8 +10,8 @@ export default function page() {
           </a>
         </li>
         <li>
-          <a href="/color-theme-main" target="_blank">
-            Main Color Theme
+          <a href="/alternative-color-theme-0" target="_blank">
+            Alternative Color Theme 0
           </a>
         </li>
         <li>
@@ -30,13 +30,13 @@ export default function page() {
           </a>
         </li>
         <li>
-          <a href="/templatedark" target="_blank">
-            Tailwind Template - Dark
+          <a href="/templatelight" target="_blank">
+            Tailwind Template - Light
           </a>
         </li>
         <li>
-          <a href="/templatelight" target="_blank">
-            Tailwind Template - Light
+          <a href="/templatedark" target="_blank">
+            Tailwind Template - Dark
           </a>
         </li>
       </ul>
