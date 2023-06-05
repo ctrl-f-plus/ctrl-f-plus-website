@@ -3,7 +3,7 @@
 # Landing Page Copy
 
 ## Company Name
-- Ctrl-F Advanced
+- Ctrl-F Plus
 
 ## Navigation
 - Features

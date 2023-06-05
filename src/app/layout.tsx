@@ -4,7 +4,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Ctrl-F Advanced',
+  title: 'Ctrl-F Plus',
   description: 'CTRL-F Advance - Chrome Extension',
 };
 

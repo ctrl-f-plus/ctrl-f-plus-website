@@ -4,7 +4,7 @@
 
 // Simplicity is Key: No complicated setups, no eye-rolling procedures. Just press Ctrl-Shift-F and type in what you're looking for. Because you have better things to do with your time.
 
-export const COMPANY_NAME = 'Ctrl-F Advanced';
+export const COMPANY_NAME = 'Ctrl-F Plus';
 
 export const HEADLINE_HERO = 'Ctrl-F Plus: For the Tab Hoarders';
 export const SUBHEADLINE_HERO = `Tab hoarders, your time has come. Ctrl-F Plus searches across all your precious tabs, not just the one you're currently obsessing over`;
