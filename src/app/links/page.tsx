@@ -10,6 +10,11 @@ export default function page() {
           </a>
         </li>
         <li>
+          <a href="/main-mockup" target="_blank">
+            Main Mockup
+          </a>
+        </li>
+        <li>
           <a href="/alternative-color-theme-0" target="_blank">
             Alternative Color Theme 0
           </a>
