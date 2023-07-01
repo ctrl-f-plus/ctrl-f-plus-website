@@ -2,6 +2,7 @@
 
 // import ButtonPhat from './components/ButtonPhat';
 import Hero from './components/Hero';
+import Navbar from './components/layout/navbar';
 
 export default function page() {
   return (
