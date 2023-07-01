@@ -3,6 +3,7 @@
 import Container from './layout/Container';
 import ButtonPrimary from './ButtonPrimary';
 
+// TODO: YOu have double the top padding that you need/should have
 export default function Hero() {
   return (
     <div>

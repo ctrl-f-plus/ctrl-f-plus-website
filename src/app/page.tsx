@@ -2,6 +2,7 @@
 
 // import ButtonPhat from './components/ButtonPhat';
 import Hero from './components/Hero';
+import CallToAction from './components/call-to-action';
 import Navbar from './components/layout/navbar';
 
 export default function page() {
@@ -10,6 +11,7 @@ export default function page() {
     <div className="">
       <Hero />
       {/* <ButtonPhat /> */}
+      <CallToAction />
     </div>
   );
 }

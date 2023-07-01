@@ -1,6 +1,7 @@
 // src/app/components/layout/Footer.tsx
 
 import LogoIconSecondary from '../icons/logo-secondary';
+import Container from './Container';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,14 +9,14 @@ export default function Footer() {
 
   return (
     // <footer className=" mx-auto bg-dark1 px-6">
-    <footer className="bg-dark1 ">
-      <div className="flex h-[5.375rem] items-center justify-between">
+    <footer className="bg-dark1">
+      <Container className="flex h-[5.375rem] items-center justify-between">
         <LogoIconSecondary />
         {/* <p>&copy; 2020 Your Company, Inc. All rights reserved.</p> */}
         <p className="text-fs-lg leading-5 text-white">
           copyright {copyrightDate}
         </p>
-      </div>
+      </Container>
     </footer>
   );
 }

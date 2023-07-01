@@ -28,11 +28,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${open_sans.variable} h-full  antialiased`}
+      // h-full
+      className={`${inter.variable} ${open_sans.variable}  antialiased`}
     >
       <body
         // className="mx-auto max-w-7xl px-4"
-        className="flex h-full flex-col"
+        className="flex h-full flex-col gap-[4.5rem]"
       >
         <Navbar />
         <main className="isolate flex h-full flex-col">{children}</main>

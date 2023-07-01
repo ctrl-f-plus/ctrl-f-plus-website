@@ -28,6 +28,7 @@ module.exports = {
         { lineHeight: '1.53125rem', fontWeight: '600' },
       ],
       'fs-lg': ['1.125rem', { lineHeight: '150%', fontWeight: '400' }],
+      'fs-x0': ['2.0625rem', { lineHeight: '100%', fontWeight: '800' }],
       'fs-xl': ['3.4375rem', { lineHeight: '100%', fontWeight: '800' }],
     },
 
