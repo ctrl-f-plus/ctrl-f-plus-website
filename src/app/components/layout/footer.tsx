@@ -1,13 +1,21 @@
 // src/app/components/layout/Footer.tsx
 
-import LogoIcon from '../icons/logo';
+import LogoIconSecondary from '../icons/logo-secondary';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
+
   return (
-    <div>
-      <LogoIcon />
-      {/* <p>&copy; 2020 Your Company, Inc. All rights reserved.</p> */}
-      <p>copyright 2023</p>
-    </div>
+    // <footer className=" mx-auto bg-dark1 px-6">
+    <footer className="bg-dark1 ">
+      <div className="flex h-[5.375rem] items-center justify-between">
+        <LogoIconSecondary />
+        {/* <p>&copy; 2020 Your Company, Inc. All rights reserved.</p> */}
+        <p className="text-fs-lg leading-5 text-white">
+          copyright {copyrightDate}
+        </p>
+      </div>
+    </footer>
   );
 }

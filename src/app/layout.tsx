@@ -26,16 +26,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${open_sans.variable}`}>
-      <body className="font-inter">
-        <div>
-          {/* <Container className="bg-blue-500"> */}
+    <html
+      lang="en"
+      className={`${inter.variable} ${open_sans.variable} h-full  antialiased`}
+    >
+      <body
+        // className="mx-auto max-w-7xl px-4"
+        className="flex h-full flex-col"
+      >
+        <main className="isolate flex h-full flex-col">
           <Navbar />
-          <main className="isolate">{children}</main>
-          {/* <main>{children}</main> */}
-          {/* </Container> */}
-          <Footer />
-        </div>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

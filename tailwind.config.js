@@ -23,9 +23,12 @@ module.exports = {
       'fs-base': ['1rem', { lineHeight: '1.3rem', fontWeight: '600' }],
       'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
       'fs-md': ['1.125rem', { lineHeight: '1.53125rem', fontWeight: '400' }],
-      'fs-md-bold': ['1.125rem', { lineHeight: '1.53125rem', fontWeight: '600' }],
-      'fs-lg': ['1.125rem', { lineHeight: '1.6875rem', fontWeight: '400' }],
-      'fs-xl': ['3.4375rem', { lineHeight: '3.4375rem', fontWeight: '800' }],
+      'fs-md-bold': [
+        '1.125rem',
+        { lineHeight: '1.53125rem', fontWeight: '600' },
+      ],
+      'fs-lg': ['1.125rem', { lineHeight: '150%', fontWeight: '400' }],
+      'fs-xl': ['3.4375rem', { lineHeight: '100%', fontWeight: '800' }],
     },
 
     extend: {
