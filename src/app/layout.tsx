@@ -1,5 +1,7 @@
 import { Inter, Open_Sans } from 'next/font/google';
 import './globals.css';
+import Navbar from './components/layout/navbar';
+import Footer from './components/layout/footer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,7 +17,7 @@ const open_sans = Open_Sans({
 
 export const metadata = {
   title: 'Ctrl-F Plus',
-  description: 'CTRL-F Advance - Chrome Extension',
+  description: 'CTRL-F Plus - Chrome Extension',
 };
 
 export default function RootLayout({
@@ -26,16 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${open_sans.variable}`}>
       <body className="font-inter">
-        {/* <body className="font-inter"> */}
-        {/* <body> */}
-        {/* <div className="bg-white"> */}
         <div>
           {/* <Container className="bg-blue-500"> */}
-          {/* <Navbar /> */}
+          <Navbar />
           <main className="isolate">{children}</main>
           {/* <main>{children}</main> */}
           {/* </Container> */}
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </body>
     </html>

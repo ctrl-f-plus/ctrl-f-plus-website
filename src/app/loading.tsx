@@ -1,8 +1,8 @@
-export default function Loading() {
+function Loading() {
   return (
     <div>
       <svg
-        className="animate-spin -ml-1 mr-3 h-5 w-5 text-red-500"
+        className="-ml-1 mr-3 h-5 w-5 animate-spin text-red-500"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -25,3 +25,5 @@ export default function Loading() {
     </div>
   );
 }
+
+export default Loading;

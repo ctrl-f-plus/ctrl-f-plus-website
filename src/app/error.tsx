@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/Button';
+// import Button from '@/components/Button';
 
 type ErrorPageProps = {
   error: Error;
