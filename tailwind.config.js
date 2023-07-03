@@ -47,6 +47,47 @@ module.exports = {
         'highlight-focus': '#53E7BB',
         dark1: '#1B2528',
         primary1: '#0C3440',
+        'gradient-color-1': '#f5fbff',
+        'gradient-color-2': '#dde3ee',
+        'gradient-color-3': '#f2effb',
+        'gradient-color-4': '#d4ece5',
+        // color1: '#1b505e',
+        // color2: '#f4465b',
+        // color3: '#53E7BB',
+        // color4: '#e51d01',
+        color1: '#dde3ee',
+        color2: '#f5fbff',
+        color3: '#d4ece5',
+        color4: '#f2effb',
+      },
+      // animation: {
+      //   'gradient-x': 'gradient-x .5s ease infinite',
+      // },
+      // keyframes: {
+      //   'gradient-x': {
+      //     '0%, 100%': {
+      //       'background-size': '200% 200%',
+      //       'background-position': 'right center',
+      //     },
+      //     '50%': {
+      //       'background-size': '200% 200%',
+      //       'background-position': 'left center',
+      //     },
+      //   },
+      // },
+
+      keyframes: {
+        animatedgradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      },
+      backgroundSize: {
+        '300%': '300%',
+      },
+      animation: {
+        gradient: 'animatedgradient 6s ease infinite alternate',
       },
 
       // colors: {

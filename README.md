@@ -37,3 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## TODO:
   - [ ] Consolidate Logo Icons if possible
+  - [ ] Add Gradient
+    - https://codepen.io/P1N2O/pen/pyBNzX
+    - https://dev.to/geowrgetudor/gradient-animated-text-with-tailwind-css-24a0
+    - https://www.andrealves.dev/blog/how-to-make-an-animated-gradient-text-with-tailwindcss/
+    - https://javascript.plainenglish.io/animated-text-gradients-with-react-and-styled-components-93891797eaf1
+    - https://www.joshwcomeau.com/react/rainbow-button/

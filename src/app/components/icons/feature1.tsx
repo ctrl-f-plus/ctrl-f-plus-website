@@ -5,7 +5,8 @@
 export default function FeatureIcon1() {
   return (
     <svg
-      width="264"
+      // width="264"
+      width="auto"
       height="222"
       viewBox="0 0 264 222"
       fill="none"
