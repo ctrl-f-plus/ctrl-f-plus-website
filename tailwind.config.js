@@ -62,32 +62,44 @@ module.exports = {
       },
       // animation: {
       //   'gradient-x': 'gradient-x .5s ease infinite',
+      //   gradient: 'animatedgradient 6s ease infinite alternate',
       // },
       // keyframes: {
-      //   'gradient-x': {
-      //     '0%, 100%': {
-      //       'background-size': '200% 200%',
-      //       'background-position': 'right center',
-      //     },
-      //     '50%': {
-      //       'background-size': '200% 200%',
-      //       'background-position': 'left center',
-      //     },
+      // 'gradient-x': {
+      //   '0%, 100%': {
+      //     'background-size': '200% 200%',
+      //     'background-position': 'right center',
+      //   },
+      //   '50%': {
+      //     'background-size': '200% 200%',
+      //     'background-position': 'left center',
       //   },
       // },
+      // },
 
+      animation: {
+        gradient: 'animatedgradient 6s ease infinite alternate',
+        'gradient-x': 'gradient-x 10s ease infinite',
+      },
       keyframes: {
         animatedgradient: {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
         },
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+        },
       },
       backgroundSize: {
         '300%': '300%',
-      },
-      animation: {
-        gradient: 'animatedgradient 6s ease infinite alternate',
       },
 
       // colors: {

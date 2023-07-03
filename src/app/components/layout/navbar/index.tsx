@@ -49,6 +49,7 @@ export default function Navbar() {
             <span className="sr-only">Open main menu</span>
             {/* <Bars2Icon className="h-6 w-6" aria-hidden="true" /> */}
             <MenuIcon />
+            {/* <XMarkIcon className="bg-[#0C3440]" /> */}
           </button>
         </div>
         <div className="lg:flex lg:gap-x-12 hidden">

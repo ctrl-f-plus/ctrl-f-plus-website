@@ -3,7 +3,7 @@
 import { Dialog } from '@headlessui/react';
 import { useState } from 'react';
 import LogoIcon from '../../icons/logo';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import XMarkIcon from '../../icons/x-mark';
 
 export default function MobileMenu({
   navigation,
@@ -38,7 +38,7 @@ export default function MobileMenu({
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon aria-hidden="true" />
             </button>
           </div>
           <div className="mt-6 flow-root">

@@ -10,7 +10,7 @@ export default function FeatureCard() {
     <Container className="mx-auto flex w-full flex-col">
       {/* grid grid-cols-1 */}
       {/* px-[2.25rem] */}
-      <div className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-white">
+      <div className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-white shadow-xl">
         <FeatureIcon1 />
         <div className="flex flex-col items-center justify-center gap-9 text-center">
           <h2 className="font-inter text-fs-base text-primary1">

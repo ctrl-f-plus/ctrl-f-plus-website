@@ -2,6 +2,8 @@
 
 import PuzzleIcon2 from './icons/puzzle2';
 
+// TODO: 1. Combine this into `ButtonPrimary`
+// TODO: 2. Fix the styling of the button's width
 function ButtonPhat() {
   return (
     <div>
