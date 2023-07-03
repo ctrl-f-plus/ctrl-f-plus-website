@@ -33,10 +33,12 @@ export default function RootLayout({
     >
       <body
         // className="mx-auto max-w-7xl px-4"
-        className="flex h-full flex-col gap-[4.5rem]"
+        className="flex h-full flex-col gap-[4.5rem] bg-gray-100"
       >
         <Navbar />
-        <main className="isolate flex h-full flex-col">{children}</main>
+        <main className="isolate flex h-full flex-col gap-[4.5rem]">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

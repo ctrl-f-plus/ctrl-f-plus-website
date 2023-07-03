@@ -20,7 +20,7 @@ module.exports = {
       // 'fs-md4': ['18px', { lineHeight: '27px', fontWeight: '400' }],
       // 'fs-xl': ['55px', { lineHeight: '55px', fontWeight: '800' }],
 
-      'fs-base': ['1rem', { lineHeight: '1.3rem', fontWeight: '600' }],
+      'fs-base': ['1rem', { lineHeight: '130%', fontWeight: '600' }],
       'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
       'fs-md': ['1.125rem', { lineHeight: '1.53125rem', fontWeight: '400' }],
       'fs-md-bold': [

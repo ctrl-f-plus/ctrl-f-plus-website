@@ -7,7 +7,7 @@ import ButtonPrimary from './ButtonPrimary';
 export default function Hero() {
   return (
     <div>
-      <Container className="my-[4.5rem] flex flex-col gap-[3.44rem]">
+      <Container className="flex flex-col gap-[3.44rem]">
         <div className="relative flex flex-col items-start gap-8">
           <h1 className="z-10 text-fs-xl text-dark1">
             Ctrl-F Plus:
