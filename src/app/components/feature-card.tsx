@@ -7,25 +7,32 @@ export default function FeatureCard() {
   return (
     // <Container className="w-full">
     // h-full  min-w-[23.5rem]
-    <Container className="mx-auto flex w-full flex-col">
+    <Container className="mx-auto flex w-full flex-col ">
       {/* grid grid-cols-1 */}
       {/* px-[2.25rem] */}
-      <div className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-white shadow-xl">
-        <FeatureIcon1 />
-        <div className="flex flex-col items-center justify-center gap-9 text-center">
-          <h2 className="font-inter text-fs-base text-primary1">
-            All-Tab Search: The Panoramic View
-          </h2>
-          {/*  */}
-          <h3 className=" font-inter text-fs-x0 text-dark1">
-            Upgrade from
-            <br />
-            One-Tab Searches
-          </h3>
-          <p className="max-w-[19rem] font-open-sans text-fs-lg text-dark1">
-            Your CTRL+F only searches one tab? That's cute. We prefer the
-            panoramic view.
-          </p>
+      <div className="laptop:text-left">
+        <div className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-white p-10 shadow-xl laptop:flex-row ">
+          {/* <div> */}
+          <FeatureIcon1 className="basis-1/3" />
+          <div className="flex basis-2/3 flex-col items-center justify-center gap-9 ">
+            <h2 className="w-full text-center font-inter text-fs-base text-primary1 laptop:text-left">
+              All-Tab Search: The Panoramic View
+            </h2>
+            {/*  */}
+            <h3 className="w-full text-center font-inter text-fs-x0 text-dark1 tablet:text-fs-xl laptop:text-left">
+              Upgrade from <br className="hidden laptop:block" />
+              One-
+              <br className="hidden tablet:block laptop:hidden" />
+              Tab Searches
+            </h3>
+            <p
+              className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-full laptop:text-left
+"
+            >
+              Your CTRL+F only searches one tab? That's cute. We prefer the
+              panoramic view.
+            </p>
+          </div>
         </div>
       </div>
     </Container>

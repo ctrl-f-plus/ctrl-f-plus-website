@@ -10,10 +10,10 @@ import MobileMenu from './mobile-menu';
 import MenuIcon from '../../icons/menu';
 
 const navigation = [
-  { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Blog', href: '#' },
+  { name: 'About', href: '#' },
+  { name: 'Donate', href: '#' },
 ];
 
 function classNames(...classes: any[]) {
@@ -26,12 +26,13 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="">
+    // TODO: maybe put this inside of a container instead of setting padding
+    <header className="px-8 pt-2">
       {/* <Container className={''}>
         <LogoIcon />
       </Container> */}
       <nav
-        className="lg:px-8 mx-auto flex max-w-7xl items-center justify-between p-6"
+        className="mx-auto flex max-w-7xl items-center justify-between py-2 "
         aria-label="Global"
       >
         <a href="#" className="-m-1.5 p-1.5">
@@ -52,19 +53,19 @@ export default function Navbar() {
             {/* <XMarkIcon className="bg-[#0C3440]" /> */}
           </button>
         </div>
-        <div className="lg:flex lg:gap-x-12 hidden">
+        <div className="hidden font-open-sans text-fs-lg  laptop:flex laptop:gap-x-6">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-dark-1 text-fs-lg"
             >
               {item.name}
             </a>
           ))}
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </a> */}
         </div>
       </nav>
       <MobileMenu

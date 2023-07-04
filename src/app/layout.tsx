@@ -2,6 +2,8 @@ import { Inter, Open_Sans } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/layout/navbar';
 import Footer from './components/layout/footer';
+import TestComponent from './components/test-component';
+import HeroAnimation from './components/icons/hero-animation';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,9 +33,17 @@ export default function RootLayout({
       // h-full
       className={`${inter.variable} ${open_sans.variable}  antialiased`}
     >
+      {/* <TestComponent /> */}
+      {/* <div className="flex h-full w-full items-start bg-green-800 laptop:block">
+        <HeroAnimation className="bg-blue-300 pt-0 laptop:block" />
+      </div> */}
       <body
-        // className="mx-auto max-w-7xl px-4"
-        className="flex h-full flex-col bg-gray-100"
+        // px-4
+        // bg-yellow-300
+        // tablet:bg-gray-100
+        // laptop:bg-indigo-500
+        className="mx-auto max-w-7xl  tablet:bg-green-100 desktop:bg-gray-100 wide:bg-slate-700"
+        // className="flex h-full flex-col "
       >
         <main className="isolate flex h-full flex-col ">{children}</main>
         <Footer />

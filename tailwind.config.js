@@ -7,9 +7,16 @@ module.exports = {
   ],
   theme: {
     screens: {
-      tablet: '430px',
-      laptop: '1024px',
-      desktop: '1280px',
+      // tablet: '430px',
+      // laptop: '900px',
+      tablet: '640px',
+      laptop: '768px',
+      desktop: '1024px',
+      wide: '1280px',
+      // tablet: '430px',
+      // laptop: '900px',
+      // laptop: '1024px',
+      // desktop: '1280px',
     },
     fontSize: {
       // sm: ['14px', { lineHeight: '24px', letterSpacing: '-0.03em' }],
@@ -22,7 +29,7 @@ module.exports = {
 
       'fs-base': ['1rem', { lineHeight: '130%', fontWeight: '600' }],
       'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
-      'fs-md': ['1.125rem', { lineHeight: '1.53125rem', fontWeight: '400' }],
+      'fs-md': ['1.125rem', { lineHeight: 'normal', fontWeight: '400' }],
       'fs-md-bold': [
         '1.125rem',
         { lineHeight: '1.53125rem', fontWeight: '600' },

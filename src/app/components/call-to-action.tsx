@@ -79,8 +79,10 @@ export default function CallToAction() {
             </defs>
           </svg> */}
           {/* <div className="z-20"> */}
-          <h1 className="text-fs-x0 text-white">Boost your productivity.</h1>
-          <p className="font-open-sans text-white">
+          <h1 className="font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
+            Boost your productivity.
+          </h1>
+          <p className="max-w-[26.75rem] font-open-sans text-fs-lg  text-white tablet:max-w-[25.8125rem] ">
             Lorem ipsum dolor sit amet consectetur. Nunc fames venenatis non
             ipsum pretium amet.
           </p>
@@ -93,10 +95,12 @@ export default function CallToAction() {
       <Container className="w-full min-w-[23.5rem] ">
         <div className="relative isolate flex h-[32.8125rem] flex-col  items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
           <div className="absolute -top-24 right-10 -z-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 translate-x-1/2 rounded-full bg-[#8DBEDA] blur-[43.5px] filter" />
-          <div className="absolute -bottom-24 left-10 -z-10   h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter" />
+          <div className="absolute -bottom-24 left-10 -z-10   h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter " />
 
-          <h1 className="text-fs-x0 text-white">Boost your productivity.</h1>
-          <p className="font-open-sans text-white">
+          <h1 className="font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
+            Boost your productivity.
+          </h1>
+          <p className="max-w-[26.75rem] font-open-sans text-fs-lg  text-white tablet:max-w-[25.8125rem]">
             Lorem ipsum dolor sit amet consectetur. Nunc fames venenatis non
             ipsum pretium amet.
           </p>

@@ -10,7 +10,7 @@ export default function PuzzleIcon2({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <g id="extension 1" clip-path="url(#clip0_238_1292)">
+      <g id="extension 1" clipPath="url(#clip0_238_1292)">
         <g id="Group">
           <g id="Group_2">
             <path

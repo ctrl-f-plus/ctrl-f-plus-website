@@ -2,17 +2,20 @@
 
 // TODO: Review the xlinks to see what they actually do and if your solution of removing them will be okay.
 
-export default function FeatureIcon1() {
+// TODO: fix error coming from `width="auto"`
+export default function FeatureIcon1({ className }: { className?: string }) {
   return (
     <svg
       // width="264"
-      width="auto"
-      height="222"
+      // width="auto"
+      // height="auto"
+      // height="222"
       viewBox="0 0 264 222"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       // xmlns:xlink="http://www.w3.org/1999/xlink"
       // xmlns="http://www.w3.org/1999/xlink"
+      className={className}
     >
       <rect
         x="21.7"
@@ -29,7 +32,7 @@ export default function FeatureIcon1() {
         height="174.3"
         rx="11.2"
         fill="url(#pattern0)"
-        fill-opacity="0.32"
+        fillOpacity="0.32"
       />
       <rect
         x="21.7"
@@ -38,7 +41,7 @@ export default function FeatureIcon1() {
         height="174.3"
         rx="11.2"
         fill="url(#paint0_linear_127_4811)"
-        fill-opacity="0.38"
+        fillOpacity="0.38"
       />
       <rect
         x="84.35"
@@ -48,7 +51,7 @@ export default function FeatureIcon1() {
         rx="6.06887"
         fill="white"
         stroke="#A8AEB1"
-        stroke-width="0.7"
+        strokeWidth="0.7"
       />
       <rect
         x="89.6"
@@ -114,7 +117,7 @@ export default function FeatureIcon1() {
         rx="6.06887"
         fill="white"
         stroke="#A8AEB1"
-        stroke-width="0.7"
+        strokeWidth="0.7"
       />
       <rect
         x="155.4"
@@ -188,7 +191,7 @@ export default function FeatureIcon1() {
         rx="6.06887"
         fill="white"
         stroke="#A8AEB1"
-        stroke-width="0.7"
+        strokeWidth="0.7"
       />
       <rect
         x="5.59998"
@@ -267,8 +270,8 @@ export default function FeatureIcon1() {
           y2="179.9"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0021CD" />
-          <stop offset="1" stop-color="#8CFFFF" />
+          <stop stopColor="#0021CD" />
+          <stop offset="1" stopColor="#8CFFFF" />
         </linearGradient>
         <image
           id="image0_127_4811"

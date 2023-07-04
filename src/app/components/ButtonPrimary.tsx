@@ -7,8 +7,9 @@ import { PlayIcon } from './icons/play';
 import PuzzleIcon from './icons/puzzle';
 
 // TODO: Shadow?
+// px-9
 const baseStyles = {
-  base: 'flex h-14 w-full items-center justify-center gap-2 rounded-[37px] px-9 py-2 font-open-sans text-fs-md-bold ',
+  base: 'flex h-14 w-full items-center justify-center gap-2 rounded-[37px]  py-2 font-open-sans text-fs-md-bold ',
 };
 
 const variantStyles = {
