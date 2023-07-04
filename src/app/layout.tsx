@@ -46,6 +46,7 @@ export default function RootLayout({
         className="mx-auto bg-gray-100"
         // className="flex h-full flex-col "
       >
+        <Navbar />
         <main className="isolate flex h-full flex-col ">{children}</main>
         <Footer />
       </body>

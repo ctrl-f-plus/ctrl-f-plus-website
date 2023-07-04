@@ -43,3 +43,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - https://www.andrealves.dev/blog/how-to-make-an-animated-gradient-text-with-tailwindcss/
     - https://javascript.plainenglish.io/animated-text-gradients-with-react-and-styled-components-93891797eaf1
     - https://www.joshwcomeau.com/react/rainbow-button/
+
+  - [] Do we want to use the version with the dark grey or light square? See the 1270px-1024px screen for the light grey version

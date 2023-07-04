@@ -8,12 +8,13 @@ import { Bars2Icon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { JSX, SVGProps, useState } from 'react';
 import MobileMenu from './mobile-menu';
 import MenuIcon from '../../icons/menu';
+import Link from 'next/link';
 
 const navigation = [
-  { name: 'Features', href: '#' },
-  { name: 'Blog', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Donate', href: '#' },
+  { name: 'Features', path: '/' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'About', path: '#' },
+  { name: 'Donate', path: '#' },
 ];
 
 function classNames(...classes: any[]) {
@@ -25,10 +26,10 @@ function classNames(...classes: any[]) {
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  return (
+  http: return (
     // TODO: maybe put this inside of a container instead of setting padding
     // px-8
-    <header className=" pt-2">
+    <header className="mb-[4.5rem] pt-2">
       <Container className={''}>
         {/* <LogoIcon /> */}
 
@@ -36,12 +37,12 @@ export default function Navbar() {
           className="mx-auto flex max-w-7xl items-center justify-between py-2 "
           aria-label="Global"
         >
-          <a href="#" className="-m-1.5 p-1.5">
+          <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Ctrl-F Plus</span>
             {/* <div className="h-8 w-auto"> */}
             <LogoIcon />
             {/* </div> */}
-          </a>
+          </Link>
           <div className="flex laptop:hidden">
             <button
               type="button"
@@ -54,19 +55,19 @@ export default function Navbar() {
               {/* <XMarkIcon className="bg-[#0C3440]" /> */}
             </button>
           </div>
-          <div className="hidden font-open-sans text-fs-lg  laptop:flex laptop:gap-x-6">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-dark-1 text-fs-lg"
-              >
-                {item.name}
-              </a>
-            ))}
-            {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a> */}
+
+          <div className="hidden laptop:block">
+            {navigation.length ? (
+              <ul className="flex flex-row font-open-sans text-fs-lg laptop:gap-x-6">
+                {navigation.map((item) => (
+                  <li key={item.path}>
+                    <Link href={item.path} className="text-dark-1 text-fs-lg">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </nav>
         <MobileMenu
