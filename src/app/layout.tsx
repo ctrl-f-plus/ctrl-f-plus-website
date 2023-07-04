@@ -42,7 +42,8 @@ export default function RootLayout({
         // bg-yellow-300
         // tablet:bg-gray-100
         // laptop:bg-indigo-500
-        className="mx-auto max-w-7xl  tablet:bg-green-100 desktop:bg-gray-100 wide:bg-slate-700"
+        // max-w-7xl
+        className="mx-auto bg-gray-100"
         // className="flex h-full flex-col "
       >
         <main className="isolate flex h-full flex-col ">{children}</main>

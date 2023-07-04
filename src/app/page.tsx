@@ -13,7 +13,7 @@ export default function page() {
     // TODO: Fix margin bottom. `mb-[4.5rem]` is arbitrary
     // tablet:bg-blue-700 laptop:bg-green-300
     // bg-yellow-300 tablet:bg-gray-100 desktop:bg-red-500 wide:bg-slate-700
-    <div className="mb-[4.5rem] flex flex-col gap-[4.5rem] laptop:gap-24 ">
+    <div className="mb-[4.5rem] flex flex-col gap-[4.5rem] laptop:gap-24 wide:gap-32">
       <Navbar />
       <Hero />
 
