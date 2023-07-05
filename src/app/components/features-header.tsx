@@ -1,13 +1,19 @@
 'use client';
-// src/app/components/feature-header.tsx
+// src/app/components/features-header.tsx
 
 import Container from './layout/Container';
 
-export default function FeatureHeader() {
+export default function FeaturesHeader() {
   return (
     <>
+      {/* TODO: REMOVE THIS DIV AND FIGURE OUT ANOTHER WAY TO HAVE TOP PADDING */}
+      {/* <div id="features-header"></div> */}
       {/* items-center  desktop:max-w-[1168px]*/}
-      <Container className="flex w-full flex-col justify-center">
+      <Container
+        id="feature-header"
+        // TODO: check if you need justify-center here
+        className="mx-auto flex w-full flex-col justify-center"
+      >
         {/* min-h-[26.938rem] p-[4.5rem]*/}
         {/* TODO: Review `px-5` below this padding figure was not in the figma */}
         <div className="flex flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-dark1 px-5 py-[4.5rem] text-center shadow-xl">

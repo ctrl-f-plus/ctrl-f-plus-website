@@ -37,11 +37,11 @@ export default function FeatureCard() {
         return (
           <Container key={feat.title} className="mx-auto flex w-full flex-col ">
             <div className="laptop:text-left">
-              <div className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-white p-10 shadow-xl laptop:flex-row ">
+              <div className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-white p-10 shadow-xl laptop:flex-row">
                 {
                   <feat.icon
                     className={`basis-1/3 ${
-                      index % 2 === 1 ? 'order-last' : ''
+                      index % 2 === 1 ? 'laptop:order-last' : ''
                     }`}
                   />
                 }

@@ -6,18 +6,6 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    screens: {
-      // tablet: '430px',
-      // laptop: '900px',
-      tablet: '640px',
-      laptop: '768px',
-      desktop: '1024px',
-      wide: '1280px',
-      // tablet: '430px',
-      // laptop: '900px',
-      // laptop: '1024px',
-      // desktop: '1280px',
-    },
     fontSize: {
       // sm: ['14px', { lineHeight: '24px', letterSpacing: '-0.03em' }],
       // 'fs-md': ['16px', { lineHeight: '20.8px', fontWeight: '600' }],
@@ -34,12 +22,30 @@ module.exports = {
         '1.125rem',
         { lineHeight: '1.53125rem', fontWeight: '600' },
       ],
-      'fs-lg': ['1.125rem', { lineHeight: '150%', fontWeight: '400' }],
+      'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
       'fs-x0': ['2.0625rem', { lineHeight: '100%', fontWeight: '800' }],
-      'fs-xl': ['3.4375rem', { lineHeight: '100%', fontWeight: '800' }],
+      'fs-xl': ['3.4375rem', { lineHeight: '100%', fontWeight: '800' }], // INTRO
+
+      //
+      subtitle: ['1.4375rem', { lineHeight: '1.3', fontWeight: '600' }],
     },
 
+    //styleName: subtitle;
+    // font-family: Inter; font-size: 23px; font-weight: 600; line-height: 30px; letter-spacing: 0em; text-align: center;
+
     extend: {
+      screens: {
+        // tablet: '430px',
+        // laptop: '900px',
+        tablet: '640px',
+        laptop: '768px',
+        desktop: '1024px',
+        wide: '1280px',
+        // tablet: '430px',
+        // laptop: '900px',
+        // laptop: '1024px',
+        // desktop: '1280px',
+      },
       fontFamily: {
         inter: ['var(--font-inter)'],
         'open-sans': ['var(--font-open-sans)'],
@@ -51,7 +57,9 @@ module.exports = {
       // },
       colors: {
         // white: 'ffffff',
+        // TODO: WHICH COLOR IS THE HIGHLIGHT COLOR - SEE BLOG HEADER CARD?
         'highlight-focus': '#53E7BB',
+        'highlight-focus-1': '#48D0A8',
         dark1: '#1B2528',
         primary1: '#0C3440',
         'gradient-color-1': '#f5fbff',

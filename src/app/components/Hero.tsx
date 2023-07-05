@@ -9,8 +9,12 @@ import SearchIcon from './icons/search';
 // TODO: YOu have double the top padding that you need/should have
 export default function Hero() {
   return (
-    <div>
-      <Container className="flex   laptop:flex-row laptop:justify-between">
+    <>
+      {/* className="mx-auto flex w-full flex-col bg-red-500" */}
+      <Container
+        // className="flex laptop:flex-row laptop:justify-between"
+        className="mx-auto flex w-full flex-col   laptop:flex-row laptop:justify-between"
+      >
         {/* gap-[3.44rem] */}
         <div className="flex w-full flex-col gap-14 laptop:max-w-[586px] desktop:gap-28">
           <div className="relative flex flex-col items-start gap-8 ">
@@ -43,6 +47,6 @@ export default function Hero() {
           <HeroAnimation className="flex flex-auto" />
         </div>
       </Container>
-    </div>
+    </>
   );
 }

@@ -11,7 +11,7 @@ import MenuIcon from '../../icons/menu';
 import Link from 'next/link';
 
 const navigation = [
-  { name: 'Features', path: '/' },
+  { name: 'Features', path: '#features-header' },
   { name: 'Blog', path: '/blog' },
   { name: 'About', path: '#' },
   { name: 'Donate', path: '#' },
@@ -30,11 +30,16 @@ export default function Navbar() {
     // TODO: maybe put this inside of a container instead of setting padding
     // px-8
     <header className="mb-[4.5rem] pt-2">
-      <Container className={''}>
+      <Container
+        // className={
+        //   'mx-auto flex w-full items-center justify-between bg-red-500'
+        // }
+        className="bg-red-500' mx-auto flex w-full items-center justify-between"
+      >
         {/* <LogoIcon /> */}
 
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between py-2 "
+          className="mx-auto flex w-full items-center justify-between py-2"
           aria-label="Global"
         >
           <Link href="/" className="-m-1.5 p-1.5">

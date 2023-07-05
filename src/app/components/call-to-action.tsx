@@ -8,8 +8,11 @@ import Container from './layout/Container';
 export default function CallToAction() {
   return (
     <>
-      <Container className="w-full min-w-[23.5rem] ">
-        <div className="relative isolate flex h-[32.8125rem]  flex-col items-center justify-center gap-9  overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
+      <Container
+        // className="w-full min-w-[23.5rem]"
+        className="mx-auto flex w-full flex-col laptop:flex-row laptop:justify-between"
+      >
+        <div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9  overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
           <svg
             viewBox="0 0 1024 1024"
             // className="absolute -left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
@@ -92,8 +95,12 @@ export default function CallToAction() {
       </Container>
 
       {/* ALT COLOR */}
-      <Container className="w-full min-w-[23.5rem] ">
-        <div className="relative isolate flex h-[32.8125rem] flex-col  items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
+
+      <Container
+        // className="w-full min-w-[23.5rem]"
+        className="mx-auto flex w-full flex-col laptop:flex-row laptop:justify-between"
+      >
+        <div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
           <div className="absolute -top-24 right-10 -z-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 translate-x-1/2 rounded-full bg-[#8DBEDA] blur-[43.5px] filter" />
           <div className="absolute -bottom-24 left-10 -z-10   h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter " />
 

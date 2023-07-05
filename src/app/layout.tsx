@@ -47,7 +47,7 @@ export default function RootLayout({
         // className="flex h-full flex-col "
       >
         <Navbar />
-        <main className="isolate flex h-full flex-col ">{children}</main>
+        <main className="isolate flex h-full flex-col">{children}</main>
         <Footer />
       </body>
     </html>
