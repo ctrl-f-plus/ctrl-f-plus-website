@@ -44,7 +44,7 @@ export default function MobileMenu({
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {navigation.map((item: any) => (
                   <a
                     key={item.name}
                     href={item.href}

@@ -28,8 +28,8 @@ export default function FeatureHeader() {
             Your Guiding Light in the Tab Chaos
           </h3> */}
           <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white">
-            Tab overload? We've got your back. Unearth any word or phrase hidden
-            in the depths of your browser.
+            Tab overload? We&apos;ve got your back. Unearth any word or phrase
+            hidden in the depths of your browser.
           </p>
         </div>
       </Container>

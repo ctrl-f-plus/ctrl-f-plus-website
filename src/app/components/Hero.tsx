@@ -26,8 +26,8 @@ export default function Hero() {
             {/* max-w-[23.4375rem] */}
             <p className="max-w-full font-open-sans text-fs-lg text-dark1 tablet:max-w-[48rem]">
               Tab hoarders, your time has come. Ctrl-F Plus searches across all
-              your precious tabs, not just the one you're currently obsessing
-              over.
+              your precious tabs, not just the one you&apos;re currently
+              obsessing over.
             </p>
             {/* <span className="absolute -left-[0.5625rem] top-[6.6875rem]  h-[3.8125rem] w-[24.5rem] rounded-2xl bg-highlight-focus" /> */}
           </div>
