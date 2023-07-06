@@ -2,6 +2,7 @@
 
 import DrawingIcon from '../components/icons/drawing-icon';
 import Container from '../components/layout/Container';
+import BlogCard from './components/blog-card';
 
 const blogPosts = [
   { title: 'Environment variables and GraphQL queries 1', date: '7/14/23' },
@@ -20,13 +21,16 @@ const blogPosts = [
 export default function Blog() {
   return (
     <>
-      <Container className="mx-auto flex w-full flex-col items-center gap-y-10  p-5">
+      {/* <Container className="mx-auto flex w-full flex-col items-center gap-y-10  p-5"> */}
+      <Container className="mx-auto flex flex-col gap-y-10 p-2">
         {/* Header Card */}
-        <div className="flex w-full items-center justify-center rounded-3xl  bg-white/[.47] px-32 py-14 shadow-sm backdrop-blur-[23px]">
+        <div className="flex w-full items-center justify-center rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] tablet:px-32 tablet:py-14">
+          {/*  */}
+
           {/* Content */}
           {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
           <div className="flex justify-start gap-[9.375rem]">
-            <div className="flex flex-col items-start justify-center gap-6 p-2">
+            <div className="flex flex-col items-start justify-center gap-6 ">
               <h1 className="font-inter  text-fs-xl text-dark1">Blog</h1>
               <p className="font-open-sans text-fs-lg text-dark1">
                 Welcome to development journey of{' '}
@@ -42,27 +46,12 @@ export default function Blog() {
           </div>
         </div>
 
-        <ul className="grid w-full grid-cols-1 gap-y-3 laptop:grid-cols-2">
-          {blogPosts.map((post) => {
-            return (
-              <div key={post.title} className="flex justify-around">
-                <li
-                  key={post.title}
-                  // className="flex max-w-xl items-start rounded-3xl bg-white/[.68] px-[24px] py-[19px] backdrop-blur-[23px]"
-                  className="min-w-[36rem] rounded-3xl  bg-white/[.68] px-[24px] py-[19px] shadow-sm backdrop-blur-[23px]"
-                >
-                  <div className="flex w-full flex-col items-start gap-2 gap-[12px] p-2">
-                    <h2 className="w-full font-inter text-subtitle text-dark1">
-                      {post.title}
-                    </h2>
-                    <p className="font-open-sans text-fs-lg text-dark1">
-                      {post.date}
-                    </p>
-                  </div>
-                </li>
-              </div>
-            );
-          })}
+        {/* <ul className="grid w-full grid-cols-1 gap-y-3 tablet:grid-cols-2"> */}
+        <ul className="grid grid-cols-1 gap-3 tablet:px-[24px] tablet:grid-cols-2">
+          {/*    desktop:px-8 wide:px-16 laptop:px-[8px]*/}
+          {blogPosts.map((post) => (
+            <BlogCard key={post.title} title={post.title} date={post.date} />
+          ))}
         </ul>
       </Container>
     </>
@@ -156,8 +145,10 @@ export default function Blog() {
 //   </div>
 // </Container>
 
-// {/* <div>
-//   {/* sm:bg-slate-200 sm:py-32 md:bg-slate-500 lg:bg-slate-800 xl:bg-red-500 */}
+//
+//
+//
+// <div className="">
 //   <div className="bg-slate-400 py-24 sm:py-32">
 //     <div className="mx-auto max-w-7xl px-6 lg:px-8">
 //       {/*  */}
@@ -216,4 +207,4 @@ export default function Blog() {
 //       </ul>
 //     </div>
 //   </div>
-// </div>; */}
+// </div>;

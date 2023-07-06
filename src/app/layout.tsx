@@ -43,7 +43,7 @@ export default function RootLayout({
         // tablet:bg-gray-100
         // laptop:bg-indigo-500
         // max-w-7xl
-        className="mx-auto bg-gray-100"
+        className="mx-auto bg-slate-500"
         // className="flex h-full flex-col "
       >
         <Navbar />
