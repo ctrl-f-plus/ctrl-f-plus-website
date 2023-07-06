@@ -43,12 +43,12 @@ export default function RootLayout({
         // tablet:bg-gray-100
         // laptop:bg-indigo-500
         // max-w-7xl
-        className="mx-auto bg-slate-500"
+        className="mx-auto "
         // className="flex h-full flex-col "
       >
-        {/* <Navbar /> */}
+        <Navbar />
         <main className="isolate flex h-full flex-col">{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
