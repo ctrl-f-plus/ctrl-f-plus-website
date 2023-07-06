@@ -1,0 +1,94 @@
+background: radial-gradient(207.73% 2514.58% at 101.82% -54.55%, #5A5A5A 0%, #606060 100%)
+
+/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
+linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)
+
+
+bg-[radial-gradient(at_center_bottom,_#5a5a5a,_606060,_#5a5a5a)]
+radial-gradient(207.73% 2514.58% at 101.82% -54.55%, #5A5A5A 0%, #606060 100%)
+
+
+bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-pink-300 via-purple-300 to-indigo-400
+
+bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#5a5a5a] via-[#606060] to-[#5a5a5a]
+
+
+
+bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#5a5a5a] via-[#606060] to-[#5a5a5a]
+bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#606060] via-[#5a5a5a] to-[#606060]
+
+
+
+
+
+
+
+
+
+//
+
+//
+--
+--
+--
+--
+'use client';
+// src/app/components/features-header.tsx
+
+import Container from './layout/Container';
+
+export default function FeaturesHeader() {
+  return (
+    <>
+      {/* TODO: REMOVE THIS DIV AND FIGURE OUT ANOTHER WAY TO HAVE TOP PADDING */}
+      {/* <div id="features-header"></div> */}
+      {/* items-center  desktop:max-w-[1168px]*/}
+      <Container
+        id="feature-header"
+        // TODO: check if you need justify-center here
+        className="mx-auto flex w-full flex-col justify-center"
+      >
+        {/* min-h-[26.938rem] p-[4.5rem]*/}
+        {/* TODO: Review `px-5` below this padding figure was not in the figma */}
+        <div
+          className="flex flex-col items-center justify-center gap-9 rounded-[2.25rem]
+
+          bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#5a5a5a] via-[#606060] to-[#5a5a5a]
+
+          px-5 py-[4.5rem] text-center shadow-xl"
+        >
+          <h2 className="font-inter text-fs-base text-white wide:text-text-dark">
+            Tab Junkie? Meet Your New Best Friend.
+          </h2>
+
+          <h3 className="gradient-text  max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#0021CD] via-[#F9F9F9] to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tablet:text-fs-xl">
+            Your Guiding Light in the Tab Chaos
+          </h3>
+          <h3 className="max-w-[36.125rem] bg-clip-text font-inter text-fs-x0 text-transparent tablet:text-fs-xl">
+            {' '}
+            {/* <span className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#5a5a5a] via-[#606060] to-[#5a5a5a] bg-clip-text text-transparent"> */}
+            <span className="bg-[radial-gradient(ellipse_at_1%,_var(--tw-gradient-stops))] from-yellow-300 via-green-500 to-red-500 bg-clip-text text-transparent">
+              Your Guiding Light in the Tab Chaos
+            </span>
+          </h3>
+          <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white wide:text-text-dark">
+            Tab overload? We&apos;ve got your back. Unearth any word or phrase
+            hidden in the depths of your browser.
+          </p>
+        </div>
+      </Container>
+    </>
+  );
+}
+
+{
+  /* <span className="text-2xl animate-gradient bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 bg-300% bg-clip-text font-bold text-transparent">
+            My gradient text
+          </span> */
+}
+{
+  /* <span className="text-2xl animate-gradient bg-gradient-to-r from-[#F9F9F9] via-[#0021CD] to-[#8CFFFF] bg-300% bg-clip-text font-bold text-transparent">
+            My gradient text
+          </span> */
+}
