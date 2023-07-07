@@ -1,14 +1,12 @@
 'use client';
 // src/app/components/layout/navbar/index.tsx
 
-import LogoIcon from '../../icons/logo';
-import Container from '../Container';
-import { Dialog } from '@headlessui/react';
-import { Bars2Icon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { JSX, SVGProps, useState } from 'react';
-import MobileMenu from './mobile-menu';
-import MenuIcon from '../../icons/menu';
 import Link from 'next/link';
+import { useState } from 'react';
+import LogoIcon from '../../icons/logo';
+import MenuIcon from '../../icons/menu';
+import Container from '../Container';
+import MobileMenu from './mobile-menu';
 
 const navigation = [
   { name: 'Features', path: '#features-header' },

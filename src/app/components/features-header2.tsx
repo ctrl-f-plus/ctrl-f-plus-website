@@ -1,18 +1,19 @@
 // src/app/components/features-header.tsx
 
 'use client';
-
 import {
   motion,
   useMotionTemplate,
-  useMotionValue,
   useSpring,
   useTransform,
 } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import Container from './layout/Container';
-import { useEffect, useLayoutEffect, useRef } from 'react';
 
 export default function FeaturesHeader2() {
+  // const MagnifyIconSVG = encodeURIComponent(
+  //   ReactDOMServer.renderToStaticMarkup(<MagnifyIcon />)
+  // );
   // let mouseX = useMotionValue(0);
   // let mouseY = useMotionValue(0);
 
@@ -74,7 +75,11 @@ export default function FeaturesHeader2() {
         <div
           onMouseMove={handleMouseMove}
           // border border-gray-700
-          className="group relative rounded-[2.25rem] bg-dark1 shadow-xl backdrop-blur-lg  backdrop-opacity-90"
+          className="group relative rounded-[2.25rem] bg-dark1 shadow-xl backdrop-blur-lg backdrop-opacity-90"
+          // style={{
+          //   cursor: `url("data:image/svg+xml,${MagnifyIconSVG}") 25 25, auto`,
+          // }}
+          style={{ cursor: `url('/images/magnifyicon.svg'), auto` }}
         >
           <div
             className=" relative max-h-[554px] overflow-hidden rounded-[2.25rem]"

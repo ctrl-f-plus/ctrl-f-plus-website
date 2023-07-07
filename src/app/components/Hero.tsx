@@ -4,7 +4,7 @@
 import Container from './layout/Container';
 import ButtonPrimary from './ButtonPrimary';
 import HeroAnimation from './icons/hero-animation';
-import SearchIcon from './icons/search';
+import SearchIcon from './icons/search-icon';
 
 // TODO: YOu have double the top padding that you need/should have
 export default function Hero() {
