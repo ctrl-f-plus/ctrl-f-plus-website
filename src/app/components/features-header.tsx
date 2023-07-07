@@ -48,10 +48,8 @@ export default function FeaturesHeader() {
         >
           <motion.div
             // className="pointer-events-none absolute inset-0 opacity-0 transition duration-100 group-hover:opacity-100"
+            // mix-blend-color-dodge
             className="pointer-events-none absolute -inset-px hidden rounded-[2.25rem] opacity-0
-
-mix-blend-color-dodge
-
             transition  duration-100 group-hover:opacity-100 wide:block"
             style={{
               background:
