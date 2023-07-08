@@ -1,5 +1,5 @@
 // ctrl-f-plus-website/src/app/tab-hoarders/page.tsx
-
+'use client';
 // import ButtonPhat from './components/ButtonPhat';
 import FeatureCard from './components/feature-card';
 import Hero from './components/Hero';
@@ -8,6 +8,8 @@ import Navbar from './components/layout/navbar';
 import FeaturesHeader from './components/features-header';
 import TestComponent from './components/test-component';
 import FeaturesHeader2 from './components/features-header2';
+import ButtonPhat from './components/ButtonPhat';
+import FramerButton from './components/FramerButton';
 
 export default function page() {
   return (
@@ -20,7 +22,11 @@ export default function page() {
       <FeaturesHeader2 />
       <FeaturesHeader />
       <FeatureCard />
+
+      <FramerButton />
       <CallToAction />
+
+      {/* <ButtonPhat /> */}
     </div>
   );
 }
