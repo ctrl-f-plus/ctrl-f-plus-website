@@ -89,7 +89,7 @@ export default function FeaturesHeader2() {
               ref={divRef}
               // absolute hidden transition duration-900
               // pointer-events-none
-              className="opacity-1  -inset-px hidden h-[20000px] rounded-[2.25rem]  p-20  file:group-hover:opacity-100 wide:block"
+              className="opacity-1  -inset-px hidden h-[20000px] rounded-[2.25rem]  p-20  file:group-hover:opacity-100 desktop:block"
               style={{
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskImage:
@@ -129,7 +129,7 @@ export default function FeaturesHeader2() {
 
 // <motion.div
 //   ref={divRef}
-//   className="opacity-1 duration-900 pointer-events-none -inset-px hidden h-[20000px] rounded-[2.25rem] p-20 file:group-hover:opacity-100 wide:block"
+//   className="opacity-1 duration-900 pointer-events-none -inset-px hidden h-[20000px] rounded-[2.25rem] p-20 file:group-hover:opacity-100 desktop:block"
 //   style={{
 //     WebkitMaskRepeat: 'no-repeat',
 //     WebkitMaskImage:

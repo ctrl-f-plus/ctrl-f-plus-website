@@ -5,6 +5,7 @@ import Container from './layout/Container';
 import ButtonPrimary from './ButtonPrimary';
 import HeroAnimation from './icons/hero-animation';
 import SearchIcon from './icons/search-icon';
+import Image from 'next/image';
 
 // TODO: YOu have double the top padding that you need/should have
 export default function Hero() {
@@ -45,6 +46,13 @@ export default function Hero() {
         {/* <SearchIcon className="flex flex-auto" /> */}
         <div className="-mt-10 hidden  laptop:block">
           <HeroAnimation className="flex flex-auto" />
+          {/* <Image
+            className="flex flex-auto"
+            width={500}
+            height={500}
+            src={'/images/HeroGIF.gif'}
+            alt={''}
+          /> */}
         </div>
       </Container>
     </>
