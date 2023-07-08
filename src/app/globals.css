@@ -68,7 +68,6 @@ body {
   transform-style: preserve-3d;
   transition-property: transform;
   display: block;
-  /* background: #ff0000; */
   border-radius: 2.25rem;
 }
 .atropos-shadow,
@@ -82,32 +81,25 @@ body {
 .atropos-shadow {
   z-index: -1;
   background: #000;
-
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-
   /* filter: blur(30px); */
-
   filter: blur(24px);
 }
-
 .atropos-highlight {
   left: -50%;
   top: -50%;
   width: 200%;
   height: 200%;
-
   background-image: radial-gradient(
     circle at 50%,
     rgba(255, 255, 255, 0.25),
     transparent 50%
   );
-
   z-index: 0;
 }
-
 .atropos-rotate {
   position: relative;
 }
@@ -119,11 +111,10 @@ body {
   transform-style: preserve-3d;
   transform: translate3d(0, 0, 0);
   display: block;
-
   border-radius: 2.25rem;
 }
 .atropos-active {
-  /* z-index: 1; */
+  z-index: 1;
   .atropos-shadow {
     opacity: 1 !important;
   }
@@ -136,8 +127,4 @@ body {
 }
 [data-atropos-offset][data-atropos-opacity] {
   transition-property: transform, opacity;
-}
-
-.highlight-2 {
-  transform: translate3d(0, 0, 0);
 }
