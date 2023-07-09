@@ -9,7 +9,6 @@ import FeaturesHeader from './components/features-header';
 import TestComponent from './components/test-component';
 import FeaturesHeader2 from './components/features-header2';
 import ButtonPhat from './components/ButtonPhat';
-import FramerButton from './components/FramerButton';
 
 export default function page() {
   return (
