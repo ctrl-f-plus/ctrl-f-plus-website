@@ -11,7 +11,7 @@ import {
 import Container from './layout/Container';
 
 // TODO: Add aria-hidden to the radial-gradient?
-export default function FeaturesHeader2() {
+export default function FeaturesHeaderVersion2Backup() {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
   const mouseX2 = useMotionValue(0);
