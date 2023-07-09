@@ -132,7 +132,7 @@ export default function CallToAction() {
         {/* shadow-xl */}
         <Atropos
           className="h-full w-full rounded-[2.25rem] "
-          highlight={false}
+          // highlight={false}
           // shadow={false}
           // shadowScale={1}
         >

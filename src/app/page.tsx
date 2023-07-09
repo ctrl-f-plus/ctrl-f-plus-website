@@ -23,7 +23,6 @@ export default function page() {
       <FeaturesHeader />
       <FeatureCard />
 
-      <FramerButton />
       <CallToAction />
 
       {/* <ButtonPhat /> */}
