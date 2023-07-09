@@ -44,19 +44,6 @@ const variants = {
   },
 };
 
-function ToggleContent({ header, content, isOpen, toggle }) {
-  return (
-    <motion.div
-      layout
-      onClick={toggle}
-      className="absolute overflow-hidden  border border-white"
-    >
-      <motion.h2 layout>{header}</motion.h2>
-      {isOpen ? content : null}
-    </motion.div>
-  );
-}
-
 // Apply the variants to your components
 export default function FramerButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,46 +52,74 @@ export default function FramerButton() {
     setIsOpen(!isOpen);
   };
 
-  // initial={{ translateX: '-80%', translateY: '-32%' }}
-  // animate={{ translateX: '0%', translateY: '0%' }}
   return (
     <>
-      {/* <Container> */}
-      <div className="relative flex h-96 w-full items-center justify-center bg-green-200 ">
-        <div className="absolute h-64 w-64 overflow-hidden bg-blue-500">
-          <LayoutGroup>
-            <motion.span
-              layout
-              className="absolute h-64 w-64 -rotate-45 bg-red-500"
-              animate={
-                isOpen
-                  ? {
-                      opacity: 1,
-                      display: 'block',
-                      translateX: '-80%',
-                      translateY: '-32%',
-                    }
-                  : {
-                      // opacity: 0,
-                      // y: 22,
-                      translateX: '0%',
-                      translateY: '0%',
-                      // transitionEnd: { display: 'none' },
-                    }
-              }
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-            />
+      <Container className="grid grid-cols-2 bg-slate-500">
+        <div className="flex items-center justify-center">
+          <a
+            href="#_"
+            // overflow-hidden
+            className="group relative inline-block inline-flex items-center justify-start rounded-full px-5 py-3 font-bold"
+          >
+            {/* <span className="absolute left-0 top-0 h-32 w-32 -translate-y-2 translate-x-12 rotate-45 bg-white opacity-[3%]"></span> */}
 
-            <ToggleContent
-              header={'Add to Chrome'}
-              content={''}
-              isOpen={isOpen}
-              toggle={toggle}
-            />
-          </LayoutGroup>
+            <span className="absolute left-0 top-0 -mt-1 h-48 w-48 -translate-x-56 -translate-y-24 rotate-45 bg-white opacity-100 transition-all duration-500 ease-in-out group-hover:-translate-x-8"></span>
+
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">
+              Button Text
+            </span>
+
+            <span className="absolute inset-0 rounded-full border-2 border-white"></span>
+          </a>
         </div>
-      </div>
-      {/* </Container> */}
+
+        <div className="relative flex h-96 w-full items-center justify-center  bg-green-200">
+          <button
+            // href=""
+            // className="rounded-full bg-slate-500 px-5 py-3"
+            className="group relative inline-block inline-flex items-center  justify-start overflow-hidden rounded-full bg-slate-800 px-5 py-3 font-bold"
+          >
+            <LayoutGroup>
+              <motion.span
+                layout
+                className="absolute -top-16 left-0  h-48 w-48 bg-red-500 "
+                style={{
+                  // rotate: -45,
+                  rotate: -68.566,
+                  //  translateY: '-25%'
+                }}
+                // initial={{ rotate: -68.566, translateY: '-25%' }}
+                animate={
+                  isOpen
+                    ? {
+                        translateX: '-110%',
+                      }
+                    : {
+                        translateX: '0%',
+                        // transitionEnd: {
+                        //   translateY: '-25%',
+                        // },
+                      }
+                }
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+              />
+
+              <motion.div
+                layout
+                onClick={toggle}
+                className="relative w-full text-center text-white "
+              >
+                {/* <motion.h2 layout>{'Add to Chrome'}</motion.h2> */}
+                Add to Chrome
+              </motion.div>
+              {/* <motion.span
+                layout
+                className="absolute inset-0 rounded-full border-2 border-white"
+              /> */}
+            </LayoutGroup>
+          </button>
+        </div>
+      </Container>
     </>
   );
 }
