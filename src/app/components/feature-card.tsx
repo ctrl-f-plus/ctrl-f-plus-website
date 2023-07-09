@@ -27,12 +27,21 @@ const features = [
   },
 ];
 
-function FadeInWhenVisible({ children }) {
+function FadeInWhenVisible({
+  children,
+  index,
+}: {
+  children: any;
+  index: number;
+}) {
+  const initialXOffset = index % 2 === 1 ? '300' : '-300';
+
   return (
     <motion.div
       // initial="hidden"
       // whileInView="visible"
-      initial={{ opacity: 0, x: -300 }}
+      // initial={{ opacity: 0, x: -300 }}
+      initial={{ opacity: 0, x: initialXOffset }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       // transition={{ duration: 0.3 }}
@@ -60,7 +69,7 @@ function FadeInWhenVisible({ children }) {
   );
 }
 
-function FadeUpWhenVisible({ children }) {
+function FadeUpWhenVisible({ children }: any) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 300 }}
@@ -109,12 +118,12 @@ export default function FeatureCard() {
                     index % 2 === 1 ? 'laptop:order-last' : ''
                   }`}
                 >
-                  <FadeInWhenVisible>
+                  <FadeInWhenVisible index={index}>
                     {
                       <feat.icon
-                        className={`basis-1/3  ${
-                          index % 2 === 1 ? 'laptop:order-last' : ''
-                        }`}
+                      // className={`basis-1/3  ${
+                      //   index % 2 === 1 ? 'laptop:order-last' : ''
+                      // }`}
                       />
                     }
                   </FadeInWhenVisible>
