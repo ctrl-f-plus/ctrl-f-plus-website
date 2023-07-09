@@ -8,28 +8,22 @@ import PuzzleIcon from './icons/puzzle';
 
 // TODO: Shadow?
 // px-9
+// shadow-sm
 const baseStyles = {
-  base: 'flex h-14 w-full items-center justify-center gap-2 rounded-[37px]  py-2 font-open-sans text-fs-md-bold ',
+  base: 'flex h-14 w-full justify-center items-center gap-2 rounded-[37px] py-2 font-open-sans text-fs-md-bold group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2b35] shadow-sm',
 };
 
 const variantStyles = {
-  solid: 'bg-primary1 text-white',
-  outline: 'border-2 border-primary1 text-primary1',
+  solid:
+    'bg-primary1 text-white hover:bg-primary1/90 active:bg-[#0a2b35] active:text-white/80 ',
+
+  outline:
+    'border-2 border-primary1 text-primary1  focus:outline-none hover:bg-primary1/10     active:text-[#0a2b35]/70',
   IconComponents: {
     solid: PuzzleIcon,
     outline: PlayIcon,
   },
 };
-
-{
-  /* <button
-        type="button"
-        className="text-sm gap-5 rounded-full bg-indigo-600 px-4 py-2.5 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-        Button text
-      </button> */
-}
-// self-stretch
 
 type ButtonProps = {
   variant: 'solid' | 'outline';
