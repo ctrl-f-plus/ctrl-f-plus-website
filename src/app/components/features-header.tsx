@@ -83,6 +83,8 @@ export default function FeaturesHeader() {
     );
   }
 
+  if (showAnimation === undefined) return null;
+
   return (
     <>
       <Container
@@ -91,7 +93,7 @@ export default function FeaturesHeader() {
       >
         <div
           onMouseMove={handleMouseMove}
-          className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90 desktop:cursor-magnifying-glass"
+          className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  desktop:cursor-magnifying-glass"
         >
           <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
             {showAnimation ? (
@@ -114,7 +116,9 @@ export default function FeaturesHeader() {
                 <CardText />
               </motion.div>
             ) : (
-              <CardText />
+              <div className="wide:hidden">
+                <CardText />
+              </div>
             )}
           </div>
         </div>
