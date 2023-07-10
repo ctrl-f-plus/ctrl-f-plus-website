@@ -5,9 +5,9 @@
 export default function FeatureIcon2({ className }: { className?: string }) {
   return (
     <svg
-      // width="378"
+      // width="376"
       // height="317"
-      viewBox="0 0 378 317"
+      viewBox="0 0 376 317"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       // xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -21,7 +21,7 @@ export default function FeatureIcon2({ className }: { className?: string }) {
         height="249"
         rx="16"
         fill="url(#pattern0)"
-        fill-opacity="0.53"
+        fillOpacity="0.53"
       />
       <rect
         x="31"
@@ -30,7 +30,7 @@ export default function FeatureIcon2({ className }: { className?: string }) {
         height="249"
         rx="16"
         fill="url(#paint0_linear_118_1409)"
-        fill-opacity="0.38"
+        fillOpacity="0.38"
       />
       <path
         d="M157 47C154.5 47 152.5 49 152.5 51.5C152.5 54 154.5 56 157 56C159.5 56 161.5 54 161.5 51.5C161.5 49 159.5 47 157 47Z"
@@ -39,8 +39,8 @@ export default function FeatureIcon2({ className }: { className?: string }) {
       <path
         d="M157 56C159.5 56 161.5 54 161.5 51.5C161.5 49 159.5 47 157 47C154.5 47 152.5 49 152.5 51.5C152.5 54 154.5 56 157 56ZM157 56V100.5C157 111.546 148.046 120.5 137 120.5H92C80.9543 120.5 72 129.454 72 140.5V162.5"
         stroke="white"
-        stroke-width="3"
-        stroke-dasharray="0"
+        strokeWidth="3"
+        strokeDasharray="0"
       />
       <path
         d="M234.5 273.5C237 273.5 239 271.5 239 269C239 266.5 237 264.5 234.5 264.5C232 264.5 230 266.5 230 269C230 271.5 232 273.5 234.5 273.5Z"
@@ -49,8 +49,8 @@ export default function FeatureIcon2({ className }: { className?: string }) {
       <path
         d="M234.5 264.5V247C234.5 235.954 243.454 227 254.5 227H299.5C310.546 227 319.5 218.046 319.5 207V185M239 269C239 271.5 237 273.5 234.5 273.5C232 273.5 230 271.5 230 269C230 266.5 232 264.5 234.5 264.5C237 264.5 239 266.5 239 269Z"
         stroke="white"
-        stroke-width="3"
-        stroke-dasharray="0"
+        strokeWidth="3"
+        strokeDasharray="0"
       />
       <path
         d="M119.686 236.5C121.678 236.5 123.271 234.907 123.271 232.915C123.271 230.924 121.678 229.331 119.686 229.331C117.695 229.331 116.102 230.924 116.102 232.915C116.102 234.907 117.695 236.5 119.686 236.5Z"
@@ -59,8 +59,8 @@ export default function FeatureIcon2({ className }: { className?: string }) {
       <path
         d="M119.686 229.331C117.695 229.331 116.102 230.924 116.102 232.915C116.102 234.907 117.695 236.5 119.686 236.5C121.678 236.5 123.271 234.907 123.271 232.915C123.271 230.924 121.678 229.331 119.686 229.331ZM119.686 229.331V218.39C119.686 209.591 126.82 202.458 135.619 202.458H171.466C180.265 202.458 187.398 195.325 187.398 186.525V169"
         stroke="white"
-        stroke-width="2.38983"
-        stroke-dasharray="0"
+        strokeWidth="2.38983"
+        strokeDasharray="0"
       />
       <rect x="1" y="131" width="375" height="54" rx="9" fill="#69757B" />
       <path
@@ -68,24 +68,24 @@ export default function FeatureIcon2({ className }: { className?: string }) {
         fill="white"
       />
       <path
-        d="M262 162.25L270.5 153.75L279 162.25"
+        d="M241 162.25L249.5 153.75L258 162.25"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
-        d="M328 153.75L319.5 162.25L311 153.75"
+        d="M307 153.75L298.5 162.25L290 153.75"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
-      <g clip-path="url(#clip0_118_1409)">
+      <g clipPath="url(#clip0_118_1409)">
         <path
-          d="M360.879 167C360.705 167 360.535 166.948 360.39 166.852C360.246 166.755 360.133 166.618 360.067 166.457C360 166.297 359.983 166.12 360.017 165.949C360.051 165.779 360.134 165.622 360.257 165.499L376.499 149.257C376.664 149.092 376.888 149 377.121 149C377.354 149 377.578 149.092 377.743 149.257C377.907 149.422 378 149.646 378 149.879C378 150.112 377.907 150.335 377.743 150.5L361.5 166.743C361.419 166.824 361.322 166.889 361.215 166.933C361.109 166.977 360.994 167 360.879 167Z"
+          d="M339.879 167C339.705 167 339.535 166.948 339.39 166.852C339.246 166.755 339.133 166.618 339.067 166.457C339 166.297 338.983 166.12 339.017 165.949C339.051 165.779 339.134 165.622 339.257 165.499L355.499 149.257C355.664 149.092 355.888 149 356.121 149C356.354 149 356.578 149.092 356.743 149.257C356.907 149.422 357 149.646 357 149.879C357 150.112 356.907 150.335 356.743 150.5L340.5 166.743C340.419 166.824 340.322 166.889 340.215 166.933C340.109 166.977 339.994 167 339.879 167Z"
           fill="white"
         />
         <path
-          d="M377.121 167C377.006 167 376.891 166.977 376.785 166.933C376.678 166.889 376.581 166.824 376.5 166.743L360.257 150.5C360.093 150.336 360 150.112 360 149.879C360 149.646 360.093 149.422 360.257 149.257C360.422 149.092 360.646 149 360.879 149C361.112 149 361.336 149.092 361.501 149.257L377.743 165.5C377.866 165.622 377.949 165.779 377.983 165.95C378.017 166.12 378 166.297 377.933 166.457C377.867 166.618 377.754 166.755 377.61 166.852C377.465 166.948 377.295 167 377.121 167Z"
+          d="M356.121 167C356.006 167 355.891 166.977 355.785 166.933C355.678 166.889 355.581 166.824 355.5 166.743L339.257 150.5C339.093 150.336 339 150.112 339 149.879C339 149.646 339.093 149.422 339.257 149.257C339.422 149.092 339.646 149 339.879 149C340.112 149 340.336 149.092 340.501 149.257L356.743 165.5C356.866 165.622 356.949 165.779 356.983 165.95C357.017 166.12 357 166.297 356.933 166.457C356.867 166.618 356.754 166.755 356.61 166.852C356.465 166.948 356.295 167 356.121 167Z"
           fill="white"
         />
       </g>
@@ -97,6 +97,7 @@ export default function FeatureIcon2({ className }: { className?: string }) {
           height="0.257028"
         >
           <use
+            // xlink:href="#image0_118_1409"
             href="#image0_118_1409"
             transform="scale(0.00159236 0.00200803)"
           />
@@ -117,13 +118,14 @@ export default function FeatureIcon2({ className }: { className?: string }) {
             width="18"
             height="18"
             fill="white"
-            transform="translate(360 149)"
+            transform="translate(339 149)"
           />
         </clipPath>
         <image
           id="image0_118_1409"
           width="128"
           height="128"
+          // xlink:href="data:image/png;base64,
           href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA40lEQVR4Ae3YPRZBMRAG0AnPPtRKrcZSLJWaxgqwBCWFUPgrPBVN5t5qzsl0+U5yZiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAfymR2Gq9rY+6G47Gs+nkEMkMgtQEIDkBSE4AkhOA5AQguebHwNVmu+s9rDF+1iX2fW3dYDRvdUTsonXvl/yLvsb4ApJr/gUotcz7zmqpy1djLMql7D/1tbwhtAq+swomJQFITgCSE4DkBCC59hdB39xGv0d5LqdjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/NwVr1weZe+7KDYAAAAASUVORK5CYII="
         />
       </defs>
