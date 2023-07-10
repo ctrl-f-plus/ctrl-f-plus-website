@@ -65,11 +65,11 @@ export default function FeaturesHeader() {
 
   function CardText() {
     return (
-      <div className=" flex flex-col items-center justify-center gap-9 px-5 py-[4.5rem] text-center  ">
+      <div className=" flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18">
         <h2 className="font-inter text-fs-base text-white ">
           Tab Junkie? Meet Your New Best Friend.
         </h2>
-        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#0021CD] via-[#F9F9F9] to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent  tablet:text-fs-xl">
+        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#0021CD] via-[#F9F9F9] to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent  tab-pro:text-fs-xl">
           Your Guiding Light in the Tab Chaos
         </h3>
         <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ">
@@ -88,14 +88,14 @@ export default function FeaturesHeader() {
       >
         <div
           onMouseMove={handleMouseMove}
-          className="group relative hidden rounded-[2.25rem]  bg-dark1 shadow-xl backdrop-blur-lg  backdrop-opacity-90 desktop:block desktop:cursor-magnifying-glass"
+          className=" group relative hidden rounded-[2.25rem] bg-dark1 shadow-xl  backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass"
         >
-          <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
+          <div className=" relative max-h-146 overflow-hidden rounded-[2.25rem]">
             <motion.div
               ref={divRef}
               // pointer-events-none
               // hidden
-              className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] p-20 file:group-hover:opacity-100 desktop:block"
+              className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] p-18 file:group-hover:opacity-100 wide:block"
               style={{
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskImage:
@@ -114,7 +114,7 @@ export default function FeaturesHeader() {
 
         <div
           onMouseMove={handleMouseMove}
-          className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  desktop:hidden desktop:cursor-magnifying-glass "
+          className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  wide:hidden wide:cursor-magnifying-glass "
         >
           <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
             <CardText />

@@ -1,10 +1,9 @@
 'use client';
 // src/app/components/Hero.tsx
 
-import Container from './layout/Container';
 import ButtonPrimary from './ButtonPrimary';
 import HeroAnimation from './icons/hero-animation';
-import SearchIcon from './icons/search-icon';
+import Container from './layout/Container';
 import Image from 'next/image';
 
 // TODO: YOu have double the top padding that you need/should have
@@ -14,17 +13,17 @@ export default function Hero() {
       {/* className="mx-auto flex w-full flex-col bg-red-500" */}
       <Container
         // className="flex laptop:flex-row laptop:justify-between"
-        className="mx-auto flex w-full flex-col   laptop:flex-row laptop:justify-between"
+        className="mx-auto flex w-full flex-col laptop:flex-row laptop:justify-between wide:h-109"
       >
         {/* gap-[3.44rem] */}
-        <div className="flex w-full flex-col gap-14 laptop:max-w-[586px] desktop:gap-28">
+        <div className="flex w-full flex-col gap-14  laptop:max-w-[586px] wide:gap-28">
           <div className="relative flex flex-col items-start gap-8 ">
             <h1 className="z-10 font-inter text-fs-xl text-dark1">
               Ctrl-F Plus:
               <br />
               For the
-              <br className="tablet:hidden" />
-              <span className="ml-1 rounded-2xl bg-highlight-focus px-2">
+              <br className="tab-pro:hidden" />
+              <span className="ml-1 whitespace-nowrap rounded-2xl bg-highlight-focus px-2">
                 Tab Hoarders
               </span>
             </h1>
@@ -36,7 +35,7 @@ export default function Hero() {
             </p>
             {/* <span className="absolute -left-[0.5625rem] top-[6.6875rem]  h-[3.8125rem] w-[24.5rem] rounded-2xl bg-highlight-focus" /> */}
           </div>
-          <div className="flex flex-col gap-6 tablet:flex-row">
+          <div className="flex flex-col gap-6 tab-pro:flex-row">
             <ButtonPrimary variant="solid">
               Add to Chrome for free
             </ButtonPrimary>
@@ -44,7 +43,7 @@ export default function Hero() {
           </div>
         </div>
         {/* <SearchIcon className="flex flex-auto" /> */}
-        <div className="-mt-10 hidden  laptop:block">
+        <div className="-mt-10 hidden laptop:block  desktop:-mt-6">
           <HeroAnimation className="flex flex-auto" />
           {/* <Image
             className="flex flex-auto"

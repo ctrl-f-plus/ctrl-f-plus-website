@@ -31,7 +31,7 @@ export default function RootLayout({
     <html
       lang="en"
       // h-full
-      className={`${inter.variable} ${open_sans.variable}  scroll-smooth antialiased`}
+      className={`${inter.variable} ${open_sans.variable} scroll-smooth antialiased`}
     >
       {/* <TestComponent /> */}
       {/* <div className="flex h-full w-full items-start bg-green-800 laptop:block">

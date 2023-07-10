@@ -37,16 +37,37 @@ module.exports = {
 
     extend: {
       screens: {
-        // tablet: '430px',
-        // laptop: '900px',
-        tablet: '640px',
-        laptop: '768px',
-        desktop: '1024px',
-        wide: '1280px',
+        // tablet: '640px',
+        // laptop: '768px',
+        // desktop: '1024px',
+        // wide: '1280px',
+
         // tablet: '430px',
         // laptop: '900px',
         // laptop: '1024px',
         // desktop: '1280px',
+
+        tablet: '430px',
+        'tab-pro': '768px',
+        laptop: '900px',
+        desktop: '1024px',
+        wide: '1280px',
+      },
+      spacing: {
+        6.5: '1.625rem', // 26px
+        18: '4.5rem', // 72px
+        21: '5.25rem', // 84px
+        22: '5.5rem', // 88px
+        23: '5.75rem', // 92px
+        25: '6.25rem', // 100px
+        26: '6.5rem', // 104px
+        109: '27.25rem', // 436px
+        146: '36.5rem', // 584px
+        147: '36.75rem', // 588px
+        292: '73rem', // 1168px
+      },
+      maxWidth: {
+        292: '73rem', // 1168px
       },
       fontFamily: {
         inter: ['var(--font-inter)'],
@@ -120,119 +141,10 @@ module.exports = {
         '300%': '300%',
       },
 
-      // colors: {
-      //   base0: '#1B1527',
-      //   base1: '#433154',
-      //   accent0: '#FD9873',
-      //   secondary0: '#B14360',
-      //   secondary1: '#F4465B',
-
-      //   base00: '#F7F1EC',
-      //   base11: '#010100',
-      //   accent00: '#F74A38',
-      //   accent11: '#FFDED9',
-      //   secondary00: '#00849B',
-      //   secondary11: '#7F1234',
-      //   accent0: '#FE2001',
-
-      //   highlight: '#128da1',
-      //   // highlightFocus: '#05fdb4',
-      //   // highlightFocus: '#25FDAA',
-
-      //   'highlight-focus': {
-      //     DEFAULT: '#05fdb4',
-      //     50: '#edfff9',
-      //     100: '#d6fff3',
-      //     200: '#afffe7',
-      //     300: '#71ffd6',
-      //     400: '#2dfbbe',
-      //     500: '#05fdb4',
-      //     600: '#00bf83',
-      //     700: '#00956a',
-      //     800: '#067555',
-      //     900: '#085f47',
-      //     950: '#003627',
-      //   },
-
-      //   glacier: {
-      //     DEFAULT: '#128da1',
-      //     50: '#edfefe',
-      //     100: '#d2fafb',
-      //     200: '#aaf3f7',
-      //     300: '#70e8f0',
-      //     400: '#2fd4e1',
-      //     500: '#13b7c7',
-      //     600: '#128da1',
-      //     700: '#167588',
-      //     800: '#1b606f',
-      //     900: '#1b505e',
-      //     950: '#0c3440',
-      //   },
-      //   amaranth: {
-      //     DEFAULT: '#f4465b',
-      //     50: '#fef6f7',
-      //     100: '#feedef',
-      //     200: '#fcd1d6',
-      //     300: '#fbb5bd',
-      //     400: '#f77e8c',
-      //     500: '#f4465b',
-      //     600: '#dc3f52',
-      //     700: '#b73544',
-      //     800: '#922a37',
-      //     900: '#6e2029',
-      //     950: '#3d1217',
-      //   },
-      //   linen: {
-      //     50: '#fffefe',
-      //     100: '#fffdfc',
-      //     200: '#fffbf8',
-      //     300: '#fff8f4',
-      //     400: '#fff3eb',
-      //     500: '#ffeee3',
-      //     600: '#e6d6cc',
-      //     700: '#bfb3aa',
-      //     800: '#998f88',
-      //     900: '#736b66',
-      //     950: '#403c39',
-      //   },
-      //   peach: {
-      //     DEFAULT: '#FBB984',
-      //     50: '#fffcf9',
-      //     100: '#fff8f3',
-      //     200: '#feeee0',
-      //     300: '#fde3ce',
-      //     400: '#fccea9',
-      //     500: '#fbb984',
-      //     600: '#e2a777',
-      //     700: '#bc8b63',
-      //     800: '#976f4f',
-      //     900: '#71533b',
-      //     950: '#3f2e21',
-      //   },
-      //   scarlet: {
-      //     50: '#fff4f2',
-      //     100: '#ffe9e6',
-      //     200: '#ffc7c0',
-      //     300: '#ffa699',
-      //     400: '#fe634d',
-      //     500: '#fe2001',
-      //     600: '#e51d01',
-      //     700: '#bf1801',
-      //     800: '#981301',
-      //     900: '#720e00',
-      //     950: '#400800',
-      //   },
-      // },
       cursor: {
-        // fancy: 'url(hand.cur), pointer',
         'magnifying-glass': `url('/images/magnifyicon.svg'), auto`,
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    plugin(function ({ addUtilities }) {
-      // Add your custom styles here
-    }),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 };
