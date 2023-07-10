@@ -27,7 +27,6 @@ export default function FeaturesHeaderVersion2() {
   return (
     <>
       <Container
-        id="feature-header"
         // TODO: check if you need justify-center here
         className="mx-auto flex w-full flex-col justify-center"
       >

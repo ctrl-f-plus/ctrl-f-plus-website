@@ -36,7 +36,6 @@ export default function FeaturesHeaderVersion2Backup() {
   return (
     <>
       <Container
-        id="feature-header"
         // TODO: check if you need justify-center here
         className="relative mx-auto flex w-full flex-col justify-center "
       >
