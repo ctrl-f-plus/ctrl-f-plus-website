@@ -9,11 +9,8 @@ import {
 } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import Container from './layout/Container';
-import useMediaQuery from '../hooks/useMediaQuery';
 
 export default function FeaturesHeader() {
-  const showAnimation = useMediaQuery('(min-width: 1280px)');
-
   // const MagnifyIconSVG = encodeURIComponent(
   //   ReactDOMServer.renderToStaticMarkup(<MagnifyIcon />)
   // );
@@ -83,43 +80,48 @@ export default function FeaturesHeader() {
     );
   }
 
-  if (showAnimation === undefined) return null;
-
   return (
     <>
       <Container
         id="feature-header"
-        className="mx-auto flex w-full flex-col justify-center"
+        className="mx-auto flex hidden w-full flex-col justify-center desktop:block"
       >
         <div
           onMouseMove={handleMouseMove}
           className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  desktop:cursor-magnifying-glass"
         >
           <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
-            {showAnimation ? (
-              <motion.div
-                ref={divRef}
-                // pointer-events-none
-                // hidden
-                className="opacity-1 -inset-px hidden h-[20000px] rounded-[2.25rem] p-20 file:group-hover:opacity-100 desktop:block"
-                style={{
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskImage:
-                    'radial-gradient(300px 300px, rgba(0, 0, 0, 1),  transparent)',
-                  WebkitMaskPosition: webkitMaskPosition,
-                  // backgroundColor: 'rgba(0, 0, 0, .3)',
-                }}
-                whileHover={{ backgroundColor: '#03AF7D' }}
-                transition={{ duration: 0.9 }}
-                // transition={{ type: 'spring', stiffness: 50, damping: 100 }}
-              >
-                <CardText />
-              </motion.div>
-            ) : (
-              <div className="wide:hidden">
-                <CardText />
-              </div>
-            )}
+            <motion.div
+              ref={divRef}
+              // pointer-events-none
+              // hidden
+              className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] p-20 file:group-hover:opacity-100 desktop:block"
+              style={{
+                WebkitMaskRepeat: 'no-repeat',
+                WebkitMaskImage:
+                  'radial-gradient(300px 300px, rgba(0, 0, 0, 1),  transparent)',
+                WebkitMaskPosition: webkitMaskPosition,
+                // backgroundColor: 'rgba(0, 0, 0, .3)',
+              }}
+              whileHover={{ backgroundColor: '#03AF7D' }}
+              transition={{ duration: 0.9 }}
+              // transition={{ type: 'spring', stiffness: 50, damping: 100 }}
+            >
+              <CardText />
+            </motion.div>
+          </div>
+        </div>
+      </Container>
+      <Container
+        id="feature-header"
+        className="mx-auto flex w-full flex-col justify-center desktop:hidden "
+      >
+        <div
+          onMouseMove={handleMouseMove}
+          className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  desktop:cursor-magnifying-glass"
+        >
+          <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
+            <CardText />
           </div>
         </div>
       </Container>
