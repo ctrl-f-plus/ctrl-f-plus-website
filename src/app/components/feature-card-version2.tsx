@@ -27,9 +27,10 @@ const features = [
   },
 ];
 
-export default function FeatureCard() {
+export default function FeatureCardVersion2() {
   const iconVariants = (index: number) => {
     const initialXOffset = index % 2 === 1 ? '500' : '-500';
+    const delayTime = 0.25 * index;
 
     return {
       hidden: { opacity: 0, scale: 1, x: initialXOffset },
@@ -39,12 +40,17 @@ export default function FeatureCard() {
         x: 0,
         transition: {
           duration: 1.5,
+          delay: delayTime,
+
+          // duration: 1.5,
         },
       },
     };
   };
 
   const textVariants = (index: number) => {
+    const delayTime = 0.25 * index;
+
     return {
       hidden: { opacity: 0, scale: 1, y: 500 },
       show: {
@@ -53,6 +59,10 @@ export default function FeatureCard() {
         y: 0,
         transition: {
           duration: 1.5,
+          // delay: 0.25,
+          delay: delayTime,
+
+          // duration: 1.5,
         },
       },
     };
