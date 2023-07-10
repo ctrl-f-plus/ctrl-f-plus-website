@@ -46,3 +46,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
   - [] Do we want to use the version with the dark grey or light square? See the 1270px-1024px screen for the light grey version
   - [] Add back `"prettier-plugin-tailwindcss": "^0.3.0"`
+
+  Feature Cards:
+    - [] `stagger` on options1 page?
+    - [] `viewport: { once: true }`?
+
+  Call To Action Card:
+    - [] vartions: shadow size, highlight, data-atropos-offset

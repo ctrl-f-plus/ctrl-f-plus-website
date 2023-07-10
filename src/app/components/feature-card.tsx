@@ -32,10 +32,9 @@ export default function FeatureCard() {
     const initialXOffset = index % 2 === 1 ? '500' : '-500';
 
     return {
-      hidden: { opacity: 0, scale: 1, x: initialXOffset },
+      hidden: { opacity: 0, x: initialXOffset },
       show: {
         opacity: 1,
-        scale: 1,
         x: 0,
         transition: {
           duration: 1.5,
@@ -46,10 +45,9 @@ export default function FeatureCard() {
 
   const textVariants = (index: number) => {
     return {
-      hidden: { opacity: 0, scale: 1, y: 500 },
+      hidden: { opacity: 0, y: 500 },
       show: {
         opacity: 1,
-        scale: 1,
         y: 0,
         transition: {
           duration: 1.5,
@@ -68,6 +66,7 @@ export default function FeatureCard() {
                 className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-white p-10 shadow-xl laptop:flex-row"
                 whileInView="show"
                 initial="hidden"
+                viewport={{ once: true }}
               >
                 <motion.div
                   className={`basis-1/3  ${
@@ -103,36 +102,3 @@ export default function FeatureCard() {
     </>
   );
 }
-
-// export default function FeatureCard() {
-//   return (
-//     // h-full  min-w-[23.5rem]
-//     <Container className="mx-auto flex w-full flex-col ">
-//       {/* grid grid-cols-1 */}
-//       {/* px-[2.25rem] */}
-//       <div className="laptop:text-left">
-//         <div className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-white p-10 shadow-xl laptop:flex-row ">
-//           <FeatureIcon1 className="basis-1/3" />
-//           <div className="flex basis-2/3 flex-col items-center justify-center gap-9 ">
-//             <h2 className="w-full text-center font-inter text-fs-base text-primary1 laptop:text-left">
-//               All-Tab Search: The Panoramic View
-//             </h2>
-//             <h3 className="w-full text-center font-inter text-fs-x0 text-dark1 tablet:text-fs-xl laptop:text-left">
-//               Upgrade from <br className="hidden laptop:block" />
-//               One-
-//               <br className="hidden tablet:block laptop:hidden" />
-//               Tab Searches
-//             </h3>
-//             <p
-//               className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-full laptop:text-left
-// "
-//             >
-//               Your CTRL+F only searches one tab? That's cute. We prefer the
-//               panoramic view.
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </Container>
-//   );
-// }
