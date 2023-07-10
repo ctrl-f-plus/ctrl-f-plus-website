@@ -61,7 +61,7 @@ export default function FeatureCard() {
       {features.map((feat, index) => {
         return (
           <Container key={feat.title} className="mx-auto flex w-full flex-col ">
-            <div className=" laptop:text-left">
+            <div className="laptop:text-left">
               <motion.div
                 className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-white p-10 shadow-xl laptop:flex-row"
                 whileInView="show"
@@ -69,14 +69,19 @@ export default function FeatureCard() {
                 viewport={{ once: true }}
               >
                 <motion.div
-                  className={`basis-1/3  ${
-                    index % 2 === 1 ? 'laptop:order-last' : ''
-                  }`}
+                  // className={`basis-1/3 bg-red-500  ${
+                  //   index % 2 === 1 ? 'laptop:order-last' : ''
+                  // }`}
                   variants={iconVariants(index)}
                 >
-                  {<feat.icon />}
+                  {
+                    <feat.icon
+                      className={`h-full w-full basis-1/3  ${
+                        index % 2 === 1 ? 'laptop:order-last' : ''
+                      }`}
+                    />
+                  }
                 </motion.div>
-
                 <motion.div
                   className="flex basis-2/3 flex-col items-center justify-center gap-9 "
                   variants={textVariants(index)}
