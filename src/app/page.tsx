@@ -1,14 +1,11 @@
 // ctrl-f-plus-website/src/app/tab-hoarders/page.tsx
 'use client';
 // import ButtonPhat from './components/ButtonPhat';
-import FeatureCard from './components/feature-card';
 import Hero from './components/Hero';
 import CallToAction from './components/call-to-action';
-import Navbar from './components/layout/navbar';
+import FeatureCard from './components/feature-card';
 
-import TestComponent from './components/test-component';
 import FeaturesHeader from './components/features-header';
-import ButtonPhat from './components/ButtonPhat';
 
 export default function page() {
   return (

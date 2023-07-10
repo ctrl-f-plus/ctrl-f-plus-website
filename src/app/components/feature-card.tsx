@@ -68,12 +68,7 @@ export default function FeatureCard() {
                 initial="hidden"
                 viewport={{ once: true }}
               >
-                <motion.div
-                  // className={`basis-1/3 bg-red-500  ${
-                  //   index % 2 === 1 ? 'laptop:order-last' : ''
-                  // }`}
-                  variants={iconVariants(index)}
-                >
+                <motion.div variants={iconVariants(index)}>
                   {
                     <feat.icon
                       className={`h-full w-full basis-1/3  ${

@@ -221,6 +221,10 @@ module.exports = {
       //     950: '#400800',
       //   },
       // },
+      cursor: {
+        // fancy: 'url(hand.cur), pointer',
+        'magnifying-glass': `url('/images/magnifyicon.svg'), auto`,
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
