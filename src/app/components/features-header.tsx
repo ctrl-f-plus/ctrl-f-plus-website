@@ -84,7 +84,7 @@ export default function FeaturesHeader() {
     <>
       <Container
         id="features-header"
-        className="mx-auto flex  w-full flex-col justify-center "
+        className="mx-auto flex w-full scroll-mt-12 flex-col justify-center"
       >
         <div
           onMouseMove={handleMouseMove}

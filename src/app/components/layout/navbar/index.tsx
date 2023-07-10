@@ -9,7 +9,7 @@ import Container from '../Container';
 import MobileMenu from './mobile-menu';
 
 const navigation = [
-  { name: 'Features', path: '#features-header' },
+  { name: 'Features', path: '/#features-header' },
   { name: 'Blog', path: '/blog' },
   { name: 'About', path: '#' },
   { name: 'Donate', path: '#' },
@@ -59,14 +59,15 @@ export default function Navbar() {
             </button>
           </div>
 
+          {/* TODO: change a tag to link if scroll is fixed */}
           <div className="hidden laptop:block">
             {navigation.length ? (
               <ul className="flex flex-row font-open-sans text-fs-lg laptop:gap-x-6">
                 {navigation.map((item) => (
                   <li key={item.path}>
-                    <Link href={item.path} className="text-dark-1 text-fs-lg">
+                    <a href={item.path} className="text-dark-1 text-fs-lg">
                       {item.name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
