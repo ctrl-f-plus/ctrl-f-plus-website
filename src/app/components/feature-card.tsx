@@ -68,14 +68,13 @@ export default function FeatureCard() {
                 initial="hidden"
                 viewport={{ once: true }}
               >
-                <motion.div variants={iconVariants(index)}>
-                  {
-                    <feat.icon
-                      className={`h-full w-full basis-1/3  ${
-                        index % 2 === 1 ? 'laptop:order-last' : ''
-                      }`}
-                    />
-                  }
+                <motion.div
+                  variants={iconVariants(index)}
+                  className={`h-full w-full basis-1/3  ${
+                    index % 2 === 1 ? 'laptop:order-last' : ''
+                  }`}
+                >
+                  {<feat.icon className="h-full w-full" />}
                 </motion.div>
                 <motion.div
                   className="flex basis-2/3 flex-col items-center justify-center gap-9 "
