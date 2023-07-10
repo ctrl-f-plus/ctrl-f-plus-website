@@ -32,12 +32,12 @@ export default function Navbar() {
         // className={
         //   'mx-auto flex w-full items-center justify-between bg-red-500'
         // }
-        className="bg-red-500' mx-auto flex w-full items-center justify-between"
+        className="mx-auto flex w-full items-center justify-between "
       >
         {/* <LogoIcon /> */}
 
         <nav
-          className="mx-auto flex w-full items-center justify-between py-2"
+          className="mx-auto flex w-full items-center justify-between  p-2"
           aria-label="Global"
         >
           <Link href="/" className="-m-1.5 p-1.5">
@@ -65,7 +65,7 @@ export default function Navbar() {
               <ul className="flex flex-row font-open-sans text-fs-lg laptop:gap-x-6">
                 {navigation.map((item) => (
                   <li key={item.path}>
-                    <a href={item.path} className="text-dark-1 text-fs-lg">
+                    <a href={item.path} className="text-dark-1 px-4 text-fs-lg">
                       {item.name}
                     </a>
                   </li>
