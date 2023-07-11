@@ -7,6 +7,7 @@ import LogoIcon from '../../icons/logo';
 import MenuIcon from '../../icons/menu';
 import Container from '../Container';
 import MobileMenu from './mobile-menu';
+import XMarkIcon from '../../icons/x-mark';
 
 const navigation = [
   { name: 'Features', path: '/#features-header' },
@@ -20,31 +21,20 @@ function classNames(...classes: any[]) {
 }
 
 // TODO: Fix Mobile menu
-// TODO: Fix spacing
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   http: return (
-    // TODO: maybe put this inside of a container instead of setting padding
-    // px-8
-    <header className="mb-[4.5rem] pt-2">
-      <Container
-        // className={
-        //   'mx-auto flex w-full items-center justify-between bg-red-500'
-        // }
-        className="mx-auto flex w-full items-center justify-between "
-      >
-        {/* <LogoIcon /> */}
-
+    <header className="mb-18 pt-2 tablet:mb-24 wide:mb-[7.625rem]">
+      <Container className="mx-auto flex w-full items-center justify-between ">
         <nav
-          className="mx-auto flex w-full items-center justify-between  p-2"
+          className="mx-auto flex h-auto w-full items-center justify-between p-2"
           aria-label="Global"
         >
-          <Link href="/" className="-m-1.5 p-1.5">
+          {/* -m-1.5 p-1.5 */}
+          <Link href="/" className="">
             <span className="sr-only">Ctrl-F Plus</span>
-            {/* <div className="h-8 w-auto"> */}
             <LogoIcon />
-            {/* </div> */}
           </Link>
           <div className="flex laptop:hidden">
             <button
@@ -59,7 +49,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* TODO: change a tag to link if scroll is fixed */}
+          {/* TODO: change `a` tag to link if scroll is fixed */}
           <div className="hidden laptop:block">
             {navigation.length ? (
               <ul className="flex flex-row font-open-sans text-fs-lg laptop:gap-x-6">

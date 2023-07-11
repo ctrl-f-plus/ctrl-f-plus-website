@@ -61,6 +61,7 @@ module.exports = {
         23: '5.75rem', // 92px
         25: '6.25rem', // 100px
         26: '6.5rem', // 104px
+        30: '7.5rem', // 120px
         109: '27.25rem', // 436px
         146: '36.5rem', // 584px
         147: '36.75rem', // 588px
@@ -68,6 +69,11 @@ module.exports = {
       },
       maxWidth: {
         292: '73rem', // 1168px
+        324: '81rem', // 1296px
+      },
+      minHeight: {
+        146: '36.5rem', // 584px
+        154: '38.5rem', // 616px
       },
       fontFamily: {
         inter: ['var(--font-inter)'],

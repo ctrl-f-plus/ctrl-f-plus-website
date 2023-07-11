@@ -18,6 +18,7 @@ ContainerProps) {
   // const baseClasses = 'mx-auto max-w-7xl px-[1.81rem] ';
   // max-w-7xl
   const baseClasses = 'max-w-292 wide:px-0 desktop:px-8 tablet:px-9 px-6.5';
+
   return (
     <div id={id} className={clsx(baseClasses, className)}>
       {children}

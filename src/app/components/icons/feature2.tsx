@@ -5,8 +5,8 @@
 export default function FeatureIcon2({ className }: { className?: string }) {
   return (
     <svg
-      // width="376"
-      // height="317"
+      width="376"
+      height="317"
       viewBox="0 0 376 317"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

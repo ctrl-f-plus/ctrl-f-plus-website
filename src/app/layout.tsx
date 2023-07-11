@@ -33,20 +33,9 @@ export default function RootLayout({
       // h-full
       className={`${inter.variable} ${open_sans.variable} scroll-smooth antialiased`}
     >
-      {/* <TestComponent /> */}
-      {/* <div className="flex h-full w-full items-start bg-green-800 laptop:block">
-        <HeroAnimation className="bg-blue-300 pt-0 laptop:block" />
-      </div> */}
-      <body
-        // px-4
-        // bg-yellow-300
-        // tablet:bg-gray-100
-        // laptop:bg-indigo-500
-        // max-w-7xl
-        className="mx-auto "
-        // className="flex h-full flex-col "
-      >
+      <body className="mx-auto pt-3 wide:pt-10">
         <Navbar />
+        {/* **** */}
         <main className="isolate flex h-full flex-col">{children}</main>
         <Footer />
       </body>

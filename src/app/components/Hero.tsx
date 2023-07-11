@@ -16,7 +16,7 @@ export default function Hero() {
         className="mx-auto flex w-full flex-col laptop:flex-row laptop:justify-between wide:h-109"
       >
         {/* gap-[3.44rem] */}
-        <div className="flex w-full flex-col gap-14  laptop:max-w-[586px] wide:gap-28">
+        <div className="flex w-full flex-col gap-14 laptop:max-w-[586px] wide:gap-28">
           <div className="relative flex flex-col items-start gap-8 ">
             <h1 className="z-10 font-inter text-fs-xl text-dark1">
               Ctrl-F Plus:
