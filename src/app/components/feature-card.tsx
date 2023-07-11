@@ -69,14 +69,18 @@ export default function FeatureCard() {
                 initial="hidden"
                 viewport={{ once: true }}
               >
-                <div className="flex flex-col gap-9 bg-yellow-500 laptop:flex-row">
+                <div className="flex flex-col gap-9  laptop:flex-row">
                   <motion.div
                     variants={iconVariants(index)}
-                    className={`shrink-0 bg-red-500  ${
+                    // shrink-0
+                    className={`flex items-center justify-center   ${
                       index % 2 === 1 ? 'laptop:order-last' : ''
                     }`}
                   >
-                    {<feat.icon className="h-full w-full" />}
+                    {
+                      // desktop:h-full desktop:w-full
+                      <feat.icon className="h-[221.358px] w-[263.2px] desktop:h-[317px] desktop:w-[376px]" />
+                    }
                   </motion.div>
 
                   <div
@@ -85,21 +89,23 @@ export default function FeatureCard() {
                     } `}
                   >
                     <motion.div
-                      className="flex w-fit flex-col items-center justify-center gap-9 bg-blue-500  laptop:items-start"
+                      className="flex w-fit flex-col items-center justify-center gap-9   laptop:items-start"
                       variants={textVariants(index)}
                     >
                       {/* w-full */}
-                      <h2 className=" bg-green-500 text-center font-inter text-fs-base text-primary1 laptop:text-left">
+                      <h2 className="  text-center font-inter text-fs-base text-primary1 laptop:text-left">
                         {feat.title}
                       </h2>
 
                       {/* w-full */}
-                      <h3 className=" bg-green-500 text-center font-inter text-fs-x0 text-dark1 tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
+                      <h3 className=" max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
                         {feat.subTitle}
                       </h3>
                       <p
                         // laptop:text-left text-center
-                        className="max-w-[19rem] bg-green-500  font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px]
+                        // max-w-[30px]
+                        // tablet:max-w-[479px]
+                        className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left
     "
                       >
                         {feat.description}
