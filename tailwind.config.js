@@ -42,16 +42,48 @@ module.exports = {
         // desktop: '1024px',
         // wide: '1280px',
 
-        // tablet: '430px',
-        // laptop: '900px',
-        // laptop: '1024px',
-        // desktop: '1280px',
+        // sm: '640px',
+        // md: '768px',
+        // lg: '1024px',
+        // xl: '1280px',
+        // '2xl': '1536px',
 
-        tablet: '430px',
+        // sm: '576px', // Small devices (landscape phones, 576px and up)
+        // md: '768px', // Medium devices (tablets, 768px and up)
+        // lg: '992px', // Large devices (desktops, 992px and up)
+        // xl: '1200px', // Extra large devices (large desktops, 1200px and up)
+        // xxl: '1400px', //
+
+        // sm: '320px', // Extra small devices
+        // md: '480px', // Small devices, large smartphones
+        // lg: '768px', // Medium devices, tablets
+        // xl: '900px', // Large tablets, small laptops
+        // '2xl': '1024px', // Small desktops
+        // '3xl': '1280px', // Large desktops
+        // '4xl': '1920px', // HD screens
+        // '5xl': '3840px', // 4K screens
+
+        tablet: '480px',
+        // tablet2: '640px',
         'tab-pro': '768px',
-        laptop: '900px',
+        laptop: '900px', //*
         desktop: '1024px',
         wide: '1280px',
+        '2xl': '1536px',
+
+        // tablet: '430px',
+        // 'tab-pro': '768px',
+        // laptop: '900px',
+        // desktop: '1024px',
+        // wide: '1280px',
+
+        // tablet: '430px',
+        // // 'tablet-pro': '640px',
+        // 'tablet-pro': '768px',
+        // // laptop: '768px',
+        // laptop: '900px',
+        // desktop: '1024px',
+        // wide: '1280px',
       },
       spacing: {
         6.5: '1.625rem', // 26px
@@ -68,6 +100,13 @@ module.exports = {
         292: '73rem', // 1168px
       },
       maxWidth: {
+        94: '23.5rem', // 376px
+        174: '43.5rem', // 696px
+        276: '69rem', // 1104px
+        292: '73rem', // 1168px
+        324: '81rem', // 1296px
+      },
+      minWidth: {
         94: '23.5rem', // 376px
         174: '43.5rem', // 696px
         276: '69rem', // 1104px

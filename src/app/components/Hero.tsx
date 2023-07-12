@@ -21,9 +21,9 @@ export default function Hero() {
             <h1 className="z-10 font-inter text-fs-xl text-dark1">
               Ctrl-F Plus:
               <br />
-              For the
+              <span className="whitespace-nowrap">For the</span>
               <br className="tab-pro:hidden" />
-              <span className="ml-1 whitespace-nowrap rounded-2xl bg-highlight-focus px-2">
+              <span className="-mx-2 whitespace-nowrap rounded-2xl bg-highlight-focus px-2 tab-pro:ml-1 ">
                 Tab Hoarders
               </span>
             </h1>

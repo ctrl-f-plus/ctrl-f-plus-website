@@ -1,3 +1,4 @@
+
 // ctrl-f-plus-website/src/app/tab-hoarders/components/FeatureCard.tsx
 
 import { motion } from 'framer-motion';
@@ -60,44 +61,52 @@ export default function FeatureCard() {
     <>
       {features.map((feat, index) => {
         return (
-          <Container key={feat.title} className="mx-auto flex w-full flex-col ">
+          <Container key={feat.title} className="mx-auto flex w-full flex-col">
             <div className="laptop:text-left">
               <motion.div
-                className="flex min-h-[38.3125rem] flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-white p-10 shadow-xl laptop:flex-row"
+                className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white shadow-xl tablet:p-9 tab-pro:p-14 laptop:min-h-146  laptop:p-16 desktop:p-20 wide:p-24"
                 whileInView="show"
                 initial="hidden"
                 viewport={{ once: true }}
               >
-
-
-                <motion.div
-                  variants={iconVariants(index)}
-                  className={`h-full w-full basis-1/3  ${
-                    index % 2 === 1 ? 'laptop:order-last' : ''
-                  }`}
-                >
-                  {<feat.icon className="h-full w-full" />}
-                </motion.div>
-
-
-
-                <motion.div
-                  className="flex basis-2/3 flex-col items-center justify-center gap-9 "
-                  variants={textVariants(index)}
-                >
-                  <h2 className="w-full text-center font-inter text-fs-base text-primary1 laptop:text-left">
-                    {feat.title}
-                  </h2>
-                  <h3 className="w-full text-center font-inter text-fs-x0 text-dark1 tablet:text-fs-xl laptop:text-left">
-                    {feat.subTitle}
-                  </h3>
-                  <p
-                    className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-full laptop:text-left
-    "
+                <div className="flex flex-col gap-9 laptop:flex-row">
+                  <motion.div
+                    variants={iconVariants(index)}
+                    // shrink-0
+                    className={`flex items-center justify-center   ${
+                      index % 2 === 1 ? 'laptop:order-last' : ''
+                    }`}
                   >
-                    {feat.description}
-                  </p>
-                </motion.div>
+                    {
+                      <feat.icon className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]" />
+                    }
+                  </motion.div>
+
+                  <div
+                    className={`flex w-full  ${
+                      index % 2 === 1 ? '' : 'laptop:justify-end'
+                    } `}
+                  >
+                    <motion.div
+                      className="flex w-fit flex-col items-center justify-center gap-9  laptop:items-start"
+                      variants={textVariants(index)}
+                    >
+                      <h2 className="text-center font-inter text-fs-base text-primary1 laptop:text-left">
+                        {feat.title}
+                      </h2>
+
+                      <h3 className=" max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
+                        {feat.subTitle}
+                      </h3>
+
+                      <p
+                        className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left"
+                      >
+                        {feat.description}
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </Container>

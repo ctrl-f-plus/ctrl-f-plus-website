@@ -9,7 +9,7 @@ import FeaturesHeader from './components/features-header';
 
 export default function page() {
   return (
-    <div className="flex flex-col gap-18 bg-slate-100 tablet:gap-24 wide:gap-[7.625rem]">
+    <div className="flex flex-col gap-18 tablet:gap-24 wide:gap-[7.625rem]">
       <Hero />
       <FeaturesHeader />
       <FeatureCard />
