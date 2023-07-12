@@ -127,7 +127,9 @@ module.exports = {
       //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       // },
       colors: {
-        // white: 'ffffff',
+        'light-blue': '#B0D6EC',
+        'light-purple': '#C8ADEB',
+
         // TODO: WHICH COLOR IS THE HIGHLIGHT COLOR - SEE BLOG HEADER CARD?
         'highlight-focus': '#53E7BB',
         'highlight-focus-1': '#48D0A8',
@@ -191,6 +193,9 @@ module.exports = {
 
       cursor: {
         'magnifying-glass': `url('/images/magnifyicon.svg'), auto`,
+      },
+      boxShadow: {
+        bg: '-117.23332977294922px 117.23332977294922px 117.23332977294922px 0px rgba(255, 255, 255, 0.10) inset, 117.23332977294922px -117.23332977294922px 117.23332977294922px 0px rgba(165, 165, 165, 0.10) inset',
       },
     },
   },

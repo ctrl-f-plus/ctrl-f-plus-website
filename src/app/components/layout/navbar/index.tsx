@@ -25,7 +25,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   http: return (
-    <header className="mb-18 pt-2 tablet:mb-24 wide:mb-[7.625rem]">
+    <header className="mb-18 pt-5 tablet:mb-24 wide:mb-[7.625rem] wide:pt-12 ">
       <Container className="mx-auto flex w-full items-center justify-between ">
         <nav
           className="mx-auto flex h-auto w-full items-center justify-between p-2"
