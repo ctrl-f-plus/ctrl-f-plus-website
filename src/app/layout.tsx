@@ -33,7 +33,7 @@ export default function RootLayout({
       // h-full
       className={`${inter.variable} ${open_sans.variable} scroll-smooth antialiased`}
     >
-      <body className="mx-auto pt-3 wide:pt-10">
+      <body className="debug-screens mx-auto pt-3 wide:pt-10">
         <Navbar />
         {/* **** */}
         <main className="isolate flex h-full flex-col">{children}</main>
