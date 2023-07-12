@@ -1,5 +1,7 @@
 // src/app/blog/components/blog-card.tsx
 
+import Link from 'next/link';
+
 // TODO: date could be a date type add formatter?
 type BlogCard = {
   title: string;
@@ -9,15 +11,16 @@ type BlogCard = {
 export default function BlogCard(post: any) {
   return (
     <>
-      <li
+      <Link
         key={post.title}
+        href={`/blog/${post.slug}`}
         className="rounded-3xl bg-white/[.68] px-[24px] py-[19px] shadow-sm backdrop-blur-[23px]"
       >
         <div className="">
           <h2 className="font-inter text-subtitle text-dark1">{post.title}</h2>
           <p className="font-open-sans text-fs-lg text-dark1">{post.date}</p>
         </div>
-      </li>
+      </Link>
     </>
 
     // <div>

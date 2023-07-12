@@ -1,5 +1,6 @@
 // src/app/blog/page.tsx
 
+import Link from 'next/link';
 import DrawingIcon from '../components/icons/drawing-icon';
 import Container from '../components/layout/Container';
 import BlogCard from './components/blog-card';
@@ -18,7 +19,7 @@ const blogPosts = [
   { title: 'Blog Post 7', date: '7/14/23' },
 ];
 
-export default function Blog() {
+export default function BlogPage() {
   return (
     <>
       {/* <Container className="mx-auto flex w-full flex-col items-center gap-y-10  p-5"> */}
@@ -47,7 +48,7 @@ export default function Blog() {
         </div>
 
         {/* <ul className="grid w-full grid-cols-1 gap-y-3 tablet:grid-cols-2"> */}
-        <ul className="grid grid-cols-1 gap-3 tablet:px-[24px] tablet:grid-cols-2">
+        <ul className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
           {/*    desktop:px-8 wide:px-16 laptop:px-[8px]*/}
           {blogPosts.map((post) => (
             <BlogCard key={post.title} title={post.title} date={post.date} />
