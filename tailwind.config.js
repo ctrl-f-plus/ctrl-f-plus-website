@@ -135,6 +135,7 @@ module.exports = {
         'highlight-focus-1': '#48D0A8',
         dark1: '#1B2528',
         primary1: '#0C3440',
+        primary2: '#128DA1',
         'text-dark': '#434343',
         'gradient-color-1': '#f5fbff',
         'gradient-color-2': '#dde3ee',
