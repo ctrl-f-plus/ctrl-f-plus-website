@@ -1,0 +1,59 @@
+---
+title: 'Understanding JavaScript Promises'
+author: 'John Doe'
+date: '2023-07-12'
+---
+
+# Understanding JavaScript Promises
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan mollis ligula, nec maximus massa varius nec. Fusce cursus pellentesque odio, non pellentesque elit. Proin nec augue turpis.
+
+## What is a Promise?
+
+A **Promise** in JavaScript is an object representing the eventual completion or failure of an asynchronous operation.
+
+```javascript
+const promise = new Promise((resolve, reject) => {
+  let condition = true;
+
+  if (condition) {
+    resolve('Promise is resolved!');
+  } else {
+    reject('Promise is rejected!');
+  }
+});
+```
+
+## Promise Methods
+
+Promises include several methods, two of the most used ones are `.then()` and `.catch()`.
+
+### .then()
+
+The `.then()` method is used with a Promise to specify what should happen when the Promise is resolved.
+
+```javascript
+promise
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
+```
+
+### .catch()
+
+The `.catch()` method is used with a Promise to specify what should happen if the Promise is rejected.
+
+```javascript
+promise
+  .then((response) => console.log(response))
+  .catch((error) => console.log('Error:', error));
+```
+
+Ut tempus urna at massa semper aliquam. Phasellus faucibus nunc non interdum consequat.
+
+## Conclusion
+
+Promises are a powerful tool in JavaScript that allow you to work with asynchronous operations more comfortably. Understanding how they work can help you write more effective and clean JavaScript code.
+
+```javascript
+console.log('Happy coding!');
+```

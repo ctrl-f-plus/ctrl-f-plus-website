@@ -1,9 +1,16 @@
 // src/app/blog/page.tsx
 
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { allBlogs } from 'contentlayer/generated';
 import DrawingIcon from '../components/icons/drawing-icon';
 import Container from '../components/layout/Container';
 import BlogCard from './components/blog-card';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Blog posts metadata description',
+};
 
 const blogPosts = [
   { title: 'Environment variables and GraphQL queries 1', date: '7/14/23' },
@@ -48,12 +55,22 @@ export default function BlogPage() {
         </div>
 
         {/* <ul className="grid w-full grid-cols-1 gap-y-3 tablet:grid-cols-2"> */}
-        <ul className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
-          {/*    desktop:px-8 wide:px-16 laptop:px-[8px]*/}
+        {/* <ul className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
+             //desktop:px-8 wide:px-16 laptop:px-[8px]
           {blogPosts.map((post) => (
             <BlogCard key={post.title} title={post.title} date={post.date} />
           ))}
-        </ul>
+        </ul> */}
+
+        <div className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
+          {allBlogs.map((post: any) => (
+            // <Link key={post.slug} href={`/blog/${post.slug}`}>
+            <div key={post.slug}>
+              <h1>{post.title}</h1>
+            </div>
+            // </Link>
+          ))}
+        </div>
       </Container>
     </>
   );

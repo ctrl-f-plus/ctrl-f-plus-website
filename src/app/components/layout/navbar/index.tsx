@@ -1,17 +1,14 @@
 'use client';
 // src/app/components/layout/navbar/index.tsx
 
-import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import LogoIcon from '../../icons/logo';
 import MenuIcon from '../../icons/menu';
 import Container from '../Container';
 import MobileMenu from './mobile-menu';
-import XMarkIcon from '../../icons/x-mark';
-import clsx from 'clsx';
-import { LayoutGroup, motion } from 'framer-motion';
-import { Bars2Icon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Features', path: '/#features-header' },
