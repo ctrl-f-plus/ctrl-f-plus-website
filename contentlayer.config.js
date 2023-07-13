@@ -1,6 +1,7 @@
 // contentlayer.config.ts
 
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import { readFileSync } from 'fs';
 import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
@@ -35,6 +36,7 @@ export const Blog = defineDocumentType(() => ({
   computedFields,
 }));
 
+const themePath = './assets/themes/oneHunter.json';
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog],
@@ -45,7 +47,8 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: 'min-light',
+          // theme: 'min-light',
+          theme: JSON.parse(readFileSync(themePath, 'utf-8')),
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
