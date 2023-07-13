@@ -11,6 +11,7 @@ import MobileMenu from './mobile-menu';
 import XMarkIcon from '../../icons/x-mark';
 import clsx from 'clsx';
 import { LayoutGroup, motion } from 'framer-motion';
+import { Bars2Icon } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Features', path: '/#features-header' },
@@ -53,7 +54,7 @@ export default function Navbar() {
       <Container className="mx-auto flex w-full items-center justify-between ">
         <nav
           // scroll-pr-6 fade
-          className="mx-auto flex h-auto w-full items-center justify-between p-2 "
+          className="mx-auto flex h-auto w-full items-center justify-between p-2"
           aria-label="Global"
         >
           {/* -m-1.5 p-1.5 */}
@@ -69,9 +70,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              {/* <Bars2Icon className="h-6 w-6" aria-hidden="true" /> */}
               <MenuIcon />
-              {/* <XMarkIcon className="bg-[#0C3440]" /> */}
             </button>
           </div>
 

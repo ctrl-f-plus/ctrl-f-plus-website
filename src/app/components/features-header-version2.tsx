@@ -36,7 +36,7 @@ export default function FeaturesHeaderVersion2() {
         >
           <motion.div
             className="pointer-events-none absolute -inset-px hidden rounded-[2.25rem] opacity-0
-            transition  duration-100 group-hover:opacity-100 wide:block"
+            transition duration-100 group-hover:opacity-100 wide:block"
             style={{
               background: useMotionTemplate`radial-gradient(500px circle at ${mouseX}px ${mouseY}px, rgba(3, 175, 125, .90) 0%, transparent 50%)`,
             }}

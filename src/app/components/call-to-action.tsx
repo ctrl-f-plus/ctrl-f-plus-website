@@ -16,7 +16,7 @@ export default function CallToAction() {
         <Atropos
           className="hidden h-full w-full rounded-[2.25rem]"
           // highlight={false}
-          // shadow={false}
+          shadow={false}
           // shadowScale={1}
         >
           <div className="relative isolate  flex h-[32.8125rem] w-full flex-col items-center  justify-center  gap-9 rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center">

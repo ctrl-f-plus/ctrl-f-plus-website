@@ -103,6 +103,7 @@ export default function FeaturesHeader() {
                 WebkitMaskPosition: webkitMaskPosition,
                 // backgroundColor: 'rgba(0, 0, 0, .3)',
               }}
+              // TODO: Try to add more blur
               whileHover={{ backgroundColor: '#03AF7D' }}
               transition={{ duration: 0.9 }}
               // transition={{ type: 'spring', stiffness: 50, damping: 100 }}

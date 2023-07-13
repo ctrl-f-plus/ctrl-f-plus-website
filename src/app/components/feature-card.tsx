@@ -1,4 +1,3 @@
-
 // ctrl-f-plus-website/src/app/tab-hoarders/components/FeatureCard.tsx
 
 import { motion } from 'framer-motion';
@@ -67,7 +66,8 @@ export default function FeatureCard() {
                 className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white shadow-xl tablet:p-9 tab-pro:p-14 laptop:min-h-146  laptop:p-16 desktop:p-20 wide:p-24"
                 whileInView="show"
                 initial="hidden"
-                viewport={{ once: true }}
+                // viewport={{ once: true }}
+                // variants={cardVariants(index)}
               >
                 <div className="flex flex-col gap-9 laptop:flex-row">
                   <motion.div
@@ -99,9 +99,7 @@ export default function FeatureCard() {
                         {feat.subTitle}
                       </h3>
 
-                      <p
-                        className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left"
-                      >
+                      <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
                         {feat.description}
                       </p>
                     </motion.div>
