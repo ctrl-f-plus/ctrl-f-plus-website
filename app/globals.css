@@ -131,10 +131,12 @@ body {
 
 /* globals.css */
 @import 'tailwindcss/base';
-
 @import 'tailwindcss/components';
-
 @import 'tailwindcss/utilities';
+/* ::selection {
+  background-color: #ff0000;
+  color: #fefefe;
+} */
 
 /* @import 'atropos/css'; */
 
@@ -244,3 +246,6 @@ body {
 }
 
 /* ///////////////////////////// */
+pre > code {
+  display: grid;
+}

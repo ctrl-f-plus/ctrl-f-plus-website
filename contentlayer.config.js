@@ -45,7 +45,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: 'github-light',
+          theme: 'min-light',
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
