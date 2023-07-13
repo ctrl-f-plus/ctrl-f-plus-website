@@ -9,7 +9,7 @@ import BlogCard from './components/blog-card';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Blog posts metadata description',
+  description: 'Blog posts index page metadata description',
 };
 
 const blogPosts = [
@@ -29,49 +29,61 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <>
-      {/* <Container className="mx-auto flex w-full flex-col items-center gap-y-10  p-5"> */}
-      <Container className="mx-auto flex flex-col gap-y-10 p-2">
-        {/* Header Card */}
-        <div className="flex w-full items-center justify-center rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] tablet:px-32 tablet:py-14">
-          {/*  */}
+      <section>
+        {/* <Container className="mx-auto flex w-full flex-col items-center gap-y-10  p-5"> */}
+        <Container className="mx-auto flex flex-col gap-y-10 p-2">
+          {/* Header Card */}
+          <div className="flex w-full items-center justify-center rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] tablet:px-32 tablet:py-14">
+            {/*  */}
 
-          {/* Content */}
-          {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
-          <div className="flex justify-start gap-[9.375rem]">
-            <div className="flex flex-col items-start justify-center gap-6 ">
-              <h1 className="font-inter  text-fs-xl text-dark1">Blog</h1>
-              <p className="font-open-sans text-fs-lg text-dark1">
-                Welcome to development journey of{' '}
-                <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}
-                Here, you can find articles about my progress, challenges, and
-                successes. I hope you enjoy reading about my experiences and
-                find them inspiring.
-              </p>
-            </div>
-            <div className="hidden desktop:block">
-              <DrawingIcon />
+            {/* Content */}
+            {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
+            <div className="flex justify-start gap-[9.375rem]">
+              <div className="flex flex-col items-start justify-center gap-6 ">
+                <h1 className="font-inter  text-fs-xl text-dark1">Blog</h1>
+                <p className="font-open-sans text-fs-lg text-dark1">
+                  Welcome to development journey of{' '}
+                  <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}
+                  Here, you can find articles about my progress, challenges, and
+                  successes. I hope you enjoy reading about my experiences and
+                  find them inspiring.
+                </p>
+              </div>
+              <div className="hidden desktop:block">
+                <DrawingIcon />
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* <ul className="grid w-full grid-cols-1 gap-y-3 tablet:grid-cols-2"> */}
-        {/* <ul className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
+          {/* <ul className="grid w-full grid-cols-1 gap-y-3 tablet:grid-cols-2"> */}
+          {/* <ul className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
              //desktop:px-8 wide:px-16 laptop:px-[8px]
           {blogPosts.map((post) => (
             <BlogCard key={post.title} title={post.title} date={post.date} />
           ))}
         </ul> */}
 
-        <div className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
-          {allBlogs.map((post: any) => (
-            // <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <div key={post.slug}>
-              <h1>{post.title}</h1>
-            </div>
-            // </Link>
-          ))}
-        </div>
-      </Container>
+          <div className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
+            {allBlogs.map((post: any) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="rounded-3xl bg-white/[.68] px-[24px] py-[19px] shadow-sm backdrop-blur-[23px]"
+                // className="flex flex-col space-y-1 mb-4"
+              >
+                <div className="w-full flex flex-col">
+                  <h2 className="font-inter text-subtitle text-dark1">
+                    {post.title}
+                  </h2>
+                  <p className="font-open-sans text-fs-lg text-dark1">
+                    {post.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
     </>
   );
 }
