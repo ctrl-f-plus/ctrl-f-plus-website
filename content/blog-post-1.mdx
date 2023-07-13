@@ -56,3 +56,38 @@ Promises are a powerful tool in JavaScript that allow you to work with asynchron
 ```javascript
 console.log('Happy coding!');
 ```
+
+```bash
+npx create-next-app --example with-tailwindcss image-gallery
+```
+
+```js title="components/Subscribe.js"
+<Box
+  border="1px solid"
+  borderColor="blue.200"
+  bg="blue.50"
+  borderRadius={4}
+  padding={6}
+  my={4}
+>
+  <Heading as="h5" size="lg" mb={2}>
+    Subscribe to the newsletter
+  </Heading>
+  <Text>
+    Get emails from me about web development, tech, and early access to new
+    articles.
+  </Text>
+  <InputGroup size="md" mt={4}>
+    <Input
+      aria-label="Email for newsletter"
+      placeholder="tim@apple.com"
+      type="email"
+    />
+    <InputRightElement width="6.75rem">
+      <Button fontWeight="bold" h="1.75rem" size="sm">
+        Subscribe
+      </Button>
+    </InputRightElement>
+  </InputGroup>
+</Box>
+```

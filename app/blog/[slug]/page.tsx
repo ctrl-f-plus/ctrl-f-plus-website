@@ -18,6 +18,7 @@ import { allBlogs } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
 import { Mdx } from '@/app/components/mdx';
 import Balancer from 'react-wrap-balancer';
+import Container from '@/app/components/layout/Container';
 
 interface pageProps {
   params: {
@@ -44,13 +45,15 @@ export default async function Blog({ params }) {
   return (
     <>
       <section>
-        {/* <script type="application/ld+json" suppressHydrationWarning>
+        <Container>
+          {/* <script type="application/ld+json" suppressHydrationWarning>
           {JSON.stringify(post.structuredData)}
         </script> */}
-        <h1 className="text-red-500">
-          <Balancer>{post.title}</Balancer>
-        </h1>
-        <Mdx code={post?.body.code} />;
+          <h1 className="">
+            <Balancer>{post.title}</Balancer>
+          </h1>
+          <Mdx code={post?.body.code} />;
+        </Container>
       </section>
     </>
   );
