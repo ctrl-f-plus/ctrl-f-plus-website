@@ -4,6 +4,7 @@ import Navbar from './components/layout/navbar';
 import Footer from './components/layout/footer';
 import TestComponent from './components/test-component';
 import HeroAnimation from './components/icons/hero-animation';
+import GradientBackground from './components/gradient-background';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,7 +35,11 @@ export default function RootLayout({
       className={`${inter.variable} ${open_sans.variable} scroll-smooth antialiased`}
     >
       <body className="debug-screens relative mx-auto">
-        <div className="absolute inset-0 h-auto w-full overflow-hidden opacity-[.2]">
+        <GradientBackground
+        // className="w-full h-full"
+        />
+        <div className="absolute inset-0 h-full w-full overflow-hidden opacity-[1] ">
+          {/* <div className="absolute inset-0 h-auto w-full overflow-hidden opacity-[.2]">
           <svg
             // width="1440"
             // height="3759"
@@ -79,7 +84,7 @@ export default function RootLayout({
               ry="805.958"
               fill="#ADD5EB"
             />
-          </svg>
+          </svg> */}
         </div>
         <div className="bg-white/[.47] shadow-bg backdrop-blur-[158.26499938964844px]">
           <Navbar />

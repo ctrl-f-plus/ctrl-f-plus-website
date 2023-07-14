@@ -36,7 +36,8 @@ export const Blog = defineDocumentType(() => ({
   computedFields,
 }));
 
-const themePath = './assets/themes/oneHunter.json';
+const themePath =
+  './assets/themes/WinterIsComing-dark-blue-color-no-italics-theme.json';
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog],
