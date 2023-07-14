@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import clsx from 'clsx';
+import Container from './layout/Container';
 
 const components = {
   // h1: ({ className, ...props }: any) => (
@@ -163,9 +164,11 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <article className="mdx ">
-      {/* <article className="prose prose-quoteless prose-neutral prose-invert"> */}
+    // <Container className="">
+    // {/* // <article className="mdx "> */}
+    <article className="prose prose-quoteless prose-neutral mx-auto prose-invert ">
       <Component components={{ ...components }} />
     </article>
+    // </Container>
   );
 }

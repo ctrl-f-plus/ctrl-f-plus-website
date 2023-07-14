@@ -8,34 +8,33 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    fontSize: {
-      // sm: ['14px', { lineHeight: '24px', letterSpacing: '-0.03em' }],
-      // 'fs-md': ['16px', { lineHeight: '20.8px', fontWeight: '600' }],
-      // 'fs-sm': ['14px', { lineHeight: '24px' }],
-      // 'fs-md2': ['18px', { lineHeight: '24.51px', fontWeight: '400' }],
-      // 'fs-lg': ['18px', { lineHeight: '24.51px', fontWeight: '600' }],
-      // 'fs-md4': ['18px', { lineHeight: '27px', fontWeight: '400' }],
-      // 'fs-xl': ['55px', { lineHeight: '55px', fontWeight: '800' }],
-
-      'fs-base': ['1rem', { lineHeight: '130%', fontWeight: '600' }],
-      'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
-      'fs-md': ['1.125rem', { lineHeight: 'normal', fontWeight: '400' }],
-      'fs-md-bold': [
-        '1.125rem',
-        { lineHeight: '1.53125rem', fontWeight: '600' },
-      ],
-      'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
-      'fs-x0': ['2.0625rem', { lineHeight: '100%', fontWeight: '800' }],
-      'fs-xl': ['3.4375rem', { lineHeight: '120%', fontWeight: '800' }], // INTRO
-
-      //
-      subtitle: ['1.4375rem', { lineHeight: '1.3', fontWeight: '600' }],
-    },
-
     //styleName: subtitle;
     // font-family: Inter; font-size: 23px; font-weight: 600; line-height: 30px; letter-spacing: 0em; text-align: center;
 
     extend: {
+      fontSize: {
+        // sm: ['14px', { lineHeight: '24px', letterSpacing: '-0.03em' }],
+        // 'fs-md': ['16px', { lineHeight: '20.8px', fontWeight: '600' }],
+        // 'fs-sm': ['14px', { lineHeight: '24px' }],
+        // 'fs-md2': ['18px', { lineHeight: '24.51px', fontWeight: '400' }],
+        // 'fs-lg': ['18px', { lineHeight: '24.51px', fontWeight: '600' }],
+        // 'fs-md4': ['18px', { lineHeight: '27px', fontWeight: '400' }],
+        // 'fs-xl': ['55px', { lineHeight: '55px', fontWeight: '800' }],
+
+        'fs-base': ['1rem', { lineHeight: '130%', fontWeight: '600' }],
+        'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
+        'fs-md': ['1.125rem', { lineHeight: 'normal', fontWeight: '400' }],
+        'fs-md-bold': [
+          '1.125rem',
+          { lineHeight: '1.53125rem', fontWeight: '600' },
+        ],
+        'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
+        'fs-x0': ['2.0625rem', { lineHeight: '100%', fontWeight: '800' }],
+        'fs-xl': ['3.4375rem', { lineHeight: '120%', fontWeight: '800' }], // INTRO
+
+        //
+        subtitle: ['1.4375rem', { lineHeight: '1.3', fontWeight: '600' }],
+      },
       screens: {
         // tablet: '640px',
         // laptop: '768px',
