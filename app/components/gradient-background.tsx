@@ -9,8 +9,9 @@ function GradientBackground() {
     import('../lib/gradient').then(({ Gradient }) => {
       const gradient = new Gradient();
 
+      //@ts-ignore
       gradient.initGradient('#gradient-canvas');
-
+      //@ts-ignore
       setGradient(gradient);
     });
   }, []);
