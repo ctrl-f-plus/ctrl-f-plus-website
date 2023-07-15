@@ -14,6 +14,8 @@ const baseStyles = {
 };
 
 const variantStyles = {
+  simple:
+    'bg-primary1 text-white hover:bg-primary1/90 active:bg-[#0a2b35] active:text-white/80 ',
   solid:
     'bg-primary1 text-white hover:bg-primary1/90 active:bg-[#0a2b35] active:text-white/80 ',
 
@@ -26,10 +28,11 @@ const variantStyles = {
 };
 
 type ButtonProps = {
-  variant: 'solid' | 'outline';
+  variant: 'solid' | 'outline' | 'simple';
   children: React.ReactNode;
   // onClick?: () => void;
   // url: string;
+
   className?: string;
 };
 
@@ -37,6 +40,7 @@ function ButtonPrimary({
   variant,
   children,
   className,
+
   ...props
 }: ButtonProps) {
   // const handleClick = useCallback(
@@ -54,6 +58,7 @@ function ButtonPrimary({
     <button
       type="button"
       className={className}
+
       // onClick={handleClick}
     >
       {IconComponent && <IconComponent />}

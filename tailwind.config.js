@@ -13,14 +13,6 @@ module.exports = {
 
     extend: {
       fontSize: {
-        // sm: ['14px', { lineHeight: '24px', letterSpacing: '-0.03em' }],
-        // 'fs-md': ['16px', { lineHeight: '20.8px', fontWeight: '600' }],
-        // 'fs-sm': ['14px', { lineHeight: '24px' }],
-        // 'fs-md2': ['18px', { lineHeight: '24.51px', fontWeight: '400' }],
-        // 'fs-lg': ['18px', { lineHeight: '24.51px', fontWeight: '600' }],
-        // 'fs-md4': ['18px', { lineHeight: '27px', fontWeight: '400' }],
-        // 'fs-xl': ['55px', { lineHeight: '55px', fontWeight: '800' }],
-
         'fs-base': ['1rem', { lineHeight: '130%', fontWeight: '600' }],
         'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
         'fs-md': ['1.125rem', { lineHeight: 'normal', fontWeight: '400' }],
@@ -34,6 +26,10 @@ module.exports = {
 
         //
         subtitle: ['1.4375rem', { lineHeight: '1.3', fontWeight: '600' }],
+
+        'h1-blog': ['1.75rem', { lineHeight: '1.3', fontWeight: '600' }],
+        'p-blog': ['1.125rem', { lineHeight: '2rem', fontWeight: '400' }],
+        'button-18': ['1.125rem', { lineHeight: 'normal', fontWeight: '600' }], //
       },
       screens: {
         // tablet: '640px',
@@ -119,6 +115,7 @@ module.exports = {
       fontFamily: {
         inter: ['var(--font-inter)'],
         'open-sans': ['var(--font-open-sans)'],
+        arimo: ['var(--font-arimo)'],
       },
       // backgroundImage: {
       //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -136,6 +133,7 @@ module.exports = {
         primary1: '#0C3440',
         primary2: '#128DA1',
         'text-dark': '#434343',
+        'mongo-black': '#001E2B',
       },
       // animation: {
       //   'gradient-x': 'gradient-x .5s ease infinite',

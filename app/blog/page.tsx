@@ -40,7 +40,7 @@ export default function BlogPage() {
             {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6 ">
-                <h1 className="font-inter  text-fs-xl text-dark1">Blog</h1>
+                <h1 className="font-inter text-fs-xl text-dark1">Blog</h1>
                 <p className="font-open-sans text-fs-lg text-dark1">
                   Welcome to development journey of{' '}
                   <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}

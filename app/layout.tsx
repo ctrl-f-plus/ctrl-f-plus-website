@@ -1,4 +1,4 @@
-import { Inter, Open_Sans } from 'next/font/google';
+import { Inter, Open_Sans, Arimo } from 'next/font/google';
 import GradientBackground from './components/gradient-background';
 import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
@@ -15,6 +15,11 @@ const open_sans = Open_Sans({
   variable: '--font-open-sans',
 });
 
+const arimo = Arimo({
+  subsets: ['latin'],
+  variable: '--font-arimo',
+});
+
 export const metadata = {
   title: 'Ctrl-F Plus',
   description: 'CTRL-F Plus - Chrome Extension',
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${open_sans.variable} scroll-smooth antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} scroll-smooth antialiased`}
     >
       <body className="debug-screens relative mx-auto">
         <GradientBackground />
@@ -36,6 +41,7 @@ export default function RootLayout({
           <Navbar />
 
           <main className="isolate flex h-full flex-col">{children}</main>
+
           <Footer />
         </div>
       </body>
