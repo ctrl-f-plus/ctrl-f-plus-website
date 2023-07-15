@@ -27,12 +27,6 @@ export default function FeaturesHeader() {
   useEffect(() => {
     if (initialRender) {
       initialRender = false;
-      // mouseX.set(800);
-      // mouseY.set(90);
-
-      // mouseX.set(650);
-      // mouseY.set(70);
-
       mouseX.set(750);
       mouseY.set(70);
     }
@@ -59,8 +53,6 @@ export default function FeaturesHeader() {
     let { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
-    console.log('change');
-    console.log(webkitMaskPosition);
   }
 
   function CardText() {
