@@ -1,5 +1,4 @@
 // app/tab-hoarders/page.tsx
-'use client';
 
 import Hero from './components/Hero';
 import CallToAction from './components/call-to-action';

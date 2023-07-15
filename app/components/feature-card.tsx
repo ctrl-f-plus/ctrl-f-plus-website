@@ -1,4 +1,5 @@
 // app/tab-hoarders/components/FeatureCard.tsx
+'use client';
 
 import { motion } from 'framer-motion';
 import FeatureIcon1 from './icons/feature1';

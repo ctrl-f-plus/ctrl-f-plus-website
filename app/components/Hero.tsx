@@ -1,4 +1,3 @@
-'use client';
 // app/components/Hero.tsx
 
 import ButtonPrimary from './ButtonPrimary';
