@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 // app/components/features-header.tsx
 
 import {

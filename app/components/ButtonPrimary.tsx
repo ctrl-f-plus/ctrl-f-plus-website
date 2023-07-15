@@ -51,6 +51,7 @@ function ButtonPrimary({
   //   [url]
   // );
 
+  //@ts-ignore
   const IconComponent = variantStyles.IconComponents[variant];
   className = clsx(baseStyles['base'], variantStyles[variant], className);
 

@@ -6,7 +6,7 @@ function GradientBackground() {
   const [Gradient, setGradient] = useState(null);
 
   useEffect(() => {
-    import('../../public/gradient').then(({ Gradient }) => {
+    import('../lib/gradient').then(({ Gradient }) => {
       const gradient = new Gradient();
 
       gradient.initGradient('#gradient-canvas');
