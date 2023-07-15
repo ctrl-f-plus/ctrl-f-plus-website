@@ -6,6 +6,7 @@ import { allBlogs } from 'contentlayer/generated';
 import DrawingIcon from '../components/icons/drawing-icon';
 import Container from '../components/layout/Container';
 import BlogCard from './components/blog-card';
+import { Balancer } from 'react-wrap-balancer';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -30,7 +31,6 @@ export default function BlogPage() {
   return (
     <>
       <section>
-        {/* <Container className="mx-auto flex w-full flex-col items-center gap-y-10  p-5"> */}
         <Container className="mx-auto flex flex-col gap-y-10 p-2">
           {/* Header Card */}
           <div className="flex w-full items-center justify-center rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] tablet:px-32 tablet:py-14">
@@ -55,32 +55,30 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* <ul className="grid w-full grid-cols-1 gap-y-3 tablet:grid-cols-2"> */}
-          {/* <ul className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
-             //desktop:px-8 wide:px-16 laptop:px-[8px]
-          {blogPosts.map((post) => (
-            <BlogCard key={post.title} title={post.title} date={post.date} />
-          ))}
-        </ul> */}
-
           <div className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
-            {allBlogs.map((post: any) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="rounded-3xl bg-white/[.68] px-[24px] py-[19px] shadow-sm backdrop-blur-[23px]"
-                // className="flex flex-col space-y-1 mb-4"
-              >
-                <div className="w-full flex flex-col">
-                  <h2 className="font-inter text-subtitle text-dark1">
-                    {post.title}
-                  </h2>
-                  <p className="font-open-sans text-fs-lg text-dark1">
-                    {post.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
+            {allBlogs
+              .sort((a, b) => {
+                if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+                  return -1;
+                }
+                return 1;
+              })
+              .map((post: any) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="rounded-3xl bg-white/[.68] px-[24px] py-[19px] shadow-sm backdrop-blur-[23px]"
+                >
+                  <div className="w-full flex flex-col">
+                    <h2 className="font-inter text-subtitle text-dark1">
+                      <Balancer>{post.title}</Balancer>
+                    </h2>
+                    <p className="font-open-sans text-fs-lg text-dark1">
+                      {post.publishedAt}
+                    </p>
+                  </div>
+                </Link>
+              ))}
           </div>
         </Container>
       </section>

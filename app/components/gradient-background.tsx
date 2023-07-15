@@ -18,7 +18,7 @@ function GradientBackground() {
   return (
     <div>
       {/* rotate-180 */}
-      <canvas id="gradient-canvas" data-transition-in className="absolute" />
+      <canvas id="gradient-canvas" data-transition-in className="absolute " />
     </div>
   );
 }

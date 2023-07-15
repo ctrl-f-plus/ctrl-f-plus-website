@@ -50,19 +50,23 @@ export default async function Blog({ params }: BlogProps) {
           </Link>
           {/* Header Card */}
           {/* <div className="flex w-full items-center justify-center rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] tablet:px-32 tablet:py-14"> */}
-          <div className="flex w-full h-[307px] items-center justify-center rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] ">
-            <div className="flex justify-start bg-red-500 gap-[9.375rem]">
+          <div className="flex w-full h-[307px] items-center px-10 rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] ">
+            {/* bg-red-500 */}
+            <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col gap-6 ">
                 <h1 className="font-inter text-fs-xl text-dark1">
-                  {/* <Balancer>{post.title}</Balancer> */}
-                  {post.title}
+                  <Balancer>{post.title}</Balancer>
+                  {/* {post.title} */}
                 </h1>
+                <p className="font-open-sans text-fs-lg text-dark1">
+                  {post.publishedAt}
+                </p>
               </div>
             </div>
           </div>
 
           {/* <div className="bg-white p-10 rounded-3xl"> */}
-          <div className="rounded-3xl bg-white/[.68] px-[24px] py-[19px] shadow-sm backdrop-blur-[23px]">
+          <div className="bg-white/[.68] rounded-3xl  p-10 shadow-sm backdrop-blur-[23px]">
             <Mdx code={post?.body.code} />;
           </div>
         </Container>

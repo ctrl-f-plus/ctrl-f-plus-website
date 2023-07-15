@@ -33,17 +33,23 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} scroll-smooth antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} scroll-smooth antialiased  h-full`}
     >
-      <body className="debug-screens relative mx-auto">
-        <GradientBackground />
-        <div className="bg-white/[.47] shadow-bg backdrop-blur-[158.26499938964844px]">
-          <Navbar />
+      <body className="debug-screens flex min-h-full flex-col mx-auto">
+        <div className="flex relative flex-auto ">
+          <GradientBackground />
+          <div className="bg-white/[.47] shadow-bg backdrop-blur-[158.26499938964844px] w-full h-auto ">
+            <Navbar />
 
-          <main className="isolate flex h-full flex-col">{children}</main>
-
-          <Footer />
+            <main
+              className="flex-auto isolate  "
+              // className="flex-auto isolate flex flex-col"
+            >
+              {children}
+            </main>
+          </div>
         </div>
+        <Footer />
       </body>
     </html>
   );

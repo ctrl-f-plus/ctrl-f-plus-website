@@ -18,10 +18,6 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
   },
-  // url: {
-  //   type: 'string',
-  //   resolve: (post) => `/posts/${post._raw.flattenedPath}`,
-  // },
 };
 
 export const Blog = defineDocumentType(() => ({
@@ -31,7 +27,7 @@ export const Blog = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
-    // date: { type: 'date', required: true },
+    publishedAt: { type: 'string', required: true },
   },
   computedFields,
 }));
