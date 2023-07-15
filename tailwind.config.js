@@ -209,7 +209,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('tailwindcss-debug-screens'),
     ...(process.env.NODE_ENV === 'development'
       ? [require('tailwindcss-debug-screens')]
       : []),
