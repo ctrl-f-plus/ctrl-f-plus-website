@@ -38,18 +38,23 @@ export default function RootLayout({
       <body className="debug-screens flex min-h-full flex-col mx-auto">
         <div className="flex relative flex-auto ">
           <GradientBackground />
-          <div className="bg-white/[.47] shadow-bg backdrop-blur-[158.26499938964844px] w-full h-auto ">
+          {/* gap-20 flex flex-col */}
+          <div
+            className="bg-white/[.47] shadow-bg backdrop-blur-[158.26499938964844px] w-full h-auto flex flex-col
+            gap-18  tablet:gap-24 wide:gap-[7.625rem]
+          "
+          >
             <Navbar />
 
             <main
-              className="flex-auto isolate  "
+              className="flex-auto isolate"
               // className="flex-auto isolate flex flex-col"
             >
               {children}
             </main>
+            <Footer />
           </div>
         </div>
-        <Footer />
       </body>
     </html>
   );

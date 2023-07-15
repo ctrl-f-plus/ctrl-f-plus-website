@@ -47,7 +47,8 @@ export default function Navbar() {
 
   // http: return (
   return (
-    <header className="pt-5 mb-18  tablet:mb-24 wide:mb-[7.625rem] wide:pt-12 ">
+    // mb-18  tablet:mb-24 wide:mb-[7.625rem]
+    <header className="pt-5  wide:pt-12 ">
       <Container className="mx-auto flex w-full items-center justify-between ">
         <nav
           // scroll-pr-6 fade
