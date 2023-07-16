@@ -10,7 +10,7 @@ export default function page() {
   return (
     <div className="flex flex-col gap-18 tablet:gap-24 wide:gap-[7.625rem]">
       <Hero />
-      <FeaturesHeaderVersion2 />
+      {/* <FeaturesHeaderVersion2 /> */}
       <FeaturesHeader />
       <FeatureCard />
       <CallToAction />
