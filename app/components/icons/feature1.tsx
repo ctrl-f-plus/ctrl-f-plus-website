@@ -301,7 +301,7 @@ export default function FeatureIcon1({ className }: { className?: string }) {
         height="249"
         rx="16"
         fill="url(#pattern0)"
-        fill-opacity="0.53"
+        fillOpacity="0.53"
       />
       <rect
         x="31"
@@ -310,7 +310,7 @@ export default function FeatureIcon1({ className }: { className?: string }) {
         height="249"
         rx="16"
         fill="url(#paint0_linear_531_1265)"
-        fill-opacity="0.38"
+        fillOpacity="0.38"
       />
       <rect
         x="120.5"
@@ -445,8 +445,8 @@ export default function FeatureIcon1({ className }: { className?: string }) {
           y2="257"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0021CD" />
-          <stop offset="1" stop-color="#8CFFFF" />
+          <stop stopColor="#0021CD" />
+          <stop offset="1" stopColor="#8CFFFF" />
         </linearGradient>
         <image
           id="image0_531_1265"

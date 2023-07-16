@@ -21,7 +21,7 @@ export default function FeatureIcon3({ className }: { className?: string }) {
         height="249"
         rx="16"
         fill="url(#pattern0)"
-        fill-opacity="0.53"
+        fillOpacity="0.53"
       />
       <rect
         x="31"
@@ -30,7 +30,7 @@ export default function FeatureIcon3({ className }: { className?: string }) {
         height="249"
         rx="16"
         fill="url(#paint0_linear_118_1436)"
-        fill-opacity="0.38"
+        fillOpacity="0.38"
       />
       <rect
         x="172"
@@ -40,7 +40,7 @@ export default function FeatureIcon3({ className }: { className?: string }) {
         rx="16"
         fill="#69757B"
         stroke="white"
-        stroke-width="8"
+        strokeWidth="8"
       />
       <rect x="206.5" y="93.5" width="154" height="47" rx="9.5" fill="white" />
       <path
@@ -71,7 +71,7 @@ export default function FeatureIcon3({ className }: { className?: string }) {
         rx="11"
         fill="#F9F9F9"
         stroke="#A8AEB1"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <rect
         x="41.5"
@@ -145,8 +145,8 @@ export default function FeatureIcon3({ className }: { className?: string }) {
           y2="257"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0021CD" />
-          <stop offset="1" stop-color="#8CFFFF" />
+          <stop stopColor="#0021CD" />
+          <stop offset="1" stopColor="#8CFFFF" />
         </linearGradient>
         <image
           id="image0_118_1436"

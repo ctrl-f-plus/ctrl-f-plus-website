@@ -13,7 +13,7 @@ export default function SearchIcon({ className }: { className?: string }) {
       <g filter="url(#filter0_ddddii_130_5339)">
         <rect x="48" y="48" width="353" height="54" rx="12" fill="#222D31" />
       </g>
-      <g clip-path="url(#clip0_130_5339)">
+      <g clipPath="url(#clip0_130_5339)">
         <path
           d="M103.716 88.3679L95.9702 80.7461C97.9985 78.5424 99.2448 75.628 99.2448 72.421C99.2438 65.5606 93.5931 60 86.6221 60C79.6511 60 74.0004 65.5606 74.0004 72.421C74.0004 79.2814 79.6511 84.842 86.6221 84.842C89.6341 84.842 92.3966 83.8002 94.5665 82.0683L102.342 89.7201C102.721 90.0933 103.336 90.0933 103.715 89.7201C104.095 89.3469 104.095 88.7411 103.716 88.3679ZM86.6221 82.931C80.7239 82.931 75.9424 78.2255 75.9424 72.421C75.9424 66.6165 80.7239 61.911 86.6221 61.911C92.5204 61.911 97.3018 66.6165 97.3018 72.421C97.3018 78.2255 92.5204 82.931 86.6221 82.931Z"
           fill="white"
@@ -26,14 +26,14 @@ export default function SearchIcon({ className }: { className?: string }) {
       <path
         d="M375 66L383.5 74.5L375 83"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M343.5 83L335 74.5L343.5 66"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <defs>
         <filter
@@ -43,9 +43,9 @@ export default function SearchIcon({ className }: { className?: string }) {
           width="457"
           height="158"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

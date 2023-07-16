@@ -183,6 +183,9 @@ module.exports = {
       boxShadow: {
         bg: '-117.23332977294922px 117.23332977294922px 117.23332977294922px 0px rgba(255, 255, 255, 0.10) inset, 117.23332977294922px -117.23332977294922px 117.23332977294922px 0px rgba(165, 165, 165, 0.10) inset',
       },
+      backdropBlur: {
+        bg: '158px',
+      },
       typography: {
         quoteless: {
           css: {

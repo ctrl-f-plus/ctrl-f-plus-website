@@ -10,8 +10,6 @@ export default function FeaturesHeaderVersion2() {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
 
-  console.log(`render`);
-
   // function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
   function handleMouseMove({
     currentTarget,

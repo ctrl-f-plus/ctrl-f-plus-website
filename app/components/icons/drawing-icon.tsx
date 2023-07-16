@@ -131,8 +131,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="102.691"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFDFCF" />
-          <stop offset="1" stop-color="#FFA78F" />
+          <stop stopColor="#FFDFCF" />
+          <stop offset="1" stopColor="#FFA78F" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_290_9191"
@@ -142,8 +142,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="157.628"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5A5A5A" />
-          <stop offset="1" stop-color="#444444" />
+          <stop stopColor="#5A5A5A" />
+          <stop offset="1" stopColor="#444444" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_290_9191"
@@ -153,13 +153,13 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="112.942"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#C8EFFE" />
-          <stop offset="0.1044" stop-color="#BFECFD" />
-          <stop offset="0.2723" stop-color="#A8E4FB" />
-          <stop offset="0.4825" stop-color="#81D5F9" />
-          <stop offset="0.727" stop-color="#4CC2F5" />
-          <stop offset="0.9974" stop-color="#08A9F1" />
-          <stop offset="1" stop-color="#08A9F1" />
+          <stop stopColor="#C8EFFE" />
+          <stop offset="0.1044" stopColor="#BFECFD" />
+          <stop offset="0.2723" stopColor="#A8E4FB" />
+          <stop offset="0.4825" stopColor="#81D5F9" />
+          <stop offset="0.727" stopColor="#4CC2F5" />
+          <stop offset="0.9974" stopColor="#08A9F1" />
+          <stop offset="1" stopColor="#08A9F1" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_290_9191"
@@ -169,9 +169,9 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="59.0895"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0290CF" stop-opacity="0" />
-          <stop offset="0.9853" stop-color="#0290CF" stop-opacity="0.985" />
-          <stop offset="1" stop-color="#0290CF" />
+          <stop stopColor="#0290CF" stopOpacity="0" />
+          <stop offset="0.9853" stopColor="#0290CF" stopOpacity="0.985" />
+          <stop offset="1" stopColor="#0290CF" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_290_9191"
@@ -181,9 +181,9 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="145.444"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0290CF" stop-opacity="0" />
-          <stop offset="0.9853" stop-color="#0290CF" stop-opacity="0.985" />
-          <stop offset="1" stop-color="#0290CF" />
+          <stop stopColor="#0290CF" stopOpacity="0" />
+          <stop offset="0.9853" stopColor="#0290CF" stopOpacity="0.985" />
+          <stop offset="1" stopColor="#0290CF" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_290_9191"
@@ -193,8 +193,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="46.9868"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5A5A5A" />
-          <stop offset="1" stop-color="#444444" />
+          <stop stopColor="#5A5A5A" />
+          <stop offset="1" stopColor="#444444" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_290_9191"
@@ -204,8 +204,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="50.6916"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#433F43" stop-opacity="0" />
-          <stop offset="1" stop-color="#1A1A1A" />
+          <stop stopColor="#433F43" stopOpacity="0" />
+          <stop offset="1" stopColor="#1A1A1A" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_290_9191"
@@ -215,8 +215,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="50.8175"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#433F43" stop-opacity="0" />
-          <stop offset="1" stop-color="#1A1A1A" />
+          <stop stopColor="#433F43" stopOpacity="0" />
+          <stop offset="1" stopColor="#1A1A1A" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_290_9191"
@@ -226,9 +226,9 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="62.3655"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFFBF5" />
-          <stop offset="0.4893" stop-color="#FFF8EC" />
-          <stop offset="1" stop-color="#FFF2DE" />
+          <stop stopColor="#FFFBF5" />
+          <stop offset="0.4893" stopColor="#FFF8EC" />
+          <stop offset="1" stopColor="#FFF2DE" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_290_9191"
@@ -238,11 +238,11 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="52.703"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF2DE" stop-opacity="0" />
-          <stop offset="0.2223" stop-color="#FFEDD7" stop-opacity="0.222" />
-          <stop offset="0.5516" stop-color="#FFDFC3" stop-opacity="0.552" />
-          <stop offset="0.9456" stop-color="#FFC8A2" stop-opacity="0.946" />
-          <stop offset="1" stop-color="#FFC49D" />
+          <stop stopColor="#FFF2DE" stopOpacity="0" />
+          <stop offset="0.2223" stopColor="#FFEDD7" stopOpacity="0.222" />
+          <stop offset="0.5516" stopColor="#FFDFC3" stopOpacity="0.552" />
+          <stop offset="0.9456" stopColor="#FFC8A2" stopOpacity="0.946" />
+          <stop offset="1" stopColor="#FFC49D" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_290_9191"
@@ -252,9 +252,9 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="57.5247"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFFBF5" />
-          <stop offset="0.4893" stop-color="#FFF8EC" />
-          <stop offset="1" stop-color="#FFF2DE" />
+          <stop stopColor="#FFFBF5" />
+          <stop offset="0.4893" stopColor="#FFF8EC" />
+          <stop offset="1" stopColor="#FFF2DE" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_290_9191"
@@ -264,11 +264,11 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="62.9666"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF2DE" stop-opacity="0" />
-          <stop offset="0.2223" stop-color="#FFEDD7" stop-opacity="0.222" />
-          <stop offset="0.5516" stop-color="#FFDFC3" stop-opacity="0.552" />
-          <stop offset="0.9456" stop-color="#FFC8A2" stop-opacity="0.946" />
-          <stop offset="1" stop-color="#FFC49D" />
+          <stop stopColor="#FFF2DE" stopOpacity="0" />
+          <stop offset="0.2223" stopColor="#FFEDD7" stopOpacity="0.222" />
+          <stop offset="0.5516" stopColor="#FFDFC3" stopOpacity="0.552" />
+          <stop offset="0.9456" stopColor="#FFC8A2" stopOpacity="0.946" />
+          <stop offset="1" stopColor="#FFC49D" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_290_9191"
@@ -278,11 +278,11 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="59.3859"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF2DE" stop-opacity="0" />
-          <stop offset="0.2223" stop-color="#FFEDD7" stop-opacity="0.222" />
-          <stop offset="0.5516" stop-color="#FFDFC3" stop-opacity="0.552" />
-          <stop offset="0.9456" stop-color="#FFC8A2" stop-opacity="0.946" />
-          <stop offset="1" stop-color="#FFC49D" />
+          <stop stopColor="#FFF2DE" stopOpacity="0" />
+          <stop offset="0.2223" stopColor="#FFEDD7" stopOpacity="0.222" />
+          <stop offset="0.5516" stopColor="#FFDFC3" stopOpacity="0.552" />
+          <stop offset="0.9456" stopColor="#FFC8A2" stopOpacity="0.946" />
+          <stop offset="1" stopColor="#FFC49D" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_290_9191"
@@ -292,8 +292,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="133.426"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5A5A5A" />
-          <stop offset="1" stop-color="#444444" />
+          <stop stopColor="#5A5A5A" />
+          <stop offset="1" stopColor="#444444" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_290_9191"
@@ -303,8 +303,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="137.763"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#433F43" stop-opacity="0" />
-          <stop offset="1" stop-color="#1A1A1A" />
+          <stop stopColor="#433F43" stopOpacity="0" />
+          <stop offset="1" stopColor="#1A1A1A" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_290_9191"
@@ -314,8 +314,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="145.145"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#433F43" stop-opacity="0" />
-          <stop offset="1" stop-color="#1A1A1A" />
+          <stop stopColor="#433F43" stopOpacity="0" />
+          <stop offset="1" stopColor="#1A1A1A" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_290_9191"
@@ -325,9 +325,9 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="97.3911"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0290CF" stop-opacity="0" />
-          <stop offset="0.9853" stop-color="#0290CF" stop-opacity="0.985" />
-          <stop offset="1" stop-color="#0290CF" />
+          <stop stopColor="#0290CF" stopOpacity="0" />
+          <stop offset="0.9853" stopColor="#0290CF" stopOpacity="0.985" />
+          <stop offset="1" stopColor="#0290CF" />
         </linearGradient>
         <linearGradient
           id="paint17_linear_290_9191"
@@ -337,8 +337,8 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="184.507"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFDFCF" />
-          <stop offset="1" stop-color="#FFA78F" />
+          <stop stopColor="#FFDFCF" />
+          <stop offset="1" stopColor="#FFA78F" />
         </linearGradient>
         <linearGradient
           id="paint18_linear_290_9191"
@@ -348,10 +348,10 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="123.046"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F89580" stop-opacity="0" />
-          <stop offset="0.2699" stop-color="#F08F7A" stop-opacity="0.271" />
-          <stop offset="0.6945" stop-color="#D97F69" stop-opacity="0.696" />
-          <stop offset="0.9972" stop-color="#C5715A" />
+          <stop stopColor="#F89580" stopOpacity="0" />
+          <stop offset="0.2699" stopColor="#F08F7A" stopOpacity="0.271" />
+          <stop offset="0.6945" stopColor="#D97F69" stopOpacity="0.696" />
+          <stop offset="0.9972" stopColor="#C5715A" />
         </linearGradient>
         <linearGradient
           id="paint19_linear_290_9191"
@@ -361,10 +361,10 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="134.388"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F89580" stop-opacity="0" />
-          <stop offset="0.2699" stop-color="#F08F7A" stop-opacity="0.271" />
-          <stop offset="0.6945" stop-color="#D97F69" stop-opacity="0.696" />
-          <stop offset="0.9972" stop-color="#C5715A" />
+          <stop stopColor="#F89580" stopOpacity="0" />
+          <stop offset="0.2699" stopColor="#F08F7A" stopOpacity="0.271" />
+          <stop offset="0.6945" stopColor="#D97F69" stopOpacity="0.696" />
+          <stop offset="0.9972" stopColor="#C5715A" />
         </linearGradient>
         <linearGradient
           id="paint20_linear_290_9191"
@@ -374,9 +374,9 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="133.961"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFFBF5" />
-          <stop offset="0.4893" stop-color="#FFF8EC" />
-          <stop offset="1" stop-color="#FFF2DE" />
+          <stop stopColor="#FFFBF5" />
+          <stop offset="0.4893" stopColor="#FFF8EC" />
+          <stop offset="1" stopColor="#FFF2DE" />
         </linearGradient>
         <linearGradient
           id="paint21_linear_290_9191"
@@ -386,11 +386,11 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="133.961"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF2DE" stop-opacity="0" />
-          <stop offset="0.2223" stop-color="#FFEDD7" stop-opacity="0.222" />
-          <stop offset="0.5516" stop-color="#FFDFC3" stop-opacity="0.552" />
-          <stop offset="0.9456" stop-color="#FFC8A2" stop-opacity="0.946" />
-          <stop offset="1" stop-color="#FFC49D" />
+          <stop stopColor="#FFF2DE" stopOpacity="0" />
+          <stop offset="0.2223" stopColor="#FFEDD7" stopOpacity="0.222" />
+          <stop offset="0.5516" stopColor="#FFDFC3" stopOpacity="0.552" />
+          <stop offset="0.9456" stopColor="#FFC8A2" stopOpacity="0.946" />
+          <stop offset="1" stopColor="#FFC49D" />
         </linearGradient>
         <linearGradient
           id="paint22_linear_290_9191"
@@ -400,11 +400,11 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="173.995"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFF2DE" stop-opacity="0" />
-          <stop offset="0.2223" stop-color="#FFEDD7" stop-opacity="0.222" />
-          <stop offset="0.5516" stop-color="#FFDFC3" stop-opacity="0.552" />
-          <stop offset="0.9456" stop-color="#FFC8A2" stop-opacity="0.946" />
-          <stop offset="1" stop-color="#FFC49D" />
+          <stop stopColor="#FFF2DE" stopOpacity="0" />
+          <stop offset="0.2223" stopColor="#FFEDD7" stopOpacity="0.222" />
+          <stop offset="0.5516" stopColor="#FFDFC3" stopOpacity="0.552" />
+          <stop offset="0.9456" stopColor="#FFC8A2" stopOpacity="0.946" />
+          <stop offset="1" stopColor="#FFC49D" />
         </linearGradient>
         <linearGradient
           id="paint23_linear_290_9191"
@@ -414,10 +414,10 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="174.392"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F89580" stop-opacity="0" />
-          <stop offset="0.2699" stop-color="#F08F7A" stop-opacity="0.271" />
-          <stop offset="0.6945" stop-color="#D97F69" stop-opacity="0.696" />
-          <stop offset="0.9972" stop-color="#C5715A" />
+          <stop stopColor="#F89580" stopOpacity="0" />
+          <stop offset="0.2699" stopColor="#F08F7A" stopOpacity="0.271" />
+          <stop offset="0.6945" stopColor="#D97F69" stopOpacity="0.696" />
+          <stop offset="0.9972" stopColor="#C5715A" />
         </linearGradient>
         <linearGradient
           id="paint24_linear_290_9191"
@@ -427,10 +427,10 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="143.86"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F89580" stop-opacity="0" />
-          <stop offset="0.2699" stop-color="#F08F7A" stop-opacity="0.271" />
-          <stop offset="0.6945" stop-color="#D97F69" stop-opacity="0.696" />
-          <stop offset="0.9972" stop-color="#C5715A" />
+          <stop stopColor="#F89580" stopOpacity="0" />
+          <stop offset="0.2699" stopColor="#F08F7A" stopOpacity="0.271" />
+          <stop offset="0.6945" stopColor="#D97F69" stopOpacity="0.696" />
+          <stop offset="0.9972" stopColor="#C5715A" />
         </linearGradient>
         <linearGradient
           id="paint25_linear_290_9191"
@@ -440,10 +440,10 @@ export default function DrawingIcon({ className }: { className?: string }) {
           y2="158.117"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F89580" stop-opacity="0" />
-          <stop offset="0.2699" stop-color="#F08F7A" stop-opacity="0.271" />
-          <stop offset="0.6945" stop-color="#D97F69" stop-opacity="0.696" />
-          <stop offset="0.9972" stop-color="#C5715A" />
+          <stop stopColor="#F89580" stopOpacity="0" />
+          <stop offset="0.2699" stopColor="#F08F7A" stopOpacity="0.271" />
+          <stop offset="0.6945" stopColor="#D97F69" stopOpacity="0.696" />
+          <stop offset="0.9972" stopColor="#C5715A" />
         </linearGradient>
       </defs>
     </svg>

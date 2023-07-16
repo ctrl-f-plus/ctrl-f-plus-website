@@ -40,7 +40,7 @@ export default function RootLayout({
           <GradientBackground />
           {/* gap-20 flex flex-col */}
           <div
-            className="bg-white/[.47] shadow-bg backdrop-blur-[158.26499938964844px] w-full h-auto flex flex-col
+            className="bg-white/[.47] shadow-bg backdrop-blur-bg w-full h-auto flex flex-col
             gap-18  tablet:gap-24 wide:gap-[7.625rem]
           "
           >

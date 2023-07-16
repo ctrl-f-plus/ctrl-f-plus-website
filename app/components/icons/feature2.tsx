@@ -110,8 +110,8 @@ export default function FeatureIcon2({ className }: { className?: string }) {
           y2="257"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0021CD" />
-          <stop offset="1" stop-color="#8CFFFF" />
+          <stop stopColor="#0021CD" />
+          <stop offset="1" stopColor="#8CFFFF" />
         </linearGradient>
         <clipPath id="clip0_118_1409">
           <rect

@@ -29,16 +29,16 @@ export default function HeroAnimation({ className }: { className?: string }) {
       <path
         d="M375 66L383.5 74.5L375 83"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
       <path
         d="M343.5 83L335 74.5L343.5 66"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
-      <g clip-path="url(#clip1_130_5338)">
+      <g clipPath="url(#clip1_130_5338)">
         <g filter="url(#filter1_bii_130_5338)">
           <rect
             x="51"
@@ -47,7 +47,7 @@ export default function HeroAnimation({ className }: { className?: string }) {
             height="179"
             rx="24"
             fill="#D9D9D9"
-            fill-opacity="0.111"
+            fillOpacity="0.111"
           />
           <rect
             x="53"
@@ -56,7 +56,7 @@ export default function HeroAnimation({ className }: { className?: string }) {
             height="175"
             rx="22"
             stroke="white"
-            stroke-width="4"
+            strokeWidth="4"
           />
         </g>
         <path
@@ -66,7 +66,7 @@ export default function HeroAnimation({ className }: { className?: string }) {
         <circle cx="76.5" cy="169" r="5" fill="#F83A5C" />
         <circle cx="94.5" cy="169" r="5" fill="#FFF737" />
         <circle cx="112.5" cy="169" r="5" fill="#84DD97" />
-        <g clip-path="url(#clip2_130_5338)">
+        <g clipPath="url(#clip2_130_5338)">
           <path
             d="M130.498 212.472H121.018V289.528H130.498C147.343 289.528 161 272.278 161 251C161 229.722 147.343 212.472 130.498 212.472Z"
             fill="url(#paint0_linear_130_5338)"
@@ -201,9 +201,9 @@ export default function HeroAnimation({ className }: { className?: string }) {
           width="457"
           height="158"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -322,9 +322,9 @@ export default function HeroAnimation({ className }: { className?: string }) {
           width="436.781"
           height="268.781"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feGaussianBlur in="BackgroundImageFix" stdDeviation="22.4453" />
           <feComposite
             in2="SourceAlpha"
@@ -382,8 +382,8 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="290.621"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFA1AE" />
-          <stop offset="1" stop-color="#FF4565" />
+          <stop stopColor="#FFA1AE" />
+          <stop offset="1" stopColor="#FF4565" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_130_5338"
@@ -393,11 +393,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="264.596"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE0364" stop-opacity="0" />
-          <stop offset="0.2343" stop-color="#F90362" stop-opacity="0.234" />
-          <stop offset="0.5173" stop-color="#EA035B" stop-opacity="0.517" />
-          <stop offset="0.8243" stop-color="#D20250" stop-opacity="0.824" />
-          <stop offset="1" stop-color="#C00148" />
+          <stop stopColor="#FE0364" stopOpacity="0" />
+          <stop offset="0.2343" stopColor="#F90362" stopOpacity="0.234" />
+          <stop offset="0.5173" stopColor="#EA035B" stopOpacity="0.517" />
+          <stop offset="0.8243" stopColor="#D20250" stopOpacity="0.824" />
+          <stop offset="1" stopColor="#C00148" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_130_5338"
@@ -407,11 +407,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="287.209"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE0364" stop-opacity="0" />
-          <stop offset="0.2343" stop-color="#F90362" stop-opacity="0.234" />
-          <stop offset="0.5173" stop-color="#EA035B" stop-opacity="0.517" />
-          <stop offset="0.8243" stop-color="#D20250" stop-opacity="0.824" />
-          <stop offset="1" stop-color="#C00148" />
+          <stop stopColor="#FE0364" stopOpacity="0" />
+          <stop offset="0.2343" stopColor="#F90362" stopOpacity="0.234" />
+          <stop offset="0.5173" stopColor="#EA035B" stopOpacity="0.517" />
+          <stop offset="0.8243" stopColor="#D20250" stopOpacity="0.824" />
+          <stop offset="1" stopColor="#C00148" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_130_5338"
@@ -421,8 +421,8 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="265.836"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFA1AE" />
-          <stop offset="1" stop-color="#FF4565" />
+          <stop stopColor="#FFA1AE" />
+          <stop offset="1" stopColor="#FF4565" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_130_5338"
@@ -432,11 +432,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="250.839"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE0364" stop-opacity="0" />
-          <stop offset="0.2343" stop-color="#F90362" stop-opacity="0.234" />
-          <stop offset="0.5173" stop-color="#EA035B" stop-opacity="0.517" />
-          <stop offset="0.8243" stop-color="#D20250" stop-opacity="0.824" />
-          <stop offset="1" stop-color="#C00148" />
+          <stop stopColor="#FE0364" stopOpacity="0" />
+          <stop offset="0.2343" stopColor="#F90362" stopOpacity="0.234" />
+          <stop offset="0.5173" stopColor="#EA035B" stopOpacity="0.517" />
+          <stop offset="0.8243" stopColor="#D20250" stopOpacity="0.824" />
+          <stop offset="1" stopColor="#C00148" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_130_5338"
@@ -446,11 +446,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="292.346"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE0364" stop-opacity="0" />
-          <stop offset="0.2343" stop-color="#F90362" stop-opacity="0.234" />
-          <stop offset="0.5173" stop-color="#EA035B" stop-opacity="0.517" />
-          <stop offset="0.8243" stop-color="#D20250" stop-opacity="0.824" />
-          <stop offset="1" stop-color="#C00148" />
+          <stop stopColor="#FE0364" stopOpacity="0" />
+          <stop offset="0.2343" stopColor="#F90362" stopOpacity="0.234" />
+          <stop offset="0.5173" stopColor="#EA035B" stopOpacity="0.517" />
+          <stop offset="0.8243" stopColor="#D20250" stopOpacity="0.824" />
+          <stop offset="1" stopColor="#C00148" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_130_5338"
@@ -460,11 +460,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="258.096"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE0364" stop-opacity="0" />
-          <stop offset="0.2343" stop-color="#F90362" stop-opacity="0.234" />
-          <stop offset="0.5173" stop-color="#EA035B" stop-opacity="0.517" />
-          <stop offset="0.8243" stop-color="#D20250" stop-opacity="0.824" />
-          <stop offset="1" stop-color="#C00148" />
+          <stop stopColor="#FE0364" stopOpacity="0" />
+          <stop offset="0.2343" stopColor="#F90362" stopOpacity="0.234" />
+          <stop offset="0.5173" stopColor="#EA035B" stopOpacity="0.517" />
+          <stop offset="0.8243" stopColor="#D20250" stopOpacity="0.824" />
+          <stop offset="1" stopColor="#C00148" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_130_5338"
@@ -474,11 +474,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="272.034"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE0364" stop-opacity="0" />
-          <stop offset="0.2343" stop-color="#F90362" stop-opacity="0.234" />
-          <stop offset="0.5173" stop-color="#EA035B" stop-opacity="0.517" />
-          <stop offset="0.8243" stop-color="#D20250" stop-opacity="0.824" />
-          <stop offset="1" stop-color="#C00148" />
+          <stop stopColor="#FE0364" stopOpacity="0" />
+          <stop offset="0.2343" stopColor="#F90362" stopOpacity="0.234" />
+          <stop offset="0.5173" stopColor="#EA035B" stopOpacity="0.517" />
+          <stop offset="0.8243" stopColor="#D20250" stopOpacity="0.824" />
+          <stop offset="1" stopColor="#C00148" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_130_5338"
@@ -488,8 +488,8 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="263.188"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F5FBFF" />
-          <stop offset="1" stop-color="#DBD5EF" />
+          <stop stopColor="#F5FBFF" />
+          <stop offset="1" stopColor="#DBD5EF" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_130_5338"
@@ -499,8 +499,8 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="258.106"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F5FBFF" />
-          <stop offset="1" stop-color="#DBD5EF" />
+          <stop stopColor="#F5FBFF" />
+          <stop offset="1" stopColor="#DBD5EF" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_130_5338"
@@ -510,13 +510,13 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="249.535"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#DBD5EF" stop-opacity="0" />
-          <stop offset="0.2853" stop-color="#D9D2EE" stop-opacity="0.285" />
-          <stop offset="0.4739" stop-color="#D4C9E9" stop-opacity="0.474" />
-          <stop offset="0.6346" stop-color="#CBBAE2" stop-opacity="0.635" />
-          <stop offset="0.7795" stop-color="#BFA5D7" stop-opacity="0.78" />
-          <stop offset="0.9126" stop-color="#AF8ACA" stop-opacity="0.913" />
-          <stop offset="1" stop-color="#A274BF" />
+          <stop stopColor="#DBD5EF" stopOpacity="0" />
+          <stop offset="0.2853" stopColor="#D9D2EE" stopOpacity="0.285" />
+          <stop offset="0.4739" stopColor="#D4C9E9" stopOpacity="0.474" />
+          <stop offset="0.6346" stopColor="#CBBAE2" stopOpacity="0.635" />
+          <stop offset="0.7795" stopColor="#BFA5D7" stopOpacity="0.78" />
+          <stop offset="0.9126" stopColor="#AF8ACA" stopOpacity="0.913" />
+          <stop offset="1" stopColor="#A274BF" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_130_5338"
@@ -526,13 +526,13 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="256.678"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#DBD5EF" stop-opacity="0" />
-          <stop offset="0.2853" stop-color="#D9D2EE" stop-opacity="0.285" />
-          <stop offset="0.4739" stop-color="#D4C9E9" stop-opacity="0.474" />
-          <stop offset="0.6346" stop-color="#CBBAE2" stop-opacity="0.635" />
-          <stop offset="0.7795" stop-color="#BFA5D7" stop-opacity="0.78" />
-          <stop offset="0.9126" stop-color="#AF8ACA" stop-opacity="0.913" />
-          <stop offset="1" stop-color="#A274BF" />
+          <stop stopColor="#DBD5EF" stopOpacity="0" />
+          <stop offset="0.2853" stopColor="#D9D2EE" stopOpacity="0.285" />
+          <stop offset="0.4739" stopColor="#D4C9E9" stopOpacity="0.474" />
+          <stop offset="0.6346" stopColor="#CBBAE2" stopOpacity="0.635" />
+          <stop offset="0.7795" stopColor="#BFA5D7" stopOpacity="0.78" />
+          <stop offset="0.9126" stopColor="#AF8ACA" stopOpacity="0.913" />
+          <stop offset="1" stopColor="#A274BF" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_130_5338"
@@ -542,8 +542,8 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="247.077"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#B3DAFE" />
-          <stop offset="1" stop-color="#0182FC" />
+          <stop stopColor="#B3DAFE" />
+          <stop offset="1" stopColor="#0182FC" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_130_5338"
@@ -553,11 +553,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="249.948"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_130_5338"
@@ -567,11 +567,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="249.594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_130_5338"
@@ -581,11 +581,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="248.738"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_130_5338"
@@ -595,11 +595,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="246.822"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint17_linear_130_5338"
@@ -609,11 +609,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="242.06"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint18_linear_130_5338"
@@ -623,8 +623,8 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="262.243"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#B3DAFE" />
-          <stop offset="1" stop-color="#0182FC" />
+          <stop stopColor="#B3DAFE" />
+          <stop offset="1" stopColor="#0182FC" />
         </linearGradient>
         <linearGradient
           id="paint19_linear_130_5338"
@@ -634,11 +634,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="266.456"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint20_linear_130_5338"
@@ -648,11 +648,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="252.406"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint21_linear_130_5338"
@@ -662,11 +662,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="253.262"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint22_linear_130_5338"
@@ -676,11 +676,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="255.178"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint23_linear_130_5338"
@@ -690,11 +690,11 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="259.94"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#314DC9" stop-opacity="0" />
-          <stop offset="0.2761" stop-color="#304BC4" stop-opacity="0.276" />
-          <stop offset="0.5628" stop-color="#2B45B8" stop-opacity="0.563" />
-          <stop offset="0.8535" stop-color="#243BA3" stop-opacity="0.854" />
-          <stop offset="1" stop-color="#1F3596" />
+          <stop stopColor="#314DC9" stopOpacity="0" />
+          <stop offset="0.2761" stopColor="#304BC4" stopOpacity="0.276" />
+          <stop offset="0.5628" stopColor="#2B45B8" stopOpacity="0.563" />
+          <stop offset="0.8535" stopColor="#243BA3" stopOpacity="0.854" />
+          <stop offset="1" stopColor="#1F3596" />
         </linearGradient>
         <linearGradient
           id="paint24_linear_130_5338"
@@ -704,8 +704,8 @@ export default function HeroAnimation({ className }: { className?: string }) {
           y2="252.092"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5A5A5A" />
-          <stop offset="1" stop-color="#444444" />
+          <stop stopColor="#5A5A5A" />
+          <stop offset="1" stopColor="#444444" />
         </linearGradient>
         <clipPath id="clip0_130_5338">
           <rect
