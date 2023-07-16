@@ -4,6 +4,7 @@
 import {
   motion,
   useMotionTemplate,
+  useMotionValue,
   useSpring,
   useTransform,
 } from 'framer-motion';
@@ -20,8 +21,11 @@ export default function FeaturesHeader() {
   // let mouseX = useSpring(0, { stiffness: 80, damping: 50 });
   // let mouseY = useSpring(0, { stiffness: 80, damping: 50 });
 
-  let mouseX = useSpring(0, { stiffness: 80, damping: 30 });
-  let mouseY = useSpring(0, { stiffness: 80, damping: 30 });
+  // let mouseX = useSpring(0, { stiffness: 80, damping: 30 });
+  // let mouseY = useSpring(0, { stiffness: 80, damping: 30 });
+
+  let mouseX = useSpring(0, { stiffness: 90, damping: 20 });
+  let mouseY = useSpring(0, { stiffness: 90, damping: 20 });
   let initialRender = true;
 
   useEffect(() => {
@@ -91,7 +95,8 @@ export default function FeaturesHeader() {
               style={{
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskImage:
-                  'radial-gradient(300px 300px, rgba(0, 0, 0, 1),  transparent)',
+                  // 'radial-gradient(300px 300px ,rgba(0, 0, 0, 1), 30%,transparent 100%)',
+                  'radial-gradient(300px 300px, rgba(0, 0, 0, .9),  transparent)',
                 WebkitMaskPosition: webkitMaskPosition,
                 // backgroundColor: 'rgba(0, 0, 0, .3)',
               }}
@@ -102,6 +107,15 @@ export default function FeaturesHeader() {
             >
               <CardText />
             </motion.div>
+
+            {/* <motion.div
+              style={{ backgroundColor: '#03AF7D', position: 'absolute' }}
+              whileHover={{ scale: 1.1, filter: 'blur(5px)', opacity: 0.5 }}
+            ></motion.div>
+            <motion.div
+              style={{ backgroundColor: '#03AF7D', position: 'absolute' }}
+              whileHover={{ scale: 1 }}
+            ></motion.div> */}
           </div>
         </div>
 
