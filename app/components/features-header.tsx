@@ -65,7 +65,8 @@ export default function FeaturesHeader() {
         <h2 className="font-inter text-fs-base text-white ">
           Tab Junkie? Meet Your New Best Friend.
         </h2>
-        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#0021CD] via-[#F9F9F9] to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent  tab-pro:text-fs-xl">
+        {/* <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#0021CD] via-[#F9F9F9] to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:gradient-text-none"> */}
+        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#6ec3f4] via-[#eae2ff] to-[#b9beff] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:text-white">
           Your Guiding Light in the Tab Chaos
         </h3>
         <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ">
@@ -96,7 +97,7 @@ export default function FeaturesHeader() {
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskImage:
                   // 'radial-gradient(300px 300px ,rgba(0, 0, 0, 1), 30%,transparent 100%)',
-                  'radial-gradient(300px 300px, rgba(0, 0, 0, .9),  transparent)',
+                  'radial-gradient(300px 300px, rgba(0, 0, 0, .7),  transparent)',
                 WebkitMaskPosition: webkitMaskPosition,
                 // backgroundColor: 'rgba(0, 0, 0, .3)',
               }}
