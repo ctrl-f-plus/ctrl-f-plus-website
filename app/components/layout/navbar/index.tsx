@@ -59,10 +59,11 @@ export default function Navbar() {
           aria-label="Global"
         >
           {/* -m-1.5 p-1.5 */}
-          <Link href="/" className="">
+          {/* Link??? */}
+          <a href="/" className="">
             <span className="sr-only">Ctrl-F Plus</span>
             <LogoIcon />
-          </Link>
+          </a>
 
           <div className="flex laptop:hidden">
             <button

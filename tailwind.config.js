@@ -8,9 +8,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    //styleName: subtitle;
-    // font-family: Inter; font-size: 23px; font-weight: 600; line-height: 30px; letter-spacing: 0em; text-align: center;
-
     extend: {
       fontSize: {
         "fs-base": ["1rem", { lineHeight: "130%", fontWeight: "600" }],
@@ -24,7 +21,6 @@ module.exports = {
         "fs-x0": ["2.0625rem", { lineHeight: "100%", fontWeight: "800" }],
         "fs-xl": ["3.4375rem", { lineHeight: "120%", fontWeight: "800" }], // INTRO
 
-        //
         subtitle: ["1.4375rem", { lineHeight: "1.3", fontWeight: "600" }],
 
         "h1-blog": ["1.75rem", { lineHeight: "1.3", fontWeight: "600" }],
@@ -32,53 +28,14 @@ module.exports = {
         "button-18": ["1.125rem", { lineHeight: "normal", fontWeight: "600" }], //
       },
       screens: {
-        // tablet: '640px',
-        // laptop: '768px',
-        // desktop: '1024px',
-        // wide: '1280px',
-
-        // sm: '640px',
-        // md: '768px',
-        // lg: '1024px',
-        // xl: '1280px',
-        // '2xl': '1536px',
-
-        // sm: '576px', // Small devices (landscape phones, 576px and up)
-        // md: '768px', // Medium devices (tablets, 768px and up)
-        // lg: '992px', // Large devices (desktops, 992px and up)
-        // xl: '1200px', // Extra large devices (large desktops, 1200px and up)
-        // xxl: '1400px', //
-
-        // sm: '320px', // Extra small devices
-        // md: '480px', // Small devices, large smartphones
-        // lg: '768px', // Medium devices, tablets
-        // xl: '900px', // Large tablets, small laptops
-        // '2xl': '1024px', // Small desktops
-        // '3xl': '1280px', // Large desktops
-        // '4xl': '1920px', // HD screens
-        // '5xl': '3840px', // 4K screens
         iphone: "380px",
         tablet: "480px",
         // tablet2: '640px',
         "tab-pro": "768px",
-        laptop: "900px", //*
+        laptop: "900px",
         desktop: "1024px",
         wide: "1280px",
         "2xl": "1536px",
-
-        // tablet: '430px',
-        // 'tab-pro': '768px',
-        // laptop: '900px',
-        // desktop: '1024px',
-        // wide: '1280px',
-
-        // tablet: '430px',
-        // // 'tablet-pro': '640px',
-        // 'tablet-pro': '768px',
-        // // laptop: '768px',
-        // laptop: '900px',
-        // desktop: '1024px',
-        // wide: '1280px',
       },
       spacing: {
         6.5: "1.625rem", // 26px
@@ -117,16 +74,7 @@ module.exports = {
         "open-sans": ["var(--font-open-sans)"],
         arimo: ["var(--font-arimo)"],
       },
-      // backgroundImage: {
-      //   'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      //   'gradient-conic':
-      //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      // },
       colors: {
-        "light-blue": "#B0D6EC",
-        "light-purple": "#C8ADEB",
-
-        // TODO: WHICH COLOR IS THE HIGHLIGHT COLOR - SEE BLOG HEADER CARD?
         "highlight-focus": "#53E7BB",
         "highlight-focus-1": "#48D0A8",
         dark1: "#1B2528",
@@ -141,22 +89,6 @@ module.exports = {
         "gradient-gray-1": "#5A5A5A",
         "gradient-gray-2": "#606060",
       },
-      // animation: {
-      //   'gradient-x': 'gradient-x .5s ease infinite',
-      //   gradient: 'animatedgradient 6s ease infinite alternate',
-      // },
-      // keyframes: {
-      // 'gradient-x': {
-      //   '0%, 100%': {
-      //     'background-size': '200% 200%',
-      //     'background-position': 'right center',
-      //   },
-      //   '50%': {
-      //     'background-size': '200% 200%',
-      //     'background-position': 'left center',
-      //   },
-      // },
-      // },
 
       animation: {
         gradient: "animatedgradient 6s ease infinite alternate",
@@ -182,7 +114,6 @@ module.exports = {
       backgroundSize: {
         "300%": "300%",
       },
-
       cursor: {
         "magnifying-glass": `url('/images/magnifyicon.svg'), auto`,
       },

@@ -29,7 +29,7 @@ export default async function Blog({ params }: BlogProps) {
         <Container className="mx-auto flex flex-col">
           {/* Header Card */}
           {/* justify-center */}
-          {/* <Link
+          <Link
             href="/blog"
             className="group flex flex-row items-center justify-start gap-2 font-open-sans text-button-18 text-mongo-black group-hover:text-primary2 tablet:mt-10"
           >
@@ -48,7 +48,7 @@ export default async function Blog({ params }: BlogProps) {
             <span className="duration-100 ease-in group-hover:text-primary2">
               back
             </span>
-          </Link> */}
+          </Link>
           <div className="mt-4 flex min-h-[322px] w-full items-center  rounded-3xl bg-white/[.47] p-14 shadow-sm backdrop-blur-[23px] tablet:mt-10 tab-pro:px-14 laptop:px-16 desktop:px-20">
             {/*  */}
             {/* Content */}
@@ -56,12 +56,9 @@ export default async function Blog({ params }: BlogProps) {
             {/* bg-blue-500 */}
             <div className="flex min-h-[206px] justify-start gap-[9.375rem] ">
               <div className="flex flex-col items-start justify-center gap-6 ">
-                <h1 className="font-inter text-fs-xl text-dark1">
-                  {post.title}
-                </h1>
-
-                <Balancer className="font-open-sans text-fs-lg text-dark1 ">
+                <Balancer className="font-open-sans text-fs-lg text-[#889397] ">
                   {post.publishedAt}
+
                   {/* Welcome to development journey of{" "}
                   <span className=" text-highlight-focus-1">
                     Ctrl-F Plus!
@@ -70,12 +67,37 @@ export default async function Blog({ params }: BlogProps) {
                   successes. I hope you enjoy reading about my experiences and
                   find them inspiring. */}
                 </Balancer>
+                <h1 className="font-inter text-fs-xl text-dark1">
+                  {post.title}
+                </h1>
+
+                <div
+                  // mt-8
+                  className="relative  flex items-center gap-x-4"
+                >
+                  <img
+                    // src={post.author.imageUrl}
+                    src={
+                      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                    }
+                    alt=""
+                    className="h-10 w-10 rounded-full bg-gray-50"
+                  />
+                  <div className="text-sm leading-6">
+                    {/* <p className="text-gray-600">{post.author}</p> */}
+                    <p className="font-open-sans text-fs-lg text-dark1">
+                      {post.author}
+                    </p>
+                  </div>
+                </div>
               </div>
+
               <div className="hidden desktop:block">
                 {/* <DrawingIcon /> */}
               </div>
             </div>
           </div>
+
           {/* <div className="mt-10 grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
             {allBlogs
               .sort((a, b) => {
