@@ -61,15 +61,16 @@ export default function FeaturesHeader() {
 
   function CardText() {
     return (
-      <div className=" flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18">
-        <h2 className="font-inter text-fs-base text-white ">
+      <div className=" flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
+        <h2 className="font-inter text-fs-base text-white wide:text-text-dark">
           Tab Junkie? Meet Your New Best Friend.
         </h2>
         {/* <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#0021CD] via-[#F9F9F9] to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:gradient-text-none"> */}
-        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#6ec3f4] via-[#eae2ff] to-[#b9beff] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:text-white">
+        {/* <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-gradient-blue via-gradient-slate to-gradient-cyan bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent "> */}
+        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-gradient-gray-1 via-gradient-gray-2 to-gradient-gray-2 bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent ">
           Your Guiding Light in the Tab Chaos
         </h3>
-        <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ">
+        <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white wide:text-text-dark">
           Tab overload? We&apos;ve got your back. Unearth any word or phrase
           hidden in the depths of your browser.
         </p>
@@ -81,11 +82,11 @@ export default function FeaturesHeader() {
     <>
       <Container
         id="features-header"
-        className="mx-auto flex w-full scroll-mt-12 flex-col justify-center"
+        className="mx-auto flex w-full scroll-mt-12 flex-col justify-center mt-18 tablet:mt-24 wide:mt-[7.625rem] "
       >
         <div
           onMouseMove={handleMouseMove}
-          className=" group relative hidden rounded-[2.25rem] bg-dark1 shadow-xl  backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass"
+          className=" group relative hidden rounded-[2.25rem] bg-dark1 shadow-xl  backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass "
         >
           <div className=" relative max-h-146 overflow-hidden rounded-[2.25rem]">
             <motion.div
@@ -93,16 +94,18 @@ export default function FeaturesHeader() {
               // pointer-events-none
               // hidden
               className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] p-18 file:group-hover:opacity-100 wide:block"
+              // myElement
               style={{
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskImage:
-                  // 'radial-gradient(300px 300px ,rgba(0, 0, 0, 1), 30%,transparent 100%)',
-                  'radial-gradient(300px 300px, rgba(0, 0, 0, .7),  transparent)',
+                  'radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)',
                 WebkitMaskPosition: webkitMaskPosition,
-                // backgroundColor: 'rgba(0, 0, 0, .3)',
               }}
               // TODO: Try to add more blur
-              whileHover={{ backgroundColor: '#03AF7D' }}
+              whileHover={{
+                backgroundColor: '#03AF7D',
+              }}
+              // whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.9 }}
               // transition={{ type: 'spring', stiffness: 50, damping: 100 }}
             >

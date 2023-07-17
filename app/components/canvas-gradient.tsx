@@ -4,10 +4,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-console.log('render1');
-function GradientBackground() {
+function CanvasGradient() {
   const [Gradient, setGradient] = useState(null);
-  const [networkSpeed, setNetworkSpeed] = useState('4g');
 
   useEffect(() => {
     import('../../public/gradient').then(({ Gradient }) => {
@@ -22,15 +20,13 @@ function GradientBackground() {
 
   return (
     <div>
+      {/* <canvas id="gradient-canvas" className="absolute w-screen h-screen " /> */}
       <canvas
         id="gradient-canvas"
-        data-transition-in
-        className="absolute w-screen h-screen"
+        className="absolute w-screen h-screen bg-gradient-cyan/50"
       />
-      {/* <canvas id="gradient-canvas" data-transition-in className="absolute   " /> */}
     </div>
   );
 }
 
-export default GradientBackground;
-// export default React.memo(GradientBackground);
+export default CanvasGradient;

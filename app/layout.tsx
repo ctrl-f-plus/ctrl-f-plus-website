@@ -1,5 +1,5 @@
 import { Inter, Open_Sans, Arimo } from 'next/font/google';
-import GradientBackground from './components/gradient-background';
+import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
 import './globals.css';
@@ -37,11 +37,11 @@ export default function RootLayout({
     >
       <body className="debug-screens flex min-h-full flex-col mx-auto">
         <div className="flex relative flex-auto ">
-          <GradientBackground />
-          {/* gap-20 flex flex-col */}
+          <CanvasGradient />
           <div
-            // className="bg-white/[.47] w-full h-auto flex flex-col gap-18  tablet:gap-24 wide:gap-[7.625rem]"
-            className="bg-white/[.47] shadow-bg backdrop-blur-bg w-full h-auto flex flex-col gap-18  tablet:gap-24 wide:gap-[7.625rem]"
+            // gap-18 tablet:gap-24 wide:gap-[7.625rem]
+            className=" w-full h-auto flex flex-col "
+            // className="bg-white/[.47] shadow-bg backdrop-blur-bg w-full h-auto flex flex-col"
           >
             <Navbar />
 

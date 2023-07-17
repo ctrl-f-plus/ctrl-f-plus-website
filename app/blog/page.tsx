@@ -1,61 +1,64 @@
 // app/blog/page.tsx
 
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { allBlogs } from 'contentlayer/generated';
-import DrawingIcon from '../components/icons/drawing-icon';
-import Container from '../components/layout/Container';
-import BlogCard from './components/blog-card';
-import { Balancer } from 'react-wrap-balancer';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { allBlogs } from "contentlayer/generated";
+import DrawingIcon from "../components/icons/drawing-icon";
+import Container from "../components/layout/Container";
+import BlogCard from "./components/blog-card";
+import { Balancer } from "react-wrap-balancer";
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Blog posts index page metadata description',
+  title: "Blog",
+  description: "Blog posts index page metadata description",
 };
 
 const blogPosts = [
-  { title: 'Environment variables and GraphQL queries 1', date: '7/14/23' },
-  { title: 'Environment variables and GraphQL queries 2', date: '7/14/23' },
-  { title: 'Environment variables and GraphQL queries 3', date: '7/14/23' },
-  { title: 'Environment variables and GraphQL queries 4', date: '7/14/23' },
-  { title: 'Environment variables and GraphQL queries 5', date: '7/14/23' },
-  { title: 'Blog Post 2', date: '7/14/23' },
-  { title: 'Blog Post 3', date: '7/14/23' },
-  { title: 'Blog Post 4', date: '7/14/23' },
-  { title: 'Blog Post 5', date: '7/14/23' },
-  { title: 'Blog Post 6', date: '7/14/23' },
-  { title: 'Blog Post 7', date: '7/14/23' },
+  { title: "Environment variables and GraphQL queries 1", date: "7/14/23" },
+  { title: "Environment variables and GraphQL queries 2", date: "7/14/23" },
+  { title: "Environment variables and GraphQL queries 3", date: "7/14/23" },
+  { title: "Environment variables and GraphQL queries 4", date: "7/14/23" },
+  { title: "Environment variables and GraphQL queries 5", date: "7/14/23" },
+  { title: "Blog Post 2", date: "7/14/23" },
+  { title: "Blog Post 3", date: "7/14/23" },
+  { title: "Blog Post 4", date: "7/14/23" },
+  { title: "Blog Post 5", date: "7/14/23" },
+  { title: "Blog Post 6", date: "7/14/23" },
+  { title: "Blog Post 7", date: "7/14/23" },
 ];
 
 export default function BlogPage() {
   return (
     <>
       <section>
-        <Container className="mx-auto flex flex-col gap-y-10 p-2">
+        <Container className="mx-auto flex flex-col">
           {/* Header Card */}
-          <div className="flex w-full items-center justify-center rounded-3xl bg-white/[.47] shadow-sm backdrop-blur-[23px] tablet:px-32 tablet:py-14">
-            {/*  */}
 
+          <div className="mt-4 flex w-full items-center justify-center rounded-3xl bg-white/[.47] p-14 shadow-sm backdrop-blur-[23px] tablet:mt-10 tab-pro:px-14  laptop:px-16 desktop:px-20 ">
+            {/*  */}
             {/* Content */}
             {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6 ">
                 <h1 className="font-inter text-fs-xl text-dark1">Blog</h1>
-                <p className="font-open-sans text-fs-lg text-dark1">
-                  Welcome to development journey of{' '}
-                  <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}
+
+                <Balancer className="font-open-sans text-fs-lg text-dark1">
+                  Welcome to development journey of{" "}
+                  <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{" "}
                   Here, you can find articles about my progress, challenges, and
                   successes. I hope you enjoy reading about my experiences and
                   find them inspiring.
-                </p>
+                </Balancer>
               </div>
               <div className="hidden desktop:block">
                 <DrawingIcon />
               </div>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
+          <div
+            className="mt-10 grid grid-cols-1 gap-3 gap-x-10 laptop:grid-cols-2 laptop:px-[40px]
+          "
+          >
             {allBlogs
               .sort((a, b) => {
                 if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
@@ -67,9 +70,9 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="rounded-3xl bg-white/[.68] px-[24px] py-[19px] shadow-sm backdrop-blur-[23px]"
+                  className="rounded-3xl bg-white/[.68] px-[40px] py-[19px] shadow-sm backdrop-blur-[23px]"
                 >
-                  <div className="w-full flex flex-col">
+                  <div className="flex w-full flex-col">
                     <h2 className="font-inter text-subtitle text-dark1">
                       <Balancer>{post.title}</Balancer>
                     </h2>

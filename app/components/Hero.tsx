@@ -1,30 +1,40 @@
 // app/components/Hero.tsx
 
-import ButtonPrimary from './ButtonPrimary';
-import HeroAnimation from './icons/hero-animation';
-import Container from './layout/Container';
-import Image from 'next/image';
+import ButtonPrimary from "./ButtonPrimary";
+import HeroAnimation from "./icons/hero-animation";
+import Container from "./layout/Container";
+import Image from "next/image";
 
 // TODO: YOu have double the top padding that you need/should have
 export default function Hero() {
   return (
     <>
       {/* className="mx-auto flex w-full flex-col bg-red-500" */}
+
       <Container
         // className="flex laptop:flex-row laptop:justify-between"
-        className="mx-auto flex w-full flex-col laptop:flex-row laptop:justify-between wide:h-109"
+        className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 laptop:flex-row laptop:justify-between wide:mt-[7.625rem] wide:h-109"
       >
         {/* gap-[3.44rem] */}
         <div className="flex w-full flex-col gap-14 laptop:max-w-[586px] wide:gap-28">
-          <div className="relative flex flex-col items-start gap-8 ">
+          <div className="relative flex flex-col items-start gap-8">
             <h1 className="z-10 font-inter text-fs-xl text-dark1">
               Ctrl-F Plus:
               <br />
               <span className="whitespace-nowrap">For the</span>
               <br className="tab-pro:hidden" />
-              <span className="-mx-2 whitespace-nowrap rounded-2xl bg-highlight-focus px-2 tab-pro:ml-1 ">
+              <span
+                className="rounded-2xl bg-highlight-focus iphone:-mx-2 iphone:whitespace-nowrap iphone:px-2 tab-pro:ml-1"
+                // className="-mx-2 hidden whitespace-nowrap rounded-2xl bg-highlight-focus px-2 iphone:block  tab-pro:ml-1"
+              >
                 Tab Hoarders
               </span>
+              {/* <span className="-mx-2  rounded-2xl bg-highlight-focus px-2 iphone:hidden  tab-pro:ml-1">
+                Tab{" "}
+              </span>
+              <span className="-mx-2  rounded-2xl bg-highlight-focus px-2 iphone:hidden  tab-pro:ml-1">
+                Hoarders
+              </span> */}
             </h1>
             {/* max-w-[23.4375rem] */}
             <p className="max-w-full font-open-sans text-fs-lg text-dark1 tablet:max-w-[48rem]">

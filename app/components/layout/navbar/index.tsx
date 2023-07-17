@@ -1,48 +1,51 @@
-'use client';
+"use client";
 // app/components/layout/navbar/index.tsx
 
-import clsx from 'clsx';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import LogoIcon from '../../icons/logo';
-import MenuIcon from '../../icons/menu';
-import Container from '../Container';
-import MobileMenu from './mobile-menu';
+import clsx from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import LogoIcon from "../../icons/logo";
+import MenuIcon from "../../icons/menu";
+import Container from "../Container";
+import MobileMenu from "./mobile-menu";
 
 const navigation = [
-  { name: 'Features', path: '/#features-header' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'About', path: '#' },
-  { name: 'Donate', path: '#' },
+  { name: "Features", path: "/#features-header" },
+  { name: "Blog", path: "/blog" },
+  { name: "About", path: "#" },
+  { name: "Donate", path: "#" },
 ];
 
 const navItems = {
-  '/#features-header': {
-    name: 'Features',
+  "/": {
+    name: "Home",
   },
-  '/blog': {
-    name: 'Blog',
+  "/#features-header": {
+    name: "Features",
   },
-  '/about': {
-    name: 'About',
+  "/blog": {
+    name: "Blog",
   },
-  '/donate': {
-    name: 'Donate',
+  "/about": {
+    name: "About",
+  },
+  "/donate": {
+    name: "Donate",
   },
 };
 
 function classNames(...classes: any[]) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 // TODO: Fix Mobile menu
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  let pathname = usePathname() || '/';
-  if (pathname.includes('/blog/')) {
-    pathname = '/blog';
+  let pathname = usePathname() || "/";
+  if (pathname.includes("/blog/")) {
+    pathname = "/blog";
   }
 
   // http: return (
@@ -85,11 +88,11 @@ export default function Navbar() {
                   <a
                     key={path}
                     href={path}
-                    className={clsx(' text-primary2 transition-all ', {
-                      '!text-dark1 hover:!text-dark1/80': !isActive,
+                    className={clsx(" mx-1 text-primary2 transition-all ", {
+                      "!text-dark1 hover:!text-dark1/80": !isActive,
                     })}
                   >
-                    <span className="text-dark-1 px-4 text-fs-lg">{name}</span>
+                    <span className="text-dark-1 text-fs-lg">{name}</span>
                   </a>
                 );
               })}

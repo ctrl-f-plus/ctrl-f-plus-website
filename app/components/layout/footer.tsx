@@ -8,8 +8,7 @@ export default function Footer() {
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
 
   return (
-    // mt-56 tablet:mt-80 wide:mt-96
-    <footer className="bg-dark1">
+    <footer className="bg-dark1 mt-18 tablet:mt-24 wide:mt-[7.625rem]">
       <Container className="mx-auto flex h-[5.375rem] w-full items-center justify-between">
         <LogoIconSecondary />
         {/* <p>&copy; 2020 Your Company, Inc. All rights reserved.</p> */}

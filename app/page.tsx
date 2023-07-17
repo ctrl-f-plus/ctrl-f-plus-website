@@ -8,7 +8,7 @@ import FeaturesHeaderVersion2 from './components/features-header-version2';
 
 export default function page() {
   return (
-    <div className="flex flex-col gap-18 tablet:gap-24 wide:gap-[7.625rem]">
+    <div className="flex flex-col">
       <Hero />
       {/* <FeaturesHeaderVersion2 /> */}
       <FeaturesHeader />
