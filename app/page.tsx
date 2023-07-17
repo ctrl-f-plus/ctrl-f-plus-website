@@ -1,10 +1,11 @@
 // app/tab-hoarders/page.tsx
 
-import Hero from './components/Hero';
-import CallToAction from './components/call-to-action';
-import FeatureCard from './components/feature-card';
-import FeaturesHeader from './components/features-header';
-import FeaturesHeaderVersion2 from './components/features-header-version2';
+import Hero from "./components/Hero";
+import CallToAction from "./components/call-to-action";
+import FeatureCard from "./components/feature-card";
+import FeaturesHeader from "./components/features-header";
+import FeaturesHeaderVersion2 from "./components/features-header-version2";
+import Footer from "./components/layout/footer";
 
 export default function page() {
   return (
@@ -14,6 +15,7 @@ export default function page() {
       <FeaturesHeader />
       <FeatureCard />
       <CallToAction />
+      {/* <Footer /> */}
     </div>
   );
 }

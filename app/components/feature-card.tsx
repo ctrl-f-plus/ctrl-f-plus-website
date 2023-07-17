@@ -29,6 +29,18 @@ const features = [
 ];
 
 export default function FeatureCard() {
+  const cardVariants = (index: number) => {
+    return {
+      hidden: { opacity: 0 },
+      show: {
+        opacity: 1,
+        transition: {
+          duration: 1,
+        },
+      },
+    };
+  };
+
   const iconVariants = (index: number) => {
     const initialXOffset = index % 2 === 1 ? "500" : "-500";
 
@@ -71,8 +83,8 @@ export default function FeatureCard() {
                 className="flex min-h-154 items-center  justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
                 whileInView="show"
                 initial="hidden"
-                // viewport={{ once: true }}
-                // variants={cardVariants(index)}
+                viewport={{ once: true }}
+                variants={cardVariants(index)}
               >
                 <div className="flex flex-col gap-9 laptop:flex-row">
                   <motion.div

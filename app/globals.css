@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 /* ::selection {
   background-color: #ff0000;
@@ -119,28 +119,11 @@
 
   /* filter: blur(158px); */
 
-  /* --gradient-color-1: #f5fbff;
-  --gradient-color-2: #dde3ee;
-  --gradient-color-3: #f2effb;
-  --gradient-color-4: #d4ece5; */
+  --gradient-color-1: #f5fbff; /*gradient-blue: #f5fbff */
+  --gradient-color-2: #dde3ee; /*gradient-slate: #dde3ee */
+  --gradient-color-3: #f2effb; /*gradient-lavender: #f2effb */
+  --gradient-color-4: #d4ece5; /*gradient-cyan: #d4ece5 */
   z-index: -1;
-}
-
-.myElement {
-  /* background: #ffffff; starting color */
-  transition: background 0.5s ease-in-out; /* transition effect */
-}
-
-.myElement {
-  /* background: linear-gradient(to right, #03af7d, #03a7af); ending color */
-  /* background: radial-gradient(circle, #ff0000, #03af7d); ending color */
-  /* background: radial-gradient(circle at 100%, #03a7af 90%, #03a7af, red 100%); */
-  background: radial-gradient(
-      circle closest-corner at center 125px,
-      /* #222, */ #03af7d,
-      black 40%
-    )
-    no-repeat;
 }
 
 /*
@@ -182,11 +165,11 @@
 }
 
 .prose code {
-  @apply text-neutral-800 dark:text-neutral-200 px-1 py-0.5 border border-neutral-100 dark:border-neutral-800 rounded-lg bg-neutral-100 dark:bg-neutral-900;
+  @apply rounded-lg border border-neutral-100 bg-neutral-100 px-1 py-0.5 text-neutral-800 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200;
 }
 
 .prose pre code {
-  @apply text-neutral-800 dark:text-neutral-200 p-0;
+  @apply p-0 text-neutral-800 dark:text-neutral-200;
   border: initial;
 }
 
@@ -201,8 +184,8 @@
   margin-bottom: 1.25em !important;
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   @apply text-neutral-50;
 }
 
@@ -239,7 +222,7 @@ input[type='email'] {
 
 .prose h1 {
   /* @apply bg-dark1; */
-  @apply text-h1-blog font-inter text-dark1;
+  @apply font-inter text-h1-blog text-dark1;
 }
 
 .prose h2 {
@@ -248,7 +231,7 @@ input[type='email'] {
 
 .prose p {
   /* background-color: red; */
-  @apply text-dark1 font-arimo text-p-blog;
+  @apply font-arimo text-p-blog text-dark1;
 }
 
 [data-rehype-pretty-code-fragment] code {
@@ -280,7 +263,7 @@ input[type='email'] {
   @apply rounded-md bg-slate-500 bg-opacity-10 p-1;
 }
 [data-rehype-pretty-code-title] {
-  @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-neutral-200 border-[#333333] bg-dark1;
+  @apply rounded-t-lg border border-[#333333] bg-dark1 px-4 py-3 font-mono text-xs font-medium text-neutral-200;
 }
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none border-t-0;

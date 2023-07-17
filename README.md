@@ -56,3 +56,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
  Misc:
   - [] Review Balance: `https://react-wrap-balancer.vercel.app/`
+  - [] Add more sizes of the magnifying glass svg
+  - [] Move Footer to `Page` component instead of `layout`?
+  - [] Consolidate Button Styles
+  - [] 

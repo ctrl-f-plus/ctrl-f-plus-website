@@ -1,28 +1,28 @@
-import { Inter, Open_Sans, Arimo } from 'next/font/google';
-import CanvasGradient from './components/canvas-gradient';
-import Footer from './components/layout/footer';
-import Navbar from './components/layout/navbar';
-import './globals.css';
+import { Inter, Open_Sans, Arimo } from "next/font/google";
+import CanvasGradient from "./components/canvas-gradient";
+import Footer from "./components/layout/footer";
+import Navbar from "./components/layout/navbar";
+import "./globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 const open_sans = Open_Sans({
-  subsets: ['latin'],
-  variable: '--font-open-sans',
+  subsets: ["latin"],
+  variable: "--font-open-sans",
 });
 
 const arimo = Arimo({
-  subsets: ['latin'],
-  variable: '--font-arimo',
+  subsets: ["latin"],
+  variable: "--font-arimo",
 });
 
 export const metadata = {
-  title: 'Ctrl-F Plus',
-  description: 'CTRL-F Plus - Chrome Extension',
+  title: "Ctrl-F Plus",
+  description: "CTRL-F Plus - Chrome Extension",
 };
 
 export default function RootLayout({
@@ -33,20 +33,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} scroll-smooth antialiased  h-full`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth  antialiased`}
     >
-      <body className="debug-screens flex min-h-full flex-col mx-auto">
-        <div className="flex relative flex-auto ">
+      <body className="debug-screens mx-auto flex min-h-full flex-col">
+        <div className="relative flex flex-auto ">
           <CanvasGradient />
           <div
             // gap-18 tablet:gap-24 wide:gap-[7.625rem]
-            className=" w-full h-auto flex flex-col "
-            // className="bg-white/[.47] shadow-bg backdrop-blur-bg w-full h-auto flex flex-col"
+            // className=" w-full h-auto flex flex-col "
+            className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
           >
             <Navbar />
 
             <main
-              className="flex-auto isolate"
+              className="isolate flex-auto"
               // className="flex-auto isolate flex flex-col"
             >
               {children}

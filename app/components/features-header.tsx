@@ -1,4 +1,4 @@
-'use client';
+"use client";
 // app/components/features-header.tsx
 
 import {
@@ -7,9 +7,9 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import Container from './layout/Container';
+} from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import Container from "./layout/Container";
 
 export default function FeaturesHeader() {
   // const MagnifyIconSVG = encodeURIComponent(
@@ -65,9 +65,8 @@ export default function FeaturesHeader() {
         <h2 className="font-inter text-fs-base text-white wide:text-text-dark">
           Tab Junkie? Meet Your New Best Friend.
         </h2>
-        {/* <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-[#0021CD] via-[#F9F9F9] to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:gradient-text-none"> */}
-        {/* <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-gradient-blue via-gradient-slate to-gradient-cyan bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent "> */}
-        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-gradient-gray-1 via-gradient-gray-2 to-gradient-gray-2 bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent ">
+
+        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2">
           Your Guiding Light in the Tab Chaos
         </h3>
         <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white wide:text-text-dark">
@@ -82,7 +81,7 @@ export default function FeaturesHeader() {
     <>
       <Container
         id="features-header"
-        className="mx-auto flex w-full scroll-mt-12 flex-col justify-center mt-18 tablet:mt-24 wide:mt-[7.625rem] "
+        className="mx-auto mt-18 flex w-full scroll-mt-12 flex-col justify-center tablet:mt-24 wide:mt-[7.625rem] "
       >
         <div
           onMouseMove={handleMouseMove}
@@ -96,14 +95,14 @@ export default function FeaturesHeader() {
               className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] p-18 file:group-hover:opacity-100 wide:block"
               // myElement
               style={{
-                WebkitMaskRepeat: 'no-repeat',
+                WebkitMaskRepeat: "no-repeat",
                 WebkitMaskImage:
-                  'radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)',
+                  "radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)",
                 WebkitMaskPosition: webkitMaskPosition,
               }}
               // TODO: Try to add more blur
               whileHover={{
-                backgroundColor: '#03AF7D',
+                backgroundColor: "#03AF7D",
               }}
               // whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.9 }}
