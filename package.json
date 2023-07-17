@@ -53,5 +53,10 @@
     "tailwindcss": "3.3.2",
     "tailwindcss-debug-screens": "^2.2.1",
     "typescript": "5.0.4"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/ctrl-f-plus-chrome-extension"
   }
+
 }

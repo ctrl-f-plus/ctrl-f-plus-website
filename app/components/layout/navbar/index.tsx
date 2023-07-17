@@ -30,7 +30,7 @@ const navItems = {
   "/about": {
     name: "About",
   },
-  "/donate": {
+  "https://opencollective.com/ctrl-f-plus-chrome-extension": {
     name: "Donate",
   },
 };
@@ -89,6 +89,7 @@ export default function Navbar() {
                   <a
                     key={path}
                     href={path}
+                    target={name === "Donate" ? "_blank" : "_self"}
                     className={clsx(" mx-1 text-primary2 transition-all ", {
                       "!text-dark1 hover:!text-dark1/80": !isActive,
                     })}

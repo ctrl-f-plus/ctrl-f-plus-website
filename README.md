@@ -74,3 +74,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   - [ ] Add About Page
   - [ ] Add Donate Information
   - [ ] Add Footer links
+  - [ ] Add extra small screen size
