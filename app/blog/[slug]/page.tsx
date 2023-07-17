@@ -29,49 +29,48 @@ export default async function Blog({ params }: BlogProps) {
         <Container className="mx-auto flex flex-col">
           {/* Header Card */}
           {/* justify-center */}
-          <Link
-            href="/blog"
-            className="group flex flex-row items-center justify-start gap-2 font-open-sans text-button-18 text-mongo-black group-hover:text-primary2 tablet:mt-10"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-[#889397]  duration-100 ease-in group-hover:-translate-x-1"
+          <div className="mt-10  ">
+            <Link
+              href="/blog"
+              className=" group flex w-fit flex-row items-center justify-start  gap-2 font-open-sans text-button-18 text-mongo-black group-hover:text-primary2"
             >
-              <path
-                d="M12.9999 6.83211L6.05548 6.83211L7.59049 5.2971C7.98101 4.90657 7.98101 4.27341 7.59049 3.88288L7.35157 3.64397C6.96105 3.25344 6.32788 3.25344 5.93736 3.64397L2.55473 7.0266C2.5455 7.03516 2.53639 7.04394 2.52742 7.05291L2.2885 7.29183C1.89797 7.68235 1.89797 8.31552 2.2885 8.70604L5.93965 12.3572C6.33017 12.7477 6.96334 12.7477 7.35386 12.3572L7.59278 12.1183C7.9833 11.7278 7.9833 11.0946 7.59278 10.7041L6.0587 9.16998L12.9999 9.16998C13.5522 9.16998 13.9999 8.72227 13.9999 8.16998V7.83211C13.9999 7.27982 13.5522 6.83211 12.9999 6.83211Z"
-                fill="#889397"
-              />
-            </svg>
-            <span className="duration-100 ease-in group-hover:text-primary2">
-              back
-            </span>
-          </Link>
-          <div className="mt-4 flex min-h-[322px] w-full items-center  rounded-3xl bg-white/[.47] p-14 shadow-sm backdrop-blur-[23px] tablet:mt-10 tab-pro:px-14 laptop:px-16 desktop:px-20">
-            {/*  */}
-            {/* Content */}
-            {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
-            {/* bg-blue-500 */}
-            <div className="flex min-h-[206px] justify-start gap-[9.375rem] ">
-              <div className="flex flex-col items-start justify-center gap-6 ">
-                <Balancer className="font-open-sans text-fs-lg text-[#889397] ">
-                  {post.publishedAt}
-
-                  {/* Welcome to development journey of{" "}
-                  <span className=" text-highlight-focus-1">
-                    Ctrl-F Plus!
-                  </span>{" "}
-                  Here, you can find articles about my progress, challenges, and
-                  successes. I hope you enjoy reading about my experiences and
-                  find them inspiring. */}
-                </Balancer>
-                <h1 className="font-inter text-fs-xl text-dark1">
-                  {post.title}
-                </h1>
-
-                <div
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+                className="fill-[#889397]  duration-100 ease-in group-hover:-translate-x-1"
+              >
+                <path
+                  d="M12.9999 6.83211L6.05548 6.83211L7.59049 5.2971C7.98101 4.90657 7.98101 4.27341 7.59049 3.88288L7.35157 3.64397C6.96105 3.25344 6.32788 3.25344 5.93736 3.64397L2.55473 7.0266C2.5455 7.03516 2.53639 7.04394 2.52742 7.05291L2.2885 7.29183C1.89797 7.68235 1.89797 8.31552 2.2885 8.70604L5.93965 12.3572C6.33017 12.7477 6.96334 12.7477 7.35386 12.3572L7.59278 12.1183C7.9833 11.7278 7.9833 11.0946 7.59278 10.7041L6.0587 9.16998L12.9999 9.16998C13.5522 9.16998 13.9999 8.72227 13.9999 8.16998V7.83211C13.9999 7.27982 13.5522 6.83211 12.9999 6.83211Z"
+                  fill="#889397"
+                />
+              </svg>
+              <span className="duration-100 ease-in group-hover:text-primary2">
+                back
+              </span>
+            </Link>
+            {/* mt-4 tablet:mt-10*/}
+            <div className=" mt-4 flex  w-full items-center rounded-3xl bg-white/[.47] p-14 shadow-sm backdrop-blur-[23px] tab-pro:px-14 laptop:px-16 desktop:px-20">
+              {/*  */}
+              {/* Content */}
+              {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
+              {/* bg-blue-500 */}
+              <div
+                // min-h-[206px]
+                className="flex  justify-start gap-[9.375rem] "
+              >
+                <div className="flex flex-col items-start justify-center gap-6  ">
+                  <h1 className="font-inter text-fs-xl text-dark1">
+                    {/* {post.title} */}
+                    Blog
+                  </h1>
+                  <div className="min-h-[41px]">
+                    <Balancer className="font-open-sans text-fs-lg text-[#889397]  ">
+                      {post.publishedAt}
+                    </Balancer>
+                  </div>
+                  {/* <div
                   // mt-8
                   className="relative  flex items-center gap-x-4"
                 >
@@ -84,20 +83,23 @@ export default async function Blog({ params }: BlogProps) {
                     className="h-10 w-10 rounded-full bg-gray-50"
                   />
                   <div className="text-sm leading-6">
-                    {/* <p className="text-gray-600">{post.author}</p> */}
-                    <p className="font-open-sans text-fs-lg text-dark1">
+                    <p
+                      // text-gray-600
+                      className="font-open-sans text-fs-lg text-dark1 "
+                    >
                       {post.author}
                     </p>
                   </div>
+                  </div>
+                  */}
                 </div>
-              </div>
 
-              <div className="hidden desktop:block">
-                {/* <DrawingIcon /> */}
+                <div className="hidden desktop:block">
+                  {/* <DrawingIcon /> */}
+                </div>
               </div>
             </div>
           </div>
-
           {/* <div className="mt-10 grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]">
             {allBlogs
               .sort((a, b) => {
@@ -124,8 +126,14 @@ export default async function Blog({ params }: BlogProps) {
               ))}
           </div> */}
           {/* <div className="mt-10 grid grid-cols-1 gap-3 tablet:grid-cols-2 tablet:px-[24px]"> */}
-          <div className="mx-[24px] mt-10  rounded-3xl bg-white/[.68] p-10 shadow-sm backdrop-blur-[23px]">
-            <Mdx code={post?.body.code} />;
+
+          <div className="mt-10 laptop:px-[40px]">
+            <div
+              // mx-[24px] p-10
+              className="rounded-3xl bg-white/[.68] px-[40px] py-[19px] shadow-sm backdrop-blur-[23px]"
+            >
+              <Mdx code={post?.body.code} />;
+            </div>
           </div>
         </Container>
       </section>
