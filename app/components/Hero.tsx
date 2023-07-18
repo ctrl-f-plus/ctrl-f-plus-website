@@ -1,7 +1,7 @@
 // app/components/Hero.tsx
 
-import ButtonPrimary from './ButtonPrimary';
-import ButtonPrimaryCopy from './button-primary-copy';
+import ButtonPrimary from './buttons/ButtonPrimary';
+import ButtonMobile from './buttons/button-mobile';
 import HeroAnimation from './icons/hero-animation';
 import Container from './layout/Container';
 import Image from 'next/image';
@@ -46,12 +46,18 @@ export default function Hero() {
             </p>
             {/* <span className="absolute -left-[0.5625rem] top-[6.6875rem]  h-[3.8125rem] w-[24.5rem] rounded-2xl bg-highlight-focus" /> */}
           </div>
-          <div className="flex flex-col gap-6 tab-pro:flex-row">
+          <div className="hidden flex-col gap-6 tablet:flex tab-pro:flex-row">
             <ButtonPrimary variant="solid">
               Add to Chrome for free
             </ButtonPrimary>
 
             <ButtonPrimary variant="outline">See how it works</ButtonPrimary>
+          </div>
+
+          <div className="flex flex-col gap-6 tablet:hidden tab-pro:flex-row">
+            <ButtonMobile variant="solid">Add to Chrome for free</ButtonMobile>
+
+            <ButtonMobile variant="outline">See how it works</ButtonMobile>
           </div>
         </div>
         {/* <SearchIcon className="flex flex-auto" /> */}

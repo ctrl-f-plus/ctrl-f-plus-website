@@ -2,7 +2,7 @@
 'use client';
 import { LayoutGroup, motion, useAnimate, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import PuzzleIcon2 from './icons/puzzle2';
+import PuzzleIcon2 from '../icons/puzzle2';
 import Link from 'next/link';
 
 type ButtonProps = {

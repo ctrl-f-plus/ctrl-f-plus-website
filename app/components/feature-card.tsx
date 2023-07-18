@@ -1,11 +1,11 @@
 // app/tab-hoarders/components/FeatureCard.tsx
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import FeatureIcon1 from "./icons/feature1";
-import FeatureIcon2 from "./icons/feature2";
-import FeatureIcon3 from "./icons/feature3";
-import Container from "./layout/Container";
+import { motion } from 'framer-motion';
+import FeatureIcon1 from './icons/feature1';
+import FeatureIcon2 from './icons/feature2';
+import FeatureIcon3 from './icons/feature3';
+import Container from './layout/Container';
 
 const features = [
   {
@@ -29,7 +29,7 @@ const features = [
 ];
 
 export default function FeatureCard() {
-  const cardVariants = (index: number) => {
+  const cardVariants = () => {
     return {
       hidden: { opacity: 0 },
       show: {
@@ -42,7 +42,7 @@ export default function FeatureCard() {
   };
 
   const iconVariants = (index: number) => {
-    const initialXOffset = index % 2 === 1 ? "500" : "-500";
+    const initialXOffset = index % 2 === 1 ? '500' : '-500';
 
     return {
       hidden: { opacity: 0, x: initialXOffset },
@@ -56,7 +56,7 @@ export default function FeatureCard() {
     };
   };
 
-  const textVariants = (index: number) => {
+  const textVariants = () => {
     return {
       hidden: { opacity: 0, y: 500 },
       show: {
@@ -78,20 +78,18 @@ export default function FeatureCard() {
             className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]"
           >
             <div className="laptop:text-left">
-              {/* shadow-xl */}
               <motion.div
                 className="flex min-h-154 items-center  justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
                 whileInView="show"
                 initial="hidden"
                 viewport={{ once: true }}
-                variants={cardVariants(index)}
+                variants={cardVariants()}
               >
                 <div className="flex flex-col gap-9 laptop:flex-row">
                   <motion.div
                     variants={iconVariants(index)}
-                    // shrink-0
                     className={`flex items-center justify-center   ${
-                      index % 2 === 1 ? "laptop:order-last" : ""
+                      index % 2 === 1 ? 'laptop:order-last' : ''
                     }`}
                   >
                     {
@@ -101,12 +99,12 @@ export default function FeatureCard() {
 
                   <div
                     className={`flex w-full  ${
-                      index % 2 === 1 ? "" : "laptop:justify-end"
+                      index % 2 === 1 ? '' : 'laptop:justify-end'
                     } `}
                   >
                     <motion.div
                       className="flex w-fit flex-col items-center justify-center gap-9  laptop:items-start"
-                      variants={textVariants(index)}
+                      variants={textVariants()}
                     >
                       <h2 className="text-center font-inter text-fs-base text-primary1 laptop:text-left">
                         {feat.title}

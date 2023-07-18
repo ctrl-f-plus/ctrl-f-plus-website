@@ -1,29 +1,16 @@
-"use client";
 // app/components/features-header.tsx
+'use client';
 
 import {
   motion,
   useMotionTemplate,
-  useMotionValue,
   useSpring,
   useTransform,
-} from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import Container from "./layout/Container";
+} from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import Container from './layout/Container';
 
 export default function FeaturesHeader() {
-  // const MagnifyIconSVG = encodeURIComponent(
-  //   ReactDOMServer.renderToStaticMarkup(<MagnifyIcon />)
-  // );
-  // let mouseX = useMotionValue(0);
-  // let mouseY = useMotionValue(0);
-
-  // let mouseX = useSpring(0, { stiffness: 80, damping: 50 });
-  // let mouseY = useSpring(0, { stiffness: 80, damping: 50 });
-
-  // let mouseX = useSpring(0, { stiffness: 80, damping: 30 });
-  // let mouseY = useSpring(0, { stiffness: 80, damping: 30 });
-
   let mouseX = useSpring(0, { stiffness: 90, damping: 20 });
   let mouseY = useSpring(0, { stiffness: 90, damping: 20 });
   let initialRender = true;
@@ -93,32 +80,20 @@ export default function FeaturesHeader() {
               // pointer-events-none
               // hidden
               className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] p-18 file:group-hover:opacity-100 wide:block"
-              // myElement
               style={{
-                WebkitMaskRepeat: "no-repeat",
+                WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskImage:
-                  "radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)",
+                  'radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)',
                 WebkitMaskPosition: webkitMaskPosition,
               }}
               // TODO: Try to add more blur
               whileHover={{
-                backgroundColor: "#03AF7D",
+                backgroundColor: '#03AF7D',
               }}
-              // whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.9 }}
-              // transition={{ type: 'spring', stiffness: 50, damping: 100 }}
             >
               <CardText />
             </motion.div>
-
-            {/* <motion.div
-              style={{ backgroundColor: '#03AF7D', position: 'absolute' }}
-              whileHover={{ scale: 1.1, filter: 'blur(5px)', opacity: 0.5 }}
-            ></motion.div>
-            <motion.div
-              style={{ backgroundColor: '#03AF7D', position: 'absolute' }}
-              whileHover={{ scale: 1 }}
-            ></motion.div> */}
           </div>
         </div>
 

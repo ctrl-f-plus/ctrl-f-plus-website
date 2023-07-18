@@ -39,8 +39,8 @@ export default function RootLayout({
         <div className="relative flex flex-auto ">
           <CanvasGradient />
           <div
-            className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
-            // className="flex h-auto w-full flex-col "
+            // className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
+            className="flex h-auto w-full flex-col "
           >
             <Navbar />
 

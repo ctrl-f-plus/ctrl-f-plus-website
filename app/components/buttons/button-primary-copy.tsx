@@ -3,8 +3,8 @@
 // 'use client';
 // import { useCallback } from 'react';
 import clsx from 'clsx';
-import { PlayIcon } from './icons/play';
-import PuzzleIcon from './icons/puzzle';
+import { PlayIcon } from '../icons/play';
+import PuzzleIcon from '../icons/puzzle';
 
 // TODO: Shadow?
 // px-9

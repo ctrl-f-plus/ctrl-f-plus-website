@@ -1,4 +1,4 @@
-import ButtonPrimary from './components/ButtonPrimary';
+import ButtonPrimary from './components/buttons/ButtonPrimary';
 
 export default function NotFoundPage() {
   return (

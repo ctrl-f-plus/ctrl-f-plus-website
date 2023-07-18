@@ -52,14 +52,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - [ ] `viewport: { once: true }`?
 
   Call To Action Card:
-    - [ ] vartions: shadow size, highlight, data-atropos-offset
+    - [x] vartions: shadow size, highlight, data-atropos-offset
 
  Misc:
   - [ ] Review Balance: `https://react-wrap-balancer.vercel.app/`
   - [ ] Add more sizes of the magnifying glass svg
   - [ ] Move Footer to `Page` component instead of `layout`?
   - [ ] Buttons
-      - [ ] Consolidate Button Styles
+      - [x] Consolidate Button Styles
       - [ ] Add links/hrefs
   - [ ] Update 404 page
   - [ ] Update Loading component
