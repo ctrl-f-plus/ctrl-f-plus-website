@@ -1,5 +1,5 @@
 // app/tab-hoarders/components/ButtonPhat.tsx
-
+'use client';
 import { LayoutGroup, motion, useAnimate, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import PuzzleIcon2 from './icons/puzzle2';
@@ -50,7 +50,7 @@ function ButtonPhat({ className, ...props }: ButtonProps) {
             transition={{ duration: 0.5, ease: 'easeInOut' }}
           />
 
-          <motion.div className="relative flex w-full items-center justify-center  gap-4 text-center text-white">
+          <motion.div className="relative flex w-full items-center justify-center gap-4 text-center text-white">
             <motion.div
               className="relative flex h-[2.5rem] w-[2.5rem] justify-center rounded-[1.5rem] bg-white p-[0.5625rem]"
               variants={puzzleBgVariants}

@@ -1,9 +1,11 @@
 // app/components/Hero.tsx
 
-import ButtonPrimary from "./ButtonPrimary";
-import HeroAnimation from "./icons/hero-animation";
-import Container from "./layout/Container";
-import Image from "next/image";
+import ButtonPhat from './ButtonPhat';
+import ButtonPrimary from './ButtonPrimary';
+import ButtonPrimaryCopy from './button-primary-copy';
+import HeroAnimation from './icons/hero-animation';
+import Container from './layout/Container';
+import Image from 'next/image';
 
 // TODO: YOu have double the top padding that you need/should have
 export default function Hero() {
@@ -16,6 +18,7 @@ export default function Hero() {
         className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 laptop:flex-row laptop:justify-between wide:mt-[7.625rem] wide:h-109"
       >
         {/* gap-[3.44rem] */}
+
         <div className="flex w-full flex-col gap-14 laptop:max-w-[586px] wide:gap-28">
           <div className="relative flex flex-col items-start gap-8">
             <h1 className="z-10 font-inter text-fs-xl text-dark1">
@@ -48,7 +51,17 @@ export default function Hero() {
             <ButtonPrimary variant="solid">
               Add to Chrome for free
             </ButtonPrimary>
+
             <ButtonPrimary variant="outline">See how it works</ButtonPrimary>
+          </div>
+          <div className="flex flex-col gap-6 tab-pro:flex-row">
+            <ButtonPrimaryCopy variant="solid">
+              Add to Chrome for free
+            </ButtonPrimaryCopy>
+
+            <ButtonPrimaryCopy variant="outline">
+              See how it works
+            </ButtonPrimaryCopy>
           </div>
         </div>
         {/* <SearchIcon className="flex flex-auto" /> */}

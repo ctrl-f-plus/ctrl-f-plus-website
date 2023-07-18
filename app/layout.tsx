@@ -39,9 +39,8 @@ export default function RootLayout({
         <div className="relative flex flex-auto ">
           <CanvasGradient />
           <div
-            // gap-18 tablet:gap-24 wide:gap-[7.625rem]
-            // className=" w-full h-auto flex flex-col "
-            className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
+            // className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
+            className="flex h-auto w-full flex-col "
           >
             <Navbar />
 
