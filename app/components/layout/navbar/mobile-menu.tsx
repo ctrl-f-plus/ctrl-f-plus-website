@@ -41,12 +41,12 @@ export default function MobileMenu({
               <ul className="space-y-2 py-6">
                 {navigation.map((item: any) => (
                   <li key={item.path}>
-                    <a
+                    <Link
                       href={item.path}
-                      className="text-base -mx-3 block rounded-lg px-3 py-2 font-semibold leading-7 text-dark1 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark1 hover:bg-gray-50"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

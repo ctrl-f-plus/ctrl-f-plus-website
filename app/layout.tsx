@@ -1,4 +1,5 @@
-import { Inter, Open_Sans, Arimo } from 'next/font/google';
+import { Metadata } from 'next';
+import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
@@ -20,7 +21,9 @@ const arimo = Arimo({
   variable: '--font-arimo',
 });
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL('https://ctrl-f.plus'),
+
   title: 'Ctrl-F Plus',
   description: 'CTRL-F Plus - Chrome Extension',
 };
@@ -39,8 +42,8 @@ export default function RootLayout({
         <div className="relative flex flex-auto ">
           <CanvasGradient />
           <div
-            // className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
-            className="flex h-auto w-full flex-col "
+            className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
+            // className="flex h-auto w-full flex-col "
           >
             <Navbar />
 

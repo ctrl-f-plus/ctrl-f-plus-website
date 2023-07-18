@@ -1,51 +1,51 @@
-"use client";
+'use client';
 // app/components/layout/navbar/index.tsx
 
-import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import LogoIcon from "../../icons/logo";
-import MenuIcon from "../../icons/menu";
-import Container from "../Container";
-import MobileMenu from "./mobile-menu";
+import clsx from 'clsx';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import LogoIcon from '../../icons/logo';
+import MenuIcon from '../../icons/menu';
+import Container from '../Container';
+import MobileMenu from './mobile-menu';
 
 const navigation = [
-  { name: "Features", path: "/#features-header" },
-  { name: "Blog", path: "/blog" },
-  { name: "About", path: "#" },
-  { name: "Donate", path: "#" },
+  { name: 'Features', path: '/#features-header' },
+  { name: 'Blog', path: '/blog' },
+  { name: 'About', path: '#' },
+  { name: 'Donate', path: '#' },
 ];
 
 const navItems = {
-  "/": {
-    name: "Home",
+  '/': {
+    name: 'Home',
   },
-  "/#features-header": {
-    name: "Features",
+  '/#features-header': {
+    name: 'Features',
   },
-  "/blog": {
-    name: "Blog",
+  '/blog': {
+    name: 'Blog',
   },
-  "/about": {
-    name: "About",
+  '/about': {
+    name: 'About',
   },
-  "https://opencollective.com/ctrl-f-plus-chrome-extension": {
-    name: "Donate",
+  'https://opencollective.com/ctrl-f-plus-chrome-extension': {
+    name: 'Donate',
   },
 };
 
 function classNames(...classes: any[]) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 // TODO: Fix Mobile menu
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  let pathname = usePathname() || "/";
-  if (pathname.includes("/blog/")) {
-    pathname = "/blog";
+  let pathname = usePathname() || '/';
+  if (pathname.includes('/blog/')) {
+    pathname = '/blog';
   }
 
   // http: return (
@@ -60,10 +60,10 @@ export default function Navbar() {
         >
           {/* -m-1.5 p-1.5 */}
           {/* Link??? */}
-          <a href="/" className="">
+          <Link href="/" className="">
             <span className="sr-only">Ctrl-F Plus</span>
             <LogoIcon />
-          </a>
+          </Link>
 
           <div className="flex laptop:hidden">
             <button
@@ -86,16 +86,16 @@ export default function Navbar() {
                 const isActive = path === pathname;
 
                 return (
-                  <a
+                  <Link
                     key={path}
                     href={path}
-                    target={name === "Donate" ? "_blank" : "_self"}
-                    className={clsx(" mx-1 text-primary2 transition-all ", {
-                      "!text-dark1 hover:!text-dark1/80": !isActive,
+                    target={name === 'Donate' ? '_blank' : '_self'}
+                    className={clsx(' mx-1 text-primary2 transition-all ', {
+                      '!text-dark1 hover:!text-dark1/80': !isActive,
                     })}
                   >
                     <span className="text-dark-1 text-fs-lg">{name}</span>
-                  </a>
+                  </Link>
                 );
               })}
             </div>
