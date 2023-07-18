@@ -50,7 +50,7 @@ function ButtonMobile({
   return (
     <button type="button" className={className}>
       {IconComponent && (
-        <IconComponent className="fill-white group-active:!fill-white/80" />
+        <IconComponent className="fill-white tablet:group-active:!fill-white/80" />
       )}
       {children}
     </button>

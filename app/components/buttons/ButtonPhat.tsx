@@ -44,10 +44,11 @@ function ButtonPhat({ className, ...props }: ButtonProps) {
       >
         <Link href="#">
           <motion.span
-            className="absolute -left-10 -top-16 h-72 w-80 bg-highlight-focus-1 "
+            className="pointer-events-none absolute -left-10 -top-16 h-72 w-80 bg-highlight-focus-1"
             initial={{ rotate: -68.566, translateX: '-100%' }}
             variants={bgVariants}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
+            aria-hidden="true"
           />
 
           <motion.div className="relative flex w-full items-center justify-center gap-4 text-center text-white">

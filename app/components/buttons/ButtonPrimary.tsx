@@ -113,24 +113,27 @@ function ColorFill() {
   return (
     <>
       <motion.span
-        className="absolute -left-18 -top-48 hidden h-[700px] w-[650px] bg-highlight-focus-1 tablet:block tab-pro:hidden"
+        className="pointer-events-none absolute -left-18 -top-48 hidden h-[700px] w-[650px] bg-highlight-focus-1 tablet:block tab-pro:hidden"
         initial={{ rotate: -68.566, translateX: '-110%' }}
         variants={backgroundVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
+        aria-hidden="true"
       />
 
       <motion.span
-        className="absolute -left-12 -top-30 hidden h-[375px] w-96 bg-highlight-focus-1 tab-pro:block laptop:hidden"
+        className="pointer-events-none absolute -left-12 -top-30 hidden h-[375px] w-96 bg-highlight-focus-1 tab-pro:block laptop:hidden"
         initial={{ rotate: -68.566, translateX: '-100%' }}
         variants={backgroundVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
+        aria-hidden="true"
       />
 
       <motion.span
-        className="absolute -left-10 -top-16 hidden h-72 w-80 bg-highlight-focus-1 laptop:block"
+        className="pointer-events-none absolute -left-10 -top-16 hidden h-72 w-80 bg-highlight-focus-1 laptop:block"
         initial={{ rotate: -68.566, translateX: '-100%' }}
         variants={backgroundVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
+        aria-hidden="true"
       />
     </>
   );
@@ -161,7 +164,7 @@ function ButtonPrimary({
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           className={className}
         >
-          <ColorFill />
+          <ColorFill aria-hidden="true" />
 
           {variant !== 'phat' ? (
             <ButtonThin variant={variant}>{children}</ButtonThin>
