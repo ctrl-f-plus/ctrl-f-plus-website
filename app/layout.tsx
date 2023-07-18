@@ -1,28 +1,28 @@
-import { Inter, Open_Sans, Arimo } from "next/font/google";
-import CanvasGradient from "./components/canvas-gradient";
-import Footer from "./components/layout/footer";
-import Navbar from "./components/layout/navbar";
-import "./globals.css";
+import { Inter, Open_Sans, Arimo } from 'next/font/google';
+import CanvasGradient from './components/canvas-gradient';
+import Footer from './components/layout/footer';
+import Navbar from './components/layout/navbar';
+import './globals.css';
 
 const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 });
 
 const open_sans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
+  subsets: ['latin'],
+  variable: '--font-open-sans',
 });
 
 const arimo = Arimo({
-  subsets: ["latin"],
-  variable: "--font-arimo",
+  subsets: ['latin'],
+  variable: '--font-arimo',
 });
 
 export const metadata = {
-  title: "Ctrl-F Plus",
-  description: "CTRL-F Plus - Chrome Extension",
+  title: 'Ctrl-F Plus',
+  description: 'CTRL-F Plus - Chrome Extension',
 };
 
 export default function RootLayout({
@@ -39,8 +39,8 @@ export default function RootLayout({
         <div className="relative flex flex-auto ">
           <CanvasGradient />
           <div
-            // className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
-            className="flex h-auto w-full flex-col "
+            className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg"
+            // className="flex h-auto w-full flex-col "
           >
             <Navbar />
 

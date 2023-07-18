@@ -6,11 +6,12 @@ import { motion } from 'framer-motion';
 import ButtonPhat from './ButtonPhat';
 import Container from './layout/Container';
 import Atropos from 'atropos/react';
+import ButtonPrimary from './ButtonPrimary';
 
 export default function CallToAction() {
   return (
     <>
-      <Container className="mx-auto flex hidden w-full flex-col laptop:block laptop:flex-row laptop:justify-between mt-18 tablet:mt-24 wide:mt-[7.625rem]">
+      <Container className="mx-auto mt-18 flex hidden w-full flex-col tablet:mt-24 laptop:block laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
         {/* TODO: if you decide to keep shadows on the cards, then add a shadow here with framer motion so that it is only visible when in initial position */}
         {/* <motion.div className="h-full w-full rounded-[2.25rem] shadow-xl"> */}
         <Atropos
@@ -41,13 +42,14 @@ export default function CallToAction() {
                 Lorem ipsum dolor sit amet consectetur. Nunc fames venenatis non
                 ipsum pretium amet.
               </p>
-              <ButtonPhat />
+              {/* <ButtonPhat /> */}
+              <ButtonPrimary variant={'phat'}>Add to Chrome</ButtonPrimary>
             </div>
           </div>
         </Atropos>
       </Container>
 
-      <Container className="mx-auto flex w-full flex-col laptop:hidden laptop:flex-row laptop:justify-between mt-18 tablet:mt-24 wide:mt-[7.625rem]">
+      <Container className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 laptop:hidden laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
         <div className="relative isolate  flex h-[32.8125rem] w-full flex-col items-center  justify-center  gap-9 overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
           {/* <div className="absolute -top-24 right-10  h-[14.6875rem] w-[17.875rem] flex-shrink-0 translate-x-1/2 rounded-full bg-[#8DBEDA] blur-[43.5px] filter " />
             <div className="absolute -bottom-24  left-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter" /> */}

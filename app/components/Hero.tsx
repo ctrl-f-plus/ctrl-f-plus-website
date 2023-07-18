@@ -1,6 +1,5 @@
 // app/components/Hero.tsx
 
-import ButtonPhat from './ButtonPhat';
 import ButtonPrimary from './ButtonPrimary';
 import ButtonPrimaryCopy from './button-primary-copy';
 import HeroAnimation from './icons/hero-animation';
@@ -53,15 +52,6 @@ export default function Hero() {
             </ButtonPrimary>
 
             <ButtonPrimary variant="outline">See how it works</ButtonPrimary>
-          </div>
-          <div className="flex flex-col gap-6 tab-pro:flex-row">
-            <ButtonPrimaryCopy variant="solid">
-              Add to Chrome for free
-            </ButtonPrimaryCopy>
-
-            <ButtonPrimaryCopy variant="outline">
-              See how it works
-            </ButtonPrimaryCopy>
           </div>
         </div>
         {/* <SearchIcon className="flex flex-auto" /> */}

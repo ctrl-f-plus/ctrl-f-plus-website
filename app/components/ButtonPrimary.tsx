@@ -1,7 +1,6 @@
 // app/tab-hoarders/components/Button.tsx
-
 'use client';
-// import { useCallback } from 'react';
+
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -9,11 +8,8 @@ import { PlayIcon } from './icons/play';
 import PuzzleIcon from './icons/puzzle';
 import PuzzleIcon2 from './icons/puzzle2';
 
-// TODO: Shadow?
-// px-9
-// shadow-sm
 const baseStyles = {
-  base: 'flex justify-center items-center py-2 font-open-sans  group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative overflow-hidden',
+  base: 'flex justify-center items-center py-2 font-open-sans  group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative overflow-hidden shadow-sm',
 };
 
 const variantStyles = {
@@ -31,10 +27,6 @@ const variantStyles = {
     solid: PuzzleIcon,
     outline: PlayIcon,
     phat: PuzzleIcon2,
-  },
-
-  iconClasses: {
-    solid: 'group-active:!fill-[#0a2b35]/70',
   },
 };
 
@@ -114,7 +106,6 @@ type ButtonProps = {
   children: React.ReactNode;
   // onClick?: () => void;
   // url: string;
-
   className?: string;
 };
 
@@ -122,23 +113,11 @@ function ButtonPrimary({
   variant,
   children,
   className,
-
   ...props
 }: ButtonProps) {
-  // const handleClick = useCallback(
-  //   (e: React.MouseEvent) => {
-  //     e.preventDefault();
-  //     window.open(url, '_blank');
-  //   },
-  //   [url]
-  // );
-
-  // //@ts-ignore
-  // const IconComponent = variantStyles.IconComponents[variant];
-  //@ts-ignore
   className = clsx(baseStyles['base'], variantStyles[variant], className);
 
-  const bgVariants = {
+  const backgroundVariants = {
     hover: { translateX: '0%' },
   };
 
@@ -154,7 +133,7 @@ function ButtonPrimary({
           <motion.span
             className="absolute -left-10 -top-16 h-72 w-80 bg-highlight-focus-1 "
             initial={{ rotate: -68.566, translateX: '-100%' }}
-            variants={bgVariants}
+            variants={backgroundVariants}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
           />
           {variant !== 'phat' ? (
