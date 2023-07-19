@@ -13,8 +13,8 @@ import MobileMenu from './mobile-menu';
 const navigation = [
   { name: 'Features', path: '/#features-header' },
   { name: 'Blog', path: '/blog' },
-  { name: 'About', path: '#' },
-  { name: 'Donate', path: '#' },
+  { name: 'About', path: '/about' },
+  { name: 'Sponsor', path: '#' },
 ];
 
 const navItems = {
@@ -31,7 +31,7 @@ const navItems = {
     name: 'About',
   },
   'https://opencollective.com/ctrl-f-plus-chrome-extension': {
-    name: 'Donate',
+    name: 'Sponsor',
   },
 };
 
