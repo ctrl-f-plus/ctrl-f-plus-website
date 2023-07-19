@@ -18,7 +18,7 @@ const nextConfig = {
 // https://nextjs.org/docs/app/api-reference/next-config-js/headers
 const ContentSecurityPolicy = `
   default-src 'self'  vercel.live;
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' va.vercel-scripts.com cdn.vercel-insights.com vercel.live;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
@@ -64,10 +64,10 @@ const securityHeaders = [
     value: 'camera=(), microphone=(), geolocation=()',
     //  value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
   },
-  // {
-  //   key: 'X-XSS-Protection',
-  //   value: '1; mode=block',
-  // },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block',
+  },
 ];
 
 module.exports = withContentlayer(nextConfig);
