@@ -4,6 +4,7 @@ const { withContentlayer } = require('next-contentlayer');
 const nextConfig = {
   experimental: {},
   reactStrictMode: true,
+  poweredByHeader: false,
   headers() {
     return [
       {
