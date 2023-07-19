@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -22,10 +23,10 @@
   "dependencies": {
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
+    "@vercel/analytics": "^1.0.1",
     "atropos": "^2.0.2",
     "clsx": "^1.2.1",
     "contentlayer": "^0.3.4",
-    "eslint": "8.41.0",
     "framer-motion": "^10.12.18",
     "next": "13.4.8",
     "next-contentlayer": "^0.3.4",
@@ -45,6 +46,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
+    "eslint": "8.41.0",
     "eslint-config-next": "13.4.9",
     "eslint-config-prettier": "^8.8.0",
     "postcss": "8.4.24",
@@ -58,5 +60,4 @@
     "type": "opencollective",
     "url": "https://opencollective.com/ctrl-f-plus-chrome-extension"
   }
-
 }

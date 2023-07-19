@@ -3,6 +3,7 @@ import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 const inter = Inter({
@@ -23,9 +24,29 @@ const arimo = Arimo({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ctrl-f.plus'),
-
   title: 'Ctrl-F Plus',
   description: 'CTRL-F Plus - Chrome Extension',
+  openGraph: {
+    title: 'Ctrl-F Plus',
+    description: '',
+    // image:
+    url: 'https://ctrl-f.plus',
+    siteName: 'Ctrl-F Plus Chrome Extension',
+    locale: 'en-US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -52,6 +73,7 @@ export default function RootLayout({
               // className="flex-auto isolate flex flex-col"
             >
               {children}
+              <Analytics />
             </main>
             <Footer />
           </div>
