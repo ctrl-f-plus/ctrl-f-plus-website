@@ -57,9 +57,9 @@ export default function CallToAction() {
             className="flex  flex-col  items-center justify-center
              gap-9"
           >
-            <h1 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
+            <h2 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
               Boost your productivity.
-            </h1>
+            </h2>
             <p className=" max-w-[26.75rem] font-open-sans text-fs-lg  text-white tablet:max-w-[25.8125rem]">
               Lorem ipsum dolor sit amet consectetur. Nunc fames venenatis non
               ipsum pretium amet.
@@ -84,9 +84,9 @@ export default function CallToAction() {
               className="flex  flex-col  items-center justify-center
              gap-9"
             >
-              <h1 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
+              <h2 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
                 Boost your productivity.
-              </h1>
+              </h2>
               <p className=" max-w-[26.75rem] font-open-sans text-fs-lg  text-white tablet:max-w-[25.8125rem]">
                 Lorem ipsum dolor sit amet consectetur. Nunc fames venenatis non
                 ipsum pretium amet.
