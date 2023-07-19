@@ -80,7 +80,7 @@ export default function FeatureCard() {
           >
             <div className="laptop:text-left">
               <motion.div
-                className="flex min-h-154 items-center  justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
+                className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
                 whileInView="show"
                 initial="hidden"
                 viewport={{ once: true }}

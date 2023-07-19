@@ -14,35 +14,20 @@ export default function Hero() {
       <Container className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 laptop:flex-row laptop:justify-between wide:mt-[7.625rem] wide:h-109">
         <div className="flex w-full flex-col gap-14 laptop:max-w-[586px] wide:gap-28">
           <div className="relative flex flex-col items-start gap-8 ">
-            {/* <h1 className="z-10 font-inter text-fs-xl text-dark1">
-              Ctrl-F Plus:
-              <br />
-              <span className="whitespace-nowrap">For the</span>
-              <br className="tab-pro:hidden" />
-              <span
-                className="rounded-2xl bg-highlight-focus mobile-md:-mx-2 mobile-md:whitespace-nowrap mobile-md:px-2 tab-pro:ml-1"
-                // className="-mx-2 hidden whitespace-nowrap rounded-2xl bg-highlight-focus px-2 mobile-md:block  tab-pro:ml-1"
-              >
-                Tab Hoarders
-              </span>
-            </h1> */}
-
-            <h1 className=" z-10  font-inter text-fs-xxx text-dark1 mobile-lg:text-fs-xl">
-              {/* <Balancer> */}
+            <h1 className=" z-10 font-inter text-fs-xxx text-dark1 mobile-md:text-fs-xl">
               Ctrl-F Plus:
               <br />
               <span className="">For the</span>
               <br className="tab-pro:hidden" />
-              <span className="-ml-2 rounded-2xl bg-highlight-focus  px-2  mobile-lg:-mx-2 mobile-lg:hidden">
+              <span className="-ml-2 rounded-2xl bg-highlight-focus  px-2  mobile-md:-mx-2 mobile-md:hidden">
                 Tab{' '}
               </span>
-              <span className="-ml-2 rounded-2xl bg-highlight-focus px-2 text-fs-xx mobile-lg:-mx-2 mobile-lg:hidden">
+              <span className="-ml-2 rounded-2xl bg-highlight-focus px-2 text-fs-xx mobile-md:-mx-2 mobile-md:hidden">
                 Hoarders
               </span>
-              <span className="-ml-2 hidden rounded-2xl  bg-highlight-focus  px-2 mobile-lg:-mx-2 mobile-lg:block">
+              <span className="-ml-2 hidden whitespace-nowrap  rounded-2xl  bg-highlight-focus px-2 mobile-md:-mx-2 mobile-md:block">
                 Tab Hoarders
               </span>
-              {/* </Balancer> */}
             </h1>
 
             <p className="max-w-full font-open-sans text-fs-lg text-dark1 tablet:max-w-[48rem]">

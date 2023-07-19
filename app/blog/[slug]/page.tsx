@@ -49,7 +49,8 @@ export default async function Blog({ params }: BlogProps) {
               </span>
             </Link>
             {/* mt-4 tablet:mt-10*/}
-            <div className=" mt-4 flex  w-full items-center rounded-3xl bg-white/[.47] p-14 shadow-sm backdrop-blur-[23px] tab-pro:px-14 laptop:px-16 desktop:px-20">
+
+            <div className=" mt-4 flex w-full items-center rounded-3xl bg-white/[.47] px-4 py-10 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tablet:mt-10 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20">
               {/*  */}
               {/* Content */}
               {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
@@ -58,38 +59,39 @@ export default async function Blog({ params }: BlogProps) {
                 // min-h-[206px]
                 className="flex  justify-start gap-[9.375rem] "
               >
-                <div className="flex flex-col items-start justify-center gap-6  ">
-                  <h1 className="font-inter text-fs-xl text-dark1">
-                    {/* {post.title} */}
-                    Blog
-                  </h1>
+                {/* tablet:gap-6 */}
+                <div className="flex flex-col items-start justify-center ">
                   <div className="min-h-[41px]">
-                    <Balancer className="font-open-sans text-fs-lg text-[#889397]  ">
-                      {post.publishedAt}
-                    </Balancer>
-                  </div>
-                  {/* <div
-                  // mt-8
-                  className="relative  flex items-center gap-x-4"
-                >
-                  <img
-                    // src={post.author.imageUrl}
-                    src={
-                      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                    }
-                    alt=""
-                    className="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div className="text-sm leading-6">
-                    <p
-                      // text-gray-600
-                      className="font-open-sans text-fs-lg text-dark1 "
-                    >
-                      {post.author}
+                    <p className="fs-lg-sm font-open-sans text-[#889397] tablet:text-fs-lg">
+                      <Balancer>{post.publishedAt}</Balancer>
                     </p>
                   </div>
+                  <h1 className="mt-1 font-inter text-fs-x0 text-dark1 tablet:text-fs-xl">
+                    {post.title}
+                    {/* Blog */}
+                  </h1>
+
+                  <div
+                    // mt-8
+                    className="relative mt-4 flex items-center gap-x-2 "
+                  >
+                    <img
+                      // src={post.author.imageUrl}
+                      src={
+                        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80'
+                      }
+                      alt=""
+                      className="h-10 w-10 rounded-full bg-gray-50"
+                    />
+                    <div className="text-sm leading-6">
+                      <p
+                        // text-gray-600
+                        className="font-open-sans text-fs-lg text-dark1 "
+                      >
+                        {post.author}
+                      </p>
+                    </div>
                   </div>
-                  */}
                 </div>
 
                 <div className="hidden desktop:block">
@@ -99,10 +101,11 @@ export default async function Blog({ params }: BlogProps) {
             </div>
           </div>
 
+          {/* mt-4 px-4 py-14 mobile-md:px-8 tablet:mt-10 tablet:p-14    "> */}
           <div className="mt-10 laptop:px-[40px]">
             <div
               // mx-[24px] p-10
-              className="rounded-3xl bg-white/[.68] px-[40px] py-[19px] shadow-sm backdrop-blur-[23px]"
+              className="rounded-3xl bg-white/[.68] px-4 py-[19px] shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]"
             >
               <Mdx code={post?.body.code} />;
             </div>

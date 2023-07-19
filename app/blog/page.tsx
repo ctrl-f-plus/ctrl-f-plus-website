@@ -19,7 +19,7 @@ export default function BlogPage() {
         <Container className="mx-auto flex flex-col">
           {/* Header Card */}
 
-          <div className="mt-4 flex w-full items-center justify-center rounded-3xl bg-white/[.47] px-6 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:mt-10 tablet:p-14 tab-pro:px-14  laptop:px-16 desktop:px-20 ">
+          <div className="mt-4 flex w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:mt-10 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20 ">
             {/*  */}
             {/* Content */}
             {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
@@ -55,7 +55,7 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="rounded-3xl bg-white/[.68] px-6 py-[19px] shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:px-[40px]"
+                  className="rounded-3xl bg-white/[.68] px-4 py-[19px] shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:px-[40px]"
                 >
                   <div className="flex w-full flex-col">
                     <h2 className="font-inter text-subtitle text-dark1">

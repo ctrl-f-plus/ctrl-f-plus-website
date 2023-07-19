@@ -19,6 +19,7 @@ module.exports = {
           '1.125rem',
           { lineHeight: '1.53125rem', fontWeight: '600' },
         ],
+        'fs-lg-sm': ['1rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
         'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
         'fs-x0': ['2.0625rem', { lineHeight: '1', fontWeight: '800' }],
         'fs-xxx': ['3.4375rem', { lineHeight: '1.1', fontWeight: '800' }],
@@ -35,7 +36,7 @@ module.exports = {
       screens: {
         // iphone: '403px',
         'mobile-sm': '320px',
-        'mobile-md': '375px',
+        'mobile-md': '400px',
         'mobile-lg': '425px',
         tablet: '480px',
         'tab-pro': '768px',
@@ -44,6 +45,7 @@ module.exports = {
         wide: '1280px',
         '2xl': '1536px',
       },
+
       spacing: {
         6.5: '1.625rem', // 26px
         18: '4.5rem', // 72px
