@@ -20,26 +20,26 @@ export default function Hero() {
               <span className="whitespace-nowrap">For the</span>
               <br className="tab-pro:hidden" />
               <span
-                className="rounded-2xl bg-highlight-focus iphone:-mx-2 iphone:whitespace-nowrap iphone:px-2 tab-pro:ml-1"
-                // className="-mx-2 hidden whitespace-nowrap rounded-2xl bg-highlight-focus px-2 iphone:block  tab-pro:ml-1"
+                className="rounded-2xl bg-highlight-focus mobile-md:-mx-2 mobile-md:whitespace-nowrap mobile-md:px-2 tab-pro:ml-1"
+                // className="-mx-2 hidden whitespace-nowrap rounded-2xl bg-highlight-focus px-2 mobile-md:block  tab-pro:ml-1"
               >
                 Tab Hoarders
               </span>
             </h1> */}
 
-            <h1 className=" z-10  font-inter text-fs-xxx text-dark1 iphone:text-fs-xl">
+            <h1 className=" z-10  font-inter text-fs-xxx text-dark1 mobile-lg:text-fs-xl">
               {/* <Balancer> */}
               Ctrl-F Plus:
               <br />
               <span className="">For the</span>
               <br className="tab-pro:hidden" />
-              <span className="-ml-2 rounded-2xl bg-highlight-focus  px-2  iphone:-mx-2 iphone:hidden">
+              <span className="-ml-2 rounded-2xl bg-highlight-focus  px-2  mobile-lg:-mx-2 mobile-lg:hidden">
                 Tab{' '}
               </span>
-              <span className="-ml-2 rounded-2xl bg-highlight-focus px-2 text-fs-xx iphone:-mx-2 iphone:hidden">
+              <span className="-ml-2 rounded-2xl bg-highlight-focus px-2 text-fs-xx mobile-lg:-mx-2 mobile-lg:hidden">
                 Hoarders
               </span>
-              <span className="-ml-2 hidden rounded-2xl  bg-highlight-focus  px-2 iphone:-mx-2 iphone:block">
+              <span className="-ml-2 hidden rounded-2xl  bg-highlight-focus  px-2 mobile-lg:-mx-2 mobile-lg:block">
                 Tab Hoarders
               </span>
               {/* </Balancer> */}

@@ -25,7 +25,7 @@ ContainerProps) {
     <div
       id={id}
       className={clsx(
-        'max-w-292  px-4 iphone:px-6.5 tablet:px-9 desktop:px-8 wide:px-0',
+        'max-w-292  px-4 mobile-md:px-6.5 tablet:px-9 desktop:px-8 wide:px-0',
         className
       )}
     >

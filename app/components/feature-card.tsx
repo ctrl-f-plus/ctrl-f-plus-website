@@ -104,7 +104,7 @@ export default function FeatureCard() {
                     } `}
                   >
                     <motion.div
-                      className="flex w-fit flex-col items-center justify-center gap-9 px-1 iphone:px-0 laptop:items-start"
+                      className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start"
                       variants={textVariants()}
                     >
                       <h2 className="text-center font-inter text-fs-base text-primary1 laptop:text-left">

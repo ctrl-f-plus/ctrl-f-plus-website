@@ -22,7 +22,7 @@ module.exports = {
         'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
         'fs-x0': ['2.0625rem', { lineHeight: '1', fontWeight: '800' }],
         'fs-xxx': ['3.4375rem', { lineHeight: '1.1', fontWeight: '800' }],
-        'fs-xx': ['3.4375rem', { lineHeight: '1.4', fontWeight: '800' }],
+        'fs-xx': ['3.4375rem', { lineHeight: '1.5', fontWeight: '800' }],
         'fs-xl': ['3.4375rem', { lineHeight: '1.2', fontWeight: '800' }], // INTRO
 
         subtitle: ['1.4375rem', { lineHeight: '1.3', fontWeight: '600' }],
@@ -31,8 +31,12 @@ module.exports = {
         'p-blog': ['1.125rem', { lineHeight: '2rem', fontWeight: '400' }],
         'button-18': ['1.125rem', { lineHeight: 'normal', fontWeight: '600' }], //
       },
+
       screens: {
-        iphone: '391px',
+        // iphone: '403px',
+        'mobile-sm': '320px',
+        'mobile-md': '375px',
+        'mobile-lg': '425px',
         tablet: '480px',
         'tab-pro': '768px',
         laptop: '900px',
