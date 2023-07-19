@@ -107,7 +107,7 @@ export default async function Blog({ params }: BlogProps) {
               // mx-[24px] p-10
               className="rounded-3xl bg-white/[.68] px-4 py-[19px] shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]"
             >
-              <Mdx code={post?.body.code} />;
+              <Mdx code={post?.body.code} />
             </div>
           </div>
         </Container>
