@@ -1,18 +1,18 @@
 // @ts-nocheck
-"use client";
+'use client';
 
-import React from "react";
-import { useEffect, useState } from "react";
+import React from 'react';
+import { useEffect, useState } from 'react';
 
 function CanvasGradient() {
   const [Gradient, setGradient] = useState(null);
 
   useEffect(() => {
-    import("../../public/gradient").then(({ Gradient }) => {
+    import('../lib/gradient').then(({ Gradient }) => {
       const gradient = new Gradient();
 
       //@ts-ignore
-      gradient.initGradient("#gradient-canvas");
+      gradient.initGradient('#gradient-canvas');
       //@ts-ignore
       setGradient(gradient);
     });

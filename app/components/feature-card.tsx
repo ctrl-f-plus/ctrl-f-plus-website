@@ -6,6 +6,7 @@ import FeatureIcon1 from './icons/feature1';
 import FeatureIcon2 from './icons/feature2';
 import FeatureIcon3 from './icons/feature3';
 import Container from './layout/Container';
+import { Balancer } from 'react-wrap-balancer';
 
 const features = [
   {
@@ -103,11 +104,12 @@ export default function FeatureCard() {
                     } `}
                   >
                     <motion.div
-                      className="flex w-fit flex-col items-center justify-center gap-9  laptop:items-start"
+                      className="flex w-fit flex-col items-center justify-center gap-9 px-1 iphone:px-0 laptop:items-start"
                       variants={textVariants()}
                     >
                       <h2 className="text-center font-inter text-fs-base text-primary1 laptop:text-left">
-                        {feat.title}
+                        <Balancer>{feat.title}</Balancer>
+                        {/* {feat.title} */}
                       </h2>
 
                       <h3 className=" max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
@@ -115,7 +117,8 @@ export default function FeatureCard() {
                       </h3>
 
                       <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
-                        {feat.description}
+                        <Balancer>{feat.description}</Balancer>
+                        {/* {feat.description} */}
                       </p>
                     </motion.div>
                   </div>

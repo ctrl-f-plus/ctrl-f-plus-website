@@ -20,8 +20,10 @@ module.exports = {
           { lineHeight: '1.53125rem', fontWeight: '600' },
         ],
         'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
-        'fs-x0': ['2.0625rem', { lineHeight: '100%', fontWeight: '800' }],
-        'fs-xl': ['3.4375rem', { lineHeight: '120%', fontWeight: '800' }], // INTRO
+        'fs-x0': ['2.0625rem', { lineHeight: '1', fontWeight: '800' }],
+        'fs-xxx': ['3.4375rem', { lineHeight: '1.1', fontWeight: '800' }],
+        'fs-xx': ['3.4375rem', { lineHeight: '1.4', fontWeight: '800' }],
+        'fs-xl': ['3.4375rem', { lineHeight: '1.2', fontWeight: '800' }], // INTRO
 
         subtitle: ['1.4375rem', { lineHeight: '1.3', fontWeight: '600' }],
 
@@ -30,7 +32,7 @@ module.exports = {
         'button-18': ['1.125rem', { lineHeight: 'normal', fontWeight: '600' }], //
       },
       screens: {
-        iphone: '380px',
+        iphone: '391px',
         tablet: '480px',
         'tab-pro': '768px',
         laptop: '900px',
