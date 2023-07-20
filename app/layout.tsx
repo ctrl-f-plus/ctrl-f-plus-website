@@ -1,11 +1,10 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
-import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
-import Footer2 from './components/layout/footer2';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -82,7 +81,7 @@ export default function RootLayout({
               {children}
               <Analytics />
             </main>
-            <Footer2 />
+            <Footer />
           </div>
         </div>
       </body>
