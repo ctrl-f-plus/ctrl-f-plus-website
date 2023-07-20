@@ -61,10 +61,7 @@ const team = [
 function TwitterIcon({ className }: { className?: string }) {
   return (
     <svg
-      className={clsx(
-        className,
-        'h-5 w-5 fill-primary1 hover:fill-highlight-focus-1'
-      )}
+      className={clsx(className, 'h-5 w-5 fill-primary1 hover:fill-gray-300')}
       aria-hidden="true"
       // fill="currentColor"
       viewBox="0 0 20 20"
@@ -77,10 +74,7 @@ function TwitterIcon({ className }: { className?: string }) {
 function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg
-      className={clsx(
-        className,
-        'h-5 w-5 fill-primary1 hover:fill-highlight-focus-1'
-      )}
+      className={clsx(className, 'h-5 w-5 fill-primary1 hover:fill-gray-300')}
       aria-hidden="true"
       // fill="currentColor"
       viewBox="0 0 20 20"
@@ -99,10 +93,8 @@ function GithubIcon({ className }: { className?: string }) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       // height="2em"
-      className={clsx(
-        className,
-        'h-5 w-5 fill-primary1 hover:fill-highlight-focus-1'
-      )}
+
+      className={clsx(className, 'h-5 w-5 fill-primary1 hover:fill-gray-300')}
       viewBox="0 0 496 512"
     >
       {/* Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
@@ -173,7 +165,8 @@ export default function About() {
                       <a
                         href={mate.twitterUrl}
                         // className="text-gray-400 hover:text-gray-500"
-                        className="text-primary1 hover:text-highlight-focus-1"
+
+                        className="text-primary1 hover:text-gray-300"
                       >
                         <span className="sr-only">Twitter</span>
                         <TwitterIcon />
@@ -183,7 +176,8 @@ export default function About() {
                       <a
                         href={mate.linkedinUrl}
                         // className="text-gray-400 hover:text-gray-500"
-                        className="text-primary1 hover:text-highlight-focus-1"
+
+                        className="text-primary1 hover:text-gray-300"
                       >
                         <span className="sr-only">LinkedIn</span>
                         <LinkedInIcon />
@@ -193,7 +187,7 @@ export default function About() {
                       <li>
                         <a
                           href={mate.githubUrl}
-                          className="text-primary1 hover:text-highlight-focus-1"
+                          className="text-primary1 hover:text-gray-300"
                         >
                           <GithubIcon className="" />
                           <span className="sr-only">Github</span>

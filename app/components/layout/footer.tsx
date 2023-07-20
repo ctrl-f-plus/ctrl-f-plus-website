@@ -102,10 +102,10 @@ function OpenSource3() {
         <a
           href={process.env.GITHUB_ORGANIZATION_URL}
           target="_blank"
-          className="mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance] laptop:text-center"
+          className="group mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance]  laptop:text-center"
         >
-          github.com/
-          <span className="text-fs-base text-highlight-focus-1">
+          <span className="group-hover:text-white">github.com/</span>
+          <span className="text-fs-base text-highlight-focus-1 group-hover:text-highlight-focus">
             ctrl-f-plus
           </span>
         </a>
