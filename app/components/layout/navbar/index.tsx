@@ -30,7 +30,7 @@ const navItems = {
   '/about': {
     name: 'About',
   },
-  'https://opencollective.com/ctrl-f-plus-chrome-extension': {
+  [process.env.OPEN_COLLECTIVE_URL || '']: {
     name: 'Sponsor',
   },
 };

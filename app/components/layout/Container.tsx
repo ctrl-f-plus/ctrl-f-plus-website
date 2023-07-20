@@ -8,17 +8,12 @@ type ContainerProps = {
   children?: React.ReactNode;
 };
 
-export default function Container({
-  id,
-  className,
-  children,
-}: // ...props
-ContainerProps) {
+export default function Container({ id, className, children }: ContainerProps) {
   return (
     <div
       id={id}
       className={clsx(
-        'max-w-292  px-4 mobile-lg:px-6.5 tablet:px-9 desktop:px-8 wide:px-0',
+        'max-w-292 px-4 mobile-lg:px-6.5 tablet:px-9 desktop:px-8 wide:px-0',
         className
       )}
     >
