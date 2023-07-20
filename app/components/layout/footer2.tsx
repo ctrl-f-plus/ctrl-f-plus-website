@@ -39,7 +39,7 @@ const navigation = [
       { title: 'About', href: '/about' },
       { title: 'Blog', href: '/blog' },
       { title: 'Privacy Policy', href: '/' },
-      { title: 'Contact us', href: '/contact' },
+      { title: 'Contact us', href: 'mailto:ben.m.chavez@gmail.com' },
     ],
   },
   {
