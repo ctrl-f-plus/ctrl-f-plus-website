@@ -63,7 +63,9 @@ function Navigation() {
                 // mt-4
                 <li key={link.title} className="mt-2">
                   <Link
+                    // @ts-ignore
                     href={link.href}
+                    // @ts-ignore
                     target={link.target ?? '_self'}
                     className=" hover:text-white"
                   >
