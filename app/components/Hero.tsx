@@ -14,7 +14,7 @@ export default function Hero() {
       <Container className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 laptop:flex-row laptop:justify-between wide:mt-[7.625rem] wide:h-109">
         <div className="flex w-full flex-col gap-14 laptop:max-w-[586px] wide:gap-28">
           <div className="relative flex flex-col items-start gap-8 ">
-            <h1 className=" z-10 font-inter text-fs-xxx text-dark1 mobile-md:text-fs-xl">
+            <h1 className="z-10 font-inter text-fs-xxx text-dark1 mobile-md:text-fs-xl">
               Ctrl-F Plus:
               <br />
               <span className="">For the</span>

@@ -34,7 +34,6 @@ module.exports = {
       },
 
       screens: {
-        // iphone: '403px',
         'mobile-sm': '320px',
         'mobile-md': '400px',
         'mobile-lg': '425px',

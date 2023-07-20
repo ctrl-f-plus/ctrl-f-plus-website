@@ -41,3 +41,7 @@
   - [ ] Add Footer links
   - [ ] Add extra small screen size
   - Mobile menu doesn't close on click
+
+
+- Remove Footer from 404 page
+- Update Loader

@@ -89,7 +89,7 @@ export default function Navbar() {
                   <Link
                     key={path}
                     href={path}
-                    target={name === 'Donate' ? '_blank' : '_self'}
+                    target={name === 'Sponsor' ? '_blank' : '_self'}
                     className={clsx(' mx-1 text-primary2 transition-all ', {
                       '!text-dark1 hover:!text-dark1/80': !isActive,
                     })}

@@ -1,11 +1,11 @@
-import Container from "./components/layout/Container";
+import Container from './components/layout/Container';
 
 function Loading() {
   return (
-    <Container className="flex h-auto w-full items-center justify-center">
+    <Container className="mx-auto flex h-auto w-full items-center justify-center">
       <div>
         <svg
-          className="-ml-1 mr-3 h-5 w-5 animate-spin text-red-500"
+          className="-ml-1 mr-3 h-5 w-5 animate-spin text-primary1"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
