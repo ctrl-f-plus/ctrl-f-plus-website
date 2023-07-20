@@ -35,6 +35,11 @@ const team = [
     name: 'Ben Chavez',
     role: 'Developer',
     avatar: '/images/ben-avatar.jpg',
+    // width: 1000,
+    // height: 5000,
+    // avatar: '/images/ben-avatar5.png',
+    width: 528,
+    height: 473,
     bio: 'Time waits for no man. Unless that man is Chuck Norris. Chuck Norris doesn’t wear a watch. He decides what time it is. Chuck Norris has a mug of nails instead of coffee in the morning. Chuck Norris once ate at Taco Bell and didn’t get diarrhea.',
     twitterUrl: '',
     linkedinUrl: 'https://www.linkedin.com/in/benjaminchavez/',
@@ -44,6 +49,8 @@ const team = [
     name: 'Ighodalo I',
     role: 'Designer',
     avatar: '/images/ighodalo-avatar.jpeg',
+    width: 800,
+    height: 800,
     bio: 'Time waits for no man. Unless that man is Chuck Norris. Chuck Norris doesn’t wear a watch. He decides what time it is. Chuck Norris has a mug of nails instead of coffee in the morning. Chuck Norris once ate at Taco Bell and didn’t get diarrhea.',
     twitterUrl: '',
     linkedinUrl: 'https://www.linkedin.com/in/ighodalo-ijagbone/',
@@ -112,7 +119,7 @@ export default function About() {
           <div className="mt-4 flex w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:mt-10 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20 ">
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6 ">
-                <h1 className="font-inter text-fs-xl text-dark1">About</h1>
+                <h1 className="font-inter text-fs-xl text-dark1">Our Team</h1>
                 <Balancer className="font-open-sans text-fs-lg text-dark1">
                   Welcome to development journey of{' '}
                   <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{' '}
@@ -125,42 +132,39 @@ export default function About() {
             </div>
           </div>
 
-          <div
-            className="mt-10 grid grid-cols-1 gap-3 gap-x-10 laptop:grid-cols-2 laptop:px-[40px]
-          "
-          >
+          <div className="mt-10 flex flex-col justify-around gap-20 overflow-hidden rounded-3xl bg-white/[.68] py-6 shadow-sm  backdrop-blur-[23px] tab-pro:flex-row tab-pro:gap-0 laptop:mx-[40px] laptop:grid-cols-2">
             {team.map((mate: any) => (
               <div
                 key={mate.name}
-                // px-4 py-[19px] mobile-md:px-8 tablet:px-[40px]
-                // overflow-hidden
-                // className="col-span-3 flex flex-col items-center justify-center rounded-3xl  bg-white/[.68] shadow-sm backdrop-blur-[23px]"
-                className=" flex  flex-col items-center justify-center rounded-3xl  bg-white/[.68] shadow-sm backdrop-blur-[23px]"
+                className="flex max-w-full flex-col items-center justify-center tab-pro:w-96"
               >
-                <div className="h-auto w-full">
+                <div className="flex h-auto max-w-full justify-center ">
                   <Image
                     src={mate.avatar}
-                    width={500}
-                    height={500}
+                    width={mate.width}
+                    height={mate.height}
+                    // width={500}
+                    // height={500}
                     loading="lazy"
                     alt="Picture of the Team member"
-                    className="aspect-[4/3] h-auto w-full rounded-t-3xl object-cover"
-                    // className="mx-auto aspect-[1/1] rounded-full object-cover"
-                    // className="mt-6 rounded-lg object-cover shadow-xl sm:mt-8 "
+                    // w-96
+                    className="aspect-[4/3] h-auto  rounded-3xl object-cover object-center"
                   />
                 </div>
 
                 {/* CARD BODY */}
-                <div className="flex w-full flex-col justify-start px-4 pb-4">
+                <div className="flex   max-w-full flex-col justify-start px-4 pb-4">
                   <h3 className="mt-6 font-inter text-fs-x0 text-dark1">
                     {mate.name}
                   </h3>
                   <p className="font-inter text-fs-base leading-7 text-primary1 ">
                     {mate.role}
                   </p>
-                  <p className="mt-4 font-open-sans text-fs-lg text-dark1">
+                  {/* <Balancer> */}{' '}
+                  <p className="mt-4 text-start font-open-sans text-fs-lg text-dark1">
                     {mate.bio}
                   </p>
+                  {/* </Balancer> */}
                   <ul
                     role="list"
                     className="mt-6 flex items-center justify-center gap-x-6 "
@@ -201,6 +205,7 @@ export default function About() {
               </div>
             ))}
           </div>
+          {/* </div> */}
         </Container>
       </section>
     </>
