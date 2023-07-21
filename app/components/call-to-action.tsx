@@ -14,7 +14,7 @@ export default function CallToAction() {
 
   return (
     <>
-      <Container className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 laptop:hidden laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
+      <Container className=" mt-18 flex w-full flex-col tablet:mt-24 laptop:hidden laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
         <div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
           <svg
             viewBox="0 0 1024 1024"
@@ -70,7 +70,7 @@ export default function CallToAction() {
         </div>
       </Container>
 
-      <Container className="mx-auto mt-18 hidden w-full flex-col tablet:mt-24 laptop:flex laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
+      <Container className=" mt-18 hidden w-full flex-col tablet:mt-24 laptop:flex laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
         <Atropos
           className="hidden h-full w-full rounded-[2.25rem]"
           shadow={prefersReducedMotion ? false : true}

@@ -92,7 +92,7 @@ function OpenSource3() {
 
         <div className="mt-4 flex w-auto flex-row  items-center justify-center gap-3  ">
           <div className=" ">
-            <GithubIcon className="h-12 w-12 fill-white" />
+            <GithubIcon className="h-12 w-12 fill-gray-300" />
           </div>
           <p className="max-w-[14rem] font-open-sans text-sm text-gray-300 [text-wrap:balance]">
             This project is open source and we welcome your contributions!
@@ -104,8 +104,8 @@ function OpenSource3() {
           target="_blank"
           className="group mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance]  laptop:text-center"
         >
-          <span className="group-hover:text-white">github.com/</span>
-          <span className="text-fs-base text-highlight-focus-1 group-hover:text-highlight-focus">
+          <span className="font-bold group-hover:text-white">github.com/</span>
+          <span className="text-fs-base  text-highlight-focus-1 group-hover:text-highlight-focus">
             ctrl-f-plus
           </span>
         </a>
@@ -122,7 +122,7 @@ export default function Footer() {
   // "mx-auto mt-18 tablet:mt-24 wide:mt-[7.625rem]
   return (
     <footer className="mt-18 bg-dark1 tablet:mt-24 wide:mt-[7.625rem]">
-      <Container className="mx-auto">
+      <Container className="">
         <div className="mt-18 grid grid-cols-1 gap-x-8 gap-y-16 tab-pro:grid-cols-2  lg:grid-cols-2">
           <Navigation />
 
@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
       </Container>
 
-      <Container className="mx-auto mt-18 flex h-[5.375rem] w-full items-center justify-between border-t border-white/10 tablet:mt-24  ">
+      <Container className=" mt-18 flex h-[5.375rem] w-full items-center justify-between border-t border-white/10 tablet:mt-24  ">
         <LogoIconSecondary />
 
         {/* <p className="font-open-sans text-fs-lg leading-5 text-white">

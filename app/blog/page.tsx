@@ -16,30 +16,25 @@ export default function BlogPage() {
   return (
     <>
       <section>
-        <Container className="mx-auto flex flex-col">
-          {/* Header Card */}
-
-          <div className="mt-4 flex w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:mt-10 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20 ">
-            {/*  */}
-            {/* Content */}
-            {/* TODO: adjust gap for smaller screensizes: gap-?? bg-teal-500 */}
+        <Container className="mt-18 flex flex-col tablet:mt-24">
+          <div className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-red-500 bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20">
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6 ">
                 <h1 className="font-inter text-fs-xl text-dark1">Blog</h1>
-
-                <Balancer className="font-open-sans text-fs-lg text-dark1">
+                <p className="font-open-sans text-fs-lg text-dark1">
                   Welcome to development journey of{' '}
-                  <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{' '}
+                  <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}
                   Here, you can find articles about my progress, challenges, and
                   successes. I hope you enjoy reading about my experiences and
                   find them inspiring.
-                </Balancer>
+                </p>
               </div>
               <div className="hidden desktop:block">
                 <DrawingIcon />
               </div>
             </div>
           </div>
+
           <div
             className="mt-10 grid grid-cols-1 gap-3 gap-x-10 laptop:grid-cols-2 laptop:px-[40px]
           "
@@ -55,9 +50,12 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="rounded-3xl bg-white/[.68] px-4 py-[19px] shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:px-[40px]"
+                  // className="rounded-3xl bg-white/[.68] px-4 py-[19px] shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:px-[40px]"
+                  // className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-6 py-[19px] shadow-sm backdrop-blur-[23px]"
+                  // mx-[24px] p-10
+                  className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-4  py-6 shadow-sm backdrop-blur-[23px]   mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]"
                 >
-                  <div className="flex w-full flex-col">
+                  <div className="flex min-h-[96px] flex-col items-start gap-2 ">
                     <h2 className="font-inter text-subtitle text-dark1">
                       <Balancer>{post.title}</Balancer>
                     </h2>

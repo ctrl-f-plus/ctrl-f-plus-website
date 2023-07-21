@@ -2,7 +2,7 @@ import Container from './components/layout/Container';
 
 function Loading() {
   return (
-    <Container className="mx-auto flex h-auto w-full items-center justify-center">
+    <Container className=" flex h-auto w-full items-center justify-center">
       <div>
         <svg
           className="-ml-1 mr-3 h-5 w-5 animate-spin text-primary1"

@@ -13,7 +13,7 @@ export default function Container({ id, className, children }: ContainerProps) {
     <div
       id={id}
       className={clsx(
-        'max-w-292 px-4 mobile-lg:px-6.5 tablet:px-9 desktop:px-8 wide:px-0',
+        'mx-auto max-w-292 px-4 mobile-lg:px-6.5 tablet:px-9 desktop:px-8 wide:px-0',
         className
       )}
     >

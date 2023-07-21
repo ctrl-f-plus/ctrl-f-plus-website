@@ -26,7 +26,7 @@ export default function FeaturesHeaderVersion2() {
     <>
       <Container
         // TODO: check if you need justify-center here
-        className="mx-auto flex w-full flex-col justify-center"
+        className=" flex w-full flex-col justify-center"
       >
         <div
           onMouseMove={handleMouseMove}

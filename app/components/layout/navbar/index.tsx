@@ -52,7 +52,7 @@ export default function Navbar() {
   return (
     // mb-18  tablet:mb-24 wide:mb-[7.625rem]
     <header className="pt-5  wide:pt-12 ">
-      <Container className="mx-auto flex w-full items-center justify-between ">
+      <Container className=" flex w-full items-center justify-between ">
         <nav
           // scroll-pr-6 fade
           className="mx-auto flex h-auto w-full items-center justify-between p-2"
@@ -111,7 +111,7 @@ export default function Navbar() {
   );
 }
 
-//  <Container className="mx-auto flex w-full items-center justify-between ">
+//  <Container className=" flex w-full items-center justify-between ">
 //    <nav
 //      className="mx-auto flex h-auto w-full items-center justify-between p-2"
 //      aria-label="Global"

@@ -1,11 +1,11 @@
 // app/blog/[slug]/page.tsx
 
-import { allBlogs } from "contentlayer/generated";
-import { notFound } from "next/navigation";
-import { Mdx } from "@/app/components/mdx";
-import Balancer from "react-wrap-balancer";
-import Container from "@/app/components/layout/Container";
-import Link from "next/link";
+import { allBlogs } from 'contentlayer/generated';
+import { notFound } from 'next/navigation';
+import { Mdx } from '@/app/components/mdx';
+import Balancer from 'react-wrap-balancer';
+import Container from '@/app/components/layout/Container';
+import Link from 'next/link';
 
 interface BlogProps {
   params: {
@@ -29,7 +29,7 @@ export default async function Blog({ params }: BlogProps) {
         </script> */}
       {/* gap-y-10 mt-18 tablet:mt-24 wide:mt-[7.625rem] */}
       <section>
-        <Container className="mx-auto flex flex-col ">
+        <Container className=" flex flex-col ">
           <Link
             href="/blog"
             className="group flex flex-row items-center justify-start gap-2 font-open-sans text-button-18 text-mongo-black group-hover:text-primary2 tablet:mt-10"
@@ -68,8 +68,8 @@ export default async function Blog({ params }: BlogProps) {
                   {post.publishedAt}
                 </p> */}
                 <div className="w-1/2 bg-blue-500 font-open-sans text-fs-lg text-dark1">
-                  Welcome to development journey of{" "}
-                  <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{" "}
+                  Welcome to development journey of{' '}
+                  <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{' '}
                   Here, you can find articles about my progress, challenges, and
                   successes. I hope you enjoy reading about my experiences and
                   find them inspiring.

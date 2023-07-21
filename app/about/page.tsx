@@ -1,21 +1,5 @@
 // app/about/page.tsx
 
-// import Container from '../components/layout/Container';
-
-// export default function About() {
-//   return (
-//     <div>
-//       <Container>
-//         <div className="item-center mt-4 flex h-auto w-full justify-center tablet:mt-10 ">
-//           <h1>About</h1>
-//         </div>
-//       </Container>
-//     </div>
-//   );
-// }
-
-// app/blog/page.tsx
-
 import { allBlogs } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -26,7 +10,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'About',
   description: 'Blog posts index page metadata description',
 };
 
@@ -103,117 +87,220 @@ function GithubIcon({ className }: { className?: string }) {
   );
 }
 
-{
-  /* <div className="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:items-center lg:gap-x-8">
-                      <div className="aspect-h-3 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
-                        <img
-                          src={product.imageSrc}
-                          alt={product.imageAlt}
-                          className="object-cover object-center"
-                        />
-                      </div>
-                    </div> */
+function SocialProfiles({ person }: any) {
+  return (
+    <ul role="list" className="mt-6 flex items-center justify-center gap-x-6 ">
+      <li>
+        <a
+          href={person.twitterUrl}
+          // className="text-gray-400 hover:text-gray-500"
+          className="text-dark1 hover:text-gray-300"
+        >
+          <span className="sr-only">Twitter</span>
+          <TwitterIcon />
+        </a>
+      </li>
+      <li>
+        <a
+          href={person.linkedinUrl}
+          // className="text-gray-400 hover:text-gray-500"
+          className="text-primary1 hover:text-gray-300"
+        >
+          <span className="sr-only">LinkedIn</span>
+          <LinkedInIcon />
+        </a>
+      </li>
+      {person.githubUrl && (
+        <li>
+          <a
+            href={person.githubUrl}
+            className="text-primary1 hover:text-gray-300"
+          >
+            <GithubIcon className="" />
+            <span className="sr-only">Github</span>
+          </a>
+        </li>
+      )}
+    </ul>
+  );
 }
 
 export default function About() {
   return (
     <>
-      <section>
-        <Container className="mx-auto flex flex-col">
-          <div className="mt-4 flex w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:mt-10 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20 ">
-            <div className="flex justify-start gap-[9.375rem]">
-              <div className="flex flex-col items-start justify-center gap-6 ">
-                <h1 className="font-inter text-fs-xl text-dark1">Our Team</h1>
-                <Balancer className="font-open-sans text-fs-lg text-dark1">
-                  Welcome to development journey of{' '}
-                  <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{' '}
-                  Here, you can find articles about my progress, challenges, and
-                  successes. I hope you enjoy reading about my experiences and
-                  find them inspiring.
-                </Balancer>
-              </div>
-              <div className="hidden desktop:block"></div>
+      <Container className="mt-18 flex flex-col tablet:mt-24">
+        <div
+          // bg-white/[.47]
+          className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
+        >
+          <div className="flex justify-start gap-[9.375rem]">
+            <div className="flex flex-col items-start justify-center gap-6">
+              <h1 className="font-inter text-fs-xl text-dark1">About</h1>
+
+              <p className="font-open-sans text-fs-lg text-dark1 ">
+                {/* <Balancer> */} Welcome to{' '}
+                <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> ,
+                an innovative open-source Chrome extension that expands the
+                "Control + F" feature to encompass all tabs in your browser
+                window. Our mission? To revolutionize the way users interact
+                with the web, making browsing more efficient and user-centric.
+                {/* </Balancer> */}
+              </p>
+              <p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
+                <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
+                developed by a dedicated open-source community. It streamlines
+                information retrieval by enabling searches across multiple tabs.
+                This tool represents a move towards a more accessible web, with
+                a commitment to continual, community-driven development and
+                innovation.
+              </p>
             </div>
           </div>
+        </div>
 
-          <div className="mt-10 flex flex-col justify-around gap-20 overflow-hidden rounded-3xl bg-white/[.68] py-6 shadow-sm  backdrop-blur-[23px] tab-pro:flex-row tab-pro:gap-0 laptop:mx-[40px] laptop:grid-cols-2">
-            {team.map((mate: any) => (
-              <div
-                key={mate.name}
-                className="flex max-w-full flex-col items-center justify-center tab-pro:w-96"
+        {/* <div className="mt-10 flex flex-col rounded-3xl bg-white/[.68] py-6 shadow-sm backdrop-blur-[23px]"> */}
+        {/* <div className="mt-10 laptop:px-[40px]">
+          <div
+            // mx-[24px] p-10
+            className="rounded-3xl bg-white/[.68] py-[19px] shadow-sm backdrop-blur-[23px] "
+          >
+
+            */}
+        <div className="mt-10 laptop:px-[40px]">
+          <div
+            // className="mt-10 flex flex-col rounded-3xl bg-white/[.68] py-6 shadow-sm backdrop-blur-[23px]"
+            // className="bg-white py-24 md:py-32 lg:py-40"
+            // className="mt-10 rounded-3xl bg-white/[.68] py-24 md:py-32 lg:py-40"
+            // className=" rounded-3xl bg-white/[.68] py-14 shadow-sm backdrop-blur-[23px] "
+            className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 tab-pro:py-20 laptop:px-8 desktop:px-[40px]"
+          >
+            <div className="grid-cols-1 gap-x-8 xl:grid-cols-2">
+              <h2
+                // className="mt-14 text-center font-inter text-fs-x0 text-dark1"
+                // className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                // text-3xl sm:text-4xl
+                className="font-inter text-fs-x0 tracking-tight text-dark1 "
               >
-                <div className="flex h-auto max-w-full justify-center ">
-                  <Image
-                    src={mate.avatar}
-                    width={mate.width}
-                    height={mate.height}
-                    // width={500}
-                    // height={500}
-                    loading="lazy"
-                    alt="Picture of the Team member"
-                    // w-96
-                    className="aspect-[4/3] h-auto  rounded-3xl object-cover object-center"
-                  />
-                </div>
-
-                {/* CARD BODY */}
-                <div className="flex   max-w-full flex-col justify-start px-4 pb-4">
-                  <h3 className="mt-6 font-inter text-fs-x0 text-dark1">
-                    {mate.name}
-                  </h3>
-                  <p className="font-inter text-fs-base leading-7 text-primary1 ">
-                    {mate.role}
-                  </p>
-                  {/* <Balancer> */}{' '}
-                  <p className="mt-4 text-start font-open-sans text-fs-lg text-dark1">
-                    {mate.bio}
-                  </p>
-                  {/* </Balancer> */}
-                  <ul
-                    role="list"
-                    className="mt-6 flex items-center justify-center gap-x-6 "
+                Meet Our team
+              </h2>
+              <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
+                We’re a dynamic group of individuals who are passionate about
+                what we do and dedicated to delivering the best results for our
+                clients.
+              </p>
+            </div>
+            <div className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20   xl:grid-cols-2">
+              {/* <ul className="mt-14 flex flex-col justify-around gap-20 tab-pro:flex-row tab-pro:gap-0 laptop:mx-[40px] laptop:grid-cols-2"> */}
+              <ul
+                role="list"
+                className="mx-auto grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
+              >
+                {team.map((person: any) => (
+                  <li
+                    key={person.name}
+                    // className="flex max-w-full flex-col items-center justify-center tab-pro:w-96"
                   >
-                    <li>
-                      <a
-                        href={mate.twitterUrl}
-                        // className="text-gray-400 hover:text-gray-500"
+                    {/* <div className="flex h-auto max-w-full justify-center ">
+                    <Image
+                      src={person.avatar}
+                      width={person.width}
+                      height={person.height}
+                      // width={500}
+                      // height={500}
+                      loading="lazy"
+                      alt="Picture of the Team member"
+                      // w-96
+                      className="aspect-[4/3] h-auto  rounded-3xl object-cover object-center"
+                    />
+                  </div> */}
 
-                        className="text-primary1 hover:text-gray-300"
-                      >
-                        <span className="sr-only">Twitter</span>
-                        <TwitterIcon />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={mate.linkedinUrl}
-                        // className="text-gray-400 hover:text-gray-500"
+                    {/* CARD BODY */}
+                    <Image
+                      width={500}
+                      height={500}
+                      className="aspect-[3/2] w-full rounded-2xl object-cover"
+                      src={person.avatar}
+                      alt=""
+                    />
 
-                        className="text-primary1 hover:text-gray-300"
-                      >
-                        <span className="sr-only">LinkedIn</span>
-                        <LinkedInIcon />
-                      </a>
-                    </li>
-                    {mate.githubUrl && (
+                    <h3
+                      // className="mt-6 text-lg font-semibold leading-8 text-gray-900"
+                      className="mt-6 font-inter text-lg font-semibold leading-8 text-dark1"
+                    >
+                      {person.name}
+                    </h3>
+                    <p className="font-arimo text-base leading-7 text-dark1/80">
+                      {person.role}
+                    </p>
+                    <p
+                      // className="mt-4 text-base leading-7 text-gray-600"
+                      className="mt-4 font-arimo text-base leading-7 text-dark1/80"
+                    >
+                      {person.bio}
+                    </p>
+                    <ul role="list" className="mt-6 flex gap-x-6">
                       <li>
                         <a
-                          href={mate.githubUrl}
-                          className="text-primary1 hover:text-gray-300"
+                          href={person.twitterUrl}
+                          // className="text-gray-400 hover:text-gray-500"
+                          className="text-dark1/70 hover:text-dark1"
                         >
-                          <GithubIcon className="" />
-                          <span className="sr-only">Github</span>
+                          <span className="sr-only">Twitter</span>
+                          <svg
+                            className="h-5 w-5"
+                            aria-hidden="true"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                          </svg>
                         </a>
                       </li>
-                    )}
-                  </ul>
-                </div>
-              </div>
-            ))}
+                      <li>
+                        <a
+                          href={person.linkedinUrl}
+                          // className="text-gray-400 hover:text-gray-500"
+                          className="text-dark1/70 hover:text-dark1"
+                        >
+                          <span className="sr-only">LinkedIn</span>
+                          <svg
+                            className="h-5 w-5"
+                            aria-hidden="true"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+
+                    {/* <div className="flex  max-w-full flex-col justify-start px-4 pb-4">
+                    <h3 className="mt-6 font-inter text-fs-x0 text-dark1">
+                      {person.name}
+                    </h3>
+                    <p
+                      className="text-start font-open-sans text-fs-lg text-dark1"
+                      // className="font-inter text-fs-base leading-7 text-primary1 "
+                    >
+                      {person.role}
+                    </p>
+                    <p className="mt-4 text-start font-open-sans text-fs-lg text-dark1">
+                      {person.bio}
+                    </p>
+                    <SocialProfiles person={person} />
+                  </div> */}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          {/* </div> */}
-        </Container>
-      </section>
+        </div>
+      </Container>
     </>
   );
 }

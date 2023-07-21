@@ -76,7 +76,7 @@ export default function FeatureCard() {
         return (
           <Container
             key={feat.title}
-            className="mx-auto mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]"
+            className=" mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]"
           >
             <div className="laptop:text-left">
               <motion.div
@@ -112,7 +112,7 @@ export default function FeatureCard() {
                         {/* {feat.title} */}
                       </h2>
 
-                      <h3 className=" max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
+                      <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
                         {feat.subTitle}
                       </h3>
 
