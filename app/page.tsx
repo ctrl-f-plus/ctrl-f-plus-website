@@ -1,6 +1,6 @@
 // app/tab-hoarders/page.tsx
 
-import Hero from './components/Hero';
+import Hero from './components/hero';
 import CallToAction from './components/call-to-action';
 import FeatureCard from './components/feature-card';
 import FeaturesHeader from './components/features-header';

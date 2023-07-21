@@ -2,12 +2,10 @@
 
 import ButtonPrimary from './buttons/ButtonPrimary';
 import ButtonMobile from './buttons/button-mobile';
-import HeroAnimation from './icons/hero-animation';
 import Container from './layout/Container';
 import QuickView from './quick-view';
-import Image from 'next/image';
+import HeroAnimation from './icons/hero-animation';
 
-// TODO: YOu have double the top padding that you need/should have
 export default function Hero() {
   return (
     <>
@@ -35,7 +33,6 @@ export default function Hero() {
               your precious tabs, not just the one you&apos;re currently
               obsessing over.
             </p>
-            {/* <span className="absolute -left-[0.5625rem] top-[6.6875rem]  h-[3.8125rem] w-[24.5rem] rounded-2xl bg-highlight-focus" /> */}
           </div>
           <div className="hidden flex-col gap-6 tablet:flex tab-pro:flex-row">
             <ButtonPrimary variant="solid">
@@ -51,19 +48,8 @@ export default function Hero() {
             <ButtonMobile variant="outline">See how it works</ButtonMobile>
           </div>
         </div>
-        {/* <SearchIcon className="flex flex-auto" /> */}
-        <div className="-mt-10 hidden laptop:block  desktop:-mt-20">
-          {/* <HeroAnimation className="flex flex-auto" /> */}
-          <Image
-            className="flex flex-auto"
-            // width={500}
-            // height={500}
-            width={480}
-            height={423}
-            src={'/images/hero.gif'}
-            alt={''}
-          />
-        </div>
+
+        <HeroAnimation className={'hidden laptop:block'} />
       </Container>
     </>
   );

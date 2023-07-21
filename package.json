@@ -38,7 +38,8 @@
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "server-only": "^0.0.1",
-    "shiki": "^0.14.3"
+    "shiki": "^0.14.3",
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",

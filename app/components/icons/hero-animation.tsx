@@ -1,17 +1,47 @@
-// app/components/icons/hero-animation.tsx
+// app/components/icons/hero-animation.tsx\
+'use client';
 
-export default function HeroAnimation({ className }: { className?: string }) {
+import Image from 'next/image';
+import gifHero from '@/public/images/gif-hero.gif';
+import { useReducedMotion } from 'framer-motion';
+import { twMerge } from 'tailwind-merge';
+
+export default function HeroAnimation({ className }: any) {
+  const prefersReducedMotion = useReducedMotion();
+
+  const classNames = twMerge(
+    className,
+    prefersReducedMotion ? '-mt-9' : '-mt-18'
+  );
+
+  return (
+    <>
+      <div className={classNames}>
+        {prefersReducedMotion ? (
+          <StaticHeroAnimation />
+        ) : (
+          <Image
+            unoptimized={true}
+            src={gifHero}
+            alt={''}
+            priority
+            // className="flex flex-auto"
+          />
+        )}
+      </div>
+    </>
+  );
+}
+
+function StaticHeroAnimation() {
   return (
     <svg
-      // width="auto"
-      // height="338"
       // viewBox="0 0 410 338"
       width="auto"
       height="338"
       viewBox="0 0 460 338"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
     >
       <g filter="url(#filter0_ddddii_130_5338)">
         <rect x="48" y="48" width="353" height="54" rx="12" fill="#222D31" />

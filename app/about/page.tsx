@@ -1,13 +1,12 @@
 // app/about/page.tsx
 
-import { allBlogs } from 'contentlayer/generated';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { Balancer } from 'react-wrap-balancer';
-import DrawingIcon from '../components/icons/drawing-icon';
-import Container from '../components/layout/Container';
-import Image from 'next/image';
+import benAvatar from '@/public/images/ben-avatar.jpg';
+import ighodaloAvatar from '@/public/images/ighodalo-avatar.jpeg';
 import clsx from 'clsx';
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Container from '../components/layout/Container';
+import { Balancer } from 'react-wrap-balancer';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -18,10 +17,8 @@ const team = [
   {
     name: 'Ben Chavez',
     role: 'Developer',
-    avatar: '/images/ben-avatar.jpg',
-    // width: 1000,
-    // height: 5000,
-    // avatar: '/images/ben-avatar5.png',
+    // avatar: '/images/ben-avatar.jpg',
+    avatar: benAvatar,
     width: 528,
     height: 473,
     bio: 'Time waits for no man. Unless that man is Chuck Norris. Chuck Norris doesn’t wear a watch. He decides what time it is. Chuck Norris has a mug of nails instead of coffee in the morning. Chuck Norris once ate at Taco Bell and didn’t get diarrhea.',
@@ -32,7 +29,8 @@ const team = [
   {
     name: 'Ighodalo I',
     role: 'Designer',
-    avatar: '/images/ighodalo-avatar.jpeg',
+    // avatar: '/images/ighodalo-avatar.jpeg',
+    avatar: ighodaloAvatar,
     width: 800,
     height: 800,
     bio: 'Time waits for no man. Unless that man is Chuck Norris. Chuck Norris doesn’t wear a watch. He decides what time it is. Chuck Norris has a mug of nails instead of coffee in the morning. Chuck Norris once ate at Taco Bell and didn’t get diarrhea.',
@@ -77,7 +75,6 @@ function GithubIcon({ className }: { className?: string }) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       // height="2em"
-
       className={clsx(className, 'h-5 w-5 fill-primary1 hover:fill-gray-300')}
       viewBox="0 0 496 512"
     >
@@ -91,11 +88,7 @@ function SocialProfiles({ person }: any) {
   return (
     <ul role="list" className="mt-6 flex items-center justify-center gap-x-6 ">
       <li>
-        <a
-          href={person.twitterUrl}
-          // className="text-gray-400 hover:text-gray-500"
-          className="text-dark1 hover:text-gray-300"
-        >
+        <a href={person.twitterUrl} className="text-dark1 hover:text-gray-300">
           <span className="sr-only">Twitter</span>
           <TwitterIcon />
         </a>
@@ -103,7 +96,6 @@ function SocialProfiles({ person }: any) {
       <li>
         <a
           href={person.linkedinUrl}
-          // className="text-gray-400 hover:text-gray-500"
           className="text-primary1 hover:text-gray-300"
         >
           <span className="sr-only">LinkedIn</span>
@@ -129,10 +121,7 @@ export default function About() {
   return (
     <>
       <Container className="mt-18 flex flex-col tablet:mt-24">
-        <div
-          // bg-white/[.47]
-          className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
-        >
+        <div className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20">
           <div className="flex justify-start gap-[9.375rem]">
             <div className="flex flex-col items-start justify-center gap-6">
               <h1 className="font-inter text-fs-xl text-dark1">About</h1>
@@ -176,12 +165,12 @@ export default function About() {
                 {team.map((person: any) => (
                   <li key={person.name}>
                     <Image
-                      width={500}
-                      height={500}
                       loading="lazy"
                       className="aspect-[3/2] w-full rounded-2xl bg-gray-300 object-cover"
                       src={person.avatar}
                       alt=""
+                      placeholder="blur"
+                      quality={100}
                     />
 
                     <h3 className="mt-6 font-inter text-lg font-semibold leading-8 text-dark1">

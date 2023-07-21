@@ -30,7 +30,7 @@ export default async function Blog({ params }: BlogProps) {
         <Container className="mt-18 flex flex-col tablet:mt-24">
           <div
             // className="relative flex min-h-[318px] w-full items-center justify-start rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20 "
-            className="relative flex min-h-[318px] w-full items-center justify-start rounded-3xl bg-red-500 px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20 "
+            className="relative flex min-h-[318px] w-full items-center justify-start rounded-3xl px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20 "
           >
             <Link
               href="/blog"
