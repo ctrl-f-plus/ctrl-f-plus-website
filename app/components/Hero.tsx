@@ -52,7 +52,7 @@ export default function Hero() {
           </div>
         </div>
         {/* <SearchIcon className="flex flex-auto" /> */}
-        <div className="-mt-10 hidden laptop:block  desktop:-mt-6">
+        <div className="-mt-10 hidden laptop:block  desktop:-mt-20">
           {/* <HeroAnimation className="flex flex-auto" /> */}
           <Image
             className="flex flex-auto"
