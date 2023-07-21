@@ -5,6 +5,7 @@ import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
 import './globals.css';
+import QuickView from './components/quick-view';
 
 const inter = Inter({
   subsets: ['latin'],

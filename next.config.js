@@ -5,20 +5,32 @@ const nextConfig = {
   experimental: {},
   reactStrictMode: true,
   poweredByHeader: false,
-  headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
-  },
+  // headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: securityHeaders,
+  //     },
+  //   ];
+  // },
 };
 
 // https://nextjs.org/docs/app/api-reference/next-config-js/headers
+// const ContentSecurityPolicy = `
+//   default-src 'self'  vercel.live;
+//   script-src 'self' https://localhost:12719 'unsafe-eval' 'unsafe-inline' va.vercel-scripts.com cdn.vercel-insights.com vercel.live ;
+//   frame-src youtube.com www.youtube.com;
+//   style-src 'self' 'unsafe-inline';
+//   img-src * blob: data:;
+//   media-src 'none';
+//   connect-src *;
+//   font-src 'self';
+// `;
+
 const ContentSecurityPolicy = `
   default-src 'self'  vercel.live;
-  script-src 'self' https://localhost:12719 'unsafe-eval' 'unsafe-inline' va.vercel-scripts.com cdn.vercel-insights.com vercel.live;
+  script-src 'self' https://localhost:12719 'unsafe-eval' 'unsafe-inline' va.vercel-scripts.com cdn.vercel-insights.com vercel.live https://www.youtube.com;
+  frame-src youtube.com www.youtube.com;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';

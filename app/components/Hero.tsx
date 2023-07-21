@@ -1,10 +1,10 @@
 // app/components/Hero.tsx
 
-import { Balancer } from 'react-wrap-balancer';
 import ButtonPrimary from './buttons/ButtonPrimary';
 import ButtonMobile from './buttons/button-mobile';
 import HeroAnimation from './icons/hero-animation';
 import Container from './layout/Container';
+import QuickView from './quick-view';
 import Image from 'next/image';
 
 // TODO: YOu have double the top padding that you need/should have
@@ -42,7 +42,7 @@ export default function Hero() {
               Add to Chrome for free
             </ButtonPrimary>
 
-            <ButtonPrimary variant="outline">See how it works</ButtonPrimary>
+            <QuickView />
           </div>
 
           <div className="flex flex-col gap-6 tablet:hidden tab-pro:flex-row">
@@ -53,14 +53,16 @@ export default function Hero() {
         </div>
         {/* <SearchIcon className="flex flex-auto" /> */}
         <div className="-mt-10 hidden laptop:block  desktop:-mt-6">
-          <HeroAnimation className="flex flex-auto" />
-          {/* <Image
+          {/* <HeroAnimation className="flex flex-auto" /> */}
+          <Image
             className="flex flex-auto"
-            width={500}
-            height={500}
-            src={'/images/HeroGIF.gif'}
+            // width={500}
+            // height={500}
+            width={480}
+            height={423}
+            src={'/images/hero.gif'}
             alt={''}
-          /> */}
+          />
         </div>
       </Container>
     </>

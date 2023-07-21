@@ -140,7 +140,7 @@ function ColorFill() {
 type ButtonProps = {
   variant: 'solid' | 'outline' | 'simple' | 'phat';
   children: React.ReactNode;
-  // onClick?: () => void;
+  onClick?: () => void;
   // url: string;
   className?: string;
 };
@@ -149,13 +149,18 @@ function ButtonPrimary({
   variant,
   children,
   className,
+  onClick,
   ...props
 }: ButtonProps) {
   className = clsx(baseStyles['base'], variantStyles[variant], className);
 
   return (
     <>
-      <Link href="#" className="h-full w-full rounded-[37px] ">
+      <Link
+        href="#"
+        className=" h-full w-full rounded-[37px]"
+        onClick={onClick}
+      >
         <motion.div
           whileHover="hover"
           whileTap={{ scale: 0.93 }}
