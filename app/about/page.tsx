@@ -140,47 +140,26 @@ export default function About() {
               <p className="font-open-sans text-fs-lg text-dark1 ">
                 {/* <Balancer> */} Welcome to{' '}
                 <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> ,
-                an innovative open-source Chrome extension that expands the
-                "Control + F" feature to encompass all tabs in your browser
-                window. Our mission? To revolutionize the way users interact
-                with the web, making browsing more efficient and user-centric.
+                an open-source Chrome extension that Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Iure corrupti eligendi consequatur
+                repudiandae ratione suscipit minus est repellat eaque
+                reiciendis.
                 {/* </Balancer> */}
               </p>
               <p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
                 <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
-                developed by a dedicated open-source community. It streamlines
-                information retrieval by enabling searches across multiple tabs.
-                This tool represents a move towards a more accessible web, with
-                a commitment to continual, community-driven development and
-                innovation.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                corrupti eligendi consequatur repudiandae ratione suscipit minus
+                est repellat eaque reiciendis.
               </p>
             </div>
           </div>
         </div>
 
-        {/* <div className="mt-10 flex flex-col rounded-3xl bg-white/[.68] py-6 shadow-sm backdrop-blur-[23px]"> */}
-        {/* <div className="mt-10 laptop:px-[40px]">
-          <div
-            // mx-[24px] p-10
-            className="rounded-3xl bg-white/[.68] py-[19px] shadow-sm backdrop-blur-[23px] "
-          >
-
-            */}
         <div className="mt-10 laptop:px-[40px]">
-          <div
-            // className="mt-10 flex flex-col rounded-3xl bg-white/[.68] py-6 shadow-sm backdrop-blur-[23px]"
-            // className="bg-white py-24 md:py-32 lg:py-40"
-            // className="mt-10 rounded-3xl bg-white/[.68] py-24 md:py-32 lg:py-40"
-            // className=" rounded-3xl bg-white/[.68] py-14 shadow-sm backdrop-blur-[23px] "
-            className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 tab-pro:py-20 laptop:px-8 desktop:px-[40px]"
-          >
+          <div className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 tab-pro:py-20 laptop:px-8 desktop:px-[40px]">
             <div className="grid-cols-1 gap-x-8 xl:grid-cols-2">
-              <h2
-                // className="mt-14 text-center font-inter text-fs-x0 text-dark1"
-                // className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-                // text-3xl sm:text-4xl
-                className="font-inter text-fs-x0 tracking-tight text-dark1 "
-              >
+              <h2 className="font-inter text-fs-x0 tracking-tight text-dark1 ">
                 Meet Our team
               </h2>
               <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
@@ -190,59 +169,34 @@ export default function About() {
               </p>
             </div>
             <div className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20   xl:grid-cols-2">
-              {/* <ul className="mt-14 flex flex-col justify-around gap-20 tab-pro:flex-row tab-pro:gap-0 laptop:mx-[40px] laptop:grid-cols-2"> */}
               <ul
                 role="list"
                 className="mx-auto grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
               >
                 {team.map((person: any) => (
-                  <li
-                    key={person.name}
-                    // className="flex max-w-full flex-col items-center justify-center tab-pro:w-96"
-                  >
-                    {/* <div className="flex h-auto max-w-full justify-center ">
-                    <Image
-                      src={person.avatar}
-                      width={person.width}
-                      height={person.height}
-                      // width={500}
-                      // height={500}
-                      loading="lazy"
-                      alt="Picture of the Team member"
-                      // w-96
-                      className="aspect-[4/3] h-auto  rounded-3xl object-cover object-center"
-                    />
-                  </div> */}
-
-                    {/* CARD BODY */}
+                  <li key={person.name}>
                     <Image
                       width={500}
                       height={500}
-                      className="aspect-[3/2] w-full rounded-2xl object-cover"
+                      loading="lazy"
+                      className="aspect-[3/2] w-full rounded-2xl bg-gray-300 object-cover"
                       src={person.avatar}
                       alt=""
                     />
 
-                    <h3
-                      // className="mt-6 text-lg font-semibold leading-8 text-gray-900"
-                      className="mt-6 font-inter text-lg font-semibold leading-8 text-dark1"
-                    >
+                    <h3 className="mt-6 font-inter text-lg font-semibold leading-8 text-dark1">
                       {person.name}
                     </h3>
                     <p className="font-arimo text-base leading-7 text-dark1/80">
                       {person.role}
                     </p>
-                    <p
-                      // className="mt-4 text-base leading-7 text-gray-600"
-                      className="mt-4 font-arimo text-base leading-7 text-dark1/80"
-                    >
+                    <p className="mt-4 font-arimo text-base leading-7 text-dark1/80">
                       {person.bio}
                     </p>
                     <ul role="list" className="mt-6 flex gap-x-6">
                       <li>
                         <a
                           href={person.twitterUrl}
-                          // className="text-gray-400 hover:text-gray-500"
                           className="text-dark1/70 hover:text-dark1"
                         >
                           <span className="sr-only">Twitter</span>
@@ -259,7 +213,6 @@ export default function About() {
                       <li>
                         <a
                           href={person.linkedinUrl}
-                          // className="text-gray-400 hover:text-gray-500"
                           className="text-dark1/70 hover:text-dark1"
                         >
                           <span className="sr-only">LinkedIn</span>
@@ -278,22 +231,6 @@ export default function About() {
                         </a>
                       </li>
                     </ul>
-
-                    {/* <div className="flex  max-w-full flex-col justify-start px-4 pb-4">
-                    <h3 className="mt-6 font-inter text-fs-x0 text-dark1">
-                      {person.name}
-                    </h3>
-                    <p
-                      className="text-start font-open-sans text-fs-lg text-dark1"
-                      // className="font-inter text-fs-base leading-7 text-primary1 "
-                    >
-                      {person.role}
-                    </p>
-                    <p className="mt-4 text-start font-open-sans text-fs-lg text-dark1">
-                      {person.bio}
-                    </p>
-                    <SocialProfiles person={person} />
-                  </div> */}
                   </li>
                 ))}
               </ul>
