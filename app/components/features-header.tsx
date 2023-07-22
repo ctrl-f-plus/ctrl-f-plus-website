@@ -17,7 +17,7 @@ export default function FeaturesHeader() {
   let stiffness = 80;
   let damping = 30;
 
-  let initialRender = true;
+  // let initialRender = true;
 
   let mouseX = useSpring(0, { stiffness: stiffness, damping: damping });
   let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });

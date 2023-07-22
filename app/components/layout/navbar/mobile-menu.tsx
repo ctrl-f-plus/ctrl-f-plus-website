@@ -4,13 +4,15 @@ import { Dialog } from '@headlessui/react';
 import Link from 'next/link';
 import LogoIcon from '../../icons/logo';
 import XMarkIcon from '../../icons/x-mark';
+import CtrlLink from '../ctrl-link';
+import { NavItem } from '.';
 
 export default function MobileMenu({
-  navigation,
+  navItems,
   mobileMenuOpen,
   setMobileMenuOpen,
 }: {
-  navigation: any;
+  navItems: Record<string, NavItem>;
   mobileMenuOpen: any;
   setMobileMenuOpen: (value: boolean) => void;
 }) {
@@ -38,18 +40,24 @@ export default function MobileMenu({
 
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <ul className="space-y-2 py-6">
-                {navigation.map((item: any) => (
-                  <li key={item.path}>
-                    <a
-                      href={item.path}
+              <div className="space-y-2 py-6">
+                {Object.entries(navItems).map(([path, { name, linkTag }]) => {
+                  return (
+                    // FIXME: Change `aTag` to `Link` if smoothscroll is fixed in future Next.js version
+                    <CtrlLink
+                      key={path}
+                      href={path}
+                      target={name === 'Sponsor' ? '_blank' : '_self'}
+                      name={name}
+                      aTag={linkTag === 'a'}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark1 hover:bg-gray-50"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                      {name}
+                    </CtrlLink>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </Dialog.Panel>
