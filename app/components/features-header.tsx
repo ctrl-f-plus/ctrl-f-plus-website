@@ -14,17 +14,23 @@ import Container from './layout/Container';
 
 export default function FeaturesHeader() {
   const prefersReducedMotion = useReducedMotion();
-  let mouseX = useSpring(0, { stiffness: 90, damping: 20 });
-  let mouseY = useSpring(0, { stiffness: 90, damping: 20 });
+  let stiffness = 80;
+  let damping = 30;
+
   let initialRender = true;
 
+  let mouseX = useSpring(0, { stiffness: stiffness, damping: damping });
+  let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
+
   useEffect(() => {
-    if (initialRender) {
-      initialRender = false;
-      mouseX.set(750);
-      mouseY.set(70);
-    }
-  }, []);
+    // if (initialRender) {
+    //   initialRender = false;
+    mouseX.set(750);
+    mouseY.set(70);
+    stiffness = 90;
+    damping = 20;
+    // }
+  });
 
   let divRef = useRef<HTMLDivElement>(null);
 
@@ -82,14 +88,14 @@ export default function FeaturesHeader() {
               ref={divRef}
               // pointer-events-none
               // hidden
-              className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] p-18 file:group-hover:opacity-100 wide:block"
+              className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] bg-[#03af7d1a] p-18 file:group-hover:opacity-100 wide:block"
+              // 300x300
               style={{
                 WebkitMaskRepeat: 'no-repeat',
                 WebkitMaskImage:
                   'radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)',
                 WebkitMaskPosition: webkitMaskPosition,
               }}
-              // TODO: Try to add more blur
               whileHover={{
                 backgroundColor: '#03AF7D',
               }}
