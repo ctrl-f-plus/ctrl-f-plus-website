@@ -81,9 +81,8 @@ function Navigation() {
   );
 }
 
-function OpenSource3() {
+function OpenSource() {
   return (
-    // <div className="">
     <div className="flex  laptop:justify-end ">
       <div className="flex w-fit flex-col  ">
         <h3 className="text-subtitle text-white [text-wrap:balance]">
@@ -126,7 +125,7 @@ export default function Footer() {
         <div className="mt-18 grid grid-cols-1 gap-x-8 gap-y-16 tab-pro:grid-cols-2  lg:grid-cols-2">
           <Navigation />
 
-          <OpenSource3 />
+          <OpenSource />
         </div>
       </Container>
 

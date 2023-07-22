@@ -9,8 +9,8 @@ import Container from '../components/layout/Container';
 import { Balancer } from 'react-wrap-balancer';
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'Blog posts index page metadata description',
+  title: 'About Us - Ctrl-f Plus',
+  description: 'Ctrl-F Plus is an open source chrome extension. Meet our team.',
 };
 
 const team = [
