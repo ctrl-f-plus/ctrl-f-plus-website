@@ -1,4 +1,4 @@
-// app/components/layout/navbar/mobile.tsx
+'use client';
 
 import { Dialog } from '@headlessui/react';
 import Link from 'next/link';
@@ -13,13 +13,13 @@ export default function MobileMenu({
   setMobileMenuOpen,
 }: {
   navItems: Record<string, NavItem>;
-  mobileMenuOpen: any;
+  mobileMenuOpen: boolean;
   setMobileMenuOpen: (value: boolean) => void;
 }) {
   return (
     <>
       <Dialog
-        as="div"
+        as="nav"
         className="lg:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}

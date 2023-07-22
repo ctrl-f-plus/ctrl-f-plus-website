@@ -55,3 +55,4 @@ green #0F281D
 
 
  - Get Freeze Frame Hero GIF
+ - Fix Button components

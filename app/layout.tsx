@@ -5,7 +5,6 @@ import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/layout/footer';
 import Navbar from './components/layout/navbar';
 import './globals.css';
-import QuickView from './components/quick-view';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,12 +24,12 @@ const arimo = Arimo({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ctrl-f.plus'),
-  title: 'Ctrl-F Plus',
-  description: 'CTRL-F Plus - Chrome Extension',
+  title: 'Ctrl-F Plus - Multi-Tab Search',
+  description:
+    'Ctrl-F Plus is a powerful open source Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
   openGraph: {
     title: 'Ctrl-F Plus',
     description: '',
-    // image:
     url: 'https://ctrl-f.plus',
     siteName: 'Ctrl-F Plus Chrome Extension',
     locale: 'en-US',

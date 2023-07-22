@@ -74,11 +74,12 @@ export default function FeaturesHeader() {
   }
 
   return (
-    <MotionConfig reducedMotion="user">
-      <Container
-        id="features-header"
-        className=" mt-18 flex w-full scroll-mt-12 flex-col justify-center tablet:mt-24 wide:mt-[7.625rem] "
-      >
+    <section
+      id="features-header"
+      aria-label="Features for multi-tab keyword and phrase search"
+      className="mt-18 scroll-mt-12 tablet:mt-24 wide:mt-[7.625rem]"
+    >
+      <Container className="flex w-full flex-col justify-center">
         <div
           onMouseMove={handleMouseMove}
           className=" group relative hidden rounded-[2.25rem] bg-dark1 shadow-xl  backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass "
@@ -115,6 +116,6 @@ export default function FeaturesHeader() {
           </div>
         </div>
       </Container>
-    </MotionConfig>
+    </section>
   );
 }

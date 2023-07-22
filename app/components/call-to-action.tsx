@@ -7,16 +7,18 @@ import ButtonPhat from './buttons/ButtonPhat';
 import ButtonPrimary from './buttons/ButtonPrimary';
 import Container from './layout/Container';
 import ButtonPhatMobile from './buttons/button-phat-mobile';
-import { MotionConfig, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 
 export default function CallToAction() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <MotionConfig
-      transition={prefersReducedMotion ? { duration: 0 } : undefined}
+    <section
+      id="call-to-action"
+      aria-label="Try the Ctrl-F Chrome Extension today!"
+      className="mt-18 tablet:mt-24 wide:mt-[7.625rem]"
     >
-      <Container className=" mt-18 flex w-full flex-col tablet:mt-24 laptop:hidden laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
+      <Container className="  flex w-full flex-col  laptop:hidden laptop:flex-row laptop:justify-between ">
         <div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
           <svg
             viewBox="0 0 1024 1024"
@@ -60,11 +62,13 @@ export default function CallToAction() {
 
           <div className="flex flex-col items-center justify-center gap-9">
             <h2 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
-              Boost your productivity.
+              Take your tab hoarding to the next level.
             </h2>
             <p className=" max-w-[26.75rem] font-open-sans text-fs-lg text-white tablet:max-w-[25.8125rem]">
-              Lorem ipsum dolor sit amet consectetur. Nunc fames venenatis non
-              ipsum pretium amet.
+              Think your tabs are out of control? Nah, they&apos;re just
+              misunderstood. Get Ctrl-F Plus for Chrome and let your tabs run
+              wild! After all, the only thing better than a dozen tabs is a
+              couple dozen more.
             </p>
             <ButtonPhatMobile />
             {/* <ButtonPrimary variant={'phat'}>Add to Chrome</ButtonPrimary> */}
@@ -72,7 +76,7 @@ export default function CallToAction() {
         </div>
       </Container>
 
-      <Container className=" mt-18 hidden w-full flex-col tablet:mt-24 laptop:flex laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
+      <Container className="  hidden w-full flex-col laptop:flex laptop:flex-row laptop:justify-between ">
         <Atropos
           className="hidden h-full w-full rounded-[2.25rem]"
           shadow={prefersReducedMotion ? false : true}
@@ -90,12 +94,26 @@ export default function CallToAction() {
               data-atropos-offset={prefersReducedMotion ? 0 : 10}
               className="flex flex-col items-center justify-center gap-9"
             >
-              <h2 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
-                Boost your productivity.
+              {/* <h2 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem] "> */}
+              <h2 className=" max-w-3xl font-inter text-fs-x0 text-white [text-wrap:balance] tablet:text-fs-xl">
+                Take your tab hoarding to the next level.
               </h2>
-              <p className=" max-w-[26.75rem] font-open-sans text-fs-lg text-white tablet:max-w-[25.8125rem]">
-                Lorem ipsum dolor sit amet consectetur. Nunc fames venenatis non
-                ipsum pretium amet.
+              {/* <p className="max-w-[26.75rem] font-open-sans text-fs-lg text-white tablet:max-w-[25.8125rem]"> */}
+              <p className="max-w-3xl font-open-sans text-fs-lg text-white ">
+                <span className="[text-wrap:balance]">
+                  Think your tabs are out of control?{' '}
+                </span>
+                {/* <br /> */}
+                <span className="[text-wrap:balance]">
+                  Nah, they&apos;re just misunderstood.
+                </span>
+
+                <br />
+                <span className="[text-wrap:balance]">
+                  Add Ctrl-F Plus to your browser and let your tabs run wild!
+                </span>
+                {/* After all, the only thing better than a dozen tabs is a couple
+                  dozen more. */}
               </p>
               {/* <ButtonPhat /> */}
               <ButtonPrimary variant={'phat'}>Add to Chrome</ButtonPrimary>
@@ -103,6 +121,6 @@ export default function CallToAction() {
           </div>
         </Atropos>
       </Container>
-    </MotionConfig>
+    </section>
   );
 }

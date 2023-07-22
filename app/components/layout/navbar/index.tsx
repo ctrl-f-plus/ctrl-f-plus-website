@@ -2,7 +2,6 @@
 // app/components/layout/navbar/index.tsx
 
 import clsx from 'clsx';
-
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import LogoIcon from '../../icons/logo';
@@ -10,6 +9,7 @@ import MenuIcon from '../../icons/menu';
 import Container from '../Container';
 import MobileMenu from './mobile-menu';
 import CtrlLink from '../ctrl-link';
+import Link from 'next/link';
 
 export type NavItem = {
   name: string;
