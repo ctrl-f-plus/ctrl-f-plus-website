@@ -68,9 +68,7 @@ export default function FeaturesHeader() {
   }
 
   return (
-    <MotionConfig
-      transition={prefersReducedMotion ? { duration: 0 } : undefined}
-    >
+    <MotionConfig reducedMotion="user">
       <Container
         id="features-header"
         className=" mt-18 flex w-full scroll-mt-12 flex-col justify-center tablet:mt-24 wide:mt-[7.625rem] "
