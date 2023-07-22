@@ -7,13 +7,15 @@ import ButtonPhat from './buttons/ButtonPhat';
 import ButtonPrimary from './buttons/ButtonPrimary';
 import Container from './layout/Container';
 import ButtonPhatMobile from './buttons/button-phat-mobile';
-import { useReducedMotion } from 'framer-motion';
+import { MotionConfig, useReducedMotion } from 'framer-motion';
 
 export default function CallToAction() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <>
+    <MotionConfig
+      transition={prefersReducedMotion ? { duration: 0 } : undefined}
+    >
       <Container className=" mt-18 flex w-full flex-col tablet:mt-24 laptop:hidden laptop:flex-row laptop:justify-between wide:mt-[7.625rem]">
         <div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-dark1 px-[2.25rem] text-center shadow-xl">
           <svg
@@ -101,6 +103,6 @@ export default function CallToAction() {
           </div>
         </Atropos>
       </Container>
-    </>
+    </MotionConfig>
   );
 }

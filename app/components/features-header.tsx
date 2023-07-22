@@ -2,8 +2,10 @@
 'use client';
 
 import {
+  MotionConfig,
   motion,
   useMotionTemplate,
+  useReducedMotion,
   useSpring,
   useTransform,
 } from 'framer-motion';
@@ -11,6 +13,7 @@ import { useEffect, useRef } from 'react';
 import Container from './layout/Container';
 
 export default function FeaturesHeader() {
+  const prefersReducedMotion = useReducedMotion();
   let mouseX = useSpring(0, { stiffness: 90, damping: 20 });
   let mouseY = useSpring(0, { stiffness: 90, damping: 20 });
   let initialRender = true;
@@ -65,7 +68,9 @@ export default function FeaturesHeader() {
   }
 
   return (
-    <>
+    <MotionConfig
+      transition={prefersReducedMotion ? { duration: 0 } : undefined}
+    >
       <Container
         id="features-header"
         className=" mt-18 flex w-full scroll-mt-12 flex-col justify-center tablet:mt-24 wide:mt-[7.625rem] "
@@ -106,6 +111,6 @@ export default function FeaturesHeader() {
           </div>
         </div>
       </Container>
-    </>
+    </MotionConfig>
   );
 }

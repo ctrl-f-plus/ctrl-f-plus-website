@@ -1,7 +1,7 @@
 // app/tab-hoarders/components/FeatureCard.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
 import FeatureIcon1 from './icons/feature1';
 import FeatureIcon2 from './icons/feature2';
 import FeatureIcon3 from './icons/feature3';
@@ -30,6 +30,8 @@ const features = [
 ];
 
 export default function FeatureCard() {
+  const prefersReducedMotion = useReducedMotion();
+
   const cardVariants = () => {
     return {
       hidden: { opacity: 0 },
@@ -78,53 +80,57 @@ export default function FeatureCard() {
             key={feat.title}
             className=" mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]"
           >
-            <div className="laptop:text-left">
-              <motion.div
-                className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-red-500 bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
-                whileInView="show"
-                initial="hidden"
-                viewport={{ once: true }}
-                variants={cardVariants()}
-              >
-                <div className="flex flex-col gap-9 laptop:flex-row">
-                  <motion.div
-                    variants={iconVariants(index)}
-                    className={`flex items-center justify-center   ${
-                      index % 2 === 1 ? 'laptop:order-last' : ''
-                    }`}
-                  >
-                    {
-                      <feat.icon className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]" />
-                    }
-                  </motion.div>
-
-                  <div
-                    className={`flex w-full  ${
-                      index % 2 === 1 ? '' : 'laptop:justify-end'
-                    } `}
-                  >
+            <MotionConfig
+              transition={prefersReducedMotion ? { duration: 0 } : undefined}
+            >
+              <div className="laptop:text-left">
+                <motion.div
+                  className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-red-500 bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
+                  whileInView="show"
+                  initial="hidden"
+                  viewport={{ once: true }}
+                  variants={cardVariants()}
+                >
+                  <div className="flex flex-col gap-9 laptop:flex-row">
                     <motion.div
-                      className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start"
-                      variants={textVariants()}
+                      variants={iconVariants(index)}
+                      className={`flex items-center justify-center   ${
+                        index % 2 === 1 ? 'laptop:order-last' : ''
+                      }`}
                     >
-                      <h2 className="text-center font-inter text-fs-base text-primary1 laptop:text-left">
-                        <Balancer>{feat.title}</Balancer>
-                        {/* {feat.title} */}
-                      </h2>
-
-                      <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
-                        {feat.subTitle}
-                      </h3>
-
-                      <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
-                        <Balancer>{feat.description}</Balancer>
-                        {/* {feat.description} */}
-                      </p>
+                      {
+                        <feat.icon className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]" />
+                      }
                     </motion.div>
+
+                    <div
+                      className={`flex w-full  ${
+                        index % 2 === 1 ? '' : 'laptop:justify-end'
+                      } `}
+                    >
+                      <motion.div
+                        className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start"
+                        variants={textVariants()}
+                      >
+                        <h2 className="text-center font-inter text-fs-base text-primary1 laptop:text-left">
+                          <Balancer>{feat.title}</Balancer>
+                          {/* {feat.title} */}
+                        </h2>
+
+                        <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
+                          {feat.subTitle}
+                        </h3>
+
+                        <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
+                          <Balancer>{feat.description}</Balancer>
+                          {/* {feat.description} */}
+                        </p>
+                      </motion.div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            </div>
+                </motion.div>
+              </div>
+            </MotionConfig>
           </Container>
         );
       })}
