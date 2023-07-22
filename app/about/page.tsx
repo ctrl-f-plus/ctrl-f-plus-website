@@ -5,7 +5,7 @@ import ighodaloAvatar from '@/public/images/ighodalo-avatar.jpeg';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Container from '../components/layout/Container';
+import Container from '../components/Container';
 import { Balancer } from 'react-wrap-balancer';
 
 export const metadata: Metadata = {
@@ -146,10 +146,13 @@ export default function About() {
         </div>
 
         <div className="mt-10 laptop:px-[40px]">
-          <div className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 tab-pro:py-20 laptop:px-8 desktop:px-[40px]">
+          <div
+            // tab-pro:p-20
+            className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14  laptop:px-8 desktop:px-[40px]"
+          >
             <div className="grid-cols-1 gap-x-8 xl:grid-cols-2">
-              <h2 className="font-inter text-fs-x0 tracking-tight text-dark1 ">
-                Meet Our team
+              <h2 className="font-inter text-fs-x0 tracking-tight text-dark1">
+                Our team
               </h2>
               <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
                 We’re a dynamic group of individuals who are passionate about

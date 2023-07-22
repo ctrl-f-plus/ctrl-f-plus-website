@@ -5,7 +5,7 @@ import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
 import FeatureIcon1 from './icons/feature1';
 import FeatureIcon2 from './icons/feature2';
 import FeatureIcon3 from './icons/feature3';
-import Container from './layout/Container';
+import Container from './Container';
 import { Balancer } from 'react-wrap-balancer';
 
 const features = [

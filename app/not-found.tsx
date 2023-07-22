@@ -1,5 +1,5 @@
 import ButtonPrimaryCopy from './components/buttons/button-primary-copy';
-import Container from './components/layout/Container';
+import Container from './components/Container';
 
 export default function NotFoundPage() {
   return (

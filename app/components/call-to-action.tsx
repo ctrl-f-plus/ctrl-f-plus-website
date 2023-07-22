@@ -5,7 +5,7 @@
 import Atropos from 'atropos/react';
 import ButtonPhat from './buttons/ButtonPhat';
 import ButtonPrimary from './buttons/ButtonPrimary';
-import Container from './layout/Container';
+import Container from './Container';
 import ButtonPhatMobile from './buttons/button-phat-mobile';
 import { useReducedMotion } from 'framer-motion';
 

@@ -2,8 +2,8 @@
 
 import { Dialog } from '@headlessui/react';
 import Link from 'next/link';
-import LogoIcon from '../../icons/logo';
-import XMarkIcon from '../../icons/x-mark';
+import LogoIcon from '../icons/logo';
+import XMarkIcon from '../icons/x-mark';
 import CtrlLink from '../ctrl-link';
 import { NavItem } from '.';
 

@@ -1,8 +1,8 @@
 // app/components/layout/Footer.tsx
 
 import Link from 'next/link';
-import GithubIcon from '../icons/github-icon';
-import LogoIconSecondary from '../icons/logo-secondary';
+import GithubIcon from './icons/github-icon';
+import LogoIconSecondary from './icons/logo-secondary';
 import Container from './Container';
 
 const navigation = [

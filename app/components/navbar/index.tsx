@@ -4,8 +4,8 @@
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import LogoIcon from '../../icons/logo';
-import MenuIcon from '../../icons/menu';
+import LogoIcon from '../icons/logo';
+import MenuIcon from '../icons/menu';
 import Container from '../Container';
 import MobileMenu from './mobile-menu';
 import CtrlLink from '../ctrl-link';

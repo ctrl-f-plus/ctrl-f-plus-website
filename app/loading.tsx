@@ -1,9 +1,25 @@
-import Container from './components/layout/Container';
+import Container from './components/Container';
 
 function Loading() {
   return (
-    <Container className=" flex h-auto w-full items-center justify-center">
-      <div>
+    <Container className="flex h-auto w-full items-center justify-center">
+      <div
+        className="flex h-full w-full items-center justify-center"
+        aria-live="polite"
+      >
+        <div className="relative h-24 w-24 animate-spin rounded-full bg-gradient-to-r from-gradient-cyan via-highlight-focus-1 to-gradient-lavender">
+          <div className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 transform rounded-full border-2 border-white bg-gray-200"></div>
+        </div>
+      </div>
+      <span className="sr-only">Loading...</span>
+    </Container>
+  );
+}
+
+export default Loading;
+
+{
+  /* <div>
         <svg
           className="-ml-1 mr-3 h-5 w-5 animate-spin text-primary1"
           xmlns="http://www.w3.org/2000/svg"
@@ -25,18 +41,5 @@ function Loading() {
           ></path>
         </svg>
         <span className="sr-only">Loading...</span>
-      </div>
-    </Container>
-  );
+      </div> */
 }
-
-export default Loading;
-
-// GRADIENT SPINNER:
-// https://tailwindcomponents.com/component/animated-gradient-spinner
-// <!-- component -->
-// <div class="flex justify-center items-center h-screen">
-//     <div class="relative w-24 h-24 animate-spin rounded-full bg-gradient-to-r from-purple-400 via-blue-500 to-red-400 ">
-//         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-gray-200 rounded-full border-2 border-white"></div>
-//     </div>
-// </div>

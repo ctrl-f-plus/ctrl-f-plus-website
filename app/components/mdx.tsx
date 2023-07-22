@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import clsx from 'clsx';
-import Container from './layout/Container';
+import Container from './Container';
 
 const components = {
   h1: ({ className, ...props }: any) => (
@@ -87,7 +87,7 @@ const components = {
   blockquote: ({ className, ...props }: any) => (
     <blockquote
       className={clsx(
-        'mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground',
+        '[&>*]:text-muted-foreground mt-6 border-l-2 pl-6 italic',
         className
       )}
       {...props}
@@ -113,7 +113,7 @@ const components = {
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={clsx('m-0 border-t p-0 even:bg-muted', className)}
+      className={clsx('even:bg-muted m-0 border-t p-0', className)}
       {...props}
     />
   ),

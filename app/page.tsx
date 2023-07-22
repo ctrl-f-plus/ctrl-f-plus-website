@@ -1,12 +1,12 @@
 // app/tab-hoarders/page.tsx
 
-import Hero from './components/hero';
 import CallToAction from './components/call-to-action';
 import FeatureCard from './components/feature-card';
 import FeaturesHeader from './components/features-header';
-import Footer from './components/layout/footer';
+import Hero from './components/hero';
+import Loading from './loading';
 
-export default function page() {
+export default function Page() {
   return (
     <div className="flex flex-col">
       <Hero />

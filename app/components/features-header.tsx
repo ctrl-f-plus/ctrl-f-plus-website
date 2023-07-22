@@ -10,7 +10,7 @@ import {
   useTransform,
 } from 'framer-motion';
 import { useEffect, useRef } from 'react';
-import Container from './layout/Container';
+import Container from './Container';
 
 export default function FeaturesHeader() {
   const prefersReducedMotion = useReducedMotion();

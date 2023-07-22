@@ -2,8 +2,8 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import CanvasGradient from './components/canvas-gradient';
-import Footer from './components/layout/footer';
-import Navbar from './components/layout/navbar';
+import Footer from './components/footer';
+import Navbar from './components/navbar';
 import './globals.css';
 
 const inter = Inter({
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ctrl-f.plus'),
   title: 'Ctrl-F Plus - Multi-Tab Search',
   description:
-    'Ctrl-F Plus is a powerful open source Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
+    'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
   openGraph: {
     title: 'Ctrl-F Plus',
     description: '',
