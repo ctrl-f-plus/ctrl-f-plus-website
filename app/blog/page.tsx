@@ -14,9 +14,6 @@ export const metadata: Metadata = {
     'Explore the development journey of the Ctrl-F Plus chrome extension. Read about progress updates, challenges, and successes in our blog posts!',
 };
 
-// @ts-ignore
-export const cx = (...classNames) => classNames.filter(Boolean).join(' ');
-
 export default function BlogPage() {
   const fontSize = 'large';
   const fontWeight = 'normal';
@@ -64,13 +61,13 @@ export default function BlogPage() {
                   <div className="flex min-h-[96px] flex-col items-start gap-2 ">
                     <h2 className="transform font-inter text-subtitle text-dark1 ">
                       <span
-                      //   className="bg-gradient-to-r from-highlight-focus-1 to-highlight-focus/50 bg-[length:0px_10px] bg-left-bottom
-                      //  bg-no-repeat
-                      //  transition-[background-size]
-                      //  duration-500
-                      //  hover:bg-[length:100%_3px]
-                      //  group-hover:bg-[length:100%_10px]
-                      // "
+                        className="bg-gradient-to-r from-highlight-focus-1 to-highlight-focus/50 bg-[length:0px_10px] bg-left-bottom
+                       bg-no-repeat
+                       transition-[background-size]
+                       duration-500
+                       hover:bg-[length:100%_3px]
+                       group-hover:bg-[length:100%_10px]
+                      "
                       >
                         {post.title}
                       </span>
