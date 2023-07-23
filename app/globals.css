@@ -1,0 +1,271 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ::selection {
+  background-color: #ff0000;
+  color: #fefefe;
+} */
+
+/* @import 'atropos/css'; */
+.atropos {
+  position: relative;
+  display: block;
+  perspective: 1200px;
+  transform: translate3d(0, 0, 0);
+}
+
+.atropos-rotate-touch,
+.atropos-rotate-scroll-x,
+.atropos-rotate-scroll-y {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.atropos-rotate-touch-scroll-y {
+  touch-action: pan-y;
+}
+
+.atropos-rotate-touch-scroll-x {
+  touch-action: pan-x;
+}
+
+.atropos-rotate-touch {
+  touch-action: none;
+}
+
+.atropos-scale,
+.atropos-rotate {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition-property: transform;
+  display: block;
+  border-radius: 2.25rem;
+}
+
+.atropos-shadow,
+.atropos-highlight {
+  position: absolute;
+  pointer-events: none;
+  transition-property: transform, opacity;
+  display: block;
+  opacity: 0;
+}
+
+.atropos-shadow {
+  z-index: -1;
+  background: #000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* filter: blur(30px); */
+  filter: blur(24px);
+}
+
+.atropos-highlight {
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(
+    circle at 50%,
+    rgba(255, 255, 255, 0.25),
+    transparent 50%
+  );
+  z-index: 0;
+}
+
+.atropos-rotate {
+  position: relative;
+}
+
+.atropos-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 0);
+  display: block;
+  border-radius: 2.25rem;
+}
+
+.atropos-active {
+  z-index: 1;
+}
+
+.atropos-active .atropos-shadow {
+  opacity: 1 !important;
+}
+
+[data-atropos-offset] {
+  transition-property: transform;
+}
+
+[data-atropos-opacity] {
+  transition-property: opacity;
+}
+
+[data-atropos-offset][data-atropos-opacity] {
+  transition-property: transform, opacity;
+}
+
+#gradient-canvas {
+  width: 100%;
+  height: 100%;
+
+  /* filter: blur(158px); */
+
+  --gradient-color-1: #f5fbff; /*gradient-blue: #f5fbff */
+  --gradient-color-2: #dde3ee; /*gradient-slate: #dde3ee */
+  --gradient-color-3: #f2effb; /*gradient-lavender: #f2effb */
+  --gradient-color-4: #d4ece5; /*gradient-cyan: #d4ece5 */
+  z-index: -1;
+}
+
+/*
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+
+.prose a {
+  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+} */
+
+.prose pre {
+  /* border border-neutral-800 */
+  @apply bg-dark1;
+}
+
+.prose code {
+  /* border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-800 */
+  @apply rounded-lg  bg-neutral-100 px-1 py-0.5 text-neutral-800  dark:bg-primary1 dark:text-neutral-200;
+}
+
+.prose pre code {
+  @apply p-0 text-neutral-800 dark:text-neutral-200;
+  border: initial;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose > :first-child {
+  /* // Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @apply text-neutral-50;
+}
+
+/*  */
+/* pre::-webkit-scrollbar {
+  display: none;
+} */
+
+/* pre {
+  //IE and Edge
+  -ms-overflow-style: none;
+
+  //Firefox
+  scrollbar-width: none;
+} */
+
+/* input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+
+/* table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+} */
+
+/* .prose .callout > p {
+  margin: 0 !important;
+} */
+
+.prose h1 {
+  /* @apply bg-dark1; */
+  @apply font-inter text-h1-blog text-dark1;
+}
+
+.prose h2 {
+  @apply font-inter text-subtitle text-dark1;
+}
+
+.prose p {
+  /* background-color: red; */
+  @apply font-arimo text-p-blog text-dark1;
+}
+
+[data-rehype-pretty-code-fragment] code {
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
+  counter-reset: line;
+  box-decoration-break: clone;
+}
+
+[data-rehype-pretty-code-fragment] .line {
+  @apply py-1;
+}
+
+[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
+}
+[data-rehype-pretty-code-fragment] .line--highlighted {
+  @apply bg-slate-500 bg-opacity-10;
+}
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+  @apply relative;
+}
+[data-rehype-pretty-code-fragment] .word--highlighted {
+  @apply rounded-md bg-slate-500 bg-opacity-10 p-1;
+}
+[data-rehype-pretty-code-title] {
+  @apply rounded-t-lg border border-[#333333] bg-dark1 px-4 py-3 font-mono text-xs font-medium text-neutral-200;
+}
+[data-rehype-pretty-code-title] + pre {
+  @apply mt-0 rounded-t-none border-t-0;
+}
