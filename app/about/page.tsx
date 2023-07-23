@@ -8,9 +8,22 @@ import Image from 'next/image';
 import Container from '../components/Container';
 import { Balancer } from 'react-wrap-balancer';
 
+// site: 'https://ctrl-f.plus/about',
 export const metadata: Metadata = {
   title: 'About Us - Ctrl-f Plus',
-  description: 'Ctrl-F Plus is an open source chrome extension. Meet our team.',
+  description:
+    'Learn about Ctrl-F Plus, the open source Chrome extension that redefines productivity by extending the native Ctrl-F functionality to search across all tabs in your browser window.',
+
+  keywords: [
+    'About Us',
+    'Ctrl-F Plus',
+    'Chrome Extension',
+    'Browser Search',
+    'Multi-tab Search',
+    'Productivity Tool',
+    'Time Saver',
+    'Efficiency Tool',
+  ],
 };
 
 const team = [
