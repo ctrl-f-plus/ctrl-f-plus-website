@@ -34,6 +34,18 @@ const navigation = [
 
   {
     title: 'Download',
+    // links: [
+    //   {
+    //     title: 'Chrome',
+    //     href: process.env.CHROME_STORE_URL,
+    //     target: '_blank',
+    //   },
+    //   {
+    //     title: 'Brave',
+    //     href: process.env.CHROME_STORE_URL,
+    //     target: '_blank',
+    //   },
+    // ],
     links: [
       // {
       //   title: 'Chrome',
@@ -49,7 +61,7 @@ const navigation = [
       {
         title: 'Brave',
         href: new URL(
-          `'https://chrome.google.com/webstore/detail/couponbirds-smartcoupon-c/pnedebpjhiaidlbbhmogocmffpdolnek'`
+          `https://chrome.google.com/webstore/detail/couponbirds-smartcoupon-c/pnedebpjhiaidlbbhmogocmffpdolnek`
         ),
         target: '_blank',
       },
