@@ -34,35 +34,15 @@ const navigation = [
 
   {
     title: 'Download',
-    // links: [
-    //   {
-    //     title: 'Chrome',
-    //     href: process.env.CHROME_STORE_URL,
-    //     target: '_blank',
-    //   },
-    //   {
-    //     title: 'Brave',
-    //     href: process.env.CHROME_STORE_URL,
-    //     target: '_blank',
-    //   },
-    // ],
     links: [
-      // {
-      //   title: 'Chrome',
-      //   href: new URL(`${process.env.CHROME_STORE_URL}`),
-      //   target: '_blank',
-      // },
       {
-        title: 'string',
-        href: 'https://chrome.google.com/webstore/category/extensions',
+        title: 'Chrome',
+        href: process.env.CHROME_STORE_URL,
         target: '_blank',
       },
-
       {
         title: 'Brave',
-        href: new URL(
-          `https://chrome.google.com/webstore/detail/couponbirds-smartcoupon-c/pnedebpjhiaidlbbhmogocmffpdolnek`
-        ),
+        href: process.env.CHROME_STORE_URL,
         target: '_blank',
       },
     ],
