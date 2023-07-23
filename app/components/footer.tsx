@@ -40,7 +40,17 @@ const navigation = [
         href: new URL(`${process.env.CHROME_STORE_URL}`),
         target: '_blank',
       },
-      { title: 'Brave', href: process.env.CHROME_STORE_URL, target: '_blank' },
+      {
+        title: 'string',
+        href: 'https://chrome.google.com/webstore/category/extensions',
+        target: '_blank',
+      },
+
+      {
+        title: 'Brave',
+        href: 'https://chrome.google.com/webstore/detail/couponbirds-smartcoupon-c/pnedebpjhiaidlbbhmogocmffpdolnek',
+        target: '_blank',
+      },
     ],
   },
 ];
