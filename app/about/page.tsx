@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'Learn about Ctrl-F Plus, the open source Chrome extension that redefines productivity by extending the native Ctrl-F functionality to search across all tabs in your browser window.',
-
+  alternates: {
+    // canonical: new URL('https://ctrl-f.plus'),
+    canonical: 'https://ctrl-f.plus/blog',
+  },
   keywords: [
     'About Us',
     'Ctrl-F Plus',
