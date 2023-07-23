@@ -21,7 +21,7 @@ export default function BlogPage() {
     <>
       <section>
         <Container className="mt-18 flex flex-col tablet:mt-24">
-          <div className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-red-500 bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20">
+          <div className="mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20 flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-red-500 bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px]">
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6 ">
                 <h1 className="font-inter text-fs-xl text-dark1">Blog</h1>
@@ -33,13 +33,13 @@ export default function BlogPage() {
                   find them inspiring.
                 </p>
               </div>
-              <div className="hidden desktop:block">
+              <div className="desktop:block hidden">
                 <DrawingIcon aria-hidden="true" />
               </div>
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10 laptop:grid-cols-2 laptop:px-[40px]">
+          <div className="laptop:grid-cols-2 laptop:px-[40px] mt-10 grid grid-cols-1 gap-3 gap-x-10">
             {allBlogs
               .sort((a, b) => {
                 if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
@@ -53,14 +53,24 @@ export default function BlogPage() {
                   href={`/blog/${post.slug}`}
                   // className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]"
                   className={twMerge(
-                    'group flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]',
+                    'mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px] group flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px]',
                     ' transition-all hover:bg-white/[.90] hover:shadow-md'
                   )}
                   aria-label={`Read blog post: ${post.title}`}
                 >
                   <div className="flex min-h-[96px] flex-col items-start gap-2 ">
                     <h2 className="transform font-inter text-subtitle text-dark1 ">
-                      {post.title}
+                      <span
+                        className="bg-gradient-to-r from-highlight-focus-1 to-highlight-focus/50 bg-[length:0px_10px] bg-left-bottom
+                       bg-no-repeat
+                       transition-[background-size]
+                       duration-500
+                       hover:bg-[length:100%_3px]
+                       group-hover:bg-[length:100%_10px]
+                      "
+                      >
+                        {post.title}
+                      </span>
                     </h2>
                     <p className="font-open-sans text-fs-lg text-dark1">
                       {post.publishedAt}

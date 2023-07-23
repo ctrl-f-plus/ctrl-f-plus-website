@@ -56,3 +56,4 @@ green #0F281D
 
  - Get Freeze Frame Hero GIF
  - Fix Button components
+ - canonical links: `https://stackoverflow.com/questions/75938020/how-to-set-canonical-tag-in-nextjs-13`

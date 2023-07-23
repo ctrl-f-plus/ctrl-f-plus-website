@@ -36,11 +36,11 @@
       - [ ] fonts
       - [ ] colors
       - [ ] other/misc
-  - [ ] Add About Page
+  - [x] Add About Page
   - [ ] Add Donate Information
-  - [ ] Add Footer links
-  - [ ] Add extra small screen size
-  - Mobile menu doesn't close on click
+  - [x] Add Footer links
+  - [x] Add extra small screen size
+  - [x] Mobile menu doesn't close on click
 
 
 - Remove Footer from 404 page
