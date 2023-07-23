@@ -4,6 +4,7 @@ import Link from 'next/link';
 import GithubIcon from './icons/github-icon';
 import LogoIconSecondary from './icons/logo-secondary';
 import Container from './Container';
+import { url } from 'inspector';
 
 const navigation = [
   {
@@ -34,7 +35,11 @@ const navigation = [
   {
     title: 'Download',
     links: [
-      { title: 'Chrome', href: process.env.CHROME_STORE_URL, target: '_blank' },
+      {
+        title: 'Chrome',
+        href: new URL(`${process.env.CHROME_STORE_URL}`),
+        target: '_blank',
+      },
       { title: 'Brave', href: process.env.CHROME_STORE_URL, target: '_blank' },
     ],
   },

@@ -10,7 +10,8 @@ import { Balancer } from 'react-wrap-balancer';
 
 // site: 'https://ctrl-f.plus/about',
 export const metadata: Metadata = {
-  title: 'About Us - Ctrl-f Plus',
+  // title: 'About Us - Ctrl-f Plus',
+  title: 'About',
   description:
     'Learn about Ctrl-F Plus, the open source Chrome extension that redefines productivity by extending the native Ctrl-F functionality to search across all tabs in your browser window.',
 

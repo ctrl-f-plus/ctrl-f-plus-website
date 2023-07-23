@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     default: 'Ctrl-F Plus - Multi-Tab Search',
     template: '%s | Ctrl-F Plus',
   },
-  alternates: {
-    // canonical: new URL('https://ctrl-f.plus'),
-    canonical: 'https://ctrl-f.plus',
-  },
+  // alternates: {
+  //   // canonical: new URL('https://ctrl-f.plus'),
+  //   canonical: 'https://ctrl-f.plus',
+  // },
   description:
     'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
   openGraph: {

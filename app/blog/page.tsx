@@ -9,7 +9,7 @@ import Container from '../components/Container';
 import { twMerge } from 'tailwind-merge';
 
 export const metadata: Metadata = {
-  title: 'Ctrl-F Plus Blog',
+  title: 'Blog',
   description:
     'Explore the development journey of the Ctrl-F Plus chrome extension. Read about progress updates, challenges, and successes in our blog posts!',
 };
