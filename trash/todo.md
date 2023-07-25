@@ -61,3 +61,8 @@ green #0F281D
 
 
 [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+Misc.
+ - Ask Ighodalo highlight hover effect
+ - highlight load effect for hero

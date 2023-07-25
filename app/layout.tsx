@@ -65,9 +65,16 @@ export const metadata: Metadata = {
   },
   manifest: '/favicons/site.webmanifest',
   verification: {
-    google: 'icFhlS14hmuvZuZ9nAragEold6sOpwbKN5BQIbI1fNg',
+    google: 'Wgz24WvJ2hsxTmxjZD_ZyDD_UvU8Z9Lw0eMDN5sa--g',
   },
 };
+
+{
+  /* <meta
+  name="google-site-verification"
+  content="Wgz24WvJ2hsxTmxjZD_ZyDD_UvU8Z9Lw0eMDN5sa--g"
+/>; */
+}
 
 export default function RootLayout({
   children,
