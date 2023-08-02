@@ -72,11 +72,13 @@ export default function QuickView() {
 
   src='https://i.imgur.com/rxhEz0S.gif'
   alt={'Demonstration Video'}
-     width="1920"
-                    height="1080"
+     width="1122"
+                    height="631"
   aria-hidden="true"
   priority
 />
+
+{/* style="width: 1122px; height: 631px; left: 105px; top: 0px;" */}
 
                   {/* <iframe
                     className="aspect-video"
