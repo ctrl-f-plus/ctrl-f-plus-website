@@ -1,7 +1,8 @@
 // app/about/page.tsx
 
 import benAvatar from '@/public/images/ben-avatar.jpg';
-import ighodaloAvatar from '@/public/images/ighodalo-avatar.jpeg';
+import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
+
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import Image from 'next/image';
