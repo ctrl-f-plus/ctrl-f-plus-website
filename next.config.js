@@ -17,8 +17,8 @@ const nextConfig = {
 
 const ContentSecurityPolicy = `
   default-src 'self'  vercel.live;
-  script-src 'self' https://localhost:12719 'unsafe-eval' 'unsafe-inline' va.vercel-scripts.com cdn.vercel-insights.com vercel.live https://www.youtube.com;
-  frame-src youtube.com www.youtube.com;
+  script-src 'self' https://localhost:12719 'unsafe-eval' 'unsafe-inline' va.vercel-scripts.com cdn.vercel-insights.com vercel.live https://www.youtube.com https://imgur.com/;
+  frame-src youtube.com www.youtube.com https://imgur.com/;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';

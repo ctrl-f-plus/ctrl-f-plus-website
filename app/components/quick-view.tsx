@@ -8,6 +8,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Fragment, useState } from 'react';
 import ButtonPrimary from './buttons/ButtonPrimary';
+import Image from 'next/image';
 
 export default function QuickView() {
   const playerRef = useRef(null);
@@ -64,14 +65,29 @@ export default function QuickView() {
                     </button>
                   </div>
 
-                  <iframe
+
+
+        <Image
+  unoptimized={true}
+
+  src='https://i.imgur.com/rxhEz0S.gif'
+  alt={'Demonstration Video'}
+     width="1920"
+                    height="1080"
+  aria-hidden="true"
+  priority
+/>
+
+                  {/* <iframe
                     className="aspect-video"
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/RssoEj2mci0"
+                    // src="https://www.youtube.com/embed/RssoEj2mci0"
+                    src="https://imgur.com/a/EVy9rAI"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                  ></iframe>
+                  ></iframe> */}
+
                 </Dialog.Panel>
               </Transition.Child>
             </div>

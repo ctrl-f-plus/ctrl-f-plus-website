@@ -1,5 +1,6 @@
 // app/about/page.tsx
 
+
 import benAvatar from '@/public/images/ben-avatar.jpg';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
 
