@@ -16,21 +16,22 @@ export default function HeroAnimation({ className }: any) {
   );
 
   return (
-    <>
-      <div className={classNames}>
-        {prefersReducedMotion ? (
-          // <StaticHeroAnimation />
-          <Image src={heroAnimationStill} />
-        ) : (
-          <Image
-            unoptimized={true}
-            src={gifHero}
-            alt={''}
-            priority
-            // className="flex flex-auto"
-          />
-        )}
-      </div>
-    </>
+    <div className={classNames}>
+      {prefersReducedMotion ? (
+        <Image
+          src={heroAnimationStill}
+          alt={'Animated Search Visual'}
+          aria-hidden="true"
+        />
+      ) : (
+        <Image
+          unoptimized={true}
+          src={gifHero}
+          alt={'Animated Search Visual'}
+          aria-hidden="true"
+          priority
+        />
+      )}
+    </div>
   );
 }
