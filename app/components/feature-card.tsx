@@ -1,12 +1,12 @@
 // app/tab-hoarders/components/FeatureCard.tsx
 'use client';
 
-import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Balancer } from 'react-wrap-balancer';
+import Container from './Container';
 import FeatureIcon1 from './icons/feature1';
 import FeatureIcon2 from './icons/feature2';
 import FeatureIcon3 from './icons/feature3';
-import Container from './Container';
-import { Balancer } from 'react-wrap-balancer';
 
 const features = [
   {
@@ -38,7 +38,7 @@ export default function FeatureCard() {
       show: {
         opacity: 1,
         transition: {
-          duration: 1,
+          duration: 1.3,
         },
       },
     };
@@ -53,7 +53,7 @@ export default function FeatureCard() {
         opacity: 1,
         x: 0,
         transition: {
-          duration: 1.5,
+          duration: 1.9,
         },
       },
     };
@@ -66,7 +66,7 @@ export default function FeatureCard() {
         opacity: 1,
         y: 0,
         transition: {
-          duration: 1.5,
+          duration: 1.9,
         },
       },
     };

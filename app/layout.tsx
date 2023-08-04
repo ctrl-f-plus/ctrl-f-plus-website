@@ -91,11 +91,11 @@ export default function RootLayout({
           <CanvasGradient />
           <div className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg">
             <Navbar />
-            <main className="isolate flex-auto">
+            <main className="isolate z-10 flex-auto">
               {children}
               <Analytics />
             </main>
-            <Footer />
+            <Footer className="relative z-20" />
           </div>
         </div>
       </body>

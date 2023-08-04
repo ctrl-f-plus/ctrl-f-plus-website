@@ -5,6 +5,7 @@ import GithubIcon from './icons/github-icon';
 import LogoIconSecondary from './icons/logo-secondary';
 import Container from './Container';
 import { url } from 'inspector';
+import clsx from 'clsx';
 
 const navigation = [
   {
@@ -123,13 +124,18 @@ function OpenSource() {
   );
 }
 
-export default function Footer() {
+export default function Footer({ className }: { className?: string }) {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
 
   // "mx-auto mt-18 tablet:mt-24 wide:mt-[7.625rem]
   return (
-    <footer className="mt-18 bg-dark1 tablet:mt-24 wide:mt-[7.625rem]">
+    <footer
+      className={clsx(
+        'mt-18 bg-dark1 tablet:mt-24 wide:mt-[7.625rem]',
+        className
+      )}
+    >
       <Container className="">
         <div className="mt-18 grid grid-cols-1 gap-x-8 gap-y-16 tab-pro:grid-cols-2  lg:grid-cols-2">
           <Navigation />
