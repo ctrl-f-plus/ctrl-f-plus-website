@@ -39,7 +39,8 @@ export default function BlogPage() {
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10 laptop:grid-cols-2 laptop:px-[40px]">
+          {/* laptop:px-[40px] */}
+          <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10 bg-red-500 laptop:grid-cols-2 ">
             {allBlogs
               .sort((a, b) => {
                 if (new Date(a.publishedAt) > new Date(b.publishedAt)) {

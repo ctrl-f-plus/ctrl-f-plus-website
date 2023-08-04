@@ -70,7 +70,7 @@ export default function QuickView() {
         <Image
   unoptimized={true}
 
-  src='https://i.imgur.com/rxhEz0S.gif'
+  src='https://i.imgu/r.com/rxhEz0S.gif'
   alt={'Demonstration Video'}
      width="1122"
                     height="631"

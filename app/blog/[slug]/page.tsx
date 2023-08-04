@@ -112,7 +112,7 @@ export default async function Blog({ params }: BlogProps) {
                   </h1>
                 </div>
 
-                <div className="relative flex items-center space-x-2">
+                <div className="relative flex items-center space-x-2 ">
                   <Image
                     src="/images/ben-avatar.jpg"
                     width={1024}
@@ -133,7 +133,7 @@ export default async function Blog({ params }: BlogProps) {
             </div>
           </div>
 
-          <div className="mt-10 laptop:px-[40px]">
+          <div className="mt-10 ">
             <div className="rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]">
               <Mdx code={post?.body.code} />
             </div>
