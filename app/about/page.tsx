@@ -9,6 +9,8 @@ import Image from 'next/image';
 import Container from '../components/Container';
 import { Balancer } from 'react-wrap-balancer';
 
+// "meet Ben Chavez, our lead full-stack software engineer. With an extensive background in financial services, Ben brings a wealth of experience to our team. His naturally analytical mind, coupled with his passion for learning new technologies, makes him a driving force behind our innovative solutions. But Ben isn't all work and no play. When he isn't coding or solving complex problems, he indulges his creative side by writing music and diving into a good book. His unique blend of expertise, humor, and creativity makes him an invaluable part of the Ctrl-F Plus team."
+
 // site: 'https://ctrl-f.plus/about',
 export const metadata: Metadata = {
   // title: 'About Us - Ctrl-f Plus',
@@ -39,7 +41,8 @@ const team = [
     avatar: benAvatar,
     width: 528,
     height: 473,
-    bio: 'Time waits for no man. Unless that man is Chuck Norris. Chuck Norris doesn’t wear a watch. He decides what time it is. Chuck Norris has a mug of nails instead of coffee in the morning. Chuck Norris once ate at Taco Bell and didn’t get diarrhea.',
+    bio: 'Ben is a full-stack software engineer with an extensive background in financial services. Possessing a naturally analytical mind, he enjoys learning new technologies and solving complex problems. When Ben isn’t coding, he can often be found writing music or reading',
+
     linkedinUrl: 'https://www.linkedin.com/in/benjaminchavez/',
     githubUrl: 'https://github.com/bmchavez',
   },
@@ -50,7 +53,7 @@ const team = [
     avatar: ighodaloAvatar,
     width: 800,
     height: 800,
-    bio: 'Time waits for no man. Unless that man is Chuck Norris. Chuck Norris doesn’t wear a watch. He decides what time it is. Chuck Norris has a mug of nails instead of coffee in the morning. Chuck Norris once ate at Taco Bell and didn’t get diarrhea.',
+    bio: 'Ighodalo and experience Product Designer who is passionate about designing meaningful and impactful web-based digital products that meet user needs, business goals, and technology standards.',
     linkedinUrl: 'https://www.linkedin.com/in/ighodalo-ijagbone/',
     // githubUrl: '',
   },
