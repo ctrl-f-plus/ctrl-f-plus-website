@@ -53,7 +53,7 @@ const team = [
     avatar: ighodaloAvatar,
     width: 800,
     height: 800,
-    bio: 'Ighodalo and experience Product Designer who is passionate about designing meaningful and impactful web-based digital products that meet user needs, business goals, and technology standards.',
+    bio: 'Ighodalo is an experienced Product Designer who is passionate about designing meaningful and impactful web-based digital products that meet user needs, business goals, and technology standards.',
     linkedinUrl: 'https://www.linkedin.com/in/ighodalo-ijagbone/',
     // githubUrl: '',
   },
