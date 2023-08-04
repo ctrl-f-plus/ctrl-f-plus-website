@@ -1,4 +1,5 @@
 // app/about/page.tsx
+'use client';
 
 import benAvatar from '@/public/images/ben-avatar.jpg';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
@@ -8,30 +9,31 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Container from '../components/Container';
 import { Balancer } from 'react-wrap-balancer';
+import { motion, useReducedMotion } from 'framer-motion';
 
 // "meet Ben Chavez, our lead full-stack software engineer. With an extensive background in financial services, Ben brings a wealth of experience to our team. His naturally analytical mind, coupled with his passion for learning new technologies, makes him a driving force behind our innovative solutions. But Ben isn't all work and no play. When he isn't coding or solving complex problems, he indulges his creative side by writing music and diving into a good book. His unique blend of expertise, humor, and creativity makes him an invaluable part of the Ctrl-F Plus team."
 
 // site: 'https://ctrl-f.plus/about',
-export const metadata: Metadata = {
-  // title: 'About Us - Ctrl-f Plus',
-  title: 'About',
-  description:
-    'Learn about Ctrl-F Plus, the open source Chrome extension that redefines productivity by extending the native Ctrl-F functionality to search across all tabs in your browser window.',
-  alternates: {
-    // canonical: new URL('https://ctrl-f.plus'),
-    canonical: 'https://ctrl-f.plus/blog',
-  },
-  keywords: [
-    'About Us',
-    'Ctrl-F Plus',
-    'Chrome Extension',
-    'Browser Search',
-    'Multi-tab Search',
-    'Productivity Tool',
-    'Time Saver',
-    'Efficiency Tool',
-  ],
-};
+// export const metadata: Metadata = {
+//   // title: 'About Us - Ctrl-f Plus',
+//   title: 'About',
+//   description:
+//     'Learn about Ctrl-F Plus, the open source Chrome extension that redefines productivity by extending the native Ctrl-F functionality to search across all tabs in your browser window.',
+//   alternates: {
+//     // canonical: new URL('https://ctrl-f.plus'),
+//     canonical: 'https://ctrl-f.plus/blog',
+//   },
+//   keywords: [
+//     'About Us',
+//     'Ctrl-F Plus',
+//     'Chrome Extension',
+//     'Browser Search',
+//     'Multi-tab Search',
+//     'Productivity Tool',
+//     'Time Saver',
+//     'Efficiency Tool',
+//   ],
+// };
 
 const team = [
   {
@@ -131,13 +133,37 @@ function SocialProfiles({ person }: any) {
 }
 
 export default function About() {
+  const prefersReducedMotion = useReducedMotion();
+
+  const cardVariants = () => {
+    return {
+      hidden: { opacity: 0, y: 500 },
+      show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          opacity: { duration: 1.9 },
+          y: { duration: 1.3 },
+        },
+      },
+    };
+  };
+
   return (
     <>
       <Container className="mt-18 flex flex-col tablet:mt-24">
-        <div className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20">
+        <motion.div
+          className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
+          whileInView="show"
+          initial="hidden"
+          viewport={{ once: true }}
+          variants={cardVariants()}
+        >
           <div className="flex justify-start gap-[9.375rem]">
             <div className="flex flex-col items-start justify-center gap-6">
-              <h1 className="font-inter text-fs-xl text-dark1">About</h1>
+              <h1 className="font-inter text-fs-xl text-dark1">
+                Meet the team Behind Ctrl-F Plus
+              </h1>
 
               <p className="font-open-sans text-fs-lg text-dark1 ">
                 {/* <Balancer> */} Welcome to{' '}
@@ -148,22 +174,29 @@ export default function About() {
                 reiciendis.
                 {/* </Balancer> */}
               </p>
-              <p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
+              {/* <p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
                 <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                corrupti eligendi consequatur repudiandae ratione suscipit minus
-                est repellat eaque reiciendis.
-              </p>
+                This project is open source and we welcome your contributions!
+                Interested in collaborating with us or contributing to our
+                open-source project? Get in touch today and let's improve the
+                digital world together!
+              </p> */}
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="mt-10">
+        <motion.div
+          className="mt-10 "
+          whileInView="show"
+          initial="hidden"
+          viewport={{ once: true }}
+          variants={cardVariants()}
+        >
           <div
             // tab-pro:p-20
             className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14  laptop:px-8 desktop:px-[40px]"
           >
-            <div className="grid-cols-1 gap-x-8 xl:grid-cols-2">
+            {/* <div className="grid-cols-1 gap-x-8 xl:grid-cols-2">
               <h2 className="font-inter text-fs-x0 tracking-tight text-dark1">
                 Our team
               </h2>
@@ -172,40 +205,73 @@ export default function About() {
                 what we do and dedicated to delivering the best results for our
                 clients.
               </p>
-            </div>
+            </div> */}
             <div className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20   xl:grid-cols-2">
               <ul
                 role="list"
                 className="mx-auto grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
               >
                 {team.map((person: any) => (
-                  <li key={person.name}>
-                    <Image
-                      loading="lazy"
-                      className="aspect-[3/2] w-full rounded-2xl bg-gray-300 object-cover"
-                      src={person.avatar}
-                      alt=""
-                      placeholder="blur"
-                      quality={100}
-                    />
+                  <li
+                    key={person.name}
+                    className="flex flex-col justify-between"
+                  >
+                    <div>
+                      <Image
+                        loading="lazy"
+                        className="aspect-[3/2] w-full rounded-2xl bg-gray-300 object-cover"
+                        src={person.avatar}
+                        alt=""
+                        placeholder="blur"
+                        quality={100}
+                      />
 
-                    <h3 className="mt-6 font-inter text-lg font-semibold leading-8 text-dark1">
-                      {person.name}
-                    </h3>
-                    <p className="font-arimo text-base leading-7 text-dark1/80">
-                      {person.role}
-                    </p>
-                    <p className="mt-4 font-arimo text-base leading-7 text-dark1/80">
-                      {person.bio}
-                    </p>
+                      <h3 className="mt-6 font-inter text-lg font-semibold leading-8 text-dark1">
+                        {person.name}
+                      </h3>
+                      <p className="font-arimo text-base leading-7 text-dark1/80">
+                        {person.role}
+                      </p>
+                      <p className="mt-4 font-arimo text-base leading-7 text-dark1/80">
+                        {person.bio}
+                      </p>
+                    </div>
 
                     <SocialProfiles person={person} />
                   </li>
                 ))}
               </ul>
             </div>
+
+            {/* <div className="mt-20">
+              <h2 className="font-inter text-fs-x0 tracking-tight text-dark1">
+                Sponsor This Project
+              </h2>
+              <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
+                //</p><p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
+                <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
+                This project is open source and we welcome your contributions!
+                Interested in collaborating with us or contributing to our
+                open-source project? Get in touch today and let's improve the
+                digital world together!
+              </p>
+            </div>
+
+            <div className="mt-20">
+              <h2 className="font-inter text-fs-x0 tracking-tight text-dark1">
+                Contribute
+              </h2>
+              <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
+/                //</p><p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
+                <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
+                This project is open source and we welcome your contributions!
+                Interested in collaborating with us or contributing to our
+                open-source project? Get in touch today and let's improve the
+                digital world together!
+              </p>
+            </div> */}
           </div>
-        </div>
+        </motion.div>
       </Container>
     </>
   );

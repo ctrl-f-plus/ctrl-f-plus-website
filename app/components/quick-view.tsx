@@ -65,20 +65,17 @@ export default function QuickView() {
                     </button>
                   </div>
 
-
-
-        <Image
-  unoptimized={true}
-
-  src='https://i.imgu/r.com/rxhEz0S.gif'
-  alt={'Demonstration Video'}
-     width="1122"
+                  <Image
+                    unoptimized={true}
+                    src="https://i.imgur.com/rxhEz0S.gif"
+                    alt={'Demonstration Video'}
+                    width="1122"
                     height="631"
-  aria-hidden="true"
-  priority
-/>
+                    aria-hidden="true"
+                    priority
+                  />
 
-{/* style="width: 1122px; height: 631px; left: 105px; top: 0px;" */}
+                  {/* style="width: 1122px; height: 631px; left: 105px; top: 0px;" */}
 
                   {/* <iframe
                     className="aspect-video"
@@ -89,7 +86,6 @@ export default function QuickView() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe> */}
-
                 </Dialog.Panel>
               </Transition.Child>
             </div>
