@@ -5,6 +5,7 @@
 import clsx from 'clsx';
 import { PlayIcon } from '../icons/play';
 import PuzzleIcon from '../icons/puzzle';
+import CtrlLink from '../ctrl-link';
 
 // focus-visible:outline focus-visible:outline-2  focus-visible:outline-offset-2 focus-visible:outline-[#0a2b35]
 const baseStyles = {
@@ -30,17 +31,21 @@ const variantStyles = {
 type ButtonProps = {
   variant: 'solid' | 'outline' | 'simple';
   children: React.ReactNode;
-  // onClick?: () => void;
-  // url: string;
-
+  onClick?: () => void;
+  href?: string;
   className?: string;
+  aTag: boolean;
+  target: string;
 };
 
 function ButtonMobile({
   variant,
   children,
   className,
-
+  onClick,
+  href,
+  target = '',
+  aTag = false,
   ...props
 }: ButtonProps) {
   //@ts-ignore
@@ -48,12 +53,20 @@ function ButtonMobile({
   className = clsx(baseStyles['base'], variantStyles[variant], className);
 
   return (
-    <button type="button" className={className}>
+    <CtrlLink
+      type="button"
+      href={href}
+      className={className}
+      onClick={onClick}
+      target={target}
+      aTag
+      {...props}
+    >
       {IconComponent && (
         <IconComponent className="fill-white tablet:group-active:!fill-white/80" />
       )}
       {children}
-    </button>
+    </CtrlLink>
   );
 }
 

@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { PlayIcon } from '../icons/play';
 import PuzzleIcon from '../icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
+import { ButtonHTMLAttributes } from 'react';
+import CtrlLink from '../ctrl-link';
 
 const baseStyles = {
   base: 'flex justify-center items-center py-2 font-open-sans  group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative  shadow-sm overflow-hidden',
@@ -137,29 +139,39 @@ function ColorFill() {
   );
 }
 
-type ButtonProps = {
+// interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   variant: 'solid' | 'outline' | 'simple' | 'phat';
   children: React.ReactNode;
   onClick?: () => void;
-  // url: string;
+  href?: string;
   className?: string;
-};
+  aTag: boolean;
+  target: string;
+}
 
 function ButtonPrimary({
   variant,
   children,
   className,
   onClick,
+  href,
+  target = '',
+  aTag = false,
   ...props
 }: ButtonProps) {
   className = clsx(baseStyles['base'], variantStyles[variant], className);
 
+  // if (aTag) {
   return (
     <>
-      <Link
-        href="#"
+      <CtrlLink
+        href={href}
         className=" h-full w-full rounded-[37px]"
         onClick={onClick}
+        target={target}
+        aTag
+        {...props}
       >
         <motion.div
           whileHover="hover"
@@ -175,7 +187,7 @@ function ButtonPrimary({
             <ButtonPhat variant={variant}>{children}</ButtonPhat>
           )}
         </motion.div>
-      </Link>
+      </CtrlLink>
     </>
   );
 }

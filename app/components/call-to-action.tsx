@@ -160,7 +160,14 @@ export default function CallToAction() {
                   dozen more. */}
                 </p>
                 {/* <ButtonPhat /> */}
-                <ButtonPrimary variant={'phat'}>Add to Chrome</ButtonPrimary>
+                <ButtonPrimary
+                  variant={'phat'}
+                  href={process.env.CHROME_STORE_URL}
+                  target={'_blank'}
+                  aTag
+                >
+                  Add to Chrome
+                </ButtonPrimary>
               </div>
             </motion.div>
           </Atropos>

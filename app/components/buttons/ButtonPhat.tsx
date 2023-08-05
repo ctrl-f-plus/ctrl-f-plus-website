@@ -4,6 +4,7 @@ import { LayoutGroup, motion, useAnimate, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import PuzzleIcon2 from '../icons/puzzle2';
 import Link from 'next/link';
+import CtrlLink from '../ctrl-link';
 
 type ButtonProps = {
   // children: React.ReactNode;
@@ -42,7 +43,7 @@ function ButtonPhat({ className, ...props }: ButtonProps) {
         transition={{ type: 'spring', stiffness: 400, damping: 17 }}
         className="group relative  inline-block inline-flex w-[231px] items-center justify-start overflow-hidden rounded-full bg-primary1 px-5 py-3 font-bold"
       >
-        <Link href="#">
+        <CtrlLink href="#">
           <motion.span
             className="pointer-events-none absolute -left-10 -top-16 h-72 w-80 bg-highlight-focus-1"
             initial={{ rotate: -68.566, translateX: '-100%' }}
@@ -74,7 +75,7 @@ function ButtonPhat({ className, ...props }: ButtonProps) {
             </motion.span>
           </motion.div>
           {/* </LayoutGroup> */}
-        </Link>
+        </CtrlLink>
       </motion.div>
     </>
   );

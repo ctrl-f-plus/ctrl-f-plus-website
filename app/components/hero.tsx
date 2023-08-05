@@ -5,6 +5,7 @@ import ButtonMobile from './buttons/button-mobile';
 import Container from './Container';
 import QuickView from './quick-view';
 import HeroAnimation from './icons/hero-animation';
+import { Button } from './buttons/button';
 
 export default function Hero() {
   return (
@@ -35,7 +36,12 @@ export default function Hero() {
             </p>
           </div>
           <div className="hidden flex-col gap-6 tablet:flex tab-pro:flex-row">
-            <ButtonPrimary variant="solid">
+            <ButtonPrimary
+              variant="solid"
+              href={process.env.CHROME_STORE_URL}
+              target={'_blank'}
+              aTag
+            >
               Add to Chrome for free
             </ButtonPrimary>
 
@@ -43,9 +49,17 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col gap-6 tablet:hidden tab-pro:flex-row">
-            <ButtonMobile variant="solid">Add to Chrome for free</ButtonMobile>
+            <ButtonMobile
+              variant="solid"
+              href={process.env.CHROME_STORE_URL}
+              target={'_blank'}
+              aTag
+            >
+              Add to Chrome for free
+            </ButtonMobile>
 
-            <ButtonMobile variant="outline">See how it works</ButtonMobile>
+            {/* <ButtonMobile variant="outline">See how it works</ButtonMobile> */}
+            <QuickView />
           </div>
         </div>
 
