@@ -7,7 +7,7 @@ import { Balancer } from 'react-wrap-balancer';
 import DrawingIcon from '../components/icons/drawing-icon';
 import Container from '../components/Container';
 import { twMerge } from 'tailwind-merge';
-import FadeIn, { FadeInStagger } from '../components/fade-in';
+import { FadeIn, FadeInStagger } from '../components/fade-in';
 
 export const metadata: Metadata = {
   title: 'Blog',

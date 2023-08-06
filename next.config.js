@@ -3,7 +3,7 @@ const { withContentlayer } = require('next-contentlayer');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {},
-  reactStrictMode: true,
+  reactStrictMode: false,
   poweredByHeader: false,
   headers() {
     return [

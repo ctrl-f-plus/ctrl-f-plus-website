@@ -1,7 +1,7 @@
-import ButtonPrimaryCopy from './components/buttons/button-primary-copy';
+import 'server-only';
 import Container from './components/Container';
-// import { FadeIn } from './components/fade-in';
-import FadeIn from './components/fade-in';
+import ButtonPrimaryCopy from './components/buttons/button-primary-copy';
+import { FadeIn } from './components/fade-in';
 
 export default function NotFoundPage() {
   return (

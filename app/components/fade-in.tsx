@@ -7,7 +7,7 @@ import { createContext, useContext } from 'react';
 
 const FadeInStaggerContext = createContext(false);
 
-export default function FadeIn(props: any) {
+export function FadeIn(props: any) {
   let prefersReducedMotion = useReducedMotion();
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 

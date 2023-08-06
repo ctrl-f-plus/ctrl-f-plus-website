@@ -9,7 +9,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Container from '../components/Container';
 import { Balancer } from 'react-wrap-balancer';
-import FadeIn, { FadeInStagger } from '../components/fade-in';
+import { FadeIn, FadeInStagger } from '../components/fade-in';
 // import { motion, useReducedMotion } from 'framer-motion';
 
 // "meet Ben Chavez, our lead full-stack software engineer. With an extensive background in financial services, Ben brings a wealth of experience to our team. His naturally analytical mind, coupled with his passion for learning new technologies, makes him a driving force behind our innovative solutions. But Ben isn't all work and no play. When he isn't coding or solving complex problems, he indulges his creative side by writing music and diving into a good book. His unique blend of expertise, humor, and creativity makes him an invaluable part of the Ctrl-F Plus team."

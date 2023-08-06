@@ -1,18 +1,25 @@
 // app/tab-hoarders/page.tsx
 
 import CallToAction from './components/call-to-action';
+import { FadeIn, FadeInStagger } from './components/fade-in';
 import FeatureCard from './components/feature-card';
 import FeaturesHeader from './components/features-header';
 import Hero from './components/hero';
 import Loading from './loading';
 
 export default function Page() {
+  const components = [
+    <Hero key="hero" />,
+    <FeaturesHeader key="featuresHeader" />,
+    <FeatureCard key="featureCard" />,
+    <CallToAction key="callToAction" />,
+  ];
+
   return (
-    <div className="flex flex-col">
-      <Hero />
-      <FeaturesHeader />
-      <FeatureCard />
-      <CallToAction />
-    </div>
+    <FadeInStagger className="flex flex-col">
+      {components.map((component) => (
+        <FadeIn key={component.key}>{component}</FadeIn>
+      ))}
+    </FadeInStagger>
   );
 }
