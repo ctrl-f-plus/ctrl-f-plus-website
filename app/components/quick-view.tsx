@@ -16,7 +16,12 @@ export default function QuickView() {
 
   return (
     <>
-      <ButtonPrimary onClick={() => setIsOpen(true)} variant="outline">
+      <ButtonPrimary
+        onClick={() => setIsOpen(true)}
+        variant="outline"
+        aTag={false}
+        target={''}
+      >
         See how it works
       </ButtonPrimary>
 
