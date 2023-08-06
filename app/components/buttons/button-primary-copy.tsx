@@ -5,6 +5,7 @@
 import clsx from 'clsx';
 import { PlayIcon } from '../icons/play';
 import PuzzleIcon from '../icons/puzzle';
+import CtrlLink from '../ctrl-link';
 
 const baseStyles = {
   base: 'flex h-14 w-full justify-center items-center gap-2 rounded-[37px] py-2 font-open-sans text-fs-md-bold group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a2b35] shadow-sm',
@@ -27,17 +28,21 @@ const variantStyles = {
 type ButtonProps = {
   variant: 'solid' | 'outline' | 'simple';
   children: React.ReactNode;
-  // onClick?: () => void;
-  // url: string;
-
+  onClick?: () => void;
+  href?: string;
   className?: string;
+  aTag: boolean;
+  target: string;
 };
 
 export default function ButtonPrimaryCopy({
   variant,
   children,
   className,
-
+  onClick,
+  href,
+  target = '',
+  aTag = false,
   ...props
 }: ButtonProps) {
   //@ts-ignore
@@ -45,16 +50,19 @@ export default function ButtonPrimaryCopy({
   className = clsx(baseStyles['base'], variantStyles[variant], className);
 
   return (
-    <button
+    <CtrlLink
+      href={href}
       type="button"
       className={className}
-
-      // onClick={handleClick}
+      onClick={onClick}
+      target={target}
+      aTag
+      {...props}
     >
       {IconComponent && (
         <IconComponent className="fill-white group-active:!fill-white/80" />
       )}
       {children}
-    </button>
+    </CtrlLink>
   );
 }
