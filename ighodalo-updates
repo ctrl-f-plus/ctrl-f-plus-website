@@ -1,17 +1,3 @@
-·         About Page:
-
-o   Let me know if you have any other thoughts or suggestions on this page, specifically regarding the fonts, font colors, and/or overall spacing.
-
-not sure if you have any plans for the About section i.e copy, but i think you can just change the title in the nav to "Team"  and take out the about section
-
-Also, you will have to remove that margin that's indenting the "our team" container.
-
-
-
-·         Misc.
-
-o   I worked on the updates from our last meeting. Let me know if anything still needs tweaking.
-
 For the search animation/effect, can you make the text reactive to the mouse hover of the "green" shape i.e the text should look whitish-green/light shade of green  when any part of the green svg touches it.
 
 

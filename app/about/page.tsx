@@ -82,19 +82,6 @@ function SocialProfiles({ person }: any) {
             </CtrlLink>
           </li>
         )}
-        {person.email && (
-          <li>
-            <CtrlLink
-              href={person.email}
-              className="text-dark1/70 hover:text-dark1"
-              target="_blank"
-              atag
-            >
-              <span className="sr-only">Github</span>
-              <EmailIcon className={'h-5 w-5'} />
-            </CtrlLink>
-          </li>
-        )}
         {person.githubUrl && (
           <li>
             <CtrlLink
@@ -105,6 +92,19 @@ function SocialProfiles({ person }: any) {
             >
               <span className="sr-only">Github</span>
               <GithubIcon className={'h-5 w-5'} />
+            </CtrlLink>
+          </li>
+        )}
+        {person.email && (
+          <li>
+            <CtrlLink
+              href={person.email}
+              className="text-dark1/70 hover:text-dark1"
+              target="_blank"
+              atag
+            >
+              <span className="sr-only">Github</span>
+              <EmailIcon className={'h-5 w-5'} />
             </CtrlLink>
           </li>
         )}
@@ -177,11 +177,9 @@ export default function About() {
                         <Image
                           loading="lazy"
                           className="aspect-[3/2] w-full rounded-2xl bg-[#DBDFE5]/70 object-cover"
-                          // style={{ objectFit: 'contain' }}
                           src={person.avatar}
-                          alt=""
+                          alt={`Photo of ` + person.name}
                           placeholder="blur"
-                          // fill={true}
                           quality={100}
                         />
 
