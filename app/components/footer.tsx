@@ -1,7 +1,7 @@
 // app/components/layout/Footer.tsx
 
 import Link from 'next/link';
-import GithubIcon from './icons/github-icon';
+import { GithubIcon } from './icons/social-icons';
 import LogoIconSecondary from './icons/logo-secondary';
 import Container from './Container';
 import { url } from 'inspector';
