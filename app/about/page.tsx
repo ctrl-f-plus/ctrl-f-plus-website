@@ -1,8 +1,10 @@
 // app/about/page.tsx
 // 'use client';
 
-import benAvatar from '@/public/images/ben-avatar.jpg';
-import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
+// import benAvatar from '@/public/images/ben-avatar.jpg';
+// import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
+import benAvatar from '@/public/images/ben-avatar-z.png';
+import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Container from '../components/Container';
@@ -12,6 +14,7 @@ import {
   GithubIcon,
   LinkedInIcon,
 } from '../components/icons/social-icons';
+import CtrlLink from '../components/ctrl-link';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
@@ -68,38 +71,41 @@ function SocialProfiles({ person }: any) {
       <ul role="list" className="mt-6 flex gap-x-6">
         {person.linkedinUrl && (
           <li>
-            <a
+            <CtrlLink
               href={person.linkedinUrl}
               className="text-dark1/70 hover:text-dark1"
               target="_blank"
+              atag
             >
               <span className="sr-only">LinkedIn</span>
               <LinkedInIcon className={'h-5 w-5'} />
-            </a>
+            </CtrlLink>
           </li>
         )}
         {person.email && (
           <li>
-            <a
+            <CtrlLink
               href={person.email}
               className="text-dark1/70 hover:text-dark1"
               target="_blank"
+              atag
             >
               <span className="sr-only">Github</span>
               <EmailIcon className={'h-5 w-5'} />
-            </a>
+            </CtrlLink>
           </li>
         )}
         {person.githubUrl && (
           <li>
-            <a
+            <CtrlLink
               href={person.githubUrl}
               className="text-dark1/70 hover:text-dark1"
               target="_blank"
+              atag
             >
               <span className="sr-only">Github</span>
               <GithubIcon className={'h-5 w-5'} />
-            </a>
+            </CtrlLink>
           </li>
         )}
       </ul>
@@ -170,10 +176,12 @@ export default function About() {
                       <div>
                         <Image
                           loading="lazy"
-                          className="aspect-[3/2] w-full rounded-2xl bg-gray-300 object-cover"
+                          className="aspect-[3/2] w-full rounded-2xl bg-[#DBDFE5]/70 object-cover"
+                          // style={{ objectFit: 'contain' }}
                           src={person.avatar}
                           alt=""
                           placeholder="blur"
+                          // fill={true}
                           quality={100}
                         />
 
