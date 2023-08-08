@@ -11,7 +11,7 @@ import ButtonPrimary from './buttons/ButtonPrimary';
 import Image from 'next/image';
 
 export default function QuickView() {
-  const playerRef = useRef(null);
+  // const playerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,6 +21,7 @@ export default function QuickView() {
         variant="outline"
         aTag={false}
         target={''}
+        className="cursor-pointer"
       >
         See how it works
       </ButtonPrimary>

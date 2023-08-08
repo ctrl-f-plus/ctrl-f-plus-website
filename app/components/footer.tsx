@@ -21,7 +21,7 @@ const navigation = [
     title: 'Contribute',
     links: [
       {
-        title: 'Open Source',
+        title: 'Star us on GitHub',
         href: process.env.GITHUB_EXT_URL,
         target: '_blank',
       },
@@ -109,7 +109,7 @@ function OpenSource() {
         </div>
 
         <a
-          href={process.env.GITHUB_ORGANIZATION_URL}
+          href={process.env.GITHUB_EXT_URL}
           target="_blank"
           className="group mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance]  laptop:text-center"
         >
