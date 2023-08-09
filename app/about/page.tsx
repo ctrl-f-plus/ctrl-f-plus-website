@@ -13,6 +13,7 @@ import {
   EmailIcon,
   GithubIcon,
   LinkedInIcon,
+  WebsiteIcon,
 } from '../components/icons/social-icons';
 import CtrlLink from '../components/ctrl-link';
 
@@ -53,6 +54,7 @@ const team = [
     linkedinUrl: 'https://www.linkedin.com/in/benjaminchavez/',
     githubUrl: 'https://github.com/benjamin-chavez',
     email: 'mailto:ben.m.chavez@gmail.com',
+    website: 'https://benjamin-chavez.com/',
   },
   {
     name: 'Ighodalo I',
@@ -95,6 +97,7 @@ function SocialProfiles({ person }: any) {
             </CtrlLink>
           </li>
         )}
+
         {person.email && (
           <li>
             <CtrlLink
@@ -105,6 +108,19 @@ function SocialProfiles({ person }: any) {
             >
               <span className="sr-only">Github</span>
               <EmailIcon className={'h-5 w-5'} />
+            </CtrlLink>
+          </li>
+        )}
+        {person.website && (
+          <li>
+            <CtrlLink
+              href={person.website}
+              className="text-dark1/70 hover:text-dark1"
+              target="_blank"
+              atag
+            >
+              <span className="sr-only">Website</span>
+              <WebsiteIcon className={'h-5 w-5'} />
             </CtrlLink>
           </li>
         )}
