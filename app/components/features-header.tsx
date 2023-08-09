@@ -11,6 +11,7 @@ import {
 } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Container from './Container';
+import { FadeIn } from './fade-in';
 
 export default function FeaturesHeader() {
   const prefersReducedMotion = useReducedMotion();
@@ -62,7 +63,7 @@ export default function FeaturesHeader() {
           Tab Junkie? Meet Your New Best Friend.
         </h2>
 
-        <h3 className="gradient-text max-w-[36.125rem] animate-gradient-x bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2">
+        <h3 className="gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2">
           Your Guiding Light in the Tab Chaos
         </h3>
         <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white wide:text-text-dark">
@@ -79,43 +80,45 @@ export default function FeaturesHeader() {
       aria-label="Features for multi-tab keyword and phrase search"
       className="mt-18 scroll-mt-12 tablet:mt-24 wide:mt-[7.625rem]"
     >
-      <Container className="flex w-full flex-col justify-center">
-        <div
-          onMouseMove={handleMouseMove}
-          className=" group relative hidden rounded-[2.25rem] bg-dark1 shadow-xl  backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass "
-        >
-          <div className=" relative max-h-146 overflow-hidden rounded-[2.25rem]">
-            <motion.div
-              ref={divRef}
-              // pointer-events-none
-              // hidden
-              className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] bg-[#03af7d1a] p-18 file:group-hover:opacity-100 wide:block"
-              // 300x300
-              style={{
-                WebkitMaskRepeat: 'no-repeat',
-                WebkitMaskImage:
-                  'radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)',
-                WebkitMaskPosition: webkitMaskPosition,
-              }}
-              whileHover={{
-                backgroundColor: '#03AF7D',
-              }}
-              transition={{ duration: 0.9 }}
-            >
-              <CardText />
-            </motion.div>
+      <FadeIn>
+        <Container className="flex w-full flex-col justify-center">
+          <div
+            onMouseMove={handleMouseMove}
+            className=" group relative hidden rounded-[2.25rem] bg-dark1 shadow-xl  backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass "
+          >
+            <div className=" relative max-h-146 overflow-hidden rounded-[2.25rem]">
+              <motion.div
+                ref={divRef}
+                // pointer-events-none
+                // hidden
+                className="opacity-1 mask -inset-px h-[20000px] rounded-[2.25rem] bg-[#03af7d1a] p-18 file:group-hover:opacity-100 wide:block"
+                // 300x300
+                style={{
+                  WebkitMaskRepeat: 'no-repeat',
+                  WebkitMaskImage:
+                    'radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)',
+                  WebkitMaskPosition: webkitMaskPosition,
+                }}
+                whileHover={{
+                  backgroundColor: '#03AF7D',
+                }}
+                transition={{ duration: 0.9 }}
+              >
+                <CardText />
+              </motion.div>
+            </div>
           </div>
-        </div>
 
-        <div
-          onMouseMove={handleMouseMove}
-          className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  wide:hidden wide:cursor-magnifying-glass "
-        >
-          <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
-            <CardText />
+          <div
+            onMouseMove={handleMouseMove}
+            className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  wide:hidden wide:cursor-magnifying-glass "
+          >
+            <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
+              <CardText />
+            </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </FadeIn>
     </section>
   );
 }

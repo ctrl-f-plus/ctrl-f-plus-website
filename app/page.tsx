@@ -15,11 +15,13 @@ export default function Page() {
     <CallToAction key="callToAction" />,
   ];
 
-  return (
-    <FadeInStagger className="flex flex-col">
-      {components.map((component) => (
-        <FadeIn key={component.key}>{component}</FadeIn>
-      ))}
-    </FadeInStagger>
-  );
+  // return (
+  //   <FadeInStagger className="flex flex-col">
+  //     {components.map((component) => (
+  //       <FadeIn key={component.key}>{component}</FadeIn>
+  //     ))}
+  //   </FadeInStagger>
+  // );
+
+  return <FadeInStagger className="flex flex-col">{components}</FadeInStagger>;
 }
