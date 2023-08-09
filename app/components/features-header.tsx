@@ -117,14 +117,11 @@ export default function FeaturesHeader() {
             </div>
           </div>
 
-          {/* <div
-            onMouseMove={handleMouseMove}
-            className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90  wide:hidden wide:cursor-magnifying-glass "
-          >
+          <div className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90 wide:hidden wide:cursor-magnifying-glass ">
             <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
               <CardText />
             </div>
-          </div> */}
+          </div>
         </Container>
       </FadeIn>
     </section>
