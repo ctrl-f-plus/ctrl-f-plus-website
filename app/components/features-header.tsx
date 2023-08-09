@@ -56,12 +56,9 @@ export default function FeaturesHeader() {
   let mouseX = useSpring(0, { stiffness: stiffness, damping: damping });
   let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
 
-  useEffect(() => {
-    mouseX.set(750);
-    mouseY.set(70);
-    stiffness = 90;
-    damping = 20;
-  });
+  let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
+
+  let style = { maskImage, WebkitMaskImage: maskImage };
 
   function handleMouseMove({
     currentTarget,
@@ -73,11 +70,12 @@ export default function FeaturesHeader() {
     mouseY.set(clientY - top);
   }
 
-  // 'radial-gradient(250px 250px, rgba(0, 0, 0, .9),  transparent)',
-  // let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
-  let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
-
-  let style = { maskImage, WebkitMaskImage: maskImage };
+  useEffect(() => {
+    mouseX.set(750);
+    mouseY.set(70);
+    stiffness = 90;
+    damping = 20;
+  }, []);
 
   return (
     <section
@@ -97,13 +95,11 @@ export default function FeaturesHeader() {
                   <CardText2 />
                 </div>
 
-                {/*  */}
                 <motion.div
                   className="absolute inset-0 rounded-[2.25rem] bg-[#03af7d]  opacity-0 transition duration-900 group-hover:opacity-100"
                   style={style}
-                  // transition={{ duration: 0.9 }}
                 />
-                {/*  */}
+
                 <motion.div
                   className="opacity-1 absolute inset-0 flex items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100"
                   style={style}
