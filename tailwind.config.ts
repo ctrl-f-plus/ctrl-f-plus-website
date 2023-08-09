@@ -119,6 +119,9 @@ module.exports = {
           },
         },
       },
+      transitionDuration: {
+        '900': '900ms',
+      },
     },
   },
   future: {
