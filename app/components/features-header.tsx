@@ -53,29 +53,30 @@ export default function FeaturesHeader() {
   let stiffness = 80;
   let damping = 30;
 
-  let mouseX = useSpring(0, { stiffness: stiffness, damping: damping });
+  // let stiffness = 90;
+  // let damping = 20;
+
+  let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
   let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
 
-  let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
 
   let style = { maskImage, WebkitMaskImage: maskImage };
 
-  function handleMouseMove({
+  const handleMouseMove = ({
     currentTarget,
     clientX,
     clientY,
-  }: React.MouseEvent<HTMLDivElement>) {
+  }: React.MouseEvent<HTMLDivElement>) => {
     let { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
-  }
+  };
 
   useEffect(() => {
-    mouseX.set(750);
-    mouseY.set(70);
-    stiffness = 90;
-    damping = 20;
-  }, []);
+    mouseX.set(800);
+    mouseY.set(185);
+  });
 
   return (
     <section
