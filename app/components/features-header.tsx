@@ -59,7 +59,7 @@ export default function FeaturesHeader() {
   let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
   let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
 
-  let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
 
   let style = { maskImage, WebkitMaskImage: maskImage };
 
