@@ -87,8 +87,8 @@ export default function QuickView() {
                           alt="Demonstration Video"
                           // width="1122"
                           // height="631"
-                          width={1920}
-                          height={1280}
+                          width={1280}
+                          height={853}
                           aria-hidden="true"
                           priority
                         />
