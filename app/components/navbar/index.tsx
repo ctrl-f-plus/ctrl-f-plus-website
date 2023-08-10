@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import LogoIcon from '../icons/logo';
 import MenuIcon from '../icons/menu';
-import Container from '../Container';
+import Container from '../container';
 import MobileMenu from './mobile-menu';
 import CtrlLink from '../ctrl-link';
 import Link from 'next/link';

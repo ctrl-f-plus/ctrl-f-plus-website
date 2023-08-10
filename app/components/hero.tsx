@@ -2,7 +2,7 @@
 
 import ButtonPrimary from './buttons/ButtonPrimary';
 import ButtonMobile from './buttons/button-mobile';
-import Container from './Container';
+import Container from './container';
 import QuickView from './quick-view';
 import HeroAnimation from './icons/hero-animation';
 import { Button } from './buttons/button';

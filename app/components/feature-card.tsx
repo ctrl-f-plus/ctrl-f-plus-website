@@ -3,7 +3,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { Balancer } from 'react-wrap-balancer';
-import Container from './Container';
+import Container from './container';
 import FeatureIcon1 from './icons/feature1';
 import FeatureIcon2 from './icons/feature2';
 import FeatureIcon3 from './icons/feature3';

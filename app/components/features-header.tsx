@@ -1,7 +1,7 @@
-// @ts-nocheck
 // app/components/features-header.tsx
 'use client';
 
+import clsx from 'clsx';
 import {
   motion,
   useMotionTemplate,
@@ -9,38 +9,35 @@ import {
   useSpring,
 } from 'framer-motion';
 import { useEffect } from 'react';
-import Container from './Container';
+import Container from './container';
 import { FadeIn } from './fade-in';
 
-function CardText() {
+function CardText({ baseLayer = false }) {
+  const textColor: string = baseLayer ? `text-text-dark` : `text-white`;
+  const wideTextColor: string = baseLayer
+    ? `wide:text-text-dark`
+    : `wide:text-white`;
+
   return (
     <div className=" flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
-      <h2 className="font-inter text-fs-base text-white ">
+      <h2 className={clsx('font-inter text-fs-base', textColor)}>
         Tab Junkie? Meet Your New Best Friend.
       </h2>
 
-      <h3 className="gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2 wide:text-white">
+      <h3
+        className={clsx(
+          'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
+          wideTextColor
+        )}
+      >
         Your Guiding Light in the Tab Chaos
       </h3>
-      <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ">
-        Tab overload? We&apos;ve got your back. Unearth any word or phrase
-        hidden in the depths of your browser.
-      </p>
-    </div>
-  );
-}
-
-function CardText2() {
-  return (
-    <div className="flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
-      <h2 className="font-inter text-fs-base text-text-dark ">
-        Tab Junkie? Meet Your New Best Friend.
-      </h2>
-
-      <h3 className="gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2 wide:text-text-dark">
-        Your Guiding Light in the Tab Chaos
-      </h3>
-      <p className="h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-text-dark ">
+      <p
+        className={clsx(
+          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg',
+          textColor
+        )}
+      >
         Tab overload? We&apos;ve got your back. Unearth any word or phrase
         hidden in the depths of your browser.
       </p>
@@ -52,9 +49,6 @@ export default function FeaturesHeader() {
   const prefersReducedMotion = useReducedMotion();
   let stiffness = 80;
   let damping = 30;
-
-  // let stiffness = 90;
-  // let damping = 20;
 
   let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
   let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
@@ -88,19 +82,23 @@ export default function FeaturesHeader() {
         <Container className="flex w-full flex-col justify-center">
           <div
             onMouseMove={handleMouseMove}
-            className=" group relative hidden min-h-[584px]  rounded-[2.25rem] bg-dark1 shadow-xl backdrop-blur-lg backdrop-opacity-90 wide:block  wide:cursor-magnifying-glass"
+            className="group relative hidden min-h-[584px] rounded-[2.25rem] bg-dark1 shadow-xl backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass"
           >
             <div className=" min-h-146 items-center justify-center overflow-hidden rounded-[2.25rem] ">
               <div className="pointer-events-none">
+                {/* Base Always Visible Layer */}
                 <div className="absolute inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
-                  <CardText2 />
+                  {/* text-text-dark */}
+                  <CardText baseLayer />
                 </div>
 
+                {/* Green Light Layer  */}
                 <motion.div
-                  className="absolute inset-0 rounded-[2.25rem] bg-[#03af7d]  opacity-0 transition duration-900 group-hover:opacity-100"
+                  className="absolute inset-0 rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100"
                   style={style}
                 />
 
+                {/* Hover Layer  */}
                 <motion.div
                   className="opacity-1 absolute inset-0 flex items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100"
                   style={style}
@@ -111,8 +109,8 @@ export default function FeaturesHeader() {
             </div>
           </div>
 
-          <div className="group relative rounded-[2.25rem] bg-dark1  shadow-xl backdrop-blur-lg backdrop-opacity-90 wide:hidden wide:cursor-magnifying-glass ">
-            <div className="relative  max-h-[554px] overflow-hidden rounded-[2.25rem]">
+          <div className="group relative rounded-[2.25rem] bg-dark1 shadow-xl backdrop-blur-lg backdrop-opacity-90 wide:hidden wide:cursor-magnifying-glass">
+            <div className="relative max-h-[554px] overflow-hidden rounded-[2.25rem]">
               <CardText />
             </div>
           </div>

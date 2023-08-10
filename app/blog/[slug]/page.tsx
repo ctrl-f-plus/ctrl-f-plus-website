@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Balancer } from 'react-wrap-balancer';
-import Container from '../../components/Container';
+import Container from '../../components/container';
 import { Metadata } from 'next';
 import { FadeIn, FadeInStagger } from '@/app/components/fade-in';
 

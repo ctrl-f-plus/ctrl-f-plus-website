@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { GithubIcon } from './icons/social-icons';
 import LogoIconSecondary from './icons/logo-secondary';
-import Container from './Container';
+import Container from './container';
 import { url } from 'inspector';
 import clsx from 'clsx';
 

@@ -1,5 +1,5 @@
 import 'server-only';
-import Container from './components/Container';
+import Container from './components/container';
 import ButtonPrimaryCopy from './components/buttons/button-primary-copy';
 import { FadeIn } from './components/fade-in';
 

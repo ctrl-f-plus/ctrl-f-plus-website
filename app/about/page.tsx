@@ -7,7 +7,7 @@ import benAvatar from '@/public/images/ben-avatar-z.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Container from '../components/Container';
+import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import {
   EmailIcon,

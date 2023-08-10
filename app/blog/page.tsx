@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Balancer } from 'react-wrap-balancer';
 import DrawingIcon from '../components/icons/drawing-icon';
-import Container from '../components/Container';
+import Container from '../components/container';
 import { twMerge } from 'tailwind-merge';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 

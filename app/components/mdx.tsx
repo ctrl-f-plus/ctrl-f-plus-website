@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import clsx from 'clsx';
-import Container from './Container';
+import Container from './container';
 
 const components = {
   h1: ({ className, ...props }: any) => (
