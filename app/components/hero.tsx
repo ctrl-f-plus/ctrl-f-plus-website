@@ -7,6 +7,8 @@ import QuickView from './quick-view';
 import HeroAnimation from './icons/hero-animation';
 import { Button } from './buttons/button';
 import { FadeIn } from './fade-in';
+import SharedModal from './SharedModal';
+import Modal from './Modal';
 
 export default function Hero() {
   return (
@@ -48,6 +50,7 @@ export default function Hero() {
               </ButtonPrimary>
 
               <QuickView />
+              {/* <Modal /> */}
             </div>
 
             <div className="flex flex-col gap-6 tablet:hidden tab-pro:flex-row">

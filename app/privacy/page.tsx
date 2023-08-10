@@ -1,18 +1,9 @@
-// app/privacy/page.tsx
-
-// app/about/page.tsx
-// 'use client';
-
-// import benAvatar from '@/public/images/ben-avatar.jpg';
-// import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
-import type { Metadata } from 'next';
 import { allPrivacies } from '@/.contentlayer/generated/Privacy/_index.mjs';
+import type { Metadata } from 'next';
+import Balancer from 'react-wrap-balancer';
 import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import { Mdx } from '../components/mdx';
-import Balancer from 'react-wrap-balancer';
-
-import { Privacy } from '@/.contentlayer/generated';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
