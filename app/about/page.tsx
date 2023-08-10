@@ -162,24 +162,8 @@ export default function About() {
           </FadeIn>
 
           <FadeIn className="mt-10">
-            <div
-              // tab-pro:p-20
-              className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14  laptop:px-8 desktop:px-[40px]"
-            >
-              {/* <div className="grid-cols-1 gap-x-8 xl:grid-cols-2">
-                <h2 className="font-inter text-fs-x0 tracking-tight text-dark1">
-                  Our team
-                </h2>
-                <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
-                  We’re a dynamic group of individuals who are passionate about
-                  what we do and dedicated to delivering the best results for
-                  our clients.
-                </p>
-              </div> */}
-              <div
-                // mt-14
-                className="mx-auto  grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20   xl:grid-cols-2"
-              >
+            <div className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14  laptop:px-8 desktop:px-[40px]">
+              <div className="mx-auto  grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20  xl:grid-cols-2">
                 <ul
                   role="list"
                   className="mx-auto grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
@@ -215,34 +199,6 @@ export default function About() {
                   ))}
                 </ul>
               </div>
-
-              {/* <div className="mt-20">
-              <h2 className="font-inter text-fs-x0 tracking-tight text-dark1">
-                Sponsor This Project
-              </h2>
-              <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
-                //</p><p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
-                <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
-                This project is open source and we welcome your contributions!
-                Interested in collaborating with us or contributing to our
-                open-source project? Get in touch today and let's improve the
-                digital world together!
-              </p>
-            </div>
-
-            <div className="mt-20">
-              <h2 className="font-inter text-fs-x0 tracking-tight text-dark1">
-                Contribute
-              </h2>
-              <p className=" mt-6 max-w-4xl leading-8 text-dark1 ">
-/                //</p><p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
-                <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
-                This project is open source and we welcome your contributions!
-                Interested in collaborating with us or contributing to our
-                open-source project? Get in touch today and let's improve the
-                digital world together!
-              </p>
-            </div> */}
             </div>
           </FadeIn>
         </FadeInStagger>

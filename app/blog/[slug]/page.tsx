@@ -135,7 +135,7 @@ export default async function Blog({ params }: BlogProps) {
               </div>
             </FadeIn>
 
-            <FadeIn className="mt-10 ">
+            <FadeIn className="mt-10">
               <div className="rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]">
                 <Mdx code={post?.body.code} />
               </div>

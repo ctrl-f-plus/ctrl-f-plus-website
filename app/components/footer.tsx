@@ -13,7 +13,7 @@ const navigation = [
     links: [
       { title: 'About', href: '/about' },
       { title: 'Blog', href: '/blog' },
-      { title: 'Privacy Policy', href: '/' },
+      { title: 'Privacy Policy', href: '/privacy' },
       { title: 'Contact us', href: 'mailto:ben.m.chavez@gmail.com' },
     ],
   },

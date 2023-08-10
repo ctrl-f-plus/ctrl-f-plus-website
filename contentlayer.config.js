@@ -12,7 +12,8 @@ const computedFields = {
   slug: {
     type: 'string',
     // resolve: (doc) => `/${doc._raw.flattenedPath}`,
-    resolve: (doc) => doc._raw.flattenedPath,
+    // resolve: (doc) => doc._raw.flattenedPath,
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
   },
   slugAsParams: {
     type: 'string',
@@ -20,9 +21,21 @@ const computedFields = {
   },
 };
 
+export const PrivacyPolicy = defineDocumentType(() => ({
+  name: 'Privacy',
+  filePathPattern: `privacy/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true },
+  },
+  computedFields,
+}));
+
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: `**/*.mdx`,
+
+  filePathPattern: `blog/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
@@ -41,7 +54,7 @@ const themePath =
   './assets/themes/WinterIsComing-dark-blue-color-no-italics-theme.json';
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Blog],
+  documentTypes: [Blog, PrivacyPolicy],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

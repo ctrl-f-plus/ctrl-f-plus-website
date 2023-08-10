@@ -81,7 +81,7 @@ export default function FeatureCard() {
             <Container className=" mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
               <div className="laptop:text-left">
                 <FadeIn
-                  className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-red-500 bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
+                  className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
                   whileInView="visible"
                   initial="hidden"
                   viewport={{ once: true }}
