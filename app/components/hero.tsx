@@ -3,12 +3,9 @@
 import ButtonPrimary from './buttons/ButtonPrimary';
 import ButtonMobile from './buttons/button-mobile';
 import Container from './container';
-import QuickView from './quick-view';
-import HeroAnimation from './icons/hero-animation';
-import { Button } from './buttons/button';
 import { FadeIn } from './fade-in';
-import SharedModal from './SharedModal';
-import Modal from './Modal';
+import HeroAnimation from './icons/hero-animation';
+import QuickView from './quick-view';
 
 export default function Hero() {
   return (

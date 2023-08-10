@@ -2,15 +2,12 @@
 'use client';
 // @ts-nocheck
 
-import React, { useRef, useEffect } from 'react';
-import ReactPlayer from 'react-player/lazy';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Fragment, useState } from 'react';
 import ButtonPrimary from './buttons/ButtonPrimary';
-import Image from 'next/image';
-import SharedModal from './SharedModal';
-import { motion } from 'framer-motion';
 
 export default function QuickView() {
   // const playerRef = useRef(null);
