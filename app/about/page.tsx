@@ -16,6 +16,8 @@ import {
   WebsiteIcon,
 } from '../components/icons/social-icons';
 import CtrlLink from '../components/ctrl-link';
+import ButtonPrimary from '../components/buttons/ButtonPrimary';
+import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
@@ -129,6 +131,38 @@ function SocialProfiles({ person }: any) {
   );
 }
 
+function ContributeButtons() {
+  return (
+    <div className="mt-20 flex justify-center tab-pro:mt-24">
+      <div className="grid w-full grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2">
+        <div className="flex w-full flex-col justify-self-center tablet:justify-self-end tab-pro:w-3/4 ">
+          <ButtonPrimaryCopy
+            variant={'simple'}
+            className={''}
+            href={process.env.OPEN_COLLECTIVE_URL}
+            aTag
+            target={'_blank'}
+          >
+            Become a Sponsor!
+          </ButtonPrimaryCopy>
+        </div>
+        <div className="flex w-full flex-col justify-self-center tablet:justify-self-start tab-pro:w-3/4 ">
+          <ButtonPrimaryCopy
+            variant={'outline'}
+            className={''}
+            href={process.env.GITHUB_EXT_URL}
+            aTag
+            target={'_blank'}
+          >
+            Star us on GitHub!
+          </ButtonPrimaryCopy>
+        </div>
+      </div>
+      {/* </div> */}
+    </div>
+  );
+}
+
 export default function About() {
   return (
     <>
@@ -162,8 +196,8 @@ export default function About() {
           </FadeIn>
 
           <FadeIn className="mt-10">
-            <div className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14  laptop:px-8 desktop:px-[40px]">
-              <div className="mx-auto  grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20  xl:grid-cols-2">
+            <div className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm  backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]">
+              <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 xl:grid-cols-2">
                 <ul
                   role="list"
                   className="mx-auto grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
@@ -171,12 +205,12 @@ export default function About() {
                   {team.map((person: any) => (
                     <li
                       key={person.name}
-                      className="flex flex-col justify-between"
+                      className="flex flex-col justify-between "
                     >
                       <div>
                         <Image
                           loading="lazy"
-                          className="aspect-[3/2] w-full rounded-2xl bg-[#DBDFE5]/70 object-cover"
+                          className="aspect-[3/2] w-full rounded-2xl bg-[#D3D7DA]/70 object-cover"
                           src={person.avatar}
                           alt={`Photo of ` + person.name}
                           placeholder="blur"
@@ -199,6 +233,8 @@ export default function About() {
                   ))}
                 </ul>
               </div>
+
+              <ContributeButtons />
             </div>
           </FadeIn>
         </FadeInStagger>

@@ -21,7 +21,7 @@ const variantStyles = {
     'border-2 border-primary1 text-primary1  focus:outline-none hover:bg-primary1/10  active:text-[#0a2b35]/70',
   IconComponents: {
     solid: PuzzleIcon,
-    outline: PlayIcon,
+    // outline: PlayIcon,
   },
 };
 
