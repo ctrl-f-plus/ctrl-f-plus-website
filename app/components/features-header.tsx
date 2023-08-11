@@ -12,15 +12,17 @@ import { useEffect } from 'react';
 import Container from './container';
 import { FadeIn } from './fade-in';
 
-function CardText({ baseLayer = false }) {
-  const textColor: string = baseLayer ? `text-text-dark` : `text-white`;
-  const wideTextColor: string = baseLayer
-    ? `wide:text-text-dark`
-    : `wide:text-white`;
+function CardText({ topLayer = false }) {
+  const textColor: string = topLayer
+    ? `wide:text-white`
+    : `wide:text-text-dark`;
+  const wideTextColor: string = topLayer
+    ? `wide:text-white`
+    : `wide:text-text-dark`;
 
   return (
-    <div className=" flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
-      <h2 className={clsx('font-inter text-fs-base', textColor)}>
+    <div className="flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
+      <h2 className={clsx('font-inter text-fs-base text-white', textColor)}>
         Tab Junkie? Meet Your New Best Friend.
       </h2>
 
@@ -38,7 +40,7 @@ function CardText({ baseLayer = false }) {
       </h3>
       <p
         className={clsx(
-          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg',
+          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white',
           textColor
         )}
       >
@@ -51,6 +53,7 @@ function CardText({ baseLayer = false }) {
 
 export default function FeaturesHeader() {
   const prefersReducedMotion = useReducedMotion();
+
   let stiffness = 80;
   let damping = 30;
 
@@ -72,8 +75,8 @@ export default function FeaturesHeader() {
   };
 
   useEffect(() => {
-    mouseX.set(800);
-    mouseY.set(185);
+    mouseX.set(775);
+    mouseY.set(150);
   });
 
   return (
@@ -86,36 +89,34 @@ export default function FeaturesHeader() {
         <Container className="flex w-full flex-col justify-center">
           <div
             onMouseMove={handleMouseMove}
-            className="group relative hidden min-h-[584px] rounded-[2.25rem] bg-dark1 shadow-xl backdrop-blur-lg backdrop-opacity-90 wide:block wide:cursor-magnifying-glass"
+            // backdrop-blur-lg backdrop-opacity-90
+            className="group relative rounded-[2.25rem] bg-dark1 shadow-xl wide:min-h-[584px] wide:cursor-magnifying-glass"
           >
-            <div className=" min-h-146 items-center justify-center overflow-hidden rounded-[2.25rem] ">
+            <div
+              // relative
+              // max-h-[554px]
+              className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146  "
+            >
               <div className="pointer-events-none">
-                {/* Base Always Visible Layer */}
-                <div className="absolute inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
-                  {/* text-text-dark */}
-                  <CardText baseLayer />
+                {/* Base Layer - Always Visible */}
+                <div className="inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50">
+                  <CardText />
                 </div>
 
                 {/* Green Light Layer  */}
                 <motion.div
-                  className="absolute inset-0 rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100"
+                  className="absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block"
                   style={style}
                 />
 
-                {/* Hover Layer  */}
+                {/* Top Layer / Hover Layer  */}
                 <motion.div
-                  className="opacity-1 absolute inset-0 flex items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100"
+                  className="opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex"
                   style={style}
                 >
-                  <CardText />
+                  <CardText topLayer />
                 </motion.div>
               </div>
-            </div>
-          </div>
-
-          <div className="group relative rounded-[2.25rem] bg-dark1 shadow-xl backdrop-blur-lg backdrop-opacity-90 wide:hidden wide:cursor-magnifying-glass">
-            <div className="relative max-h-[554px] overflow-hidden rounded-[2.25rem]">
-              <CardText />
             </div>
           </div>
         </Container>
