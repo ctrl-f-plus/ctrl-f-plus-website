@@ -112,7 +112,7 @@ export default function FeatureCard() {
                           <Balancer>{feat.title}</Balancer>
                         </h2>
 
-                        <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tablet:text-fs-xl laptop:max-w-[521px] laptop:text-left">
+                        <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tab-pro:text-fs-xl laptop:max-w-[521px] laptop:text-left">
                           {feat.subTitle}
                         </h3>
 

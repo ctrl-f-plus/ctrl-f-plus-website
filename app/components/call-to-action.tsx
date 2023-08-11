@@ -87,7 +87,7 @@ export default function CallToAction() {
             </svg>
 
             <div className="flex flex-col items-center justify-center gap-9">
-              <h2 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem]">
+              <h2 className="font-inter text-fs-x0 text-white [text-wrap:balance] tab-pro:text-fs-xl laptop:max-w-[31.9375rem]">
                 Take your tab hoarding to the next level.
               </h2>
               {/* <p className=" max-w-[26.75rem] font-open-sans text-fs-lg text-white tablet:max-w-[25.8125rem]">
@@ -149,7 +149,7 @@ export default function CallToAction() {
                   className="flex flex-col items-center justify-center gap-9"
                 >
                   {/* <h2 className=" font-inter text-fs-x0 text-white tablet:text-fs-xl laptop:max-w-[31.9375rem] "> */}
-                  <h2 className=" max-w-3xl font-inter text-fs-x0 text-white [text-wrap:balance] tablet:text-fs-xl">
+                  <h2 className=" max-w-3xl font-inter text-fs-x0 text-white [text-wrap:balance] tab-pro:text-fs-xl">
                     Take your tab hoarding to the next level.
                   </h2>
                   {/* <p className="max-w-[26.75rem] font-open-sans text-fs-lg text-white tablet:max-w-[25.8125rem]"> */}

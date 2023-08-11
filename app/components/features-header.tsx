@@ -29,6 +29,10 @@ function CardText({ baseLayer = false }) {
           'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
           wideTextColor
         )}
+        // className={clsx(
+        //   'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-[#0021CD] via-gradient-cyan to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
+        //   wideTextColor
+        // )}
       >
         Your Guiding Light in the Tab Chaos
       </h3>
@@ -74,7 +78,7 @@ export default function FeaturesHeader() {
 
   return (
     <section
-      id="features-header"
+      id="features"
       aria-label="Features for multi-tab keyword and phrase search"
       className="mt-18 scroll-mt-12 tablet:mt-24 wide:mt-[7.625rem]"
     >

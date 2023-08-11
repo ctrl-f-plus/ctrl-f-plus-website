@@ -21,7 +21,7 @@ const navItems: Record<string, NavItem> = {
     name: 'Home',
     linkTag: 'link',
   },
-  '/#features-header': {
+  '/#features': {
     name: 'Features',
     linkTag: 'a',
   },

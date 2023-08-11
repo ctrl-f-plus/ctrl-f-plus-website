@@ -3,11 +3,9 @@
 import { allBlogs } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Balancer } from 'react-wrap-balancer';
-import DrawingIcon from '../components/icons/drawing-icon';
 import Container from '../components/container';
-import { twMerge } from 'tailwind-merge';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
+import DrawingIcon from '../components/icons/drawing-icon';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -16,8 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const fontSize = 'large';
-  const fontWeight = 'normal';
   return (
     <>
       <section>
@@ -41,7 +37,6 @@ export default function BlogPage() {
               </div>
             </FadeIn>
 
-            {/* laptop:px-[40px] */}
             <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
               {allBlogs
                 .sort((a, b) => {
@@ -53,13 +48,8 @@ export default function BlogPage() {
                 .map((post: any) => (
                   <FadeIn key={post.slug}>
                     <Link
-                      // key={post.slug}
                       href={`/blog/${post.slug}`}
-                      // className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]"
-                      className={twMerge(
-                        'group flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]',
-                        ' transition-all hover:bg-white/[.90] hover:shadow-md'
-                      )}
+                      className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] hover:opacity-75 mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px] "
                       aria-label={`Read blog post: ${post.title}`}
                     >
                       <div className="flex min-h-[96px] flex-col items-start gap-2 ">
