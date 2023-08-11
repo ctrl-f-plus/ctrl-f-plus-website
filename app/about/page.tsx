@@ -77,7 +77,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.linkedinUrl}
-              className="text-dark1/70 hover:text-dark1"
+              className="text-dark1/70 hover:text-primary1"
               target="_blank"
               atag
             >
@@ -90,7 +90,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.githubUrl}
-              className="text-dark1/70 hover:text-dark1"
+              className="text-dark1/70 hover:text-primary1"
               target="_blank"
               atag
             >
@@ -104,7 +104,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.email}
-              className="text-dark1/70 hover:text-dark1"
+              className="text-dark1/70 hover:text-primary1"
               target="_blank"
               atag
             >
@@ -117,7 +117,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.website}
-              className="text-dark1/70 hover:text-dark1"
+              className="text-dark1/70 hover:text-primary1"
               target="_blank"
               atag
             >
