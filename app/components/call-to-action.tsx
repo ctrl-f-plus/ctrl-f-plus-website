@@ -36,7 +36,7 @@ export default function CallToAction() {
       >
         <Container className="flex w-full flex-col  laptop:hidden laptop:flex-row laptop:justify-between ">
           <FadeIn
-            className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-dark1  px-[2.25rem] text-center shadow-xl"
+            className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 overflow-hidden rounded-[2.25rem] bg-shark  px-[2.25rem] text-center shadow-xl"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -140,7 +140,7 @@ export default function CallToAction() {
               rotateYMax={prefersReducedMotion ? 0 : 15} // Maximum rotation on the y-axis
               rotate={prefersReducedMotion ? false : true}
             >
-              <motion.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-dark1  px-[2.25rem] text-center">
+              <motion.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-shark  px-[2.25rem] text-center">
                 <div className="absolute -top-24 right-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 translate-x-1/2 rounded-full bg-[#8DBEDA] blur-[43.5px] filter " />
                 <div className="absolute -bottom-24 left-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter " />
 

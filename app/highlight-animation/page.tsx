@@ -24,8 +24,8 @@ export default function BlogPage() {
           <div className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-red-500 bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20">
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6 ">
-                <h1 className="font-inter text-fs-xl text-dark1">Blog</h1>
-                <p className="font-open-sans text-fs-lg text-dark1">
+                <h1 className="font-inter text-fs-xl text-shark">Blog</h1>
+                <p className="font-open-sans text-fs-lg text-shark">
                   Welcome to development journey of{' '}
                   <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}
                   Here, you can find articles about my progress, challenges, and
@@ -59,7 +59,7 @@ export default function BlogPage() {
                   aria-label={`Read blog post: ${post.title}`}
                 >
                   <div className="flex min-h-[96px] flex-col items-start gap-2 ">
-                    <h2 className="transform font-inter text-subtitle text-dark1 ">
+                    <h2 className="transform font-inter text-subtitle text-shark ">
                       <span
                         className="bg-gradient-to-r from-highlight-focus-1 to-highlight-focus/50 bg-[length:0px_10px] bg-left-bottom
                        bg-no-repeat
@@ -72,7 +72,7 @@ export default function BlogPage() {
                         {post.title}
                       </span>
                     </h2>
-                    <p className="font-open-sans text-fs-lg text-dark1">
+                    <p className="font-open-sans text-fs-lg text-shark">
                       {post.publishedAt}
                     </p>
                   </div>

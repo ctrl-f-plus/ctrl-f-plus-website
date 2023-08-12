@@ -60,22 +60,11 @@ export default function QuickView() {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <div
-                // className="fixed inset-0 bg-black bg-opacity-75 transition-opacity md:block"
-                className="fixed inset-0 bg-black/70 bg-opacity-75 backdrop-blur-sm transition-opacity"
-              />
+              <div className="fixed inset-0 bg-black/70 bg-opacity-75 backdrop-blur-sm transition-opacity" />
             </Transition.Child>
 
             <div className="fixed inset-0 z-10 overflow-y-auto">
               <div className="flex min-h-full items-center justify-center ">
-                {/*FIXME: This element is to trick the browser into centering the modal contents. */}
-                {/* <span
-                  className="hidden md:inline-block md:h-screen md:align-middle"
-                  aria-hidden="true"
-                >
-                  &#8203;
-                </span> */}
-
                 <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"

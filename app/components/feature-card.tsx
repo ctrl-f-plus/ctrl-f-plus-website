@@ -81,7 +81,7 @@ export default function FeatureCard() {
             <Container className=" mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
               <div className="laptop:text-left">
                 <FadeIn
-                  className="flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
+                  className="min-h-154 laptop:min-h-146 flex items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:p-16 desktop:p-20 wide:p-24"
                   whileInView="visible"
                   initial="hidden"
                   viewport={{ once: true }}
@@ -112,11 +112,11 @@ export default function FeatureCard() {
                           <Balancer>{feat.title}</Balancer>
                         </h2>
 
-                        <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-dark1 tablet:max-w-[525px] tab-pro:text-fs-xl laptop:max-w-[521px] laptop:text-left">
+                        <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-shark tablet:max-w-[525px] tab-pro:text-fs-xl laptop:max-w-[521px] laptop:text-left">
                           {feat.subTitle}
                         </h3>
 
-                        <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-dark1 tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
+                        <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-shark tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
                           <Balancer>{feat.description}</Balancer>
                         </p>
                       </motion.div>

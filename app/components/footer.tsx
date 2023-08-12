@@ -132,7 +132,7 @@ export default function Footer({ className }: { className?: string }) {
   return (
     <footer
       className={clsx(
-        'mt-18 bg-dark1 tablet:mt-24 wide:mt-[7.625rem]',
+        'mt-18 bg-shark tablet:mt-24 wide:mt-[7.625rem]',
         className
       )}
     >

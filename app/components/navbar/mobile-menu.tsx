@@ -50,7 +50,7 @@ export default function MobileMenu({
                       target={name === 'Sponsor' ? '_blank' : '_self'}
                       name={name}
                       aTag={linkTag === 'a'}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-dark1 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-shark hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {name}

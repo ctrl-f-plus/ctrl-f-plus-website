@@ -26,9 +26,9 @@ function TitleContent(privacyPolicy: any) {
       <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
         <Balancer>{policy.publishedAt}</Balancer>
       </p>
-      <h1 className="font-inter text-fs-xl text-dark1">Privacy Policy</h1>
+      <h1 className="font-inter text-fs-xl text-shark">Privacy Policy</h1>
 
-      <p className="font-open-sans text-fs-lg text-dark1">
+      <p className="font-open-sans text-fs-lg text-shark">
         Thank you for choosing to use{' '}
         <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>. We
         respect your privacy and are committed to protecting any personal

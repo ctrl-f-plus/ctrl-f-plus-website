@@ -94,10 +94,7 @@ export default async function Blog({ params }: BlogProps) {
                     fill="#889397"
                   />
                 </svg>
-                <span
-                  className="duration-100 ease-in group-hover:text-mongo-black/70"
-                  // group-hover:text-primary2
-                >
+                <span className="duration-100 ease-in group-hover:text-mongo-black/70">
                   back
                 </span>
               </Link>
@@ -109,7 +106,7 @@ export default async function Blog({ params }: BlogProps) {
                       <Balancer>{post.publishedAt}</Balancer>
                     </p>
 
-                    <h1 className="font-inter text-fs-x0 text-dark1 tab-pro:text-fs-middle desktop:text-fs-xxx">
+                    <h1 className="font-inter text-fs-x0 text-shark tab-pro:text-fs-middle desktop:text-fs-xxx">
                       {post.title}
                     </h1>
                   </div>
@@ -125,7 +122,7 @@ export default async function Blog({ params }: BlogProps) {
                     <div className="text-sm leading-6">
                       <p
                         // text-gray-600
-                        className="font-open-sans text-fs-lg-sm text-dark1 tab-pro:text-fs-lg"
+                        className="font-open-sans text-fs-lg-sm text-shark tab-pro:text-fs-lg"
                       >
                         {post.author}
                       </p>

@@ -77,7 +77,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.linkedinUrl}
-              className="text-dark1/70 hover:text-primary1"
+              className="text-shark/70 hover:text-primary1"
               target="_blank"
               atag
             >
@@ -90,7 +90,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.githubUrl}
-              className="text-dark1/70 hover:text-primary1"
+              className="text-shark/70 hover:text-primary1"
               target="_blank"
               atag
             >
@@ -104,7 +104,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.email}
-              className="text-dark1/70 hover:text-primary1"
+              className="text-shark/70 hover:text-primary1"
               target="_blank"
               atag
             >
@@ -117,7 +117,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.website}
-              className="text-dark1/70 hover:text-primary1"
+              className="text-shark/70 hover:text-primary1"
               target="_blank"
               atag
             >
@@ -171,11 +171,11 @@ export default function About() {
           <FadeIn className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20">
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6">
-                <h1 className="font-inter text-fs-xl text-dark1">
+                <h1 className="font-inter text-fs-xl text-shark">
                   Meet the team
                 </h1>
 
-                <p className="font-open-sans text-fs-lg text-dark1 ">
+                <p className="font-open-sans text-fs-lg text-shark ">
                   {/* <Balancer> */} Welcome to{' '}
                   <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{' '}
                   , an open-source Chrome extension that Lorem ipsum dolor sit
@@ -217,13 +217,13 @@ export default function About() {
                           quality={100}
                         />
 
-                        <h3 className="mt-6 font-inter text-lg font-semibold leading-8 text-dark1">
+                        <h3 className="mt-6 font-inter text-lg font-semibold leading-8 text-shark">
                           {person.name}
                         </h3>
-                        <p className="font-arimo text-base leading-7 text-dark1/80">
+                        <p className="font-arimo text-base leading-7 text-shark/80">
                           {person.role}
                         </p>
-                        <p className="mt-4 font-arimo text-base leading-7 text-dark1/80">
+                        <p className="mt-4 font-arimo text-base leading-7 text-shark/80">
                           {person.bio}
                         </p>
                       </div>

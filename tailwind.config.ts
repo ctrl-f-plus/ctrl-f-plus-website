@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -10,6 +9,7 @@ module.exports = {
     './content/**/*.{md,mdx}',
   ],
   theme: {
+    // TODO: Clean up font sizes
     extend: {
       fontSize: {
         'fs-base': ['1rem', { lineHeight: '130%', fontWeight: '600' }],
@@ -33,7 +33,6 @@ module.exports = {
         'p-blog': ['1.125rem', { lineHeight: '2rem', fontWeight: '400' }],
         'button-18': ['1.125rem', { lineHeight: 'normal', fontWeight: '600' }], //
       },
-
       screens: {
         'mobile-sm': '320px',
         'mobile-md': '400px',
@@ -45,35 +44,17 @@ module.exports = {
         wide: '1280px',
         '2xl': '1536px',
       },
-
       spacing: {
         6.5: '1.625rem', // 26px
         18: '4.5rem', // 72px
-        21: '5.25rem', // 84px
         22: '5.5rem', // 88px
-        23: '5.75rem', // 92px
-        25: '6.25rem', // 100px
-        26: '6.5rem', // 104px
         30: '7.5rem', // 120px
         109: '27.25rem', // 436px
         146: '36.5rem', // 584px
-        147: '36.75rem', // 588px
         292: '73rem', // 1168px
       },
       maxWidth: {
-        xxs: '16rem', // 256px
-        94: '23.5rem', // 376px
-        174: '43.5rem', // 696px
-        276: '69rem', // 1104px
         292: '73rem', // 1168px
-        324: '81rem', // 1296px
-      },
-      minWidth: {
-        94: '23.5rem', // 376px
-        174: '43.5rem', // 696px
-        276: '69rem', // 1104px
-        292: '73rem', // 1168px
-        324: '81rem', // 1296px
       },
       minHeight: {
         146: '36.5rem', // 584px
@@ -84,6 +65,7 @@ module.exports = {
         'open-sans': ['var(--font-open-sans)'],
         arimo: ['var(--font-arimo)'],
       },
+      // TODO: Update colors throughout
       colors: {
         'highlight-focus': '#53E7BB',
         'highlight-focus-1': '#48D0A8',
@@ -98,8 +80,91 @@ module.exports = {
         'gradient-cyan': '#d4ece5',
         'gradient-gray-1': '#5A5A5A',
         'gradient-gray-2': '#606060',
-
-         bittersweet: {
+        'turquoise-blue': {
+          DEFAULT: '#53E7BB',
+          50: '#F4FDFB',
+          100: '#E2FBF4',
+          200: '#BEF6E5',
+          300: '#9BF1D7',
+          400: '#77ECC9',
+          500: '#53E7BB', // highlight-focus
+          600: '#22E0A8',
+          700: '#19B184',
+          800: '#12805F',
+          900: '#0B4F3B',
+          950: '#083628',
+        },
+        shamrock: {
+          DEFAULT: '#48D0A8',
+          50: '#DAF6ED',
+          100: '#CAF1E6',
+          200: '#A9E9D6',
+          300: '#89E1C7',
+          400: '#68D8B7',
+          500: '#48D0A8', // highlight-focus-1
+          600: '#2EB28B',
+          700: '#228668',
+          800: '#175945',
+          900: '#0B2C23',
+          950: '#061611',
+        },
+        elephant: {
+          DEFAULT: '#0C3440',
+          50: '#2CB0D7',
+          100: '#26A4C9',
+          200: '#1F88A7',
+          300: '#196C85',
+          400: '#125062',
+          500: '#0C3440', // primary1
+          600: '#030E11',
+          700: '#000000',
+          800: '#000000',
+          900: '#000000',
+          950: '#000000',
+        },
+        'blue-chill': {
+          DEFAULT: '#128DA1',
+          50: '#7AE0F0',
+          100: '#68DBEE',
+          200: '#43D3EA',
+          300: '#1FCAE6',
+          400: '#16ADC6',
+          500: '#128DA1', // primary2
+          600: '#0C616F',
+          700: '#07353C',
+          800: '#01080A',
+          900: '#000000',
+          950: '#000000',
+        },
+        'cape-cod': {
+          DEFAULT: '#434343',
+          50: '#f5f5f5',
+          100: '#ededed',
+          200: '#d1d1d1',
+          300: '#b3b3b3',
+          400: '#7a7a7a',
+          500: '#434343', // text-dark
+          600: '#3b3535',
+          700: '#302424',
+          800: '#291818',
+          900: '#1f0e0e',
+          950: '#140606',
+        },
+        shark: {
+          DEFAULT: '#1b2528',
+          50: '#f0f4f5',
+          100: '#e4eaeb',
+          200: '#b9c7c9',
+          300: '#92a5a8',
+          400: '#516469',
+          500: '#1b2528', // shark
+          600: '#152024',
+          700: '#0f191f',
+          800: '#0a141a',
+          900: '#050c12',
+          950: '#02080d',
+        },
+        bittersweet: {
           DEFAULT: '#ff6960',
           50: '#fff0f0',
           100: '#ffe2e0',
@@ -126,8 +191,8 @@ module.exports = {
           800: '#0a0a0a',
           900: '#050505',
           950: '#030303',
-      }
-    },
+        },
+      },
       backgroundSize: {
         '300%': '300%',
       },

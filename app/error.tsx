@@ -25,7 +25,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
       <Container className="mt-18">
         <FadeIn className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
           <div className="text-center">
-            <h1 className="mt-4 font-inter text-fs-xl tracking-tight text-dark1 sm:text-5xl">
+            <h1 className="mt-4 font-inter text-fs-xl tracking-tight text-shark sm:text-5xl">
               Error
             </h1>
             <p className="mt-6 text-base leading-7 text-gray-600">
