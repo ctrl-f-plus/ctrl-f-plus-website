@@ -5,7 +5,7 @@ import ButtonMobile from './buttons/button-mobile';
 import Container from './container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
-// import QuickView from './quick-view';
+import QuickView from './quick-view';
 import QuickView2 from './quick-view2';
 
 export default function Hero() {
@@ -47,9 +47,7 @@ export default function Hero() {
                 Add to Chrome for free
               </ButtonPrimary>
 
-              {/* <QuickView /> */}
-              <QuickView2 />
-              {/* <Modal /> */}
+              <QuickView />
             </div>
 
             <div className="flex flex-col gap-6 tablet:hidden tab-pro:flex-row">
@@ -63,7 +61,7 @@ export default function Hero() {
               </ButtonMobile>
 
               {/* <ButtonMobile variant="outline">See how it works</ButtonMobile> */}
-              {/* <QuickView /> */}
+
               <QuickView2 />
             </div>
           </div>

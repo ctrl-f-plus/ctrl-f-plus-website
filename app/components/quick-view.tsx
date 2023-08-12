@@ -1,17 +1,35 @@
 // app/components/quick-view.tsx
 'use client';
-// @ts-nocheck
 
 import { Dialog, Transition } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Fragment, useState } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import ButtonPrimary from './buttons/ButtonPrimary';
+
+function XMarkIcon({ className }: { className: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={className}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  );
+}
 
 export default function QuickView() {
   // const playerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
+  const initialRef = useRef(null);
 
   return (
     <>
@@ -26,20 +44,13 @@ export default function QuickView() {
       </ButtonPrimary>
 
       <Transition.Root show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
-          {/* <Dialog.Overlay
-            // ref={overlayRef}
-            as={motion.div}
-            key="backdrop"
-            className="fixed inset-0 z-30 bg-black/70 backdrop-blur-2xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.9 }}
-          /> */}
-
-          <div
-            // xl:taller-than-854:h-auto max-w-7xl bg-red-500 wide:h-full
-            className="relative z-50 flex aspect-[3/2] w-full items-center"
-          >
+        <Dialog
+          as="div"
+          className="relative z-10"
+          onClose={setIsOpen}
+          initialFocus={initialRef}
+        >
+          <div className="relative z-50 flex aspect-[3/2] w-full items-center ">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -50,20 +61,20 @@ export default function QuickView() {
               leaveTo="opacity-0"
             >
               <div
-                // bg-gray-500
-                className="fixed inset-0 hidden bg-red-500 bg-opacity-75 transition-opacity md:block"
+                // className="fixed inset-0 bg-black bg-opacity-75 transition-opacity md:block"
+                className="fixed inset-0 bg-black/70 bg-opacity-75 backdrop-blur-sm transition-opacity"
               />
             </Transition.Child>
 
             <div className="fixed inset-0 z-10 overflow-y-auto">
-              <div className="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4 ">
+              <div className="flex min-h-full items-center justify-center ">
                 {/*FIXME: This element is to trick the browser into centering the modal contents. */}
-                <span
+                {/* <span
                   className="hidden md:inline-block md:h-screen md:align-middle"
                   aria-hidden="true"
                 >
                   &#8203;
-                </span>
+                </span> */}
 
                 <Transition.Child
                   as={Fragment}
@@ -74,33 +85,38 @@ export default function QuickView() {
                   leaveFrom="opacity-100 translate-y-0 md:scale-100"
                   leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
                 >
-                  <Dialog.Panel className="relative flex transform flex-col  transition">
-                    <div className="flex justify-end bg-red-500">
+                  <Dialog.Panel className="relative flex transform flex-col transition">
+                    <div className="flex justify-end ">
                       <button
-                        type="button"
-                        className="w-fit bg-red-500"
                         onClick={() => setIsOpen(false)}
+                        type="button"
+                        id="close-layover-btn"
+                        className="z-50 inline-flex rounded-full p-[2px] text-white hover:bg-gray-500 focus:ring-2 focus:ring-bittersweet active:ring-2 active:ring-bittersweet"
                       >
-                        <span className="sr-only">Close</span>
-                        <XMarkIcon className="h-8 w-8" aria-hidden="true" />
+                        <span className="sr-only">Dismiss</span>
+                        <XMarkIcon
+                          className="h-[20px] w-[20px] active:text-bittersweet"
+                          aria-hidden="true"
+                        />
                       </button>
                     </div>
-                    <div className="w-full overflow-hidden">
-                      <div className="relative flex aspect-[3/2] items-center justify-center">
-                        <div className="flex h-full w-full bg-red-500"></div>
-                        <Image
-                          unoptimized={true}
-                          src="https://i.imgur.com/rxhEz0S.gif"
-                          // src="https://i.imgur.com/sdfrxhEz0S.gif"
-                          alt="Demonstration Video"
-                          // width="1122"
-                          // height="631"
-                          className="bg-red-500"
-                          width={1280}
-                          height={853}
-                          aria-hidden="true"
-                          priority
-                        />
+                    <div className="mt-2 h-full w-full overflow-hidden">
+                      <div className="relative flex aspect-video h-full items-center justify-center">
+                        <div className="flex h-full w-full ">
+                          <Image
+                            ref={initialRef}
+                            unoptimized={true}
+                            src="https://i.imgur.com/rxhEz0S.gif"
+                            alt="Demonstration Video"
+                            // width="1122"
+                            // height="631"
+                            className="aspect-video"
+                            width={1280}
+                            height={853}
+                            aria-hidden="true"
+                            priority
+                          />
+                        </div>
                       </div>
                     </div>
                   </Dialog.Panel>
