@@ -1,13 +1,13 @@
 // app/about/page.tsx
 // 'use client';
 
-// import benAvatar from '@/public/images/ben-avatar.jpg';
-// import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
 import benAvatar from '@/public/images/ben-avatar-z.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import Container from '../components/container';
+import CtrlLink from '../components/ctrl-link';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import {
   EmailIcon,
@@ -15,9 +15,6 @@ import {
   LinkedInIcon,
   WebsiteIcon,
 } from '../components/icons/social-icons';
-import CtrlLink from '../components/ctrl-link';
-import ButtonPrimary from '../components/buttons/ButtonPrimary';
-import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
@@ -168,7 +165,10 @@ export default function About() {
     <>
       <Container className="mt-18 flex flex-col tablet:mt-24">
         <FadeInStagger>
-          <FadeIn className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20">
+          <FadeIn
+            className="flex min-h-[318px] w-full items-center
+          justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
+          >
             <div className="flex justify-start gap-[9.375rem]">
               <div className="flex flex-col items-start justify-center gap-6">
                 <h1 className="font-inter text-fs-xl text-shark">

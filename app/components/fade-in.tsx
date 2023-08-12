@@ -2,8 +2,8 @@
 
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
-import { createContext, useContext } from 'react';
+import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { createContext, useContext, useRef } from 'react';
 
 const FadeInStaggerContext = createContext(false);
 
@@ -18,11 +18,6 @@ export function FadeIn(props: any) {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.5 }}
-      // transition={{ duration: 1 }}
-      // initial="hidden"
-      // whileInView="visible"
-      // viewport={{ once: true }}
-
       {...(isInStaggerGroup
         ? {}
         : {
@@ -43,10 +38,6 @@ export function FadeInStagger({ ...props }: any) {
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ staggerChildren: 0.2, when: 'beforeChildren' }}
-        // transition={{
-        //   staggerChildren: 1,
-        //   when: 'beforeChildren',
-        // }}
         {...props}
       />
     </FadeInStaggerContext.Provider>
