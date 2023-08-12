@@ -1,7 +1,7 @@
 // app/tab-hoarders/components/FeatureCard.tsx
 'use client';
 
-import { useInView } from 'framer-motion';
+import { useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import { Balancer } from 'react-wrap-balancer';
 import Container from './container';
@@ -32,6 +32,7 @@ const features = [
 ];
 
 function AnimtateCard({ feat, index }: { feat: any; index: number }) {
+  let prefersReducedMotion = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -47,7 +48,8 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
       <div
         className=" flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
         style={{
-          transform: isInView ? 'none' : 'translateY(24px)',
+          transform:
+            isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
           opacity: isInView ? 1 : 0,
           transition: 'all 1.3s',
         }}
@@ -63,9 +65,10 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                 className="block"
                 style={{
                   opacity: isInView ? 1 : 0,
-                  transform: isInView
-                    ? 'none'
-                    : `translateX(${calculateInitialOffset(index)})`,
+                  transform:
+                    isInView || prefersReducedMotion
+                      ? 'none'
+                      : `translateX(${calculateInitialOffset(index)})`,
                   transition: 'all 1.9s',
                 }}
               >
@@ -84,7 +87,10 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                 className="block"
                 style={{
                   opacity: isInView ? 1 : 0,
-                  transform: isInView ? 'none' : 'translateY(500px)',
+                  transform:
+                    isInView || prefersReducedMotion
+                      ? 'none'
+                      : 'translateY(500px)',
                   transition: 'all 1.9s',
                 }}
               >

@@ -112,25 +112,11 @@ function CtaText() {
 }
 
 export default function CallToAction() {
-  const prefersReducedMotion = useReducedMotion();
+  let prefersReducedMotion = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
   });
-
-  const cardVariants = () => {
-    return {
-      hidden: { opacity: 0, y: 500 },
-      show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-          opacity: { duration: 1.9 },
-          y: { duration: 1.3 },
-        },
-      },
-    };
-  };
 
   return (
     <FadeIn>
@@ -145,7 +131,10 @@ export default function CallToAction() {
           <div
             className="h-full w-full"
             style={{
-              transform: isInView ? 'none' : 'translateY(24px)',
+              transform:
+                isInView || prefersReducedMotion
+                  ? 'none'
+                  : 'translateY(-524px)',
               opacity: isInView ? 1 : 0,
               transition: 'all 1.3s',
             }}
