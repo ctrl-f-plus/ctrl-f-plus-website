@@ -13,8 +13,10 @@ import Container from './container';
 import { FadeIn } from './fade-in';
 
 function CardText({ topLayer = false }) {
-  const textColor: string = topLayer ? `wide:text-white` : `wide:cape-cod`;
-  const wideTextColor: string = topLayer ? `wide:text-white` : `wide:cape-cod`;
+  const textColor: string = topLayer ? `wide:text-white` : `wide:text-cape-cod`;
+  const wideTextColor: string = topLayer
+    ? `wide:text-white`
+    : `wide:text-cape-cod`;
 
   return (
     <div className="flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
@@ -91,7 +93,7 @@ export default function FeaturesHeader() {
             <div
               // relative
               // max-h-[554px]
-              className="wide:min-h-146 items-center justify-center overflow-hidden rounded-[2.25rem]  "
+              className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146"
             >
               <div className="pointer-events-none">
                 {/* Base Layer - Always Visible */}
