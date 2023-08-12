@@ -34,7 +34,7 @@ function CardText({
       </h2>
 
       <h3
-        className={cn(
+        className={clsx(
           'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
           !prefersReducedMotion && wideTextColor,
           !prefersReducedMotion &&
@@ -98,7 +98,7 @@ export default function FeaturesHeader() {
         <Container className="flex w-full flex-col justify-center">
           <div
             onMouseMove={handleMouseMove}
-            className={cn(
+            className={clsx(
               'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
               !prefersReducedMotion && 'wide:cursor-magnifying-glass'
             )}
@@ -107,7 +107,7 @@ export default function FeaturesHeader() {
               <div className="pointer-events-none">
                 {/* Base Layer - Always Visible */}
                 <div
-                  className={cn(
+                  className={clsx(
                     'inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute',
                     !prefersReducedMotion &&
                       'wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50'
@@ -118,7 +118,7 @@ export default function FeaturesHeader() {
 
                 {/* Green Light Layer  */}
                 <motion.div
-                  className={cn(
+                  className={clsx(
                     'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
                     prefersReducedMotion && 'wide:hidden'
                   )}
@@ -129,7 +129,7 @@ export default function FeaturesHeader() {
                 <motion.div
                   // className="opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex"
 
-                  className={cn(
+                  className={clsx(
                     'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
                     prefersReducedMotion && 'wide:hidden'
                   )}
