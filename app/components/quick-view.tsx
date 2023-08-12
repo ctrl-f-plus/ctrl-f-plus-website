@@ -27,15 +27,19 @@ export default function QuickView() {
 
       <Transition.Root show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
-          <Dialog.Overlay
+          {/* <Dialog.Overlay
             // ref={overlayRef}
             as={motion.div}
             key="backdrop"
             className="fixed inset-0 z-30 bg-black/70 backdrop-blur-2xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.9 }}
-          />
-          <div className="xl:taller-than-854:h-auto relative z-50 flex aspect-[3/2] w-full max-w-7xl items-center wide:h-full">
+          /> */}
+
+          <div
+            // xl:taller-than-854:h-auto max-w-7xl bg-red-500 wide:h-full
+            className="relative z-50 flex aspect-[3/2] w-full items-center"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -45,7 +49,10 @@ export default function QuickView() {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <div className="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block" />
+              <div
+                // bg-gray-500
+                className="fixed inset-0 hidden bg-red-500 bg-opacity-75 transition-opacity md:block"
+              />
             </Transition.Child>
 
             <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -67,11 +74,11 @@ export default function QuickView() {
                   leaveFrom="opacity-100 translate-y-0 md:scale-100"
                   leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
                 >
-                  <Dialog.Panel className="relative flex  transform flex-col transition">
-                    <div className="flex justify-end">
+                  <Dialog.Panel className="relative flex transform flex-col  transition">
+                    <div className="flex justify-end bg-red-500">
                       <button
                         type="button"
-                        className="bg- w-fit"
+                        className="w-fit bg-red-500"
                         onClick={() => setIsOpen(false)}
                       >
                         <span className="sr-only">Close</span>
@@ -80,13 +87,15 @@ export default function QuickView() {
                     </div>
                     <div className="w-full overflow-hidden">
                       <div className="relative flex aspect-[3/2] items-center justify-center">
-                        <div className="absolute"></div>
+                        <div className="flex h-full w-full bg-red-500"></div>
                         <Image
                           unoptimized={true}
                           src="https://i.imgur.com/rxhEz0S.gif"
+                          // src="https://i.imgur.com/sdfrxhEz0S.gif"
                           alt="Demonstration Video"
                           // width="1122"
                           // height="631"
+                          className="bg-red-500"
                           width={1280}
                           height={853}
                           aria-hidden="true"
