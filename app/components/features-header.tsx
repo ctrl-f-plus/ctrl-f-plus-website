@@ -11,9 +11,18 @@ import {
 import { useEffect } from 'react';
 import Container from './container';
 import { FadeIn } from './fade-in';
+import { cn } from '../lib/utils';
+import { twMerge } from 'tailwind-merge';
 
-function CardText({ topLayer = false }) {
-  const textColor: string = topLayer ? `wide:text-white` : `wide:text-cape-cod`;
+function CardText({
+  prefersReducedMotion,
+  topLayer = false,
+}: {
+  prefersReducedMotion: boolean;
+  topLayer?: boolean;
+}) {
+  const textColor: string =
+    topLayer || prefersReducedMotion ? `wide:text-white` : `wide:text-cape-cod`;
   const wideTextColor: string = topLayer
     ? `wide:text-white`
     : `wide:text-cape-cod`;
@@ -25,9 +34,11 @@ function CardText({ topLayer = false }) {
       </h2>
 
       <h3
-        className={clsx(
-          'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
-          wideTextColor
+        className={cn(
+          'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
+          !prefersReducedMotion && wideTextColor,
+          !prefersReducedMotion &&
+            'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2'
         )}
         // className={clsx(
         //   'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-[#0021CD] via-gradient-cyan to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
@@ -50,7 +61,7 @@ function CardText({ topLayer = false }) {
 }
 
 export default function FeaturesHeader() {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = !!useReducedMotion();
 
   let stiffness = 80;
   let damping = 30;
@@ -87,32 +98,47 @@ export default function FeaturesHeader() {
         <Container className="flex w-full flex-col justify-center">
           <div
             onMouseMove={handleMouseMove}
-            // backdrop-blur-lg backdrop-opacity-90
-            className="group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] wide:cursor-magnifying-glass"
+            className={cn(
+              'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
+              !prefersReducedMotion && 'wide:cursor-magnifying-glass'
+            )}
           >
-            <div
-              // relative
-              // max-h-[554px]
-              className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146"
-            >
+            <div className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146">
               <div className="pointer-events-none">
                 {/* Base Layer - Always Visible */}
-                <div className="inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50">
-                  <CardText />
+                <div
+                  className={cn(
+                    'inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute',
+                    !prefersReducedMotion &&
+                      'wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50'
+                  )}
+                >
+                  <CardText prefersReducedMotion={prefersReducedMotion} />
                 </div>
 
                 {/* Green Light Layer  */}
                 <motion.div
-                  className="absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block"
+                  className={cn(
+                    'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
+                    prefersReducedMotion && 'wide:hidden'
+                  )}
                   style={style}
                 />
 
                 {/* Top Layer / Hover Layer  */}
                 <motion.div
-                  className="opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex"
+                  // className="opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex"
+
+                  className={cn(
+                    'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
+                    prefersReducedMotion && 'wide:hidden'
+                  )}
                   style={style}
                 >
-                  <CardText topLayer />
+                  <CardText
+                    topLayer
+                    prefersReducedMotion={prefersReducedMotion}
+                  />
                 </motion.div>
               </div>
             </div>
