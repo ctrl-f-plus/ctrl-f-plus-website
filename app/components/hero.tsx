@@ -62,7 +62,7 @@ export default function Hero() {
 
               {/* <ButtonMobile variant="outline">See how it works</ButtonMobile> */}
 
-              <QuickView2 />
+              <QuickView />
             </div>
           </div>
 
