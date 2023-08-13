@@ -3,7 +3,7 @@
 import { allBlogs } from 'contentlayer/generated';
 
 export default async function sitemap() {
-    const routes = ['', '/#features', '/blog', '/about'].map((route) => ({
+    const routes = ['', '/#features', '/blog', '/about', '/privacy'].map((route) => ({
     url: `https://ctrl-f.plus${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }));
