@@ -132,9 +132,7 @@ export default function CallToAction() {
             className="h-full w-full"
             style={{
               transform:
-                isInView || prefersReducedMotion
-                  ? 'none'
-                  : 'translateY(-524px)',
+                isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
               opacity: isInView ? 1 : 0,
               transition: 'all 1.3s',
             }}
