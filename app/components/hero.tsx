@@ -1,4 +1,5 @@
 // app/components/Hero.tsx
+import 'server-only';
 
 import ButtonPrimary from './buttons/ButtonPrimary';
 import ButtonMobile from './buttons/button-mobile';
@@ -6,7 +7,6 @@ import Container from './container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
 import QuickView from './quick-view';
-import QuickView2 from './quick-view2';
 
 export default function Hero() {
   return (
@@ -59,8 +59,6 @@ export default function Hero() {
               >
                 Add to Chrome for free
               </ButtonMobile>
-
-              {/* <ButtonMobile variant="outline">See how it works</ButtonMobile> */}
 
               <QuickView />
             </div>

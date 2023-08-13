@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { allPrivacies } from '@/.contentlayer/generated/Privacy/_index.mjs';
 import type { Metadata } from 'next';
 import Balancer from 'react-wrap-balancer';

@@ -1,4 +1,5 @@
 // app/blog/page.tsx
+import 'server-only';
 
 import { allBlogs } from 'contentlayer/generated';
 import type { Metadata } from 'next';

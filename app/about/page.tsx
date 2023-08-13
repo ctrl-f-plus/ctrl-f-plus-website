@@ -1,5 +1,5 @@
 // app/about/page.tsx
-// 'use client';
+import 'server-only';
 
 import benAvatar from '@/public/images/ben-avatar-z.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
@@ -155,7 +155,6 @@ function ContributeButtons() {
           </ButtonPrimaryCopy>
         </div>
       </div>
-      {/* </div> */}
     </div>
   );
 }

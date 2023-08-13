@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
@@ -5,7 +7,6 @@ import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
 import './globals.css';
-import Loading from './loading';
 
 const inter = Inter({
   subsets: ['latin'],

@@ -1,11 +1,11 @@
 // app/components/layout/Footer.tsx
+import 'server-only';
 
-import Link from 'next/link';
-import { GithubIcon } from './icons/social-icons';
-import LogoIconSecondary from './icons/logo-secondary';
-import Container from './container';
-import { url } from 'inspector';
 import clsx from 'clsx';
+import Link from 'next/link';
+import Container from './container';
+import LogoIconSecondary from './icons/logo-secondary';
+import { GithubIcon } from './icons/social-icons';
 
 const navigation = [
   {
@@ -59,7 +59,6 @@ function Navigation() {
       >
         {navigation.map((section) => (
           <li key={section.title}>
-            {/* text-sm font-semibold tracking-wider text-white */}
             <div className="font-inter text-fs-base text-white">
               {section.title}
             </div>
@@ -128,7 +127,6 @@ export default function Footer({ className }: { className?: string }) {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
 
-  // "mx-auto mt-18 tablet:mt-24 wide:mt-[7.625rem]
   return (
     <footer
       className={clsx(

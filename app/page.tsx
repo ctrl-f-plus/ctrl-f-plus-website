@@ -1,4 +1,5 @@
 // app/tab-hoarders/page.tsx
+import 'server-only';
 
 import CallToAction from './components/call-to-action';
 import { FadeInStagger } from './components/fade-in';
