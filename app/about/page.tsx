@@ -177,10 +177,8 @@ export default function About() {
                 <p className="font-open-sans text-fs-lg text-shark ">
                   {/* <Balancer> */} Welcome to{' '}
                   <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{' '}
-                  , an open-source Chrome extension that Lorem ipsum dolor sit
-                  amet consectetur adipisicing elit. Iure corrupti eligendi
-                  consequatur repudiandae ratione suscipit minus est repellat
-                  eaque reiciendis.
+                  , an open-source Chrome extension that enables cross-tab
+                  search functionality in your browser windows.
                   {/* </Balancer> */}
                 </p>
                 {/* <p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
