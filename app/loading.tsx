@@ -1,7 +1,13 @@
+'use client';
+import { useReducedMotion } from 'framer-motion';
 import Container from './components/container';
 
 function Loading() {
-  return (
+  const prefersReducedMotion = useReducedMotion();
+
+  return prefersReducedMotion ? (
+    <></>
+  ) : (
     <Container className="flex h-full w-full items-center justify-center ">
       <div
         className="flex h-full w-full items-center justify-center"
