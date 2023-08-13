@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function PuzzleIcon({ className }: { className?: string }) {
   const puzzleFillVariants = {
-    hover: { fill: '#0C3440' }, // primary1
+    hover: { fill: '#0C3440' }, // highlighter-900
   };
 
   return (

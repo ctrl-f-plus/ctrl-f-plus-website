@@ -20,13 +20,13 @@ export default function Hero() {
                 <br />
                 <span className="">For the</span>
                 <br className="tab-pro:hidden" />
-                <span className="-ml-2 rounded-2xl bg-highlight-focus  px-2  mobile-md:-mx-2 mobile-md:hidden">
+                <span className="bg-highlighter-focus -ml-2 rounded-2xl  px-2  mobile-md:-mx-2 mobile-md:hidden">
                   Tab{' '}
                 </span>
-                <span className="-ml-2 rounded-2xl bg-highlight-focus px-2 text-fs-xx mobile-md:-mx-2 mobile-md:hidden">
+                <span className="bg-highlighter-focus -ml-2 rounded-2xl px-2 text-fs-xx mobile-md:-mx-2 mobile-md:hidden">
                   Hoarders
                 </span>
-                <span className="-ml-2 hidden whitespace-nowrap  rounded-2xl  bg-highlight-focus px-2 mobile-md:-mx-2 mobile-md:block">
+                <span className="bg-highlighter-focus -ml-2 hidden whitespace-nowrap rounded-2xl px-2 mobile-md:-mx-2 mobile-md:block">
                   Tab Hoarders
                 </span>
               </h1>

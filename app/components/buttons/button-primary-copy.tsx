@@ -13,12 +13,12 @@ const baseStyles = {
 
 const variantStyles = {
   simple:
-    'bg-primary1 text-white hover:bg-primary1/90 active:bg-[#0a2b35] active:text-white/80 ',
+    'bg-highlighter-900 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 ',
   solid:
-    'bg-primary1 text-white hover:bg-primary1/90 active:bg-[#0a2b35] active:text-white/80 ',
+    'bg-highlighter-900 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 ',
 
   outline:
-    'border-2 border-primary1 text-primary1  focus:outline-none hover:bg-primary1/10  active:text-[#0a2b35]/70',
+    'border-2 border-highlighter-900 text-highlighter-900  focus:outline-none hover:bg-highlighter-900/10  active:text-[#0a2b35]/70',
   IconComponents: {
     solid: PuzzleIcon,
     // outline: PlayIcon,

@@ -20,7 +20,7 @@ function CanvasGradient() {
 
   return (
     <div>
-      <canvas id="gradient-canvas" className="absolute h-screen w-screen " />
+      <canvas id="gradient-canvas" className="absolute h-screen w-screen" />
       {/* <canvas
         id="gradient-canvas"
         className="absolute w-screen h-screen bg-gradient-cyan/50"

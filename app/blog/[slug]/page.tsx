@@ -26,16 +26,10 @@ export async function generateMetadata({
   // TODO: double check the `publishedAt` meta data
   const {
     title,
-    // publishedAt,
     publishedAt: publishedTime,
     summary: description,
-    // image,
     slug,
   } = post;
-
-  // const ogImage = image
-  //   ? `https://ctrl-f.plus${image}`
-  //   : `https://ctrl-f.plus/og?title=${title}`;
 
   return {
     title,
@@ -45,16 +39,12 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      // publishedTime,
       url: `https://ctrl-f.plus/blog/${slug}`,
-      // publishedTime
-      // images: [{ url: ogImage }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      // imarges: [ogImage],
     },
   };
 }

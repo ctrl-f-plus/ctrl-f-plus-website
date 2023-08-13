@@ -27,7 +27,9 @@ export default function BlogPage() {
                 <h1 className="font-inter text-fs-xl text-shark">Blog</h1>
                 <p className="font-open-sans text-fs-lg text-shark">
                   Welcome to development journey of{' '}
-                  <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}
+                  <span className="text-highlighter-focus-400">
+                    Ctrl-F Plus!
+                  </span>{' '}
                   Here, you can find articles about my progress, challenges, and
                   successes. I hope you enjoy reading about my experiences and
                   find them inspiring.
@@ -61,7 +63,7 @@ export default function BlogPage() {
                   <div className="flex min-h-[96px] flex-col items-start gap-2 ">
                     <h2 className="transform font-inter text-subtitle text-shark ">
                       <span
-                        className="bg-gradient-to-r from-highlight-focus-1 to-highlight-focus/50 bg-[length:0px_10px] bg-left-bottom
+                        className="bg-gradient-to-r from-highlighter-focus-400 to-highlighter-focus/50 bg-[length:0px_10px] bg-left-bottom
                        bg-no-repeat
                        transition-[background-size]
                        duration-500

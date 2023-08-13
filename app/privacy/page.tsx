@@ -32,7 +32,7 @@ function TitleContent(privacyPolicy: any) {
 
       <p className="font-open-sans text-fs-lg text-shark">
         Thank you for choosing to use{' '}
-        <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>. We
+        <span className="text-highlighter-focus-400 ">Ctrl-F Plus!</span>. We
         respect your privacy and are committed to protecting any personal
         information you may share with us. As such, Our browser extension does
         not collect any of your personal data.

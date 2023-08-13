@@ -26,7 +26,9 @@ export default function BlogPage() {
                   <h1 className="font-inter text-fs-xl text-shark">Blog</h1>
                   <p className="font-open-sans text-fs-lg text-shark">
                     Welcome to development journey of{' '}
-                    <span className="text-highlight-focus-1">Ctrl-F Plus!</span>{' '}
+                    <span className="text-highlighter-focus-400">
+                      Ctrl-F Plus!
+                    </span>{' '}
                     Here, you can find articles about my progress, challenges,
                     and successes. I hope you enjoy reading about my experiences
                     and find them inspiring.

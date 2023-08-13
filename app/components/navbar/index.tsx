@@ -1,15 +1,14 @@
-'use client';
 // app/components/layout/navbar/index.tsx
+'use client';
 
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Container from '../container';
+import CtrlLink from '../ctrl-link';
 import LogoIcon from '../icons/logo';
 import MenuIcon from '../icons/menu';
-import Container from '../container';
 import MobileMenu from './mobile-menu';
-import CtrlLink from '../ctrl-link';
-import Link from 'next/link';
 
 export type NavItem = {
   name: string;
@@ -79,13 +78,16 @@ export default function Navbar() {
                     key={path}
                     href={path}
                     target={name === 'Sponsor' ? '_blank' : '_self'}
-                    className={clsx('mx-1 text-blue-chill transition-all ', {
-                      '!text-shark hover:!text-shark/80': !isActive,
-                    })}
+                    className={clsx(
+                      'mx-1 text-highlighter-500 transition-all ',
+                      {
+                        '!text-shark hover:!text-shark/80': !isActive,
+                      }
+                    )}
                     name={name}
                     aTag={linkTag === 'a'}
                   >
-                    <span className="text-dark-1 text-fs-lg">{name}</span>
+                    <span className="text-fs-lg">{name}</span>
                   </CtrlLink>
                 );
               })}

@@ -14,7 +14,7 @@ type ButtonProps = {
 function ButtonPhatMobile({ className, ...props }: ButtonProps) {
   return (
     <>
-      <div className="group relative  inline-block inline-flex w-[231px] items-center justify-start overflow-hidden rounded-full bg-primary1 px-5 py-3 font-bold">
+      <div className="group relative  inline-block inline-flex w-[231px] items-center justify-start overflow-hidden rounded-full bg-highlighter-900 px-5 py-3 font-bold">
         <CtrlLink href={process.env.CHROME_STORE_URL} target={'_blank'} aTag>
           <div className="relative flex w-full items-center justify-center gap-4 text-center text-white">
             <div className="relative flex h-[2.5rem] w-[2.5rem] justify-center rounded-[1.5rem] bg-white p-[0.5625rem]">

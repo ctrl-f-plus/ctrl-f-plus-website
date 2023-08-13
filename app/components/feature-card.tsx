@@ -95,7 +95,7 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                 }}
               >
                 <div className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start">
-                  <h2 className="text-center font-inter text-fs-base text-primary1 laptop:text-left">
+                  <h2 className="text-center font-inter text-fs-base text-highlighter-900 laptop:text-left">
                     <Balancer>{feat.title}</Balancer>
                   </h2>
 

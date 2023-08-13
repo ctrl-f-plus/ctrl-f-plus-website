@@ -127,8 +127,6 @@ export default function FeaturesHeader() {
 
                 {/* Top Layer / Hover Layer  */}
                 <motion.div
-                  // className="opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex"
-
                   className={clsx(
                     'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
                     prefersReducedMotion && 'wide:hidden'

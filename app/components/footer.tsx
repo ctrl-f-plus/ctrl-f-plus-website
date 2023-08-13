@@ -65,11 +65,9 @@ function Navigation() {
 
             <ul
               role="list"
-              // mt-4
               className="mt-4 font-open-sans text-fs-sm text-gray-300"
             >
               {section.links.map((link) => (
-                // mt-4
                 <li key={link.title} className="mt-2">
                   <Link
                     // @ts-ignore
@@ -113,7 +111,7 @@ function OpenSource() {
           className="group mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance]  laptop:text-center"
         >
           <span className="font-bold group-hover:text-white">github.com/</span>
-          <span className="text-fs-base  text-highlight-focus-1 group-hover:text-highlight-focus">
+          <span className="text-fs-base  text-highlighter-focus-400 group-hover:text-highlighter-focus">
             ctrl-f-plus
           </span>
         </a>

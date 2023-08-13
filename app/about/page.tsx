@@ -74,7 +74,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.linkedinUrl}
-              className="text-shark/70 hover:text-primary1"
+              className="text-shark/70 hover:text-highlighter-900"
               target="_blank"
               atag
             >
@@ -87,7 +87,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.githubUrl}
-              className="text-shark/70 hover:text-primary1"
+              className="text-shark/70 hover:text-highlighter-900"
               target="_blank"
               atag
             >
@@ -101,7 +101,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.email}
-              className="text-shark/70 hover:text-primary1"
+              className="text-shark/70 hover:text-highlighter-900"
               target="_blank"
               atag
             >
@@ -114,7 +114,7 @@ function SocialProfiles({ person }: any) {
           <li>
             <CtrlLink
               href={person.website}
-              className="text-shark/70 hover:text-primary1"
+              className="text-shark/70 hover:text-highlighter-900"
               target="_blank"
               atag
             >
@@ -176,13 +176,15 @@ export default function About() {
 
                 <p className="font-open-sans text-fs-lg text-shark ">
                   {/* <Balancer> */} Welcome to{' '}
-                  <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span>{' '}
+                  <span className="text-highlighter-focus-400 ">
+                    Ctrl-F Plus!
+                  </span>{' '}
                   , an open-source Chrome extension that enables cross-tab
                   search functionality in your browser windows.
                   {/* </Balancer> */}
                 </p>
-                {/* <p className="text-dark font-open-sans text-fs-lg [text-wrap:balance]">
-                <span className="text-highlight-focus-1 ">Ctrl-F Plus!</span> is
+                {/* <p className="text-cape-cod-500 font-open-sans text-fs-lg [text-wrap:balance]">
+                <span className="text-highlighter-focus-400 ">Ctrl-F Plus!</span> is
                 This project is open source and we welcome your contributions!
                 Interested in collaborating with us or contributing to our
                 open-source project? Get in touch today and let's improve the

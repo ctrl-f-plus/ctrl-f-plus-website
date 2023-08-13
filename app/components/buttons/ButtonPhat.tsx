@@ -41,11 +41,11 @@ function ButtonPhat({ className, ...props }: ButtonProps) {
         // whileHover={{ scale: 1.2 }}
         whileTap={{ scale: 0.9 }}
         transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-        className="group relative  inline-block inline-flex w-[231px] items-center justify-start overflow-hidden rounded-full bg-primary1 px-5 py-3 font-bold"
+        className="group relative  inline-block inline-flex w-[231px] items-center justify-start overflow-hidden rounded-full bg-highlighter-900 px-5 py-3 font-bold"
       >
         <CtrlLink href="#">
           <motion.span
-            className="pointer-events-none absolute -left-10 -top-16 h-72 w-80 bg-highlight-focus-1"
+            className="pointer-events-none absolute -left-10 -top-16 h-72 w-80 bg-highlighter-focus-400"
             initial={{ rotate: -68.566, translateX: '-100%' }}
             variants={bgVariants}
             transition={{ duration: 0.5, ease: 'easeInOut' }}

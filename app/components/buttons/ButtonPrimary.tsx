@@ -16,14 +16,15 @@ const baseStyles = {
 
 const variantStyles = {
   simple:
-    'bg-primary1 rounded-[37px] w-full h-14 text-white hover:bg-primary1/90 active:bg-[#0a2b35] active:text-white/80 text-fs-md-bold',
+    'bg-highlighter-900 rounded-[37px] w-full h-14 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 text-fs-md-bold',
 
-  solid: 'rounded-[37px] bg-primary1 text-white text-fs-md-bold h-14 w-full ',
+  solid:
+    'rounded-[37px] bg-highlighter-900 text-white text-fs-md-bold h-14 w-full ',
 
   outline:
-    'border-2 rounded-[37px] border-primary1 text-primary1 focus:outline-none active:text-[#0a2b35]/70 text-fs-md-bold h-14 w-full',
+    'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 text-fs-md-bold h-14 w-full',
 
-  phat: 'inline-block inline-flex !px-5 w-[231px] text-fs-lg text-white justify-start rounded-full bg-primary1 px-5 py-3',
+  phat: 'inline-block inline-flex !px-5 w-[231px] text-fs-lg text-white justify-start rounded-full bg-highlighter-900 px-5 py-3',
 
   IconComponents: {
     solid: PuzzleIcon,
@@ -113,7 +114,7 @@ function ColorFill() {
   return (
     <>
       <motion.span
-        className="pointer-events-none absolute -left-18 -top-48 hidden h-[700px] w-[650px] bg-highlight-focus-1 tablet:block tab-pro:hidden"
+        className="pointer-events-none absolute -left-18 -top-48 hidden h-[700px] w-[650px] bg-highlighter-focus-400 tablet:block tab-pro:hidden"
         initial={{ rotate: -68.566, translateX: '-110%' }}
         variants={backgroundVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -121,7 +122,7 @@ function ColorFill() {
       />
 
       <motion.span
-        className="pointer-events-none absolute -left-12 -top-30 hidden h-[375px] w-96 bg-highlight-focus-1 tab-pro:block laptop:hidden"
+        className="pointer-events-none absolute -left-12 -top-30 hidden h-[375px] w-96 bg-highlighter-focus-400 tab-pro:block laptop:hidden"
         initial={{ rotate: -68.566, translateX: '-100%' }}
         variants={backgroundVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -129,7 +130,7 @@ function ColorFill() {
       />
 
       <motion.span
-        className="pointer-events-none absolute -left-10 -top-16 hidden h-72 w-80 bg-highlight-focus-1 laptop:block"
+        className="pointer-events-none absolute -left-10 -top-16 hidden h-72 w-80 bg-highlighter-focus-400 laptop:block"
         initial={{ rotate: -68.566, translateX: '-100%' }}
         variants={backgroundVariants}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
