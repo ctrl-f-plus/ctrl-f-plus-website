@@ -9,6 +9,7 @@ import ButtonPrimary from './buttons/ButtonPrimary';
 import ButtonPhatMobile from './buttons/button-phat-mobile';
 import Container from './container';
 import { FadeIn } from './fade-in';
+import '@/styles/ctrl-atropos.css';
 
 function CtaColorAccents() {
   return (

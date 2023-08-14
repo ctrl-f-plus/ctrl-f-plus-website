@@ -6,6 +6,7 @@ import Balancer from 'react-wrap-balancer';
 import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import { Mdx } from '../components/mdx';
+import { formatDate } from '../lib/utils';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -26,7 +27,7 @@ function TitleContent(privacyPolicy: any) {
   return (
     <>
       <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
-        <Balancer>{policy.publishedAt}</Balancer>
+        <Balancer>{formatDate(policy.publishedAt)}</Balancer>
       </p>
       <h1 className="font-inter text-fs-xl text-shark">Privacy Policy</h1>
 

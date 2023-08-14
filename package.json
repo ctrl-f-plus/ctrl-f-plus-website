@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clear-cache": "rm -rf .next && rm -rf .contentlayer && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

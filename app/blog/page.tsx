@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';
+import { formatDate } from '../lib/utils';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -60,7 +61,7 @@ export default function BlogPage() {
                           {post.title}
                         </h2>
                         <p className="font-open-sans text-fs-lg text-shark">
-                          {post.publishedAt}
+                          {formatDate(post.publishedAt)}
                         </p>
                       </div>
                     </Link>
