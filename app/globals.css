@@ -13,11 +13,10 @@
 }
 /* styles/markdown.css */
 
-/*
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
-} */
+  /* @apply bg-[#05fdb4] text-black; */
+  @apply bg-highlighter-500 text-white;
+}
 
 .prose .anchor {
   @apply invisible absolute no-underline;
@@ -47,14 +46,13 @@
 
 .prose pre {
   /* @apply border border-shark; */
-  @apply bg-shark;
+  /* @apply bg-shark; */
+  @apply bg-shark-500 shadow-sm shadow-gray-300;
 }
 
 /* Code highlight within text (ex: `snippit`) */
 .prose code {
-  /* @apply border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-800 */
-  /* @apply rounded-lg bg-neutral-100 px-1 py-0.5 text-neutral-800  dark:bg-highlighter-900 dark:text-neutral-200; */
-  @apply rounded-md border border-highlighter-900 bg-highlighter-900 px-1 py-0.5 text-neutral-100;
+  @apply border-none bg-gray-200 px-0;
 }
 
 .prose pre code {
@@ -134,11 +132,11 @@ table {
 
 /* Code Title */
 [data-rehype-pretty-code-title] {
-  @apply rounded-t-lg border border-[#333333] bg-shark-500 px-4 py-3 font-mono text-xs font-medium text-neutral-200;
-  /* @apply rounded-t-lg border border-[#333333] bg-[#1c1c1c] px-4 py-3 font-mono text-xs font-medium text-neutral-200; */
+  @apply rounded-t-lg border border-white/10  bg-shark-800 px-4 py-3 font-mono text-xs font-medium text-neutral-200;
 }
 
 /* Code Body */
 [data-rehype-pretty-code-title] + pre {
-  @apply mt-0 rounded-t-none border-t-0;
+  /* @apply mt-0  rounded-t-none border border-t-0 border-white/10; */
+  @apply mt-0 rounded-t-none border border-t-0 border-white/10;
 }

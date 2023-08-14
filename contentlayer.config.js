@@ -50,6 +50,7 @@ export const Blog = defineDocumentType(() => ({
   computedFields,
 }));
 
+// const themePath = './assets/themes/ctrl3.json';
 const themePath = './assets/themes/ctrl2.json';
 // const themePath = './assets/themes/ctrl.json';
 // const themePath = './assets/themes/cobalt2.json';
