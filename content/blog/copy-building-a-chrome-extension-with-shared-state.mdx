@@ -1,0 +1,365 @@
+---
+title: 'Copy Building a Chrome Extension with Shared State'
+author: 'Ben Chavez'
+summary: An article about middleware.
+publishedAt: '2023-08-12'
+# image: '/images/backend/og.png'
+---
+
+When building a Chrome extension with React, TypeScript, and Tailwind, there are many architectural decisions to make. One crucial decision is how to manage shared state across different parts of your extension, like content scripts that run in separate tabs. This article explores how to efficiently implement a global shared state in your background script, acting as a "controller".
+
+## Designing a Shared State
+
+Let's first look at how to design a shared state in a background script. The idea is to create a "source of truth" in your background script that can be accessed and updated by all the content scripts. Here's a basic example of how you might set this up:
+
+```ts title="background.ts"
+import { State, updateState } from './state';
+
+export const sharedState: State = {
+  // Initialize your shared state here
+};
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === 'UPDATE_STATE') {
+    updateState(sharedState, message.payload);
+    // Notify all tabs of the state change
+    chrome.tabs.query({}, (tabs) => {
+      tabs.forEach((tab) => {
+        chrome.tabs.sendMessage(tab.id!, {
+          type: 'STATE_UPDATED',
+          payload: sharedState,
+        });
+      });
+    });
+  }
+});
+```
+
+```ts title="state.ts"
+export interface State {
+  // Define your shared state structure here
+}
+
+export function updateState(state: State, newState: Partial<State>): void {
+  Object.assign(state, newState);
+}
+```
+
+In this example, the background script maintains a shared state object and listens for UPDATE_STATE messages from content scripts. When it receives such a message, it updates the shared state and broadcasts the new state to all tabs.
+
+The updateState function is a simple helper that uses Object.assign to merge the new state into the current state. This is a simple way to update the state, but you could use a more sophisticated approach if needed, such as immutability helpers or a state management library.
+
+## Incorporating Chrome Storage
+
+The shared state object in the background script is not persisted across browser sessions. To handle this, you can use `chrome.storage.local` to store the shared state and load it when the extension starts up:
+
+```ts title="background.ts"
+import { State, updateState } from './state';
+
+export const sharedState: State = {
+  // Initialize your shared state here
+};
+
+`chrome.storage`.local.get('sharedState', (result) => {
+  if (result.sharedState) {
+    Object.assign(sharedState, result.sharedState);
+  }
+});
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === 'UPDATE_STATE') {
+    updateState(sharedState, message.payload);
+    // Save the updated state
+    `chrome.storage`.local.set({ sharedState });
+    // Notify all tabs of the state change
+    chrome.tabs.query({}, (tabs) => {
+      tabs.forEach((tab) => {
+        chrome.tabs.sendMessage(tab.id!, {
+          type: 'STATE_UPDATED',
+          payload: sharedState,
+        });
+      });
+    });
+  }
+});
+```
+
+In this updated version, the background script loads the shared state from `chrome.storage`.local when it starts up. It also saves the shared state to `chrome.storage`.local whenever it is updated. This ensures that the shared state is persisted across browser sessions.
+
+## Shared State with Multiple Windows
+
+In a situation where each browser window has its own shared state object that does not share anything other than the object structure with the shared state object of the other windows, we will need to modify our state to be a map of window IDs to states:
+
+```ts title="background.ts"
+import { State, updateState } from './state';
+
+export const sharedState: Map<number, State> = new Map();
+
+chrome.windows.getAll({ populate: true }, (windows) => {
+  windows.forEach((window) => {
+    `chrome.storage`.local.get(`sharedState-${window.id}`, (result) => {
+      const windowState = result[`sharedState-${window.id}`];
+      if (windowState) {
+        sharedState.set(window.id, windowState);
+      } else {
+        // Initialize state for this window
+        sharedState.set(window.id, {
+          // Initialize your per-window shared state here
+        });
+      }
+    });
+  });
+});
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === 'UPDATE_STATE') {
+    const { windowId, newState } = message.payload;
+    const windowState = sharedState.get(windowId);
+    if (windowState) {
+      updateState(windowState, newState);
+      // Save the updated state
+      `chrome.storage`.local.set({ [`sharedState-${windowId}`]: windowState });
+      // Notify all tabs of the state change
+      chrome.tabs.query({ windowId }, (tabs) => {
+        tabs.forEach((tab) => {
+          chrome.tabs.sendMessage(tab.id!, {
+            type: 'STATE_UPDATED',
+            payload: windowState,
+          });
+        });
+      });
+    }
+  }
+});
+```
+
+```tsx
+// app/components/features-header.tsx
+'use client';
+
+import clsx from 'clsx';
+import {
+  motion,
+  useMotionTemplate,
+  useReducedMotion,
+  useSpring,
+} from 'framer-motion';
+import { useEffect } from 'react';
+import Container from './container';
+import { FadeIn } from './fade-in';
+import { cn } from '../lib/utils';
+import { twMerge } from 'tailwind-merge';
+
+function CardText({
+  prefersReducedMotion,
+  topLayer = false,
+}: {
+  prefersReducedMotion: boolean;
+  topLayer?: boolean;
+}) {
+  const textColor: string =
+    topLayer || prefersReducedMotion ? `wide:text-white` : `wide:text-cape-cod`;
+  const wideTextColor: string = topLayer
+    ? `wide:text-white`
+    : `wide:text-cape-cod`;
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
+      <h2 className={clsx('font-inter text-fs-base text-white', textColor)}>
+        Tab Junkie? Meet Your New Best Friend.
+      </h2>
+
+      <h3
+        className={clsx(
+          'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
+          !prefersReducedMotion && wideTextColor,
+          !prefersReducedMotion &&
+            'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2'
+        )}
+        // className={clsx(
+        //   'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-[#0021CD] via-gradient-cyan to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
+        //   wideTextColor
+        // )}
+      >
+        Your Guiding Light in the Tab Chaos
+      </h3>
+      <p
+        className={clsx(
+          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white',
+          textColor
+        )}
+      >
+        Tab overload? We&apos;ve got your back. Unearth any word or phrase
+        hidden in the depths of your browser.
+      </p>
+    </div>
+  );
+}
+
+export default function FeaturesHeader() {
+  const prefersReducedMotion = !!useReducedMotion();
+
+  let stiffness = 80;
+  let damping = 30;
+
+  let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
+  let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
+
+  let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
+
+  let style = { maskImage, WebkitMaskImage: maskImage };
+
+  const handleMouseMove = ({
+    currentTarget,
+    clientX,
+    clientY,
+  }: React.MouseEvent<HTMLDivElement>) => {
+    let { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  };
+
+  useEffect(() => {
+    mouseX.set(775);
+    mouseY.set(150);
+  });
+
+  return (
+    <section
+      id="features"
+      aria-label="Features for multi-tab keyword and phrase search"
+      className="mt-18 scroll-mt-12 tablet:mt-24 wide:mt-[7.625rem]"
+    >
+      <FadeIn>
+        <Container className="flex w-full flex-col justify-center">
+          <div
+            onMouseMove={handleMouseMove}
+            className={clsx(
+              'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
+              !prefersReducedMotion && 'wide:cursor-magnifying-glass'
+            )}
+          >
+            <div className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146">
+              <div className="pointer-events-none">
+                {/* Base Layer - Always Visible */}
+                <div
+                  className={clsx(
+                    'inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute',
+                    !prefersReducedMotion &&
+                      'wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50'
+                  )}
+                >
+                  <CardText prefersReducedMotion={prefersReducedMotion} />
+                </div>
+
+                {/* Green Light Layer  */}
+                <motion.div
+                  className={clsx(
+                    'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
+                    prefersReducedMotion && 'wide:hidden'
+                  )}
+                  style={style}
+                />
+
+                {/* Top Layer / Hover Layer  */}
+                <motion.div
+                  className={clsx(
+                    'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
+                    prefersReducedMotion && 'wide:hidden'
+                  )}
+                  style={style}
+                >
+                  <CardText
+                    topLayer
+                    prefersReducedMotion={prefersReducedMotion}
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </FadeIn>
+    </section>
+  );
+}
+```
+
+```json
+{
+  "name": "material-theme",
+  "semanticHighlighting": true,
+  "tokenColors": [
+    {
+      "name": "Global settings",
+      "settings": {
+        "background": "#263238",
+        "foreground": "#EEFFFF"
+      }
+    },
+    {
+      "name": "String",
+      "scope": "string",
+      "settings": {
+        "foreground": "#C3E88D"
+      }
+    },
+  ]
+},
+
+```
+
+```ts title="state.ts"
+export interface State {
+  // Define your per-window shared state structure here
+}
+
+export function updateState(state: State, newState: Partial<State>): void {
+  Object.assign(state, newState);
+}
+```
+
+In this version, the shared state is a `Map` where each key is a window ID and each value is the shared state for that window. The background script loads and saves the shared state for each window separately, using the window ID as part of the key in `chrome.storage.local`. The **`UPDATE_STATE`** message now includes the window ID, so the background script knows which window's state to update.
+
+## Pros and Cons of Maintaining Shared State in Memory
+
+Maintaining the shared state in memory (in the background script) instead of reading and writing from `chrome.storage` every time has its pros and cons:
+
+### Pros:
+
+**Performance**: Reading and writing to `chrome.storage` is asynchronous and may take some time, especially for larger data. By keeping the shared state in memory, you can access and modify it instantly.
+
+**Simplicity**: It's often easier to work with in-memory data structures like objects and arrays than with an asynchronous storage API.
+
+### Cons:
+
+**Persistence**: The in-memory shared state is lost when the background script restarts, such as when the user reloads the extension. You need to explicitly save and load the state using `chrome.storage` to make it persistent.
+
+**Consistency**: If you have multiple parts of your code modifying the shared state, you need to ensure they all update `chrome.storage` correctly to keep it in sync with the in-memory state.
+
+## Deciding Between Chrome Storage, Session Storage, and Local Storage
+
+When deciding where to store your shared state, you have several options: `chrome.storage`, `sessionStorage`, and `localStorage`. The best choice depends on your specific needs:
+
+**`chrome.storage`**: This is asynchronous, so it doesn't block the main thread. It also has larger storage limits and can be accessed from any script in your extension, including background, content, and popup scripts.
+
+**sessionStorage**: This stores data only for one session. The data is deleted when the user closes the specific browser tab. Like `localStorage`, `sessionStorage` is synchronous, can block the main thread, and has smaller storage limits.
+
+**localStorage**: This stores data with no expiration time, and the data is shared among all scripts in the same origin. Like `sessionStorage`, `localStorage` is synchronous, can block the main thread, and has smaller storage limits.
+
+For most Chrome extensions, `chrome.storage` is the best choice because of its larger storage limits, asynchronous nature, and accessibility from all scripts in the extension.
+
+## Deciding on the Background Script as a Controller
+
+Given the requirements and specifications, using the background script as a controller is a good design choice for several reasons:
+
+1. **Centralized State Management**: The background script runs independently of tabs, windows, or popups, providing a convenient place to manage shared state. All content scripts can communicate with the background script to read from and write to the shared state.
+
+2. **Longevity**: Background scripts have a longer lifecycle than content scripts or popups, which are tied to specific pages or user interactions. This makes the background script more reliable for storing state that should persist across multiple pages or sessions.
+
+3. **Access to APIs**: The background script has access to Chrome's APIs, allowing it to communicate with content scripts, interact with browser actions or context menus, make network requests, and more.
+
+4. **Modularity and Separation of Concerns**: By treating the background script as a controller, you separate the concerns of state management and UI interaction. This can make your codebase more modular, easier to maintain, and less prone to bugs.
+
+However, there are other design patterns you could consider, such as Event Pages, direct storage access by content scripts, or the use of state management libraries or frameworks. The best choice depends on the specifics of your project, its complexity, performance requirements, and how much you trust your content scripts to manage their own state.
+
+In conclusion, designing a shared state in a Chrome extension involves careful architectural decisions. With the right design, you can build a powerful and flexible extension that efficiently manages shared state across multiple tabs, windows, and sessions.

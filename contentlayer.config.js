@@ -50,8 +50,10 @@ export const Blog = defineDocumentType(() => ({
   computedFields,
 }));
 
-const themePath =
-  './assets/themes/WinterIsComing-dark-blue-color-no-italics-theme.json';
+const themePath = './assets/themes/ctrl2.json';
+// const themePath = './assets/themes/ctrl.json';
+// const themePath = './assets/themes/cobalt2.json';
+
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog, PrivacyPolicy],
