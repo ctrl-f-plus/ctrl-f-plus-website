@@ -14,7 +14,7 @@ import '@/styles/ctrl-atropos.css';
 function CtaColorAccents() {
   return (
     <>
-      <div className="laptop:hidden ">
+      <div className="laptop:hidden">
         <svg
           viewBox="0 0 1024 1024"
           className="absolute -right-10 bottom-48 -z-10 h-[40rem] w-[40rem] translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
@@ -68,12 +68,12 @@ function CtaColorAccents() {
 function CtaButtons() {
   return (
     <>
-      <div className="laptop:hidden ">
+      <div className="laptop:hidden">
         <ButtonPhatMobile />
       </div>
 
       <div className="hidden laptop:block">
-        {' '}
+        {/* <div> */}{' '}
         <ButtonPrimary
           variant={'phat'}
           href={process.env.CHROME_STORE_URL}
@@ -90,23 +90,25 @@ function CtaButtons() {
 function CtaText() {
   return (
     <>
-      <h2 className="max-w-[26.75rem] font-inter text-fs-x0 text-white [text-wrap:balance] tablet:max-w-[25.8125rem] tab-pro:text-fs-xl laptop:max-w-3xl">
+      <p className="font-inter text-fs-base text-white">
+        {/* <span className="[text-wrap:balance]">
+          Tabs feel out of control? They&apos;re just misunderstood.
+        </span> */}
+
+        <span className="[text-wrap:balance]">
+          Tabs out of control? Nah, they&apos;re just misunderstood.
+        </span>
+      </p>
+
+      <h2
+        // [text-wrap:balance]
+        className="max-w-[26.75rem] font-inter text-fs-x0 text-white  tablet:max-w-[25.8125rem] tab-pro:text-fs-xl laptop:max-w-3xl "
+      >
         Take your tab hoarding to the next level.
       </h2>
 
-      <p className="font-open-sans text-fs-lg text-white  ">
-        <span className="[text-wrap:balance]">
-          Think your tabs are out of control?{' '}
-        </span>
-
-        <span className="[text-wrap:balance]">
-          Nah, they&apos;re just misunderstood.
-        </span>
-
-        <br />
-        <span className="[text-wrap:balance]">
-          Add Ctrl-F Plus to your browser and let your tabs run wild!
-        </span>
+      <p className="font-open-sans text-fs-lg text-white">
+        Add Ctrl-F Plus to your browser and let your tabs run wild!
       </p>
     </>
   );
@@ -127,7 +129,7 @@ export default function CallToAction() {
         className="mt-18 tablet:mt-24 wide:mt-[7.625rem]"
       >
         <Container className="relative  w-full flex-col laptop:flex laptop:flex-row laptop:justify-between">
-          <div className="absolute top-1/2" ref={ref} />
+          <div className="absolute top-1/3" ref={ref} />
 
           <div
             className="h-full w-full"
@@ -156,7 +158,7 @@ export default function CallToAction() {
                 rotateYMax={prefersReducedMotion ? 0 : 15} // Maximum rotation on the y-axis
                 rotate={prefersReducedMotion ? false : true}
               >
-                <motion.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-shark  px-[2.25rem] text-center">
+                <motion.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-shark px-[2.25rem] text-center">
                   <CtaColorAccents />
                   <div
                     data-atropos-offset={prefersReducedMotion ? 0 : 10}

@@ -121,7 +121,7 @@ module.exports = {
         arimo: ['var(--font-arimo)'],
       },
       fontSize: {
-        'fs-base': ['1rem', { lineHeight: '130%', fontWeight: '600' }],
+        'fs-base': ['1rem', { lineHeight: '1.3rem', fontWeight: '600' }],
         'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
         'fs-md': ['1.125rem', { lineHeight: 'normal', fontWeight: '400' }],
         'fs-md-bold': [

@@ -15,7 +15,7 @@ const navigation = [
       { title: 'About', href: '/about' },
       { title: 'Blog', href: '/blog' },
       { title: 'Privacy Policy', href: '/privacy' },
-      { title: 'Contact us', href: 'mailto:ben.m.chavez@gmail.com' },
+      { title: 'Contact us', href: `mailto:${process.env.CONTACT_EMAIL}` },
     ],
   },
   {

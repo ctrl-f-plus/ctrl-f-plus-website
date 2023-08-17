@@ -50,10 +50,10 @@ const team = [
     width: 528,
     height: 473,
     bio: 'Ben is a full-stack software engineer with an extensive background in financial services. Possessing a naturally analytical mind, he enjoys learning new technologies and solving complex problems. When Ben isn’t coding, he can often be found writing music or reading',
-    linkedinUrl: 'https://www.linkedin.com/in/benjaminchavez/',
+    linkedinUrl: 'https://www.linkedin.com/in/benjaminchavez',
     githubUrl: 'https://github.com/benjamin-chavez',
     email: 'mailto:ben.m.chavez@gmail.com',
-    website: 'https://benjamin-chavez.com/',
+    website: 'https://benjamin-chavez.com',
   },
   {
     name: 'Ighodalo I',

@@ -49,12 +49,15 @@ function CardText({
       </h3>
       <p
         className={clsx(
-          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white',
+          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ',
           textColor
+          // ,'[text-wrap:balance]'
         )}
       >
         Tab overload? We&apos;ve got your back. Unearth any word or phrase
-        hidden in the depths of your browser.
+        hidden across the depths of your browser tabs.
+        {/* Tab overload? We&apos;ve got your back. Unearth any word or phrase
+        hidden in the depths of your browser. */}
       </p>
     </div>
   );
