@@ -15,20 +15,20 @@ import {
   LinkedInIcon,
   WebsiteIcon,
 } from '../components/icons/social-icons';
+import { HeartHand, StarIcon } from '../components/icons/play';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
 // "meet Ben Chavez, our lead full-stack software engineer. With an extensive background in financial services, Ben brings a wealth of experience to our team. His naturally analytical mind, coupled with his passion for learning new technologies, makes him a driving force behind our innovative solutions. But Ben isn't all work and no play. When he isn't coding or solving complex problems, he indulges his creative side by writing music and diving into a good book. His unique blend of expertise, humor, and creativity makes him an invaluable part of the Ctrl-F Plus team."
 
-// site: 'https://ctrl-f.plus/about',
 export const metadata: Metadata = {
-  // title: 'About Us - Ctrl-f Plus',
   title: 'About',
   description:
-    'Learn about Ctrl-F Plus, the open source Chrome extension that redefines productivity by extending the native Ctrl-F functionality to search across all tabs in your browser window.',
+    'Learn more about Ctrl-F Plus, including the company values, commitment to open source, and the team supporting the browser extension',
+
+  // "We are a small group of people working from Europe, America, and Asia. We help more than three million professionals to create new connections."
   alternates: {
-    // canonical: new URL('https://ctrl-f.plus'),
-    canonical: 'https://ctrl-f.plus/blog',
+    canonical: 'https://ctrl-f.plus/about',
   },
   keywords: [
     'About Us',
@@ -132,7 +132,7 @@ function ContributeButtons() {
   return (
     <div className="mt-20 flex justify-center tab-pro:mt-24">
       <div className="grid w-full grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2">
-        <div className="flex w-full flex-col justify-self-center tablet:justify-self-end tab-pro:w-3/4 ">
+        <div className="flex w-full flex-col justify-self-center tablet:justify-self-end laptop:w-3/4 ">
           <ButtonPrimaryCopy
             variant={'simple'}
             className={''}
@@ -140,10 +140,10 @@ function ContributeButtons() {
             aTag
             target={'_blank'}
           >
-            Become a Sponsor!
+            <HeartHand /> Become a Sponsor!
           </ButtonPrimaryCopy>
         </div>
-        <div className="flex w-full flex-col justify-self-center tablet:justify-self-start tab-pro:w-3/4 ">
+        <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-3/4 ">
           <ButtonPrimaryCopy
             variant={'outline'}
             className={''}
@@ -151,7 +151,7 @@ function ContributeButtons() {
             aTag
             target={'_blank'}
           >
-            Star us on GitHub!
+            <StarIcon /> Star us on GitHub!
           </ButtonPrimaryCopy>
         </div>
       </div>
@@ -174,22 +174,29 @@ export default function About() {
                   Meet the team
                 </h1>
 
-                <p className="font-open-sans text-fs-lg text-shark ">
-                  {/* <Balancer> */} Welcome to{' '}
+                <p
+                  // className="font-open-sans text-fs-lg text-shark [text-wrap:balance]"
+                  className="font-open-sans text-fs-lg text-shark"
+                >
+                  At{' '}
                   <span className="text-highlighter-focus-400 ">
-                    Ctrl-F Plus!
+                    Ctrl-F Plus
                   </span>{' '}
-                  , an open-source Chrome extension that enables cross-tab
-                  search functionality in your browser windows.
-                  {/* </Balancer> */}
+                  our mission is to make your life a little simpler. By
+                  extending the reach of the classic Ctrl F shortcut (Cmd F for
+                  our Mac users), we hope that our productivity tool can save
+                  you just a little bit of time so that you can spend it doing
+                  more of what you love.
                 </p>
-                {/* <p className="text-cape-cod-500 font-open-sans text-fs-lg [text-wrap:balance]">
-                <span className="text-highlighter-focus-400 ">Ctrl-F Plus!</span> is
-                This project is open source and we welcome your contributions!
-                Interested in collaborating with us or contributing to our
-                open-source project? Get in touch today and let's improve the
-                digital world together!
-              </p> */}
+                <p
+                  // className="font-open-sans text-fs-lg text-shark [text-wrap:balance]"
+                  className="font-open-sans text-fs-lg text-shark"
+                >
+                  Our small team has room for more! This project is fully open
+                  source, so if you have a love for browser extensions,
+                  Typescript, or productivity tools, then we&apos;ll be waiting
+                  for your PRs!
+                </p>
               </div>
             </div>
           </FadeIn>

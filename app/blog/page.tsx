@@ -26,13 +26,19 @@ export default function BlogPage() {
                 <div className="flex flex-col items-start justify-center gap-6 ">
                   <h1 className="font-inter text-fs-xl text-shark">Blog</h1>
                   <p className="font-open-sans text-fs-lg text-shark">
-                    Welcome to development journey of{' '}
+                    Welcome to the development journey behind{' '}
                     <span className="text-highlighter-focus-400">
                       Ctrl-F Plus!
                     </span>{' '}
-                    Here, you can find articles about my progress, challenges,
-                    and successes. I hope you enjoy reading about my experiences
-                    and find them inspiring.
+                    This space is dedicated to sharing our experiences and
+                    insights developing web technologies with React, Next.js,
+                    Tailwind, Typescript, and more.
+                  </p>
+                  <p className="font-open-sans text-fs-lg text-shark">
+                    Learn about the technology transforming our favorite
+                    keyboard command{' '}
+                    <span className="line-through decoration-2">Ctrl+F</span>{' '}
+                    <strong>Ctrl+Shift+F.</strong>
                   </p>
                 </div>
                 <div className="hidden desktop:block">
