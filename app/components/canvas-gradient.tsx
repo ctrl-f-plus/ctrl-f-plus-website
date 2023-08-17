@@ -8,25 +8,41 @@ function CanvasGradient() {
   const [Gradient, setGradient] = useState(null);
 
   useEffect(() => {
-    import('../lib/gradient').then(({ Gradient }) => {
-      const gradient = new Gradient();
+    const injectGradient = () => {
+      import('../lib/gradient').then(({ Gradient }) => {
+        const gradient = new Gradient();
 
-      //@ts-ignore
-      gradient.initGradient('#gradient-canvas');
-      //@ts-ignore
-      setGradient(gradient);
-    });
+        //@ts-ignore
+        gradient.initGradient('#gradient-canvas');
+        //@ts-ignore
+        setGradient(gradient);
+      });
+    };
+
+    process.env.NODE_ENV !== 'development' && injectGradient();
   }, []);
 
   return (
     <div>
-      <canvas id="gradient-canvas" className="absolute h-screen w-screen" />
-      {/* <canvas
+      <canvas
         id="gradient-canvas"
-        className="absolute w-screen h-screen bg-gradient-cyan/50"
-      /> */}
+        // bg-gradient-cyan/50
+        className="absolute h-screen w-screen bg-red-500"
+      />
     </div>
   );
 }
 
 export default CanvasGradient;
+
+{
+  /* {process.env.NODE_ENV === 'development' ? (
+        <canvas
+          // id="gradient-canvas"
+          // className="absolute h-screen w-screen bg-gradient-cyan/50"
+          className="absolute h-screen w-screen bg-pink-500/50"
+        />
+      ) : (
+        <canvas id="gradient-canvas" className="absolute h-screen w-screen" />
+      )} */
+}
