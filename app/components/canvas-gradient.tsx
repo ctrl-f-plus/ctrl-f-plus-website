@@ -19,7 +19,7 @@ function CanvasGradient() {
       });
     };
 
-    process.env.NODE_ENV !== 'development' && injectGradient();
+    process.env.NODE_ENV === 'development' && injectGradient();
   }, []);
 
   return (
