@@ -6,22 +6,16 @@ import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
-import { CtaColorAccents } from '../components/call-to-action';
 import Container from '../components/container';
 import CtrlLink from '../components/ctrl-link';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
-import {
-  FilledStarIcon,
-  HeartHandIcon,
-  StarIcon,
-} from '../components/icons/button-icons';
+import { HeartHandIcon, StarIcon } from '../components/icons/button-icons';
 import {
   EmailIcon,
   GithubIcon,
   LinkedInIcon,
   WebsiteIcon,
 } from '../components/icons/social-icons';
-import { Balancer } from 'react-wrap-balancer';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
