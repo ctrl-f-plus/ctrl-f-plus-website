@@ -115,7 +115,7 @@ export default async function Blog({ params }: BlogProps) {
 
                   <div className="relative flex items-center space-x-2 ">
                     <Image
-                      src="/images/ben-avatar.jpg"
+                      src="/images/ben-avatar.png"
                       width={1024}
                       height={80}
                       alt={`Author's Avatar`}
