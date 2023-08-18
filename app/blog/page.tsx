@@ -56,7 +56,11 @@ export default function BlogPage() {
 
             <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
               {allBlogs
-                .filter((post) => new Date(post.publishedAt) <= new Date())
+                .filter(
+                  (post) =>
+                    new Date(post.publishedAt) <= new Date() ||
+                    process.env.NODE_ENV === 'development'
+                )
                 .sort((a, b) => {
                   if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
                     return -1;
