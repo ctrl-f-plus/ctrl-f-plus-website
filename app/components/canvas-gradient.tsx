@@ -26,23 +26,10 @@ function CanvasGradient() {
     <div>
       <canvas
         id="gradient-canvas"
-        // bg-gradient-cyan/50
-        className="absolute h-screen w-screen bg-red-500"
+        className="absolute h-screen w-screen bg-gradient-cyan/50"
       />
     </div>
   );
 }
 
 export default CanvasGradient;
-
-{
-  /* {process.env.NODE_ENV === 'development' ? (
-        <canvas
-          // id="gradient-canvas"
-          // className="absolute h-screen w-screen bg-gradient-cyan/50"
-          className="absolute h-screen w-screen bg-pink-500/50"
-        />
-      ) : (
-        <canvas id="gradient-canvas" className="absolute h-screen w-screen" />
-      )} */
-}
