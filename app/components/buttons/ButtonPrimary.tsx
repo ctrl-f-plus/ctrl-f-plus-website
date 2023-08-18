@@ -4,7 +4,7 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { PlayIcon } from '../icons/play';
+import { PlayIcon } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
 import { ButtonHTMLAttributes } from 'react';

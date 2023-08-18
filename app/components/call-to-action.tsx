@@ -90,15 +90,17 @@ function CtaButtons() {
 function CtaText() {
   return (
     <>
-      <p className="font-inter text-fs-base text-white">
-        {/* <span className="[text-wrap:balance]">
-          Tabs feel out of control? They&apos;re just misunderstood.
-        </span> */}
-
+      {/* <p className="font-inter text-fs-base text-white">
         <span className="[text-wrap:balance]">
           Tabs out of control? Nah, they&apos;re just misunderstood.
         </span>
-      </p>
+      </p> */}
+      {/* <span className="[text-wrap:balance]">
+          Tabs feel out of control? They&apos;re just misunderstood.
+        </span> */}
+      {/* <span className="[text-wrap:balance]">
+          The only thing better than a dozen tabs is a couple dozen more
+        </span> */}
 
       <h2
         // [text-wrap:balance]
@@ -107,8 +109,13 @@ function CtaText() {
         Take your tab hoarding to the next level.
       </h2>
 
-      <p className="font-open-sans text-fs-lg text-white">
-        Add Ctrl-F Plus to your browser and let your tabs run wild!
+      <p className="max-w-[26.75rem] font-open-sans text-fs-lg text-white [text-wrap:balance] tablet:max-w-[25.8125rem] laptop:max-w-3xl ">
+        <span className="block">
+          Tabs out of control? Nah, they&apos;re just misunderstood.
+        </span>
+        <span className="block">
+          Add Ctrl-F Plus to your browser and let your tabs run wild!
+        </span>
       </p>
     </>
   );

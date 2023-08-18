@@ -28,29 +28,41 @@ export default function BlogPage() {
                 className="flex justify-start"
               >
                 <div className="flex flex-col items-start justify-center gap-6">
-                  <h1 className="  font-inter text-fs-xl text-shark">
-                    <span className="block">Behind the Tabs: </span>
-                    <span className="block">The Ctrl-F Plus Story</span>
-                  </h1>
+                  <div className="relative flex w-full justify-between">
+                    <h1 className="font-inter text-fs-xl text-shark">
+                      <span className="block">Behind the Tabs: </span>
+                      <span className="block">The Ctrl-F Plus Story</span>
+                    </h1>
+                    <div
+                      // desktop:block
+                      className=" hidden items-start justify-start bg-red-500 desktop:flex"
+                    >
+                      <DrawingIcon
+                        // bg-green-500/10
+                        className="absolute -right-5 -top-14 wide:right-10"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </div>
 
-                  <p className="font-open-sans text-fs-lg text-shark desktop:pr-[5rem]">
+                  <p className="font-open-sans text-fs-lg text-shark desktop:pr-[5rem] desktop:[text-wrap:balance]">
                     Ever wondered what fuels the madness of a proud tab hoarder?
                     We&apos;re pulling back the curtain to show how we
                     transformed the humble CTRL+F into the ultimate tool for tab
                     enthusiasts: CTRL+Shift+F.
                   </p>
-                  <p className="font-open-sans text-fs-lg text-shark desktop:pr-[5rem]">
+                  <p className="desktop:[text-wrap:] font-open-sans text-fs-lg text-shark desktop:pr-[5rem] wide:pr-[10rem]">
                     Journey with us as we reveal how React, Next.js, Tailwind,
                     and Typescript became our allies in our search for a better
                     CTRL+F.
                   </p>
                 </div>
-                <div
+                {/* <div
                   // desktop:block
                   className="hidden flex-col   justify-center desktop:flex"
                 >
                   <DrawingIcon aria-hidden="true" />
-                </div>
+                </div> */}
               </div>
             </FadeIn>
 

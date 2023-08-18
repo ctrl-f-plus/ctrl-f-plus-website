@@ -6,16 +6,22 @@ import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
+import { CtaColorAccents } from '../components/call-to-action';
 import Container from '../components/container';
 import CtrlLink from '../components/ctrl-link';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
+import {
+  FilledStarIcon,
+  HeartHandIcon,
+  StarIcon,
+} from '../components/icons/buttonIcons';
 import {
   EmailIcon,
   GithubIcon,
   LinkedInIcon,
   WebsiteIcon,
 } from '../components/icons/social-icons';
-import { HeartHand, StarIcon } from '../components/icons/play';
+import { Balancer } from 'react-wrap-balancer';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
@@ -140,7 +146,7 @@ function ContributeButtons() {
             aTag
             target={'_blank'}
           >
-            <HeartHand /> Become a Sponsor!
+            <HeartHandIcon /> Become a Sponsor!
           </ButtonPrimaryCopy>
         </div>
         <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-3/4 ">
@@ -168,34 +174,28 @@ export default function About() {
             className="flex min-h-[318px] w-full items-center
           justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
           >
-            <div className="flex justify-start gap-[9.375rem]">
+            <div className="flex justify-start gap-[9.375rem] wide:pr-10">
               <div className="flex flex-col items-start justify-center gap-6">
                 <h1 className="font-inter text-fs-xl text-shark">
                   Meet the team
                 </h1>
 
-                <p
-                  // className="font-open-sans text-fs-lg text-shark [text-wrap:balance]"
-                  className="font-open-sans text-fs-lg text-shark"
-                >
+                <p className="font-open-sans text-fs-lg text-shark">
                   At{' '}
                   <span className="text-highlighter-focus-400 ">
                     Ctrl-F Plus
                   </span>{' '}
-                  our mission is to make your life a little simpler. By
-                  extending the reach of the classic Ctrl F shortcut (Cmd F for
-                  our Mac users), we hope that our productivity tool can save
-                  you just a little bit of time so that you can spend it doing
-                  more of what you love.
+                  we&apos;re not just pixel pushers; we&apos;re certified tab
+                  hoarders, just like you! Lost in the abyss of endless tabs?
+                  Been there, done that, got the T-shirt. That&apos;s why
+                  we&apos;re letting our tabs run wild as we transform the old
+                  school CTRL+F shortcut (Cmd+F for our Apple buddies) into the
+                  productivity tool that you&apos;ve been searching for.
                 </p>
-                <p
-                  // className="font-open-sans text-fs-lg text-shark [text-wrap:balance]"
-                  className="font-open-sans text-fs-lg text-shark"
-                >
-                  Our small team has room for more! This project is fully open
-                  source, so if you have a love for browser extensions,
-                  Typescript, or productivity tools, then we&apos;ll be waiting
-                  for your PRs!
+                <p className="font-open-sans text-fs-lg text-shark ">
+                  Our grand plan? Snatch those fleeting moments from the jaws of
+                  tab chaos and gift them back to you. So you can get back to
+                  binge-watching cat videos or, you know, other important stuff.
                 </p>
               </div>
             </div>

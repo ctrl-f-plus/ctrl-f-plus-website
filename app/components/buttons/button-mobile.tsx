@@ -3,7 +3,7 @@
 // app/tab-hoarders/components/Button.tsx
 
 import clsx from 'clsx';
-import { PlayIcon } from '../icons/play';
+import { PlayIcon } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 import CtrlLink from '../ctrl-link';
 
