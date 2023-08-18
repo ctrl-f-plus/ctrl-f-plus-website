@@ -1,5 +1,6 @@
 # TODO:
 The items on this list are low priority and may not need to be done at all:
+  - [ ] Check `#features` nav link next time you udpdate next.js. You should be able to change this to a regular `Link` tag.
   - [ ] Add Google Analytics
   - [ ] Consolidate Button Components
       - [ ] Remove button animation on prefersReducedMotion

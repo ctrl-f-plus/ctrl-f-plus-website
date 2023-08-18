@@ -2,8 +2,8 @@
 // import 'server-only';
 'use client';
 
-import benAvatar from '@/public/images/ben-avatar-z.png';
-import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
+import benAvatar from '@/public/images/ben-avatar.png';
+import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
 import Image from 'next/image';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import Container from '../components/container';

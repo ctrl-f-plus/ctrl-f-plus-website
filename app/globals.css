@@ -137,6 +137,5 @@ table {
 
 /* Code Body */
 [data-rehype-pretty-code-title] + pre {
-  /* @apply mt-0  rounded-t-none border border-t-0 border-white/10; */
   @apply mt-0 rounded-t-none border border-t-0 border-white/10;
 }
