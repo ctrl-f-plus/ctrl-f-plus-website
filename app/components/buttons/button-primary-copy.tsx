@@ -17,6 +17,9 @@ const variantStyles = {
   solid:
     'bg-highlighter-900 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 ',
 
+  simplephat:
+    'flex justify-center items-center py-2 font-open-sans  group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative  shadow-sm overflow-hidden inline-block inline-flex !px-5 w-[231px] text-fs-lg text-white justify-start rounded-full bg-highlighter-900 px-5 py-3',
+
   outline:
     'border-2 border-highlighter-900 text-highlighter-900  focus:outline-none hover:bg-highlighter-900/10  active:text-[#0a2b35]/70',
   IconComponents: {
@@ -26,7 +29,7 @@ const variantStyles = {
 };
 
 type ButtonProps = {
-  variant: 'solid' | 'outline' | 'simple';
+  variant: 'solid' | 'outline' | 'simple' | 'simplephat';
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
