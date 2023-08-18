@@ -50,10 +50,7 @@ export const Blog = defineDocumentType(() => ({
   computedFields,
 }));
 
-// const themePath = './assets/themes/ctrl3.json';
-const themePath = './assets/themes/ctrl2.json';
-// const themePath = './assets/themes/ctrl.json';
-// const themePath = './assets/themes/cobalt2.json';
+const themePath = './assets/themes/ctrl-markdown-theme.json';
 
 export default makeSource({
   contentDirPath: 'content',
@@ -65,7 +62,6 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          // theme: 'min-light',
           theme: JSON.parse(readFileSync(themePath, 'utf-8')),
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty

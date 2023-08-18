@@ -1,47 +1,13 @@
- docs/TODO.md
-
-## TODO:
-  - [ ] Consolidate Logo Icons if possible
-  - [x] Add Gradient
-    - https://codepen.io/P1N2O/pen/pyBNzX
-    - https://dev.to/geowrgetudor/gradient-animated-text-with-tailwind-css-24a0
-    - https://www.andrealves.dev/blog/how-to-make-an-animated-gradient-text-with-tailwindcss/
-    - https://javascript.plainenglish.io/animated-text-gradients-with-react-and-styled-components-93891797eaf1
-    - https://www.joshwcomeau.com/react/rainbow-button/
-
-  - [z] Do we want to use the version with the dark grey or light square? See the 1270px-1024px screen for the light grey version
+# TODO:
+The items on this list are low priority and may not need to be done at all:
+  - [ ] Add Google Analytics
+  - [ ] Consolidate Button Components
+      - [ ] Remove button animation on prefersReducedMotion
+  - [ ] When you add Extension to Edge/Opra/Vivaldi/Firefox Stores, modify the buttons to use the user's browser name instead of `chrome`
+  - [ ] Convert Quickview GIF to Youtube Video
+      - You will likely need `npm i react-player`
   - [ ] Add back `"prettier-plugin-tailwindcss": "^0.3.0"`
-
-  Feature Cards:
-    - [x] `stagger` on options1 page?
-    - [x] `viewport: { once: true }`?
-
-  Call To Action Card:
-    - [x] vartions: shadow size, highlight, data-atropos-offset
-
- Misc:
-  - [ ] Review Balance: `https://react-wrap-balancer.vercel.app/`
-  - [ ] Add more sizes of the magnifying glass svg
   - [ ] Move Footer to `Page` component instead of `layout`?
-  - [ ] Buttons
-      - [x] Consolidate Button Styles
-      - [ ] Add links/hrefs
-  - [ ] Update 404 page
-  - [ ] Update Loading component
-  - [ ] Should you be using `Link` tags or `a` tags?
-  - [ ] Add SEO
-  - [ ] Add Analytics
-  - [ ] Cleanup Tailwind Config:
-      - [ ] screen sizes
-      - [ ] fonts
-      - [ ] colors
-      - [ ] other/misc
-  - [x] Add About Page
-  - [ ] Add Donate Information
-  - [x] Add Footer links
-  - [x] Add extra small screen size
-  - [x] Mobile menu doesn't close on click
-
-
-- Remove Footer from 404 page
-- Update Loader
+  - [ ] Cleanup Tailwind Config
+      - [ ] Fonts Section:
+      - [ ] Screen Sizes

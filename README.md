@@ -24,3 +24,19 @@ pnpm dev
 ```
 
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+
+
+## Scripts:
+- `pnpm dev`
+  - Runs the development server
+
+- `pnpm run dev:clear-cache`
+  - Rebuilds the `.next` and `.contentlayer` folders before running the development server. This is required in order to see styling changes when editing the blog markdown file: `ctrl-markdown-theme.json`.
+
+- `pnpm run build`
+  - Creates a production build
+
+- `pnpm run start`
+  - Runs a local copy of the production build on [http://localhost:3000](http://localhost:3000)
+- `pnpm run lint`
+  - Checks styling throughout codebase

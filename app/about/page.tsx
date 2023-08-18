@@ -1,8 +1,8 @@
 // app/about/page.tsx
 import 'server-only';
 
-import benAvatar from '@/public/images/ben-avatar-z.png';
-import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge-z.png';
+import benAvatar from '@/public/images/ben-avatar.png';
+import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
