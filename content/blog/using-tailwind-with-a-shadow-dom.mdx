@@ -7,5 +7,306 @@ publishedAt: '2023-08-29'
 
 ## Tailwind within a Shadow DOM
 
-When building a Chrome extension with React, TypeScript, and Tailwind, there are many architectural decisions to make. One crucial decision is how to manage shared state across different parts of your extension, like content scripts that run in separate tabs. This article explores how to efficiently implement a global shared state in your background script, acting as a "controller".
+While building the `Ctrl-F Plus` chrome extension, I ran into
 
+- iframe
+- shadow DOM
+- very specific !important css
+
+Let's start by looking at some vanilla JavaScript.
+
+First, open up and page on your browser. You can take the following code and run it in the DevTools console:
+
+```js
+let htmlBody = document.querySelector('body');
+let shadowHost = htmlBody.appendChild(document.createElement('div'));
+shadowHost.id = 'shadowHost';
+
+let shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+let shadowContent = document.createElement('p');
+shadowContent.textContent = 'Hello from the shadow root!';
+shadowRoot.appendChild(shadowContent);
+```
+
+If you scroll to the bottom of the page, you will see that the shadow DOM has been attached to the page.
+
+##
+
+Next, we can go ahead and add some plain css to our shadow host div by creating a style tag and appending it to our `shadowRoot`
+
+```js
+let htmlBody = document.querySelector('body');
+let shadowHost = htmlBody.appendChild(document.createElement('div'));
+shadowHost.id = 'shadowHost';
+
+// Style shadowHost to appear at the top of the page
+// shadowHost.style.position = 'fixed';
+// shadowHost.style.top = '0';
+// shadowHost.style.left = '0';
+// shadowHost.style.zIndex = '1000';
+
+let shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+let shadowContent = document.createElement('p');
+shadowContent.textContent = 'Hello from the shadow root!';
+shadowRoot.appendChild(shadowContent);
+
+let shadowStyle = document.createElement('style');
+shadowStyle.textContent = `
+  p {
+    height: 500px;
+    width: 500px;
+    background: red;
+    color: blue;
+    opacity: 50%
+  }`;
+shadowRoot.appendChild(shadowStyle);
+```
+
+Now, just to make things a bit easier, we are going to add some additionaly stlyes to our `shadowHost`. These styles are simply to position the element so that we don't have to keep scrolling to the bottom of the page:
+
+```js
+let htmlBody = document.querySelector('body');
+let shadowHost = htmlBody.appendChild(document.createElement('div'));
+shadowHost.id = 'shadowHost';
+
+// Style shadowHost to appear at the top of the page
+shadowHost.style.position = 'fixed';
+shadowHost.style.top = '0';
+shadowHost.style.left = '0';
+shadowHost.style.zIndex = '1000';
+
+let shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+let shadowContent = document.createElement('p');
+shadowContent.textContent = 'Hello from the shadow root!';
+shadowRoot.appendChild(shadowContent);
+
+let shadowStyle = document.createElement('style');
+shadowStyle.textContent = `
+  p {
+    height: 500px;
+    width: 500px;
+    background: red;
+    color: blue;
+    opacity: 50%
+  }`;
+shadowRoot.appendChild(shadowStyle);
+```
+
+```js
+let htmlBody = document.querySelector('body');
+
+let style = document.createElement('style');
+style.textContent = `
+  body {
+    background: blue !important;
+    color: green !important;
+  }`;
+htmlBody.appendChild(style);
+
+document.body.style.background = 'green !important';
+document.body.style.color = 'red !important';
+```
+
+Now let's go ahead and replace our plain css with tailwind. For this example, we are just going to use the Tailwind CDN, but if you are using this within your actual project, then you can use your compiled\*\*\* tailwind css file, typically located in the `dist` folder:
+
+```js
+let htmlBody = document.querySelector('body');
+let shadowHost = htmlBody.appendChild(document.createElement('div'));
+shadowHost.id = 'shadowHost';
+
+// Style shadowHost to appear at the top of the page
+shadowHost.style.position = 'fixed';
+shadowHost.style.top = '0';
+shadowHost.style.left = '0';
+shadowHost.style.zIndex = '1000';
+
+let shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+let tailwindLink = document.createElement('link');
+tailwindLink.rel = 'stylesheet';
+tailwindLink.href =
+  'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css';
+shadowRoot.appendChild(tailwindLink);
+
+let shadowContent = document.createElement('p');
+shadowContent.textContent = 'Hello from the shadow root!';
+shadowContent.classList.add('bg-red-500');
+shadowRoot.appendChild(shadowContent);
+
+let shadowStyle = document.createElement('style');
+shadowStyle.textContent = `
+  p {
+    height: 500px;
+    width: 500px;
+    background: red;
+    color: blue;
+    opacity: 50%
+  }`;
+shadowRoot.appendChild(shadowStyle);
+```
+
+## React
+
+Now that we've covered the basics of using a shadowDOM with vanilla JavaScript, let's look at how we can set this same functionality up using React.
+
+For this example, I've set up a new react application using Vite, but you should be able to replicate this process using the bundler of your choice. For more speicific instructions on how to get that setup,
+(Install Tailwind CSS with Vite)[https://tailwindcss.com/docs/guides/vite]
+
+We are going to need to add the `postcss-cli` package so that we can create a purged copy of the tailwind css. Run one of the following:
+
+```bash
+# npm
+npm i postcss-cli
+# pnpm
+pnpm i postcss-cli
+```
+
+Next we are going to add a css build script to our package.json:
+
+```json title="package.json"
+  "build:css": "postcss src/index.css -o src/styles/tailwind.shadow.css",
+```
+
+This script is going to compile and purge the css file where you are importing your `@tailwind` styles and output it in a new css file. This is essentially the same process as when you run `npm run build`. The difference is that we are putting the compiled css into a local file so that our shadow DOM can have access to the styles.
+
+Depending on your use case, you will likely want to modify your `build` and `start` scripts so that they run the `build:css` script as well:
+
+```json title="package.json"
+  "start": "ppm run build:css && ..."
+  "build": "ppm run build:css && ..."
+  "build:css": "postcss src/index.css -o src/styles/tailwind.shadow.css",
+```
+
+Now let's go back and modify our JavaScript. Let's start with using plain css in our shadow DOM again:
+
+```tsx title="src/components/shadowDOM/index.tsx"
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import ShadowComponent from './ShadowComponent';
+
+// let htmlBody = document.querySelector('body');
+// let shadowHost = htmlBody.appendChild(document.createElement('div'));
+// shadowHost.id = 'shadowHost';
+const shadowHost = document.createElement('div');
+shadowHost.id = 'shadow-host';
+document.body.appendChild(shadowHost);
+
+let shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+const root = document.createElement('div');
+shadowRoot.appendChild(root);
+
+// let shadowContent = document.createElement('p');
+// shadowContent.textContent = 'Hello from the shadow root!';
+// shadowRoot.appendChild(shadowContent);
+
+let shadowStyle = document.createElement('style');
+shadowStyle.textContent = `
+  div {
+    height: 500px;
+    width: 500px;
+    background: red;
+    color: blue;
+    opacity: 50%
+  }`;
+
+shadowRoot.appendChild(shadowStyle);
+
+ReactDOM.createRoot(root).render(
+  <React.StrictMode>
+    <ShadowComponent />
+  </React.StrictMode>
+);
+```
+
+Here I am passing `ShadowComponent`, but you could theoretically pass in any of your components instead. As you can see there is nothing special about my `ShadowComponent`:
+
+```tsx title="src/components/shadowDOM/ShadowComponent.tsx"
+export default function ShadowComponent() {
+  return (
+    <div>
+      <h1>Shadow Component</h1>
+    </div>
+  );
+}
+```
+
+Now let's actually apply our Tailwind Styles. First go ahead and import the file that we createed with out `build:css` script:
+
+```tsx title="index.tsx"
+// Vite
+import styles from '../../styles/tailwind.shadow.css?inline';
+
+// Other builders will likely allow you to use default imports:
+import styles from '../../styles/tailwind.shadow.css';
+```
+
+Then we can remove our plain css styling and append our tailwind styles:
+
+```tsx title="index.tsx"
+const shadowStyles = document.createElement('style');
+shadowStyles.textContent = styles;
+shadowRoot.appendChild(shadowStyles);
+```
+
+The whole thing will look like this:
+
+```tsx title="src/components/shadowDOM/index.tsx"
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import ShadowComponent from './ShadowComponent';
+
+const shadowHost = document.createElement('div');
+shadowHost.id = 'shadow-host';
+document.body.appendChild(shadowHost);
+
+let shadowRoot = shadowHost.attachShadow({ mode: 'open' });
+
+const root = document.createElement('div');
+shadowRoot.appendChild(root);
+
+const shadowStyles = document.createElement('style');
+shadowStyles.textContent = shadowStyles;
+shadowRoot.appendChild(shadowStyle);
+
+ReactDOM.createRoot(root).render(
+  <React.StrictMode>
+    <ShadowComponent />
+  </React.StrictMode>
+);
+```
+
+Depending on your specific use case and/or preference, you may choose to use the above version in your application. For example, in the `Ctrl-F Plus Extension` code, we use this implementation as I felt it was a bit cleaner and we only needed to append the component once per tab.
+
+However, if you want your shadow DOM to be encapsulated within a reusable component, then you can do the following:
+
+```tsx title="src/components/shadowRoot.tsx"
+...
+```
+
+Alternatively, you could use a package like [React Shadow](https://github.com/Wildhoney/ReactShadow) and simply use the same approach that we have used thus far:
+
+```js title=".tsx"
+import root from 'react-shadow';
+{
+  /* import styles from './styles.css'; */
+}
+import styles from '../../styles/tailwind.shadow.css';
+
+export default function Quote() {
+  return (
+    <root.div className="quote">
+      <q>There is strong shadow where there is much light.</q>
+      <span className="author">― Johann Wolfgang von Goethe.</span>
+      <style type="text/css">{styles}</style>
+    </root.div>
+  );
+}
+```
+
+## Hot Reload
+
+For the sake of this post we will try to keep things as light weight as possible, but if you are looking for a

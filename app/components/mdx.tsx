@@ -7,6 +7,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 
 import clsx from 'clsx';
 import Container from './container';
+import CopyIcon from './icons/copy-icon';
 
 const components = {
   h1: ({ className, ...props }: any) => (
@@ -138,7 +139,7 @@ const components = {
   pre: ({ className, ...props }: any) => (
     <pre
       className={clsx(
-        'mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4',
+        'mb-4 mt-6 overflow-x-auto rounded-lg border  bg-red-500 py-4',
         className
       )}
       {...props}
@@ -147,13 +148,14 @@ const components = {
   code: ({ className, ...props }: any) => (
     <code
       className={clsx(
-        'relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm',
+        'relative rounded border bg-red-500 px-[0.3rem] py-[0.2rem] font-mono text-sm',
         className
       )}
       {...props}
     />
   ),
   Image,
+  CopyIcon,
 };
 
 interface MdxProps {
