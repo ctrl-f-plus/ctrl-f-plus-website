@@ -12,6 +12,7 @@ import InfoCard from '../components/info-card';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import { FilledStarIcon } from '../components/icons/button-icons';
 import ButtonPrimary from '../components/buttons/ButtonPrimary';
+import PuzzleIcon from '../components/icons/puzzle';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -24,7 +25,7 @@ export default function BlogPage() {
     .filter(
       (post) =>
         new Date(post.publishedAt) <= new Date() ||
-        process.env.NODE_ENV === 'development'
+        process.env.NODE_ENV !== 'development'
     )
     .sort((a, b) => {
       if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
@@ -77,14 +78,14 @@ export default function BlogPage() {
                 description={`Patience, tab hoarder. We're busy cooking up some stories that might just be worth your precious tab space. Until then, Check out  the tool that understands your tab obsession!`}
               >
                 {' '}
-                <ButtonPrimary
-                  variant="solid"
+                <ButtonPrimaryCopy
+                  variant="simple"
                   href={process.env.CHROME_STORE_URL}
                   target={'_blank'}
                   aTag
                 >
-                  Get the Extension!
-                </ButtonPrimary>
+                  <PuzzleIcon /> Get the Extension!
+                </ButtonPrimaryCopy>
               </InfoCard>
             ) : (
               <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
