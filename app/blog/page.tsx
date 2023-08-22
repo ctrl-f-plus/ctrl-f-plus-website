@@ -25,7 +25,7 @@ export default function BlogPage() {
     .filter(
       (post) =>
         new Date(post.publishedAt) <= new Date() ||
-        process.env.NODE_ENV !== 'development'
+        process.env.NODE_ENV === 'development'
     )
     .sort((a, b) => {
       if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
