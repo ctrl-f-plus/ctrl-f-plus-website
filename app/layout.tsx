@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ctrl-f.plus'),
   title: {
     // default: SITE_NAME,
-    default: 'Ctrl-F Plus: Ctrl + F Across All Tabs',
+    default: 'Ctrl-F Plus: Ctrl + F Search Across All Tabs',
     template: '%s | Ctrl-F Plus',
   },
   alternates: {
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   description:
     'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
   openGraph: {
-    title: 'Ctrl-F Plus',
+    title: 'Ctrl-F Plus: Ctrl + F Search Across All Tabs',
     description:
-      'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
+      'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl+Shift+F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and increase your productivity',
     url: 'https://ctrl-f.plus',
     siteName: 'Ctrl-F Plus Chrome Extension',
     locale: 'en-US',
