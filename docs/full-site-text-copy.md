@@ -65,5 +65,4 @@ Because why settle for fewer tabs when you can have them all... and still find y
 CTRL-F Plus isn't just a tool; it's a cozy community and our code is fully open source. Got a soft spot for browser extensions or daydream about Typescript? Then hey, if you're into it, slide into our codebase with your PRs...
 
 
-/
 At Ctrl-F Plus, we're not just pixel pushers; we're certified tab hoarders, just like you! Think your tabs are out of control? Nah, they're just misunderstood. That's why we embraced the chaos to transform that old school Ctrl F shortcut (Cmd F for our Apple buddies) into the productivity tool you've been searching for. Our grand plan? Snatch those fleeting moments `from the jaws of tab chaos` and gift them back to you. So you can get back to binge-watching cat videos or, you know, other important stuff.

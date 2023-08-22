@@ -8,6 +8,10 @@ import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';
 import { formatDate } from '../lib/utils';
+import InfoCard from '../components/info-card';
+import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
+import { FilledStarIcon } from '../components/icons/button-icons';
+import ButtonPrimary from '../components/buttons/ButtonPrimary';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -16,6 +20,19 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const publicPosts = allBlogs
+    .filter(
+      (post) =>
+        new Date(post.publishedAt) <= new Date() ||
+        process.env.NODE_ENV === 'development'
+    )
+    .sort((a, b) => {
+      if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
+        return -1;
+      }
+      return 1;
+    });
+
   return (
     <>
       <section>
@@ -54,20 +71,24 @@ export default function BlogPage() {
               </div>
             </FadeIn>
 
-            <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
-              {allBlogs
-                .filter(
-                  (post) =>
-                    new Date(post.publishedAt) <= new Date() ||
-                    process.env.NODE_ENV === 'development'
-                )
-                .sort((a, b) => {
-                  if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
-                    return -1;
-                  }
-                  return 1;
-                })
-                .map((post: any) => (
+            {publicPosts.length === 0 ? (
+              <InfoCard
+                title={`Yeah, We're Making You Wait...`}
+                description={`Patience, tab hoarder. We're busy cooking up some stories that might just be worth your precious tab space. Until then, Check out  the tool that understands your tab obsession!`}
+              >
+                {' '}
+                <ButtonPrimary
+                  variant="solid"
+                  href={process.env.CHROME_STORE_URL}
+                  target={'_blank'}
+                  aTag
+                >
+                  Get the Extension!
+                </ButtonPrimary>
+              </InfoCard>
+            ) : (
+              <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
+                {publicPosts.map((post: any) => (
                   <FadeIn key={post.slug}>
                     <Link
                       href={`/blog/${post.slug}`}
@@ -85,7 +106,8 @@ export default function BlogPage() {
                     </Link>
                   </FadeIn>
                 ))}
-            </div>
+              </div>
+            )}
           </FadeInStagger>
         </Container>
       </section>
