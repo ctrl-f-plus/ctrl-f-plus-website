@@ -144,7 +144,7 @@ function ContributeButtons() {
           <ButtonPrimaryCopy
             variant={'simple'}
             className={''}
-            href={process.env.OPEN_COLLECTIVE_URL}
+            href={'https://opencollective.com/ctrl-f-plus-chrome-extension'}
             aTag
             target={'_blank'}
           >
@@ -277,7 +277,9 @@ export default function About() {
                       <ButtonPrimaryCopy
                         variant={'outline'}
                         className="group bg-white/[.68]"
-                        href={process.env.GITHUB_EXT_URL}
+                        href={
+                          'https://chrome.google.com/webstore/detail/ctrl-f-plus-multi-tab-sea/dkfbnlclahcmcgehpancgfhogmilankf'
+                        }
                         aTag
                         target={'_blank'}
                       >

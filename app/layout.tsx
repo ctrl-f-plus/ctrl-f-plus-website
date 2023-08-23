@@ -72,13 +72,6 @@ export const metadata: Metadata = {
   },
 };
 
-{
-  /* <meta
-  name="google-site-verification"
-  content="Wgz24WvJ2hsxTmxjZD_ZyDD_UvU8Z9Lw0eMDN5sa--g"
-/>; */
-}
-
 export default function RootLayout({
   children,
 }: {
