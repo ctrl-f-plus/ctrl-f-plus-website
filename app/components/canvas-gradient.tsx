@@ -1,21 +1,19 @@
-// @ts-nocheck
 'use client';
 
-import React from 'react';
 import { useEffect, useState } from 'react';
 
 function CanvasGradient() {
-  const [Gradient, setGradient] = useState(null);
+  const [gradient, setGradient] = useState(null);
 
   useEffect(() => {
     const injectGradient = () => {
+      console.log('gradient useEffect');
       import('../lib/gradient').then(({ Gradient }) => {
-        const gradient = new Gradient();
-
+        const gradientInstance = new Gradient();
         //@ts-ignore
-        gradient.initGradient('#gradient-canvas');
+        gradientInstance.initGradient('#gradient-canvas');
         //@ts-ignore
-        setGradient(gradient);
+        setGradient(gradientInstance);
       });
     };
 
@@ -26,7 +24,8 @@ function CanvasGradient() {
     <div>
       <canvas
         id="gradient-canvas"
-        className="absolute h-screen w-screen bg-gradient-cyan/50"
+        // bg-gradient-cyan/50
+        className="absolute h-screen w-screen bg-pink-500"
       />
     </div>
   );
