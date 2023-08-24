@@ -14,7 +14,7 @@ pnpm install
 
 Next, create a new `.env` file by copying [`.env.example`](.env.example):
 ```bash
-cp .env.example .env
+cp .env.example .env.local
 ```
 
 Next, run the development server:

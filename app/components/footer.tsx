@@ -15,7 +15,10 @@ const navigation = [
       { title: 'About', href: '/about' },
       { title: 'Blog', href: '/blog' },
       { title: 'Privacy Policy', href: '/privacy' },
-      { title: 'Contact us', href: `mailto:${process.env.CONTACT_EMAIL}` },
+      {
+        title: 'Contact us',
+        href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`,
+      },
     ],
   },
   {
@@ -23,12 +26,12 @@ const navigation = [
     links: [
       {
         title: 'Star us on GitHub',
-        href: process.env.GITHUB_EXT_URL,
+        href: process.env.NEXT_PUBLIC_GITHUB_EXT_URL,
         target: '_blank',
       },
       {
         title: 'Sponsor',
-        href: process.env.OPEN_COLLECTIVE_URL,
+        href: process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL,
         target: '_blank',
       },
     ],
@@ -39,12 +42,12 @@ const navigation = [
     links: [
       {
         title: 'Chrome',
-        href: process.env.CHROME_STORE_URL,
+        href: process.env.NEXT_PUBLIC_CHROME_STORE_URL,
         target: '_blank',
       },
       {
         title: 'Brave',
-        href: process.env.CHROME_STORE_URL,
+        href: process.env.NEXT_PUBLIC_CHROME_STORE_URL,
         target: '_blank',
       },
     ],
@@ -101,7 +104,7 @@ function OpenSource() {
           <div className=" ">
             <GithubIcon className="h-12 w-12 fill-gray-300" />
           </div>
-          {/* <CtrlLink href={process.env.GITHUB_EXT_URL} target="_blank" aTag>
+          {/* <CtrlLink href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL} target="_blank" aTag>
             <GithubIcon className="h-12 w-12 fill-gray-300" />
           </CtrlLink> */}
           <p className="max-w-[14rem] font-open-sans text-sm text-gray-300 [text-wrap:balance]">
@@ -110,7 +113,7 @@ function OpenSource() {
         </div>
 
         <a
-          href={process.env.GITHUB_EXT_URL}
+          href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
           target="_blank"
           className="group mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance]  laptop:text-center"
         >

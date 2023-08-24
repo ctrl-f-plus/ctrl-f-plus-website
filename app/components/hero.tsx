@@ -20,13 +20,13 @@ export default function Hero() {
                 <br />
                 <span className="">For the</span>
                 <br className="tab-pro:hidden" />
-                <span className="bg-highlighter-focus -ml-2 rounded-2xl  px-2  mobile-md:-mx-2 mobile-md:hidden">
+                <span className="-ml-2 rounded-2xl bg-highlighter-focus  px-2  mobile-md:-mx-2 mobile-md:hidden">
                   Tab{' '}
                 </span>
-                <span className="bg-highlighter-focus -ml-2 rounded-2xl px-2 text-fs-xx mobile-md:-mx-2 mobile-md:hidden">
+                <span className="-ml-2 rounded-2xl bg-highlighter-focus px-2 text-fs-xx mobile-md:-mx-2 mobile-md:hidden">
                   Hoarders
                 </span>
-                <span className="bg-highlighter-focus -ml-2 hidden whitespace-nowrap rounded-2xl px-2 mobile-md:-mx-2 mobile-md:block">
+                <span className="-ml-2 hidden whitespace-nowrap rounded-2xl bg-highlighter-focus px-2 mobile-md:-mx-2 mobile-md:block">
                   Tab Hoarders
                 </span>
               </h1>
@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="hidden flex-col gap-6 tablet:flex tab-pro:flex-row">
               <ButtonPrimary
                 variant="solid"
-                href={process.env.CHROME_STORE_URL}
+                href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
                 target={'_blank'}
                 aTag
               >
@@ -53,7 +53,7 @@ export default function Hero() {
             <div className="flex flex-col gap-6 tablet:hidden tab-pro:flex-row">
               <ButtonMobile
                 variant="solid"
-                href={process.env.CHROME_STORE_URL}
+                href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
                 target={'_blank'}
                 aTag
               >

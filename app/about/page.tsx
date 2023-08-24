@@ -241,7 +241,7 @@ export default function About() {
                     <ButtonPrimaryCopy
                       variant={'simple'}
                       className={'mt-20'}
-                      href={process.env.OPEN_COLLECTIVE_URL}
+                      href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
                       aTag
                       target={'_blank'}
                     >

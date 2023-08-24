@@ -24,13 +24,11 @@ const arimo = Arimo({
   variable: '--font-arimo',
 });
 
-const { SITE_NAME } = process.env;
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://ctrl-f.plus'),
   title: {
-    // default: SITE_NAME,
-    default: 'Ctrl-F Plus: Ctrl + F Search Across All Tabs',
+    // default: process.env.NEXT_PUBLIC_SITE_NAME,
+    default: 'Ctrl-F Plus: Ctrl+F Search Across All Tabs',
     template: '%s | Ctrl-F Plus',
   },
   alternates: {

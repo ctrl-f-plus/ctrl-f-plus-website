@@ -80,7 +80,7 @@ export default function BlogPage() {
                 {' '}
                 <ButtonPrimaryCopy
                   variant="simple"
-                  href={process.env.CHROME_STORE_URL}
+                  href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
                   target={'_blank'}
                   aTag
                 >

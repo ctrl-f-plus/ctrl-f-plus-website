@@ -43,7 +43,7 @@ export default function InfoCard({
                   {/* <ButtonPrimaryCopy
                     variant={'outline'}
                     className="group bg-white/[.68]"
-                    href={process.env.GITHUB_EXT_URL}
+                    href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
                     aTag
                     target={'_blank'}
                   >
