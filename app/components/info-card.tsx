@@ -21,7 +21,7 @@ export default function InfoCard({
 }: InfoCardProps) {
   return (
     <>
-      {/* <FadeIn
+      <FadeIn
         // min-h-[318px]
         className="// relative mt-20 flex min-h-[318px]
           w-full items-center justify-center overflow-hidden rounded-3xl  bg-white/[.68] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
@@ -42,7 +42,7 @@ export default function InfoCard({
               <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
                 <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
                   {children}
-                  <ButtonPrimaryCopy
+                  {/* <ButtonPrimaryCopy
                     variant={'outline'}
                     className="group bg-white/[.68]"
                     href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
@@ -51,15 +51,15 @@ export default function InfoCard({
                   >
                     <FilledStarIcon className="  fill-yellow-500 " /> Star us on
                     GitHub!
-                  </ButtonPrimaryCopy>
+                  </ButtonPrimaryCopy> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </FadeIn> */}
+      </FadeIn>
 
-      <FadeIn
+      {/* <FadeIn
         className="relative mt-20 flex min-h-[318px]
           w-full items-center justify-center overflow-hidden rounded-3xl  bg-white/[.68] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
       >
@@ -74,7 +74,7 @@ export default function InfoCard({
             </div>
           </div>
         </div>
-      </FadeIn>
+      </FadeIn> */}
     </>
   );
 }
