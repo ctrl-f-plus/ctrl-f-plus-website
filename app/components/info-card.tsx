@@ -26,7 +26,7 @@ export default function InfoCard({
         className="// relative mt-20 flex min-h-[318px]
           w-full items-center justify-center overflow-hidden rounded-3xl  bg-white/[.68] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
       >
-        <ColorAccents />
+        {showAccents && <ColorAccents />}
 
         <div className=" flex justify-start">
           <div className=" flex flex-col items-center justify-center gap-6 ">

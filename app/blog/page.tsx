@@ -76,6 +76,7 @@ export default function BlogPage() {
               <InfoCard
                 title={`Yeah, We're Making You Wait...`}
                 description={`Patience, tab hoarder. We're busy cooking up some stories that might just be worth your precious tab space. Until then, Check out  the tool that understands your tab obsession!`}
+                showAccents
               >
                 {' '}
                 <ButtonPrimaryCopy

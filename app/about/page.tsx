@@ -282,6 +282,7 @@ export default function About() {
             title={`Proudly Open Source`}
             description={`Got a soft spot for browser extensions or daydream about Typescript? Then hey, if you're into it, slide into our
               codebase with your PRs...`}
+            showAccents
           >
             <ButtonPrimaryCopy
               variant={'outline'}
