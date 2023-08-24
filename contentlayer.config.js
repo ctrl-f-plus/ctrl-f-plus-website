@@ -32,6 +32,17 @@ const computedFields = {
 //   computedFields,
 // }));
 
+export const Documentation = defineDocumentType(() => ({
+  name: 'Documentation',
+  filePathPattern: `documentation/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true },
+  },
+  computedFields,
+}));
+
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
 
@@ -54,7 +65,7 @@ const themePath = './assets/themes/ctrl-markdown-theme.json';
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Blog],
+  documentTypes: [Blog, Documentation],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

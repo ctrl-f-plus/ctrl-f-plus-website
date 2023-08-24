@@ -63,7 +63,7 @@
 
 import 'server-only';
 
-import { allDocs } from '@/.contentlayer/generated/Docs/_index.mjs';
+import { allDocumentations } from '@/.contentlayer/generated/Documentation/_index.mjs';
 import type { Metadata } from 'next';
 import Balancer from 'react-wrap-balancer';
 import Container from '../components/container';
@@ -82,8 +82,14 @@ export const metadata: Metadata = {
   },
 };
 
+// function getDocument() {
+//   return allDocumentations.find((doc) => doc.slug === 'privacy-policy');
+// }
+
 export default function Privacy() {
-  const privacyPolicy = getDocument(allDocs, 'privacy-policy');
+  const privacyPolicy = getDocument(allDocumentations, 'privacy-policy');
+
+  // const privacyPolicy = getDocument();
 
   if (!privacyPolicy) {
     return;
@@ -108,7 +114,7 @@ export default function Privacy() {
         </PageTitleCard>
 
         <PageBodyCard>
-          <Mdx code={privacyPolicy.body.code} />;
+          <Mdx code={privacyPolicy.body.code} />
         </PageBodyCard>
       </FadeInStagger>
     </Container>

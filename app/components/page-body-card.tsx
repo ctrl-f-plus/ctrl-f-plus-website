@@ -14,7 +14,8 @@ export default function PageBodyCard({
   className,
 }: PageBodyCardProps) {
   return (
-    <FadeIn className="mt-10" className={className}>
+    // className={className}
+    <FadeIn className="mt-10">
       <div
         // py-6
         // py-14
