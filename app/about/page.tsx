@@ -135,30 +135,28 @@ function SocialProfiles({ person }: any) {
   );
 }
 
-function ContributeButtons() {
-  return (
-    <div className="mt-20 flex justify-center tab-pro:mt-24">
-      {/* <div className="grid w-full grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"> */}
-      <div className="flex w-3/4 items-center justify-center">
-        <div className="flex w-full flex-col justify-self-center tablet:justify-self-end laptop:w-3/4 ">
-          <ButtonPrimaryCopy
-            variant={'simple'}
-            className={''}
-            href={'https://opencollective.com/ctrl-f-plus-chrome-extension'}
-            aTag
-            target={'_blank'}
-          >
-            <HeartHandIcon /> Become a Sponsor!
-          </ButtonPrimaryCopy>
-        </div>
-      </div>
-    </div>
-  );
-}
+// function ContributeButtons() {
+//   return (
+//     <div className="mt-20 flex justify-center tab-pro:mt-24">
+//       {/* <div className="grid w-full grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"> */}
+//       <div className="flex w-3/4 items-center justify-center">
+//         <div className="flex w-full flex-col justify-self-center tablet:justify-self-end laptop:w-3/4 ">
+//           <ButtonPrimaryCopy
+//             variant={'simple'}
+//             className={''}
+//             href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
+//             aTag
+//             target={'_blank'}
+//           >
+//             <HeartHandIcon /> Become a Sponsor!
+//           </ButtonPrimaryCopy>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 export default function About() {
-  console.log(process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL);
-
   return (
     <>
       <Container className="mt-18 flex flex-col tablet:mt-24">

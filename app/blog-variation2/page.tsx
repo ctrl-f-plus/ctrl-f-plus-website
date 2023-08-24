@@ -8,7 +8,7 @@ import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';
 import { formatDate } from '../lib/utils';
-import Toast from '../components/temp-components/toast';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -19,15 +19,6 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <div className="relative flex w-full justify-center">
-        <Toast>
-          <ul>
-            <li>
-              - Adjusted the Hand Drawing Icon to only line up with the header
-            </li>
-          </ul>
-        </Toast>
-      </div>
       <section>
         <Container className="mt-18 flex flex-col tablet:mt-24">
           <FadeInStagger>

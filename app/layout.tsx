@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     // canonical: new URL('https://ctrl-f.plus'),
+    // canonical: {new URL((process.env.NEXT_PUBLIC_SITE_URL)},
     canonical: 'https://ctrl-f.plus',
   },
   description:

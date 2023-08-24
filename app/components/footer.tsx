@@ -18,6 +18,7 @@ const navigation = [
       {
         title: 'Contact us',
         href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`,
+        target: '_blank',
       },
     ],
   },
