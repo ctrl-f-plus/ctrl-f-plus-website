@@ -1,4 +1,4 @@
-import 'server-only';
+// import 'server-only';
 
 import { Mdx } from '@/app/components/mdx';
 import { allBlogs } from 'contentlayer/generated';

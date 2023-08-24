@@ -162,7 +162,7 @@ export default function About() {
             </p>
           </PageTitleCard>
 
-          <PageBodyCard>
+          <PageBodyCard className={''}>
             <div
               // gap-y-20
               className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8  xl:grid-cols-2"

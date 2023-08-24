@@ -21,16 +21,16 @@ const computedFields = {
   },
 };
 
-export const Docs = defineDocumentType(() => ({
-  name: 'Docs',
-  filePathPattern: `docs/**/*.mdx`,
-  contentType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
-  },
-  computedFields,
-}));
+// export const PrivacyPolicy = defineDocumentType(() => ({
+//   name: 'Privacy',
+//   filePathPattern: `privacy/**/*.mdx`,
+//   contentType: 'mdx',
+//   fields: {
+//     title: { type: 'string', required: true },
+//     publishedAt: { type: 'string', required: true },
+//   },
+//   computedFields,
+// }));
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -54,7 +54,7 @@ const themePath = './assets/themes/ctrl-markdown-theme.json';
 
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Blog, PrivacyPolicy, Docs],
+  documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
