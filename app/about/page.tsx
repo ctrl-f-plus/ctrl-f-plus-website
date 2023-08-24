@@ -234,7 +234,7 @@ export default function About() {
                   ))}
                 </ul>
               </div>
-
+              {console.log(process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL)}
               <div className=" flex w-full items-center justify-center overflow-hidden ">
                 <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
                   <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
