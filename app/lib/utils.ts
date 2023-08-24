@@ -22,3 +22,7 @@ export function formatDate(date: string) {
 
   return `${fullDate} `;
 }
+
+export function getDocument(allDocs, slug: string) {
+  return allDocs.find((doc) => doc.slug === slug);
+}
