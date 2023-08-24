@@ -23,6 +23,6 @@ export function formatDate(date: string) {
   return `${fullDate} `;
 }
 
-export function getDocument(allDocumentations, slug: string) {
+export function getDocument(allDocumentations: any[], slug: string) {
   return allDocumentations.find((doc) => doc.slug === slug);
 }
