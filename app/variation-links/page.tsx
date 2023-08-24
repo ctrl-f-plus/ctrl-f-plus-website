@@ -16,7 +16,7 @@ export default function page() {
           </li>
         </ol>
       </div>
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <h2 className="font-semibold ">About Page Variations</h2>
         <ol className="list-inside list-decimal indent-4">
           <li>
@@ -50,7 +50,7 @@ export default function page() {
             </Link>
           </li>
         </ol>
-      </div>
+      </div> */}
     </Container>
   );
 }
