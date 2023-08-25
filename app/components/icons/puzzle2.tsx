@@ -1,5 +1,6 @@
 // app/components/icons/puzzle2.tsx
 
+'use client';
 import { motion } from 'framer-motion';
 
 export default function PuzzleIcon2({

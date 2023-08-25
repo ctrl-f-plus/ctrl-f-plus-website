@@ -1,6 +1,4 @@
-// app/components/buttons/button-mobile.tsx
-
-// app/tab-hoarders/components/Button.tsx
+'use client';
 
 import clsx from 'clsx';
 import { PlayIcon } from '../icons/button-icons';

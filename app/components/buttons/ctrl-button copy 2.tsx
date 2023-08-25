@@ -10,8 +10,6 @@ import {
 } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
-import MotionLink from './motion-link';
-import { LinkProps } from 'next/link';
 
 const button = cva({
   base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden tab-pro:',
@@ -71,35 +69,27 @@ function ButtonIcon(icon: string): React.ReactNode {
   if (icon === 'heartHand') return <HeartHandIcon />;
 }
 
-// interface CtrlButtonProps
-//   extends Omit<
-//       React.ButtonHTMLAttributes<HTMLButtonElement>,
-//       'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'
-//     >,
-//     VariantProps<typeof button> {
-//   children: React.ReactNode;
-//   icon?: 'play' | 'puzzle' | 'puzzle2' | 'star' | 'filledStar' | 'heartHand';
-//   href?: string;
-//   target?: string;
-// }
-
-interface CtrlButtonProps extends LinkProps, VariantProps<typeof button> {
+interface CtrlButtonProps
+  extends Omit<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
+      'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'
+    >,
+    VariantProps<typeof button> {
   children: React.ReactNode;
   icon?: 'play' | 'puzzle' | 'puzzle2' | 'star' | 'filledStar' | 'heartHand';
-  href: string;
+  href?: string;
   target?: string;
-  className?: string;
 }
 
 export default function CtrlButton({
   children,
+  className,
   intent,
   size,
   icon,
   animation,
   href,
   target,
-  className,
   ...props
 }: CtrlButtonProps) {
   let prefersReducedMotion = useReducedMotion();
@@ -107,7 +97,7 @@ export default function CtrlButton({
 
   return (
     <>
-      <MotionLink
+      <motion.button
         className={button({ intent, size, className, animation })}
         initial="default"
         whileHover={prefersReducedMotion ? 'default' : 'hover'}
@@ -116,8 +106,8 @@ export default function CtrlButton({
           default: { scale: 'var(--scale-from)' },
           hover: { scale: 'var(--scale-to)' },
         }}
-        href={href}
-        target={target}
+        // href={href}
+        // target={target}
         {...motionProps}
       >
         {icon && (
@@ -127,7 +117,7 @@ export default function CtrlButton({
           </>
         )}
         {children}
-      </MotionLink>
+      </motion.button>
     </>
   );
 }

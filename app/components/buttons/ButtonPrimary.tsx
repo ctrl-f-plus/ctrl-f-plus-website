@@ -11,7 +11,7 @@ import { ButtonHTMLAttributes } from 'react';
 import CtrlLink from '../ctrl-link';
 
 const baseStyles = {
-  base: 'flex justify-center items-center py-2 font-open-sans  group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative  shadow-sm overflow-hidden',
+  base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
 };
 
 const variantStyles = {

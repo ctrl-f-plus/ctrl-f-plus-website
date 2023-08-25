@@ -10,8 +10,9 @@ import {
 } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
-import MotionLink from './motion-link';
-import { LinkProps } from 'next/link';
+import Link from 'next/link';
+import { Url } from 'next/dist/shared/lib/router/router';
+import CtrlLink from '../ctrl-link';
 
 const button = cva({
   base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden tab-pro:',
@@ -79,27 +80,28 @@ function ButtonIcon(icon: string): React.ReactNode {
 //     VariantProps<typeof button> {
 //   children: React.ReactNode;
 //   icon?: 'play' | 'puzzle' | 'puzzle2' | 'star' | 'filledStar' | 'heartHand';
-//   href?: string;
+//   href: Url;
 //   target?: string;
 // }
 
-interface CtrlButtonProps extends LinkProps, VariantProps<typeof button> {
+interface CtrlButtonProps
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>,
+    VariantProps<typeof button> {
   children: React.ReactNode;
   icon?: 'play' | 'puzzle' | 'puzzle2' | 'star' | 'filledStar' | 'heartHand';
   href: string;
   target?: string;
-  className?: string;
 }
 
 export default function CtrlButton({
   children,
+  className,
   intent,
   size,
   icon,
   animation,
   href,
   target,
-  className,
   ...props
 }: CtrlButtonProps) {
   let prefersReducedMotion = useReducedMotion();
@@ -107,27 +109,27 @@ export default function CtrlButton({
 
   return (
     <>
-      <MotionLink
-        className={button({ intent, size, className, animation })}
-        initial="default"
-        whileHover={prefersReducedMotion ? 'default' : 'hover'}
-        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-        variants={{
-          default: { scale: 'var(--scale-from)' },
-          hover: { scale: 'var(--scale-to)' },
-        }}
-        href={href}
-        target={target}
-        {...motionProps}
-      >
-        {icon && (
-          <>
-            {ButtonIcon(icon)}
-            {'\u00A0'}
-          </>
-        )}
-        {children}
-      </MotionLink>
+      <Link href={href} className="h-full w-full" target={target}>
+        <motion.div
+          className={button({ intent, size, className, animation })}
+          initial="default"
+          whileHover={prefersReducedMotion ? 'default' : 'hover'}
+          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+          variants={{
+            default: { scale: 'var(--scale-from)' },
+            hover: { scale: 'var(--scale-to)' },
+          }}
+          // {...motionProps}
+        >
+          {icon && (
+            <>
+              {ButtonIcon(icon)}
+              {'\u00A0'}
+            </>
+          )}
+          {children}
+        </motion.div>
+      </Link>
     </>
   );
 }

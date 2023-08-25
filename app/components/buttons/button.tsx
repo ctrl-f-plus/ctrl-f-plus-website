@@ -1,4 +1,5 @@
 // app/components/buttons/button.tsx
+'use client';
 import { cn } from '@/app/lib/utils';
 import { VariantProps, cva } from 'class-variance-authority';
 import { ButtonHTMLAttributes, FC, forwardRef } from 'react';

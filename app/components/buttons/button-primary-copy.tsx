@@ -1,6 +1,6 @@
 // app/tab-hoarders/components/Button.tsx
 
-// 'use client';
+'use client';
 // import { useCallback } from 'react';
 import clsx from 'clsx';
 import { PlayIcon } from '../icons/button-icons';

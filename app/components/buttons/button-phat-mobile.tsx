@@ -1,3 +1,4 @@
+'use client';
 import CtrlLink from '../ctrl-link';
 import PuzzleIcon2 from '../icons/puzzle2';
 import Link from 'next/link';
