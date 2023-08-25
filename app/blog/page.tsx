@@ -4,15 +4,13 @@ import 'server-only';
 import { allBlogs } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';
-import { formatDate } from '../lib/utils';
-import InfoCard from '../components/info-card';
-import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
-import { FilledStarIcon } from '../components/icons/button-icons';
-import ButtonPrimary from '../components/buttons/ButtonPrimary';
 import PuzzleIcon from '../components/icons/puzzle';
+import InfoCard from '../components/info-card';
+import { formatDate } from '../lib/utils';
 
 export const metadata: Metadata = {
   title: 'Blog',

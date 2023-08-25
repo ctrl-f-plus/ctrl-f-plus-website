@@ -1,5 +1,5 @@
 // app/about/page.tsx
-// import 'server-only';
+import 'server-only';
 // 'use client';
 
 import benAvatar from '@/public/images/ben-avatar2.png';
