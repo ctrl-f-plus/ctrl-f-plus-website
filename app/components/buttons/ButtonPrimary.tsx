@@ -1,15 +1,12 @@
 // app/tab-hoarders/components/Button.tsx
 'use client';
 
+import { cva } from '@/cva.config';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import CtrlLink from '../ctrl-link';
 import { PlayIcon, PuzzlePhat } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
-import PuzzleIcon2 from '../icons/puzzle2';
-import { ButtonHTMLAttributes } from 'react';
-import CtrlLink from '../ctrl-link';
-import { cva } from '@/cva.config';
 
 const baseStyles = {
   // overflow-hidden

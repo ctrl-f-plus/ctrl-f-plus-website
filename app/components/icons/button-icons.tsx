@@ -181,16 +181,16 @@ export function PuzzlePhat({ className }: { className?: string }) {
     <motion.div
       // bg-white
       className="relative flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#0C3440]"
-      initial="initial"
+      // initial="initial"
       variants={{
-        initial: { backgroundColor: 'var(--backgroundColor-from), #ffffff' },
+        initial: { background: 'var(--backgroundColor-from), #ffffff' },
         hover: { backgroundColor: 'var(--backgroundColor-to)' },
       }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
     >
       <motion.span
         transition={{ type: 'spring', bounce: 0.6 }}
-        className="tablet:[--rotate-from:0deg]  tablet:[--rotate-to:-90deg] "
+        className="tablet:[--rotate-from:0deg] tablet:[--rotate-to:-90deg] "
         variants={{
           initial: { rotate: 'var(--rotate-from)' },
           hover: { rotate: 'var(--rotate-to)' },

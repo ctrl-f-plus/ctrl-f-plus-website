@@ -1,9 +1,9 @@
 // app/temp/page.tsx
 // 'use client';
 
-import ButtonPhat from '../components/buttons/ButtonPhat';
+import ButtonPhat from '../components/temp-components/ButtonPhat';
 import ButtonPrimary from '../components/buttons/ButtonPrimary';
-import { Button } from '../components/buttons/button';
+import { Button } from '../components/temp-components/button';
 
 // import ButtonPhatMobile from '../components/buttons/button-phat-mobile';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
