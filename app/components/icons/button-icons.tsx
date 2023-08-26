@@ -213,9 +213,11 @@ export const PuzzleIcon2 = motion(function PuzzleIcon2({
 export const PuzzlePhat = motion(function PuzzlePhat({
   className,
   animation = 'none',
+  intent,
 }: {
   className?: string;
   animation?: any;
+  intent?: any;
 }) {
   return (
     <motion.div
@@ -235,7 +237,7 @@ export const PuzzlePhat = motion(function PuzzlePhat({
           hover: { rotate: 'var(--rotate-to)' },
         }}
       >
-        <PuzzleIcon2 animation={animation} />
+        <PuzzleIcon2 animation={animation} intent={intent} />
       </motion.span>
     </motion.div>
   );
