@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Fragment, useRef, useState } from 'react';
 import Button from './buttons/Button';
+import ReactPlayer from 'react-player';
 
 function XMarkIcon({ className }: { className: string }) {
   return (
@@ -27,7 +28,7 @@ function XMarkIcon({ className }: { className: string }) {
 }
 
 export default function QuickView() {
-  // const playerRef = useRef(null);
+  const playerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const initialRef = useRef(null);
 
@@ -93,9 +94,9 @@ export default function QuickView() {
                       </button>
                     </div>
                     <div className="mt-2 h-full w-full overflow-hidden">
-                      <div className="relative flex aspect-video h-full items-center justify-center">
+                      <div className="relative flex aspect-video h-full w-full items-center justify-center">
                         <div className="flex h-full w-full ">
-                          <Image
+                          {/* <Image
                             ref={initialRef}
                             unoptimized={true}
                             src="https://i.imgur.com/rxhEz0S.gif"
@@ -107,7 +108,38 @@ export default function QuickView() {
                             height={853}
                             aria-hidden="true"
                             priority
-                          />
+                          /> */}
+                          {/* <iframe src="https://www.youtube.com/..."></iframe> */}
+                          {/* <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/2uBnJsjbHdo?si=xyHg5VTPP4cFOHDT"
+                            title="YouTube video player"
+                            frameborder="0"
+                            className=" aspect-video w-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                          ></iframe> */}
+                          <div
+                            // className="flex items-center overflow-hidden shadow-2xl"
+                            // style={{ width: '80vw', height: '80vh' }}
+                            // className="flex h-full w-full items-center overflow-hidden shadow-2xl"
+                            className="flex h-[663px] w-[1179px] items-center justify-center overflow-hidden shadow-2xl shadow-blue-500"
+                          >
+                            <ReactPlayer
+                              ref={playerRef}
+                              url="https://www.youtube.com/embed/2uBnJsjbHdo?si=xyHg5VTPP4cFOHDT"
+                              // playing
+                              controls
+                              className=" aspect-video "
+                              width="85%"
+                              height="auto"
+                              // frameborder="0"
+
+                              // width="1179"
+                              // height="663"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

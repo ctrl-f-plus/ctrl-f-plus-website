@@ -1,18 +1,17 @@
 // app/tab-hoarders/components/Button.tsx
 'use client';
 
-import { cx, cva } from '@/cva.config';
+import { cva } from '@/cva.config';
 import { motion } from 'framer-motion';
 import CtrlLink from '../ctrl-link';
 import {
-  PlayIcon,
-  PuzzleIcon2,
-  PuzzleIcon,
-  PuzzlePhat,
-  HeartHandIcon,
   FilledStarIcon,
+  HeartHandIcon,
+  PlayIcon,
+  PuzzleIcon,
+  PuzzleIcon2,
+  PuzzlePhat,
 } from '../icons/button-icons';
-// import PuzzleIcon from '../icons/puzzle';
 
 const variantStyles = {
   IconComponents: {
@@ -85,8 +84,6 @@ const ColorFill = motion(function ColorFill({ animation }: any) {
     <>
       <motion.span
         className={colorFill({ animation })}
-        // className={button({ intent, size, className })}
-        // className="pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80"
         variants={{
           initial: {
             rotate: 'var(--rotate-from)',
@@ -158,14 +155,8 @@ function Button({
           <ColorFill aria-hidden="true" animation={animation} intent={intent} />
 
           <motion.div className="relative flex w-full items-center justify-center gap-2 text-center">
-            {IconComponent && (
-              <IconComponent
-                // className={'group-active:!fill-[#0a2b35]/70'}
-                animation={animation}
-              />
-            )}
+            {IconComponent && <IconComponent animation={animation} />}
             <motion.span
-              // className="groupactive:!text-[#0a2b35]/70"
               transition={{ duration: 0.5, ease: 'linear' }}
               variants={{
                 initial: { color: 'var(--color-from)' },
