@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import ButtonPrimaryCopy from './components/buttons/button-primary-copy';
 import Container from './components/container';
 import { FadeIn } from './components/fade-in';
 import ButtonPrimary from './components/buttons/ButtonPrimary';

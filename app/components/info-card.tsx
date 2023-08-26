@@ -1,9 +1,7 @@
 // app/components/info-card.tsx
 
 import { ReactNode } from 'react';
-import ButtonPrimaryCopy from './buttons/button-primary-copy';
 import { FadeIn } from './fade-in';
-import { FilledStarIcon } from './icons/button-icons';
 import { ColorAccents } from './temp-components/color-accents';
 
 interface InfoCardProps {

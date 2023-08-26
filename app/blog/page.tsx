@@ -4,7 +4,6 @@ import 'server-only';
 import { allBlogs } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';

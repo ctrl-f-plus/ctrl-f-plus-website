@@ -5,15 +5,12 @@ import 'server-only';
 import benAvatar from '@/public/images/ben-avatar2.png';
 // import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar.png';
+import { Metadata } from 'next';
 import Image from 'next/image';
-import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
+import ButtonPrimary from '../components/buttons/ButtonPrimary';
 import Container from '../components/container';
 import CtrlLink from '../components/ctrl-link';
 import { FadeInStagger } from '../components/fade-in';
-import {
-  FilledStarIcon,
-  HeartHandIcon,
-} from '../components/icons/button-icons';
 import {
   EmailIcon,
   GithubIcon,
@@ -23,9 +20,6 @@ import {
 import InfoCard from '../components/info-card';
 import PageBodyCard from '../components/page-body-card';
 import PageTitleCard from '../components/page-title-card';
-import { Metadata } from 'next';
-import PuzzleIcon from '../components/icons/puzzle';
-import ButtonPrimary from '../components/buttons/ButtonPrimary';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
