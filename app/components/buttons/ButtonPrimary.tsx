@@ -39,8 +39,6 @@ const button = cva({
     },
     size: {
       thin: 'h-14 flex w-full items-center justify-center text-center  flex-row text-lg leading-6 font-semibold',
-
-      // phat: 'relative flex w-full items-center gap-4 text-center',
       phat: 'inline-block inline-flex w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full bg-highlighter-900 px-5 py-4 ',
     },
     animation: {
@@ -62,7 +60,6 @@ const button = cva({
     {
       intent: 'solid',
       animation: 'none',
-      // active:text-red-500/80
       className: 'hover:bg-highlighter-900/90 active:bg-[#0a2b35]',
     },
     {
@@ -135,14 +132,11 @@ function ButtonPrimary({
   aTag = false,
   ...props
 }: ButtonProps) {
-  // className = clsx(baseStyles['base'], variantStyles[variant], className);
   const intent = variant;
-  // const size = variant === 'phat' ? 'phat' : 'thin';
 
   //@ts-ignore
   const IconComponent = variantStyles.IconComponents[icon];
 
-  // if (aTag) {
   return (
     <>
       <CtrlLink
@@ -167,7 +161,6 @@ function ButtonPrimary({
               <IconComponent
                 // className={'group-active:!fill-[#0a2b35]/70'}
                 animation={animation}
-                // animation={'none'}
               />
             )}
             <motion.span

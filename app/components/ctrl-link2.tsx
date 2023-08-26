@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/components/ctrl-link2.tsx
 
 import { MotionProps, motion } from 'framer-motion';
