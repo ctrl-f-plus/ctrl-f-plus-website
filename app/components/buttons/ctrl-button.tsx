@@ -1,19 +1,17 @@
 // app/components/buttons/ctrl-button.tsx
 'use client';
 import { cva, type VariantProps } from 'cva';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
+import { LinkProps } from 'next/link';
+import CtrlLink2, { CtrlLinkProps } from '../ctrl-link2';
 import {
-  PlayIcon,
-  StarIcon,
   FilledStarIcon,
   HeartHandIcon,
+  PlayIcon,
+  StarIcon,
 } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
-import MotionLink from './motion-link';
-import { LinkProps } from 'next/link';
-import CtrlLink from '../ctrl-link';
-import CtrlLink2 from '../ctrl-link2';
 
 const button = cva({
   base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden tab-pro:',
@@ -85,13 +83,22 @@ function ButtonIcon(icon: string): React.ReactNode {
 //   target?: string;
 // }
 
-interface CtrlButtonProps extends LinkProps, VariantProps<typeof button> {
-  children: React.ReactNode;
-  icon?: 'play' | 'puzzle' | 'puzzle2' | 'star' | 'filledStar' | 'heartHand';
-  href: string;
-  target?: string;
-  className?: string;
-}
+// interface CtrlButtonProps extends LinkProps, VariantProps<typeof button> {
+//   children: React.ReactNode;
+//   icon?: 'play' | 'puzzle' | 'puzzle2' | 'star' | 'filledStar' | 'heartHand';
+//   href: string;
+//   target?: string;
+//   className?: string;
+// }
+// extends LinkProps,
+type CtrlButtonProps = CtrlLinkProps &
+  VariantProps<typeof button> & {
+    children: React.ReactNode;
+    icon?: 'play' | 'puzzle' | 'puzzle2' | 'star' | 'filledStar' | 'heartHand';
+    href: string;
+    target?: string;
+    className?: string;
+  };
 
 export default function CtrlButton({
   children,
@@ -102,6 +109,7 @@ export default function CtrlButton({
   href,
   target,
   className,
+  componentType,
   ...props
 }: CtrlButtonProps) {
   let prefersReducedMotion = useReducedMotion();
@@ -120,7 +128,7 @@ export default function CtrlButton({
         }}
         href={href}
         target={target}
-        type={'link'}
+        componentType={'anchor'}
         {...motionProps}
       >
         {icon && (

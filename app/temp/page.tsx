@@ -1,7 +1,6 @@
 // app/temp/page.tsx
 // 'use client';
 
-import Link from 'next/link';
 import ButtonPhat from '../components/buttons/ButtonPhat';
 import ButtonPrimary from '../components/buttons/ButtonPrimary';
 import { Button } from '../components/buttons/button';
@@ -11,12 +10,6 @@ import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import CtrlButton from '../components/buttons/ctrl-button';
 import FramerButton from '../components/buttons/framer-button';
 import Container from '../components/container';
-import { HeartHandIcon } from '../components/icons/button-icons';
-import PuzzleIcon from '../components/icons/puzzle';
-import PuzzleIcon2 from '../components/icons/puzzle2';
-import CtrlLink from '../components/ctrl-link';
-import CtrlLink2 from '../components/ctrl-link2';
-import { motion } from 'framer-motion';
 
 export default function page() {
   return (
@@ -66,8 +59,20 @@ export default function page() {
               className=""
               animation="basic"
               href={'/about'}
+              componentType="anchor"
             >
               Become a Sponsor!
+            </CtrlButton>
+
+            <CtrlButton
+              intent="solid"
+              icon="puzzle"
+              className=""
+              animation="simple"
+              href={'/about'}
+              componentType="anchor"
+            >
+              Add To Chrome
             </CtrlButton>
             {/* </Link> */}
 
