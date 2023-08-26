@@ -31,8 +31,13 @@ const button = cva({
     intent: {
       solid:
         'rounded-[37px] bg-highlighter-900 text-white w-full active:text-white/80 ',
+      solid2:
+        'rounded-[37px] text-highlighter-900 w-full active:text-highlighter-900/80 ',
       outline:
         'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 w-full color-[#0C3440]',
+
+      outline2:
+        'bg-highlighter-900 border-2 rounded-[37px] border-white text-white focus:outline-none active:text-[#0a2b35]/70 w-full color-[#ff0000]',
       phat: '',
       simple: '',
     },
@@ -100,7 +105,7 @@ const ColorFill = motion(function ColorFill({ animation }: any) {
 });
 
 interface ButtonProps {
-  variant: 'solid' | 'outline' | 'simple' | 'phat';
+  variant: 'solid' | 'solid2' | 'outline' | 'outline2' | 'simple' | 'phat';
   size: 'thin' | 'phat';
   icon?:
     | 'puzzle'

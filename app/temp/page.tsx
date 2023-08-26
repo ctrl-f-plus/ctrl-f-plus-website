@@ -138,6 +138,58 @@ export default function page() {
           See how it works-qb
         </Button>
       </div>
+
+      <div className="mt-40 flex flex-col gap-6 tab-pro:flex-row">
+        <Button
+          variant="solid2"
+          size="thin"
+          icon="puzzle"
+          animation="slice"
+          href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
+          target={'_blank'}
+          aTag
+        >
+          See how it works-h
+        </Button>
+
+        <Button
+          variant="solid2"
+          size="thin"
+          icon="play"
+          animation="slice"
+          aTag={false}
+          target={''}
+          className="cursor-pointer"
+        >
+          See how it works-qb
+        </Button>
+      </div>
+
+      <div className="mt-40 flex flex-col gap-6 tab-pro:flex-row">
+        <Button
+          variant="outline2"
+          size="thin"
+          icon="puzzle"
+          animation="slice"
+          href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
+          target={'_blank'}
+          aTag
+        >
+          See how it works-h
+        </Button>
+
+        <Button
+          variant="outline2"
+          size="thin"
+          icon="play"
+          animation="slice"
+          aTag={false}
+          target={''}
+          className="cursor-pointer"
+        >
+          See how it works-qb
+        </Button>
+      </div>
     </>
   );
 }
