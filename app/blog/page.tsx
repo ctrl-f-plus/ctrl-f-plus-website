@@ -11,6 +11,7 @@ import DrawingIcon from '../components/icons/drawing-icon';
 import PuzzleIcon from '../components/icons/puzzle';
 import InfoCard from '../components/info-card';
 import { formatDate } from '../lib/utils';
+import ButtonPrimary from '../components/buttons/ButtonPrimary';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -77,14 +78,16 @@ export default function BlogPage() {
                 showAccents
               >
                 {' '}
-                <ButtonPrimaryCopy
-                  variant="simple"
+                <ButtonPrimary
+                  variant="solid"
+                  size="thin"
+                  icon="puzzle2"
                   href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
                   target={'_blank'}
                   aTag
                 >
-                  <PuzzleIcon /> Get the Extension!
-                </ButtonPrimaryCopy>
+                  Get the Extension!
+                </ButtonPrimary>
               </InfoCard>
             ) : (
               <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">

@@ -1,7 +1,8 @@
 import 'server-only';
 import Container from './components/container';
-import ButtonPrimaryCopy from './components/buttons/button-primary-copy';
+
 import { FadeIn } from './components/fade-in';
+import ButtonPrimary from './components/buttons/ButtonPrimary';
 
 export default function NotFoundPage() {
   return (
@@ -18,15 +19,16 @@ export default function NotFoundPage() {
             </p>
             <div className="mt-10 flex w-full items-center justify-center ">
               <div className="w-1/2">
-                <ButtonPrimaryCopy
-                  variant={'simple'}
+                <ButtonPrimary
+                  variant="solid"
+                  size="thin"
                   className={''}
                   href="/"
                   aTag={false}
                   target={''}
                 >
                   Go back home
-                </ButtonPrimaryCopy>
+                </ButtonPrimary>
               </div>
             </div>
           </div>

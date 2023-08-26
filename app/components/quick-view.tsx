@@ -37,6 +37,7 @@ export default function QuickView() {
         variant="outline"
         size="thin"
         icon="play"
+        animation="slice"
         onClick={() => setIsOpen(true)}
         aTag={false}
         target={''}

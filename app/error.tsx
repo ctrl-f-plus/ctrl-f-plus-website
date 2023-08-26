@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import ButtonPrimaryCopy from './components/buttons/button-primary-copy';
 import Container from './components/container';
 import { FadeIn } from './components/fade-in';
+import ButtonPrimary from './components/buttons/ButtonPrimary';
 
 type ErrorPageProps = {
   error: Error;
@@ -33,8 +34,9 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
             </p>
             <div className="mt-10 flex w-full items-center justify-center ">
               <div className="w-3/4">
-                <ButtonPrimaryCopy
-                  variant={'simple'}
+                <ButtonPrimary
+                  variant="solid"
+                  size="thin"
                   className={''}
                   href=""
                   aTag={false}
@@ -42,7 +44,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
                   onClick={handleReset}
                 >
                   Try Again
-                </ButtonPrimaryCopy>
+                </ButtonPrimary>
               </div>
             </div>
           </div>

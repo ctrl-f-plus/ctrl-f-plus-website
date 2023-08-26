@@ -5,12 +5,47 @@ import { cva, type VariantProps } from 'cva';
 import { motion } from 'framer-motion';
 
 const icon = cva({
-  base: 'fill-highlighter-900',
   // base: 'fill-highlighter-900',
+  // base: 'color-white',
   variants: {
     intent: {
-      outline: 'fill-highlighter-900',
-      circle: 'fill-red-500',
+      solid: 'fill-red-500 group-active::fill-white/80 ',
+      outline:
+        'fill-highlighter-900 color-highlighter-900 group-active:fill-[#0a2b35]/70',
+      circle: '',
+    },
+    animation: {
+      none: '',
+      slice:
+        '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
+    },
+  },
+  defaultVariants: {
+    intent: 'solid',
+    animation: 'none',
+  },
+  compoundVariants: [
+    {
+      intent: 'solid',
+      animation: 'none',
+      className:
+        '[--fill-from:#ffffff] [--fill-to:#ffffff] fill-white group-active:fill-white/80 active:fill-[#0a2b35]/70',
+    },
+    {
+      intent: 'outline',
+      animation: 'none',
+      className: 'fill-highlighter-900 tablet:group-active:fill-[#0a2b35]/70',
+    },
+  ],
+});
+
+const iconCva = cva({
+  base: 'color-white',
+  variants: {
+    animation: {
+      none: '[--fill-from:#ffffff] [--fill-to:#ffffff] active:text-white/80',
+      slice:
+        '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
     },
   },
 });
@@ -21,6 +56,7 @@ export function PlayIcon({
   //className,
   intent,
 }: ButtonIconProps) {
+  intent = 'outline';
   return (
     <svg
       width="19"
@@ -64,7 +100,8 @@ export function FilledStarIcon({ className }: { className?: string }) {
       height="22"
       // height="1em"
       viewBox="0 0 576 512"
-      className={className}
+      // className={className}
+      className="fill-yellow-500"
     >
       {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
       <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
@@ -124,21 +161,22 @@ export function OsiIcon({ className }: { className?: string }) {
 
 export const PuzzleIcon2 = motion(function PuzzleIcon2({
   className,
+  intent,
+  animation = 'none',
 }: // puzzleFillVariants,
 {
   className?: string;
+  intent: any;
+  animation?: any;
   // puzzleFillVariants?: any;
 }) {
-  const puzzleFillVariants = {
-    hover: { fill: '#48D0A8' },
-  };
-
   return (
     <motion.svg
-      className={clsx(
-        '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
-        className
-      )}
+      // className={clsx(
+      //   '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
+      //   className
+      // )}
+      className={icon({ intent, animation, className })}
       width="23"
       height="22"
       viewBox="0 0 23 22"
@@ -174,16 +212,15 @@ export const PuzzleIcon2 = motion(function PuzzleIcon2({
 
 export const PuzzlePhat = motion(function PuzzlePhat({
   className,
+  animation = 'none',
 }: {
   className?: string;
+  animation?: any;
 }) {
   return (
     <motion.div
       // bg-white
       className="relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff] tablet:[--backgroundColor-to:#0C3440]"
-      //group-active:!fill-[#0a2b35]/70
-      // [--backgroundColor-from:#ffffff] [--backgroundColor-to:#0C3440]
-      // initial="initial"
       variants={{
         initial: { background: 'var(--backgroundColor-from)' },
         hover: { backgroundColor: 'var(--backgroundColor-to)' },
@@ -198,7 +235,7 @@ export const PuzzlePhat = motion(function PuzzlePhat({
           hover: { rotate: 'var(--rotate-to)' },
         }}
       >
-        <PuzzleIcon2 />
+        <PuzzleIcon2 animation={animation} />
       </motion.span>
     </motion.div>
   );

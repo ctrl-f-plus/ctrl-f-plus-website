@@ -43,6 +43,7 @@ export default function Hero() {
                 variant="solid"
                 size="thin"
                 icon="puzzle"
+                animation="slice"
                 href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
                 target={'_blank'}
                 aTag

@@ -25,6 +25,7 @@ import PageBodyCard from '../components/page-body-card';
 import PageTitleCard from '../components/page-title-card';
 import { Metadata } from 'next';
 import PuzzleIcon from '../components/icons/puzzle';
+import ButtonPrimary from '../components/buttons/ButtonPrimary';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
@@ -206,16 +207,19 @@ export default function About() {
             <div className=" flex w-full items-center justify-center overflow-hidden ">
               <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
                 <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
-                  <ButtonPrimaryCopy
-                    variant={'simple'}
+                  <ButtonPrimary
+                    variant="solid"
+                    size="thin"
+                    icon="heartHandIcon"
+                    // animation="slice"
                     className={'mt-20'}
                     href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
                     aTag
                     target={'_blank'}
                   >
-                    <HeartHandIcon /> Become a Sponsor!
+                    Become a Sponsor!
                     {/* Get In Touch! */}
-                  </ButtonPrimaryCopy>
+                  </ButtonPrimary>
                 </div>
               </div>
             </div>
@@ -284,16 +288,19 @@ export default function About() {
               codebase with your PRs...`}
             showAccents
           >
-            <ButtonPrimaryCopy
-              variant={'outline'}
+            <ButtonPrimary
+              // variant={'outline'}
+              variant="outline"
+              size="thin"
+              icon="filledStarIcon"
+              // animation="slice"
               className="group bg-white/[.68]"
               href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
               target={'_blank'}
               aTag
             >
-              <FilledStarIcon className="  fill-yellow-500 " /> Star us on
-              GitHub!
-            </ButtonPrimaryCopy>
+              Star us on GitHub!
+            </ButtonPrimary>
           </InfoCard>
         </FadeInStagger>
       </Container>

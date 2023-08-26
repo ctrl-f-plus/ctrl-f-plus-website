@@ -70,6 +70,7 @@ function CtaButtons() {
       variant={'solid'}
       size="phat"
       icon="puzzlePhat"
+      animation="slice"
       href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
       target={'_blank'}
       aTag

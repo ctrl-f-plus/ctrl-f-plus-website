@@ -5,7 +5,13 @@ import { cx, cva } from '@/cva.config';
 // import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import CtrlLink from '../ctrl-link';
-import { PlayIcon, PuzzlePhat } from '../icons/button-icons';
+import {
+  PlayIcon,
+  PuzzleIcon2,
+  PuzzlePhat,
+  HeartHandIcon,
+  FilledStarIcon,
+} from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 
 const baseStyles = {
@@ -15,7 +21,7 @@ const baseStyles = {
 
 const variantStyles = {
   simple:
-    'bg-highlighter-900 rounded-[37px] w-full h-14 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 text-fs-md-bold',
+    'bg-highlighter-900 rounded-[37px] w-full h-14 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 text-fs-md-bold ',
 
   solid:
     'rounded-[37px] bg-highlighter-900 text-white text-fs-md-bold h-14 w-full ',
@@ -27,38 +33,80 @@ const variantStyles = {
 
   IconComponents: {
     puzzle: PuzzleIcon,
+    puzzle2: PuzzleIcon2,
     play: PlayIcon,
     puzzlePhat: PuzzlePhat,
+    heartHandIcon: HeartHandIcon,
+    filledStarIcon: FilledStarIcon,
   },
 };
 
 const button = cva({
   // base: 'relative flex w-full items-center justify-center gap-2 text-center ',
   // overflow-hidden
-  base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm  overflow-hidden',
+  base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm  overflow-hidden',
+
   variants: {
     intent: {
       solid:
-        'rounded-[37px] bg-highlighter-900 text-white w-full [--color-from:#ffffff] tablet:[--color-to:#0C3440]',
+        'rounded-[37px] bg-highlighter-900 text-white w-full active:text-white/80 ',
       outline:
         'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 w-full color-[#0C3440]',
       phat: '',
       simple: '',
     },
     size: {
-      thin: 'h-14 flex w-full items-center justify-center gap-2 text-center  flex-row text-lg leading-6 font-semibold',
+      thin: 'h-14 flex w-full items-center justify-center text-center  flex-row text-lg leading-6 font-semibold',
 
       // phat: 'relative flex w-full items-center gap-4 text-center',
-      phat: 'inline-block inline-flex w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full bg-highlighter-900 px-5 py-4 gap-4',
+      phat: 'inline-block inline-flex w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full bg-highlighter-900 px-5 py-4 ',
+    },
+    animation: {
+      none: '',
+      slice: '',
+    },
+  },
+  compoundVariants: [
+    {
+      intent: 'solid',
+      animation: 'slice',
+      className: '[--color-from:#ffffff] tablet:[--color-to:#0C3440] ',
+    },
+    {
+      intent: 'outline',
+      animation: 'slice',
+      className: '',
+    },
+    {
+      intent: 'solid',
+      animation: 'none',
+      // active:text-red-500/80
+      className: 'hover:bg-highlighter-900/90 active:bg-[#0a2b35]',
+    },
+    {
+      intent: 'outline',
+      animation: 'none',
+      className:
+        'focus:outline-none hover:bg-highlighter-900/10  active:text-[#0a2b35]/70',
+    },
+  ],
+});
+
+const colorFill = cva({
+  variants: {
+    animation: {
+      slice:
+        'pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80',
     },
   },
 });
-
-const ColorFill = motion(function ColorFill() {
+const ColorFill = motion(function ColorFill({ animation }: any) {
   return (
     <>
       <motion.span
-        className="pointer-events-none absolute  bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80"
+        className={colorFill({ animation })}
+        // className={button({ intent, size, className })}
+        // className="pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80"
         variants={{
           initial: {
             rotate: 'var(--rotate-from)',
@@ -76,7 +124,14 @@ const ColorFill = motion(function ColorFill() {
 interface ButtonProps {
   variant: 'solid' | 'outline' | 'simple' | 'phat';
   size: 'thin' | 'phat';
-  icon: 'puzzle' | 'play' | 'puzzlePhat';
+  icon?:
+    | 'puzzle'
+    | 'puzzle2'
+    | 'play'
+    | 'puzzlePhat'
+    | 'heartHandIcon'
+    | 'filledStarIcon';
+  animation?: 'slice' | 'none';
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
@@ -89,6 +144,7 @@ function ButtonPrimary({
   variant,
   size,
   icon,
+  animation = 'none',
   children,
   className,
   onClick,
@@ -118,18 +174,22 @@ function ButtonPrimary({
         <motion.div
           whileHover="hover"
           initial="initial"
-          whileTap={{ scale: 0.93 }}
+          // whileTap={{ scale: 0.93 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          className={button({ intent, size, className })}
+          className={button({ intent, size, className, animation })}
         >
-          <ColorFill aria-hidden="true" />
+          <ColorFill aria-hidden="true" animation={animation} intent={intent} />
 
           <motion.div className="relative flex w-full items-center justify-center gap-2 text-center">
             {IconComponent && (
-              <IconComponent className={'group-active:!fill-[#0a2b35]/70'} />
+              <IconComponent
+                // className={'group-active:!fill-[#0a2b35]/70'}
+                animation={animation}
+                // animation={'none'}
+              />
             )}
             <motion.span
-              className="group-active:!text-[#0a2b35]/70"
+              // className="group-active:!text-[#0a2b35]/70"
               transition={{ duration: 0.5, ease: 'linear' }}
               variants={{
                 initial: { color: 'var(--color-from)' },
