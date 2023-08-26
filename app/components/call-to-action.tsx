@@ -149,7 +149,7 @@ export default function CallToAction() {
                 rotateYMax={prefersReducedMotion ? 0 : 15} // Maximum rotation on the y-axis
                 rotate={prefersReducedMotion ? false : true}
               >
-                <motion.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 rounded-[2.25rem] bg-red-500 bg-shark px-[2.25rem] text-center">
+                <motion.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 rounded-[2.25rem]  bg-shark px-[2.25rem] text-center">
                   <CtaColorAccents />
                   <div
                     data-atropos-offset={prefersReducedMotion ? 0 : 10}
