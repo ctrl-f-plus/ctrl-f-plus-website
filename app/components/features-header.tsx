@@ -11,8 +11,6 @@ import {
 import { useEffect } from 'react';
 import Container from './container';
 import { FadeIn } from './fade-in';
-import { cn } from '../lib/utils';
-import { twMerge } from 'tailwind-merge';
 
 function CardText({
   prefersReducedMotion,

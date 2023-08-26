@@ -34,8 +34,10 @@ export default function QuickView() {
   return (
     <>
       <ButtonPrimary
-        onClick={() => setIsOpen(true)}
         variant="outline"
+        size="thin"
+        icon="play"
+        onClick={() => setIsOpen(true)}
         aTag={false}
         target={''}
         className="cursor-pointer"

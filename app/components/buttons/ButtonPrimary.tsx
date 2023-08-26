@@ -1,8 +1,8 @@
 // app/tab-hoarders/components/Button.tsx
 'use client';
 
-import { cva } from '@/cva.config';
-import clsx from 'clsx';
+import { cx, cva } from '@/cva.config';
+// import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import CtrlLink from '../ctrl-link';
 import { PlayIcon, PuzzlePhat } from '../icons/button-icons';
@@ -26,29 +26,35 @@ const variantStyles = {
   phat: 'inline-block inline-flex !px-5 w-[231px] text-fs-lg text-white justify-start rounded-full bg-highlighter-900 px-5 py-3',
 
   IconComponents: {
-    solid: PuzzleIcon,
-    outline: PlayIcon,
-    phat: PuzzlePhat,
+    puzzle: PuzzleIcon,
+    play: PlayIcon,
+    puzzlePhat: PuzzlePhat,
   },
 };
 
 const button = cva({
   // base: 'relative flex w-full items-center justify-center gap-2 text-center ',
+  // overflow-hidden
+  base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm  overflow-hidden',
   variants: {
     intent: {
-      solid: '[--color-from:#ffffff] tablet:[--color-to:#0C3440]',
-      outline: 'color-[#0C3440]',
+      solid:
+        'rounded-[37px] bg-highlighter-900 text-white w-full [--color-from:#ffffff] tablet:[--color-to:#0C3440]',
+      outline:
+        'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 w-full color-[#0C3440]',
       phat: '',
       simple: '',
     },
     size: {
-      thin: 'relative flex w-full items-center justify-center gap-2 text-center',
-      phat: 'relative flex w-full items-center gap-4 text-center',
+      thin: 'h-14 flex w-full items-center justify-center gap-2 text-center  flex-row text-lg leading-6 font-semibold',
+
+      // phat: 'relative flex w-full items-center gap-4 text-center',
+      phat: 'inline-block inline-flex w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full bg-highlighter-900 px-5 py-4 gap-4',
     },
   },
 });
 
-function ColorFill() {
+const ColorFill = motion(function ColorFill() {
   return (
     <>
       <motion.span
@@ -65,10 +71,12 @@ function ColorFill() {
       />
     </>
   );
-}
+});
 
 interface ButtonProps {
   variant: 'solid' | 'outline' | 'simple' | 'phat';
+  size: 'thin' | 'phat';
+  icon: 'puzzle' | 'play' | 'puzzlePhat';
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
@@ -79,6 +87,8 @@ interface ButtonProps {
 
 function ButtonPrimary({
   variant,
+  size,
+  icon,
   children,
   className,
   onClick,
@@ -87,12 +97,12 @@ function ButtonPrimary({
   aTag = false,
   ...props
 }: ButtonProps) {
-  className = clsx(baseStyles['base'], variantStyles[variant], className);
+  // className = clsx(baseStyles['base'], variantStyles[variant], className);
   const intent = variant;
-  const size = variant === 'phat' ? 'phat' : 'thin';
+  // const size = variant === 'phat' ? 'phat' : 'thin';
 
   //@ts-ignore
-  const IconComponent = variantStyles.IconComponents[variant];
+  const IconComponent = variantStyles.IconComponents[icon];
 
   // if (aTag) {
   return (
@@ -110,11 +120,11 @@ function ButtonPrimary({
           initial="initial"
           whileTap={{ scale: 0.93 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          className={className}
+          className={button({ intent, size, className })}
         >
           <ColorFill aria-hidden="true" />
 
-          <motion.div className={button({ intent, size })}>
+          <motion.div className="relative flex w-full items-center justify-center gap-2 text-center">
             {IconComponent && (
               <IconComponent className={'group-active:!fill-[#0a2b35]/70'} />
             )}

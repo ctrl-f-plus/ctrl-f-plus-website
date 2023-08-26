@@ -129,7 +129,7 @@ module.exports = {
           { lineHeight: '1.53125rem', fontWeight: '600' },
         ], // text-lg leading-6 font-semibold
         'fs-lg-sm': ['1rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
-        'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
+        'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // text-lg leading-[1.6875rem] font-normal
         'fs-x0': ['2.0625rem', { lineHeight: '1', fontWeight: '800' }],
         'fs-middle': ['2.75rem', { lineHeight: '1.1', fontWeight: '800' }],
         'fs-xxx': ['3.4375rem', { lineHeight: '1.1', fontWeight: '800' }],

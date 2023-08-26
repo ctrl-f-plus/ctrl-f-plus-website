@@ -6,10 +6,9 @@ import Atropos from 'atropos/react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import ButtonPrimary from './buttons/ButtonPrimary';
-// import ButtonPhatMobile from './buttons/button-phat-mobile';
+import '@/styles/ctrl-atropos.css';
 import Container from './container';
 import { FadeIn } from './fade-in';
-import '@/styles/ctrl-atropos.css';
 
 function CtaColorAccents() {
   return (
@@ -68,7 +67,9 @@ function CtaColorAccents() {
 function CtaButtons() {
   return (
     <ButtonPrimary
-      variant={'phat'}
+      variant={'solid'}
+      size="phat"
+      icon="puzzlePhat"
       href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
       target={'_blank'}
       aTag
@@ -111,7 +112,7 @@ export default function CallToAction() {
         aria-label="Try the Ctrl-F Chrome Extension today!"
         className="mt-18 tablet:mt-24 wide:mt-[7.625rem]"
       >
-        <Container className="relative  w-full flex-col laptop:flex laptop:flex-row laptop:justify-between">
+        <Container className="relative w-full flex-col laptop:flex laptop:flex-row laptop:justify-between">
           <div className="absolute top-1/3" ref={ref} />
 
           <div

@@ -122,7 +122,7 @@ export function OsiIcon({ className }: { className?: string }) {
   );
 }
 
-export default function PuzzleIcon2({
+export const PuzzleIcon2 = motion(function PuzzleIcon2({
   className,
 }: // puzzleFillVariants,
 {
@@ -135,22 +135,18 @@ export default function PuzzleIcon2({
 
   return (
     <motion.svg
+      className={clsx(
+        '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
+        className
+      )}
       width="23"
       height="22"
       viewBox="0 0 23 22"
-      // fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      // variants={puzzleFillVariants}
-      initial="initial"
       variants={{
         initial: { fill: 'var(--fill-from)' },
         hover: { fill: 'var(--fill-to)' },
       }}
-      // initial={{ fill: '#0C3440' }}
-      className={clsx(
-        'tablet:[--fill-from:#0C3440] tablet:[--fill-to:#48D0A8]',
-        className
-      )}
     >
       <g id="extension 1" clipPath="url(#clip0_238_1292)">
         <g id="Group">
@@ -174,23 +170,29 @@ export default function PuzzleIcon2({
       </defs>
     </motion.svg>
   );
-}
+});
 
-export function PuzzlePhat({ className }: { className?: string }) {
+export const PuzzlePhat = motion(function PuzzlePhat({
+  className,
+}: {
+  className?: string;
+}) {
   return (
     <motion.div
       // bg-white
-      className="relative flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#0C3440]"
+      className="relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff] tablet:[--backgroundColor-to:#0C3440]"
+      //group-active:!fill-[#0a2b35]/70
+      // [--backgroundColor-from:#ffffff] [--backgroundColor-to:#0C3440]
       // initial="initial"
       variants={{
-        initial: { background: 'var(--backgroundColor-from), #ffffff' },
+        initial: { background: 'var(--backgroundColor-from)' },
         hover: { backgroundColor: 'var(--backgroundColor-to)' },
       }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
     >
       <motion.span
         transition={{ type: 'spring', bounce: 0.6 }}
-        className="tablet:[--rotate-from:0deg] tablet:[--rotate-to:-90deg] "
+        className=" [--rotate-from:0deg] tablet:[--rotate-to:-90deg]"
         variants={{
           initial: { rotate: 'var(--rotate-from)' },
           hover: { rotate: 'var(--rotate-to)' },
@@ -200,4 +202,4 @@ export function PuzzlePhat({ className }: { className?: string }) {
       </motion.span>
     </motion.div>
   );
-}
+});

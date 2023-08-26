@@ -15,7 +15,7 @@ const variantStyles = {
   simple:
     'bg-highlighter-900 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 ',
   solid:
-    'bg-highlighter-900 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 ',
+    'bg-highlighter-900 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80',
 
   simplephat:
     'flex justify-center items-center py-2 font-open-sans  group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative  shadow-sm overflow-hidden inline-block inline-flex !px-5 w-[231px] text-fs-lg text-white justify-start rounded-full bg-highlighter-900 px-5 py-3',

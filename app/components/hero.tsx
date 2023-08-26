@@ -41,6 +41,8 @@ export default function Hero() {
             <div className="flex flex-col gap-6 tab-pro:flex-row">
               <ButtonPrimary
                 variant="solid"
+                size="thin"
+                icon="puzzle"
                 href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
                 target={'_blank'}
                 aTag
