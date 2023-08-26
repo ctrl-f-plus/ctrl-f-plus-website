@@ -7,11 +7,12 @@ import CtrlLink from '../ctrl-link';
 import {
   PlayIcon,
   PuzzleIcon2,
+  PuzzleIcon,
   PuzzlePhat,
   HeartHandIcon,
   FilledStarIcon,
 } from '../icons/button-icons';
-import PuzzleIcon from '../icons/puzzle';
+// import PuzzleIcon from '../icons/puzzle';
 
 const variantStyles = {
   IconComponents: {
@@ -29,10 +30,9 @@ const button = cva({
 
   variants: {
     intent: {
-      solid:
-        'rounded-[37px] bg-highlighter-900 text-white w-full active:text-white/80 ',
+      solid: 'rounded-[37px] bg-highlighter-900 text-white w-full ',
       outline:
-        'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 w-full color-[#0C3440]',
+        'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 w-full',
       phat: '',
       simple: '',
     },
@@ -49,7 +49,8 @@ const button = cva({
     {
       intent: 'solid',
       animation: 'slice',
-      className: '[--color-from:#ffffff] tablet:[--color-to:#0C3440] ',
+      className:
+        '[--color-from:#ffffff] tablet:[--color-to:#0C3440] active:[--color-from:#ffffffcc] active:tablet:[--color-to:#0a2b35b3]',
     },
     {
       intent: 'outline',
@@ -59,7 +60,8 @@ const button = cva({
     {
       intent: 'solid',
       animation: 'none',
-      className: 'hover:bg-highlighter-900/90 active:bg-[#0a2b35]',
+      className:
+        'hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80',
     },
     {
       intent: 'outline',
@@ -163,7 +165,7 @@ function Button({
               />
             )}
             <motion.span
-              // className="group-active:!text-[#0a2b35]/70"
+              // className="groupactive:!text-[#0a2b35]/70"
               transition={{ duration: 0.5, ease: 'linear' }}
               variants={{
                 initial: { color: 'var(--color-from)' },

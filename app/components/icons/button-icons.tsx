@@ -1,7 +1,6 @@
 // app/components/icons/play.tsx
 'use client';
-import clsx from 'clsx';
-import { cva, type VariantProps } from 'cva';
+import { cva, cx, type VariantProps } from 'cva';
 import { motion } from 'framer-motion';
 
 const icon = cva({
@@ -9,7 +8,7 @@ const icon = cva({
   // base: 'color-white',
   variants: {
     intent: {
-      solid: 'fill-red-500 group-active::fill-white/80 ',
+      solid: 'fill-white group-active:fill-white/80 ',
       outline:
         'fill-highlighter-900 color-highlighter-900 group-active:fill-[#0a2b35]/70',
       circle: '',
@@ -28,8 +27,12 @@ const icon = cva({
     {
       intent: 'solid',
       animation: 'none',
-      className:
-        '[--fill-from:#ffffff] [--fill-to:#ffffff] fill-white group-active:fill-white/80 active:fill-[#0a2b35]/70',
+      className: '[--fill-from:#ffffff] [--fill-to:#ffffffcc] ',
+    },
+    {
+      intent: 'solid',
+      animation: 'slice',
+      className: '[--fill-from:#0C3440] [--fill-to:#0a2b35b3]',
     },
     {
       intent: 'outline',
@@ -37,17 +40,6 @@ const icon = cva({
       className: 'fill-highlighter-900 tablet:group-active:fill-[#0a2b35]/70',
     },
   ],
-});
-
-const iconCva = cva({
-  base: 'color-white',
-  variants: {
-    animation: {
-      none: '[--fill-from:#ffffff] [--fill-to:#ffffff] active:text-white/80',
-      slice:
-        '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
-    },
-  },
 });
 
 interface ButtonIconProps extends VariantProps<typeof icon> {}
@@ -95,13 +87,11 @@ export function FilledStarIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      // width="19"
       width="22"
       height="22"
-      // height="1em"
       viewBox="0 0 576 512"
       // className={className}
-      className="fill-yellow-500"
+      className="fill-yellow-500 group-active:fill-yellow-500/70"
     >
       {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
       <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
@@ -127,48 +117,48 @@ export function HeartHandIcon({ className }: { className?: string }) {
   );
 }
 
-export function CodeIcon({ className }: { className?: string }) {
+export const PuzzleIcon = motion(function PuzzleIcon2({
+  className,
+  intent,
+  animation = 'none',
+}: {
+  className?: string;
+  intent: any;
+  animation?: any;
+}) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="22"
-      height="22"
-      // height="1em"
-      viewBox="0 0 640 512"
-      fill="currentColor"
-      className={className}
-    >
-      {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
-      <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
-    </svg>
+    <>
+      <motion.svg
+        width="22"
+        height="22"
+        viewBox="0 0 22 22"
+        xmlns="http://www.w3.org/2000/svg"
+        // className={cx(
+        //   '[--fill-from:#ffffff] [--fill-to:#ffffff] tablet:[--fill-to:#0C3440] active:tablet:[--fill-to:#0a2b35b3]'
+        //   // className
+        // )}
+        // className={icon({ intent, animation, className })}
+        className="[--fill-from:#ffffff] [--fill-to:#ffffff] tablet:[--fill-to:#0C3440] group-active:tablet:[--fill-to:#0a2b35b3]"
+        variants={{
+          initial: { fill: 'var(--fill-from)' },
+          hover: { fill: 'var(--fill-to)' },
+        }}
+        transition={{ duration: 0.5, ease: 'linear' }}
+      >
+        <path d="M19.381 10.4762H17.8095V6.28571C17.8095 5.12811 16.8719 4.19046 15.7143 4.19046H11.5238V2.61903C11.5238 1.17332 10.3505 0 8.90475 0C7.45903 0 6.28571 1.17332 6.28571 2.61903V4.19046H2.09525C0.937652 4.19046 0.0105089 5.12806 0.0105089 6.28571L0.00525446 10.2667H1.57143C3.1324 10.2667 4.4 11.5343 4.4 13.0953C4.4 14.6562 3.1324 15.9238 1.57143 15.9238H0.00525446L0 19.9047C0 21.0624 0.937603 22 2.09525 22H6.07622V20.4286C6.07622 18.8676 7.34383 17.6 8.90479 17.6C10.4658 17.6 11.7334 18.8676 11.7334 20.4286V22H15.7143C16.8719 22 17.8095 21.0624 17.8095 19.9047V15.7143H19.381C20.8267 15.7143 22 14.541 22 13.0953C22 11.6495 20.8267 10.4762 19.381 10.4762Z" />
+      </motion.svg>
+    </>
   );
-}
-
-export function OsiIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      // height="1em"
-      width="22"
-      height="22"
-      viewBox="0 0 512 512"
-    >
-      {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
-      <path d="M8 266.44C10.3 130.64 105.4 34 221.8 18.34c138.8-18.6 255.6 75.8 278 201.1 21.3 118.8-44 230-151.6 274-9.3 3.8-14.4 1.7-18-7.7q-26.7-69.45-53.4-139c-3.1-8.1-1-13.2 7-16.8 24.2-11 39.3-29.4 43.3-55.8a71.47 71.47 0 0 0-64.5-82.2c-39-3.4-71.8 23.7-77.5 59.7-5.2 33 11.1 63.7 41.9 77.7 9.6 4.4 11.5 8.6 7.8 18.4q-26.85 69.9-53.7 139.9c-2.6 6.9-8.3 9.3-15.5 6.5-52.6-20.3-101.4-61-130.8-119-24.9-49.2-25.2-87.7-26.8-108.7zm20.9-1.9c.4 6.6.6 14.3 1.3 22.1 6.3 71.9 49.6 143.5 131 183.1 3.2 1.5 4.4.8 5.6-2.3q22.35-58.65 45-117.3c1.3-3.3.6-4.8-2.4-6.7-31.6-19.9-47.3-48.5-45.6-86 1-21.6 9.3-40.5 23.8-56.3 30-32.7 77-39.8 115.5-17.6a91.64 91.64 0 0 1 45.2 90.4c-3.6 30.6-19.3 53.9-45.7 69.8-2.7 1.6-3.5 2.9-2.3 6q22.8 58.8 45.2 117.7c1.2 3.1 2.4 3.8 5.6 2.3 35.5-16.6 65.2-40.3 88.1-72 34.8-48.2 49.1-101.9 42.3-161-13.7-117.5-119.4-214.8-255.5-198-106.1 13-195.3 102.5-197.1 225.8z" />
-    </svg>
-  );
-}
+});
 
 export const PuzzleIcon2 = motion(function PuzzleIcon2({
   className,
   intent,
   animation = 'none',
-}: // puzzleFillVariants,
-{
+}: {
   className?: string;
   intent: any;
   animation?: any;
-  // puzzleFillVariants?: any;
 }) {
   return (
     <motion.svg
@@ -221,10 +211,10 @@ export const PuzzlePhat = motion(function PuzzlePhat({
 }) {
   return (
     <motion.div
-      // bg-white
-      className="relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff] tablet:[--backgroundColor-to:#0C3440]"
+      //
+      className="relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff]   tablet:[--backgroundColor-to:#0C3440] group-active:tablet:[--backgroundColor-to:#0a2b35b3]"
       variants={{
-        initial: { background: 'var(--backgroundColor-from)' },
+        initial: { backgroundColor: 'var(--backgroundColor-from)' },
         hover: { backgroundColor: 'var(--backgroundColor-to)' },
       }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}

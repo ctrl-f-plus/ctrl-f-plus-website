@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';
-import PuzzleIcon from '../components/icons/puzzle';
 import InfoCard from '../components/info-card';
 import { formatDate } from '../lib/utils';
 import Button from '../components/buttons/Button';
@@ -61,10 +60,7 @@ export default function BlogPage() {
                     CTRL+F.
                   </p>
                 </div>
-                <div
-                  // desktop:block
-                  className="hidden flex-col   justify-center desktop:flex"
-                >
+                <div className="hidden flex-col justify-center desktop:flex">
                   <DrawingIcon aria-hidden="true" />
                 </div>
               </div>
