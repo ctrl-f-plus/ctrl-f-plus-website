@@ -7,7 +7,7 @@ import benAvatar from '@/public/images/ben-avatar2.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar.png';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import ButtonPrimary from '../components/buttons/ButtonPrimary';
+import Button from '../components/buttons/Button';
 import Container from '../components/container';
 import CtrlLink from '../components/ctrl-link';
 import { FadeInStagger } from '../components/fade-in';
@@ -201,7 +201,7 @@ export default function About() {
             <div className=" flex w-full items-center justify-center overflow-hidden ">
               <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
                 <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
-                  <ButtonPrimary
+                  <Button
                     variant="solid"
                     size="thin"
                     icon="heartHandIcon"
@@ -213,7 +213,7 @@ export default function About() {
                   >
                     Become a Sponsor!
                     {/* Get In Touch! */}
-                  </ButtonPrimary>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function About() {
               codebase with your PRs...`}
             showAccents
           >
-            <ButtonPrimary
+            <Button
               // variant={'outline'}
               variant="outline"
               size="thin"
@@ -294,7 +294,7 @@ export default function About() {
               aTag
             >
               Star us on GitHub!
-            </ButtonPrimary>
+            </Button>
           </InfoCard>
         </FadeInStagger>
       </Container>

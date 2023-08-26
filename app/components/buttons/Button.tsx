@@ -118,7 +118,7 @@ interface ButtonProps {
   target: string;
 }
 
-function ButtonPrimary({
+function Button({
   variant,
   size,
   icon,
@@ -179,4 +179,4 @@ function ButtonPrimary({
   );
 }
 
-export default ButtonPrimary;
+export default Button;

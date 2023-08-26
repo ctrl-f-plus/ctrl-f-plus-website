@@ -1,7 +1,7 @@
 // app/components/Hero.tsx
 import 'server-only';
 
-import ButtonPrimary from './buttons/ButtonPrimary';
+import Button from './buttons/Button';
 
 import Container from './container';
 import { FadeIn } from './fade-in';
@@ -39,7 +39,7 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col gap-6 tab-pro:flex-row">
-              <ButtonPrimary
+              <Button
                 variant="solid"
                 size="thin"
                 icon="puzzle"
@@ -49,7 +49,7 @@ export default function Hero() {
                 aTag
               >
                 Add to Chrome for free
-              </ButtonPrimary>
+              </Button>
 
               <QuickView />
             </div>

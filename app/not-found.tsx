@@ -2,7 +2,7 @@ import 'server-only';
 import Container from './components/container';
 
 import { FadeIn } from './components/fade-in';
-import ButtonPrimary from './components/buttons/ButtonPrimary';
+import Button from './components/buttons/Button';
 
 export default function NotFoundPage() {
   return (
@@ -19,7 +19,7 @@ export default function NotFoundPage() {
             </p>
             <div className="mt-10 flex w-full items-center justify-center ">
               <div className="w-1/2">
-                <ButtonPrimary
+                <Button
                   variant="solid"
                   size="thin"
                   className={''}
@@ -28,7 +28,7 @@ export default function NotFoundPage() {
                   target={''}
                 >
                   Go back home
-                </ButtonPrimary>
+                </Button>
               </div>
             </div>
           </div>

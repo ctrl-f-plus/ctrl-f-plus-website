@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Container from './components/container';
 import { FadeIn } from './components/fade-in';
-import ButtonPrimary from './components/buttons/ButtonPrimary';
+import Button from './components/buttons/Button';
 
 type ErrorPageProps = {
   error: Error;
@@ -33,7 +33,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
             </p>
             <div className="mt-10 flex w-full items-center justify-center ">
               <div className="w-3/4">
-                <ButtonPrimary
+                <Button
                   variant="solid"
                   size="thin"
                   className={''}
@@ -43,7 +43,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
                   onClick={handleReset}
                 >
                   Try Again
-                </ButtonPrimary>
+                </Button>
               </div>
             </div>
           </div>

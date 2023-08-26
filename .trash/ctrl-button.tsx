@@ -13,7 +13,7 @@ import {
 } from '../app/components/icons/button-icons';
 import PuzzleIcon from '../app/components/icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
-import { ColorFill } from '../app/components/buttons/ButtonPrimary';
+import { ColorFill } from '../app/components/buttons/Button';
 
 const button = cva({
   base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',

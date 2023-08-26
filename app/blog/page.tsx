@@ -10,7 +10,7 @@ import DrawingIcon from '../components/icons/drawing-icon';
 import PuzzleIcon from '../components/icons/puzzle';
 import InfoCard from '../components/info-card';
 import { formatDate } from '../lib/utils';
-import ButtonPrimary from '../components/buttons/ButtonPrimary';
+import Button from '../components/buttons/Button';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -77,7 +77,7 @@ export default function BlogPage() {
                 showAccents
               >
                 {' '}
-                <ButtonPrimary
+                <Button
                   variant="solid"
                   size="thin"
                   icon="puzzle2"
@@ -86,7 +86,7 @@ export default function BlogPage() {
                   aTag
                 >
                   Get the Extension!
-                </ButtonPrimary>
+                </Button>
               </InfoCard>
             ) : (
               <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">

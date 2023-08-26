@@ -5,7 +5,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Fragment, useRef, useState } from 'react';
-import ButtonPrimary from './buttons/ButtonPrimary';
+import Button from './buttons/Button';
 
 function XMarkIcon({ className }: { className: string }) {
   return (
@@ -33,7 +33,7 @@ export default function QuickView() {
 
   return (
     <>
-      <ButtonPrimary
+      <Button
         variant="outline"
         size="thin"
         icon="play"
@@ -44,7 +44,7 @@ export default function QuickView() {
         className="cursor-pointer"
       >
         See how it works
-      </ButtonPrimary>
+      </Button>
 
       <Transition.Root show={isOpen} as={Fragment}>
         <Dialog

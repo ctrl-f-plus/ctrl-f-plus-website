@@ -5,7 +5,7 @@
 import Atropos from 'atropos/react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
-import ButtonPrimary from './buttons/ButtonPrimary';
+import Button from './buttons/Button';
 import '@/styles/ctrl-atropos.css';
 import Container from './container';
 import { FadeIn } from './fade-in';
@@ -66,7 +66,7 @@ function CtaColorAccents() {
 
 function CtaButtons() {
   return (
-    <ButtonPrimary
+    <Button
       variant={'solid'}
       size="phat"
       icon="puzzlePhat"
@@ -76,7 +76,7 @@ function CtaButtons() {
       aTag
     >
       Add to Chrome
-    </ButtonPrimary>
+    </Button>
   );
 }
 
