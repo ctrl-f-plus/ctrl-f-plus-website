@@ -1,6 +1,7 @@
 // app/temp/page.tsx
 // 'use client';
 
+import Link from 'next/link';
 import ButtonPhat from '../components/buttons/ButtonPhat';
 import ButtonPrimary from '../components/buttons/ButtonPrimary';
 import { Button } from '../components/buttons/button';
@@ -13,6 +14,9 @@ import Container from '../components/container';
 import { HeartHandIcon } from '../components/icons/button-icons';
 import PuzzleIcon from '../components/icons/puzzle';
 import PuzzleIcon2 from '../components/icons/puzzle2';
+import CtrlLink from '../components/ctrl-link';
+import CtrlLink2 from '../components/ctrl-link2';
+import { motion } from 'framer-motion';
 
 export default function page() {
   return (
@@ -22,6 +26,20 @@ export default function page() {
 
         <div className="bg-pin-200 flex flex-col items-center ">
           <div className="flex w-1/3 flex-col items-center gap-6 py-6">
+            {/* <CtrlLink2
+              className="rounded-full bg-red-500 px-4 py-2 font-bold text-white [--scale-from:100%] tab-pro:[--scale-to:80%]"
+              href=""
+              initial="default"
+              whileHover={'hover'}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              variants={{
+                default: { scale: 'var(--scale-from)' },
+                hover: { scale: 'var(--scale-to)' },
+              }}
+            >
+              test
+            </CtrlLink2> */}
+
             {/* <CtrlButton intent="dark" size="thic" icon={'puzzle2'}>
               &nbsp; Ctrl Button
             </CtrlButton>
@@ -37,18 +55,23 @@ export default function page() {
             <CtrlButton intent="solid" size="default" icon={'puzzle'}>
               Add to Chrome for free
             </CtrlButton> */}
+            {/* <button></button>
+            <Link href={''}></Link>
+            <CtrlLink></CtrlLink> */}
 
+            {/* <Link href={'/about'} className="h-full w-full bg-red-500"> */}
             <CtrlButton
               intent="solid"
               icon="heartHand"
-              className="mt-20"
+              className=""
               animation="basic"
               href={'/about'}
             >
               Become a Sponsor!
             </CtrlButton>
+            {/* </Link> */}
 
-            <CtrlButton
+            {/* <CtrlButton
               intent="solid"
               icon="heartHand"
               className="mt-20"
@@ -68,7 +91,7 @@ export default function page() {
               href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
             >
               Star Us on GitHub!
-            </CtrlButton>
+            </CtrlButton> */}
           </div>
         </div>
 

@@ -12,8 +12,6 @@ import PuzzleIcon from '../icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
 import MotionLink from './motion-link';
 import { LinkProps } from 'next/link';
-import CtrlLink from '../ctrl-link';
-import CtrlLink2 from '../ctrl-link2';
 
 const button = cva({
   base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden tab-pro:',
@@ -109,7 +107,7 @@ export default function CtrlButton({
 
   return (
     <>
-      <CtrlLink2
+      <MotionLink
         className={button({ intent, size, className, animation })}
         initial="default"
         whileHover={prefersReducedMotion ? 'default' : 'hover'}
@@ -120,7 +118,6 @@ export default function CtrlButton({
         }}
         href={href}
         target={target}
-        type={'link'}
         {...motionProps}
       >
         {icon && (
@@ -130,7 +127,7 @@ export default function CtrlButton({
           </>
         )}
         {children}
-      </CtrlLink2>
+      </MotionLink>
     </>
   );
 }
