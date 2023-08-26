@@ -14,23 +14,7 @@ import {
 } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 
-const baseStyles = {
-  // overflow-hidden
-  base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
-};
-
 const variantStyles = {
-  simple:
-    'bg-highlighter-900 rounded-[37px] w-full h-14 text-white hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 text-fs-md-bold ',
-
-  solid:
-    'rounded-[37px] bg-highlighter-900 text-white text-fs-md-bold h-14 w-full ',
-
-  outline:
-    'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 text-fs-md-bold h-14 w-full',
-
-  phat: 'inline-block inline-flex !px-5 w-[231px] text-fs-lg text-white justify-start rounded-full bg-highlighter-900 px-5 py-3',
-
   IconComponents: {
     puzzle: PuzzleIcon,
     puzzle2: PuzzleIcon2,
@@ -42,8 +26,6 @@ const variantStyles = {
 };
 
 const button = cva({
-  // base: 'relative flex w-full items-center justify-center gap-2 text-center ',
-  // overflow-hidden
   base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm  overflow-hidden',
 
   variants: {
