@@ -2,7 +2,6 @@
 'use client';
 
 import { cx, cva } from '@/cva.config';
-// import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import CtrlLink from '../ctrl-link';
 import {
@@ -26,7 +25,7 @@ const variantStyles = {
 };
 
 const button = cva({
-  base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm  overflow-hidden',
+  base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
 
   variants: {
     intent: {
@@ -38,7 +37,7 @@ const button = cva({
       simple: '',
     },
     size: {
-      thin: 'h-14 flex w-full items-center justify-center text-center  flex-row text-lg leading-6 font-semibold',
+      thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-lg leading-6 font-semibold',
       phat: 'inline-block inline-flex w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full bg-highlighter-900 px-5 py-4 ',
     },
     animation: {
@@ -66,7 +65,7 @@ const button = cva({
       intent: 'outline',
       animation: 'none',
       className:
-        'focus:outline-none hover:bg-highlighter-900/10  active:text-[#0a2b35]/70',
+        'focus:outline-none hover:bg-highlighter-900/10 active:text-[#0a2b35]/70',
     },
   ],
 });

@@ -4,16 +4,16 @@
 import { cva, type VariantProps } from 'cva';
 import { motion, useReducedMotion } from 'framer-motion';
 import { LinkProps } from 'next/link';
-import CtrlLink2, { CtrlLinkProps } from '../ctrl-link2';
+import CtrlLink2, { CtrlLinkProps } from './ctrl-link2';
 import {
   FilledStarIcon,
   HeartHandIcon,
   PlayIcon,
   StarIcon,
-} from '../icons/button-icons';
-import PuzzleIcon from '../icons/puzzle';
+} from '../app/components/icons/button-icons';
+import PuzzleIcon from '../app/components/icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
-import { ColorFill } from './ButtonPrimary';
+import { ColorFill } from '../app/components/buttons/ButtonPrimary';
 
 const button = cva({
   base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
