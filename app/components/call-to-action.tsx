@@ -130,7 +130,7 @@ export default function CallToAction() {
           >
             <div className="laptop:hidden">
               {/* bg-shark */}
-              <div className="relative isolate flex flex  h-[32.8125rem] items-center justify-center  overflow-hidden rounded-[2.25rem] px-[2.25rem] text-center shadow-xl">
+              <div className="relative isolate flex h-[32.8125rem]  items-center justify-center overflow-hidden  rounded-[2.25rem] bg-shark px-[2.25rem] text-center shadow-xl">
                 <div className="flex w-fit flex-col items-center justify-center gap-9">
                   <CtaColorAccents />
                   <CtaText />
