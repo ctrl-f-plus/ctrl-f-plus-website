@@ -30,7 +30,7 @@ function XMarkIcon({ className }: { className: string }) {
 export default function QuickView() {
   const playerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-  const initialRef = useRef(null);
+  const initialFocusRef = useRef(null);
 
   return (
     <>
@@ -52,7 +52,8 @@ export default function QuickView() {
           as="div"
           className="relative z-10"
           onClose={setIsOpen}
-          initialFocus={initialRef}
+          initialFocus={initialFocusRef}
+          // initialFocus={}
         >
           <div className="relative z-50 flex aspect-[3/2] w-full items-center ">
             <Transition.Child
@@ -79,7 +80,7 @@ export default function QuickView() {
                   leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
                 >
                   <Dialog.Panel className="relative flex transform flex-col transition">
-                    <div className="flex justify-end ">
+                    {/* <div className="flex justify-end ">
                       <button
                         onClick={() => setIsOpen(false)}
                         type="button"
@@ -92,11 +93,11 @@ export default function QuickView() {
                           aria-hidden="true"
                         />
                       </button>
-                    </div>
+                    </div> */}
                     <div className="mt-2 h-full w-full overflow-hidden">
                       <div className="relative flex aspect-video h-full w-full items-center justify-center">
                         <div className="flex h-full w-full ">
-                          <Image
+                          {/* <Image
                             ref={initialRef}
                             unoptimized={true}
                             src="https://i.imgur.com/rxhEz0S.gif"
@@ -108,7 +109,7 @@ export default function QuickView() {
                             height={853}
                             aria-hidden="true"
                             priority
-                          />
+                          /> */}
                           {/* <iframe src="https://www.youtube.com/..."></iframe> */}
                           {/* <iframe
                             width="560"
@@ -120,23 +121,41 @@ export default function QuickView() {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen
                           ></iframe> */}
-                          {/* <div
-                            className="flex h-[663px] w-[1179px] items-center justify-center overflow-hidden shadow-2xl shadow-blue-500"
+
+                          <div
+                            //  h-[663px] w-[1179px]
+                            className="relative flex h-auto w-screen flex-col items-center justify-center overflow-hidden shadow-2xl shadow-blue-500"
                           >
+                            <div className="mb-2 ml-2   flex w-[85%] flex-col items-end">
+                              <button
+                                onClick={() => setIsOpen(false)}
+                                type="button"
+                                id="close-layover-btn"
+                                className="z-50 inline-flex rounded-full p-[2px] text-white hover:bg-gray-500 focus:ring-2 focus:ring-bittersweet active:ring-2 active:ring-bittersweet"
+                              >
+                                <span className="sr-only">Dismiss</span>
+                                <XMarkIcon
+                                  className="h-[20px] w-[20px] active:text-bittersweet"
+                                  aria-hidden="true"
+                                />
+                              </button>
+                            </div>
+                            <span className="hidden" />
                             <ReactPlayer
                               ref={playerRef}
                               url="https://www.youtube.com/embed/2uBnJsjbHdo?si=xyHg5VTPP4cFOHDT"
-                              // playing
                               controls
-                              className=" aspect-video w-3/4"
+                              className="aspect-video h-full w-full"
                               width="85%"
                               height="auto"
+                              // tabIndex={-1}
+
                               // frameborder="0"
 
                               // width="1179"
                               // height="663"
                             />
-                          </div> */}
+                          </div>
                         </div>
                       </div>
                     </div>
