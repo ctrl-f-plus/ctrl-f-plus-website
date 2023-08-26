@@ -2,7 +2,7 @@
 import 'server-only';
 
 import ButtonPrimary from './buttons/ButtonPrimary';
-import ButtonMobile from './buttons/button-mobile';
+
 import Container from './container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
@@ -37,7 +37,8 @@ export default function Hero() {
                 obsessing over.
               </p>
             </div>
-            <div className="hidden flex-col gap-6 tablet:flex tab-pro:flex-row">
+
+            <div className="flex flex-col gap-6 tab-pro:flex-row">
               <ButtonPrimary
                 variant="solid"
                 href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
@@ -46,19 +47,6 @@ export default function Hero() {
               >
                 Add to Chrome for free
               </ButtonPrimary>
-
-              <QuickView />
-            </div>
-
-            <div className="flex flex-col gap-6 tablet:hidden tab-pro:flex-row">
-              <ButtonMobile
-                variant="solid"
-                href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
-                target={'_blank'}
-                aTag
-              >
-                Add to Chrome for free
-              </ButtonMobile>
 
               <QuickView />
             </div>

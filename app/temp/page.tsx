@@ -4,12 +4,13 @@
 import ButtonPhat from '../components/buttons/ButtonPhat';
 import ButtonPrimary from '../components/buttons/ButtonPrimary';
 import { Button } from '../components/buttons/button';
-import ButtonMobile from '../components/buttons/button-mobile';
-import ButtonPhatMobile from '../components/buttons/button-phat-mobile';
+
+// import ButtonPhatMobile from '../components/buttons/button-phat-mobile';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import CtrlButton from '../components/buttons/ctrl-button';
 import FramerButton from '../components/buttons/framer-button';
 import Container from '../components/container';
+import QuickView from '../components/quick-view';
 
 export default function page() {
   return (
@@ -53,7 +54,7 @@ export default function page() {
             <CtrlLink></CtrlLink> */}
 
             {/* <Link href={'/about'} className="h-full w-full bg-red-500"> */}
-            <CtrlButton
+            {/* <CtrlButton
               intent="solid"
               icon="heartHand"
               className=""
@@ -62,18 +63,19 @@ export default function page() {
               componentType="anchor"
             >
               Become a Sponsor!
-            </CtrlButton>
-
+            </CtrlButton> */}
+            {/*
             <CtrlButton
-              intent="solid"
-              icon="puzzle"
+              intent="outline"
+              icon="play"
               className=""
-              animation="simple"
-              href={'/about'}
-              componentType="anchor"
+              animation="slice"
+              // href={'/about'}
+              componentType="button"
             >
-              Add To Chrome
-            </CtrlButton>
+              See how it works
+            </CtrlButton> */}
+            <QuickView />
             {/* </Link> */}
 
             {/* <CtrlButton
@@ -110,16 +112,8 @@ export default function page() {
             >
               Add to Chrome for free
             </ButtonPrimary>
-            <ButtonMobile
-              variant={'outline'}
-              aTag={false}
-              target={''}
-              href="/temp"
-            >
-              ButtonMobile
-            </ButtonMobile>
 
-            <ButtonPhatMobile />
+            {/* <ButtonPhatMobile /> */}
 
             <ButtonPrimaryCopy
               variant={'outline'}

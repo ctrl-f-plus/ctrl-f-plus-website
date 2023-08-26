@@ -1,11 +1,16 @@
 // app/components/icons/play.tsx
+'use client';
+import clsx from 'clsx';
 import { cva, type VariantProps } from 'cva';
+import { motion } from 'framer-motion';
 
 const icon = cva({
-  base: 'bg-blue-500',
+  base: 'fill-highlighter-900',
+  // base: 'fill-highlighter-900',
   variants: {
     intent: {
-      circle: 'bg-red-500',
+      outline: 'fill-highlighter-900',
+      circle: 'fill-red-500',
     },
   },
 });
@@ -24,8 +29,7 @@ export function PlayIcon({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       // className={className}
-      //className="fill-highlighter-900 tablet:group-active:fill-[#0a2b35]/70"
-      // 'fill-highlighter-900 tablet:group-active:fill-[#0a2b35]/70'
+      // className="fill-highlighter-900 tablet:group-active:fill-[#0a2b35]/70"
       className={icon({ intent })}
     >
       <path d="M16.6275 8.2775L3.75 0.8375C3.3819 0.619715 2.96269 0.50327 2.535 0.5C1.86268 0.5 1.21789 0.76708 0.742485 1.24248C0.26708 1.71789 0 2.36268 0 3.035V19.0025C8.55053e-05 19.4487 0.119686 19.8867 0.346367 20.2709C0.573047 20.6552 0.898531 20.9718 1.28898 21.1877C1.67942 21.4035 2.12057 21.5109 2.56656 21.4986C3.01255 21.4862 3.44709 21.3546 3.825 21.1175L16.7175 12.9725C17.1184 12.7216 17.4474 12.3712 17.6726 11.9553C17.8977 11.5394 18.0113 11.0723 18.0022 10.5995C17.9932 10.1267 17.8618 9.66428 17.6208 9.25735C17.3799 8.85042 17.0377 8.51283 16.6275 8.2775Z" />
@@ -115,5 +119,85 @@ export function OsiIcon({ className }: { className?: string }) {
       {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
       <path d="M8 266.44C10.3 130.64 105.4 34 221.8 18.34c138.8-18.6 255.6 75.8 278 201.1 21.3 118.8-44 230-151.6 274-9.3 3.8-14.4 1.7-18-7.7q-26.7-69.45-53.4-139c-3.1-8.1-1-13.2 7-16.8 24.2-11 39.3-29.4 43.3-55.8a71.47 71.47 0 0 0-64.5-82.2c-39-3.4-71.8 23.7-77.5 59.7-5.2 33 11.1 63.7 41.9 77.7 9.6 4.4 11.5 8.6 7.8 18.4q-26.85 69.9-53.7 139.9c-2.6 6.9-8.3 9.3-15.5 6.5-52.6-20.3-101.4-61-130.8-119-24.9-49.2-25.2-87.7-26.8-108.7zm20.9-1.9c.4 6.6.6 14.3 1.3 22.1 6.3 71.9 49.6 143.5 131 183.1 3.2 1.5 4.4.8 5.6-2.3q22.35-58.65 45-117.3c1.3-3.3.6-4.8-2.4-6.7-31.6-19.9-47.3-48.5-45.6-86 1-21.6 9.3-40.5 23.8-56.3 30-32.7 77-39.8 115.5-17.6a91.64 91.64 0 0 1 45.2 90.4c-3.6 30.6-19.3 53.9-45.7 69.8-2.7 1.6-3.5 2.9-2.3 6q22.8 58.8 45.2 117.7c1.2 3.1 2.4 3.8 5.6 2.3 35.5-16.6 65.2-40.3 88.1-72 34.8-48.2 49.1-101.9 42.3-161-13.7-117.5-119.4-214.8-255.5-198-106.1 13-195.3 102.5-197.1 225.8z" />
     </svg>
+  );
+}
+
+export default function PuzzleIcon2({
+  className,
+}: // puzzleFillVariants,
+{
+  className?: string;
+  // puzzleFillVariants?: any;
+}) {
+  const puzzleFillVariants = {
+    hover: { fill: '#48D0A8' },
+  };
+
+  return (
+    <motion.svg
+      width="23"
+      height="22"
+      viewBox="0 0 23 22"
+      // fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      // variants={puzzleFillVariants}
+      initial="initial"
+      variants={{
+        initial: { fill: 'var(--fill-from)' },
+        hover: { fill: 'var(--fill-to)' },
+      }}
+      // initial={{ fill: '#0C3440' }}
+      className={clsx(
+        'tablet:[--fill-from:#0C3440] tablet:[--fill-to:#48D0A8]',
+        className
+      )}
+    >
+      <g id="extension 1" clipPath="url(#clip0_238_1292)">
+        <g id="Group">
+          <g id="Group_2_1">
+            <path
+              id="Vector"
+              d="M19.881 10.4762H18.3095V6.28571C18.3095 5.12811 17.3719 4.19046 16.2143 4.19046H12.0238V2.61903C12.0238 1.17332 10.8505 0 9.40474 0C7.95903 0 6.78571 1.17332 6.78571 2.61903V4.19046H2.59525C1.43765 4.19046 0.510509 5.12806 0.510509 6.28571L0.505254 10.2667H2.07143C3.6324 10.2667 4.9 11.5343 4.9 13.0953C4.9 14.6562 3.6324 15.9238 2.07143 15.9238H0.505254L0.5 19.9047C0.5 21.0624 1.4376 22 2.59525 22H6.57622V20.4286C6.57622 18.8676 7.84383 17.6 9.40479 17.6C10.9658 17.6 12.2334 18.8676 12.2334 20.4286V22H16.2143C17.3719 22 18.3095 21.0624 18.3095 19.9047V15.7143H19.881C21.3267 15.7143 22.5 14.541 22.5 13.0953C22.5 11.6495 21.3267 10.4762 19.881 10.4762Z"
+            />
+          </g>
+        </g>
+      </g>
+      <defs>
+        <clipPath id="clip0_238_1292">
+          <rect
+            width="22"
+            height="22"
+            // fill="white"
+            transform="translate(0.5)"
+          />
+        </clipPath>
+      </defs>
+    </motion.svg>
+  );
+}
+
+export function PuzzlePhat({ className }: { className?: string }) {
+  return (
+    <motion.div
+      // bg-white
+      className="relative flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#0C3440]"
+      initial="initial"
+      variants={{
+        initial: { backgroundColor: 'var(--backgroundColor-from), #ffffff' },
+        hover: { backgroundColor: 'var(--backgroundColor-to)' },
+      }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+    >
+      <motion.span
+        transition={{ type: 'spring', bounce: 0.6 }}
+        className="tablet:[--rotate-from:0deg]  tablet:[--rotate-to:-90deg] "
+        variants={{
+          initial: { rotate: 'var(--rotate-from)' },
+          hover: { rotate: 'var(--rotate-to)' },
+        }}
+      >
+        <PuzzleIcon2 />
+      </motion.span>
+    </motion.div>
   );
 }

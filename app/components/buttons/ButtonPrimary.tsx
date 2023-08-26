@@ -4,13 +4,15 @@
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { PlayIcon } from '../icons/button-icons';
+import { PlayIcon, PuzzlePhat } from '../icons/button-icons';
 import PuzzleIcon from '../icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
 import { ButtonHTMLAttributes } from 'react';
 import CtrlLink from '../ctrl-link';
+import { cva } from '@/cva.config';
 
 const baseStyles = {
+  // overflow-hidden
   base: 'flex justify-center items-center py-2 font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
 };
 
@@ -29,110 +31,38 @@ const variantStyles = {
   IconComponents: {
     solid: PuzzleIcon,
     outline: PlayIcon,
-    phat: PuzzleIcon2,
+    phat: PuzzlePhat,
   },
 };
 
-function ButtonThin({ children, variant }: any) {
-  //@ts-ignore
-  const IconComponent = variantStyles.IconComponents[variant];
-  const textVariants = {
-    initial: { color: '#ffffff' },
-    hover: { color: '#0C3440' },
-  };
-
-  return (
-    <>
-      <motion.div className="relative flex w-full items-center justify-center gap-2 text-center">
-        {IconComponent && (
-          <IconComponent className={'group-active:!fill-[#0a2b35]/70'} />
-        )}
-        <motion.span
-          className="group-active:!text-[#0a2b35]/70"
-          transition={{ duration: 0.5, ease: 'linear' }}
-          variants={textVariants}
-        >
-          {children}
-        </motion.span>
-      </motion.div>
-    </>
-  );
-}
-
-function ButtonPhat({ children, variant }: any) {
-  //@ts-ignore
-  const IconComponent = variantStyles.IconComponents[variant];
-  const textVariants = {
-    initial: { color: '#ffffff' },
-    hover: { color: '#0C3440' },
-  };
-
-  const puzzleVariants = {
-    initial: { rotate: '0deg' },
-    hover: { rotate: '-90deg' },
-  };
-
-  const puzzleBgVariants = {
-    initial: { backgroundColor: '#ffffff' },
-    hover: { backgroundColor: '#0C3440' },
-  };
-  return (
-    <>
-      <motion.div
-        variants={textVariants}
-        className="relative flex w-full items-center  gap-4  text-center"
-      >
-        <motion.div
-          className="relative flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem]"
-          variants={puzzleBgVariants}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
-        >
-          <motion.span
-            transition={{ type: 'spring', bounce: 0.6 }}
-            variants={puzzleVariants}
-          >
-            {IconComponent && <IconComponent />}
-          </motion.span>
-        </motion.div>
-
-        <motion.span
-          className="group-active:!text-[#0a2b35]/70"
-          transition={{ duration: 0.5, ease: 'linear' }}
-        >
-          {children}
-        </motion.span>
-      </motion.div>
-    </>
-  );
-}
+const button = cva({
+  // base: 'relative flex w-full items-center justify-center gap-2 text-center ',
+  variants: {
+    intent: {
+      solid: '[--color-from:#ffffff] tablet:[--color-to:#0C3440]',
+      outline: 'color-[#0C3440]',
+      phat: '',
+      simple: '',
+    },
+    size: {
+      thin: 'relative flex w-full items-center justify-center gap-2 text-center',
+      phat: 'relative flex w-full items-center gap-4 text-center',
+    },
+  },
+});
 
 function ColorFill() {
-  const backgroundVariants = {
-    hover: { translateX: '0%' },
-  };
-
   return (
     <>
       <motion.span
-        className="pointer-events-none absolute -left-18 -top-48 hidden h-[700px] w-[650px] bg-highlighter-focus-400 tablet:block tab-pro:hidden"
-        initial={{ rotate: -68.566, translateX: '-110%' }}
-        variants={backgroundVariants}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-        aria-hidden="true"
-      />
-
-      <motion.span
-        className="pointer-events-none absolute -left-12 -top-30 hidden h-[375px] w-96 bg-highlighter-focus-400 tab-pro:block laptop:hidden"
-        initial={{ rotate: -68.566, translateX: '-100%' }}
-        variants={backgroundVariants}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-        aria-hidden="true"
-      />
-
-      <motion.span
-        className="pointer-events-none absolute -left-10 -top-16 hidden h-72 w-80 bg-highlighter-focus-400 laptop:block"
-        initial={{ rotate: -68.566, translateX: '-100%' }}
-        variants={backgroundVariants}
+        className="pointer-events-none absolute  bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80"
+        variants={{
+          initial: {
+            rotate: 'var(--rotate-from)',
+            x: 'var(--x-from)',
+          },
+          hover: { x: 'var(--x-to)' },
+        }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
         aria-hidden="true"
       />
@@ -140,7 +70,6 @@ function ColorFill() {
   );
 }
 
-// interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 interface ButtonProps {
   variant: 'solid' | 'outline' | 'simple' | 'phat';
   children: React.ReactNode;
@@ -162,13 +91,18 @@ function ButtonPrimary({
   ...props
 }: ButtonProps) {
   className = clsx(baseStyles['base'], variantStyles[variant], className);
+  const intent = variant;
+  const size = variant === 'phat' ? 'phat' : 'thin';
+
+  //@ts-ignore
+  const IconComponent = variantStyles.IconComponents[variant];
 
   // if (aTag) {
   return (
     <>
       <CtrlLink
         href={href}
-        className=" h-full w-full rounded-[37px]"
+        className="h-full w-full rounded-[37px]"
         onClick={onClick}
         target={target}
         aTag
@@ -176,17 +110,28 @@ function ButtonPrimary({
       >
         <motion.div
           whileHover="hover"
+          initial="initial"
           whileTap={{ scale: 0.93 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           className={className}
         >
           <ColorFill aria-hidden="true" />
 
-          {variant !== 'phat' ? (
-            <ButtonThin variant={variant}>{children}</ButtonThin>
-          ) : (
-            <ButtonPhat variant={variant}>{children}</ButtonPhat>
-          )}
+          <motion.div className={button({ intent, size })}>
+            {IconComponent && (
+              <IconComponent className={'group-active:!fill-[#0a2b35]/70'} />
+            )}
+            <motion.span
+              className="group-active:!text-[#0a2b35]/70"
+              transition={{ duration: 0.5, ease: 'linear' }}
+              variants={{
+                initial: { color: 'var(--color-from)' },
+                hover: { color: 'var(--color-to)' },
+              }}
+            >
+              {children}
+            </motion.span>
+          </motion.div>
         </motion.div>
       </CtrlLink>
     </>

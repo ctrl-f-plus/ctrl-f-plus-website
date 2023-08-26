@@ -6,7 +6,7 @@ import Atropos from 'atropos/react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import ButtonPrimary from './buttons/ButtonPrimary';
-import ButtonPhatMobile from './buttons/button-phat-mobile';
+// import ButtonPhatMobile from './buttons/button-phat-mobile';
 import Container from './container';
 import { FadeIn } from './fade-in';
 import '@/styles/ctrl-atropos.css';
@@ -67,45 +67,21 @@ function CtaColorAccents() {
 
 function CtaButtons() {
   return (
-    <>
-      <div className="laptop:hidden">
-        <ButtonPhatMobile />
-      </div>
-
-      <div className="hidden laptop:block">
-        {/* <div> */}{' '}
-        <ButtonPrimary
-          variant={'phat'}
-          href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
-          target={'_blank'}
-          aTag
-        >
-          Add to Chrome
-        </ButtonPrimary>
-      </div>
-    </>
+    <ButtonPrimary
+      variant={'phat'}
+      href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
+      target={'_blank'}
+      aTag
+    >
+      Add to Chrome
+    </ButtonPrimary>
   );
 }
 
 function CtaText() {
   return (
     <>
-      {/* <p className="font-inter text-fs-base text-white">
-        <span className="[text-wrap:balance]">
-          Tabs out of control? Nah, they&apos;re just misunderstood.
-        </span>
-      </p> */}
-      {/* <span className="[text-wrap:balance]">
-          Tabs feel out of control? They&apos;re just misunderstood.
-        </span> */}
-      {/* <span className="[text-wrap:balance]">
-          The only thing better than a dozen tabs is a couple dozen more
-        </span> */}
-
-      <h2
-        // [text-wrap:balance]
-        className="max-w-[26.75rem] font-inter text-fs-x0 text-white  tablet:max-w-[25.8125rem] tab-pro:text-fs-xl laptop:max-w-3xl "
-      >
+      <h2 className="max-w-[26.75rem] font-inter text-fs-x0 text-white  tablet:max-w-[25.8125rem] tab-pro:text-fs-xl laptop:max-w-3xl ">
         Take your tab hoarding to the next level.
       </h2>
 
