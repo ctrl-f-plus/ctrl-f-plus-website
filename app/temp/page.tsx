@@ -8,7 +8,7 @@ import { Button } from '../components/temp-components/button';
 // import ButtonPhatMobile from '../components/buttons/button-phat-mobile';
 import ButtonPrimaryCopy from '../components/buttons/button-primary-copy';
 import CtrlButton from '../components/buttons/ctrl-button';
-import FramerButton from '../components/buttons/framer-button';
+import FramerButton from '../components/temp-components/framer-button';
 import Container from '../components/container';
 import QuickView from '../components/quick-view';
 
