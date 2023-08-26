@@ -17,7 +17,7 @@ export default function PuzzleIcon({ className }: { className?: string }) {
         xmlns="http://www.w3.org/2000/svg"
         // variants={puzzleFillVariants}
         className={clsx(
-          'tablet:[--fill-from:#ffffff] tablet:[--fill-to:#0C3440]',
+          '[--fill-from:#ffffff] [--fill-to:#ffffff] tablet:[--fill-to:#0C3440]',
           className
         )}
         variants={{
