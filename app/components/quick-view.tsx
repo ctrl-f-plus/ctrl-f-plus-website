@@ -110,23 +110,9 @@ export default function QuickView() {
                             aria-hidden="true"
                             priority
                           /> */}
-                          {/* <iframe src="https://www.youtube.com/..."></iframe> */}
-                          {/* <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/2uBnJsjbHdo?si=xyHg5VTPP4cFOHDT"
-                            title="YouTube video player"
-                            frameborder="0"
-                            className=" aspect-video w-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                          ></iframe> */}
 
-                          <div
-                            //  h-[663px] w-[1179px]
-                            className="relative flex h-auto w-screen flex-col items-center justify-center overflow-hidden shadow-2xl shadow-blue-500"
-                          >
-                            <div className="mb-2 ml-2   flex w-[85%] flex-col items-end">
+                          <div className="relative flex  w-screen max-w-screen-xl flex-col items-center justify-center">
+                            <div className="mb-2 ml-2 flex w-[85%]  flex-col items-end pt-2">
                               <button
                                 onClick={() => setIsOpen(false)}
                                 type="button"
@@ -148,12 +134,6 @@ export default function QuickView() {
                               className="aspect-video h-full w-full"
                               width="85%"
                               height="auto"
-                              // tabIndex={-1}
-
-                              // frameborder="0"
-
-                              // width="1179"
-                              // height="663"
                             />
                           </div>
                         </div>
