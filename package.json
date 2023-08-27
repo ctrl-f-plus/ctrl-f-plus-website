@@ -33,7 +33,7 @@
     "date-fns": "^2.30.0",
     "esbuild": "0.18.x",
     "framer-motion": "^10.12.18",
-    "next": "13.4.8",
+    "next": "13.4.19",
     "next-contentlayer": "^0.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
