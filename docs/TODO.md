@@ -8,7 +8,10 @@ The items on this list are low priority and may not need to be done at all:
       - [ ] Fonts Section:
       - [ ] Screen Sizes
   - [ ] Links saved as constants
-  - [ ] Review the usage of `Ctrl + F`, `CTRL F`, `Ctrl-F` in the text copy on the about and blog pages for consistency and styling.
+  - [ ] Review the usage of `Ctrl + F`, `CTRL F`, `Ctrl-F` in the text copy on the about and blog pages for consistency and styling
+  - [ ] Look into converting parts of the app to CSS to improve perfomance
+  - [ ] Add copy button to code blocks
+  - [ ] Review top padding on layout/body content card
   - [ ] Convert the Features Header and Feature Cards into Server components so that they the animation code is moved into client components.
     - [ ] Add Google Analytics
     - [ ] Review and update Metadata throughout app
