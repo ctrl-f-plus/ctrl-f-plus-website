@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/blog/page.tsx
 import 'server-only';
 

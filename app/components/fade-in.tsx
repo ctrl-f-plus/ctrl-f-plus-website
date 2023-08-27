@@ -2,7 +2,7 @@
 
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion';
 import { createContext, useContext } from 'react';
 
 const FadeInStaggerContext = createContext(false);
@@ -20,7 +20,7 @@ export function FadeIn({
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 
   return (
-    <motion.div
+    <m.div
       className={className}
       variants={{
         hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 24 },
@@ -37,7 +37,7 @@ export function FadeIn({
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -51,17 +51,19 @@ export function FadeInStagger({
   props?: any;
 }) {
   return (
-    <FadeInStaggerContext.Provider value={true}>
-      <motion.div
-        className={className}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.2, when: 'beforeChildren' }}
-        {...props}
-      >
-        {children}
-      </motion.div>
-    </FadeInStaggerContext.Provider>
+    <LazyMotion features={domAnimation}>
+      <FadeInStaggerContext.Provider value={true}>
+        <m.div
+          className={className}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2, when: 'beforeChildren' }}
+          {...props}
+        >
+          {children}
+        </m.div>
+      </FadeInStaggerContext.Provider>
+    </LazyMotion>
   );
 }

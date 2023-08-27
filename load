@@ -1,0 +1,113 @@
+ctrl-f-plus-website git:(master) ✗ ANALYZE=true ppm run build
+
+> ctrl-f-plus-chrome-extension-website@0.1.0 build /home/benchavez/Code (Ubuntu VM)/Projects/ctrl-f-plus/ctrl-f-plus-website
+> next build
+
+- info Loaded env from /home/benchavez/Code (Ubuntu VM)/Projects/ctrl-f-plus/ctrl-f-plus-website/.env.local
+Warning: Found 1 problems in 5 documents.
+
+ └── Couldn't determine the document type for 1 documents. (Skipping documents)
+
+     Please either define a filePathPattern for the given document type definition or provide a valid value for the type field (i.e. the field "type" needs to be one of the following document type names: Blog, Documentation).
+
+     • privacy/privacy-policy.mdx
+
+
+Generated 4 documents in .contentlayer
+Warning: For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.
+Read more: https://nextjs.org/docs/messages/sharp-missing-in-production
+Webpack Bundle Analyzer saved report to /home/benchavez/Code (Ubuntu VM)/Projects/ctrl-f-plus/ctrl-f-plus-website/.next/analyze/nodejs.html
+
+No bundles were parsed. Analyzer will show only original module sizes from stats file.
+
+Webpack Bundle Analyzer saved report to /home/benchavez/Code (Ubuntu VM)/Projects/ctrl-f-plus/ctrl-f-plus-website/.next/analyze/edge.html
+Webpack Bundle Analyzer saved report to /home/benchavez/Code (Ubuntu VM)/Projects/ctrl-f-plus/ctrl-f-plus-website/.next/analyze/client.html
+- info Creating an optimized production build
+- info Compiled successfully
+- info Linting and checking validity of types
+- info Collecting page data
+- info Generating static pages (12/12)
+- info Finalizing page optimization
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      46.2 kB         188 kB
+├ ○ /_not-found                            0 B                0 B
+├ ○ /about                                 4.2 kB          136 kB
+├ ○ /blog                                  3.64 kB         131 kB
+├ λ /blog/[slug]                           731 B           129 kB
+├ ○ /highlight-animation                   565 B          84.8 kB
+├ ○ /opengraph-image.png                   0 B                0 B
+├ ○ /privacy                               534 B           123 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /setup                                 534 B           123 kB
+└ ○ /sitemap.xml                           0 B                0 B
++ First Load JS shared by all              78.6 kB
+  ├ chunks/415-3a6014127b234f02.js         26.1 kB
+  ├ chunks/5bed4269-7ceca354ac57aa48.js    50.5 kB
+  ├ chunks/main-app-f0fb1ddea56cbd94.js    218 B
+  └ chunks/webpack-022b26349c770b67.js     1.79 kB
+
+Route (pages)                              Size     First Load JS
++ First Load JS shared by all              76.5 kB
+  ├ chunks/framework-510ec8ffd65e1d01.js   45.1 kB
+  ├ chunks/main-6ede4ca1a83823b8.js        29.4 kB
+  ├ chunks/pages/_app-c2d9d4def48d416f.js  195 B
+  └ chunks/webpack-022b26349c770b67.js     1.79 kB
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+➜  ctrl-f-plus-website git:(master) ✗
+
+
+/////////////////////////////////
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      46.3 kB         191 kB
+├ ○ /_not-found                            0 B                0 B
+├ ○ /about                                 4.23 kB         139 kB
+├ ○ /blog                                  3.67 kB         133 kB
+├ λ /blog/[slug]                           762 B           120 kB
+├ ○ /highlight-animation                   565 B          84.8 kB
+├ ○ /opengraph-image.png                   0 B                0 B
+├ ○ /privacy                               567 B           114 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /setup                                 566 B           114 kB
+└ ○ /sitemap.xml                           0 B                0 B
++ First Load JS shared by all              78.6 kB
+  ├ chunks/415-3a6014127b234f02.js         26.1 kB
+  ├ chunks/5bed4269-7ceca354ac57aa48.js    50.5 kB
+  ├ chunks/main-app-d3442ba486a4ba44.js    219 B
+  └ chunks/webpack-022b26349c770b67.js     1.79 kB
+
+Route (pages)                              Size     First Load JS
++ First Load JS shared by all              76.5 kB
+  ├ chunks/framework-510ec8ffd65e1d01.js   45.1 kB
+➜  ctrl-f-plus-website git:(master) ✗ ppm dev
+
+
+//////////////////////////////////////////////////////
+Route (app)                                Size     First Load JS
+┌ ○ /                                      46.2 kB         178 kB
+├ ○ /_not-found                            0 B                0 B
+├ ○ /about                                 4.23 kB         125 kB
+├ ○ /blog                                  3.67 kB         120 kB
+├ λ /blog/[slug]                           761 B           118 kB
+├ ○ /highlight-animation                   565 B          84.8 kB
+├ ○ /opengraph-image.png                   0 B                0 B
+├ ○ /privacy                               567 B           113 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /setup                                 567 B           113 kB
+└ ○ /sitemap.xml                           0 B                0 B
++ First Load JS shared by all              78.6 kB
+  ├ chunks/415-858ca3934ae72ab0.js         26.1 kB
+  ├ chunks/5bed4269-73ca0275a13281ac.js    50.5 kB
+  ├ chunks/main-app-d3442ba486a4ba44.js    219 B
+  └ chunks/webpack-46e299a3ac7ed4a6.js     1.79 kB
+
+Route (pages)                              Size     First Load JS
++ First Load JS shared by all              76.5 kB
+  ├ chunks/framework-510ec8ffd65e1d01.js   45.1 kB
+  ├ chunks/main-6ede4ca1a83823b8.js        29.4 kB
+  ├ chunks/pages/_app-8a2599b4792795b9.js  195 B
+  └ chunks/webpack-46e299a3ac7ed4a6.js     1.79 kB

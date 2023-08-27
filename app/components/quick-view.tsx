@@ -2,12 +2,10 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { Fragment, useRef, useState } from 'react';
-import Button from './buttons/Button';
 import ReactPlayer from 'react-player';
 import Loading from '../loading';
+import Button from './buttons/Button';
 
 function XMarkIcon({ className }: { className: string }) {
   return (
@@ -28,11 +26,9 @@ function XMarkIcon({ className }: { className: string }) {
   );
 }
 
-// export default function QuickView({ children }: { children: React.ReactNode }) {
-const QuickView: React.FC = () => {
+export default function QuickView() {
   const playerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-  const initialFocusRef = useRef(null);
 
   return (
     <>
@@ -50,13 +46,7 @@ const QuickView: React.FC = () => {
       </Button>
 
       <Transition.Root show={isOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="relative z-10"
-          onClose={setIsOpen}
-          initialFocus={initialFocusRef}
-          // initialFocus={}
-        >
+        <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
           <div className="relative z-50 flex aspect-[3/2] w-full items-center ">
             <Transition.Child
               as={Fragment}
@@ -82,37 +72,9 @@ const QuickView: React.FC = () => {
                   leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
                 >
                   <Dialog.Panel className="relative flex transform flex-col transition">
-                    {/* <div className="flex justify-end ">
-                      <button
-                        onClick={() => setIsOpen(false)}
-                        type="button"
-                        id="close-layover-btn"
-                        className="z-50 inline-flex rounded-full p-[2px] text-white hover:bg-gray-500 focus:ring-2 focus:ring-bittersweet active:ring-2 active:ring-bittersweet"
-                      >
-                        <span className="sr-only">Dismiss</span>
-                        <XMarkIcon
-                          className="h-[20px] w-[20px] active:text-bittersweet"
-                          aria-hidden="true"
-                        />
-                      </button>
-                    </div> */}
                     <div className="mt-2 h-full w-full overflow-hidden">
                       <div className="relative flex aspect-video h-full w-full items-center justify-center">
                         <div className="flex h-full w-full ">
-                          {/* <Image
-                            ref={initialRef}
-                            unoptimized={true}
-                            src="https://i.imgur.com/rxhEz0S.gif"
-                            alt="Demonstration Video"
-                            // width="1122"
-                            // height="631"
-                            className="aspect-video"
-                            width={1280}
-                            height={853}
-                            aria-hidden="true"
-                            priority
-                          /> */}
-
                           <div className="relative flex  w-screen max-w-screen-xl flex-col items-center justify-center">
                             <div className="mb-2 ml-2 flex w-[85%]  flex-col items-end pt-2">
                               <button
@@ -152,28 +114,4 @@ const QuickView: React.FC = () => {
       </Transition.Root>
     </>
   );
-};
-
-export default QuickView;
-
-{
-  /* <div
-                    // className="flex items-center overflow-hidden shadow-2xl"
-                    // style={{ width: '80vw', height: '80vh' }}
-                    // className="flex h-full w-full items-center overflow-hidden shadow-2xl"
-                    className="flex h-[663px] w-[1179px] items-center overflow-hidden shadow-2xl"
-                  >
-                    <ReactPlayer
-                      ref={playerRef}
-                      url="https://www.youtube.com/embed/RssoEj2mci0"
-                      playing
-                      controls
-                      className="aspect-video "
-                      width="100%"
-                      height="100%"
-
-                      // width="1179"
-                      // height="663"
-                    />
-                  </div> */
 }

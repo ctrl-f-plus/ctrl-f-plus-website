@@ -1,9 +1,7 @@
 // app/about/page.tsx
 import 'server-only';
-// 'use client';
 
-import benAvatar from '@/public/images/ben-avatar2.png';
-// import ighodaloAvatar from '@/public/images/ighodalo-avatar-imoge.png';
+import benAvatar from '@/public/images/ben-avatar.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar.png';
 import { Metadata } from 'next';
 import Image from 'next/image';

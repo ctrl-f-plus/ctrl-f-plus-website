@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 import { FadeIn } from './fade-in';
-import { ColorAccents } from './temp-components/color-accents';
+import { ColorAccents } from './color-accents';
 
 interface InfoCardProps {
   title?: string;

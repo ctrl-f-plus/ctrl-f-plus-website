@@ -3,7 +3,9 @@
 
 import clsx from 'clsx';
 import {
-  motion,
+  LazyMotion,
+  domAnimation,
+  m,
   useMotionTemplate,
   useReducedMotion,
   useSpring,
@@ -38,10 +40,6 @@ function CardText({
           !prefersReducedMotion &&
             'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2'
         )}
-        // className={clsx(
-        //   'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-[#0021CD] via-gradient-cyan to-[#8CFFFF] bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
-        //   wideTextColor
-        // )}
       >
         Your Guiding Light in the Tab Chaos
       </h3>
@@ -49,13 +47,10 @@ function CardText({
         className={clsx(
           'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ',
           textColor
-          // ,'[text-wrap:balance]'
         )}
       >
         Tab overload? We&apos;ve got your back. Unearth any word or phrase
         hidden across the depths of your browser tabs.
-        {/* Tab overload? We&apos;ve got your back. Unearth any word or phrase
-        hidden in the depths of your browser. */}
       </p>
     </div>
   );
@@ -90,60 +85,62 @@ export default function FeaturesHeader() {
   });
 
   return (
-    <section
-      id="features"
-      aria-label="Features for multi-tab keyword and phrase search"
-      className="mt-18 scroll-mt-12 tablet:mt-24 wide:mt-[7.625rem]"
-    >
-      <FadeIn>
-        <Container className="flex w-full flex-col justify-center">
-          <div
-            onMouseMove={handleMouseMove}
-            className={clsx(
-              'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
-              !prefersReducedMotion && 'wide:cursor-magnifying-glass'
-            )}
-          >
-            <div className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146">
-              <div className="pointer-events-none">
-                {/* Base Layer - Always Visible */}
-                <div
-                  className={clsx(
-                    'inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute',
-                    !prefersReducedMotion &&
-                      'wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50'
-                  )}
-                >
-                  <CardText prefersReducedMotion={prefersReducedMotion} />
-                </div>
+    <LazyMotion features={domAnimation}>
+      <section
+        id="features"
+        aria-label="Features for multi-tab keyword and phrase search"
+        className="mt-18 scroll-mt-12 tablet:mt-24 wide:mt-[7.625rem]"
+      >
+        <FadeIn>
+          <Container className="flex w-full flex-col justify-center">
+            <div
+              onMouseMove={handleMouseMove}
+              className={clsx(
+                'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
+                !prefersReducedMotion && 'wide:cursor-magnifying-glass'
+              )}
+            >
+              <div className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146">
+                <div className="pointer-events-none">
+                  {/* Base Layer - Always Visible */}
+                  <div
+                    className={clsx(
+                      'inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute',
+                      !prefersReducedMotion &&
+                        'wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50'
+                    )}
+                  >
+                    <CardText prefersReducedMotion={prefersReducedMotion} />
+                  </div>
 
-                {/* Green Light Layer  */}
-                <motion.div
-                  className={clsx(
-                    'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
-                    prefersReducedMotion && 'wide:hidden'
-                  )}
-                  style={style}
-                />
-
-                {/* Top Layer / Hover Layer  */}
-                <motion.div
-                  className={clsx(
-                    'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
-                    prefersReducedMotion && 'wide:hidden'
-                  )}
-                  style={style}
-                >
-                  <CardText
-                    topLayer
-                    prefersReducedMotion={prefersReducedMotion}
+                  {/* Green Light Layer  */}
+                  <m.div
+                    className={clsx(
+                      'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
+                      prefersReducedMotion && 'wide:hidden'
+                    )}
+                    style={style}
                   />
-                </motion.div>
+
+                  {/* Top Layer / Hover Layer  */}
+                  <m.div
+                    className={clsx(
+                      'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
+                      prefersReducedMotion && 'wide:hidden'
+                    )}
+                    style={style}
+                  >
+                    <CardText
+                      topLayer
+                      prefersReducedMotion={prefersReducedMotion}
+                    />
+                  </m.div>
+                </div>
               </div>
             </div>
-          </div>
-        </Container>
-      </FadeIn>
-    </section>
+          </Container>
+        </FadeIn>
+      </section>
+    </LazyMotion>
   );
 }

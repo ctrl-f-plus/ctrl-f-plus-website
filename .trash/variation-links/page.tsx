@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/variation-links/page.tsx
 
 import Link from 'next/link';

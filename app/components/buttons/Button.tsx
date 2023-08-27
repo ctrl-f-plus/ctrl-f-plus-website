@@ -2,7 +2,7 @@
 'use client';
 
 import { cva } from '@/cva.config';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import CtrlLink from '../ctrl-link';
 import {
   FilledStarIcon,
@@ -79,10 +79,10 @@ const colorFill = cva({
     },
   },
 });
-const ColorFill = motion(function ColorFill({ animation }: any) {
+const ColorFill = m(function ColorFill({ animation }: any) {
   return (
     <>
-      <motion.span
+      <m.span
         className={colorFill({ animation })}
         variants={{
           initial: {
@@ -136,39 +136,37 @@ function Button({
   const IconComponent = variantStyles.IconComponents[icon];
 
   return (
-    <>
-      <CtrlLink
-        href={href}
-        className="h-full w-full rounded-[37px]"
-        onClick={onClick}
-        target={target}
-        aTag
-        {...props}
+    <CtrlLink
+      href={href}
+      className="h-full w-full rounded-[37px]"
+      onClick={onClick}
+      target={target}
+      aTag
+      {...props}
+    >
+      <m.div
+        whileHover="hover"
+        initial="initial"
+        // whileTap={{ scale: 0.93 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+        className={button({ intent, size, className, animation })}
       >
-        <motion.div
-          whileHover="hover"
-          initial="initial"
-          // whileTap={{ scale: 0.93 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          className={button({ intent, size, className, animation })}
-        >
-          <ColorFill aria-hidden="true" animation={animation} intent={intent} />
+        <ColorFill aria-hidden="true" animation={animation} intent={intent} />
 
-          <motion.div className="relative flex w-full items-center justify-center gap-2 text-center">
-            {IconComponent && <IconComponent animation={animation} />}
-            <motion.span
-              transition={{ duration: 0.5, ease: 'linear' }}
-              variants={{
-                initial: { color: 'var(--color-from)' },
-                hover: { color: 'var(--color-to)' },
-              }}
-            >
-              {children}
-            </motion.span>
-          </motion.div>
-        </motion.div>
-      </CtrlLink>
-    </>
+        <m.div className="relative flex w-full items-center justify-center gap-2 text-center">
+          {IconComponent && <IconComponent animation={animation} />}
+          <m.span
+            transition={{ duration: 0.5, ease: 'linear' }}
+            variants={{
+              initial: { color: 'var(--color-from)' },
+              hover: { color: 'var(--color-to)' },
+            }}
+          >
+            {children}
+          </m.span>
+        </m.div>
+      </m.div>
+    </CtrlLink>
   );
 }
 
