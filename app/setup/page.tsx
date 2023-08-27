@@ -21,7 +21,6 @@ export const metadata: Metadata = {
 
 export default function Setup() {
   const document = getDocument(allDocumentations, 'keyboard-shortcut-setup');
-  // const document = allDocumentations;
 
   if (!document) {
     return;

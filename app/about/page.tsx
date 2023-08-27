@@ -19,16 +19,10 @@ import InfoCard from '../components/info-card';
 import PageBodyCard from '../components/page-body-card';
 import PageTitleCard from '../components/page-title-card';
 
-// import { motion, useReducedMotion } from 'framer-motion';
-
-// "meet Ben Chavez, our lead full-stack software engineer. With an extensive background in financial services, Ben brings a wealth of experience to our team. His naturally analytical mind, coupled with his passion for learning new technologies, makes him a driving force behind our innovative solutions. But Ben isn't all work and no play. When he isn't coding or solving complex problems, he indulges his creative side by writing music and diving into a good book. His unique blend of expertise, humor, and creativity makes him an invaluable part of the Ctrl-F Plus team."
-
 export const metadata: Metadata = {
   title: 'About',
   description:
     'Learn more about Ctrl-F Plus, including the company values, commitment to open source, and the team supporting the browser extension',
-
-  // "We are a small group of people working from Europe, America, and Asia. We help more than three million professionals to create new connections."
   alternates: {
     canonical: 'https://ctrl-f.plus/about',
   },

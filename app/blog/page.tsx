@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: 'Blog',
   description:
     'Explore the development journey of the Ctrl-F Plus chrome extension. Read about progress updates, challenges, and successes in our blog posts!',
+  alternates: {
+    canonical: 'https://ctrl-f.plus/blog',
+  },
 };
 
 export default function BlogPage() {
@@ -37,11 +40,7 @@ export default function BlogPage() {
         <Container className="mt-18 flex flex-col tablet:mt-24">
           <FadeInStagger>
             <FadeIn className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20">
-              <div
-                // gap-[9.375rem]
-                //gap-[5rem]
-                className="flex justify-start"
-              >
+              <div className="flex justify-start">
                 <div className="flex flex-col items-start justify-center gap-6">
                   <h1 className="  font-inter text-fs-xl text-shark">
                     <span className="block">Behind the Tabs: </span>
