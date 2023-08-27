@@ -1,5 +1,6 @@
 // app/components/Hero.tsx
-import 'server-only';
+// import 'server-only';
+'use client';
 
 import Button from './buttons/Button';
 
@@ -7,6 +8,7 @@ import Container from './container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
 import QuickView from './quick-view';
+import ReactPlayer from 'react-player';
 
 export default function Hero() {
   return (

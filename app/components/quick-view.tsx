@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Fragment, useRef, useState } from 'react';
 import Button from './buttons/Button';
 import ReactPlayer from 'react-player';
+import Loading from '../loading';
 
 function XMarkIcon({ className }: { className: string }) {
   return (
@@ -27,7 +28,8 @@ function XMarkIcon({ className }: { className: string }) {
   );
 }
 
-export default function QuickView() {
+// export default function QuickView({ children }: { children: React.ReactNode }) {
+const QuickView: React.FC = () => {
   const playerRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const initialFocusRef = useRef(null);
@@ -126,7 +128,7 @@ export default function QuickView() {
                                 />
                               </button>
                             </div>
-                            <span className="hidden" />
+
                             <ReactPlayer
                               ref={playerRef}
                               url="https://www.youtube.com/embed/2uBnJsjbHdo?si=xyHg5VTPP4cFOHDT"
@@ -134,6 +136,8 @@ export default function QuickView() {
                               className="aspect-video h-full w-full"
                               width="85%"
                               height="auto"
+                              fallback={<Loading />}
+                              priority
                             />
                           </div>
                         </div>
@@ -148,7 +152,9 @@ export default function QuickView() {
       </Transition.Root>
     </>
   );
-}
+};
+
+export default QuickView;
 
 {
   /* <div
