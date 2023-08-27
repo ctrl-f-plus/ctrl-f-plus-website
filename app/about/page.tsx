@@ -150,10 +150,7 @@ export default function About() {
           </PageTitleCard>
 
           <PageBodyCard className={''}>
-            <div
-              // gap-y-20
-              className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8  xl:grid-cols-2"
-            >
+            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8  xl:grid-cols-2">
               <h2 className="font-inter text-fs-middle text-shark">Our Team</h2>
               <ul
                 role="list"
@@ -197,76 +194,17 @@ export default function About() {
                     intent="solid"
                     size="thin"
                     icon="heartHandIcon"
-                    // animation="slice"
                     className={'mt-20'}
                     href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
                     aTag
                     target={'_blank'}
                   >
                     Become a Sponsor!
-                    {/* Get In Touch! */}
                   </Button>
                 </div>
               </div>
             </div>
           </PageBodyCard>
-
-          {/* <InfoCard>
-            <h2 className="text-center font-inter text-fs-middle text-shark">
-              Support Our Work
-            </h2>
-            <p className="text-center font-open-sans text-fs-lg text-shark [text-wrap:balance]">
-              Got a soft spot for browser extensions or daydream about
-              Typescript? Then hey, if you&apos;re into it, slide into our
-              codebase with your PRs...
-            </p>
-
-            <div className="flex w-full items-center justify-center overflow-hidden ">
-              <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
-                <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
-                  <ButtonPrimaryCopy
-                    intent={'simple'}
-                    className={''}
-                    href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
-                    aTag
-                    target={'_blank'}
-                  >
-                    <HeartHandIcon /> Become a Sponsor!
-                  </ButtonPrimaryCopy>
-                </div>
-              </div>
-            </div>
-          </InfoCard>
-
-          <InfoCard showAccents>
-            {' '}
-            <h2 className="text-center font-inter text-fs-middle text-shark">
-              Proudly Open Source
-            </h2>
-            <p className="text-center font-open-sans text-fs-lg text-shark [text-wrap:balance]">
-              Got a soft spot for browser extensions or daydream about
-              Typescript? Then hey, if you&apos;re into it, slide into our
-              codebase with your PRs...
-            </p>
-            <div className=" flex w-full items-center justify-center overflow-hidden ">
-              <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
-                <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
-                  <ButtonPrimaryCopy
-                    intent={'outline'}
-                    className="group bg-white/[.68]"
-                    href={
-                      'https://chrome.google.com/webstore/detail/ctrl-f-plus-multi-tab-sea/dkfbnlclahcmcgehpancgfhogmilankf'
-                    }
-                    aTag
-                    target={'_blank'}
-                  >
-                    <FilledStarIcon className="  fill-yellow-500 " /> Star us on
-                    GitHub!
-                  </ButtonPrimaryCopy>
-                </div>
-              </div>
-            </div>
-          </InfoCard> */}
 
           <InfoCard
             title={`Proudly Open Source`}
@@ -275,11 +213,9 @@ export default function About() {
             showAccents
           >
             <Button
-              // intent={'outline'}
               intent="outline"
               size="thin"
               icon="filledStarIcon"
-              // animation="slice"
               className="group bg-white/[.68]"
               href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
               target={'_blank'}

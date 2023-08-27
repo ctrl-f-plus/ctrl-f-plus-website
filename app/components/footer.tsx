@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Container from './container';
 import LogoIconSecondary from './icons/logo-secondary';
 import { GithubIcon } from './icons/social-icons';
-import CtrlLink from './ctrl-link';
 
 const navigation = [
   {
@@ -106,9 +105,6 @@ function OpenSource() {
           <div className=" ">
             <GithubIcon className="h-12 w-12 fill-gray-300" />
           </div>
-          {/* <CtrlLink href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL} target="_blank" aTag>
-            <GithubIcon className="h-12 w-12 fill-gray-300" />
-          </CtrlLink> */}
           <p className="max-w-[14rem] font-open-sans text-sm text-gray-300 [text-wrap:balance]">
             This project is open source and we welcome your contributions!
           </p>
@@ -124,7 +120,6 @@ function OpenSource() {
             ctrl-f-plus
           </span>
         </a>
-        {/* Check out our Github to join the development! */}
       </div>
     </div>
   );
