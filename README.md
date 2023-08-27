@@ -1,14 +1,16 @@
+
 # Ctrl-F.Plus
 
-<p align="center">
-  <img src="public/images/Screenshots/Ctrl-f-plus_Screenshot2.png" alt="Demo GIF">
-</p>
+<div align="center">
+  <img src="public/images/Screenshots/Ctrl-f-plus_Screenshot2.png" alt="Demo GIF" width="800px" height="450px">
+</div>
 
 This application requires Node.js v18.15+.
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
 - **Animation**: [Framer Motion](https://www.framer.com/motion/)
 - **Static Content**: [MDX](https://mdxjs.com/) & [Content Layer](https://contentlayer.dev/)
+
 
 ## Getting Started
 
