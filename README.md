@@ -5,6 +5,8 @@
   <img src="public/images/Screenshots/Ctrl-f-plus_Screenshot2.png" alt="Demo GIF" width="800px" height="450px">
 </div>
 
+
+## Technologies
 This application requires Node.js v18.15+.
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
