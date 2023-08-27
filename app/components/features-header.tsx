@@ -1,6 +1,8 @@
 // app/components/features-header.tsx
 'use client';
 
+// TODO: Convert to server-only
+
 import clsx from 'clsx';
 import {
   LazyMotion,
@@ -10,7 +12,7 @@ import {
   useReducedMotion,
   useSpring,
 } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import Container from './container';
 import { FadeIn } from './fade-in';
 
@@ -65,9 +67,16 @@ export default function FeaturesHeader() {
   let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
   let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
 
+  // let mouseX = useMotionValue(-500);
+  // let mouseY = useMotionValue(0);
+
   let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
 
-  let style = { maskImage, WebkitMaskImage: maskImage };
+  // let style = { maskImage, WebkitMaskImage: maskImage };
+  const style = useMemo(
+    () => ({ maskImage, WebkitMaskImage: maskImage }),
+    [maskImage]
+  );
 
   const handleMouseMove = ({
     currentTarget,
@@ -119,6 +128,7 @@ export default function FeaturesHeader() {
                       'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
                       prefersReducedMotion && 'wide:hidden'
                     )}
+                    // className="absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block"
                     style={style}
                   />
 

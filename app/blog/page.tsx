@@ -9,7 +9,7 @@ import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';
 import InfoCard from '../components/info-card';
 import { formatDate } from '../lib/utils';
-import Button from '../components/buttons/Button';
+import Button from '../components/Button';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -74,7 +74,7 @@ export default function BlogPage() {
               >
                 {' '}
                 <Button
-                  variant="solid"
+                  intent="solid"
                   size="thin"
                   icon="puzzle2"
                   href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}

@@ -1,6 +1,8 @@
 // app/tab-hoarders/components/FeatureCard.tsx
 'use client';
 
+// TODO: Convert to server-only
+
 import { useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import { Balancer } from 'react-wrap-balancer';
@@ -44,9 +46,6 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
   return (
     <>
       <div className="absolute top-1/3" ref={ref} />
-      {/* <div className="absolute top-1/3 bg-red-500" ref={ref}>
-        test
-      </div> */}
 
       <div
         className=" flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"

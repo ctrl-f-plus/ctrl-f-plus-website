@@ -2,7 +2,7 @@ import 'server-only';
 import Container from './components/container';
 
 import { FadeIn } from './components/fade-in';
-import Button from './components/buttons/Button';
+import Button from './components/Button';
 
 export default function NotFoundPage() {
   return (
@@ -20,7 +20,7 @@ export default function NotFoundPage() {
             <div className="mt-10 flex w-full items-center justify-center ">
               <div className="w-1/2">
                 <Button
-                  variant="solid"
+                  intent="solid"
                   size="thin"
                   className={''}
                   href="/"

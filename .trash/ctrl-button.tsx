@@ -9,7 +9,6 @@ import {
   FilledStarIcon,
   HeartHandIcon,
   PlayIcon,
-  StarIcon,
 } from '../app/components/icons/button-icons';
 import PuzzleIcon from '../app/components/icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
@@ -64,7 +63,6 @@ function ButtonIcon(icon: string, intent: any): React.ReactNode {
   if (icon === 'play') return <PlayIcon intent={intent} />;
   if (icon === 'puzzle') return <PuzzleIcon />;
   if (icon === 'puzzle2') return <PuzzleIcon2 />;
-  if (icon === 'star') return <StarIcon />;
   if (icon === 'filledStar') return <FilledStarIcon />;
   if (icon === 'heartHand') return <HeartHandIcon />;
 }

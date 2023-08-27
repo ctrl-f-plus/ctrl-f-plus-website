@@ -1,4 +1,4 @@
-// import 'server-only';
+import 'server-only';
 
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
@@ -7,7 +7,6 @@ import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
 import './globals.css';
-import { LazyMotion, domAnimation } from 'framer-motion';
 
 const inter = Inter({
   subsets: ['latin'],

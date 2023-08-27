@@ -1,11 +1,10 @@
 // app/components/call-to-action.tsx
-
 'use client';
 
 import Atropos from 'atropos/react';
 import { m, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
-import Button from './buttons/Button';
+import Button from './Button';
 import '@/styles/ctrl-atropos.css';
 import Container from './container';
 import { FadeIn } from './fade-in';
@@ -67,9 +66,9 @@ function CtaColorAccents() {
 function CtaButtons() {
   return (
     <Button
-      variant={'solid'}
+      intent="solid"
       size="phat"
-      icon="puzzlePhat"
+      icon="puzzleIconWithBg"
       animation="slice"
       href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
       target={'_blank'}

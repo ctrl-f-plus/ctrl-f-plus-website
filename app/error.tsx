@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import Container from './components/container';
 import { FadeIn } from './components/fade-in';
-import Button from './components/buttons/Button';
+import Button from './components/Button';
 
 type ErrorPageProps = {
   error: Error;
@@ -34,7 +34,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
             <div className="mt-10 flex w-full items-center justify-center ">
               <div className="w-3/4">
                 <Button
-                  variant="solid"
+                  intent="solid"
                   size="thin"
                   className={''}
                   href=""

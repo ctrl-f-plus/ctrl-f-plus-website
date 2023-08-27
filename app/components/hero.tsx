@@ -1,9 +1,7 @@
-// app/components/Hero.tsx
-// import 'server-only';
-'use client';
+// app/components/hero.tsx
+import 'server-only';
 
-import Button from './buttons/Button';
-
+import Button from './Button';
 import Container from './container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
@@ -41,7 +39,7 @@ export default function Hero() {
 
             <div className="flex flex-col gap-6 tab-pro:flex-row">
               <Button
-                variant="solid"
+                intent="solid"
                 size="thin"
                 icon="puzzle"
                 animation="slice"

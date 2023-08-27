@@ -41,7 +41,7 @@ export default function InfoCard({
                 <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
                   {children}
                   {/* <ButtonPrimaryCopy
-                    variant={'outline'}
+                    intent={'outline'}
                     className="group bg-white/[.68]"
                     href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
                     aTag

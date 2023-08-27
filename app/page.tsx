@@ -1,4 +1,4 @@
-// app/tab-hoarders/page.tsx
+// app/page.tsx
 import 'server-only';
 
 import CallToAction from './components/call-to-action';

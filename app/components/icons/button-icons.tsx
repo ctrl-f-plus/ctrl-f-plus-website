@@ -1,22 +1,26 @@
-// app/components/icons/play.tsx
+// app/components/icons/button-icons.tsx
+
 'use client';
-import { cva, cx, type VariantProps } from 'cva';
+
+import { cva, type VariantProps } from 'cva';
 import { m } from 'framer-motion';
 
 const icon = cva({
-  // base: 'fill-highlighter-900',
-  // base: 'color-white',
   variants: {
     intent: {
       solid: 'fill-white group-active:fill-white/80 ',
       outline:
         'fill-highlighter-900 color-highlighter-900 group-active:fill-[#0a2b35]/70',
-      circle: '',
+      phat: '',
+      simple: '',
+    },
+    size: {
+      thin: '',
+      phat: '',
     },
     animation: {
       none: '',
-      slice:
-        '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
+      slice: '',
     },
   },
   defaultVariants: {
@@ -26,13 +30,23 @@ const icon = cva({
   compoundVariants: [
     {
       intent: 'solid',
+      size: 'thin',
       animation: 'none',
       className: '[--fill-from:#ffffff] [--fill-to:#ffffffcc] ',
     },
     {
       intent: 'solid',
+      size: 'thin',
       animation: 'slice',
-      className: '[--fill-from:#0C3440] [--fill-to:#0a2b35b3]',
+      className:
+        '[--fill-from:#ffffff] [--fill-to:#ffffff] tablet:[--fill-to:#0C3440] group-active:tablet:[--fill-to:#0a2b35b3]',
+    },
+    {
+      intent: 'solid',
+      size: 'phat',
+      animation: 'slice',
+      className:
+        '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
     },
     {
       intent: 'outline',
@@ -42,13 +56,16 @@ const icon = cva({
   ],
 });
 
-interface ButtonIconProps extends VariantProps<typeof icon> {}
+interface ButtonIconProps extends VariantProps<typeof icon> {
+  className?: string;
+}
 
 export function PlayIcon({
-  //className,
+  className,
   intent,
+  size,
+  animation,
 }: ButtonIconProps) {
-  intent = 'outline';
   return (
     <svg
       width="19"
@@ -56,29 +73,9 @@ export function PlayIcon({
       viewBox="0 0 19 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      // className={className}
-      // className="fill-highlighter-900 tablet:group-active:fill-[#0a2b35]/70"
-      className={icon({ intent })}
+      className={icon({ intent, size, animation, className })}
     >
       <path d="M16.6275 8.2775L3.75 0.8375C3.3819 0.619715 2.96269 0.50327 2.535 0.5C1.86268 0.5 1.21789 0.76708 0.742485 1.24248C0.26708 1.71789 0 2.36268 0 3.035V19.0025C8.55053e-05 19.4487 0.119686 19.8867 0.346367 20.2709C0.573047 20.6552 0.898531 20.9718 1.28898 21.1877C1.67942 21.4035 2.12057 21.5109 2.56656 21.4986C3.01255 21.4862 3.44709 21.3546 3.825 21.1175L16.7175 12.9725C17.1184 12.7216 17.4474 12.3712 17.6726 11.9553C17.8977 11.5394 18.0113 11.0723 18.0022 10.5995C17.9932 10.1267 17.8618 9.66428 17.6208 9.25735C17.3799 8.85042 17.0377 8.51283 16.6275 8.2775Z" />
-    </svg>
-  );
-}
-
-export function StarIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      // height="1em"
-      // width="19"
-      // height="22"
-      width="22"
-      height="22"
-      viewBox="0 0 576 512"
-      className={className}
-    >
-      {/* Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. */}
-      <path d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.6 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z" />
     </svg>
   );
 }
@@ -117,15 +114,13 @@ export function HeartHandIcon({ className }: { className?: string }) {
   );
 }
 
-export const PuzzleIcon = m(function PuzzleIcon2({
+export const PuzzleIcon = m(function PuzzleIcon({
   className,
   intent,
+  size,
   animation = 'none',
-}: {
-  className?: string;
-  intent: any;
-  animation?: any;
-}) {
+}: ButtonIconProps) {
+  console.log('puzzleIcon', intent, animation, size);
   return (
     <>
       <m.svg
@@ -133,12 +128,7 @@ export const PuzzleIcon = m(function PuzzleIcon2({
         height="22"
         viewBox="0 0 22 22"
         xmlns="http://www.w3.org/2000/svg"
-        // className={cx(
-        //   '[--fill-from:#ffffff] [--fill-to:#ffffff] tablet:[--fill-to:#0C3440] active:tablet:[--fill-to:#0a2b35b3]'
-        //   // className
-        // )}
-        // className={icon({ intent, animation, className })}
-        className="[--fill-from:#ffffff] [--fill-to:#ffffff] tablet:[--fill-to:#0C3440] group-active:tablet:[--fill-to:#0a2b35b3]"
+        className={icon({ intent, size, animation, className })}
         variants={{
           initial: { fill: 'var(--fill-from)' },
           hover: { fill: 'var(--fill-to)' },
@@ -154,19 +144,13 @@ export const PuzzleIcon = m(function PuzzleIcon2({
 export const PuzzleIcon2 = m(function PuzzleIcon2({
   className,
   intent,
+  size,
   animation = 'none',
-}: {
-  className?: string;
-  intent: any;
-  animation?: any;
-}) {
+}: ButtonIconProps) {
+  console.log('puzzleIcon2', intent, animation, size);
   return (
     <m.svg
-      // className={clsx(
-      //   '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
-      //   className
-      // )}
-      className={icon({ intent, animation, className })}
+      className={icon({ intent, size, animation, className })}
       width="23"
       height="22"
       viewBox="0 0 23 22"
@@ -188,31 +172,22 @@ export const PuzzleIcon2 = m(function PuzzleIcon2({
       </g>
       <defs>
         <clipPath id="clip0_238_1292">
-          <rect
-            width="22"
-            height="22"
-            // fill="white"
-            transform="translate(0.5)"
-          />
+          <rect width="22" height="22" transform="translate(0.5)" />
         </clipPath>
       </defs>
     </m.svg>
   );
 });
 
-export const PuzzlePhat = m(function PuzzlePhat({
-  className,
-  animation = 'none',
+export const PuzzleIconWithBg = m(function puzzleIconWithBg({
   intent,
-}: {
-  className?: string;
-  animation?: any;
-  intent?: any;
-}) {
+  size,
+  animation = 'none',
+}: ButtonIconProps) {
+  console.log('puzzleIcon2', intent, animation, size);
   return (
     <m.div
-      //
-      className="relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff]   tablet:[--backgroundColor-to:#0C3440] group-active:tablet:[--backgroundColor-to:#0a2b35b3]"
+      className="relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff] tablet:[--backgroundColor-to:#0C3440] group-active:tablet:[--backgroundColor-to:#0a2b35b3]"
       variants={{
         initial: { backgroundColor: 'var(--backgroundColor-from)' },
         hover: { backgroundColor: 'var(--backgroundColor-to)' },
@@ -227,7 +202,7 @@ export const PuzzlePhat = m(function PuzzlePhat({
           hover: { rotate: 'var(--rotate-to)' },
         }}
       >
-        <PuzzleIcon2 animation={animation} intent={intent} />
+        <PuzzleIcon2 animation={animation} intent={intent} size={size} />
       </m.span>
     </m.div>
   );

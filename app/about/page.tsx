@@ -5,7 +5,7 @@ import benAvatar from '@/public/images/ben-avatar.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar.png';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Button from '../components/buttons/Button';
+import Button from '../components/Button';
 import Container from '../components/container';
 import CtrlLink from '../components/ctrl-link';
 import { FadeInStagger } from '../components/fade-in';
@@ -200,7 +200,7 @@ export default function About() {
               <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
                 <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
                   <Button
-                    variant="solid"
+                    intent="solid"
                     size="thin"
                     icon="heartHandIcon"
                     // animation="slice"
@@ -231,7 +231,7 @@ export default function About() {
               <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
                 <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
                   <ButtonPrimaryCopy
-                    variant={'simple'}
+                    intent={'simple'}
                     className={''}
                     href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
                     aTag
@@ -258,7 +258,7 @@ export default function About() {
               <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
                 <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
                   <ButtonPrimaryCopy
-                    variant={'outline'}
+                    intent={'outline'}
                     className="group bg-white/[.68]"
                     href={
                       'https://chrome.google.com/webstore/detail/ctrl-f-plus-multi-tab-sea/dkfbnlclahcmcgehpancgfhogmilankf'
@@ -281,8 +281,8 @@ export default function About() {
             showAccents
           >
             <Button
-              // variant={'outline'}
-              variant="outline"
+              // intent={'outline'}
+              intent="outline"
               size="thin"
               icon="filledStarIcon"
               // animation="slice"

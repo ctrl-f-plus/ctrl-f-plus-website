@@ -1,4 +1,7 @@
+// app/loading.tsx
+
 'use client';
+
 import { useReducedMotion } from 'framer-motion';
 import Container from './components/container';
 

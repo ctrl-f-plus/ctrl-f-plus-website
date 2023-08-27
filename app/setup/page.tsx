@@ -1,7 +1,6 @@
 // app/setup/page.tsx
 import 'server-only';
 
-// import { allDocumentations } from '@/.contentlayer/generated/Documentation/documentation__keyboard-shortcut-setup.mdx.json';
 import { allDocumentations } from '@/.contentlayer/generated/Documentation/_index.mjs';
 import type { Metadata } from 'next';
 import Balancer from 'react-wrap-balancer';

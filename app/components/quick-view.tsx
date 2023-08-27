@@ -5,7 +5,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import Loading from '../loading';
-import Button from './buttons/Button';
+import Button from './Button';
 
 function XMarkIcon({ className }: { className: string }) {
   return (
@@ -33,7 +33,7 @@ export default function QuickView() {
   return (
     <>
       <Button
-        variant="outline"
+        intent="outline"
         size="thin"
         icon="play"
         animation="slice"
