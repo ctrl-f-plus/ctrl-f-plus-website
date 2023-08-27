@@ -2,7 +2,7 @@
 
 'use client';
 
-import { cva, type VariantProps } from 'cva';
+import { cva, cx, type VariantProps } from 'cva';
 import { m } from 'framer-motion';
 
 const icon = cva({
@@ -47,6 +47,12 @@ const icon = cva({
       animation: 'slice',
       className:
         '[--fill-from:#0C3440] [--fill-to:#0C3440] tablet:[--fill-to:#48D0A8]',
+    },
+    {
+      intent: 'solid',
+      size: 'phat',
+      animation: 'none',
+      className: '[--fill-from:#0C3440] [--fill-to:#0C3440]',
     },
     {
       intent: 'outline',
@@ -120,7 +126,6 @@ export const PuzzleIcon = m(function PuzzleIcon({
   size,
   animation = 'none',
 }: ButtonIconProps) {
-  console.log('puzzleIcon', intent, animation, size);
   return (
     <>
       <m.svg
@@ -147,7 +152,6 @@ export const PuzzleIcon2 = m(function PuzzleIcon2({
   size,
   animation = 'none',
 }: ButtonIconProps) {
-  console.log('puzzleIcon2', intent, animation, size);
   return (
     <m.svg
       className={icon({ intent, size, animation, className })}
@@ -184,10 +188,14 @@ export const PuzzleIconWithBg = m(function puzzleIconWithBg({
   size,
   animation = 'none',
 }: ButtonIconProps) {
-  console.log('puzzleIcon2', intent, animation, size);
   return (
     <m.div
-      className="relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff] tablet:[--backgroundColor-to:#0C3440] group-active:tablet:[--backgroundColor-to:#0a2b35b3]"
+      className={cx(
+        'relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff]',
+        animation !== 'none'
+          ? 'tablet:[--backgroundColor-to:#0C3440] group-active:tablet:[--backgroundColor-to:#0a2b35b3]'
+          : 'group-active:[--backgroundColor-to:#ffffffcc]'
+      )}
       variants={{
         initial: { backgroundColor: 'var(--backgroundColor-from)' },
         hover: { backgroundColor: 'var(--backgroundColor-to)' },
@@ -196,7 +204,12 @@ export const PuzzleIconWithBg = m(function puzzleIconWithBg({
     >
       <m.span
         transition={{ type: 'spring', bounce: 0.6 }}
-        className=" [--rotate-from:0deg] tablet:[--rotate-to:-90deg]"
+        className={cx(
+          '[--rotate-from:0deg]',
+          animation === 'none'
+            ? 'tablet:[--rotate-to:0deg]'
+            : 'tablet:[--rotate-to:-90deg]'
+        )}
         variants={{
           initial: { rotate: 'var(--rotate-from)' },
           hover: { rotate: 'var(--rotate-to)' },
