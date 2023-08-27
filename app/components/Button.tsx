@@ -19,15 +19,13 @@ const button = cva({
   base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
   variants: {
     intent: {
-      solid: 'rounded-[37px] bg-highlighter-900 text-white w-full ',
+      solid: 'rounded-[37px] bg-highlighter-900 text-white w-full',
       outline:
         'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 w-full',
-      phat: '',
-      simple: '',
     },
     size: {
       thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-lg leading-6 font-semibold',
-      phat: 'inline-block w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full bg-highlighter-900 px-5 py-4 ',
+      phat: 'inline-block w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full px-5 py-4 ',
     },
     animation: {
       none: '',
@@ -39,7 +37,7 @@ const button = cva({
       intent: 'solid',
       animation: 'slice',
       className:
-        '[--color-from:#ffffff] tablet:[--color-to:#0C3440] active:[--color-from:#ffffffcc] active:tablet:[--color-to:#0a2b35b3]   ',
+        '[--color-from:#ffffff] tablet:[--color-to:#0C3440] active:[--color-from:#ffffffcc] active:tablet:[--color-to:#0a2b35b3] ',
     },
     {
       intent: 'solid',
@@ -51,7 +49,7 @@ const button = cva({
       intent: 'solid',
       animation: 'none',
       className:
-        'hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80',
+        'hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 ',
     },
     {
       intent: 'outline',
@@ -77,8 +75,12 @@ const ColorFill = m(function ColorFill({
           initial: {
             rotate: 'var(--rotate-from)',
             x: 'var(--x-from)',
+            // background: 'var(--background-to)',
           },
-          hover: { x: 'var(--x-to)' },
+          hover: {
+            x: 'var(--x-to)',
+            // background: 'var(--background-to)'
+          },
         }}
         transition={{ duration: 0.5, ease: 'easeInOut' }}
         aria-hidden="true"

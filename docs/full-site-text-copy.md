@@ -59,10 +59,22 @@ Because why settle for fewer tabs when you can have them all... and still find y
 
 ## About Page
 - **Url:** https://CTRL-f.plus/about
-- **Headline:** Meet the team
-- **Description:** At CTRL-F Plus, we're not just pixel pushers; we're certified tab hoarders, just like you! Lost in the abyss of endless tabs? Been there, done that, got the T-shirt. That's why we're letting our tabs run wild as we transform the old school CTRL F shortcut (Cmd F for our Apple buddies) into the productivity tool that you've been searching for. Our grand plan? Snatch those fleeting moments `from the jaws of tab chaos` and gift them back to you. So you can get back to binge-watching cat videos or, you know, other important stuff.
+- **Headline:** About
+- **Description:** At Ctrl-F Plus we're not just pixel pushers; we're certified tab hoarders, just like you! Lost in the abyss of endless tabs? Been there, done that, got the T-shirt. That's why we're letting our tabs run wild as we transform the old school CTRL F shortcut (Cmd F for our Apple buddies) into the productivity tool that you've been searching for.
 
-CTRL-F Plus isn't just a tool; it's a cozy community and our code is fully open source. Got a soft spot for browser extensions or daydream about Typescript? Then hey, if you're into it, slide into our codebase with your PRs...
+Our grand plan? Snatch those fleeting moments from the jaws of tab chaos and gift them back to you. So you can get back to binge-watching cat videos or, you know, other important stuff.
 
+  ### Team Section
+    - **Headline:** Our Team
+    - **Ben Bio:** Ben is a full-stack software engineer with an extensive background in financial services. Possessing a naturally analytical mind, he enjoys learning new technologies and solving complex problems. When Ben isn’t coding, he can often be found writing music or reading
+    - **Ighodalo Bio:** Ighodalo is an experienced Product Designer who is passionate about designing meaningful and impactful web-based digital products that meet user needs, business goals, and technology standards.
+    - **Button:** Get in Touch
 
-At Ctrl-F Plus, we're not just pixel pushers; we're certified tab hoarders, just like you! Think your tabs are out of control? Nah, they're just misunderstood. That's why we embraced the chaos to transform that old school Ctrl F shortcut (Cmd F for our Apple buddies) into the productivity tool you've been searching for. Our grand plan? Snatch those fleeting moments `from the jaws of tab chaos` and gift them back to you. So you can get back to binge-watching cat videos or, you know, other important stuff.
+  ### Support Section
+    - **Headline:** Support Our Work
+    - **Description:** <NEED COPY FOR THIS SECTION>
+    - **Button:** Become a Sponsor!
+  ### Open Source Section
+    - **Headline:** Proudly Open Source
+    - **Description:** Got a soft spot for browser extensions or daydream about Typescript? Then hey, if you're into it, slide into our codebase with your PRs...
+    - **Button:** Star us on GitHub!

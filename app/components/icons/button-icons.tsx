@@ -11,8 +11,6 @@ const icon = cva({
       solid: 'fill-white group-active:fill-white/80 ',
       outline:
         'fill-highlighter-900 color-highlighter-900 group-active:fill-[#0a2b35]/70',
-      phat: '',
-      simple: '',
     },
     size: {
       thin: '',
