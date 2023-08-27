@@ -15,9 +15,10 @@ import {
   LinkedInIcon,
   WebsiteIcon,
 } from '../components/icons/social-icons';
-import InfoCard from '../components/info-card';
+import InfoCard, { InfoCardDark } from '../components/info-card';
 import PageBodyCard from '../components/page-body-card';
 import PageTitleCard from '../components/page-title-card';
+import { HeartHandIcon } from '../components/icons/button-icons';
 
 // import { motion, useReducedMotion } from 'framer-motion';
 
@@ -202,77 +203,37 @@ export default function About() {
                   <Button
                     intent="solid"
                     size="thin"
-                    icon="heartHandIcon"
+                    icon="joinIcon"
                     // animation="slice"
                     className={'mt-20'}
                     href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
                     aTag
                     target={'_blank'}
                   >
-                    Become a Sponsor!
-                    {/* Get In Touch! */}
+                    Get In Touch!
                   </Button>
                 </div>
               </div>
             </div>
           </PageBodyCard>
 
-          {/* <InfoCard>
-            <h2 className="text-center font-inter text-fs-middle text-shark">
-              Support Our Work
-            </h2>
-            <p className="text-center font-open-sans text-fs-lg text-shark [text-wrap:balance]">
-              Got a soft spot for browser extensions or daydream about
-              Typescript? Then hey, if you&apos;re into it, slide into our
-              codebase with your PRs...
-            </p>
-
-            <div className="flex w-full items-center justify-center overflow-hidden ">
-              <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
-                <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
-                  <ButtonPrimaryCopy
-                    intent={'simple'}
-                    className={''}
-                    href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
-                    aTag
-                    target={'_blank'}
-                  >
-                    <HeartHandIcon /> Become a Sponsor!
-                  </ButtonPrimaryCopy>
-                </div>
-              </div>
-            </div>
-          </InfoCard>
-
-          <InfoCard showAccents>
-            {' '}
-            <h2 className="text-center font-inter text-fs-middle text-shark">
-              Proudly Open Source
-            </h2>
-            <p className="text-center font-open-sans text-fs-lg text-shark [text-wrap:balance]">
-              Got a soft spot for browser extensions or daydream about
-              Typescript? Then hey, if you&apos;re into it, slide into our
-              codebase with your PRs...
-            </p>
-            <div className=" flex w-full items-center justify-center overflow-hidden ">
-              <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
-                <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
-                  <ButtonPrimaryCopy
-                    intent={'outline'}
-                    className="group bg-white/[.68]"
-                    href={
-                      'https://chrome.google.com/webstore/detail/ctrl-f-plus-multi-tab-sea/dkfbnlclahcmcgehpancgfhogmilankf'
-                    }
-                    aTag
-                    target={'_blank'}
-                  >
-                    <FilledStarIcon className="  fill-yellow-500 " /> Star us on
-                    GitHub!
-                  </ButtonPrimaryCopy>
-                </div>
-              </div>
-            </div>
-          </InfoCard> */}
+          <InfoCardDark
+            title={`Support Our Work`}
+            description={`Stumbled upon our extension and now you can't imagine life without it? Classic. Support our work, Every bit of love helps us refine and reach more fellow hoarders.`}
+            showAccents
+          >
+            <Button
+              intent="solid"
+              size="thin"
+              icon="heartHandIcon"
+              href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
+              aTag
+              iconRight
+              target={'_blank'}
+            >
+              Become a Sponsor!
+            </Button>
+          </InfoCardDark>
 
           <InfoCard
             title={`Proudly Open Source`}

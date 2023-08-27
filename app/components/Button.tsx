@@ -7,6 +7,7 @@ import CtrlLink from './ctrl-link';
 import {
   FilledStarIcon,
   HeartHandIcon,
+  JoinIcon,
   PlayIcon,
   PuzzleIcon,
   PuzzleIcon2,
@@ -99,9 +100,11 @@ interface ButtonProps
     | 'play'
     | 'puzzleIconWithBg'
     | 'heartHandIcon'
-    | 'filledStarIcon';
+    | 'filledStarIcon'
+    | 'joinIcon';
   href?: string;
   aTag: boolean;
+  iconRight?: boolean;
   target: string;
 }
 
@@ -116,6 +119,7 @@ function Button({
   href,
   target = '',
   aTag = false,
+  iconRight = false,
   ...props
 }: ButtonProps) {
   let prefersReducedMotion = useReducedMotion();
@@ -129,10 +133,15 @@ function Button({
       puzzleIconWithBg: PuzzleIconWithBg,
       heartHandIcon: HeartHandIcon,
       filledStarIcon: FilledStarIcon,
+      joinIcon: JoinIcon,
     },
   };
 
   const IconComponent = icon ? iconVariants.IconComponents[icon] : undefined;
+
+  const renderedIcon = IconComponent && (
+    <IconComponent animation={animation} intent={intent} size={size} />
+  );
 
   return (
     <CtrlLink
@@ -157,9 +166,7 @@ function Button({
         <ColorFill aria-hidden="true" animation={animation} />
 
         <m.div className="relative flex w-full items-center justify-center gap-2 text-center">
-          {IconComponent && (
-            <IconComponent animation={animation} intent={intent} size={size} />
-          )}
+          {!iconRight && renderedIcon}
 
           <m.span
             transition={{ duration: 0.5, ease: 'linear' }}
@@ -170,6 +177,8 @@ function Button({
           >
             {children}
           </m.span>
+
+          {iconRight && renderedIcon}
         </m.div>
       </m.div>
     </CtrlLink>
