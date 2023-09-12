@@ -1,12 +1,11 @@
 // app/components/mdx.tsx
 
-import * as React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import Image from 'next/image';
+import * as React from 'react';
 
 import clsx from 'clsx';
-import Container from './container';
+import Title from './title';
 
 const components = {
   h1: ({ className, ...props }: any) => (
@@ -137,8 +136,10 @@ const components = {
   ),
   pre: ({ className, ...props }: any) => (
     <pre
+      // mt-6
+      //
       className={clsx(
-        'mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4',
+        'mb-4 mt-6 overflow-x-auto rounded-lg border border-t-0 border-gray-700  py-4',
         className
       )}
       {...props}
@@ -147,13 +148,14 @@ const components = {
   code: ({ className, ...props }: any) => (
     <code
       className={clsx(
-        'relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm',
+        'relative rounded  px-[0.3rem] py-[0.2rem] font-mono text-sm',
         className
       )}
       {...props}
     />
   ),
   Image,
+  Title,
 };
 
 interface MdxProps {
@@ -164,14 +166,8 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    // <Container className="">
-    <article
-      // className="mdx"
-      // className="prose prose-quoteless prose-neutral mx-auto "
-      className="prose max-w-none"
-    >
+    <article className="prose max-w-none">
       <Component components={{ ...components }} />
     </article>
-    // </Container>
   );
 }

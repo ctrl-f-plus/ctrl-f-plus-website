@@ -6,6 +6,8 @@ import remarkGfm from 'remark-gfm';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkCodeTitles from 'remark-flexible-code-titles';
+import { visit } from 'unist-util-visit';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -67,8 +69,39 @@ export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog, Documentation],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [
+      remarkGfm,
+      [
+        remarkCodeTitles,
+        {
+          titleTagName: 'Title',
+          titleClassName: 'custom-code-title',
+          titleProperties: (language, title) => ({
+            ['data-language']: language,
+            title,
+          }),
+        },
+      ],
+    ],
     rehypePlugins: [
+      () => (tree) => {
+        visit(tree, (node) => {
+          if (
+            node?.type === 'element' &&
+            node?.tagName === 'div' &&
+            node.properties.className[0] === 'remark-code-container'
+          ) {
+            if (node.children.length > 1) {
+              const titleNode = node.children[0];
+              const preNode = node.children[1];
+
+              const val = preNode.children['0'].children['0'].value;
+              titleNode.__rawString__ = val;
+            }
+          }
+        });
+      },
+
       rehypeSlug,
       [
         rehypePrettyCode,
@@ -89,12 +122,24 @@ export default makeSource({
           },
         },
       ],
+
+      () => (tree) => {
+        visit(tree, (node) => {
+          if (node?.type === 'element' && node?.tagName === 'Title') {
+            console.log('node::::: ', node);
+
+            node.properties['__withMeta__'] =
+              node.children.at(0).tagName === 'div';
+            node.properties['__rawString__'] = node.__rawString__;
+          }
+        });
+      },
+
       [
         rehypeAutolinkHeadings,
         {
           properties: {
             className: ['anchor'],
-            // className: ['subheading-anchor'],
             ariaLabel: 'Link to section',
           },
         },

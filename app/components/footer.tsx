@@ -37,7 +37,6 @@ const navigation = [
       },
     ],
   },
-
   {
     title: 'Download',
     links: [
