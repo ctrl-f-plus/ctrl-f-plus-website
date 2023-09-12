@@ -9,8 +9,9 @@ const Title = ({ ...props }) => {
   return (
     <div className={'flex p-0'}>
       <div
+        // border border-b-green-700
         className={
-          'code-header mt-6 flex w-full items-center justify-between border border-gray-700 px-4'
+          'code-header flex h-12 w-full items-center justify-between  rounded-t-lg border-b !border-b-gray-700  bg-shark-800 px-4 py-3 font-mono text-sm font-medium text-neutral-200'
         }
       >
         {props.title}

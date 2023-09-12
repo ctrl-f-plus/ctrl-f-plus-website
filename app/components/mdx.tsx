@@ -139,7 +139,9 @@ const components = {
       // mt-6
       //
       className={clsx(
-        'mb-4 mt-6 overflow-x-auto rounded-lg border border-t-0 border-gray-700  py-4',
+        // border border-t-0 border-gray-700
+        // mb-4 mt-6
+        'm-0 overflow-x-auto rounded-md !bg-transparent py-4',
         className
       )}
       {...props}
