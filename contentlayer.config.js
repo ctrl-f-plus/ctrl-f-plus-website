@@ -7,7 +7,10 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkCodeTitles from 'remark-flexible-code-titles';
-import { visit } from 'unist-util-visit';
+import {
+  attachRawStringToCodeContainers,
+  attachMetadataProperties,
+} from './plugins/mdxPlugins';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -22,17 +25,6 @@ const computedFields = {
     resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
   },
 };
-
-// export const PrivacyPolicy = defineDocumentType(() => ({
-//   name: 'Privacy',
-//   filePathPattern: `privacy/**/*.mdx`,
-//   contentType: 'mdx',
-//   fields: {
-//     title: { type: 'string', required: true },
-//     publishedAt: { type: 'string', required: true },
-//   },
-//   computedFields,
-// }));
 
 export const Documentation = defineDocumentType(() => ({
   name: 'Documentation',
@@ -67,6 +59,7 @@ const themePath = './assets/themes/ctrl-markdown-theme.json';
 
 export default makeSource({
   contentDirPath: 'content',
+  contentDirExclude: ['drafts'],
   documentTypes: [Blog, Documentation],
   mdx: {
     remarkPlugins: [
@@ -84,28 +77,7 @@ export default makeSource({
       ],
     ],
     rehypePlugins: [
-      () => (tree) => {
-        visit(tree, (node) => {
-          if (
-            node?.type === 'element' &&
-            node?.tagName === 'div' &&
-            node.properties.className[0] === 'remark-code-container'
-          ) {
-            if (node.children.length > 1) {
-              const titleNode = node.children[0];
-              const preNode = node.children[1];
-
-              const val = preNode.children['0'].children['0'].value;
-              titleNode.__rawString__ = val;
-            } else if (node.children.length === 1) {
-              const preNode = node.children[0];
-              const val = preNode.children['0'].children['0'].value;
-              preNode.__rawString__ = val;
-            }
-          }
-        });
-      },
-
+      attachRawStringToCodeContainers,
       rehypeSlug,
       [
         rehypePrettyCode,
@@ -127,30 +99,7 @@ export default makeSource({
         },
       ],
 
-      () => (tree) => {
-        visit(tree, (node) => {
-          if (node?.type === 'element' && node?.tagName === 'Title') {
-            node.properties['__withMeta__'] =
-              node.children.at(0).tagName === 'div';
-            node.properties['__rawString__'] = node.__rawString__;
-          } else if (node?.type === 'element' && node?.tagName === 'div') {
-            if (!('data-rehype-pretty-code-fragment' in node.properties)) {
-              return;
-            }
-
-            const preElement = node.children.at(-1);
-
-            if (preElement.tagName !== 'pre') {
-              return;
-            }
-
-            preElement.properties['__withMeta__'] =
-              node.children.at(0).tagName === 'div';
-
-            preElement.properties['__rawString__'] = node.__rawString__;
-          }
-        });
-      },
+      attachMetadataProperties,
 
       [
         rehypeAutolinkHeadings,

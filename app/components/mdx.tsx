@@ -143,7 +143,7 @@ const components = {
       )}
       {...props}
     >
-      <CopyButton text={props.__rawString__} />
+      <CopyButton text={props.__rawstring__} />
       {props.children}
     </pre>
   ),
