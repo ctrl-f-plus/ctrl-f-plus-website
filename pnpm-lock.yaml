@@ -74,9 +74,6 @@ dependencies:
   rehype-autolink-headings:
     specifier: ^6.1.1
     version: 6.1.1
-  rehype-code-copier:
-    specifier: ^0.0.2
-    version: 0.0.2
   rehype-pretty-code:
     specifier: ^0.9.5
     version: 0.9.5(shiki@0.14.3)
@@ -4605,12 +4602,6 @@ packages:
       hast-util-is-element: 2.1.3
       unified: 10.1.2
       unist-util-visit: 4.1.2
-    dev: false
-
-  /rehype-code-copier@0.0.2:
-    resolution: {integrity: sha512-4OOTl74L97kbFVQ+F2AD1Ot+z5YLFY8l+3unYZeC+gb+FrhZIk8xEM9MlhUdtNvvMuWIuyse5XPD5dSafZuhMg==}
-    dependencies:
-      unist-util-visit: 5.0.0
     dev: false
 
   /rehype-pretty-code@0.9.5(shiki@0.14.3):
