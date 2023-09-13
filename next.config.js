@@ -5,6 +5,7 @@ const nextConfig = {
   experimental: {},
   reactStrictMode: false,
   poweredByHeader: false,
+  trailingSlash: true,
   headers() {
     return [
       {
