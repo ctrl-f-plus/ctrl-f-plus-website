@@ -75,6 +75,8 @@ const CopyButton = ({
       </>
     );
   }
+
+  return null;
 };
 
 export default CopyButton;
