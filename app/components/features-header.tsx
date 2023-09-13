@@ -8,6 +8,7 @@ import {
   LazyMotion,
   domAnimation,
   m,
+  useAnimate,
   useMotionTemplate,
   useMotionValue,
   useReducedMotion,
@@ -62,16 +63,17 @@ function CardText({
 export default function FeaturesHeader() {
   const prefersReducedMotion = !!useReducedMotion();
 
-  // let stiffness = 80;
-  // let damping = 30;
+  let stiffness = 80;
+  let damping = 30;
 
   // let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
   // let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
 
+  let mouseX = useSpring(-500);
+  let mouseY = useSpring(0);
+
   // let mouseX = useMotionValue(-500);
   // let mouseY = useMotionValue(0);
-  let mouseX = useMotionValue(0);
-  let mouseY = useMotionValue(0);
 
   let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
 
