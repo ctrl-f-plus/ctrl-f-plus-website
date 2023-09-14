@@ -2,10 +2,11 @@
 'use client';
 
 import Image from 'next/image';
-import gifHero from '@/public/images/gif-hero.gif';
+// import gifHero from '@/public/images/gif-hero.gif';
 import { useReducedMotion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 import heroAnimationStill from 'public/images/hero-animation-still.png';
+// import { CldImage } from 'next-cloudinary';
 
 export default function HeroAnimation({ className }: any) {
   const prefersReducedMotion = useReducedMotion();
@@ -26,14 +27,19 @@ export default function HeroAnimation({ className }: any) {
           priority
         />
       ) : (
-        <Image
-          unoptimized={true}
-          src={gifHero}
-          alt={'Animated Search Visual'}
-          aria-hidden="true"
-          priority
-          // loading="lazy"
-        />
+        <>
+          <Image
+            height="480"
+            width="423"
+            // unoptimized={true}
+            // src={gifHero}
+            src="https://res.cloudinary.com/dyy8g76av/image/upload/v1694724152/gif-hero_etecxp.gif"
+            alt={'Animated Search Visual'}
+            aria-hidden="true"
+            priority
+            // loading="lazy"
+          />
+        </>
       )}
     </div>
   );

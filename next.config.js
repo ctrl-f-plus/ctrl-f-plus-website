@@ -14,6 +14,9 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    domains: ['res.cloudinary.com', 'asset.cloudinary.com/'],
+  },
 };
 
 const ContentSecurityPolicy = `
