@@ -33,7 +33,8 @@ export default function HeroAnimation({ className }: any) {
             width="423"
             // unoptimized={true}
             // src={gifHero}
-            src="https://res.cloudinary.com/dyy8g76av/image/upload/v1694724152/gif-hero_etecxp.gif"
+            // src="https://res.cloudinary.com/dyy8g76av/image/upload/v1694724152/gif-hero_etecxp.gif"
+            src="https://res.cloudinary.com/dyy8g76av/image/upload/fl_animated/v1694724152/gif-hero_etecxp.webp"
             alt={'Animated Search Visual'}
             aria-hidden="true"
             priority
