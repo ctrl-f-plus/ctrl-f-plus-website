@@ -3,17 +3,39 @@
 
 import { cva, cx } from '@/cva.config';
 import { m, useReducedMotion } from 'framer-motion';
-import CtrlLink from './ctrl-link';
-import {
-  FilledStarIcon,
-  HeartHandIcon,
-  PlayIcon,
-  PuzzleIcon,
-  PuzzleIcon2,
-  PuzzleIconWithBg,
-} from './icons/button-icons';
+// import CtrlLink from './ctrl-link';
+// import {
+//   FilledStarIcon,
+//   HeartHandIcon,
+//   PlayIcon,
+//   PuzzleIcon,
+//   PuzzleIcon2,
+//   PuzzleIconWithBg,
+// } from './icons/button-icons';
 import { VariantProps } from 'cva';
 import { ButtonHTMLAttributes } from 'react';
+import dynamic from 'next/dynamic';
+const CtrlLink = dynamic(() => import('./ctrl-link'));
+// const FilledStarIcon = dynamic(() => import('./icons/button-icons'));
+
+const FilledStarIcon = dynamic(() =>
+  import('./icons/button-icons').then((mod) => mod.FilledStarIcon)
+);
+const HeartHandIcon = dynamic(() =>
+  import('./icons/button-icons').then((mod) => mod.HeartHandIcon)
+);
+const PlayIcon = dynamic(() =>
+  import('./icons/button-icons').then((mod) => mod.PlayIcon)
+);
+const PuzzleIcon = dynamic(() =>
+  import('./icons/button-icons').then((mod) => mod.PuzzleIcon)
+);
+const PuzzleIcon2 = dynamic(() =>
+  import('./icons/button-icons').then((mod) => mod.PuzzleIcon2)
+);
+const PuzzleIconWithBg = dynamic(() =>
+  import('./icons/button-icons').then((mod) => mod.PuzzleIconWithBg)
+);
 
 const btn = cva({
   base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
