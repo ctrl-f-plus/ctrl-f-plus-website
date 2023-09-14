@@ -109,6 +109,7 @@ export default async function Blog({ params }: BlogProps) {
                       height={80}
                       alt={`Author's Avatar`}
                       className="h-10 w-10 rounded-full bg-gray-50 object-cover"
+                      loading="lazy"
                     />
                     <div className="text-sm leading-6">
                       <p

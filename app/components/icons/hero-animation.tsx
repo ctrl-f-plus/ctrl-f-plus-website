@@ -22,14 +22,16 @@ export default function HeroAnimation({ className }: any) {
           src={heroAnimationStill}
           alt={'Animated Search Visual'}
           aria-hidden="true"
+          loading="lazy"
         />
       ) : (
         <Image
-          unoptimized={true}
+          // unoptimized={true}
           src={gifHero}
           alt={'Animated Search Visual'}
           aria-hidden="true"
-          priority
+          // priority
+          loading="lazy"
         />
       )}
     </div>
