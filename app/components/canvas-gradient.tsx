@@ -24,7 +24,11 @@ function CanvasGradient() {
   }, []);
 
   return (
-    <canvas id="gradient-canvas" className="absolute h-screen w-screen " />
+    // <canvas id="gradient-canvas" className="absolute h-screen w-screen " />
+    <>
+      <div className="fixed h-screen w-screen bg-white/[.47] shadow-bg" />
+      <canvas id="gradient-canvas" className="fixed h-screen w-screen " />
+    </>
   );
 }
 

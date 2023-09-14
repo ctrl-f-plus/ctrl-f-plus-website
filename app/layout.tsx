@@ -86,7 +86,10 @@ export default function RootLayout({
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
           <CanvasGradient />
-          <div className="flex h-auto w-full flex-col  bg-white/[.47] shadow-bg backdrop-blur-bg">
+          <div
+            // backdrop-blur-bg
+            className="flex h-auto w-full flex-col backdrop-blur"
+          >
             <Navbar />
             <main className="isolate z-10 flex-auto">
               {children}
