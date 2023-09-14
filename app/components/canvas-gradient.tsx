@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-// import 'server-only';
 
 function CanvasGradient() {
   const [gradient, setGradient] = useState(null);
@@ -24,11 +23,7 @@ function CanvasGradient() {
   }, []);
 
   return (
-    <canvas
-      id="gradient-canvas"
-      className="absolute h-screen w-screen "
-      // className="absolute h-screen w-screen "
-    />
+    <canvas id="gradient-canvas" className="absolute h-screen w-screen " />
   );
 }
 

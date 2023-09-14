@@ -54,7 +54,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <HeroAnimation className={'hidden laptop:block'} afterInteractive />
+          <HeroAnimation className={'hidden laptop:block'} />
         </Container>
       </FadeIn>
     </>
