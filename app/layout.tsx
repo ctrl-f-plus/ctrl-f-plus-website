@@ -91,7 +91,7 @@ export default function RootLayout({
           </CanvasGradient>
           <div
             // backdrop-blur-bg
-            className="flex h-auto w-full flex-col backdrop-blur"
+            className="flex h-auto w-full flex-col backdrop-blur-sm"
           >
             <Navbar />
             <main className="isolate z-10 flex-auto">
