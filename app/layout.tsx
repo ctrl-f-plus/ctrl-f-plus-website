@@ -2,12 +2,10 @@ import 'server-only';
 
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
-// import CanvasGradient from './components/canvas-gradient';
-// import Footer from './components/footer';
 import Navbar from './components/navbar';
 import './globals.css';
-import dynamic from 'next/dynamic';
 const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
 const Footer = dynamic(() => import('./components/footer'));
 
@@ -88,10 +86,7 @@ export default function RootLayout({
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
           <CanvasGradient />
-          <div
-            // bg-white/[.47] shadow-bg backdrop-blur-bg
-            className="flex h-auto w-full flex-col backdrop-blur-bg"
-          >
+          <div className="flex h-auto w-full flex-col  bg-white/[.47] shadow-bg backdrop-blur-bg">
             <Navbar />
             <main className="isolate z-10 flex-auto">
               {children}

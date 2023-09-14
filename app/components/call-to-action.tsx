@@ -77,6 +77,7 @@ function CtaButtons() {
       animation="slice"
       href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
       target={'_blank'}
+      className="relative isolate z-50"
       aTag
     >
       Add to Chrome
