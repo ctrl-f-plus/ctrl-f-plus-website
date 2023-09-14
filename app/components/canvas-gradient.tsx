@@ -26,8 +26,8 @@ function CanvasGradient() {
   return (
     <canvas
       id="gradient-canvas"
-      // className="absolute h-screen w-screen bg-gradient-cyan/50"
-      className="absolute h-screen w-screen "
+      className="absolute h-screen w-screen bg-gradient-cyan/50"
+      // className="absolute h-screen w-screen "
     />
   );
 }

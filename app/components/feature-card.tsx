@@ -4,14 +4,20 @@
 // TODO: Convert to server-only
 
 import { useInView, useReducedMotion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import { Balancer } from 'react-wrap-balancer';
 import Container from './container';
 import { FadeIn } from './fade-in';
-import FeatureIcon1 from './icons/feature1';
-import FeatureIcon2 from './icons/feature2';
-import FeatureIcon3 from './icons/feature3';
+// import FeatureIcon1 from './icons/feature1';
+// import FeatureIcon2 from './icons/feature2';
+// import FeatureIcon3 from './icons/feature3';
 
+const FeatureIcon1 = dynamic(() => import('./icons/feature1'));
+const FeatureIcon2 = dynamic(() => import('./icons/feature2'));
+const FeatureIcon3 = dynamic(() => import('./icons/feature3'));
+// const Button = dynamic(() => import('./Button'));
+//
 const features = [
   {
     title: `All-Tab Search: The Panoramic View`,

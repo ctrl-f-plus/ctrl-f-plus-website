@@ -8,9 +8,7 @@ import {
   LazyMotion,
   domAnimation,
   m,
-  useAnimate,
   useMotionTemplate,
-  useMotionValue,
   useReducedMotion,
   useSpring,
 } from 'framer-motion';
