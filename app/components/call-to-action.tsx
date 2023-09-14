@@ -1,13 +1,19 @@
 // app/components/call-to-action.tsx
 'use client';
 
+import dynamic from 'next/dynamic';
 import '@/styles/ctrl-atropos.css';
-import Atropos from 'atropos/react';
+// import Atropos from 'atropos/react';
 import { m, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
-import Button from './Button';
-import Container from './container';
+// import Button from './Button';
+// import Container from './container';
 import { FadeIn } from './fade-in';
+
+const Atropos = dynamic(() => import('atropos/react'));
+const Button = dynamic(() => import('./Button'));
+const Container = dynamic(() => import('./container'));
+// const { FadeIn } = dynamic(() => import('./fade-in'));
 
 function CtaColorAccents() {
   return (

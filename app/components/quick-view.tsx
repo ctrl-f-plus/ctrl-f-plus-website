@@ -3,9 +3,13 @@
 
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useRef, useState } from 'react';
-import ReactPlayer from 'react-player';
-import Loading from '../loading';
+import dynamic from 'next/dynamic';
+// import ReactPlayer from 'react-player';
+// import Loading from '../loading';
 import Button from './Button';
+
+const ReactPlayer = dynamic(() => import('react-player'));
+const Loading = dynamic(() => import('../loading'));
 
 function XMarkIcon({ className }: { className: string }) {
   return (
