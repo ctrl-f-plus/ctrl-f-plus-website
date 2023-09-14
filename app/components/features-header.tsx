@@ -94,7 +94,7 @@ export default function FeaturesHeader() {
   };
 
   useEffect(() => {
-    console.log('USEEFFECT!!!!!');
+    // console.log('USEEFFECT!!!!!');
     mouseX.set(775);
     mouseY.set(150);
   });

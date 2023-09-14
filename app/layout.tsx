@@ -3,10 +3,13 @@ import 'server-only';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
-import CanvasGradient from './components/canvas-gradient';
-import Footer from './components/footer';
+// import CanvasGradient from './components/canvas-gradient';
+// import Footer from './components/footer';
 import Navbar from './components/navbar';
 import './globals.css';
+import dynamic from 'next/dynamic';
+const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
+const Footer = dynamic(() => import('./components/footer'));
 
 const inter = Inter({
   subsets: ['latin'],
@@ -79,9 +82,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth bg-red-500 antialiased`}
     >
-      <body className="debug-screens mx-auto flex min-h-full flex-col">
+      <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
           <CanvasGradient />
           <div className="flex h-auto w-full flex-col bg-white/[.47] shadow-bg backdrop-blur-bg">
