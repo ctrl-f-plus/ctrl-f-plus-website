@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import Navbar from './components/navbar';
 import './globals.css';
+import CanvasGradientInner from './components/canvas-gradient-inner';
 const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
 const Footer = dynamic(() => import('./components/footer'));
 
@@ -85,7 +86,9 @@ export default function RootLayout({
     >
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
-          <CanvasGradient />
+          <CanvasGradient>
+            <CanvasGradientInner />
+          </CanvasGradient>
           <div
             // backdrop-blur-bg
             className="flex h-auto w-full flex-col backdrop-blur"

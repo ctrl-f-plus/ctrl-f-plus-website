@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import '../../styles/canvas-gradient.css';
 
-function CanvasGradient() {
+function CanvasGradient({ children }: { children: React.ReactNode }) {
   const [gradient, setGradient] = useState(null);
 
   useEffect(() => {
@@ -26,8 +26,9 @@ function CanvasGradient() {
   return (
     // <canvas id="gradient-canvas" className="absolute h-screen w-screen " />
     <>
-      <div className="fixed h-screen w-screen bg-white/[.47] shadow-bg" />
-      <canvas id="gradient-canvas" className="fixed h-screen w-screen " />
+      {children}
+      {/* <div className="fixed h-screen w-screen bg-white/[.47] shadow-bg" />
+      <canvas id="gradient-canvas" className="fixed h-screen w-screen " /> */}
     </>
   );
 }
