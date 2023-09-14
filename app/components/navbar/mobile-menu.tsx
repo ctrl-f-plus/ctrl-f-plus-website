@@ -1,11 +1,15 @@
 'use client';
 
 import { Dialog } from '@headlessui/react';
-import Link from 'next/link';
-import LogoIcon from '../icons/logo';
-import XMarkIcon from '../icons/x-mark';
-import CtrlLink from '../ctrl-link';
+// import Link from 'next/link';
+// import LogoIcon from '../icons/logo';
+// import XMarkIcon from '../icons/x-mark';
+// import CtrlLink from '../ctrl-link';
 import { NavItem } from '.';
+import dynamic from 'next/dynamic';
+const CtrlLink = dynamic(() => import('../ctrl-link'));
+const LogoIcon = dynamic(() => import('../icons/logo'));
+const XMarkIcon = dynamic(() => import('../icons/x-mark'));
 
 export default function MobileMenu({
   navItems,
