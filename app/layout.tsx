@@ -10,6 +10,7 @@ import CanvasGradientInner from './components/canvas-gradient-inner';
 const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
 const Footer = dynamic(() => import('./components/footer'));
 
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
