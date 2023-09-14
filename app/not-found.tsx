@@ -1,12 +1,12 @@
 import 'server-only';
 import Container from './components/container';
 
-import { FadeIn } from './components/fade-in';
+import { FadeIn, FadeInStagger } from './components/fade-in';
 import Button from './components/Button';
 
 export default function NotFoundPage() {
   return (
-    <>
+    <FadeInStagger>
       <Container className=" mt-18">
         <FadeIn className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
           <div className="text-center">
@@ -34,6 +34,6 @@ export default function NotFoundPage() {
           </div>
         </FadeIn>
       </Container>
-    </>
+    </FadeInStagger>
   );
 }

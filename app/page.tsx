@@ -7,6 +7,7 @@ import { FadeInStagger } from './components/fade-in';
 import FeatureCard from './components/feature-card';
 import FeaturesHeader from './components/features-header';
 import Hero from './components/hero';
+// import Loading from './loading';
 
 export default function Page() {
   const components = [
