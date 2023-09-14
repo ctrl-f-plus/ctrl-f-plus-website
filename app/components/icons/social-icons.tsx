@@ -1,5 +1,5 @@
 // app/components/icons/github-icon.tsx
-
+import 'server-only';
 import clsx from 'clsx';
 
 export function GithubIcon({ className }: { className?: string }) {
