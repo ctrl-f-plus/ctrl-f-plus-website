@@ -40,6 +40,7 @@ export default function QuickView() {
         onClick={() => setIsOpen(true)}
         aTag={false}
         target={''}
+        button={true}
         className="cursor-pointer"
       >
         See how it works

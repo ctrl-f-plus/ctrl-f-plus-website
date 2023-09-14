@@ -90,7 +90,7 @@ export default function CtrlButton({
 }: CtrlButtonProps) {
   let prefersReducedMotion = useReducedMotion();
   const motionProps = props;
-  console.log(intent);
+  // console.log(intent);
   return (
     <>
       <CtrlLink2

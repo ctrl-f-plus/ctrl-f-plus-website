@@ -15,7 +15,7 @@ import {
 import { VariantProps } from 'cva';
 import { ButtonHTMLAttributes } from 'react';
 
-const button = cva({
+const btn = cva({
   base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
   variants: {
     intent: {
@@ -62,7 +62,7 @@ const button = cva({
 
 const ColorFill = m(function ColorFill({
   animation,
-}: VariantProps<typeof button>) {
+}: VariantProps<typeof btn>) {
   return (
     <>
       <m.span
@@ -91,7 +91,7 @@ const ColorFill = m(function ColorFill({
 
 interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
-    VariantProps<typeof button> {
+    VariantProps<typeof btn> {
   children: React.ReactNode;
   icon?:
     | 'puzzle'
@@ -101,8 +101,9 @@ interface ButtonProps
     | 'heartHandIcon'
     | 'filledStarIcon';
   href?: string;
-  aTag: boolean;
+  aTag?: boolean;
   target: string;
+  button?: boolean;
 }
 
 function Button({
@@ -116,6 +117,7 @@ function Button({
   href,
   target = '',
   aTag = false,
+  button = false,
   ...props
 }: ButtonProps) {
   let prefersReducedMotion = useReducedMotion();
@@ -140,7 +142,8 @@ function Button({
       className="h-full w-full rounded-[37px]"
       onClick={onClick}
       target={target}
-      aTag
+      aTag={aTag}
+      button
       {...props}
     >
       <m.div
@@ -148,7 +151,7 @@ function Button({
         initial="initial"
         whileTap="tap"
         transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-        className={button({ intent, size, className, animation })}
+        className={btn({ intent, size, className, animation })}
         variants={{
           initial: { scale: 'var(--scale-from)' },
           tap: { scale: 'var(--scale-to)' },
