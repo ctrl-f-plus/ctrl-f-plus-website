@@ -3,15 +3,10 @@ import 'server-only';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
-// import CanvasGradient from './components/canvas-gradient';
+import CanvasGradient from './components/canvas-gradient';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
-import dynamic from 'next/dynamic';
 import './globals.css';
-
-const CanvasGradient = dynamic(() => import('./components/canvas-gradient'), {
-  ssr: false,
-});
 
 const inter = Inter({
   subsets: ['latin'],

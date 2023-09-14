@@ -1,27 +1,26 @@
-'use client';
+// 'use client';
 
-import { useEffect, useState } from 'react';
-// import 'server-only';
+// import { useEffect, useState } from 'react';
+import 'server-only';
 
 function CanvasGradient() {
-  const [gradient, setGradient] = useState(null);
+  // const [gradient, setGradient] = useState(null);
 
-  useEffect(() => {
-    const injectGradient = () => {
-      import('../lib/gradient').then(({ Gradient }) => {
-        const gradientInstance = new Gradient();
+  // useEffect(() => {
+  //   const injectGradient = () => {
+  //     import('../lib/gradient').then(({ Gradient }) => {
+  //       const gradientInstance = new Gradient();
 
-        //@ts-ignore
-        gradientInstance.initGradient('#gradient-canvas');
+  //       //@ts-ignore
+  //       gradientInstance.initGradient('#gradient-canvas');
 
-        //@ts-ignore
-        setGradient(gradientInstance);
-      });
-    };
+  //       //@ts-ignore
+  //       setGradient(gradientInstance);
+  //     });
+  //   };
 
-    // process.env.NODE_ENV !== 'development' &&
-    injectGradient();
-  }, []);
+  //   process.env.NODE_ENV !== 'development' && injectGradient();
+  // }, []);
 
   return (
     <canvas
