@@ -4,12 +4,12 @@ import 'server-only';
 import { allBlogs } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Button from '../components/Button';
 import Container from '../components/container';
 import { FadeIn, FadeInStagger } from '../components/fade-in';
 import DrawingIcon from '../components/icons/drawing-icon';
 import InfoCard from '../components/info-card';
 import { formatDate } from '../lib/utils';
-import Button from '../components/Button';
 
 export const metadata: Metadata = {
   title: 'Blog',

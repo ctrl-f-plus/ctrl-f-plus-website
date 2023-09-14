@@ -1,11 +1,11 @@
 // app/components/call-to-action.tsx
 'use client';
 
+import '@/styles/ctrl-atropos.css';
 import Atropos from 'atropos/react';
 import { m, useInView, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 import Button from './Button';
-import '@/styles/ctrl-atropos.css';
 import Container from './container';
 import { FadeIn } from './fade-in';
 

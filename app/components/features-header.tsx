@@ -63,8 +63,8 @@ function CardText({
 export default function FeaturesHeader() {
   const prefersReducedMotion = !!useReducedMotion();
 
-  let stiffness = 80;
-  let damping = 30;
+  // let stiffness = 80;
+  // let damping = 30;
 
   // let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
   // let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
@@ -94,6 +94,7 @@ export default function FeaturesHeader() {
   };
 
   useEffect(() => {
+    console.log('USEEFFECT!!!!!');
     mouseX.set(775);
     mouseY.set(150);
   });
