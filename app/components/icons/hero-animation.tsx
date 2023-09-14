@@ -23,6 +23,7 @@ export default function HeroAnimation({ className }: any) {
           alt={'Animated Search Visual'}
           aria-hidden="true"
           // loading="lazy"
+          priority
         />
       ) : (
         <Image
@@ -30,7 +31,7 @@ export default function HeroAnimation({ className }: any) {
           src={gifHero}
           alt={'Animated Search Visual'}
           aria-hidden="true"
-          // priority
+          priority
           // loading="lazy"
         />
       )}
