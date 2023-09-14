@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import '../../styles/canvas-gradient.css';
 
 function CanvasGradient() {
   const [gradient, setGradient] = useState(null);
