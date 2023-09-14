@@ -100,6 +100,7 @@ export default function QuickView() {
                               height="auto"
                               fallback={<Loading />}
                               priority
+                              afterInteractive
                             />
                           </div>
                         </div>
