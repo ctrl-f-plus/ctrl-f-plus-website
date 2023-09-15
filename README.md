@@ -2,7 +2,7 @@
 # Ctrl-F.Plus
 
 <div align="center">
-  <img src="public/images/Screenshots/ctrl-f-plus_screenshot2-800x450.png" alt="Demo GIF">
+  <img src="public/images/Screenshots/ctrl-f-plus_screenshot2-800x450.png" alt="ctrl-f.plus application screenshot">
 </div>
 
 
