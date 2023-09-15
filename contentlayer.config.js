@@ -104,7 +104,6 @@ export default makeSource({
           codeBlockTitle: 'Title',
         },
       ],
-
       [
         rehypeAutolinkHeadings,
         {
