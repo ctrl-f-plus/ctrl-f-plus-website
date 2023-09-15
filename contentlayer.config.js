@@ -8,9 +8,9 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkCodeTitles from 'remark-flexible-code-titles';
 import {
-  attachRawStringToCodeContainers,
-  attachMetadataProperties,
-} from './plugins/mdxPlugins';
+  rehypeAttachRawStringsToCodeContainer,
+  rehypeEnrichCodeContainerMetadata,
+} from 'rehype-clipboard-prep-code';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -77,7 +77,7 @@ export default makeSource({
       ],
     ],
     rehypePlugins: [
-      attachRawStringToCodeContainers,
+      rehypeAttachRawStringsToCodeContainer,
       rehypeSlug,
       [
         rehypePrettyCode,
@@ -98,8 +98,12 @@ export default makeSource({
           },
         },
       ],
-
-      attachMetadataProperties,
+      [
+        rehypeEnrichCodeContainerMetadata,
+        {
+          codeBlockTitle: 'Title',
+        },
+      ],
 
       [
         rehypeAutolinkHeadings,
