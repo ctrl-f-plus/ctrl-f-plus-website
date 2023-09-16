@@ -163,7 +163,7 @@ export default function About() {
                   >
                     <div>
                       <Image
-                        loading="lazy"
+                        // loading="lazy"
                         className="aspect-[3/2] w-full rounded-2xl bg-[#D3D7DA]/70 object-cover"
                         src={person.avatar}
                         alt={`Photo of ` + person.name}

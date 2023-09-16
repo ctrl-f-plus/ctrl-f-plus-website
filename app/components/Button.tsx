@@ -7,7 +7,6 @@ import { m, useReducedMotion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { ButtonHTMLAttributes } from 'react';
 const CtrlLink = dynamic(() => import('./ctrl-link'));
-
 const FilledStarIcon = dynamic(() =>
   import('./icons/button-icons').then((mod) => mod.FilledStarIcon)
 );
