@@ -5,7 +5,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 // import dynamic from 'next/dynamic';
 import Loading from '../loading';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/youtube';
 import XVideoIcon from './icons/x-video-icon';
 
 // const ReactPlayer = dynamic(() => import('react-player/youtube'));
