@@ -93,7 +93,7 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                         aria-hidden="true"
                         alt=""
                         src={feat.icon}
-                        unoptimized
+                        // unoptimized
                       />
                     </div>
                     {/* <div className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]">
