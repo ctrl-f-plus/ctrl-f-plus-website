@@ -3,11 +3,13 @@
 
 import clsx from 'clsx';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import Container from '../container';
-import MobileMenu from './mobile-menu';
-const LogoIcon = dynamic(() => import('../icons/logo'));
+import logoIcon from '/public/svgs/logo-icon.min.svg';
+// import MobileMenu from './mobile-menu';
+const MobileMenu = dynamic(() => import('./mobile-menu'));
 const CtrlLink = dynamic(() => import('../ctrl-link'));
 const MenuIcon = dynamic(() => import('../icons/menu'));
 
@@ -42,7 +44,7 @@ const navItems: Record<string, NavItem> = {
 
 // TODO: Fix Mobile menu
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   let pathname = usePathname() || '/';
   if (pathname.includes('/blog/')) {
@@ -58,11 +60,18 @@ export default function Navbar() {
         >
           <CtrlLink href="/" className="">
             <span className="sr-only">Ctrl-F Plus</span>
-            <LogoIcon />
+            <Image
+              width="102"
+              height="19"
+              src={logoIcon}
+              alt="Logo Icon"
+              unoptimized
+            />
+            {/* <LogoIcon /> */}
           </CtrlLink>
 
           <div className="flex laptop:hidden">
-            <button type="button" onClick={() => setMobileMenuOpen(true)}>
+            <button type="button" onClick={() => setIsMobileMenuOpen(true)}>
               <span className="sr-only">Open main menu</span>
               <MenuIcon />
             </button>
@@ -96,11 +105,13 @@ export default function Navbar() {
           </div>
         </nav>
 
-        <MobileMenu
-          mobileMenuOpen={mobileMenuOpen}
-          setMobileMenuOpen={setMobileMenuOpen}
-          navItems={navItems}
-        />
+        {isMobileMenuOpen && (
+          <MobileMenu
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+            navItems={navItems}
+          />
+        )}
       </Container>
     </header>
   );
