@@ -113,7 +113,7 @@ module.exports = {
         },
       },
       cursor: {
-        'magnifying-glass': `url('/images/magnifyicon.svg'), auto`,
+        'magnifying-glass': `url('/svgs/magnifyicon.min.svg'), auto`,
       },
       fontFamily: {
         inter: ['var(--font-inter)'],

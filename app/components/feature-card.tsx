@@ -1,41 +1,50 @@
 // app/tab-hoarders/components/FeatureCard.tsx
 'use client';
 
-// TODO: Convert to server-only
-
 import { useInView, useReducedMotion } from 'framer-motion';
-import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { useRef } from 'react';
 import Container from './container';
 import { FadeIn } from './fade-in';
-const FeatureIcon1 = dynamic(() => import('./icons/feature1'));
-const FeatureIcon2 = dynamic(() => import('./icons/feature2'));
-const FeatureIcon3 = dynamic(() => import('./icons/feature3'));
+// import dynamic from 'next/dynamic';
+// const FeatureIcon1 = dynamic(() => import('./icons/feature1'));
+// const FeatureIcon2 = dynamic(() => import('./icons/feature2'));
+// const FeatureIcon3 = dynamic(() => import('./icons/feature3'));
+
+import feature1 from '/public/svgs/feature1.min.svg';
+import feature2 from '/public/svgs/feature2.min.svg';
+import feature3 from '/public/svgs/feature3.min.svg';
 
 const features = [
   {
     title: `All-Tab Search: The Panoramic View`,
     subTitle: `Upgrade from One-Tab Searches`,
     description: `Your CTRL+F only searches one tab? That's cute. We prefer the panoramic view.`,
-    icon: FeatureIcon1,
+    // icon0: FeatureIcon1,
+    icon: feature1,
+    initialOfset: '-500px',
   },
   {
     title: `Familiar Interface: Revolutionary Yet Comfortable`,
     subTitle: `Innovation with Coziness`,
     description: `Just because we've revolutionized search doesn't mean we can't be cozy. Slip into something comfortable.`,
-    icon: FeatureIcon2,
+    // icon0: FeatureIcon2,
+    icon: feature2,
+    initialOfset: '500px',
   },
   {
     title: `Easy Activation: CTRL+SHIFT+F`,
     subTitle: `Simplicity at Your Fingertips`,
     description: `CTRL+SHIFT+F. So easy a caveman could do it. But don't worry, you'll probably get the hang of it too.`,
-    icon: FeatureIcon3,
+    // icon0: FeatureIcon3,
+    icon: feature3,
+    initialOfset: '-500px',
   },
 ];
 // TODO: pass as param instead
-const calculateInitialOffset = (index: number): string => {
-  return index % 2 === 1 ? '500px' : '-500px';
-};
+// const calculateInitialOffset = (index: number): string => {
+//   return index % 2 === 1 ? '500px' : '-500px';
+// };
 
 function AnimtateCard({ feat, index }: { feat: any; index: number }) {
   let prefersReducedMotion = useReducedMotion();
@@ -71,12 +80,26 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                   transform:
                     isInView || prefersReducedMotion
                       ? 'none'
-                      : `translateX(${calculateInitialOffset(index)})`,
+                      : `translateX(${feat.initialOfset})`,
+                  // : `translateX(${calculateInitialOffset(index)})`,
                   transition: 'all 1.9s',
                 }}
               >
                 {
-                  <feat.icon className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]" />
+                  <>
+                    <div className="relative h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]">
+                      <Image
+                        fill
+                        aria-hidden="true"
+                        alt=""
+                        src={feat.icon}
+                        unoptimized
+                      />
+                    </div>
+                    {/* <div className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]">
+                      <feat.icon0 className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]" />
+                    </div> */}
+                  </>
                 }
               </span>
             </div>
@@ -125,7 +148,7 @@ export default function FeatureCard() {
       {features.map((feat, index) => {
         return (
           <FadeIn key={feat.title} className="">
-            <Container className="relative mt-18  flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
+            <Container className="relative mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
               <div className="laptop:text-left">
                 <AnimtateCard feat={feat} index={index} />
               </div>
