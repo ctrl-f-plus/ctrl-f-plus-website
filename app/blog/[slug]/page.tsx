@@ -9,7 +9,6 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Balancer } from 'react-wrap-balancer';
 import Container from '../../components/container';
 
 function getPost(params: any) {
@@ -94,7 +93,7 @@ export default async function Blog({ params }: BlogProps) {
                 <div className="flex flex-col items-start justify-center gap-6 ">
                   <div className="flex flex-col gap-3">
                     <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
-                      <Balancer>{formatDate(post.publishedAt)}</Balancer>
+                      {formatDate(post.publishedAt)}
                     </p>
 
                     <h1 className="font-inter text-fs-x0 text-shark tab-pro:text-fs-middle desktop:text-fs-xxx">

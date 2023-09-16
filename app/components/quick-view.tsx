@@ -4,31 +4,10 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
-// import ReactPlayer from 'react-player';
 import Loading from '../loading';
 import Button from './Button';
-
-const ReactPlayer = dynamic(() => import('react-player'));
-// const Loading = dynamic(() => import('../loading'));
-
-function XMarkIcon({ className }: { className: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-      className={className}
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6 18L18 6M6 6l12 12"
-      />
-    </svg>
-  );
-}
+const ReactPlayer = dynamic(() => import('react-player/youtube'));
+const XVideoIcon = dynamic(() => import('./icons/x-video-icon'));
 
 export default function QuickView() {
   const playerRef = useRef(null);
@@ -89,7 +68,7 @@ export default function QuickView() {
                                 className="z-50 inline-flex rounded-full p-[2px] text-white hover:bg-gray-500 focus:ring-2 focus:ring-bittersweet active:ring-2 active:ring-bittersweet"
                               >
                                 <span className="sr-only">Dismiss</span>
-                                <XMarkIcon
+                                <XVideoIcon
                                   className="h-[20px] w-[20px] active:text-bittersweet"
                                   aria-hidden="true"
                                 />
@@ -104,7 +83,7 @@ export default function QuickView() {
                               width="85%"
                               height="auto"
                               fallback={<Loading />}
-                              priority
+                              // priority
                               afterInteractive
                             />
                           </div>

@@ -1,32 +1,28 @@
 // app/components/icons/hero-animation.tsx\
 'use client';
 
-import Image from 'next/image';
 import gifHero from '@/public/images/gif-hero-animated.webp';
 import { useReducedMotion } from 'framer-motion';
-import { twMerge } from 'tailwind-merge';
+import Image from 'next/image';
 import heroAnimationStill from 'public/images/hero-animation-still.png';
 
 export default function HeroAnimation({ className }: any) {
   const prefersReducedMotion = useReducedMotion();
 
-  const classNames = twMerge(
-    className,
-    prefersReducedMotion ? '-mt-9' : '-mt-18'
-  );
-
   return (
-    <div className={classNames}>
+    <>
       {prefersReducedMotion ? (
-        <Image
-          src={heroAnimationStill}
-          alt={'Animated Search Visual'}
-          aria-hidden="true"
-          // loading="lazy"
-          priority
-        />
+        <div className="-mt-9 hidden laptop:block">
+          <Image
+            src={heroAnimationStill}
+            alt={'Animated Search Visual'}
+            aria-hidden="true"
+            // loading="lazy"
+            priority
+          />
+        </div>
       ) : (
-        <>
+        <div className="-mt-18 hidden laptop:block">
           <Image
             height="423"
             width="480"
@@ -39,8 +35,8 @@ export default function HeroAnimation({ className }: any) {
             priority
             // loading="lazy"
           />
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }

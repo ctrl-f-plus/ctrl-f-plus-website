@@ -1,16 +1,13 @@
 // app/components/layout/navbar/index.tsx
 'use client';
-import dynamic from 'next/dynamic';
+
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import Container from '../container';
-// import CtrlLink from '../ctrl-link';
-import LogoIcon from '../icons/logo';
-// import MenuIcon from '../icons/menu';
 import MobileMenu from './mobile-menu';
-
-// const MobileMenu = dynamic(() => import('./mobile-menu'));
+const LogoIcon = dynamic(() => import('../icons/logo'));
 const CtrlLink = dynamic(() => import('../ctrl-link'));
 const MenuIcon = dynamic(() => import('../icons/menu'));
 

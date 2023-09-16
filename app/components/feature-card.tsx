@@ -6,18 +6,12 @@
 import { useInView, useReducedMotion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
-import { Balancer } from 'react-wrap-balancer';
 import Container from './container';
 import { FadeIn } from './fade-in';
-// import FeatureIcon1 from './icons/feature1';
-// import FeatureIcon2 from './icons/feature2';
-// import FeatureIcon3 from './icons/feature3';
-
 const FeatureIcon1 = dynamic(() => import('./icons/feature1'));
 const FeatureIcon2 = dynamic(() => import('./icons/feature2'));
 const FeatureIcon3 = dynamic(() => import('./icons/feature3'));
-// const Button = dynamic(() => import('./Button'));
-//
+
 const features = [
   {
     title: `All-Tab Search: The Panoramic View`,
@@ -103,16 +97,16 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                 }}
               >
                 <div className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start">
-                  <h2 className="text-center font-inter text-fs-base text-highlighter-900 laptop:text-left">
-                    <Balancer>{feat.title}</Balancer>
+                  <h2 className="text-center font-inter text-fs-base text-highlighter-900 [text-wrap:balance] laptop:text-left">
+                    {feat.title}
                   </h2>
 
                   <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-shark tablet:max-w-[525px] tab-pro:text-fs-xl laptop:max-w-[521px] laptop:text-left">
                     {feat.subTitle}
                   </h3>
 
-                  <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-shark tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
-                    <Balancer>{feat.description}</Balancer>
+                  <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-shark [text-wrap:balance] tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
+                    {feat.description}
                   </p>
                 </div>
               </span>

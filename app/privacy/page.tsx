@@ -2,7 +2,6 @@ import 'server-only';
 
 import { allDocumentations } from '@/.contentlayer/generated/Documentation/_index.mjs';
 import type { Metadata } from 'next';
-import Balancer from 'react-wrap-balancer';
 import Container from '../components/container';
 import { FadeInStagger } from '../components/fade-in';
 import { Mdx } from '../components/mdx';
@@ -31,7 +30,7 @@ export default function Privacy() {
       <FadeInStagger>
         <PageTitleCard>
           <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
-            <Balancer>{formatDate(privacyPolicy.publishedAt)}</Balancer>
+            {formatDate(privacyPolicy.publishedAt)}
           </p>
           <h1 className="font-inter text-fs-xl text-shark">Privacy Policy</h1>
 

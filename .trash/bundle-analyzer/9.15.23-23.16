@@ -1,0 +1,79 @@
+ .trash/bundle-analyzer/9.15.23-23.16
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      6.57 kB         139 kB
+├ ○ /_not-found                            0 B                0 B
+├ ○ /about                                 2.98 kB         125 kB
+├ ○ /blog                                  2.43 kB         119 kB
+├ λ /blog/[slug]                           1.49 kB         127 kB
+├ ○ /opengraph-image.png                   0 B                0 B
+├ ○ /privacy                               1.63 kB         121 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /setup                                 1.63 kB         121 kB
+├ ○ /sitemap.xml                           0 B                0 B
+└ ○ /test                                  178 B           110 kB
++ First Load JS shared by all              78.9 kB
+  ├ chunks/415-e28cff8c1a86d10b.js         26.1 kB
+  ├ chunks/5bed4269-73ca0275a13281ac.js    50.5 kB
+  ├ chunks/main-app-98abb4e81ef4cdae.js    219 B
+  └ chunks/webpack-81ae2864ab417213.js     2.02 kB
+
+Route (pages)                              Size     First Load JS
++ First Load JS shared by all              76.7 kB
+  ├ chunks/framework-510ec8ffd65e1d01.js   45.1 kB
+  ├ chunks/main-88cd4b1bb8da5574.js        29.4 kB
+  ├ chunks/pages/_app-8a2599b4792795b9.js  195 B
+  └ chunks/webpack-81ae2864ab417213.js     2.02 kB
+
+
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      6.8 kB          138 kB
+├ ○ /_not-found                            0 B                0 B
+├ ○ /about                                 2.98 kB         125 kB
+├ ○ /blog                                  2.44 kB         119 kB
+├ λ /blog/[slug]                           1.49 kB         127 kB
+├ ○ /opengraph-image.png                   0 B                0 B
+├ ○ /privacy                               1.63 kB         121 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /setup                                 1.63 kB         121 kB
+├ ○ /sitemap.xml                           0 B                0 B
+└ ○ /test                                  178 B           110 kB
++ First Load JS shared by all              78.8 kB
+  ├ chunks/415-e28cff8c1a86d10b.js         26.1 kB
+  ├ chunks/5bed4269-73ca0275a13281ac.js    50.5 kB
+  ├ chunks/main-app-d3442ba486a4ba44.js    219 B
+  └ chunks/webpack-b12a79c52765d413.js     1.95 kB
+
+Route (pages)                              Size     First Load JS
++ First Load JS shared by all              76.6 kB
+  ├ chunks/framework-510ec8ffd65e1d01.js   45.1 kB
+  ├ chunks/main-88cd4b1bb8da5574.js        29.4 kB
+  ├ chunks/pages/_app-8a2599b4792795b9.js  195 B
+  └ chunks/webpack-b12a79c52765d413.js     1.95 kB
+
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      5.88 kB         138 kB
+├ ○ /_not-found                            0 B                0 B
+├ ○ /about                                 2.98 kB         125 kB
+├ ○ /blog                                  2.44 kB         119 kB
+├ λ /blog/[slug]                           1.48 kB         126 kB
+├ ○ /opengraph-image.png                   0 B                0 B
+├ ○ /privacy                               1.63 kB         120 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /setup                                 1.63 kB         120 kB
+├ ○ /sitemap.xml                           0 B                0 B
+└ ○ /test                                  178 B           110 kB
++ First Load JS shared by all              78.9 kB
+  ├ chunks/415-e28cff8c1a86d10b.js         26.1 kB
+  ├ chunks/5bed4269-73ca0275a13281ac.js    50.5 kB
+  ├ chunks/main-app-9c8c7865253fe4d6.js    218 B
+  └ chunks/webpack-7d889d595e33c6b8.js     2.04 kB
+
+Route (pages)                              Size     First Load JS
++ First Load JS shared by all              76.7 kB
+  ├ chunks/framework-510ec8ffd65e1d01.js   45.1 kB
+  ├ chunks/main-88cd4b1bb8da5574.js        29.4 kB
+  ├ chunks/pages/_app-8a2599b4792795b9.js  195 B
+  └ chunks/webpack-7d889d595e33c6b8.js     2.04 kB

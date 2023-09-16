@@ -1,11 +1,13 @@
 // app/components/hero.tsx
 import 'server-only';
 
+// import dynamic from 'next/dynamic';
 import Button from './Button';
 import Container from './container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
 import QuickView from './quick-view';
+// const QuickView = dynamic(() => import('./quick-view'));
 
 export default function Hero() {
   return (
@@ -54,7 +56,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <HeroAnimation className={'hidden laptop:block'} />
+          <HeroAnimation />
         </Container>
       </FadeIn>
     </>

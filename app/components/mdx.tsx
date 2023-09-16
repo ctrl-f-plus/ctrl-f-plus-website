@@ -2,7 +2,6 @@
 
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';
-import * as React from 'react';
 import clsx from 'clsx';
 import Title from './title';
 import CopyButton from './copy-button';

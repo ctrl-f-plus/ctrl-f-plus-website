@@ -11,24 +11,13 @@ interface PageTitleCardProps {
 export default function PageTitleCard({ children }: PageTitleCardProps) {
   return (
     <>
-      <FadeIn
-        // tablet:p-14
-        className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20"
-      >
+      <FadeIn className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20">
         <div className="flex justify-start gap-[9.375rem]">
           <div className="flex flex-col items-start justify-center gap-6">
             {children}
           </div>
         </div>
       </FadeIn>
-
-      {/* <FadeIn className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20">
-        <div
-          // gap-[9.375rem]
-          //gap-[5rem]
-          className="flex justify-start"
-        ></div>
-      </FadeIn> */}
     </>
   );
 }

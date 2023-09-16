@@ -3,7 +3,6 @@ import 'server-only';
 
 import { allDocumentations } from '@/.contentlayer/generated/Documentation/_index.mjs';
 import type { Metadata } from 'next';
-import Balancer from 'react-wrap-balancer';
 import Container from '../components/container';
 import { FadeInStagger } from '../components/fade-in';
 import { Mdx } from '../components/mdx';
@@ -31,7 +30,7 @@ export default function Setup() {
       <FadeInStagger>
         <PageTitleCard>
           <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
-            <Balancer>{formatDate(document.publishedAt)}</Balancer>
+            {formatDate(document.publishedAt)}
           </p>
           <h1 className="font-inter text-fs-xl text-shark">{document.title}</h1>
 

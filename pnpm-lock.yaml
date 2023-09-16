@@ -17,21 +17,12 @@ dependencies:
   '@headlessui/react':
     specifier: ^1.7.14
     version: 1.7.14(react-dom@18.2.0)(react@18.2.0)
-  '@heroicons/react':
-    specifier: ^2.0.18
-    version: 2.0.18(react@18.2.0)
   '@vercel/analytics':
     specifier: ^1.0.1
     version: 1.0.1
   atropos:
     specifier: ^2.0.2
     version: 2.0.2
-  class-variance-authority:
-    specifier: ^0.7.0
-    version: 0.7.0
-  client-only:
-    specifier: ^0.0.1
-    version: 0.0.1
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -41,24 +32,15 @@ dependencies:
   cva:
     specifier: 1.0.0-beta.0
     version: 1.0.0-beta.0(typescript@5.0.4)
-  date-fns:
-    specifier: ^2.30.0
-    version: 2.30.0
   esbuild:
     specifier: 0.18.x
     version: 0.18.0
   framer-motion:
     specifier: ^10.12.18
     version: 10.12.18(react-dom@18.2.0)(react@18.2.0)
-  install:
-    specifier: ^0.13.0
-    version: 0.13.0
   next:
     specifier: 13.4.19
     version: 13.4.19(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
-  next-cloudinary:
-    specifier: ^4.21.0
-    version: 4.21.0(next@13.4.19)(react@18.2.0)
   next-contentlayer:
     specifier: ^0.3.4
     version: 0.3.4(contentlayer@0.3.4)(esbuild@0.18.0)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
@@ -71,9 +53,6 @@ dependencies:
   react-player:
     specifier: ^2.12.0
     version: 2.12.0(react@18.2.0)
-  react-wrap-balancer:
-    specifier: ^1.0.0
-    version: 1.0.0(react@18.2.0)
   rehype-autolink-headings:
     specifier: ^6.1.1
     version: 6.1.1
@@ -104,9 +83,6 @@ dependencies:
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
-  unist-util-visit:
-    specifier: ^5.0.0
-    version: 5.0.0
 
 devDependencies:
   '@next/bundle-analyzer':
@@ -175,29 +151,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
-
-  /@cloudinary-util/url-loader@3.10.0:
-    resolution: {integrity: sha512-RNp6WayU6e5ikA7yCRqNhp0lOwLl82vLco9EwpES2si6Hb+g9yEaeTYvobD44ISQeJUnPl6e1c/AEYVSjfzwrg==}
-    dependencies:
-      '@cloudinary-util/util': 2.2.1
-      '@cloudinary/url-gen': 1.11.2
-    dev: false
-
-  /@cloudinary-util/util@2.2.1:
-    resolution: {integrity: sha512-MEIqn5WtPP3mxSMTNNfpqlGS1UquAXcjmVdY/t/edD/ZWVjI85viBiOMIuF0W6n6UF5gTstLymfQNYx0YO/GZg==}
-    dev: false
-
-  /@cloudinary/transformation-builder-sdk@1.6.1:
-    resolution: {integrity: sha512-cBoSFbE4SnXO2QvUq+cYgUpXufmZTgg05Cy+jAdiNRGcC6lN+KO0ybMnLU6yg9cFub2NRkBDpU4N53wg4a977w==}
-    dependencies:
-      '@cloudinary/url-gen': 1.11.2
-    dev: false
-
-  /@cloudinary/url-gen@1.11.2:
-    resolution: {integrity: sha512-9yL3BlThh3PfyRg/zS8cQVic3FdFaIOp361YrDrQ4fqYbYE47SGWF4ji9KoFxYF4ejfDEptayeG9jF2C465KRQ==}
-    dependencies:
-      '@cloudinary/transformation-builder-sdk': 1.6.1
-    dev: false
 
   /@contentlayer/cli@0.3.4(esbuild@0.18.0):
     resolution: {integrity: sha512-vNDwgLuhYNu+m70NZ3XK9kexKNguuxPXg7Yvzj3B34cEilQjjzSrcTY/i+AIQm9V7uT5GGshx9ukzPf+SmoszQ==}
@@ -674,14 +627,6 @@ packages:
       client-only: 0.0.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@heroicons/react@2.0.18(react@18.2.0):
-    resolution: {integrity: sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==}
-    peerDependencies:
-      react: '>= 16'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
@@ -1643,12 +1588,6 @@ packages:
     resolution: {integrity: sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg==}
     dev: false
 
-  /class-variance-authority@0.7.0:
-    resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
-    dependencies:
-      clsx: 2.0.0
-    dev: false
-
   /client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
     dev: false
@@ -1802,13 +1741,6 @@ packages:
   /data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
-    dev: false
-
-  /date-fns@2.30.0:
-    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
-    engines: {node: '>=0.11'}
-    dependencies:
-      '@babel/runtime': 7.22.15
     dev: false
 
   /debug@3.2.7:
@@ -2956,11 +2888,6 @@ packages:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
     dev: false
 
-  /install@0.13.0:
-    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
-    engines: {node: '>= 0.10'}
-    dev: false
-
   /internal-slot@1.0.5:
     resolution: {integrity: sha512-Y+R5hJrzs52QCG2laLn4udYVnxsfny9CpOhNhUvk/SSSVyF6T27FzRbF0sroPidSu3X8oEAkOn2K804mjpt6UQ==}
     engines: {node: '>= 0.4'}
@@ -4004,18 +3931,6 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /next-cloudinary@4.21.0(next@13.4.19)(react@18.2.0):
-    resolution: {integrity: sha512-MMGNt5IFB7wJFmY6WlTKBQkwJLzEL3P6qdhRfzXVMlDG9uxzHvTqnb4bGZ+a3Bf0Ul4gdqAr1duhOxDlZdNpBw==}
-    peerDependencies:
-      next: ^12 || ^13
-      react: ^17 || ^18
-    dependencies:
-      '@cloudinary-util/url-loader': 3.10.0
-      '@cloudinary-util/util': 2.2.1
-      next: 13.4.19(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-    dev: false
-
   /next-contentlayer@0.3.4(contentlayer@0.3.4)(esbuild@0.18.0)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-UtUCwgAl159KwfhNaOwyiI7Lg6sdioyKMeh+E7jxx0CJ29JuXGxBEYmCI6+72NxFGIFZKx8lvttbbQhbnYWYSw==}
     peerDependencies:
@@ -4577,14 +4492,6 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-fast-compare: 3.2.2
-    dev: false
-
-  /react-wrap-balancer@1.0.0(react@18.2.0):
-    resolution: {integrity: sha512-yjDH+I8WGyDfh95gKhX/6ckfSBAltwQkxiYxtLPlyIRQNUVSjvz1uHR6Hpy+zHyOkJQw6GEC5RPglA41QXvzyw==}
-    peerDependencies:
-      react: '>=16.8.0 || ^17.0.0 || ^18'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /react@18.2.0:

@@ -2,21 +2,11 @@
 'use client';
 
 import { cva, cx } from '@/cva.config';
-import { m, useReducedMotion } from 'framer-motion';
-// import CtrlLink from './ctrl-link';
-// import {
-//   FilledStarIcon,
-//   HeartHandIcon,
-//   PlayIcon,
-//   PuzzleIcon,
-//   PuzzleIcon2,
-//   PuzzleIconWithBg,
-// } from './icons/button-icons';
 import { VariantProps } from 'cva';
-import { ButtonHTMLAttributes } from 'react';
+import { m, useReducedMotion } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import { ButtonHTMLAttributes } from 'react';
 const CtrlLink = dynamic(() => import('./ctrl-link'));
-// const FilledStarIcon = dynamic(() => import('./icons/button-icons'));
 
 const FilledStarIcon = dynamic(() =>
   import('./icons/button-icons').then((mod) => mod.FilledStarIcon)

@@ -44,12 +44,6 @@ export function ColorAccents() {
           </defs>
         </svg>
       </div>
-
-      {/* <div className=" hidden">
-        {' '}
-        <div className="absolute -top-24 right-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 translate-x-1/2 rounded-full bg-[#8DBEDA] blur-[43.5px] filter " />
-        <div className="absolute -bottom-24 left-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter " />
-      </div> */}
     </>
   );
 }
