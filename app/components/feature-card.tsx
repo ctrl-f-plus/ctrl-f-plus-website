@@ -32,6 +32,10 @@ const features = [
     icon: FeatureIcon3,
   },
 ];
+// TODO: pass as param instead
+const calculateInitialOffset = (index: number): string => {
+  return index % 2 === 1 ? '500px' : '-500px';
+};
 
 function AnimtateCard({ feat, index }: { feat: any; index: number }) {
   let prefersReducedMotion = useReducedMotion();
@@ -40,9 +44,6 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
     once: true,
   });
 
-  const calculateInitialOffset = (index: number): string => {
-    return index % 2 === 1 ? '500px' : '-500px';
-  };
   return (
     <>
       <div className="absolute top-1/3" ref={ref} />

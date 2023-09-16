@@ -499,14 +499,14 @@ class Gradient {
       e(this, 'maxCssVarRetries', 200),
       e(this, 'angle', 0),
       e(this, 'isLoadedClass', !1),
-      e(this, 'isScrolling', !1),
+      // e(this, 'isScrolling', !1),
       /*e(this, "isStatic", o.disableAmbientAnimations()),*/ e(
         this,
         'scrollingTimeout',
         void 0
       ),
-      e(this, 'scrollingRefreshDelay', 200),
-      e(this, 'isIntersecting', !1),
+      // e(this, 'scrollingRefreshDelay', 200),
+      // e(this, 'isIntersecting', !1),
       e(this, 'shaderFiles', void 0),
       e(this, 'vertexShader', void 0),
       e(this, 'sectionColors', void 0),
@@ -524,7 +524,7 @@ class Gradient {
       e(this, 'material', void 0),
       e(this, 'geometry', void 0),
       e(this, 'minigl', void 0),
-      e(this, 'scrollObserver', void 0),
+      // e(this, 'scrollObserver', void 0),
       e(this, 'amp', 320),
       e(this, 'seed', 5),
       e(this, 'freqX', 14e-5),
@@ -533,19 +533,19 @@ class Gradient {
       e(this, 'activeColors', [1, 1, 1, 1]),
       e(this, 'isMetaKey', !1),
       e(this, 'isGradientLegendVisible', !1),
-      e(this, 'isMouseDown', !1),
-      e(this, 'handleScroll', () => {
-        clearTimeout(this.scrollingTimeout),
-          (this.scrollingTimeout = setTimeout(
-            this.handleScrollEnd,
-            this.scrollingRefreshDelay
-          )),
-          this.isGradientLegendVisible && this.hideGradientLegend(),
-          this.conf.playing && ((this.isScrolling = !0), this.pause());
-      }),
-      e(this, 'handleScrollEnd', () => {
-        (this.isScrolling = !1), this.isIntersecting && this.play();
-      }),
+      // e(this, 'isMouseDown', !1),
+      // e(this, 'handleScroll', () => {
+      //   clearTimeout(this.scrollingTimeout),
+      //     (this.scrollingTimeout = setTimeout(
+      //       this.handleScrollEnd,
+      //       this.scrollingRefreshDelay
+      //     )),
+      //     this.isGradientLegendVisible && this.hideGradientLegend(),
+      //     this.conf.playing && ((this.isScrolling = !0), this.pause());
+      // }),
+      // e(this, 'handleScrollEnd', () => {
+      //   (this.isScrolling = !1), this.isIntersecting && this.play();
+      // }),
       e(this, 'resize', () => {
         (this.width = window.innerWidth),
           this.minigl.setSize(this.width, this.height),
@@ -557,15 +557,15 @@ class Gradient {
           (this.mesh.material.uniforms.u_shadow_power.value =
             this.width < 600 ? 5 : 6);
       }),
-      e(this, 'handleMouseDown', (e) => {
-        this.isGradientLegendVisible &&
-          ((this.isMetaKey = e.metaKey),
-          (this.isMouseDown = !0),
-          !1 === this.conf.playing && requestAnimationFrame(this.animate));
-      }),
-      e(this, 'handleMouseUp', () => {
-        this.isMouseDown = !1;
-      }),
+      // e(this, 'handleMouseDown', (e) => {
+      //   this.isGradientLegendVisible &&
+      //     ((this.isMetaKey = e.metaKey),
+      //     (this.isMouseDown = !0),
+      //     !1 === this.conf.playing && requestAnimationFrame(this.animate));
+      // }),
+      // e(this, 'handleMouseUp', () => {
+      //   this.isMouseDown = !1;
+      // }),
       e(this, 'animate', (e) => {
         if (!this.shouldSkipFrame(e) || this.isMouseDown) {
           if (
@@ -592,12 +592,12 @@ class Gradient {
             this.el.parentElement.classList.add('isLoaded');
           }, 3e3));
       }),
-      e(this, 'pause', () => {
-        this.conf.playing = false;
-      }),
-      e(this, 'play', () => {
-        requestAnimationFrame(this.animate), (this.conf.playing = true);
-      }),
+      // e(this, 'pause', () => {
+      //   this.conf.playing = false;
+      // }),
+      // e(this, 'play', () => {
+      //   requestAnimationFrame(this.animate), (this.conf.playing = true);
+      // }),
       e(this, 'initGradient', (selector) => {
         this.el = document.querySelector(selector);
         this.connect();
@@ -641,15 +641,15 @@ class Gradient {
             window.addEventListener("scroll", this.handleScroll), window.addEventListener("mousedown", this.handleMouseDown), window.addEventListener("mouseup", this.handleMouseUp), window.addEventListener("keydown", this.handleKeyDown), this.isIntersecting = !0, this.addIsLoadedClass(), this.play()
         })*/
   }
-  disconnect() {
-    this.scrollObserver &&
-      (window.removeEventListener('scroll', this.handleScroll),
-      window.removeEventListener('mousedown', this.handleMouseDown),
-      window.removeEventListener('mouseup', this.handleMouseUp),
-      window.removeEventListener('keydown', this.handleKeyDown),
-      this.scrollObserver.disconnect()),
-      window.removeEventListener('resize', this.resize);
-  }
+  // disconnect() {
+  //   this.scrollObserver &&
+  //     (window.removeEventListener('scroll', this.handleScroll),
+  //     window.removeEventListener('mousedown', this.handleMouseDown),
+  //     window.removeEventListener('mouseup', this.handleMouseUp),
+  //     window.removeEventListener('keydown', this.handleKeyDown),
+  //     this.scrollObserver.disconnect()),
+  //     window.removeEventListener('resize', this.resize);
+  // }
   initMaterial() {
     this.uniforms = {
       u_time: new this.minigl.Uniform({

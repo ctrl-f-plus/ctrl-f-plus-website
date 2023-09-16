@@ -6,6 +6,7 @@ import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion';
 import { createContext, useContext } from 'react';
 
 const FadeInStaggerContext = createContext(false);
+const viewport = { once: true };
 
 export function FadeIn({
   children,
@@ -32,7 +33,7 @@ export function FadeIn({
         : {
             initial: 'hidden',
             whileInView: 'visible',
-            viewport: { once: true },
+            viewport,
           })}
       {...props}
     >
@@ -57,7 +58,7 @@ export function FadeInStagger({
           className={className}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={viewport}
           transition={{ staggerChildren: 0.2, when: 'beforeChildren' }}
           {...props}
         >
