@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import '../../styles/canvas-gradient.css';
 
 function CanvasGradient({ children }: { children: React.ReactNode }) {
   const [gradient, setGradient] = useState(null);
@@ -27,6 +26,7 @@ function CanvasGradient({ children }: { children: React.ReactNode }) {
     // <canvas id="gradient-canvas" className="absolute h-screen w-screen " />
     <>
       {children}
+      {/* <CanvasGradientInner />; */}
       {/* <div className="fixed h-screen w-screen bg-white/[.47] shadow-bg" />
       <canvas id="gradient-canvas" className="fixed h-screen w-screen " /> */}
     </>

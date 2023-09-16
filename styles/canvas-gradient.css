@@ -1,8 +1,9 @@
 /* styles/canvas-gradient.css */
 
 #gradient-canvas {
-  width: 100%;
+  /* width: 100%;
   height: 100%;
+  display: block; */
   /*  gradient-blue: #f5fbff */
   --gradient-color-1: #f5fbff;
   /* --gradient-color-1: #ff0000; */

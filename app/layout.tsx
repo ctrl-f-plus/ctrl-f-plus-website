@@ -4,9 +4,12 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
+import CanvasGradientInner from './components/canvas-gradient-inner';
 import Navbar from './components/navbar';
 import './globals.css';
-import CanvasGradientInner from './components/canvas-gradient-inner';
+// const CanvasGradientInner = dynamic(
+//   () => import('./components/canvas-gradient-inner')
+// );
 const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
 const Footer = dynamic(() => import('./components/footer'));
 
@@ -91,7 +94,7 @@ export default function RootLayout({
           </CanvasGradient>
           <div
             // backdrop-blur-bg
-            className="flex h-auto w-full flex-col backdrop-blur-sm"
+            className="flex h-auto w-full flex-col backdrop-blur-md"
           >
             <Navbar />
             <main className="isolate z-10 flex-auto">
