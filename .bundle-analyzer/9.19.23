@@ -1,0 +1,26 @@
+ .bundle-analyzer/9.19.23
+
+
+Route (app)                                Size     First Load JS
+┌ ○ /                                      7.46 kB         123 kB
+├ ○ /_not-found                            0 B                0 B
+├ ○ /about                                 2.98 kB         124 kB
+├ ○ /blog                                  2.46 kB         119 kB
+├ λ /blog/[slug]                           1.49 kB         125 kB
+├ ○ /opengraph-image.png                   0 B                0 B
+├ ○ /privacy                               1.57 kB         120 kB
+├ ○ /robots.txt                            0 B                0 B
+├ ○ /setup                                 1.57 kB         120 kB
+└ ○ /sitemap.xml                           0 B                0 B
++ First Load JS shared by all              78.8 kB
+  ├ chunks/415-e28cff8c1a86d10b.js         26.1 kB
+  ├ chunks/5bed4269-73ca0275a13281ac.js    50.5 kB
+  ├ chunks/main-app-4cb5dae7b7acc9fb.js    217 B
+  └ chunks/webpack-e799fde70d00b22a.js     2.01 kB
+
+Route (pages)                              Size     First Load JS
++ First Load JS shared by all              76.7 kB
+  ├ chunks/framework-510ec8ffd65e1d01.js   45.1 kB
+  ├ chunks/main-3b9c01cdfbbcdf28.js        29.4 kB
+  ├ chunks/pages/_app-8a2599b4792795b9.js  195 B
+  └ chunks/webpack-e799fde70d00b22a.js     2.01 kB
