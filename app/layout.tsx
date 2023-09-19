@@ -4,7 +4,7 @@ import 'server-only';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
-// import CanvasGradientInner from './components/canvas-gradient-inner';
+import CanvasGradientInner from './components/canvas-gradient-inner';
 import Navbar from './components/navbar';
 import './globals.css';
 // const CanvasGradientInner = dynamic(
@@ -89,9 +89,9 @@ export default function RootLayout({
     >
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
-          {/* <CanvasGradient>
-            <CanvasGradientInner />
-          </CanvasGradient> */}
+          {/* <CanvasGradient> */}
+          <CanvasGradientInner />
+          {/* </CanvasGradient> */}
           <div
             // backdrop-blur-bg
             className="flex h-auto w-full flex-col backdrop-blur-md"
