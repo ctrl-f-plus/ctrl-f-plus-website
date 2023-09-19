@@ -10,7 +10,7 @@ import './globals.css';
 // const CanvasGradientInner = dynamic(
 //   () => import('./components/canvas-gradient-inner')
 // );
-// const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
+const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
 const Footer = dynamic(() => import('./components/footer'));
 
 const inter = Inter({
@@ -89,9 +89,9 @@ export default function RootLayout({
     >
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
-          {/* <CanvasGradient> */}
-          <CanvasGradientInner />
-          {/* </CanvasGradient> */}
+          <CanvasGradient>
+            <CanvasGradientInner />
+          </CanvasGradient>
           <div
             // backdrop-blur-bg
             className="flex h-auto w-full flex-col backdrop-blur-md"
