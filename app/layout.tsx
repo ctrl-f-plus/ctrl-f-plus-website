@@ -12,7 +12,9 @@ import Script from 'next/script';
 // const CanvasGradientInner = dynamic(
 //   () => import('./components/canvas-gradient-inner')
 // );
-// const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
+const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
+// import CanvasGradient from './components/canvas-gradient';
+
 const Footer = dynamic(() => import('./components/footer'));
 
 const inter = Inter({
@@ -91,7 +93,7 @@ export default function RootLayout({
     >
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
-          {/* <CanvasGradient> */}
+          <CanvasGradient />
           <CanvasGradientInner />
           {/* <canvas id="gradient-canvas" className="fixed h-screen w-screen " /> */}
           {/* </CanvasGradient> */}
