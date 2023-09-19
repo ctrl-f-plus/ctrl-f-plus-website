@@ -1,14 +1,17 @@
 // app/components/icons/hero-animation.tsx\
 'use client';
 
-import gifHero from '@/public/images/gif-hero-animated.webp';
+// import gifHero from '@/public/images/gif-hero-animated.webp';
 import { useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
-import heroAnimationStill from 'public/images/hero-animation-still.png';
+// import heroAnimationStill from 'public/images/hero-animation-still.png';
 
 export default function HeroAnimation() {
   const prefersReducedMotion = useReducedMotion();
-  const imageSrc = prefersReducedMotion ? heroAnimationStill : gifHero;
+  // const imageSrc = prefersReducedMotion ? heroAnimationStill : gifHero;
+  const imageSrc = prefersReducedMotion
+    ? 'https://res.cloudinary.com/dyy8g76av/image/upload/f_webp,q_auto/v1695149280/hero-animation-still_neaxme.webp'
+    : 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
   const className = prefersReducedMotion
     ? '-mt-9 hidden laptop:block'
     : '-mt-18 hidden laptop:block';
@@ -20,6 +23,8 @@ export default function HeroAnimation() {
           height="423"
           width="480"
           src={imageSrc}
+          // src=""
+          // src="https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp"
           alt={'Animated Search Visual'}
           aria-hidden="true"
           // loading="lazy"
