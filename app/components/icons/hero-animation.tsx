@@ -28,7 +28,7 @@ export default function HeroAnimation() {
           alt={'Animated Search Visual'}
           aria-hidden="true"
           // loading="lazy"
-          priority
+          // priority
         />
       </div>
     </>
