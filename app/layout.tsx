@@ -7,7 +7,7 @@ import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import CanvasGradientInner from './components/canvas-gradient-inner';
 import Navbar from './components/navbar';
 import './globals.css';
-import '../styles/animated-gradient.css';
+// import '../styles/animated-gradient.css';
 // import Script from 'next/script';
 // import { Gradient } from './lib/gradient';
 // const CanvasGradientInner = dynamic(
@@ -90,16 +90,16 @@ export default function RootLayout({
     <html
       lang="en"
       // bg-gradient-cyan/50
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth  antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth  bg-gradient-cyan/50  antialiased`}
     >
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
           {/* <canvas id="gradient-canvas" className=" absolute h-full w-full" /> */}
 
-          <canvas
+          {/* <canvas
             // id="gradient-canvas"
             className="css-selector background-animate absolute h-full w-full bg-gradient-to-r"
-          />
+          /> */}
 
           {/* <CanvasGradient />
           <CanvasGradientInner /> */}
@@ -152,7 +152,7 @@ export default function RootLayout({
               />
             </svg>
           </div> */}
-          {/* <CanvasGradientInner /> */}
+          <CanvasGradientInner />
           <div
             // backdrop-blur-bg
             className="flex h-auto w-full flex-col "
