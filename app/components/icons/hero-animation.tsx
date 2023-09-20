@@ -40,11 +40,14 @@ export default function HeroAnimation() {
   let imageSrc, className;
   if (prefersReducedMotion) {
     imageSrc =
-      'https://res.cloudinary.com/dyy8g76av/image/upload/f_webp,q_auto/v1695149280/hero-animation-still_neaxme.webp';
+      'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto,q_auto/v1695149280/hero-animation-still_neaxme.webp';
     className = '-mt-9';
   } else {
     imageSrc =
-      'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
+      // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
+      // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
+      'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto:video,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
+    // 'https://res.cloudinary.com/dyy8g76av/image/upload/fl_animated,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
     className = '-mt-18';
   }
 
