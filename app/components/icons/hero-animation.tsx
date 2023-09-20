@@ -40,14 +40,15 @@ export default function HeroAnimation() {
   let imageSrc, className;
   if (prefersReducedMotion) {
     imageSrc =
-      'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto,q_auto/v1695149280/hero-animation-still_neaxme.webp';
+      'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/2d289852-4c4e-4bc4-a123-58255d587700/public';
     className = '-mt-9';
   } else {
     imageSrc =
       // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
       // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
       // 'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto:video,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
-      'https://res.cloudinary.com/dyy8g76av/image/upload/fl_animated,q_auto:best/v1695149280/gif-hero-animated_kuadwt.webp';
+      // 'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/bac1a18f-e104-4a26-95ec-b303f4550300/public';
+      'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/bac1a18f-e104-4a26-95ec-b303f4550300/variant1';
     className = '-mt-18';
   }
 
