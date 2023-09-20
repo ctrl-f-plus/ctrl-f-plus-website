@@ -1,6 +1,6 @@
-/* styles/canvas-gradient.css */
+styles/canvas-gradient.css
 
-#gradient-canvas {
+.gradient-canvas {
   /* width: 100%;
   height: 100%;
   display: block; */
@@ -10,5 +10,64 @@
   --gradient-color-2: #dde3ee; /*gradient-slate: #dde3ee */
   --gradient-color-3: #f2effb; /*gradient-lavender: #f2effb */
   --gradient-color-4: #d4ece5; /*gradient-cyan: #d4ece5 */
-  z-index: -1;
+  /* z-index: -1; */
+  /* z-index: 50; */
+
+  background-size: 240% 240%;
+  /* animation: AnimationName 4s ease infinite; */
+  background: linear-gradient(
+    344deg,
+    #ff0000,
+    #f5fbff,
+    #06fab1,
+    #f2effb,
+    #d4ece5
+  );
+  background-image: linear-gradient(
+    to right,
+    #f687b3,
+    #f56565,
+    #ed8936,
+    #48bb78
+  );
+  -webkit-animation: gradient-animation 3s ease infinite;
+  -moz-animation: gradient-animation 3s ease infinite;
+  animation: gradient-animation 3s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.background-animate {
+  background-size: 400%;
+
+  background-image: linear-gradient(
+    to right,
+    #0011ff,
+    #f56565,
+    #ed8936,
+    #48bb78
+  );
+  -webkit-animation: AnimationName 3s ease infinite;
+  -moz-animation: AnimationName 3s ease infinite;
+  animation: AnimationName 3s ease infinite;
+}
+
+@keyframes AnimationName {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
