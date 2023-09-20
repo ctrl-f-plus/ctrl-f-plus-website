@@ -46,9 +46,10 @@ export default function HeroAnimation() {
     imageSrc =
       // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
       // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
-      // 'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto:video,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
-      // 'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/bac1a18f-e104-4a26-95ec-b303f4550300/public';
-      'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/bac1a18f-e104-4a26-95ec-b303f4550300/variant1';
+      'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto,fl_animated,q_90/v1695149280/gif-hero-animated_pwcfif.webp';
+    // 'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto:video,q_100/v1695149280/gif-hero-animated_kuadwt.webp';
+    // 'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/bac1a18f-e104-4a26-95ec-b303f4550300/public';
+    // 'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/bac1a18f-e104-4a26-95ec-b303f4550300/variant1';
     className = '-mt-18';
   }
 
