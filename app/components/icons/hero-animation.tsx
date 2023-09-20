@@ -14,7 +14,7 @@ export default function HeroAnimation() {
   useEffect(() => {
     // Function to check and set if the device is desktop
     const checkDeviceType = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 768) {
         // Assuming 1024px as the breakpoint for desktop
         setIsDesktop(true);
       } else {
@@ -46,8 +46,8 @@ export default function HeroAnimation() {
     imageSrc =
       // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
       // 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
-      'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto:video,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
-    // 'https://res.cloudinary.com/dyy8g76av/image/upload/fl_animated,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
+      // 'https://res.cloudinary.com/dyy8g76av/image/upload/f_auto:video,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
+      'https://res.cloudinary.com/dyy8g76av/image/upload/fl_animated,q_auto/v1695149280/gif-hero-animated_kuadwt.webp';
     className = '-mt-18';
   }
 
