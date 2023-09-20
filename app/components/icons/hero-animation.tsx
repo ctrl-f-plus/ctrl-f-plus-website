@@ -4,17 +4,49 @@
 // import gifHero from '@/public/images/gif-hero-animated.webp';
 import { useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 // import heroAnimationStill from 'public/images/hero-animation-still.png';
 
 export default function HeroAnimation() {
   const prefersReducedMotion = useReducedMotion();
+  const [isDesktop, setIsDesktop] = useState(false); // State to track device type
+
+  useEffect(() => {
+    // Function to check and set if the device is desktop
+    const checkDeviceType = () => {
+      if (window.innerWidth >= 1024) {
+        // Assuming 1024px as the breakpoint for desktop
+        setIsDesktop(true);
+      } else {
+        setIsDesktop(false);
+      }
+    };
+
+    // Initial check
+    checkDeviceType();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkDeviceType);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', checkDeviceType);
+    };
+  }, []);
+
+  if (!isDesktop) return null;
   // const imageSrc = prefersReducedMotion ? heroAnimationStill : gifHero;
-  const imageSrc = prefersReducedMotion
-    ? 'https://res.cloudinary.com/dyy8g76av/image/upload/f_webp,q_auto/v1695149280/hero-animation-still_neaxme.webp'
-    : 'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
-  const className = prefersReducedMotion
-    ? '-mt-9 hidden laptop:block'
-    : '-mt-18 hidden laptop:block';
+
+  let imageSrc, className;
+  if (prefersReducedMotion) {
+    imageSrc =
+      'https://res.cloudinary.com/dyy8g76av/image/upload/f_webp,q_auto/v1695149280/hero-animation-still_neaxme.webp';
+    className = '-mt-9';
+  } else {
+    imageSrc =
+      'https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp';
+    className = '-mt-18';
+  }
 
   return (
     <>
