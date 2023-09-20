@@ -2,46 +2,46 @@
 'use client';
 
 import { useInView, useReducedMotion } from 'framer-motion';
-// import Image from 'next/image';
+import Image from 'next/image';
 import { useRef } from 'react';
 import Container from './container';
 import { FadeIn } from './fade-in';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 // const FeatureIcon1 = dynamic(() => import('./icons/feature1'));
 // const FeatureIcon2 = dynamic(() => import('./icons/feature2'));
 // const FeatureIcon3 = dynamic(() => import('./icons/feature3'));
 
-const FeatureIcon1 = dynamic(() => import('./icons/minimized/feature1'));
-const FeatureIcon2 = dynamic(() => import('./icons/minimized/feature2'));
-const FeatureIcon3 = dynamic(() => import('./icons/minimized/feature3'));
+// const FeatureIcon1 = dynamic(() => import('./icons/minimized/feature1'));
+// const FeatureIcon2 = dynamic(() => import('./icons/minimized/feature2'));
+// const FeatureIcon3 = dynamic(() => import('./icons/minimized/feature3'));
 
-// import feature1 from '/public/svgs/feature1.min.svg';
-// import feature2 from '/public/svgs/feature2.min.svg';
-// import feature3 from '/public/svgs/feature3.min.svg';
+import feature1 from '/public/svgs/feature1.min.svg';
+import feature2 from '/public/svgs/feature2.min.svg';
+import feature3 from '/public/svgs/feature3.min.svg';
 
 const features = [
   {
     title: `All-Tab Search: The Panoramic View`,
     subTitle: `Upgrade from One-Tab Searches`,
     description: `Your CTRL+F only searches one tab? That's cute. We prefer the panoramic view.`,
-    icon: FeatureIcon1,
-    // icon: feature1,
+    // icon: FeatureIcon1,
+    icon: feature1,
     initialOfset: '-500px',
   },
   {
     title: `Familiar Interface: Revolutionary Yet Comfortable`,
     subTitle: `Innovation with Coziness`,
     description: `Just because we've revolutionized search doesn't mean we can't be cozy. Slip into something comfortable.`,
-    icon: FeatureIcon2,
-    // icon: feature2,
+    // icon: FeatureIcon2,
+    icon: feature2,
     initialOfset: '500px',
   },
   {
     title: `Easy Activation: CTRL+SHIFT+F`,
     subTitle: `Simplicity at Your Fingertips`,
     description: `CTRL+SHIFT+F. So easy a caveman could do it. But don't worry, you'll probably get the hang of it too.`,
-    icon: FeatureIcon3,
-    // icon: feature3,
+    // icon: FeatureIcon3,
+    icon: feature3,
     initialOfset: '-500px',
   },
 ];
@@ -91,8 +91,8 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
               >
                 {
                   <>
-                    {/* // <div className="relative h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]"> */}
-                    {/* <Image
+                    <div className="relative h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]">
+                      <Image
                         fill
                         aria-hidden="true"
                         alt=""
@@ -100,10 +100,10 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                         unoptimized
                         priority
                       />
-                    </div> */}
-                    <div className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]">
-                      <feat.icon className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]" />
                     </div>
+                    {/* <div className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]">
+                      <feat.icon className="h-[221.358px] w-[263.2px] laptop:h-[317px] laptop:w-[376px]" />
+                    </div> */}
                   </>
                 }
               </span>
