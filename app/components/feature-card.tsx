@@ -97,7 +97,7 @@ function AnimtateCard({ feat, index }: { feat: any; index: number }) {
                         aria-hidden="true"
                         alt=""
                         src={feat.icon}
-                        unoptimized
+                        // unoptimized
                         priority
                       />
                     </div>
