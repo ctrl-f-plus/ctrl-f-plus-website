@@ -1,5 +1,5 @@
 import 'server-only';
-import '../../styles/canvas-gradient.css';
+// import '../../styles/canvas-gradient.css';
 
 function CanvasGradientInner() {
   return (

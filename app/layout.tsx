@@ -89,73 +89,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      // bg-gradient-cyan/50
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth  bg-gradient-cyan/50  antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth bg-gradient-cyan/50 antialiased`}
     >
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
-          {/* <canvas id="gradient-canvas" className=" absolute h-full w-full" /> */}
-
-          {/* <canvas
-            // id="gradient-canvas"
-            className="css-selector background-animate absolute h-full w-full bg-gradient-to-r"
-          /> */}
-
-          {/* <CanvasGradient />
-          <CanvasGradientInner /> */}
-
-          {/* </CanvasGradient> */}
-          {/* <div className="] absolute inset-0 h-auto w-full overflow-clip">
-            <svg
-              // width="1440"
-              // height="3759"
-              viewBox="0 0 1440 3759"
-              preserveAspectRatio="xMidYMid meet"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className=""
-            >
-              <ellipse
-                cx="375.808"
-                cy="434.354"
-                rx="434.267"
-                ry="865.042"
-                fill="#ff5fbf"
-              />
-              <ellipse
-                cx="1078.25"
-                cy="667.018"
-                rx="578.915"
-                ry="883.331"
-                fill="#dde3ee"
-              />
-              <ellipse
-                cx="268.007"
-                cy="3035.77"
-                rx="486.173"
-                ry="722.626"
-                fill="#f2effb"
-              />
-              <ellipse
-                cx="1096.43"
-                cy="2884.38"
-                rx="428.083"
-                ry="799.011"
-                fill="#d4ece5"
-              />
-              <ellipse
-                cx="699.168"
-                cy="1632.22"
-                rx="388.683"
-                ry="805.958"
-                fill="#f5fbff"
-              />
-            </svg>
-          </div> */}
+          {/* <CanvasGradient> */}
           <CanvasGradientInner />
+          {/* </CanvasGradient> */}
           <div
             // backdrop-blur-bg
-            className="flex h-auto w-full flex-col "
+            className="flex h-auto w-full flex-col backdrop-blur-md"
           >
             <Navbar />
             <main className="isolate z-10 flex-auto">
