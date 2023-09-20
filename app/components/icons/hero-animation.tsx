@@ -40,7 +40,7 @@ export default function HeroAnimation() {
   let imageSrc, className;
   if (prefersReducedMotion) {
     imageSrc =
-      'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/2d289852-4c4e-4bc4-a123-58255d587700/public';
+      'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/2d289852-4c4e-4bc4-a123-58255d587700/variant1';
     className = '-mt-9';
   } else {
     imageSrc =
