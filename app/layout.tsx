@@ -7,12 +7,12 @@ import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import CanvasGradientInner from './components/canvas-gradient-inner';
 import Navbar from './components/navbar';
 import './globals.css';
-import Script from 'next/script';
+// import Script from 'next/script';
 // import { Gradient } from './lib/gradient';
 // const CanvasGradientInner = dynamic(
 //   () => import('./components/canvas-gradient-inner')
 // );
-const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
+// const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
 // import CanvasGradient from './components/canvas-gradient';
 
 const Footer = dynamic(() => import('./components/footer'));
@@ -112,35 +112,35 @@ export default function RootLayout({
                 cy="434.354"
                 rx="434.267"
                 ry="865.042"
-                fill="#ADEAEB"
+                fill="#f5fbff"
               />
               <ellipse
                 cx="1078.25"
                 cy="667.018"
                 rx="578.915"
                 ry="883.331"
-                fill="#ADB3EB"
+                fill="#dde3ee"
               />
               <ellipse
                 cx="268.007"
                 cy="3035.77"
                 rx="486.173"
                 ry="722.626"
-                fill="#ADEBCB"
+                fill="#f2effb"
               />
               <ellipse
                 cx="1096.43"
                 cy="2884.38"
                 rx="428.083"
                 ry="799.011"
-                fill="#ADEBB6"
+                fill="#d4ece5"
               />
               <ellipse
                 cx="699.168"
                 cy="1632.22"
                 rx="388.683"
                 ry="805.958"
-                fill="#ADD5EB"
+                fill="#f5fbff"
               />
             </svg>
           </div>
@@ -158,7 +158,6 @@ export default function RootLayout({
           </div>
         </div>
       </body>
-      <Script src="gradient2.js" strategy="lazyOnload" />
     </html>
   );
 }
