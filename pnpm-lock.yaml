@@ -38,9 +38,6 @@ dependencies:
   next:
     specifier: 13.4.19
     version: 13.4.19(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
-  next-cloudinary:
-    specifier: ^4.22.0
-    version: 4.22.0(next@13.4.19)(react@18.2.0)
   next-contentlayer:
     specifier: ^0.3.4
     version: 0.3.4(contentlayer@0.3.4)(esbuild@0.18.0)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
@@ -151,29 +148,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
-
-  /@cloudinary-util/url-loader@3.10.0:
-    resolution: {integrity: sha512-RNp6WayU6e5ikA7yCRqNhp0lOwLl82vLco9EwpES2si6Hb+g9yEaeTYvobD44ISQeJUnPl6e1c/AEYVSjfzwrg==}
-    dependencies:
-      '@cloudinary-util/util': 2.2.1
-      '@cloudinary/url-gen': 1.11.2
-    dev: false
-
-  /@cloudinary-util/util@2.2.1:
-    resolution: {integrity: sha512-MEIqn5WtPP3mxSMTNNfpqlGS1UquAXcjmVdY/t/edD/ZWVjI85viBiOMIuF0W6n6UF5gTstLymfQNYx0YO/GZg==}
-    dev: false
-
-  /@cloudinary/transformation-builder-sdk@1.6.1:
-    resolution: {integrity: sha512-cBoSFbE4SnXO2QvUq+cYgUpXufmZTgg05Cy+jAdiNRGcC6lN+KO0ybMnLU6yg9cFub2NRkBDpU4N53wg4a977w==}
-    dependencies:
-      '@cloudinary/url-gen': 1.11.2
-    dev: false
-
-  /@cloudinary/url-gen@1.11.2:
-    resolution: {integrity: sha512-9yL3BlThh3PfyRg/zS8cQVic3FdFaIOp361YrDrQ4fqYbYE47SGWF4ji9KoFxYF4ejfDEptayeG9jF2C465KRQ==}
-    dependencies:
-      '@cloudinary/transformation-builder-sdk': 1.6.1
-    dev: false
 
   /@contentlayer/cli@0.3.4(esbuild@0.18.0):
     resolution: {integrity: sha512-vNDwgLuhYNu+m70NZ3XK9kexKNguuxPXg7Yvzj3B34cEilQjjzSrcTY/i+AIQm9V7uT5GGshx9ukzPf+SmoszQ==}
@@ -3949,18 +3923,6 @@ packages:
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
-
-  /next-cloudinary@4.22.0(next@13.4.19)(react@18.2.0):
-    resolution: {integrity: sha512-jSTHLsIEJsKVijyCY2gLybKr6nwJrTEHRi93PjoFKF6H7AmMh5K7pQJPi61lHQ3d9s16rQMMfPSQPp8Kq1aMVw==}
-    peerDependencies:
-      next: ^12 || ^13
-      react: ^17 || ^18
-    dependencies:
-      '@cloudinary-util/url-loader': 3.10.0
-      '@cloudinary-util/util': 2.2.1
-      next: 13.4.19(@opentelemetry/api@1.4.1)(react-dom@18.2.0)(react@18.2.0)
-      react: 18.2.0
-    dev: false
 
   /next-contentlayer@0.3.4(contentlayer@0.3.4)(esbuild@0.18.0)(next@13.4.19)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-UtUCwgAl159KwfhNaOwyiI7Lg6sdioyKMeh+E7jxx0CJ29JuXGxBEYmCI6+72NxFGIFZKx8lvttbbQhbnYWYSw==}
