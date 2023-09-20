@@ -89,7 +89,7 @@ export default function RootLayout({
     <html
       lang="en"
       // bg-gradient-cyan/50
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth bg-gradient-cyan/50 antialiased`}
     >
       <body className="debug-screens mx-auto flex min-h-full flex-col ">
         <div className="relative flex flex-auto ">
@@ -97,7 +97,7 @@ export default function RootLayout({
           <CanvasGradientInner /> */}
           {/* <canvas id="gradient-canvas" className="fixed h-screen w-screen " /> */}
           {/* </CanvasGradient> */}
-          <div className="absolute inset-0 h-auto w-full overflow-hidden opacity-[.2]">
+          {/* <div className="] absolute inset-0 h-auto w-full overflow-clip">
             <svg
               // width="1440"
               // height="3759"
@@ -112,7 +112,7 @@ export default function RootLayout({
                 cy="434.354"
                 rx="434.267"
                 ry="865.042"
-                fill="#f5fbff"
+                fill="#ff5fbf"
               />
               <ellipse
                 cx="1078.25"
@@ -143,11 +143,11 @@ export default function RootLayout({
                 fill="#f5fbff"
               />
             </svg>
-          </div>
-          <CanvasGradientInner />
+          </div> */}
+          {/* <CanvasGradientInner /> */}
           <div
             // backdrop-blur-bg
-            className="flex h-auto w-full flex-col backdrop-blur-bg"
+            className="flex h-auto w-full flex-col "
           >
             <Navbar />
             <main className="isolate z-10 flex-auto">
