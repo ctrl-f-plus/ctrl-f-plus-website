@@ -130,8 +130,10 @@ export default function CallToAction() {
               <div className="relative isolate flex h-[32.8125rem]  items-center justify-center overflow-hidden  rounded-[2.25rem] bg-shark px-[2.25rem] text-center shadow-xl">
                 <div className="flex w-fit flex-col items-center justify-center gap-9">
                   <CtaColorAccents />
-                  <CtaText />
-                  <CtaButtons />
+                  <div className="flex w-fit flex-col items-center justify-center gap-9">
+                    <CtaText />
+                    <CtaButtons />
+                  </div>
                 </div>
               </div>
             </div>
@@ -146,7 +148,7 @@ export default function CallToAction() {
                 rotateYMax={prefersReducedMotion ? 0 : 15} // Maximum rotation on the y-axis
                 rotate={prefersReducedMotion ? false : true}
               >
-                <m.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center gap-9 rounded-[2.25rem]  bg-shark px-[2.25rem] text-center">
+                <m.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center rounded-[2.25rem]  bg-shark px-[2.25rem] text-center">
                   <CtaColorAccents />
                   <div
                     data-atropos-offset={prefersReducedMotion ? 0 : 10}

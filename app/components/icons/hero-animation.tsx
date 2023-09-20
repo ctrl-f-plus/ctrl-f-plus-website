@@ -14,7 +14,7 @@ export default function HeroAnimation() {
   useEffect(() => {
     // Function to check and set if the device is desktop
     const checkDeviceType = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 900) {
         // Assuming 1024px as the breakpoint for desktop
         setIsDesktop(true);
       } else {
