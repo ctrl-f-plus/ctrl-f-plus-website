@@ -1,6 +1,6 @@
 import 'server-only';
 
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
@@ -103,7 +103,7 @@ export default function RootLayout({
             <Navbar />
             <main className="isolate z-10 flex-auto">
               {children}
-              {/* <Analytics /> */}
+              <Analytics />
             </main>
             <Footer className="relative z-20" />
           </div>
