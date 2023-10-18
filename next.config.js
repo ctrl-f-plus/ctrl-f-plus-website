@@ -17,6 +17,16 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com', 'asset.cloudinary.com/'],
   },
+  async redirects() {
+    return [
+      {
+        source: '/ext',
+        destination:
+          'https://chrome.google.com/webstore/detail/ctrl-f-plus-ctrl-%2B-f-acro/dkfbnlclahcmcgehpancgfhogmilankf',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const ContentSecurityPolicy = `
