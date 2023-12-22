@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Keyboard Shortcut Setup',
   description: '',
   alternates: {
-    canonical: 'https://ctrl-f.plus/setup',
+    canonical: 'https://ctrl-f.plus/setup/',
   },
 };
 

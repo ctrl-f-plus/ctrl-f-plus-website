@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     'Explore the development journey of the Ctrl-F Plus chrome extension. Read about progress updates, challenges, and successes in our blog posts!',
   alternates: {
-    canonical: 'https://ctrl-f.plus/blog',
+    canonical: 'https://ctrl-f.plus/blog/',
   },
 };
 

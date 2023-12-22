@@ -4,9 +4,10 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
-// import CanvasGradientInner from './components/canvas-gradient-inner';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navbar from './components/navbar';
 import './globals.css';
+// import CanvasGradientInner from './components/canvas-gradient-inner';
 // import '../styles/animated-gradient.css';
 // import Script from 'next/script';
 // import { Gradient } from './lib/gradient';
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   alternates: {
     // canonical: new URL('https://ctrl-f.plus'),
     // canonical: {new URL((process.env.NEXT_PUBLIC_SITE_URL)},
-    canonical: 'https://ctrl-f.plus',
+    canonical: 'https://ctrl-f.plus/',
   },
   description:
     'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     title: 'Ctrl-F Plus: Ctrl + F Search Across All Tabs',
     description:
       'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl+Shift+F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and increase your productivity',
-    url: 'https://ctrl-f.plus',
+    url: 'https://ctrl-f.plus/',
     siteName: 'Ctrl-F Plus Chrome Extension',
     locale: 'en-US',
     type: 'website',
@@ -104,6 +105,7 @@ export default function RootLayout({
             <main className="isolate z-10 flex-auto">
               {children}
               <Analytics />
+              <SpeedInsights />
             </main>
             <Footer className="relative z-20" />
           </div>

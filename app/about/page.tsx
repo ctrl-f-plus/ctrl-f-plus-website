@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     'Learn more about Ctrl-F Plus, including the company values, commitment to open source, and the team supporting the browser extension',
   alternates: {
-    canonical: 'https://ctrl-f.plus/about',
+    canonical: 'https://ctrl-f.plus/about/',
   },
   keywords: [
     'About Us',
