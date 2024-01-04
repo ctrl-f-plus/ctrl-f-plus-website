@@ -8,22 +8,22 @@ import dynamic from 'next/dynamic';
 import { ButtonHTMLAttributes } from 'react';
 const CtrlLink = dynamic(() => import('./ctrl-link'));
 const FilledStarIcon = dynamic(() =>
-  import('./icons/button-icons').then((mod) => mod.FilledStarIcon)
+  import('../icons/button-icons').then((mod) => mod.FilledStarIcon)
 );
 const HeartHandIcon = dynamic(() =>
-  import('./icons/button-icons').then((mod) => mod.HeartHandIcon)
+  import('../icons/button-icons').then((mod) => mod.HeartHandIcon)
 );
 const PlayIcon = dynamic(() =>
-  import('./icons/button-icons').then((mod) => mod.PlayIcon)
+  import('../icons/button-icons').then((mod) => mod.PlayIcon)
 );
 const PuzzleIcon = dynamic(() =>
-  import('./icons/button-icons').then((mod) => mod.PuzzleIcon)
+  import('../icons/button-icons').then((mod) => mod.PuzzleIcon)
 );
 const PuzzleIcon2 = dynamic(() =>
-  import('./icons/button-icons').then((mod) => mod.PuzzleIcon2)
+  import('../icons/button-icons').then((mod) => mod.PuzzleIcon2)
 );
 const PuzzleIconWithBg = dynamic(() =>
-  import('./icons/button-icons').then((mod) => mod.PuzzleIconWithBg)
+  import('../icons/button-icons').then((mod) => mod.PuzzleIconWithBg)
 );
 
 const btn = cva({

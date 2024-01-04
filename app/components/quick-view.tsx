@@ -4,7 +4,7 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 const QuickViewModal = dynamic(() => import('./quick-view-modal'));
-const Button = dynamic(() => import('./Button'));
+const Button = dynamic(() => import('./ui/Button'));
 
 export default function QuickView() {
   const [isOpen, setIsOpen] = useState(false);

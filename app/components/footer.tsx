@@ -3,7 +3,7 @@ import 'server-only';
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import Container from './container';
+import Container from './ui/container';
 import LogoIconSecondary from './icons/logo-secondary';
 import { GithubIcon } from './icons/social-icons';
 

@@ -3,7 +3,7 @@
 import { Dialog } from '@headlessui/react';
 // import dynamic from 'next/dynamic';
 import { NavItem } from '.';
-import CtrlLink from '../ctrl-link';
+import CtrlLink from '../ui/ctrl-link';
 import XMarkIcon from '../icons/x-mark';
 import Image from 'next/image';
 // import LogoIcon from '../icons/logo';

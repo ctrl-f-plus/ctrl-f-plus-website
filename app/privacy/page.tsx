@@ -2,7 +2,7 @@ import 'server-only';
 
 import { allDocumentations } from '@/.contentlayer/generated/Documentation/_index.mjs';
 import type { Metadata } from 'next';
-import Container from '../components/container';
+import Container from '../components/ui/container';
 import { FadeInStagger } from '../components/fade-in';
 import { Mdx } from '../components/mdx';
 import PageBodyCard from '../components/page-body-card';

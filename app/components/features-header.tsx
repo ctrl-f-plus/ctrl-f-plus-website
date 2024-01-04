@@ -13,7 +13,7 @@ import {
   useSpring,
 } from 'framer-motion';
 import { useEffect, useMemo } from 'react';
-import Container from './container';
+import Container from './ui/container';
 import { FadeIn } from './fade-in';
 
 function CardText({
@@ -92,7 +92,6 @@ export default function FeaturesHeader() {
   };
 
   useEffect(() => {
-    // console.log('USEEFFECT!!!!!');
     mouseX.set(775);
     mouseY.set(150);
   });

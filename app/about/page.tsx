@@ -5,9 +5,9 @@ import benAvatar from '@/public/images/ben-avatar.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar.png';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Button from '../components/Button';
-import Container from '../components/container';
-import CtrlLink from '../components/ctrl-link';
+import Button from '../components/ui/Button';
+import Container from '../components/ui/container';
+import CtrlLink from '../components/ui/ctrl-link';
 import { FadeInStagger } from '../components/fade-in';
 import {
   EmailIcon,

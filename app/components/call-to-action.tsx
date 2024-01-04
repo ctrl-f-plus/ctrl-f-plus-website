@@ -5,10 +5,10 @@ import '@/styles/ctrl-atropos.css';
 import { m, useInView, useReducedMotion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
-import Container from './container';
+import Container from './ui/container';
 import { FadeIn } from './fade-in';
 const Atropos = dynamic(() => import('atropos/react'));
-const Button = dynamic(() => import('./Button'));
+const Button = dynamic(() => import('./ui/Button'));
 
 function CtaColorAccents() {
   return (

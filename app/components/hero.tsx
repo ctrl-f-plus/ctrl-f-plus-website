@@ -1,8 +1,8 @@
 // app/components/hero.tsx
 import 'server-only';
 
-import Button from './Button';
-import Container from './container';
+import Button from './ui/Button';
+import Container from './ui/container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
 import QuickView from './quick-view';

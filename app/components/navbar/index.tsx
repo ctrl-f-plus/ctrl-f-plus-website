@@ -6,11 +6,11 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import Container from '../container';
+import Container from '../ui/container';
 import logoIcon from '/public/svgs/logo-icon.min.svg';
 // import MobileMenu from './mobile-menu';
 const MobileMenu = dynamic(() => import('./mobile-menu'));
-const CtrlLink = dynamic(() => import('../ctrl-link'));
+const CtrlLink = dynamic(() => import('../ui/ctrl-link'));
 const MenuIcon = dynamic(() => import('../icons/menu'));
 
 export type NavItem = {

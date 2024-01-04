@@ -4,7 +4,7 @@
 import { useInView, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
-import Container from './container';
+import Container from './ui/container';
 import { FadeIn } from './fade-in';
 // import dynamic from 'next/dynamic';
 // const FeatureIcon1 = dynamic(() => import('./icons/feature1'));
