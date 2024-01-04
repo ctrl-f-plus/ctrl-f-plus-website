@@ -9,12 +9,14 @@ import {
   domAnimation,
   m,
   useMotionTemplate,
+  useMotionValue,
   useReducedMotion,
   useSpring,
 } from 'framer-motion';
 import { useEffect, useMemo } from 'react';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
+import fastdom from 'fastdom';
 
 function CardText({
   prefersReducedMotion,
@@ -61,14 +63,14 @@ function CardText({
 export default function FeaturesHeader() {
   const prefersReducedMotion = !!useReducedMotion();
 
-  // let stiffness = 80;
-  // let damping = 30;
+  let stiffness = 80;
+  let damping = 30;
 
-  // let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
-  // let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
+  let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
+  let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
 
-  let mouseX = useSpring(-500);
-  let mouseY = useSpring(0);
+  // let mouseX = useSpring(-500);
+  // let mouseY = useSpring(0);
 
   // let mouseX = useMotionValue(-500);
   // let mouseY = useMotionValue(0);
@@ -86,10 +88,25 @@ export default function FeaturesHeader() {
     clientX,
     clientY,
   }: React.MouseEvent<HTMLDivElement>) => {
-    let { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+    fastdom.measure(() => {
+      const { left, top } = currentTarget.getBoundingClientRect();
+
+      fastdom.mutate(() => {
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+      });
+    });
   };
+
+  // const handleMouseMove = ({
+  //   currentTarget,
+  //   clientX,
+  //   clientY,
+  // }: React.MouseEvent<HTMLDivElement>) => {
+  //   const { left, top } = currentTarget.getBoundingClientRect();
+  //   mouseX.set(clientX - left);
+  //   mouseY.set(clientY - top);
+  // };
 
   useEffect(() => {
     mouseX.set(775);
