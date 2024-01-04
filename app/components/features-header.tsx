@@ -98,16 +98,6 @@ export default function FeaturesHeader() {
     });
   };
 
-  // const handleMouseMove = ({
-  //   currentTarget,
-  //   clientX,
-  //   clientY,
-  // }: React.MouseEvent<HTMLDivElement>) => {
-  //   const { left, top } = currentTarget.getBoundingClientRect();
-  //   mouseX.set(clientX - left);
-  //   mouseY.set(clientY - top);
-  // };
-
   useEffect(() => {
     mouseX.set(775);
     mouseY.set(150);
