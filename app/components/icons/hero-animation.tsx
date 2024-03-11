@@ -4,7 +4,7 @@
 // import gifHero from '@/public/images/gif-hero-animated.webp';
 import { useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 // import heroAnimationStill from 'public/images/hero-animation-still.png';
 
 export default function HeroAnimation() {
@@ -39,8 +39,10 @@ export default function HeroAnimation() {
 
   let imageSrc, className;
   if (prefersReducedMotion) {
-    imageSrc =
-      'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/2d289852-4c4e-4bc4-a123-58255d587700/variant1';
+    // imageSrc =
+    //   'https://imagedelivery.net/iiP7mcx9iKOhYG4rdM-BWg/2d289852-4c4e-4bc4-a123-58255d587700/variant1';
+    // imageSrc = 'public/images/hero-animation-still.png';
+    imageSrc = '/images/hero-animation-still.png';
     className = '-mt-9';
   } else {
     imageSrc =
@@ -54,22 +56,20 @@ export default function HeroAnimation() {
   }
 
   return (
-    <>
-      <div className={className}>
-        <Image
-          height="423"
-          width="480"
-          src={imageSrc}
-          // src=""
-          // src="https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp"
-          alt={'Animated Search Visual'}
-          aria-hidden="true"
-          unoptimized
-          // loading="lazy"
-          priority
-        />
-      </div>
-    </>
+    <div className={className}>
+      <Image
+        height="423"
+        width="480"
+        src={imageSrc}
+        // src=""
+        // src="https://res.cloudinary.com/dyy8g76av/image/upload/v1695149280/gif-hero-animated_pwcfif.webp"
+        alt={'Animated Search Visual'}
+        aria-hidden="true"
+        unoptimized
+        // loading="lazy"
+        priority
+      />
+    </div>
   );
 }
 

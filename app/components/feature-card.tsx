@@ -50,7 +50,7 @@ const features = [
 //   return index % 2 === 1 ? '500px' : '-500px';
 // };
 
-function AnimtateCard({ feat, index }: { feat: any; index: number }) {
+function AnimateCard({ feat, index }: { feat: any; index: number }) {
   let prefersReducedMotion = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -155,7 +155,7 @@ export default function FeatureCard() {
           <FadeIn key={feat.title} className="">
             <Container className="relative mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
               <div className="laptop:text-left">
-                <AnimtateCard feat={feat} index={index} />
+                <AnimateCard feat={feat} index={index} />
               </div>
             </Container>
           </FadeIn>

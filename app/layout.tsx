@@ -1,10 +1,11 @@
 import 'server-only';
 
 import { Analytics } from '@vercel/analytics/react';
-import { Metadata } from 'next';
-import dynamic from 'next/dynamic';
-import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Metadata } from 'next';
+import { Arimo, Inter, Open_Sans } from 'next/font/google';
+import { Suspense } from 'react';
+import Footer from './components/footer';
 import Navbar from './components/navbar';
 import './globals.css';
 // import CanvasGradientInner from './components/canvas-gradient-inner';
@@ -17,7 +18,7 @@ import './globals.css';
 // const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
 // import CanvasGradient from './components/canvas-gradient';
 
-const Footer = dynamic(() => import('./components/footer'));
+// const Footer = dynamic(() => import('./components/footer'));
 
 const inter = Inter({
   subsets: ['latin'],
@@ -107,7 +108,9 @@ export default function RootLayout({
               <Analytics />
               <SpeedInsights />
             </main>
-            <Footer className="relative z-20" />
+            <Suspense fallback={<></>}>
+              <Footer className="relative z-20" />
+            </Suspense>
           </div>
         </div>
       </body>
