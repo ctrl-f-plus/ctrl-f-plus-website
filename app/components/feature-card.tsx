@@ -1,7 +1,12 @@
 // app/tab-hoarders/components/FeatureCard.tsx
 'use client';
+// TODO: I temporarily removed reduced motion functionality on these cards. Add it back.
 
-import { useInView, useReducedMotion } from 'framer-motion';
+import {
+  useInView,
+  // useReducedMotion
+  useReducedMotion,
+} from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import Container from './ui/container';
@@ -64,9 +69,10 @@ function AnimateCard({ feat, index }: { feat: any; index: number }) {
       <div
         className=" flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
         style={{
-          transform:
-            isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
-          opacity: isInView || prefersReducedMotion ? 1 : 0,
+          // transform:
+          //   isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
+          transform: isInView ? 'none' : 'translateY(24px)',
+          opacity: isInView ? 1 : 0,
           transition: 'all 1.3s',
         }}
       >
@@ -80,12 +86,15 @@ function AnimateCard({ feat, index }: { feat: any; index: number }) {
               <span
                 className="block"
                 style={{
-                  opacity: isInView || prefersReducedMotion ? 1 : 0,
-                  transform:
-                    isInView || prefersReducedMotion
-                      ? 'none'
-                      : `translateX(${feat.initialOfset})`,
-                  // : `translateX(${calculateInitialOffset(index)})`,
+                  opacity: isInView ? 1 : 0,
+                  transform: isInView
+                    ? 'none'
+                    : `translateX(${feat.initialOfset})`,
+                  // transform:
+                  //   isInView || prefersReducedMotion
+                  //     ? 'none'
+                  //     : `translateX(${feat.initialOfset})`,
+                  //// : `translateX(${calculateInitialOffset(index)})`,
                   transition: 'all 1.9s',
                 }}
               >
@@ -117,11 +126,13 @@ function AnimateCard({ feat, index }: { feat: any; index: number }) {
               <span
                 className="block"
                 style={{
-                  opacity: isInView || prefersReducedMotion ? 1 : 0,
-                  transform:
-                    isInView || prefersReducedMotion
-                      ? 'none'
-                      : 'translateY(500px)',
+                  opacity: isInView ? 1 : 0,
+                  transform: isInView ? 'none' : 'translateY(500px)',
+
+                  // transform:
+                  //   isInView || prefersReducedMotion
+                  //     ? 'none'
+                  //     : 'translateY(500px)',
                   transition: 'all 1.9s',
                 }}
               >
