@@ -66,7 +66,7 @@ function AnimateCard({ feat, index }: { feat: any; index: number }) {
         style={{
           transform:
             isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
-          opacity: isInView ? 1 : 0,
+          opacity: isInView || prefersReducedMotion ? 1 : 0,
           transition: 'all 1.3s',
         }}
       >
@@ -80,7 +80,7 @@ function AnimateCard({ feat, index }: { feat: any; index: number }) {
               <span
                 className="block"
                 style={{
-                  opacity: isInView ? 1 : 0,
+                  opacity: isInView || prefersReducedMotion ? 1 : 0,
                   transform:
                     isInView || prefersReducedMotion
                       ? 'none'
@@ -117,7 +117,7 @@ function AnimateCard({ feat, index }: { feat: any; index: number }) {
               <span
                 className="block"
                 style={{
-                  opacity: isInView ? 1 : 0,
+                  opacity: isInView || prefersReducedMotion ? 1 : 0,
                   transform:
                     isInView || prefersReducedMotion
                       ? 'none'
