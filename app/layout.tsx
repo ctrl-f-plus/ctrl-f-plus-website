@@ -4,21 +4,16 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
+import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
 import './globals.css';
-// import CanvasGradientInner from './components/canvas-gradient-inner';
-// import '../styles/animated-gradient.css';
-// import Script from 'next/script';
-// import { Gradient } from './lib/gradient';
-// const CanvasGradientInner = dynamic(
-//   () => import('./components/canvas-gradient-inner')
-// );
-// const CanvasGradient = dynamic(() => import('./components/canvas-gradient'));
-// import CanvasGradient from './components/canvas-gradient';
 
-// const Footer = dynamic(() => import('./components/footer'));
+const AnimatedGradientBg = dynamic(
+  () => import('./components/animated-gradient-bg'),
+  { ssr: false }
+);
 
 const inter = Inter({
   subsets: ['latin'],
@@ -91,17 +86,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth bg-gradient-cyan/50 antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="debug-screens mx-auto flex min-h-full flex-col ">
-        <div className="relative flex flex-auto ">
-          {/* <CanvasGradient> */}
-          {/* <CanvasGradientInner /> */}
-          {/* </CanvasGradient> */}
-          <div
-            // backdrop-blur-bg
-            className="flex h-auto w-full flex-col backdrop-blur-md"
-          >
+      <body className="debug-screens mx-auto flex min-h-full flex-col">
+        <AnimatedGradientBg />
+        <div className="relative flex flex-auto">
+          <div className="flex h-auto w-full flex-col backdrop-blur-md">
             <Navbar />
             <main className="isolate z-10 flex-auto">
               {children}
