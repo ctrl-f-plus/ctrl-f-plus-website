@@ -2,6 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* CSS variables for animated gradient canvas */
+#gradient-canvas {
+  --gradient-color-1: #f5fbff; /* gradient-blue */
+  --gradient-color-2: #dde3ee; /* gradient-slate */
+  --gradient-color-3: #f2effb; /* gradient-lavender */
+  --gradient-color-4: #d4ece5; /* gradient-cyan */
+}
+
 /* styles/markdown.css */
 
 ::selection {

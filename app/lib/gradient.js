@@ -598,8 +598,9 @@ class Gradient {
       // e(this, 'play', () => {
       //   requestAnimationFrame(this.animate), (this.conf.playing = true);
       // }),
-      e(this, 'initGradient', (selector) => {
+      e(this, 'initGradient', (selector, options = {}) => {
         this.el = document.querySelector(selector);
+        this.colors = options.colors || null;
         this.connect();
         return this;
       });
@@ -806,51 +807,80 @@ class Gradient {
    * Using default colors assigned below if no variables have been found after maxCssVarRetries
    */
   waitForCssVars() {
+    // If colors were passed directly, skip CSS variable check
+    if (this.colors && this.colors.length >= 4) {
+      this.init();
+      this.addIsLoadedClass();
+      return;
+    }
+
+    const color1 = this.computedCanvasStyle?.getPropertyValue('--gradient-color-1')?.trim();
+
     if (
       this.computedCanvasStyle &&
-      -1 !==
-        this.computedCanvasStyle
-          .getPropertyValue('--gradient-color-1')
-          .indexOf('#')
-    )
+      -1 !== color1?.indexOf('#')
+    ) {
       this.init(), this.addIsLoadedClass();
-    else {
+    } else {
       if (
         ((this.cssVarRetries += 1), this.cssVarRetries > this.maxCssVarRetries)
       ) {
-        return (
-          (this.sectionColors = [16711680, 16711680, 16711935, 65280, 255]),
-          void this.init()
-        );
+        // Fallback to soft pastel palette: #f5fbff, #dde3ee, #f2effb, #d4ece5
+        this.sectionColors = [
+          normalizeColor(0xf5fbff), // gradient-blue
+          normalizeColor(0xdde3ee), // gradient-slate
+          normalizeColor(0xf2effb), // gradient-lavender
+          normalizeColor(0xd4ece5), // gradient-cyan
+        ];
+        return void this.init();
       }
       requestAnimationFrame(() => this.waitForCssVars());
     }
   }
   /*
-   * Initializes the four section colors by retrieving them from css variables.
+   * Initializes the four section colors.
+   * If colors were passed via options, use those directly.
+   * Otherwise, try to retrieve them from CSS variables.
    */
   initGradientColors() {
-    this.sectionColors = [
+    // If colors were passed directly, use them
+    if (this.colors && this.colors.length >= 4) {
+      this.sectionColors = this.colors.map((hex) => {
+        // Handle shorthand hex
+        if (hex.length === 4) {
+          hex = '#' + hex.substr(1).split('').map(c => c + c).join('');
+        }
+        return normalizeColor(parseInt(hex.replace('#', ''), 16));
+      });
+      return;
+    }
+
+    // Otherwise, try CSS variables
+    const cssVarNames = [
       '--gradient-color-1',
       '--gradient-color-2',
       '--gradient-color-3',
       '--gradient-color-4',
-    ]
-      .map((cssPropertyName) => {
-        let hex = this.computedCanvasStyle
-          .getPropertyValue(cssPropertyName)
-          .trim();
-        //Check if shorthand hex value was used and double the length so the conversion in normalizeColor will work.
-        if (4 === hex.length) {
-          const hexTemp = hex
-            .substr(1)
-            .split('')
-            .map((hexTemp) => hexTemp + hexTemp)
-            .join('');
-          hex = `#${hexTemp}`;
-        }
-        return hex && `0x${hex.substr(1)}`;
-      })
+    ];
+
+    const hexValues = cssVarNames.map((cssPropertyName) => {
+      let hex = this.computedCanvasStyle
+        .getPropertyValue(cssPropertyName)
+        .trim();
+      // Check if shorthand hex value was used and double the length so the conversion in normalizeColor will work.
+      if (4 === hex.length) {
+        const hexTemp = hex
+          .substr(1)
+          .split('')
+          .map((hexTemp) => hexTemp + hexTemp)
+          .join('');
+        hex = `#${hexTemp}`;
+      }
+      return hex;
+    });
+
+    this.sectionColors = hexValues
+      .map(hex => hex && `0x${hex.substr(1)}`)
       .filter(Boolean)
       .map(normalizeColor);
   }
