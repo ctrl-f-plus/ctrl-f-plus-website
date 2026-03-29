@@ -1,4 +1,4 @@
-import { clientEnv } from '@/clientEnv';
+import { clientEnv } from '@/src/clientEnv';
 import { FadeIn, FadeInStagger } from '@/src/components/fade-in';
 import { formatDate } from '@/src/lib/utils';
 import { getPostBySlug, getPublishedPosts } from '@/src/lib/posts';

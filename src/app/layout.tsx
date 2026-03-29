@@ -2,7 +2,7 @@ import 'server-only';
 
 import { CloudWatchRUM } from '@/src/components/utility/cloudwatch-rum';
 import { SentryInit } from '@/src/components/utility/sentry-init';
-import { clientEnv } from '@/clientEnv';
+import { clientEnv } from '@/src/clientEnv';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import Script from 'next/script';

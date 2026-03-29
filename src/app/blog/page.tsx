@@ -1,4 +1,4 @@
-import { clientEnv } from '@/clientEnv';
+import { clientEnv } from '@/src/clientEnv';
 import { getPublishedPosts } from '@/src/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';

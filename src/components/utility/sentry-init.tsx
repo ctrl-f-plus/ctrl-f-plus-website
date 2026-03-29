@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { clientEnv } from '@/clientEnv';
+import { clientEnv } from '@/src/clientEnv';
 
 export function SentryInit() {
   useEffect(() => {

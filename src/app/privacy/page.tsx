@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default async function Privacy() {
   const { default: PrivacyContent } = await import(
-    '@/content/documentation/privacy-policy.mdx'
+    '@/src/content/documentation/privacy-policy.mdx'
   );
 
   return (
