@@ -1,7 +1,7 @@
 export const dynamic = 'force-static';
 
 import { clientEnv } from '@/clientEnv';
-import { getPublishedPosts } from '@/app/lib/posts';
+import { getPublishedPosts } from '@/src/app/lib/posts';
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {

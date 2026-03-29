@@ -9,8 +9,8 @@
     "build": "tsx scripts/generate-og-images.tsx && next build --webpack",
     "start": "next start",
     "lint": "next lint",
-    "codemod:readonly-props": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts app/ mdx-components.tsx",
-    "codemod:readonly-props:dry": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts --dry --print app/ mdx-components.tsx"
+    "codemod:readonly-props": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts src/app/ mdx-components.tsx",
+    "codemod:readonly-props:dry": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts --dry --print src/app/ mdx-components.tsx"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",

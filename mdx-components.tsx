@@ -1,8 +1,8 @@
 import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import clsx from 'clsx';
-import Title from '@/app/components/title';
-import CopyButton from '@/app/components/copy-button';
+import Title from '@/src/app/components/title';
+import CopyButton from '@/src/app/components/copy-button';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {

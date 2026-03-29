@@ -1,7 +1,7 @@
 import { clientEnv } from '@/clientEnv';
-import { FadeIn, FadeInStagger } from '@/app/components/fade-in';
-import { formatDate } from '@/app/lib/utils';
-import { getPostBySlug, getPublishedPosts } from '@/app/lib/posts';
+import { FadeIn, FadeInStagger } from '@/src/app/components/fade-in';
+import { formatDate } from '@/src/app/lib/utils';
+import { getPostBySlug, getPublishedPosts } from '@/src/app/lib/posts';
 import '@/styles/mdx.css';
 import { Metadata } from 'next';
 import Image from 'next/image';

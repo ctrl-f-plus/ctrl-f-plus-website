@@ -2,7 +2,7 @@
 
 import 'server-only';
 
-import { FadeIn } from '../components/fade-in';
+import { FadeIn } from './fade-in';
 
 interface PageTitleCardProps {
   children: React.ReactNode;

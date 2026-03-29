@@ -15,7 +15,7 @@ async function main() {
   // without needing a separate wrapper script.
   loadEnvConfig(projectDir, false);
 
-  const { getPublishedPosts } = await import('../app/lib/posts');
+  const { getPublishedPosts } = await import('../src/app/lib/posts');
 
   const outDir = path.join(projectDir, 'public/og');
   fs.mkdirSync(outDir, { recursive: true });

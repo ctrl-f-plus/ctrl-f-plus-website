@@ -1,5 +1,5 @@
 import { clientEnv } from '@/clientEnv';
-import { getPublishedPosts } from '@/app/lib/posts';
+import { getPublishedPosts } from '@/src/app/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Button from '../components/ui/Button';

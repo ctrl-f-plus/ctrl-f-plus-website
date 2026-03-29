@@ -1,7 +1,7 @@
 'use client';
 
 import { Dialog, DialogPanel } from '@headlessui/react';
-import { NavItem } from '.';
+import { NavItem } from './index';
 import CtrlLink from '../ui/ctrl-link';
 import XMarkIcon from '../icons/x-mark';
 import Image from 'next/image';
@@ -29,7 +29,7 @@ export default function MobileMenu({
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-11 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <CtrlLink
-              href="/"
+              href="/public"
               className="-m-1.5 p-1.5"
               onClick={() => setIsMobileMenuOpen(false)}
             >

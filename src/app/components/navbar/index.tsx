@@ -58,7 +58,7 @@ export default function Navbar() {
           className="mx-auto flex h-auto w-full items-center justify-between p-2"
           aria-label="Global"
         >
-          <CtrlLink href="/" className="">
+          <CtrlLink href="/public" className="">
             <span className="sr-only">Ctrl-F Plus</span>
             <Image
               width="102"
