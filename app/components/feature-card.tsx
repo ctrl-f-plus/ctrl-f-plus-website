@@ -55,7 +55,7 @@ const features = [
 //   return index % 2 === 1 ? '500px' : '-500px';
 // };
 
-function AnimateCard({ feat, index }: { feat: any; index: number }) {
+function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
   let prefersReducedMotion = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, {

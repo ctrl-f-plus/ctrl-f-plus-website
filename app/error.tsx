@@ -10,7 +10,7 @@ type ErrorPageProps = {
   reset?: () => void;
 };
 
-export default function ErrorPage({ error, reset }: ErrorPageProps) {
+export default function ErrorPage({ error, reset }: Readonly<ErrorPageProps>) {
   const handleReset = () => {
     reset ? reset() : window.location.reload();
   };

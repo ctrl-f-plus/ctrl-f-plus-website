@@ -21,10 +21,10 @@ import fastdom from 'fastdom';
 function CardText({
   prefersReducedMotion,
   topLayer = false,
-}: {
+}: Readonly<{
   prefersReducedMotion: boolean;
   topLayer?: boolean;
-}) {
+}>) {
   const textColor: string =
     topLayer || prefersReducedMotion ? `wide:text-white` : `wide:text-cape-cod`;
   const wideTextColor: string = topLayer
@@ -87,7 +87,7 @@ export default function FeaturesHeader() {
     currentTarget,
     clientX,
     clientY,
-  }: React.MouseEvent<HTMLDivElement>) => {
+  }: Readonly<React.MouseEvent<HTMLDivElement>>) => {
     fastdom.measure(() => {
       const { left, top } = currentTarget.getBoundingClientRect();
 

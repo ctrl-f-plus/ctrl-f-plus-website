@@ -73,7 +73,7 @@ const btn = cva({
 
 const ColorFill = m(function ColorFill({
   animation,
-}: VariantProps<typeof btn>) {
+}: Readonly<VariantProps<typeof btn>>) {
   return (
     <>
       <m.span
@@ -130,7 +130,7 @@ function Button({
   aTag = false,
   button = false,
   ...props
-}: ButtonProps) {
+}: Readonly<ButtonProps>) {
   let prefersReducedMotion = useReducedMotion();
   animation = prefersReducedMotion ? 'none' : animation;
 

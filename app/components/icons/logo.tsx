@@ -1,6 +1,6 @@
 // app/components/icons/logoIcon.tsx
 
-export default function LogoIcon({ className }: { className?: string }) {
+export default function LogoIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       width="102"

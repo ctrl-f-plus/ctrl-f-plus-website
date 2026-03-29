@@ -2,7 +2,7 @@
 
 // TODO: Review the xlinks to see what they actually do and if your solution of removing them will be okay.
 
-export default function FeatureIcon3({ className }: { className?: string }) {
+export default function FeatureIcon3({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       width="380"

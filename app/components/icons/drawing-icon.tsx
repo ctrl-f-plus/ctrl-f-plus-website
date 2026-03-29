@@ -1,6 +1,6 @@
 // app/components/icons/drawing-icon.tsx
 
-export default function DrawingIcon({ className }: { className?: string }) {
+export default function DrawingIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       width="236"

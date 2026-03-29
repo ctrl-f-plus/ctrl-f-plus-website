@@ -3,7 +3,7 @@
 // TODO: Review the xlinks to see what they actually do and if your solution of removing them will be okay.
 
 // TODO: fix error coming from `width="auto"`
-export default function FeatureIcon1({ className }: { className?: string }) {
+export default function FeatureIcon1({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       // width="376"

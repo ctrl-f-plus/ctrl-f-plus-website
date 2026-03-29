@@ -12,7 +12,7 @@ interface PageBodyCardProps {
 export default function PageBodyCard({
   children,
   className,
-}: PageBodyCardProps) {
+}: Readonly<PageBodyCardProps>) {
   return (
     // className={className}
     <FadeIn className="mt-10">

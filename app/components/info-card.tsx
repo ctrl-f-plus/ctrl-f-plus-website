@@ -16,7 +16,7 @@ export default function InfoCard({
   description,
   children,
   showAccents = false,
-}: InfoCardProps) {
+}: Readonly<InfoCardProps>) {
   return (
     <>
       <FadeIn
@@ -54,7 +54,7 @@ export function InfoCardDark({
   description,
   children,
   showAccents = false,
-}: InfoCardProps) {
+}: Readonly<InfoCardProps>) {
   return (
     <>
       <FadeIn

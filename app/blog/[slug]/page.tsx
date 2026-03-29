@@ -17,9 +17,9 @@ export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}): Promise<Metadata | undefined> {
+}>): Promise<Metadata | undefined> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
@@ -53,9 +53,9 @@ export async function generateMetadata({
 
 export default async function Blog({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
@@ -68,7 +68,7 @@ export default async function Blog({
   );
 
   return (
-    <>
+
       <section>
         <Container className="mt-18 flex flex-col tablet:mt-24">
           <FadeInStagger>
@@ -134,6 +134,6 @@ export default async function Blog({
           </FadeInStagger>
         </Container>
       </section>
-    </>
+
   );
 }

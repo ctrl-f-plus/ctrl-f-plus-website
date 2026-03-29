@@ -1,6 +1,6 @@
 // app/components/icons/x-mark-icon.tsx
 
-export default function XVideoIcon({ className }: { className: string }) {
+export default function XVideoIcon({ className }: Readonly<{ className: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

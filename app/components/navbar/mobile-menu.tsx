@@ -12,11 +12,11 @@ export default function MobileMenu({
   navItems,
   isMobileMenuOpen,
   setIsMobileMenuOpen,
-}: {
+}: Readonly<{
   navItems: Record<string, NavItem>;
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: (value: boolean) => void;
-}) {
+}>) {
   return (
     <>
       <Dialog

@@ -124,7 +124,7 @@ function OpenSource() {
   );
 }
 
-export default function Footer({ className }: { className?: string }) {
+export default function Footer({ className }: Readonly<{ className?: string }>) {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
 

@@ -9,10 +9,10 @@ import XVideoIcon from './icons/x-video-icon';
 export default function QuickViewModal({
   isOpen,
   setIsOpen,
-}: {
+}: Readonly<{
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
-}) {
+}>) {
   return (
     <>
       <Transition show={isOpen} as={Fragment}>

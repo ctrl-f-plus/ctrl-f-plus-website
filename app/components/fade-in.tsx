@@ -12,11 +12,11 @@ export function FadeIn({
   children,
   className,
   ...props
-}: {
+}: Readonly<{
   children: React.ReactNode;
   className?: string;
   props?: any;
-}) {
+}>) {
   let prefersReducedMotion = useReducedMotion();
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 
@@ -47,11 +47,11 @@ export function FadeInStagger({
   children,
   className,
   ...props
-}: {
+}: Readonly<{
   children: React.ReactNode;
   className?: string;
   props?: any;
-}) {
+}>) {
   return (
     <LazyMotion features={domAnimation}>
       <FadeInStaggerContext.Provider value={true}>

@@ -69,7 +69,7 @@ export function PlayIcon({
   intent,
   size,
   animation,
-}: ButtonIconProps) {
+}: Readonly<ButtonIconProps>) {
   return (
     <svg
       width="19"
@@ -84,7 +84,7 @@ export function PlayIcon({
   );
 }
 
-export function FilledStarIcon({ className }: { className?: string }) {
+export function FilledStarIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ export function FilledStarIcon({ className }: { className?: string }) {
   );
 }
 
-export function HeartHandIcon({ className }: { className?: string }) {
+export function HeartHandIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ export const PuzzleIcon = m(function PuzzleIcon({
   intent,
   size,
   animation = 'none',
-}: ButtonIconProps) {
+}: Readonly<ButtonIconProps>) {
   return (
     <>
       <m.svg
@@ -149,7 +149,7 @@ export const PuzzleIcon2 = m(function PuzzleIcon2({
   intent,
   size,
   animation = 'none',
-}: ButtonIconProps) {
+}: Readonly<ButtonIconProps>) {
   return (
     <m.svg
       className={icon({ intent, size, animation, className })}
@@ -185,7 +185,7 @@ export const PuzzleIconWithBg = m(function puzzleIconWithBg({
   intent,
   size,
   animation = 'none',
-}: ButtonIconProps) {
+}: Readonly<ButtonIconProps>) {
   return (
     <m.div
       className={cx(

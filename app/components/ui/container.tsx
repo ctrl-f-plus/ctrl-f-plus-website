@@ -8,7 +8,7 @@ type ContainerProps = {
   children?: React.ReactNode;
 };
 
-export default function Container({ id, className, children }: ContainerProps) {
+export default function Container({ id, className, children }: Readonly<ContainerProps>) {
   return (
     <div
       id={id}

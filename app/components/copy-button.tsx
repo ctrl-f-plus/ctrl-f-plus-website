@@ -7,10 +7,10 @@ import { useState } from 'react';
 const CopyButton = ({
   text,
   isTitle = false,
-}: {
+}: Readonly<{
   text: string;
   isTitle?: boolean;
-}) => {
+}>) => {
   const [isCopied, setIsCopied] = useState(false);
 
   const copy = async () => {

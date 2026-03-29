@@ -98,19 +98,19 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       className,
       alt,
       ...props
-    }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    }: Readonly<React.ImgHTMLAttributes<HTMLImageElement>>) => (
       // eslint-disable-next-line @next/next/no-img-element
-      <img
+      (<img
         className={clsx('rounded-md border', className)}
         alt={alt}
         {...props}
-      />
+      />)
     ),
     hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
     table: ({
       className,
       ...props
-    }: React.HTMLAttributes<HTMLTableElement>) => (
+    }: Readonly<React.HTMLAttributes<HTMLTableElement>>) => (
       <div className="my-6 w-full overflow-y-auto">
         <table className={clsx('w-full', className)} {...props} />
       </div>
@@ -118,7 +118,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     tr: ({
       className,
       ...props
-    }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    }: Readonly<React.HTMLAttributes<HTMLTableRowElement>>) => (
       <tr
         className={clsx('even:bg-muted m-0 border-t p-0', className)}
         {...props}

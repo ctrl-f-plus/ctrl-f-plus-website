@@ -8,7 +8,9 @@
     "dev:clear-cache": "rm -rf .next && next dev --webpack",
     "build": "tsx scripts/generate-og-images.tsx && next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codemod:readonly-props": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts app/ mdx-components.tsx",
+    "codemod:readonly-props:dry": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts --dry --print app/ mdx-components.tsx"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
@@ -44,6 +46,7 @@
     "@next/bundle-analyzer": "^16.2.1",
     "@next/env": "^16.2.1",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/jscodeshift": "^17.3.0",
     "@types/mdx": "^2.0.13",
     "@types/node": "22.19.15",
     "@types/react": "19.2.14",
@@ -52,6 +55,7 @@
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.1",
     "eslint-config-prettier": "^10.1.8",
+    "jscodeshift": "^17.3.0",
     "postcss": "8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",

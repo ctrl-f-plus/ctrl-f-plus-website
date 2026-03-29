@@ -2,7 +2,7 @@
 import 'server-only';
 import clsx from 'clsx';
 
-export function GithubIcon({ className }: { className?: string }) {
+export function GithubIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ export function GithubIcon({ className }: { className?: string }) {
   );
 }
 
-export function LinkedInIcon({ className }: { className?: string }) {
+export function LinkedInIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ export function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-export function EmailIcon({ className }: { className?: string }) {
+export function EmailIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export function EmailIcon({ className }: { className?: string }) {
   );
 }
 
-export function WebsiteIcon({ className }: { className?: string }) {
+export function WebsiteIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

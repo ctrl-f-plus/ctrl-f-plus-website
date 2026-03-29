@@ -2,9 +2,9 @@
 
 export default function LogoIconSecondary({
   className,
-}: {
+}: Readonly<{
   className?: string;
-}) {
+}>) {
   return (
     <svg
       width="102"

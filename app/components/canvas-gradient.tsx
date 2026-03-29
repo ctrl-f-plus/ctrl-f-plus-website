@@ -39,9 +39,9 @@ import React, { useEffect } from 'react';
 
 export default function CanvasGradient({
   children,
-}: {
+}: Readonly<{
   children?: React.ReactNode;
-}) {
+}>) {
   useEffect(() => {
     const worker = new Worker('/path/to/gradientWorker.js');
 

@@ -1,6 +1,6 @@
 // app/components/icons/MagnifyIcon.tsx
 
-export default function MagnifyIcon({ className }: { className?: string }) {
+export default function MagnifyIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       // width="122"
