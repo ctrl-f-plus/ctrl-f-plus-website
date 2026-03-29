@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { clientEnv } from '@/src/clientEnv';
+import { clientEnv } from '@/clientEnv';
 
 export function CloudWatchRUM() {
   useEffect(() => {

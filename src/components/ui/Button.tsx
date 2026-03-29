@@ -1,7 +1,7 @@
 // app/tab-hoarders/components/Button.tsx
 'use client';
 
-import { cva, cx } from '@/cva.config';
+import { cva, cx } from '../../../cva.config';
 import { VariantProps } from 'cva';
 import { m, useReducedMotion } from 'framer-motion';
 import dynamic from 'next/dynamic';

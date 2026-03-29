@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Container from '@/src/components/ui/container';
-import { FadeInStagger } from '@/src/components/fade-in';
-import PageBodyCard from '@/src/components/page-body-card';
-import PageTitleCard from '@/src/components/page-title-card';
+import Container from '@/components/ui/container';
+import { FadeInStagger } from '@/components/fade-in';
+import PageBodyCard from '@/components/page-body-card';
+import PageTitleCard from '@/components/page-title-card';
 
 export const metadata: Metadata = {
   title: 'Keyboard Shortcut Setup',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function Setup() {
   const { default: SetupContent } = await import(
-    '@/src/content/documentation/keyboard-shortcut-setup.mdx'
+    '@/content/documentation/keyboard-shortcut-setup.mdx'
   );
 
   return (

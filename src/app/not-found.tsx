@@ -1,8 +1,8 @@
 import 'server-only';
-import Container from '@/src/components/ui/container';
+import Container from '@/components/ui/container';
 
-import { FadeIn, FadeInStagger } from '@/src/components/fade-in';
-import Button from '@/src/components/ui/Button';
+import { FadeIn, FadeInStagger } from '@/components/fade-in';
+import Button from '@/components/ui/Button';
 
 export default function NotFoundPage() {
   return (

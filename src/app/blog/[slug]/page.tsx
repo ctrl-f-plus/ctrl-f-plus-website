@@ -1,13 +1,13 @@
-import { clientEnv } from '@/src/clientEnv';
-import { FadeIn, FadeInStagger } from '@/src/components/fade-in';
-import { formatDate } from '@/src/lib/utils';
-import { getPostBySlug, getPublishedPosts } from '@/src/lib/posts';
-import '@/src/styles/mdx.css';
+import { clientEnv } from '@/clientEnv';
+import { FadeIn, FadeInStagger } from '@/components/fade-in';
+import { formatDate } from '@/lib/utils';
+import { getPostBySlug, getPublishedPosts } from '@/lib/posts';
+import '@/styles/mdx.css';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import Container from '@/src/components/ui/container';
+import Container from '@/components/ui/container';
 
 export async function generateStaticParams() {
   return getPublishedPosts().map((post) => ({ slug: post.slug }));

@@ -9,7 +9,7 @@ import {
   FilledStarIcon,
   HeartHandIcon,
   PlayIcon,
-} from '@/src/components/icons/button-icons';
+} from '@/components/icons/button-icons';
 import PuzzleIcon from '../app/components/icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
 import { ColorFill } from '../app/components/buttons/Button';

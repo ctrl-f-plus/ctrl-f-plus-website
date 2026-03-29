@@ -2,7 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import { clientEnv } from '@/src/clientEnv';
+import {clientEnv} from "@/clientEnv";
+
 
 export interface Post {
   title: string;
@@ -17,7 +18,7 @@ export interface Post {
   structuredData: Record<string, unknown>;
 }
 
-const CONTENT_DIR = path.join(process.cwd(), 'content/blog');
+const CONTENT_DIR = path.join(process.cwd(), 'src/content/blog');
 
 let cachedPosts: Post[] | null = null;
 

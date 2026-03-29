@@ -1,7 +1,7 @@
 // app/components/copy-button.tsx
 'use client';
 
-import { cx } from '@/cva.config';
+import { cx } from '../../cva.config';
 import { useState } from 'react';
 
 const CopyButton = ({

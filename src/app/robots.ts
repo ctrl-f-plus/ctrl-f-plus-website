@@ -1,6 +1,6 @@
 export const dynamic = 'force-static';
 
-import { clientEnv } from '@/src/clientEnv';
+import { clientEnv } from '@/clientEnv';
 
 export default function robots() {
   return {
