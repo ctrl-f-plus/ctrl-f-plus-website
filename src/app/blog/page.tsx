@@ -2,11 +2,11 @@ import { clientEnv } from '@/clientEnv';
 import { getPublishedPosts } from '@/src/app/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Button from '../components/ui/Button';
-import Container from '../components/ui/container';
-import { FadeIn, FadeInStagger } from '../components/fade-in';
-import DrawingIcon from '../components/icons/drawing-icon';
-import InfoCard from '../components/info-card';
+import Button from '@/src/components/ui/Button';
+import Container from '@/src/components/ui/container';
+import { FadeIn, FadeInStagger } from '@/src/components/fade-in';
+import DrawingIcon from '@/src/components/icons/drawing-icon';
+import InfoCard from '@/src/components/info-card';
 import { formatDate } from '../lib/utils';
 
 export const metadata: Metadata = {

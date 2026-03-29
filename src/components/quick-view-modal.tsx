@@ -2,7 +2,7 @@
 
 import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
 import { Fragment } from 'react';
-import Loading from '../loading';
+import Loading from '../app/loading';
 import ReactPlayer from 'react-player/youtube';
 import XVideoIcon from './icons/x-video-icon';
 

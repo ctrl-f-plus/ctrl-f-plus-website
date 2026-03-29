@@ -1,14 +1,14 @@
 import 'server-only';
 
-import { CloudWatchRUM } from './components/utility/cloudwatch-rum';
-import { SentryInit } from './components/utility/sentry-init';
+import { CloudWatchRUM } from '@/src/components/utility/cloudwatch-rum';
+import { SentryInit } from '@/src/components/utility/sentry-init';
 import { clientEnv } from '@/clientEnv';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import Script from 'next/script';
 import { Suspense } from 'react';
-import Footer from './components/footer';
-import Navbar from './components/navbar';
+import Footer from '@/src/components/footer';
+import Navbar from '@/src/components/navbar';
 import './globals.css';
 
 const inter = Inter({

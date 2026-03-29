@@ -5,19 +5,19 @@ import benAvatar from '@/public/images/ben-avatar.png';
 import ighodaloAvatar from '@/public/images/ighodalo-avatar.png';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Button from '../components/ui/Button';
-import Container from '../components/ui/container';
-import CtrlLink from '../components/ui/ctrl-link';
-import { FadeInStagger } from '../components/fade-in';
+import Button from '@/src/components/ui/Button';
+import Container from '@/src/components/ui/container';
+import CtrlLink from '@/src/components/ui/ctrl-link';
+import { FadeInStagger } from '@/src/components/fade-in';
 import {
   EmailIcon,
   GithubIcon,
   LinkedInIcon,
   WebsiteIcon,
-} from '../components/icons/social-icons';
-import InfoCard from '../components/info-card';
-import PageBodyCard from '../components/page-body-card';
-import PageTitleCard from '../components/page-title-card';
+} from '@/src/components/icons/social-icons';
+import InfoCard from '@/src/components/info-card';
+import PageBodyCard from '@/src/components/page-body-card';
+import PageTitleCard from '@/src/components/page-title-card';
 
 export const metadata: Metadata = {
   title: 'About',

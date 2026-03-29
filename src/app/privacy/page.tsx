@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Container from '../components/ui/container';
-import { FadeInStagger } from '../components/fade-in';
-import PageBodyCard from '../components/page-body-card';
-import PageTitleCard from '../components/page-title-card';
+import Container from '@/src/components/ui/container';
+import { FadeInStagger } from '@/src/components/fade-in';
+import PageBodyCard from '@/src/components/page-body-card';
+import PageTitleCard from '@/src/components/page-title-card';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',

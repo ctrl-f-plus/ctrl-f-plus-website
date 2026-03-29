@@ -3,7 +3,7 @@
 'use client';
 
 import { useReducedMotion } from 'framer-motion';
-import Container from './components/ui/container';
+import Container from '@/src/components/ui/container';
 
 function Loading() {
   const prefersReducedMotion = useReducedMotion();

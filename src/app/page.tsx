@@ -2,11 +2,11 @@
 
 import 'server-only';
 
-import CallToAction from './components/call-to-action';
-import { FadeInStagger } from './components/fade-in';
-import FeatureCard from './components/feature-card';
-import FeaturesHeader from './components/features-header';
-import Hero from './components/hero';
+import CallToAction from '@/src/components/call-to-action';
+import { FadeInStagger } from '@/src/components/fade-in';
+import FeatureCard from '@/src/components/feature-card';
+import FeaturesHeader from '@/src/components/features-header';
+import Hero from '@/src/components/hero';
 import { Suspense } from 'react';
 
 export default function Page() {
