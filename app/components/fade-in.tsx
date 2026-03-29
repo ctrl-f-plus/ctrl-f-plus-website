@@ -23,6 +23,7 @@ export function FadeIn({
   return (
     <m.div
       className={className}
+      suppressHydrationWarning
       variants={{
         hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 24 },
         visible: { opacity: 1, y: 0 },
@@ -56,6 +57,7 @@ export function FadeInStagger({
       <FadeInStaggerContext.Provider value={true}>
         <m.div
           className={className}
+          suppressHydrationWarning
           initial="hidden"
           whileInView="visible"
           viewport={viewport}

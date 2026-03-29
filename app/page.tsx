@@ -10,20 +10,18 @@ import Hero from './components/hero';
 import { Suspense } from 'react';
 
 export default function Page() {
-  const components = [
-    <>
-      <Hero key="hero" />,
+  return (
+    <FadeInStagger className="flex flex-col">
+      <Hero />
       <Suspense fallback={<></>}>
-        <FeaturesHeader key="featuresHeader" />,
+        <FeaturesHeader />
       </Suspense>
       <Suspense fallback={<></>}>
-        <FeatureCard key="featureCard" />,
+        <FeatureCard />
       </Suspense>
       <Suspense fallback={<></>}>
-        <CallToAction key="callToAction" />,
+        <CallToAction />
       </Suspense>
-    </>,
-  ];
-
-  return <FadeInStagger className="flex flex-col">{components}</FadeInStagger>;
+    </FadeInStagger>
+  );
 }

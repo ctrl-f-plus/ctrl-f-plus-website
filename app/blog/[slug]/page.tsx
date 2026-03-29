@@ -1,36 +1,35 @@
-import 'server-only';
-
+import { clientEnv } from '@/clientEnv';
 import { FadeIn, FadeInStagger } from '@/app/components/fade-in';
-import { Mdx } from '@/app/components/mdx';
 import { formatDate } from '@/app/lib/utils';
+import { getPostBySlug, getPublishedPosts } from '@/app/lib/posts';
 import '@/styles/mdx.css';
-import { allBlogs } from 'contentlayer/generated';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Container from '../../components/ui/container';
 
-function getPost(params: any) {
-  return allBlogs.find((post) => post.slug === params.slug);
+export async function generateStaticParams() {
+  return getPublishedPosts().map((post) => ({ slug: post.slug }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
-}: any): Promise<Metadata | undefined> {
-  const post = getPost(params);
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata | undefined> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return;
   }
 
-  // TODO: double check the `publishedAt` meta data
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    slug,
-  } = post;
+  const { title, publishedAt: publishedTime, summary: description } = post;
+
+  const ogImage = `${clientEnv.NEXT_PUBLIC_APP_URL}/og/${slug}.png`;
 
   return {
     title,
@@ -40,28 +39,33 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://ctrl-f.plus/blog/${slug}`,
+      url: `${clientEnv.NEXT_PUBLIC_APP_URL}/blog/${slug}/`,
+      images: [ogImage],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImage],
     },
   };
 }
 
-interface BlogProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function Blog({ params }: BlogProps) {
-  const post = getPost(params);
+export default async function Blog({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
+
+  const { default: PostContent } = await import(
+    `@/content/blog/${slug}.mdx`
+  );
 
   return (
     <>
@@ -111,10 +115,7 @@ export default async function Blog({ params }: BlogProps) {
                       loading="lazy"
                     />
                     <div className="text-sm leading-6">
-                      <p
-                        // text-gray-600
-                        className="font-open-sans text-fs-lg-sm text-shark tab-pro:text-fs-lg"
-                      >
+                      <p className="font-open-sans text-fs-lg-sm text-shark tab-pro:text-fs-lg">
                         {post.author}
                       </p>
                     </div>
@@ -125,7 +126,9 @@ export default async function Blog({ params }: BlogProps) {
 
             <FadeIn className="mt-10">
               <div className="rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]">
-                <Mdx code={post?.body.code} />
+                <article className="prose max-w-none">
+                  <PostContent />
+                </article>
               </div>
             </FadeIn>
           </FadeInStagger>

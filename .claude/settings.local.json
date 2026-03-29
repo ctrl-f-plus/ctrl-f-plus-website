@@ -1,0 +1,62 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(cd:*)",
+      "Bash(grep:*)",
+      "Bash(pnpm add:*)",
+      "mcp__stripe__get_stripe_account_info",
+      "mcp__stripe__search_stripe_resources",
+      "mcp__stripe__fetch_stripe_resources",
+      "mcp__stripe__list_customers",
+      "Bash(rg:*)",
+      "Bash(ls:*)",
+      "Bash(pnpm test:*)",
+      "Bash(NODE_ENV=test npx vitest:*)",
+      "Bash(./node_modules/.bin/turbo daemon status:*)",
+      "Bash(export PATH=\"/home/benchavez/.local/share/pnpm:/home/benchavez/.nvm/versions/node/v22.14.0/bin:$PATH\")",
+      "Bash(turbo daemon:*)",
+      "Bash(echo:*)",
+      "Bash(turbo:*)",
+      "WebSearch",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:orpc.dev)",
+      "mcp__plugin_context7_context7__query-docs",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__next-devtools__nextjs_call",
+      "mcp__next-devtools__nextjs_docs",
+      "mcp__next-devtools__browser_eval",
+      "mcp__plugin_playwright_playwright__*",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__*",
+      "WebFetch(domain:results-receiver.actions.githubusercontent.com)",
+      "Skill(pr-review-toolkit:review-pr)",
+      "Bash(grep error TS:*)",
+      "Bash(git checkout zod-migration 2>&1 && git stash pop 2>&1)",
+      "Bash(node:*)",
+      "Bash(pnpm --filter client typecheck 2>&1 | grep \"featured-listings-section\" | grep \"error TS\" 2>&1)",
+      "Bash(pnpm:*)",
+      "Bash(cd /Users/benjaminchavez/Code/audioarchive/apps/client && npx vitest run --reporter=verbose 2>&1)",
+      "Bash(tail:*)"
+    ],
+    "deny": []
+  },
+  "enabledMcpjsonServers": ["next-devtools", "playwright"],
+  "sandbox": {
+    "enabled": false,
+    "autoAllowBashIfSandboxed": false,
+    "allowUnsandboxedCommands": false,
+    "network": {}
+  },
+  "allowedTools": [
+    "Bash(pnpm *)",
+    "Bash(git status)",
+    "Bash(git diff *)",
+    "Bash(git log *)"
+  ]
+}

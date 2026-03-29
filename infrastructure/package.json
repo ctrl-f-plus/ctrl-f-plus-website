@@ -1,0 +1,23 @@
+{
+  "name": "ctrl-f-plus-website-infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run build:edge && tsc",
+    "build:edge": "tsc -p tsconfig.edge.json",
+    "build:local": "pnpm run build:edge && tsc",
+    "cdk": "cdk",
+    "synth": "pnpm run build:edge && cdk synth",
+    "deploy": "pnpm run build:edge && cdk deploy",
+    "diff": "pnpm run build:edge && cdk diff"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.180.0",
+    "constructs": "^10.4.0"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.180.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.0"
+  }
+}

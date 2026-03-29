@@ -1,13 +1,8 @@
-import 'server-only';
-
-import { allDocumentations } from '@/.contentlayer/generated/Documentation/_index.mjs';
 import type { Metadata } from 'next';
 import Container from '../components/ui/container';
 import { FadeInStagger } from '../components/fade-in';
-import { Mdx } from '../components/mdx';
 import PageBodyCard from '../components/page-body-card';
 import PageTitleCard from '../components/page-title-card';
-import { formatDate, getDocument } from '../lib/utils';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -18,19 +13,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Privacy() {
-  const privacyPolicy = getDocument(allDocumentations, 'privacy-policy');
-
-  if (!privacyPolicy) {
-    return;
-  }
+export default async function Privacy() {
+  const { default: PrivacyContent } = await import(
+    '@/content/documentation/privacy-policy.mdx'
+  );
 
   return (
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
         <PageTitleCard>
           <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
-            {formatDate(privacyPolicy.publishedAt)}
+            August 10, 2023
           </p>
           <h1 className="font-inter text-fs-xl text-shark">Privacy Policy</h1>
 
@@ -44,7 +37,9 @@ export default function Privacy() {
         </PageTitleCard>
 
         <PageBodyCard>
-          <Mdx code={privacyPolicy.body.code} />
+          <article className="prose max-w-none">
+            <PrivacyContent />
+          </article>
         </PageBodyCard>
       </FadeInStagger>
     </Container>

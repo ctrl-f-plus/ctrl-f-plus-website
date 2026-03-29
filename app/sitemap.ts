@@ -1,31 +1,21 @@
-// app/sitemap.ts
+export const dynamic = 'force-static';
 
-import { allBlogs } from 'contentlayer/generated';
+import { clientEnv } from '@/clientEnv';
+import { getPublishedPosts } from '@/app/lib/posts';
+import { MetadataRoute } from 'next';
 
-export default async function sitemap() {
-  const today = new Date();
-
-  const filteredBlogs = allBlogs.filter((post) => {
-    const publishDate = new Date(post.publishedAt);
-    return publishDate <= today;
-  });
-
-  const blogs = filteredBlogs.map((post) => ({
-    url: `https://ctrl-f.plus/blog/${post.slug}/`,
-    lastModified: post.publishedAt,
+export default function sitemap(): MetadataRoute.Sitemap {
+  const blogs = getPublishedPosts().map((post) => ({
+    url: `${clientEnv.NEXT_PUBLIC_APP_URL}/blog/${post.slug}/`,
+    lastModified: post.updatedAt,
   }));
 
-  const routes = [
-    '',
-    '/#features',
-    '/blog',
-    '/about',
-    '/privacy',
-    '/setup',
-  ].map((route) => ({
-    url: `https://ctrl-f.plus${route}/`,
-    lastModified: new Date().toISOString().split('T')[0],
-  }));
+  const routes = ['', '/blog', '/about', '/privacy', '/setup'].map(
+    (route) => ({
+      url: `${clientEnv.NEXT_PUBLIC_APP_URL}${route}`,
+      lastModified: new Date().toISOString().split('T')[0],
+    }),
+  );
 
   return [...routes, ...blogs];
 }

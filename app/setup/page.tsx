@@ -1,14 +1,8 @@
-// app/setup/page.tsx
-import 'server-only';
-
-import { allDocumentations } from '@/.contentlayer/generated/Documentation/_index.mjs';
 import type { Metadata } from 'next';
 import Container from '../components/ui/container';
 import { FadeInStagger } from '../components/fade-in';
-import { Mdx } from '../components/mdx';
 import PageBodyCard from '../components/page-body-card';
 import PageTitleCard from '../components/page-title-card';
-import { formatDate, getDocument } from '../lib/utils';
 
 export const metadata: Metadata = {
   title: 'Keyboard Shortcut Setup',
@@ -18,21 +12,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Setup() {
-  const document = getDocument(allDocumentations, 'keyboard-shortcut-setup');
-
-  if (!document) {
-    return;
-  }
+export default async function Setup() {
+  const { default: SetupContent } = await import(
+    '@/content/documentation/keyboard-shortcut-setup.mdx'
+  );
 
   return (
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
         <PageTitleCard>
           <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
-            {formatDate(document.publishedAt)}
+            August 23, 2023
           </p>
-          <h1 className="font-inter text-fs-xl text-shark">{document.title}</h1>
+          <h1 className="font-inter text-fs-xl text-shark">
+            Keyboard Shortcut Setup
+          </h1>
 
           <p className="font-open-sans text-fs-lg text-shark">
             Thank you for choosing to use{' '}
@@ -43,7 +37,9 @@ export default function Setup() {
         </PageTitleCard>
 
         <PageBodyCard>
-          <Mdx code={document.body.code} />
+          <article className="prose max-w-none">
+            <SetupContent />
+          </article>
         </PageBodyCard>
       </FadeInStagger>
     </Container>

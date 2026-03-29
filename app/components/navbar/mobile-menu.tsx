@@ -1,15 +1,10 @@
 'use client';
 
-import { Dialog } from '@headlessui/react';
-// import dynamic from 'next/dynamic';
+import { Dialog, DialogPanel } from '@headlessui/react';
 import { NavItem } from '.';
 import CtrlLink from '../ui/ctrl-link';
 import XMarkIcon from '../icons/x-mark';
 import Image from 'next/image';
-// import LogoIcon from '../icons/logo';
-// const CtrlLink = dynamic(() => import('../ctrl-link'));
-// const LogoIcon = dynamic(() => import('../icons/logo'));
-// const XMarkIcon = dynamic(() => import('../icons/x-mark'));
 
 import logoIcon from '/public/svgs/logo-icon.min.svg';
 
@@ -31,7 +26,7 @@ export default function MobileMenu({
         onClose={setIsMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-11 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-11 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <CtrlLink
               href="/"
@@ -39,7 +34,6 @@ export default function MobileMenu({
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <span className="sr-only">Ctrl-F Plus</span>
-              {/* <LogoIcon /> */}
               <Image width="102" height="19" src={logoIcon} alt="Logo Icon" />
             </CtrlLink>
 
@@ -71,7 +65,7 @@ export default function MobileMenu({
               </div>
             </div>
           </div>
-        </Dialog.Panel>
+        </DialogPanel>
       </Dialog>
     </>
   );

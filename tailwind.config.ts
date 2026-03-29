@@ -187,7 +187,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('prettier-plugin-tailwindcss'),
     ...(process.env.NODE_ENV === 'development'
       ? [require('tailwindcss-debug-screens')]
       : []),

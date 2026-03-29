@@ -1,0 +1,67 @@
+name: Build Static Site
+
+on:
+  workflow_call:
+    inputs:
+      app_url:
+        description: Public site URL embedded in the build output.
+        required: true
+        type: string
+      artifact_name:
+        description: Name for the uploaded build artifact.
+        required: false
+        type: string
+        default: dist
+      aws_region:
+        description: AWS region exposed to the client build.
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_APP_URL: ${{ inputs.app_url }}
+      NEXT_PUBLIC_AWS_REGION: ${{ inputs.aws_region }}
+      NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ vars.NEXT_PUBLIC_CF_ANALYTICS_TOKEN }}
+      NEXT_PUBLIC_CW_RUM_APP_MONITOR_ID: ${{ vars.NEXT_PUBLIC_CW_RUM_APP_MONITOR_ID }}
+      NEXT_PUBLIC_CW_RUM_IDENTITY_POOL_ID: ${{ vars.NEXT_PUBLIC_CW_RUM_IDENTITY_POOL_ID }}
+      NEXT_PUBLIC_SENTRY_DSN: ${{ vars.NEXT_PUBLIC_SENTRY_DSN }}
+      NEXT_PUBLIC_CHROME_STORE_URL: ${{ vars.NEXT_PUBLIC_CHROME_STORE_URL }}
+      NEXT_PUBLIC_GITHUB_EXT_URL: ${{ vars.NEXT_PUBLIC_GITHUB_EXT_URL }}
+      NEXT_PUBLIC_GITHUB_ORGANIZATION_URL: ${{ vars.NEXT_PUBLIC_GITHUB_ORGANIZATION_URL }}
+      NEXT_PUBLIC_OPEN_COLLECTIVE_URL: ${{ vars.NEXT_PUBLIC_OPEN_COLLECTIVE_URL }}
+      NEXT_PUBLIC_CONTACT_EMAIL: ${{ vars.NEXT_PUBLIC_CONTACT_EMAIL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate required inputs
+        env:
+          INPUT_AWS_REGION: ${{ inputs.aws_region }}
+        run: |
+          if [ -z "$INPUT_AWS_REGION" ]; then
+            echo "Input 'aws_region' is required." >&2
+            exit 1
+          fi
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: dist/
+          retention-days: 1

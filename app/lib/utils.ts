@@ -1,6 +1,4 @@
-// app/lib/utils.ts
-
-export function formatDate(date: string) {
+export function formatDate(date: string): string {
   const targetDate = new Date(date);
 
   const fullDate = targetDate.toLocaleString('en-us', {
@@ -10,8 +8,4 @@ export function formatDate(date: string) {
   });
 
   return `${fullDate} `;
-}
-
-export function getDocument(allDocumentations: any[], slug: string) {
-  return allDocumentations.find((doc) => doc.slug === slug);
 }

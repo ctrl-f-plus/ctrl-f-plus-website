@@ -1,14 +1,15 @@
-// app/robots.ts
+export const dynamic = 'force-static';
+
+import { clientEnv } from '@/clientEnv';
 
 export default function robots() {
   return {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
       },
     ],
-    sitemap: 'https://ctrl-f.plus/sitemap.xml',
-    host: 'https://ctrl-f.plus',
+    sitemap: `${clientEnv.NEXT_PUBLIC_APP_URL}/sitemap.xml`,
+    host: clientEnv.NEXT_PUBLIC_APP_URL,
   };
 }

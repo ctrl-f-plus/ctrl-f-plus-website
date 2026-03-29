@@ -1,0 +1,116 @@
+name: Deploy Static Site
+
+on:
+  workflow_call:
+    inputs:
+      artifact_name:
+        description: Name of the build artifact to deploy.
+        required: false
+        type: string
+        default: dist
+      aws_region:
+        description: AWS region for deployment.
+        required: true
+        type: string
+      cdk_stack_name:
+        description: CloudFormation stack name that exposes deploy outputs.
+        required: true
+        type: string
+      tag_prefix:
+        description: Prefix for deployment tags.
+        required: false
+        type: string
+        default: v
+    secrets:
+      AWS_DEPLOY_ROLE_ARN:
+        description: IAM role ARN used for GitHub OIDC deployment.
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate required inputs
+        run: |
+          if [ -z "${{ inputs.aws_region }}" ]; then
+            echo "Input 'aws_region' is required." >&2
+            exit 1
+          fi
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: dist/
+
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ inputs.aws_region }}
+
+      - name: Read CDK stack outputs
+        id: stack
+        env:
+          CDK_STACK_NAME: ${{ inputs.cdk_stack_name }}
+        run: |
+          OUTPUTS=$(aws cloudformation describe-stacks \
+            --stack-name "$CDK_STACK_NAME" \
+            --query 'Stacks[0].Outputs' --output json)
+          BUCKET=$(echo "$OUTPUTS" | jq -r '.[] | select(.OutputKey=="BucketName") | .OutputValue')
+          DIST_ID=$(echo "$OUTPUTS" | jq -r '.[] | select(.OutputKey=="DistributionId") | .OutputValue')
+          echo "bucket=$BUCKET" >> "$GITHUB_OUTPUT"
+          echo "dist_id=$DIST_ID" >> "$GITHUB_OUTPUT"
+
+      - name: Sync to S3
+        env:
+          BUCKET: ${{ steps.stack.outputs.bucket }}
+        run: aws s3 sync dist/ "s3://$BUCKET" --delete
+
+      - name: Invalidate CloudFront cache
+        env:
+          DIST_ID: ${{ steps.stack.outputs.dist_id }}
+        run: aws cloudfront create-invalidation --distribution-id "$DIST_ID" --paths "/*"
+
+      - name: Tag deployment
+        id: tag_deployment
+        env:
+          TAG_PREFIX: ${{ inputs.tag_prefix }}
+        run: |
+          git fetch --force --tags origin
+
+          LATEST=$(git tag -l "${TAG_PREFIX}*" --sort=-v:refname | head -n 1)
+          if [ -z "$LATEST" ]; then
+            LATEST="${TAG_PREFIX}0.0.0"
+          fi
+
+          VERSION="${LATEST#${TAG_PREFIX}}"
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Latest tag '$LATEST' is not valid semver" >&2
+            exit 1
+          fi
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+          NEW_TAG="${TAG_PREFIX}${MAJOR}.${MINOR}.$((PATCH + 1))"
+
+          if git rev-parse "$NEW_TAG" >/dev/null 2>&1; then
+            echo "Tag '$NEW_TAG' already exists" >&2
+            exit 1
+          fi
+
+          git tag "$NEW_TAG"
+          git push origin "$NEW_TAG"
+          echo "new_tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Print created tag
+        run: echo "Created tag ${{ steps.tag_deployment.outputs.new_tag }}"

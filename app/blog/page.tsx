@@ -1,7 +1,5 @@
-// app/blog/page.tsx
-import 'server-only';
-
-import { allBlogs } from 'contentlayer/generated';
+import { clientEnv } from '@/clientEnv';
+import { getPublishedPosts } from '@/app/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Button from '../components/ui/Button';
@@ -16,23 +14,12 @@ export const metadata: Metadata = {
   description:
     'Explore the development journey of the Ctrl-F Plus chrome extension. Read about progress updates, challenges, and successes in our blog posts!',
   alternates: {
-    canonical: 'https://ctrl-f.plus/blog/',
+    canonical: `${clientEnv.NEXT_PUBLIC_APP_URL}/blog/`,
   },
 };
 
 export default function BlogPage() {
-  const publicPosts = allBlogs
-    .filter(
-      (post) =>
-        new Date(post.publishedAt) <= new Date() ||
-        process.env.NODE_ENV === 'development'
-    )
-    .sort((a, b) => {
-      if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
-        return -1;
-      }
-      return 1;
-    });
+  const publicPosts = getPublishedPosts();
 
   return (
     <>
@@ -85,10 +72,10 @@ export default function BlogPage() {
               </InfoCard>
             ) : (
               <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
-                {publicPosts.map((post: any) => (
+                {publicPosts.map((post) => (
                   <FadeIn key={post.slug}>
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={`/blog/${post.slug}/`}
                       className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] hover:opacity-75 mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px] "
                       aria-label={`Read blog post: ${post.title}`}
                     >
