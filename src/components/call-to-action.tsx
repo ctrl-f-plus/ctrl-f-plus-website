@@ -1,7 +1,7 @@
 // app/components/call-to-action.tsx
 'use client';
 
-import '@/styles/ctrl-atropos.css';
+import '@/src/styles/ctrl-atropos.css';
 import { m, useInView, useReducedMotion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';

@@ -1,5 +1,5 @@
 import { clientEnv } from '@/clientEnv';
-import { getPublishedPosts } from '@/src/app/lib/posts';
+import { getPublishedPosts } from '@/src/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Button from '@/src/components/ui/Button';
@@ -7,7 +7,7 @@ import Container from '@/src/components/ui/container';
 import { FadeIn, FadeInStagger } from '@/src/components/fade-in';
 import DrawingIcon from '@/src/components/icons/drawing-icon';
 import InfoCard from '@/src/components/info-card';
-import { formatDate } from '../lib/utils';
+import { formatDate } from '@/src/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Blog',
