@@ -9,7 +9,12 @@ export function CloudWatchRUM() {
     const identityPoolId = clientEnv.NEXT_PUBLIC_CW_RUM_IDENTITY_POOL_ID;
     const region = clientEnv.NEXT_PUBLIC_AWS_REGION;
 
-    if (!appMonitorId || !identityPoolId || !region) return;
+    if (!appMonitorId || !identityPoolId) return;
+
+    if (!region) {
+      console.warn('Region is not set for CloudWatchRUM');
+      return
+    }
 
     import('aws-rum-web').then(({ AwsRum }) => {
       try {
@@ -21,8 +26,8 @@ export function CloudWatchRUM() {
           allowCookies: true,
           enableXRay: false,
         });
-      } catch {
-        // Silently fail — RUM is non-critical
+      } catch (err) {
+        console.warn('[CloudWatch RUM] Failed to initialize:', err);
       }
     });
   }, []);

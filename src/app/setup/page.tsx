@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function Setup() {
   const { default: SetupContent } = await import(
-    '@/content/documentation/keyboard-shortcut-setup.mdx'
+    '@/src/content/documentation/keyboard-shortcut-setup.mdx'
   );
 
   return (

@@ -12,6 +12,7 @@ export default function Page() {
   return (
     <FadeInStagger className="flex flex-col">
       <Hero />
+
       <Suspense fallback={<></>}>
         <FeaturesHeader />
       </Suspense>

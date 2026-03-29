@@ -84,12 +84,15 @@ export default function RootLayout({
         <div className="relative flex flex-auto ">
           <div className="flex h-auto w-full flex-col backdrop-blur-md">
             <Navbar />
+
             <main className="isolate z-10 flex-auto">{children}</main>
+
             <Suspense fallback={<></>}>
               <Footer className="relative z-20" />
             </Suspense>
           </div>
         </div>
+
         <CloudWatchRUM />
         <SentryInit />
         {/* Cloudflare Web Analytics — loads only when NEXT_PUBLIC_CF_ANALYTICS_TOKEN is set */}

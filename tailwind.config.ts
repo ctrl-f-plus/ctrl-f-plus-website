@@ -3,10 +3,10 @@ import type { Config } from 'tailwindcss';
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './content/**/*.{md,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/content/**/*.{md,mdx}',
+    './mdx-components.tsx',
   ],
   theme: {
     extend: {

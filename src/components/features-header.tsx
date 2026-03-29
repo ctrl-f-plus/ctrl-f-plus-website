@@ -1,15 +1,12 @@
 // app/components/features-header.tsx
 'use client';
 
-// TODO: Convert to server-only
-
 import clsx from 'clsx';
 import {
-  LazyMotion,
   domAnimation,
+  LazyMotion,
   m,
   useMotionTemplate,
-  useMotionValue,
   useReducedMotion,
   useSpring,
 } from 'framer-motion';
@@ -42,7 +39,7 @@ function CardText({
           'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
           !prefersReducedMotion && wideTextColor,
           !prefersReducedMotion &&
-            'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2'
+            'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
         )}
       >
         Your Guiding Light in the Tab Chaos
@@ -50,7 +47,7 @@ function CardText({
       <p
         className={clsx(
           'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ',
-          textColor
+          textColor,
         )}
       >
         Tab overload? We&apos;ve got your back. Unearth any word or phrase
@@ -80,7 +77,7 @@ export default function FeaturesHeader() {
   // let style = { maskImage, WebkitMaskImage: maskImage };
   const style = useMemo(
     () => ({ maskImage, WebkitMaskImage: maskImage }),
-    [maskImage]
+    [maskImage],
   );
 
   const handleMouseMove = ({
@@ -116,7 +113,7 @@ export default function FeaturesHeader() {
               onMouseMove={handleMouseMove}
               className={clsx(
                 'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
-                !prefersReducedMotion && 'wide:cursor-magnifying-glass'
+                !prefersReducedMotion && 'wide:cursor-magnifying-glass',
               )}
             >
               <div className="items-center justify-center overflow-hidden rounded-[2.25rem] wide:min-h-146">
@@ -126,7 +123,7 @@ export default function FeaturesHeader() {
                     className={clsx(
                       'inset-0 flex items-center justify-center rounded-[2.25rem] transition duration-900 wide:absolute',
                       !prefersReducedMotion &&
-                        'wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50'
+                        'wide:[mask-image:linear-gradient(white,transparent)] wide:group-hover:opacity-50',
                     )}
                   >
                     <CardText prefersReducedMotion={prefersReducedMotion} />
@@ -136,7 +133,7 @@ export default function FeaturesHeader() {
                   <m.div
                     className={clsx(
                       'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
-                      prefersReducedMotion && 'wide:hidden'
+                      prefersReducedMotion && 'wide:hidden',
                     )}
                     // className="absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block"
                     style={style}
@@ -146,7 +143,7 @@ export default function FeaturesHeader() {
                   <m.div
                     className={clsx(
                       'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
-                      prefersReducedMotion && 'wide:hidden'
+                      prefersReducedMotion && 'wide:hidden',
                     )}
                     style={style}
                   >
