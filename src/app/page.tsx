@@ -2,7 +2,7 @@
 import 'server-only';
 
 import CallToAction from '@/components/call-to-action';
-import {FadeInStagger} from '@/components/fade-in';
+import { FadeInStagger } from '@/components/fade-in';
 import FeatureCard from '@/components/feature-card';
 import FeaturesHeader from '@/components/features-header';
 import Hero from '@/components/hero';

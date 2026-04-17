@@ -36,6 +36,14 @@
   transition-property: transform;
   display: block;
   border-radius: 2.25rem;
+  /* 3D-rotated wrappers steal click hit-tests from descendants. Atropos's
+     own pointer listeners live on the outer .atropos element, so making
+     these inner wrappers transparent to events is safe. */
+  pointer-events: none;
+}
+
+.atropos-inner {
+  pointer-events: auto;
 }
 
 .atropos-shadow,

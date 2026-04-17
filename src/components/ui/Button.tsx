@@ -72,30 +72,41 @@ const btn = cva({
   ],
 });
 
-const ColorFill = m.create(function ColorFill({
-  animation,
-}: Readonly<VariantProps<typeof btn>>) {
+function ColorFill({ animation }: Readonly<VariantProps<typeof btn>>) {
+  if (animation !== 'slice') return null;
+
   return (
-    <m.span
-      className={cx(
-        animation === 'slice'
-          ? 'pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80'
-          : '',
-      )}
-      variants={{
-        initial: {
-          rotate: 'var(--rotate-from)',
-          x: 'var(--x-from)',
-        },
-        hover: {
-          x: 'var(--x-to)',
-        },
-      }}
-      transition={{ duration: 0.5, ease: 'easeInOut' }}
+    <span
+      className="pointer-events-none absolute -translate-x-full rotate-[-68.566deg] bg-highlighter-focus-400 transition-transform duration-500 ease-in-out tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80 group-hover:translate-x-0 group-hover/cta-card:translate-x-0"
       aria-hidden="true"
     />
   );
-});
+}
+
+// const ColorFill = m.create(function ColorFill({
+//   animation,
+// }: Readonly<VariantProps<typeof btn>>) {
+//   return (
+//     <m.span
+//       className={cx(
+//         animation === 'slice'
+//           ? 'pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80'
+//           : '',
+//       )}
+//       variants={{
+//         initial: {
+//           rotate: 'var(--rotate-from)',
+//           x: 'var(--x-from)',
+//         },
+//         hover: {
+//           x: 'var(--x-to)',
+//         },
+//       }}
+//       transition={{ duration: 0.5, ease: 'easeInOut' }}
+//       aria-hidden="true"
+//     />
+//   );
+// });
 
 interface ButtonProps
   extends
@@ -173,15 +184,15 @@ function Button({
             <IconComponent animation={animation} intent={intent} size={size} />
           )}
 
-          <m.span
-            transition={{ duration: 0.5, ease: 'linear' }}
-            variants={{
-              initial: { color: 'var(--color-from)' },
-              hover: { color: 'var(--color-to)' },
-            }}
+          <span
+            className={
+              animation === 'slice'
+                ? 'transition-colors duration-500 ease-linear tablet:group-hover:text-[#0C3440] tablet:group-hover/cta-card:text-[#0C3440]'
+                : ''
+            }
           >
             {children}
-          </m.span>
+          </span>
         </m.div>
       </m.div>
     </CtrlLink>

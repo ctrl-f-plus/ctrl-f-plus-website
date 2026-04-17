@@ -1,10 +1,9 @@
 // app/components/call-to-action.tsx
-
 'use client';
 
 import '@/styles/ctrl-atropos.css';
 
-import { m, useInView } from 'framer-motion';
+import { domAnimation, LazyMotion, m, useInView } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
@@ -105,7 +104,8 @@ function CtaText() {
 }
 
 export default function CallToAction() {
-  let prefersReducedMotion = useReducedMotion();
+  let prefersReducedMotion = false;
+  useReducedMotion();
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -113,7 +113,8 @@ export default function CallToAction() {
   });
 
   return (
-    <FadeIn>
+    <LazyMotion features={domAnimation}>
+      {/*<FadeIn>*/}
       <section
         id="call-to-action"
         aria-label="Try the Ctrl-F Chrome Extension today!"
@@ -143,17 +144,17 @@ export default function CallToAction() {
               </div>
             </div>
 
-            <div className="hidden laptop:block ">
+            <div className="group/cta-card hidden laptop:block">
               <Atropos
                 className="h-full w-full rounded-[2.25rem] "
                 shadow={prefersReducedMotion ? false : true}
                 activeOffset={prefersReducedMotion ? 0 : 50}
-                rotateTouch={prefersReducedMotion ? false : true} // Disables rotation on touch
-                rotateXMax={prefersReducedMotion ? 0 : 15} // Maximum rotation on the x-axis
-                rotateYMax={prefersReducedMotion ? 0 : 15} // Maximum rotation on the y-axis
+                rotateTouch={prefersReducedMotion ? false : true}
+                rotateXMax={prefersReducedMotion ? 0 : 15}
+                rotateYMax={prefersReducedMotion ? 0 : 15}
                 rotate={prefersReducedMotion ? false : true}
               >
-                <m.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center rounded-[2.25rem]  bg-shark px-[2.25rem] text-center">
+                <m.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center rounded-[2.25rem] bg-shark px-[2.25rem] text-center">
                   <CtaColorAccents />
                   <div
                     data-atropos-offset={prefersReducedMotion ? 0 : 10}
@@ -168,6 +169,7 @@ export default function CallToAction() {
           </div>
         </Container>
       </section>
-    </FadeIn>
+      {/*</FadeIn>*/}
+    </LazyMotion>
   );
 }
