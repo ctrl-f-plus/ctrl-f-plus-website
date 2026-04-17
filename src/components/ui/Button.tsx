@@ -77,7 +77,7 @@ function ColorFill({ animation }: Readonly<VariantProps<typeof btn>>) {
 
   return (
     <span
-      className="pointer-events-none absolute -translate-x-full rotate-[-68.566deg] bg-highlighter-focus-400 transition-transform duration-500 ease-in-out tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80 group-hover:translate-x-0 group-hover/cta-card:translate-x-0"
+      className="pointer-events-none absolute -translate-x-full rotate-[-68.566deg] bg-highlighter-focus-400 transition-transform duration-500 ease-in-out tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80 group-hover:translate-x-0"
       aria-hidden="true"
     />
   );
@@ -187,7 +187,7 @@ function Button({
           <span
             className={
               animation === 'slice'
-                ? 'transition-colors duration-500 ease-linear tablet:group-hover:text-[#0C3440] tablet:group-hover/cta-card:text-[#0C3440]'
+                ? 'transition-colors duration-500 ease-linear tablet:group-hover:text-[#0C3440]'
                 : ''
             }
           >

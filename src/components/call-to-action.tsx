@@ -144,7 +144,7 @@ export default function CallToAction() {
               </div>
             </div>
 
-            <div className="group/cta-card hidden laptop:block">
+            <div className="hidden laptop:block">
               <Atropos
                 className="h-full w-full rounded-[2.25rem] "
                 shadow={prefersReducedMotion ? false : true}
