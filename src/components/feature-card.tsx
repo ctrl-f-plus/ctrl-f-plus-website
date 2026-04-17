@@ -2,23 +2,12 @@
 'use client';
 // TODO: I temporarily removed reduced motion functionality on these cards. Add it back.
 
-import {
-  useInView,
-  // useReducedMotion
-  useReducedMotion,
-} from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
-// import dynamic from 'next/dynamic';
-// const FeatureIcon1 = dynamic(() => import('./icons/feature1'));
-// const FeatureIcon2 = dynamic(() => import('./icons/feature2'));
-// const FeatureIcon3 = dynamic(() => import('./icons/feature3'));
-
-// const FeatureIcon1 = dynamic(() => import('./icons/minimized/feature1'));
-// const FeatureIcon2 = dynamic(() => import('./icons/minimized/feature2'));
-// const FeatureIcon3 = dynamic(() => import('./icons/minimized/feature3'));
 
 import feature1 from '/public/svgs/feature1.min.svg';
 import feature2 from '/public/svgs/feature2.min.svg';

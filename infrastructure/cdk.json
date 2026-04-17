@@ -19,12 +19,12 @@
     "@aws-cdk/core:checkSecretUsage": true,
     "@aws-cdk/core:target-partitions": ["aws"],
     "appName": "ctrl-f-plus-website",
-    "repository": "ctrl-f-plus/ctrl-f-plus-website",
+    "githubRepository": "ctrl-f-plus/ctrl-f-plus-website",
     "environments": {
       "prod": {
         "account": "${CDK_DEFAULT_ACCOUNT}",
         "region": "${CDK_DEFAULT_REGION}",
-        "certificateRegion": "${CLOUDFRONT_CERTIFICATE_REGION}",
+        "certificateRegion": "us-east-1",
         "envName": "prod",
         "domainName": "ctrl-f.plus",
         "alternateDomainNames": ["www.ctrl-f.plus"]

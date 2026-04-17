@@ -8,7 +8,7 @@
     "build:local": "pnpm run build:edge && tsc",
     "cdk": "cdk",
     "synth": "pnpm run build:edge && cdk synth",
-    "deploy": "pnpm run build:edge && cdk deploy",
+    "deploy": "pnpm run build:edge && cdk deploy --all",
     "diff": "pnpm run build:edge && cdk diff"
   },
   "dependencies": {

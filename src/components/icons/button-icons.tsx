@@ -118,7 +118,7 @@ export function HeartHandIcon({ className }: Readonly<{ className?: string }>) {
   );
 }
 
-export const PuzzleIcon = m(function PuzzleIcon({
+export const PuzzleIcon = m.create(function PuzzleIcon({
   className,
   intent,
   size,
@@ -144,7 +144,7 @@ export const PuzzleIcon = m(function PuzzleIcon({
   );
 });
 
-export const PuzzleIcon2 = m(function PuzzleIcon2({
+export const PuzzleIcon2 = m.create(function PuzzleIcon2({
   className,
   intent,
   size,
@@ -181,7 +181,7 @@ export const PuzzleIcon2 = m(function PuzzleIcon2({
   );
 });
 
-export const PuzzleIconWithBg = m(function puzzleIconWithBg({
+export const PuzzleIconWithBg = m.create(function puzzleIconWithBg({
   intent,
   size,
   animation = 'none',
@@ -192,7 +192,7 @@ export const PuzzleIconWithBg = m(function puzzleIconWithBg({
         'relative mr-2 flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-[1.5rem] bg-white p-[0.5625rem] [--backgroundColor-from:#ffffff] [--backgroundColor-to:#ffffff]',
         animation !== 'none'
           ? 'tablet:[--backgroundColor-to:#0C3440] group-active:tablet:[--backgroundColor-to:#0a2b35b3]'
-          : 'group-active:[--backgroundColor-to:#ffffffcc]'
+          : 'group-active:[--backgroundColor-to:#ffffffcc]',
       )}
       variants={{
         initial: { backgroundColor: 'var(--backgroundColor-from)' },
@@ -206,7 +206,7 @@ export const PuzzleIconWithBg = m(function puzzleIconWithBg({
           '[--rotate-from:0deg]',
           animation === 'none'
             ? 'tablet:[--rotate-to:0deg]'
-            : 'tablet:[--rotate-to:-90deg]'
+            : 'tablet:[--rotate-to:-90deg]',
         )}
         variants={{
           initial: { rotate: 'var(--rotate-from)' },

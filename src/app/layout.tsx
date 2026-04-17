@@ -1,12 +1,14 @@
 import 'server-only';
 
-import {CloudWatchRUM} from '@/components/utility/cloudwatch-rum';
-import {SentryInit} from '@/components/utility/sentry-init';
-import {clientEnv} from '@/clientEnv';
-import {Metadata} from 'next';
-import {Arimo, Inter, Open_Sans} from 'next/font/google';
+// import '../styles/globals.css';
+
+import { CloudWatchRUM } from '@/components/utility/cloudwatch-rum';
+import { SentryInit } from '@/components/utility/sentry-init';
+import { clientEnv } from '@/clientEnv';
+import { Metadata } from 'next';
+import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import Script from 'next/script';
-import {Suspense} from 'react';
+import { Suspense } from 'react';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import '../styles/globals.css';
@@ -80,7 +82,10 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth bg-gradient-cyan/50 antialiased`}
     >
-      <body className="debug-screens mx-auto flex min-h-full flex-col ">
+      <body
+        className="debug-screens mx-auto flex min-h-full flex-col"
+        suppressHydrationWarning
+      >
         <div className="relative flex flex-auto ">
           <div className="flex h-auto w-full flex-col backdrop-blur-md">
             <Navbar />

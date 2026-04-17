@@ -1,3 +1,5 @@
+// src/app/blog/[slug]/page.tsx
+
 import { clientEnv } from '@/clientEnv';
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
 import { formatDate } from '@/lib/utils';
@@ -9,8 +11,16 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Container from '@/components/ui/container';
 
-export async function generateStaticParams() {
-  return getPublishedPosts().map((post) => ({ slug: post.slug }));
+const EMPTY_BLOG_PLACEHOLDER_SLUG = '__placeholder__';
+
+export function generateStaticParams() {
+  const posts = getPublishedPosts();
+
+  if (posts.length === 0) {
+    return [{ slug: EMPTY_BLOG_PLACEHOLDER_SLUG }];
+  }
+
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export const dynamicParams = false;

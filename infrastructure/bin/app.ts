@@ -8,8 +8,9 @@ import {
   loadAppContext,
   resolveEnvironmentConfig,
 } from '../lib/config/site-config';
-import { DnsStack } from '../lib/stacks/dns-stack';
 import { StaticSiteStack } from '../lib/stacks/static-site-stack';
+import { HostedZoneStack } from '../lib/stacks/hosted-zone-stack';
+import { CertificateStack } from '../lib/stacks/certificate-stack';
 
 const app = new cdk.App();
 const appContext = loadAppContext(app);
@@ -23,24 +24,32 @@ const stackName = deriveStackName(appContext.appName, environment);
 
 cdk.Tags.of(app).add('Project', appContext.appName);
 cdk.Tags.of(app).add('Environment', environment);
-cdk.Tags.of(app).add('Repository', appContext.repository);
+cdk.Tags.of(app).add('Repository', appContext.githubRepository);
 cdk.Tags.of(app).add('ManagedBy', 'cdk');
 cdk.Tags.of(app).add('Owner', 'ben');
 
-const dnsStack = new DnsStack(app, `${stackName}-Dns`, {
+const hostedZoneStack = new HostedZoneStack(app, `${stackName}-HostedZone`, {
   env: { account: env.account, region: envConfig.certificateRegion },
   crossRegionReferences: true,
   envConfig,
+});
+
+const certificateStack = new CertificateStack(app, `${stackName}-Certificate`, {
+  env: { account: env.account, region: envConfig.certificateRegion },
+  crossRegionReferences: true,
+  envConfig,
+  hostedZone: hostedZoneStack.hostedZone,
 });
 
 const siteStack = new StaticSiteStack(app, stackName, {
   env,
   crossRegionReferences: true,
   appName: appContext.appName,
+  githubRepository: appContext.githubRepository,
   environment,
   envConfig,
-  certificate: dnsStack.certificate,
-  hostedZone: dnsStack.hostedZone,
+  certificate: certificateStack.certificate,
+  hostedZone: hostedZoneStack.hostedZone,
 });
 
-siteStack.addDependency(dnsStack);
+siteStack.addDependency(certificateStack);

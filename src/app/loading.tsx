@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import Container from '@/components/ui/container';
 
 function Loading() {

@@ -2,8 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import {clientEnv} from "@/clientEnv";
-
+import { clientEnv } from '@/clientEnv';
 
 export interface Post {
   title: string;
@@ -88,8 +87,8 @@ export function getPublishedPosts(): Post[] {
   // sortable and avoids timezone issues with Date parsing.
   const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD" in UTC
   return getAllPosts().filter(
-    (post) =>
-      post.publishedAt <= today || process.env.NODE_ENV === 'development',
+    (post) => post.publishedAt <= today,
+    // post.publishedAt <= today || process.env.NODE_ENV === 'development',
   );
 }
 

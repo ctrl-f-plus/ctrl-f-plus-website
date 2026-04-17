@@ -2,7 +2,8 @@
 
 'use client';
 
-import { LazyMotion, domAnimation, m, useReducedMotion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { createContext, useContext } from 'react';
 
 const FadeInStaggerContext = createContext(false);

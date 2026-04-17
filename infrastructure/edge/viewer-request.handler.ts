@@ -33,7 +33,7 @@ const kvs = cf.kvs();
 
 function hasFileExtension(uri: string): boolean {
   const lastSegment = uri.split('/').pop() ?? '';
-  return lastSegment.includes('.');
+  return /\.\w+$/.test(lastSegment);
 }
 
 function serializeQuerystring(querystring: Querystring): string {
@@ -50,7 +50,8 @@ function serializeQuerystring(querystring: Querystring): string {
         ? entry.multiValue
         : [entry];
 
-    for (const valueEntry of values) {
+    for (let i = 0; i < values.length; i++) {
+      const valueEntry = values[i];
       parts.push(
         `${encodeURIComponent(key)}=${encodeURIComponent(valueEntry.value)}`,
       );
@@ -92,7 +93,7 @@ async function handler(
         },
       },
     };
-  } catch {
+  } catch (_) {
     // A missing key just means this request is not a redirect.
   }
 

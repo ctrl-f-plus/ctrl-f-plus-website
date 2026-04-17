@@ -3,27 +3,28 @@
 
 import { cva, cx } from '../../../cva.config';
 import { VariantProps } from 'cva';
-import { m, useReducedMotion } from 'framer-motion';
+import { m } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
 import { ButtonHTMLAttributes } from 'react';
 const CtrlLink = dynamic(() => import('./ctrl-link'));
 const FilledStarIcon = dynamic(() =>
-  import('../icons/button-icons').then((mod) => mod.FilledStarIcon)
+  import('../icons/button-icons').then((mod) => mod.FilledStarIcon),
 );
 const HeartHandIcon = dynamic(() =>
-  import('../icons/button-icons').then((mod) => mod.HeartHandIcon)
+  import('../icons/button-icons').then((mod) => mod.HeartHandIcon),
 );
 const PlayIcon = dynamic(() =>
-  import('../icons/button-icons').then((mod) => mod.PlayIcon)
+  import('../icons/button-icons').then((mod) => mod.PlayIcon),
 );
 const PuzzleIcon = dynamic(() =>
-  import('../icons/button-icons').then((mod) => mod.PuzzleIcon)
+  import('../icons/button-icons').then((mod) => mod.PuzzleIcon),
 );
 const PuzzleIcon2 = dynamic(() =>
-  import('../icons/button-icons').then((mod) => mod.PuzzleIcon2)
+  import('../icons/button-icons').then((mod) => mod.PuzzleIcon2),
 );
 const PuzzleIconWithBg = dynamic(() =>
-  import('../icons/button-icons').then((mod) => mod.PuzzleIconWithBg)
+  import('../icons/button-icons').then((mod) => mod.PuzzleIconWithBg),
 );
 
 const btn = cva({
@@ -71,37 +72,34 @@ const btn = cva({
   ],
 });
 
-const ColorFill = m(function ColorFill({
+const ColorFill = m.create(function ColorFill({
   animation,
 }: Readonly<VariantProps<typeof btn>>) {
   return (
-    <>
-      <m.span
-        className={cx(
-          animation === 'slice'
-            ? 'pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80'
-            : ''
-        )}
-        variants={{
-          initial: {
-            rotate: 'var(--rotate-from)',
-            x: 'var(--x-from)',
-            // background: 'var(--background-to)',
-          },
-          hover: {
-            x: 'var(--x-to)',
-            // background: 'var(--background-to)'
-          },
-        }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
-        aria-hidden="true"
-      />
-    </>
+    <m.span
+      className={cx(
+        animation === 'slice'
+          ? 'pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80'
+          : '',
+      )}
+      variants={{
+        initial: {
+          rotate: 'var(--rotate-from)',
+          x: 'var(--x-from)',
+        },
+        hover: {
+          x: 'var(--x-to)',
+        },
+      }}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      aria-hidden="true"
+    />
   );
 });
 
 interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
+  extends
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>,
     VariantProps<typeof btn> {
   children: React.ReactNode;
   icon?:

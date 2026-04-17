@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#  export AWS_REGION=us-east-2
+#  export CLOUDFRONT_CERTIFICATE_REGION=us-east-1
+
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -46,9 +49,14 @@ require_env_file_value() {
   fi
 }
 
+normalize_ns() {
+  tr ',' '\n' | sed 's/\.$//' | tr '[:upper:]' '[:lower:]' | sed '/^$/d' | sort -u
+}
+
 require_command aws
 require_command jq
 require_command pnpm
+require_command dig
 
 require_env AWS_REGION
 require_env CLOUDFRONT_CERTIFICATE_REGION
@@ -80,10 +88,12 @@ else
   STACK_NAME="$(to_pascal_case "$APP_NAME")-$(to_pascal_case "$ENV_NAME")"
 fi
 
-DNS_STACK_NAME="${STACK_NAME}-Dns"
+HOSTED_ZONE_STACK_NAME="${STACK_NAME}-HostedZone"
+CERT_STACK_NAME="${STACK_NAME}-Certificate"
+
+DOMAIN_NAME="$(jq -r '.context.environments.prod.domainName' infrastructure/cdk.json)"
 
 require_file .env.local
-require_env_file_value NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME .env.local
 require_env_file_value NEXT_PUBLIC_APP_URL .env.local
 
 export NEXT_PUBLIC_AWS_REGION="${NEXT_PUBLIC_AWS_REGION:-$AWS_REGION}"
@@ -93,8 +103,10 @@ echo "AWS_REGION: $AWS_REGION"
 echo "NEXT_PUBLIC_AWS_REGION: $NEXT_PUBLIC_AWS_REGION"
 echo "CLOUDFRONT_CERTIFICATE_REGION: $CLOUDFRONT_CERTIFICATE_REGION"
 echo "CDK_DEFAULT_ACCOUNT: $CDK_DEFAULT_ACCOUNT"
-echo "CDK stack: $STACK_NAME"
-echo "CDK DNS stack: $DNS_STACK_NAME"
+echo "CDK hosted zone stack: $HOSTED_ZONE_STACK_NAME"
+echo "CDK certificate stack: $CERT_STACK_NAME"
+echo "CDK site stack: $STACK_NAME"
+echo "Domain: $DOMAIN_NAME"
 
 echo
 if [[ ! -x infrastructure/node_modules/.bin/ts-node || ! -x infrastructure/node_modules/.bin/cdk ]]; then
@@ -125,22 +137,21 @@ pnpm --dir infrastructure exec cdk bootstrap \
   "aws://$CDK_DEFAULT_ACCOUNT/$CLOUDFRONT_CERTIFICATE_REGION"
 
 echo
-echo "Deploying DNS stack (${CLOUDFRONT_CERTIFICATE_REGION})..."
-pnpm --dir infrastructure exec cdk deploy "$DNS_STACK_NAME" --require-approval never
+echo "Deploying Hosted Zone stack (${CLOUDFRONT_CERTIFICATE_REGION})..."
+pnpm --dir infrastructure exec cdk deploy "$HOSTED_ZONE_STACK_NAME" --require-approval never
 
 echo
-echo "Reading DNS stack outputs..."
-DNS_OUTPUTS_JSON="$(aws cloudformation describe-stacks \
-  --stack-name "$DNS_STACK_NAME" \
+echo "Reading Hosted Zone stack outputs..."
+HZ_OUTPUTS_JSON="$(aws cloudformation describe-stacks \
+  --stack-name "$HOSTED_ZONE_STACK_NAME" \
   --region "$CLOUDFRONT_CERTIFICATE_REGION" \
   --query 'Stacks[0].Outputs' \
   --output json)"
 
-NAME_SERVERS="$(echo "$DNS_OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="NameServers") | .OutputValue')"
-CERT_ARN="$(echo "$DNS_OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="CertificateArn") | .OutputValue')"
+NAME_SERVERS="$(echo "$HZ_OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="NameServers") | .OutputValue')"
 
-if [[ -z "$NAME_SERVERS" || -z "$CERT_ARN" ]]; then
-  echo "Could not read required outputs from DNS stack." >&2
+if [[ -z "$NAME_SERVERS" ]]; then
+  echo "Could not read nameservers from Hosted Zone stack." >&2
   exit 1
 fi
 
@@ -148,20 +159,77 @@ echo
 echo "============================================"
 echo "ACTION REQUIRED: Update registrar nameservers"
 echo "============================================"
-echo "Route 53 nameservers:"
+echo "Route 53 nameservers for ${DOMAIN_NAME}:"
 echo "$NAME_SERVERS" | tr ',' '\n' | sed 's/^/  /'
 echo
 echo "Update your domain registrar to use the nameservers above, then"
-echo "press Enter to begin waiting for ACM certificate validation."
-echo "(Certificate ARN: $CERT_ARN)"
+echo "press Enter to begin verifying DNS delegation."
 read -r
 
 echo
-echo "Waiting for ACM certificate to be issued (this may take several minutes)..."
-aws acm wait certificate-validated \
-  --certificate-arn "$CERT_ARN" \
-  --region "$CLOUDFRONT_CERTIFICATE_REGION"
-echo "Certificate validated."
+echo "Verifying nameserver delegation for ${DOMAIN_NAME}..."
+EXPECTED_NS="$(echo "$NAME_SERVERS" | normalize_ns)"
+MAX_ATTEMPTS=60
+ATTEMPT=0
+while true; do
+  ACTUAL_NS="$(dig +short NS "$DOMAIN_NAME" | normalize_ns)"
+  if [[ "$ACTUAL_NS" == "$EXPECTED_NS" ]]; then
+    echo "Nameserver delegation confirmed."
+    break
+  fi
+  ATTEMPT=$((ATTEMPT + 1))
+  if [[ $ATTEMPT -ge $MAX_ATTEMPTS ]]; then
+    echo "Delegation not confirmed after $MAX_ATTEMPTS attempts (~30 minutes)." >&2
+    echo "Expected:" >&2
+    echo "$EXPECTED_NS" >&2
+    echo "Got:" >&2
+    echo "$ACTUAL_NS" >&2
+    echo "Press Ctrl+C to abort, or Enter to keep waiting." >&2
+    read -r
+    ATTEMPT=0
+  fi
+  echo "  Waiting for delegation (attempt $ATTEMPT/$MAX_ATTEMPTS, checking every 30s)..."
+  sleep 30
+done
+
+# ── Phase 3: Certificate ──────────────────────────────────────
+
+echo
+echo "Deploying Certificate stack (${CLOUDFRONT_CERTIFICATE_REGION})..."
+pnpm --dir infrastructure exec cdk deploy "$CERT_STACK_NAME" --require-approval never
+
+echo
+echo "Reading Certificate stack outputs..."
+CERT_OUTPUTS_JSON="$(aws cloudformation describe-stacks \
+  --stack-name "$CERT_STACK_NAME" \
+  --region "$CLOUDFRONT_CERTIFICATE_REGION" \
+  --query 'Stacks[0].Outputs' \
+  --output json)"
+
+CERT_ARN="$(echo "$CERT_OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="CertificateArn") | .OutputValue')"
+
+if [[ -z "$CERT_ARN" ]]; then
+  echo "Could not read certificate ARN from Certificate stack." >&2
+  exit 1
+fi
+
+echo "Certificate ARN: $CERT_ARN"
+
+# ── Phase 4: Site stack ───────────────────────────────────────
+
+echo
+echo "Ensuring GitHub OIDC provider exists..."
+if aws iam list-open-id-connect-providers \
+  --query "OpenIDConnectProviderList[?ends_with(Arn, '/token.actions.githubusercontent.com')]" \
+  --output text | grep -q 'arn:aws'; then
+  echo "GitHub OIDC provider already exists — skipping creation."
+else
+  echo "Creating GitHub OIDC provider..."
+  aws iam create-open-id-connect-provider \
+    --url https://token.actions.githubusercontent.com \
+    --client-id-list sts.amazonaws.com \
+    --thumbprint-list 6938fd4d98bab03faadb97b34396831e3780aea1
+fi
 
 echo
 echo "Deploying site stack (${AWS_REGION})..."
@@ -206,5 +274,4 @@ echo "Distribution domain: $DISTRIBUTION_DOMAIN_NAME"
 echo
 echo "Next steps:"
 echo "1. Verify the site on https://$DISTRIBUTION_DOMAIN_NAME"
-DOMAIN_NAME="$(jq -r '.context.environments.prod.domainName' infrastructure/cdk.json)"
-echo "2. After nameserver propagation, verify https://$DOMAIN_NAME"
+echo "2. Verify https://$DOMAIN_NAME"

@@ -149,7 +149,7 @@ function parseEnvironmentConfig(
 
 export function loadAppContext(app: cdk.App): AppContext {
   const appName = app.node.tryGetContext('appName');
-  const repository = app.node.tryGetContext('repository');
+  const githubRepository = app.node.tryGetContext('githubRepository');
   const environments = app.node.tryGetContext('environments');
 
   if (!isRecord(environments)) {
@@ -160,7 +160,7 @@ export function loadAppContext(app: cdk.App): AppContext {
 
   return {
     appName: readString(appName, 'appName'),
-    repository: readString(repository, 'repository'),
+    githubRepository: readString(githubRepository, 'githubRepository'),
     environments: {
       prod: parseEnvironmentConfig('prod', environments.prod),
     },

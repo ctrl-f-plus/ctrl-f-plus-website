@@ -58,7 +58,7 @@ export default function Navbar() {
           className="mx-auto flex h-auto w-full items-center justify-between p-2"
           aria-label="Global"
         >
-          <CtrlLink href="/public" className="">
+          <CtrlLink href="/" className="">
             <span className="sr-only">Ctrl-F Plus</span>
             <Image
               width="102"
@@ -66,8 +66,8 @@ export default function Navbar() {
               src={logoIcon}
               alt="Logo Icon"
               unoptimized
+              priority
             />
-            {/* <LogoIcon /> */}
           </CtrlLink>
 
           <div className="flex laptop:hidden">
@@ -92,7 +92,7 @@ export default function Navbar() {
                       'mx-1 text-highlighter-500 transition-all ',
                       {
                         '!text-shark hover:!text-shark/80': !isActive,
-                      }
+                      },
                     )}
                     name={name}
                     aTag={linkTag === 'a'}

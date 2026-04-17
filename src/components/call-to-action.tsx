@@ -1,12 +1,16 @@
 // app/components/call-to-action.tsx
+
 'use client';
 
 import '@/styles/ctrl-atropos.css';
-import { m, useInView, useReducedMotion } from 'framer-motion';
+
+import { m, useInView } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
+
 const Atropos = dynamic(() => import('atropos/react'));
 const Button = dynamic(() => import('./ui/Button'));
 
@@ -102,6 +106,7 @@ function CtaText() {
 
 export default function CallToAction() {
   let prefersReducedMotion = useReducedMotion();
+
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,

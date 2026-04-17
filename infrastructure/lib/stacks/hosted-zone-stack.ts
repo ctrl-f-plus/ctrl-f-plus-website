@@ -1,20 +1,18 @@
-// infrastructure/lib/stacks/dns-stack.ts
+// infrastructure/lib/stacks/hosted-zone-stack.ts
 
 import * as cdk from 'aws-cdk-lib';
-import * as acm from 'aws-cdk-lib/aws-certificatemanager';
 import * as route53 from 'aws-cdk-lib/aws-route53';
 import { Construct } from 'constructs';
 import type { ResolvedEnvironmentConfig } from '../config/types';
 
-export interface DnsStackProps extends cdk.StackProps {
+export interface HostedZoneStackProps extends cdk.StackProps {
   readonly envConfig: ResolvedEnvironmentConfig;
 }
 
-export class DnsStack extends cdk.Stack {
-  public readonly certificate: acm.Certificate;
+export class HostedZoneStack extends cdk.Stack {
   public readonly hostedZone: route53.PublicHostedZone;
 
-  constructor(scope: Construct, id: string, props: DnsStackProps) {
+  constructor(scope: Construct, id: string, props: HostedZoneStackProps) {
     super(scope, id, props);
     const { envConfig } = props;
 
@@ -23,22 +21,12 @@ export class DnsStack extends cdk.Stack {
     });
     this.hostedZone.applyRemovalPolicy(cdk.RemovalPolicy.RETAIN);
 
-    this.certificate = new acm.Certificate(this, 'Certificate', {
-      domainName: envConfig.domainName,
-      subjectAlternativeNames: envConfig.alternateDomainNames,
-      validation: acm.CertificateValidation.fromDns(this.hostedZone),
-    });
-
     new cdk.CfnOutput(this, 'HostedZoneId', {
       value: this.hostedZone.hostedZoneId,
     });
 
     new cdk.CfnOutput(this, 'NameServers', {
       value: cdk.Fn.join(',', this.hostedZone.hostedZoneNameServers!),
-    });
-
-    new cdk.CfnOutput(this, 'CertificateArn', {
-      value: this.certificate.certificateArn,
     });
   }
 }

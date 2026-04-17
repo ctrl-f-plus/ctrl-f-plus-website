@@ -7,9 +7,9 @@ import {
   LazyMotion,
   m,
   useMotionTemplate,
-  useReducedMotion,
   useSpring,
 } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { useEffect, useMemo } from 'react';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
@@ -59,6 +59,7 @@ function CardText({
 
 export default function FeaturesHeader() {
   const prefersReducedMotion = !!useReducedMotion();
+  // const [prefersReduced, setPrefersReduced] = useState(false);
 
   let stiffness = 80;
   let damping = 30;
