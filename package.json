@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^5.2.8",
+    "@lhci/cli": "0.15.1",
     "@next/bundle-analyzer": "^16.2.1",
     "@next/env": "^16.2.1",
     "@tailwindcss/typography": "^0.5.10",

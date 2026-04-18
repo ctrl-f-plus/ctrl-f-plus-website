@@ -18,5 +18,6 @@
     "skipLibCheck": true
   },
   "include": ["bin/**/*.ts", "lib/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist"],
+  "references": [{ "path": "./tsconfig.edge.json" }]
 }

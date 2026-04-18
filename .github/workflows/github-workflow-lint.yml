@@ -1,6 +1,6 @@
-# .github/workflows/lint-github-actions.yml
+# .github/workflows/github-workflow-lint.yml
 
-name: Lint GitHub Actions
+name: GitHub Workflow Lint
 
 on:
   workflow_call:
@@ -9,14 +9,14 @@ permissions:
   contents: read
 
 jobs:
-  actionlint:
-    name: Actionlint
+  github-workflow-lint:
+    name: GitHub Workflow Lint
     runs-on: ubuntu-latest
     env:
       ACTIONLINT_VERSION: 1.7.11
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install actionlint
         run: |

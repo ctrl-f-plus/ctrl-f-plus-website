@@ -61,12 +61,19 @@ export class StaticSite extends Construct {
       {
         securityHeadersBehavior: {
           contentSecurityPolicy: {
+            // CSP tightening vs source project:
+            // - Removed 'unsafe-eval' (Next.js static export doesn't require it).
+            // - Dropped imgur from frame-src (unused).
+            // - Narrowed img-src from '*' to 'self' data: blob: https:.
+            // 'unsafe-inline' kept in script-src because Next ships inline
+            // bootstrap scripts; swap for nonce-based allowlist if needed.
+            // 'unsafe-inline' in style-src is required by Next's inline <style> blocks.
             contentSecurityPolicy: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://static.cloudflareinsights.com https://www.youtube.com",
-              'frame-src youtube.com www.youtube.com https://imgur.com/',
+              "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.youtube.com",
+              'frame-src youtube.com www.youtube.com',
               "style-src 'self' 'unsafe-inline'",
-              'img-src * blob: data:',
+              "img-src 'self' data: blob: https:",
               "media-src 'none'",
               "connect-src 'self' https://static.cloudflareinsights.com",
               "font-src 'self'",

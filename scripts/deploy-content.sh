@@ -68,7 +68,7 @@ export AWS_REGION="${AWS_REGION:-us-east-2}"
 export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION:-$AWS_REGION}"
 export NEXT_PUBLIC_AWS_REGION="${NEXT_PUBLIC_AWS_REGION:-$AWS_REGION}"
 
-require_env_or_env_file_value NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME .env.local
+#require_env_or_env_file_value NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME .env.local
 require_env_or_env_file_value NEXT_PUBLIC_APP_URL .env.local
 require_env_or_env_file_value NEXT_PUBLIC_AWS_REGION .env.local
 

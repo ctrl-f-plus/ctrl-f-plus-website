@@ -76,6 +76,13 @@ to_pascal_case() {
   printf '%s' "$result"
 }
 
+read_stack_output() {
+  local outputs_json="$1"
+  local output_key="$2"
+  echo "$outputs_json" | jq -r --arg key "$output_key" \
+    '.[] | select(.OutputKey==$key) | .OutputValue'
+}
+
 if [[ -n "${CDK_STACK_NAME:-}" ]]; then
   STACK_NAME="$CDK_STACK_NAME"
 else
@@ -148,7 +155,7 @@ HZ_OUTPUTS_JSON="$(aws cloudformation describe-stacks \
   --query 'Stacks[0].Outputs' \
   --output json)"
 
-NAME_SERVERS="$(echo "$HZ_OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="NameServers") | .OutputValue')"
+NAME_SERVERS="$(read_stack_output "$HZ_OUTPUTS_JSON" NameServers)"
 
 if [[ -z "$NAME_SERVERS" ]]; then
   echo "Could not read nameservers from Hosted Zone stack." >&2
@@ -206,7 +213,7 @@ CERT_OUTPUTS_JSON="$(aws cloudformation describe-stacks \
   --query 'Stacks[0].Outputs' \
   --output json)"
 
-CERT_ARN="$(echo "$CERT_OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="CertificateArn") | .OutputValue')"
+CERT_ARN="$(read_stack_output "$CERT_OUTPUTS_JSON" CertificateArn)"
 
 if [[ -z "$CERT_ARN" ]]; then
   echo "Could not read certificate ARN from Certificate stack." >&2
@@ -243,9 +250,9 @@ OUTPUTS_JSON="$(aws cloudformation describe-stacks \
   --query 'Stacks[0].Outputs' \
   --output json)"
 
-BUCKET_NAME="$(echo "$OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="BucketName") | .OutputValue')"
-DISTRIBUTION_ID="$(echo "$OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="DistributionId") | .OutputValue')"
-DISTRIBUTION_DOMAIN_NAME="$(echo "$OUTPUTS_JSON" | jq -r '.[] | select(.OutputKey=="DistributionDomainName") | .OutputValue')"
+BUCKET_NAME="$(read_stack_output "$OUTPUTS_JSON" BucketName)"
+DISTRIBUTION_ID="$(read_stack_output "$OUTPUTS_JSON" DistributionId)"
+DISTRIBUTION_DOMAIN_NAME="$(read_stack_output "$OUTPUTS_JSON" DistributionDomainName)"
 
 if [[ -z "$BUCKET_NAME" || -z "$DISTRIBUTION_ID" || -z "$DISTRIBUTION_DOMAIN_NAME" ]]; then
   echo "One or more required site stack outputs were missing." >&2

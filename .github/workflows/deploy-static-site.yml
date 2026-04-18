@@ -38,18 +38,25 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Validate required inputs
+        env:
+          INPUT_AWS_REGION: ${{ inputs.aws_region }}
+          INPUT_CDK_STACK_NAME: ${{ inputs.cdk_stack_name }}
         run: |
-          if [ -z "${{ inputs.aws_region }}" ]; then
+          if [ -z "$INPUT_AWS_REGION" ]; then
             echo "Input 'aws_region' is required." >&2
             exit 1
           fi
+          if [ -z "$INPUT_CDK_STACK_NAME" ]; then
+            echo "Input 'cdk_stack_name' is required." >&2
+            exit 1
+          fi
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: ${{ inputs.artifact_name }}
           path: dist/
@@ -59,6 +66,26 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
           aws-region: ${{ inputs.aws_region }}
+
+      # Decodes the GitHub-issued OIDC JWT claims so initial setup can verify
+      # the "sub" claim matches the IAM trust policy. Only runs when the
+      # workflow is re-run with debug logging (RUNNER_DEBUG=1) to keep normal
+      # runs free of token metadata.
+      - name: Print OIDC subject
+        if: runner.debug == '1'
+        env:
+          ACTIONS_ID_TOKEN_REQUEST_TOKEN: ${{ env.ACTIONS_ID_TOKEN_REQUEST_TOKEN }}
+          ACTIONS_ID_TOKEN_REQUEST_URL: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}
+        run: |
+          TOKEN=$(curl -sSf \
+            -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" \
+            | jq -r '.value')
+          # Token is three base64url segments: header.payload.signature
+          PAYLOAD=$(echo "$TOKEN" | cut -d '.' -f 2)
+          # Pad the base64url string to a multiple of 4 and decode.
+          PADDED=$(printf '%s' "$PAYLOAD" | tr '_-' '/+' | awk '{ while (length % 4) $0 = $0 "="; print }')
+          echo "$PADDED" | base64 -d | jq '{sub, aud, repository, ref, job_workflow_ref}'
 
       - name: Read CDK stack outputs
         id: stack
@@ -95,7 +122,7 @@ jobs:
             LATEST="${TAG_PREFIX}0.0.0"
           fi
 
-          VERSION="${LATEST#${TAG_PREFIX}}"
+          VERSION="${LATEST#"${TAG_PREFIX}"}"
           if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "Latest tag '$LATEST' is not valid semver" >&2
             exit 1
