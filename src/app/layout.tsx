@@ -2,16 +2,14 @@ import 'server-only';
 
 // import '../styles/globals.css';
 
-import { CloudWatchRUM } from '@/components/utility/cloudwatch-rum';
-import { SentryInit } from '@/components/utility/sentry-init';
 import { clientEnv } from '@/clientEnv';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
-import Script from 'next/script';
 import { Suspense } from 'react';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import '../styles/globals.css';
+import { CloudflareAnalytics } from '@/components/utility/cloudflare-analytics';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -98,16 +96,9 @@ export default function RootLayout({
           </div>
         </div>
 
-        <CloudWatchRUM />
-        <SentryInit />
-        {/* Cloudflare Web Analytics — loads only when NEXT_PUBLIC_CF_ANALYTICS_TOKEN is set */}
-        {clientEnv.NEXT_PUBLIC_CF_ANALYTICS_TOKEN && (
-          <Script
-            strategy="afterInteractive"
-            src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon={`{"token":"${clientEnv.NEXT_PUBLIC_CF_ANALYTICS_TOKEN}"}`}
-          />
-        )}
+        {/*<CloudWatchRUM />*/}
+        {/*<SentryInit />*/}
+        <CloudflareAnalytics />
       </body>
     </html>
   );
