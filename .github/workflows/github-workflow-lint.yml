@@ -1,0 +1,49 @@
+# .github/workflows/github-workflow-lint.yml
+
+name: GitHub Workflow Lint
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  github-workflow-lint:
+    name: GitHub Workflow Lint
+    runs-on: ubuntu-latest
+    env:
+      ACTIONLINT_VERSION: 1.7.11
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+
+      - name: Install actionlint
+        run: |
+          set -euo pipefail
+
+          case "$(uname -m)" in
+            x86_64)
+              ARCH=amd64
+              ;;
+            aarch64|arm64)
+              ARCH=arm64
+              ;;
+            *)
+              echo "Unsupported runner architecture: $(uname -m)" >&2
+              exit 1
+              ;;
+          esac
+
+          BIN_DIR="$RUNNER_TEMP/actionlint-bin"
+          mkdir -p "$BIN_DIR"
+
+          TARBALL="actionlint_${ACTIONLINT_VERSION}_linux_${ARCH}.tar.gz"
+          URL="https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/${TARBALL}"
+
+          curl -sSfL "$URL" -o "$RUNNER_TEMP/$TARBALL"
+          tar -xzf "$RUNNER_TEMP/$TARBALL" -C "$BIN_DIR"
+          echo "$BIN_DIR" >> "$GITHUB_PATH"
+
+      - name: Lint GitHub Actions workflows
+        run: actionlint

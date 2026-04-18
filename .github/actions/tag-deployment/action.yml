@@ -1,0 +1,42 @@
+name: Tag deployment
+description: Find the latest semantic deployment tag, bump it, and push the new tag
+
+inputs:
+  tag-prefix:
+    description: Prefix for deployment tags
+    required: false
+    default: "v"
+
+  initial-version:
+    description: Version to start from when no matching tags exist
+    required: false
+    default: "0.0.0"
+
+  bump:
+    description: Which semver component to bump (major, minor, patch)
+    required: false
+    default: "patch"
+
+  remote:
+    description: Git remote to push the tag to
+    required: false
+    default: "origin"
+
+outputs:
+  new-tag:
+    description: The newly created tag
+    value: ${{ steps.tag.outputs.new-tag }}
+
+runs:
+  using: composite
+  steps:
+    - name: Run tag deployment script
+      id: tag
+      shell: bash
+      env:
+        INPUT_TAG_PREFIX: ${{ inputs.tag-prefix }}
+        INPUT_INITIAL_VERSION: ${{ inputs.initial-version }}
+        INPUT_BUMP: ${{ inputs.bump }}
+        INPUT_REMOTE: ${{ inputs.remote }}
+      run: |
+        bash "${{ github.action_path }}/tag-deployment.sh"

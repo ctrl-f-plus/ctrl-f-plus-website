@@ -1,0 +1,23 @@
+/*@import '../../node_modules/tailwindcss/base.css';*/
+/*@import '../../node_modules/tailwindcss/components.css';*/
+/*@import '../../node_modules/tailwindcss/utilities.css';*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* styles/markdown.css */
+
+::selection {
+  /* @apply bg-[#05fdb4] text-black; */
+  @apply bg-highlighter-500 text-white;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

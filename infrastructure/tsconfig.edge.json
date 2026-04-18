@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "lib": ["ES2022"],
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "sourceMap": false,
+    "rootDir": "./edge",
+    "outDir": "./dist/cloudfront"
+  },
+  "include": ["edge/**/*", "edge/**/*.ts", "edge/**/*.d.ts"]
+}

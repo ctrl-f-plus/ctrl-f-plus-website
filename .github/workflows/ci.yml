@@ -1,0 +1,66 @@
+#.github/workflows/ci.yml
+
+name: CI
+run-name: "CI #${{ github.run_number }} | ${{ github.sha }}"
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+# Cancel in-progress CI runs on non-master branches when a newer commit is pushed.
+# master runs are allowed to complete so we always produce a deployable artifact
+# from every commit that reaches the default branch.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION }}
+  CDK_STACK_NAME: ${{ vars.CDK_STACK_NAME }}
+  APP_URL: ${{ vars.APP_URL }}
+  ARTIFACT_NAME: dist
+  TAG_PREFIX: v
+
+permissions:
+  contents: read
+
+jobs:
+  github-workflow-lint:
+    name: GitHub Workflow Lint
+    uses: ./.github/workflows/github-workflow-lint.yml
+
+  build:
+    name: Build
+    uses: ./.github/workflows/build-static-site.yml
+    with:
+      app_url: ${{ vars.APP_URL }}
+      artifact_name: dist
+      aws_region: ${{ vars.AWS_REGION }}
+    secrets: inherit
+
+#  lighthouse:
+#    name: Lighthouse
+#    needs: build
+#    uses: ./.github/workflows/lighthouse-static-site.yml
+#    with:
+#      artifact_name: dist
+
+  deploy:
+    name: Deploy
+    needs: [github-workflow-lint, build,
+#            lighthouse
+    ]
+    if: github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    permissions:
+      contents: write
+      id-token: write
+    uses: ./.github/workflows/deploy-static-site.yml
+    with:
+      artifact_name: dist
+      aws_region: ${{ vars.AWS_REGION }}
+      cdk_stack_name: ${{ vars.CDK_STACK_NAME }}
+      tag_prefix: v
+    secrets: inherit

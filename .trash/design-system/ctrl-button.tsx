@@ -1,15 +1,16 @@
 // @ts-nocheck
 // app/components/buttons/ctrl-button.tsx
 'use client';
+
 import { cva, type VariantProps } from 'cva';
-import { motion, useReducedMotion } from 'framer-motion';
-import { LinkProps } from 'next/link';
+import { motion } from 'framer-motion';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import CtrlLink2, { CtrlLinkProps } from './ctrl-link2';
 import {
   FilledStarIcon,
   HeartHandIcon,
   PlayIcon,
-} from '../../app/components/icons/button-icons';
+} from '@/components/icons/button-icons';
 import PuzzleIcon from '../app/components/icons/puzzle';
 import PuzzleIcon2 from '../icons/puzzle2';
 import { ColorFill } from '../app/components/buttons/Button';
@@ -92,39 +93,37 @@ export default function CtrlButton({
   const motionProps = props;
   // console.log(intent);
   return (
-    <>
-      <CtrlLink2
-        className={button({ intent, size, className, animation })}
-        initial="default"
-        whileHover={prefersReducedMotion ? 'default' : 'hover'}
-        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-        variants={{
-          default: { scale: 'var(--scale-from)' },
-          hover: { scale: 'var(--scale-to)' },
-        }}
-        href={href}
-        target={target}
-        componentType={'anchor'}
-        {...motionProps}
+    <CtrlLink2
+      className={button({ intent, size, className, animation })}
+      initial="default"
+      whileHover={prefersReducedMotion ? 'default' : 'hover'}
+      transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+      variants={{
+        default: { scale: 'var(--scale-from)' },
+        hover: { scale: 'var(--scale-to)' },
+      }}
+      href={href}
+      target={target}
+      componentType={'anchor'}
+      {...motionProps}
+    >
+      {' '}
+      <motion.div
+        whileHover="hover"
+        whileTap={{ scale: 0.93 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+        className={className}
       >
-        {' '}
-        <motion.div
-          whileHover="hover"
-          whileTap={{ scale: 0.93 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          className={className}
-        >
-          <ColorFill aria-hidden="true" />
+        <ColorFill aria-hidden="true" />
 
-          {icon && (
-            <>
-              {ButtonIcon(icon, intent)}
-              {'\u00A0'}
-            </>
-          )}
-          {children}
-        </motion.div>
-      </CtrlLink2>
-    </>
+        {icon && (
+          <>
+            {ButtonIcon(icon, intent)}
+            {'\u00A0'}
+          </>
+        )}
+        {children}
+      </motion.div>
+    </CtrlLink2>
   );
 }

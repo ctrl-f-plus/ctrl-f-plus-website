@@ -1,0 +1,47 @@
+name: Lighthouse Static Site
+
+on:
+  workflow_call:
+    inputs:
+      artifact_name:
+        description: Name of the downloaded build artifact.
+        required: false
+        type: string
+        default: dist
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - uses: actions/download-artifact@v5
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: dist/
+
+      - name: Lighthouse CI
+        env:
+          LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm exec lhci autorun
+
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/
+          retention-days: 30

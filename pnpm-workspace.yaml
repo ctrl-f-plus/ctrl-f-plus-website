@@ -1,0 +1,7 @@
+packages:
+  - infrastructure
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true

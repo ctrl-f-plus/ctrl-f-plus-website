@@ -1,0 +1,34 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "watch": {
+    "build": "pnpm run build:edge",
+    "include": ["**"],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "node_modules",
+      "dist"
+    ]
+  },
+  "context": {
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": ["aws"],
+    "appName": "ctrl-f-plus-website",
+    "githubRepository": "ctrl-f-plus/ctrl-f-plus-website",
+    "environments": {
+      "prod": {
+        "account": "${CDK_DEFAULT_ACCOUNT}",
+        "region": "${CDK_DEFAULT_REGION}",
+        "certificateRegion": "us-east-1",
+        "envName": "prod",
+        "domainName": "ctrl-f.plus",
+        "alternateDomainNames": ["www.ctrl-f.plus"]
+      }
+    }
+  }
+}
