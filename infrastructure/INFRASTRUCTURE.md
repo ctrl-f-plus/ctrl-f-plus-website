@@ -79,15 +79,21 @@ scripts/setup-github.sh --check   # shows current state
 scripts/setup-github.sh --apply   # writes values via gh CLI
 ```
 
-| Kind | Name | Source |
-|---|---|---|
-| Secret | `AWS_DEPLOY_ROLE_ARN` | CloudFormation output `GitHubActionsDeployRoleArn` |
-| Variable | `NEXT_PUBLIC_APP_URL` | `https://` + `context.environments.prod.domainName` from `cdk.json` |
-| Variable | `NEXT_PUBLIC_AWS_REGION` | `us-east-2` |
-| Variable | `CDK_STACK_NAME` | Derived from `cdk.json` |
-| Variables (ctrl-f-plus specific) | `NEXT_PUBLIC_CHROME_STORE_URL`, `NEXT_PUBLIC_GITHUB_EXT_URL`, `NEXT_PUBLIC_GITHUB_ORGANIZATION_URL`, `NEXT_PUBLIC_OPEN_COLLECTIVE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL` | From `.env.local` or prompted |
+| Kind                             | Name                                                                                                                                                                | Source                                                              |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
+| Secret                           | `AWS_DEPLOY_ROLE_ARN`                                                                                                                                               | CloudFormation output `GitHubActionsDeployRoleArn`                  |
+| Variable                         | `NEXT_PUBLIC_APP_URL`                                                                                                                                               | `https://` + `context.environments.prod.domainName` from `cdk.json` |
+| Variable                         | `NEXT_PUBLIC_AWS_REGION`                                                                                                                                            | `us-east-2`                                                         |
+| Variable                         | `CDK_STACK_NAME`                                                                                                                                                    | Derived from `cdk.json`                                             |
+| Variables (ctrl-f-plus specific) | `NEXT_PUBLIC_CHROME_STORE_URL`, `NEXT_PUBLIC_GITHUB_EXT_URL`, `NEXT_PUBLIC_GITHUB_ORGANIZATION_URL`, `NEXT_PUBLIC_OPEN_COLLECTIVE_URL`, `NEXT_PUBLIC_CONTACT_EMAIL` | From `.env.local` or prompted                                       |
 
 The script is idempotent; secrets that already exist prompt before overwriting.
+
+## Monitoring & analytics
+
+CloudWatch RUM, Cloudflare Web Analytics, Sentry, and Lighthouse CI are
+configured but inert until per-integration env vars are set. Setup docs and
+scripts live under [`monitoring/`](./monitoring/README.md).
 
 ## Related files
 
@@ -96,9 +102,12 @@ The script is idempotent; secrets that already exist prompt before overwriting.
 - `infrastructure/lib/constructs/static-site.ts` — CloudFront + S3 + CSP headers
 - `infrastructure/lib/config/site-config.ts` — context loading, env resolution
 - `infrastructure/cdk.json` — per-environment domain, region, and repo config
+- `infrastructure/monitoring/` — RUM / analytics / error-reporting setup
 - `scripts/initial-aws-deploy.sh` — one-shot first deploy
 - `scripts/deploy-content.sh` — content-only deploys
 - `scripts/setup-github.sh` — GitHub repo var/secret wiring
+- `scripts/setup-cloudwatch-rum.sh` — provision CloudWatch RUM resources
+- `scripts/setup-cloudflare-analytics.sh` — provision CF Web Analytics site
 - `.github/workflows/` — CI build + deploy workflows
 
 See `.context/plans/cdk-infra-alignment/` for the alignment plan and follow-up

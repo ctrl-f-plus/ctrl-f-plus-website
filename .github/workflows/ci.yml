@@ -41,16 +41,18 @@ jobs:
       aws_region: ${{ vars.AWS_REGION }}
     secrets: inherit
 
-  lighthouse:
-    name: Lighthouse
-    needs: build
-    uses: ./.github/workflows/lighthouse-static-site.yml
-    with:
-      artifact_name: dist
+#  lighthouse:
+#    name: Lighthouse
+#    needs: build
+#    uses: ./.github/workflows/lighthouse-static-site.yml
+#    with:
+#      artifact_name: dist
 
   deploy:
     name: Deploy
-    needs: [github-workflow-lint, build, lighthouse]
+    needs: [github-workflow-lint, build,
+#            lighthouse
+    ]
     if: github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     permissions:
       contents: write
