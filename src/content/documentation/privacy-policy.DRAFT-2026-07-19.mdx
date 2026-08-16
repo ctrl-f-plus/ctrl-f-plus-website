@@ -1,0 +1,89 @@
+---
+title: 'Privacy Policy'
+publishedAt: '2026-07-19'
+---
+
+{/\*
+DRAFT — ships with the paid-tier launch, not before. Ship checklist (all in
+the same commit that renames this file to privacy-policy.mdx):
+
+1. src/app/privacy/page.tsx:26 — hardcoded "August 10, 2023" date line:
+   update or remove (this draft carries the effective date in-body).
+2. src/app/privacy/page.tsx:30-36 — intro claim "does not collect any of
+   your personal data": reword to match the free/paid split below.
+3. Open items pending Ben/lawyer review (see the D0 record in
+   extension-rewrite docs/plans/pdf-search): legal entity behind "we";
+   GDPR controller statement for license-key transmission vs LS's MoR
+   coverage; whether CWS "conspicuous terms of sale" needs a dedicated
+   /terms page; note LS refunds are discretionary case-by-case per their
+   buyer terms — align our refund copy with that.
+4. If a Firefox/AMO release ships alongside this: check whether Mozilla's
+   distribution policies have an equivalent of the CWS "conspicuous terms
+   of sale" requirement from item 3.
+   \*/}
+
+_Effective: July 19, 2026_
+
+## The Short Version
+
+- Searching — including PDF search — happens entirely on your device. Your search queries never leave your browser.
+- The extension contains no analytics, no telemetry, no tracking, and no ads, in any tier.
+- If you buy a paid license, the only thing the extension ever sends anywhere is your license key (plus a device activation identifier) to Lemon Squeezy, our payment provider, to confirm your license.
+- We run no servers of our own and never see your payment details.
+
+## Free Tier: No Data Collection
+
+If you use the free tier of Ctrl-F Plus, the extension does not collect, store, use, or share any data about you or your usage, and it makes no network connections at all. Everything — searching, highlighting, your settings — happens locally on your device.
+
+The free trial of paid features is also entirely local: starting a trial sends nothing off your device.
+
+The built-in PDF viewer and PDF search are paid features. On the free tier, the extension does not open, intercept, or redirect your PDFs at all — and even on the paid tier, PDFs are viewed and searched entirely on your device.
+
+## Paid Licenses and Lemon Squeezy
+
+Paid purchases (one-time or subscription) are handled by [Lemon Squeezy](https://www.lemonsqueezy.com), acting as the **merchant of record** — they are the legal seller of Ctrl-F Plus licenses and handle payment processing, invoicing, VAT/sales tax, and refunds.
+
+Checkout happens on lemonsqueezy.com in a regular browser tab, never inside the extension. The extension never sees or handles your card details. Any payment, email, or billing information you provide during checkout is collected by Lemon Squeezy under its own [Privacy Policy](https://www.lemonsqueezy.com/privacy) and [Terms](https://www.lemonsqueezy.com/terms).
+
+After purchase you receive a license key. No account is created with us — we run no servers of our own.
+
+## What the Extension Sends (Paid Tier Only)
+
+When you enter your license key, the extension talks directly to Lemon Squeezy's license API (`api.lemonsqueezy.com`) to activate, periodically re-validate, and deactivate your license. These requests contain only:
+
+- your license key, and
+- an activation-instance identifier/name (so you can manage which devices use your license).
+
+That's it. These checks are periodic, with a 14-day offline grace period — searching never triggers a network request. Deactivating your license (or uninstalling the extension) releases that device's activation.
+
+## What We Never Do
+
+- No analytics, telemetry, tracking, or ads — in any tier.
+- No selling or sharing of data.
+- No servers of ours: we cannot see your searches, your tabs, or your PDFs.
+- No payment data: card details go only to Lemon Squeezy.
+- Search queries and page/PDF content never leave your device.
+
+## Local Storage of Data
+
+Ctrl-F Plus utilizes your browser's extension storage to store data. This means that any data saved by the extension — your settings and preferences, and for paid users a cached copy of your license key and entitlement — is stored directly on your device and not on any external servers or databases. It's solely used to enhance your experience with the extension by retaining settings, preferences, or any other functionality that requires data persistence across sessions.
+
+If you uninstall the extension, this locally stored data (including the cached license key) is deleted.
+
+## Refunds
+
+Refunds are handled by Lemon Squeezy as the merchant of record, under their [buyer terms](https://www.lemonsqueezy.com/buyer-terms). If you need help with a purchase or refund, contact us at [support@ctrl-f.plus](mailto:support@ctrl-f.plus) and we'll point you in the right direction.
+
+## Our Website
+
+Our website does not use analytics scripts, cookies, or trackers. Like most websites, our hosting infrastructure may keep standard, short-lived access logs in aggregate form; we do not use them to identify or track you.
+
+## Changes to this Privacy Policy
+
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. Changes to this Privacy Policy are effective when they are posted on this page.
+
+## Contact Us
+
+If you have any questions about this Privacy Policy, please contact us:
+
+By email: [support@ctrl-f.plus](mailto:support@ctrl-f.plus)
