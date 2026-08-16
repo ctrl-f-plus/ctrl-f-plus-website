@@ -4,10 +4,10 @@ import { clientEnv } from '@/clientEnv';
 import { getPublishedPosts } from '@/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
 import Container from '@/components/ui/container';
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
 import DrawingIcon from '@/components/icons/drawing-icon';
+import { BrowserLabel, InstallButton } from '@/components/install-button';
 import InfoCard from '@/components/info-card';
 import { formatDate } from '@/lib/utils';
 
@@ -59,17 +59,9 @@ export default function BlogPage() {
               description={`Patience, tab hoarder. We're busy cooking up some stories that might just be worth your precious tab space. Until then, Check out  the tool that understands your tab obsession!`}
               showAccents
             >
-              {' '}
-              <Button
-                intent="solid"
-                size="thin"
-                icon="puzzle2"
-                href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
-                target={'_blank'}
-                aTag
-              >
-                Get the Extension!
-              </Button>
+              <InstallButton intent="solid" size="thin" icon="puzzle2">
+                Get the <BrowserLabel /> extension!
+              </InstallButton>
             </InfoCard>
           ) : (
             <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
