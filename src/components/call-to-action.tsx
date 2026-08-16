@@ -9,9 +9,9 @@ import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
+import { BrowserLabel, InstallButton } from '@/components/install-button';
 
 const Atropos = dynamic(() => import('atropos/react'));
-const Button = dynamic(() => import('./ui/Button'));
 
 function CtaColorAccents() {
   return (
@@ -69,18 +69,15 @@ function CtaColorAccents() {
 
 function CtaButtons() {
   return (
-    <Button
+    <InstallButton
       intent="solid"
       size="phat"
       icon="puzzleIconWithBg"
       animation="slice"
-      href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
-      target={'_blank'}
       className="relative isolate z-50"
-      aTag
     >
-      Add to Chrome
-    </Button>
+      Add to <BrowserLabel />
+    </InstallButton>
   );
 }
 
@@ -147,12 +144,12 @@ export default function CallToAction() {
             <div className="hidden laptop:block">
               <Atropos
                 className="h-full w-full rounded-[2.25rem] "
-                shadow={prefersReducedMotion ? false : true}
+                shadow={!prefersReducedMotion}
                 activeOffset={prefersReducedMotion ? 0 : 50}
-                rotateTouch={prefersReducedMotion ? false : true}
+                rotateTouch={!prefersReducedMotion}
                 rotateXMax={prefersReducedMotion ? 0 : 15}
                 rotateYMax={prefersReducedMotion ? 0 : 15}
-                rotate={prefersReducedMotion ? false : true}
+                rotate={!prefersReducedMotion}
               >
                 <m.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center rounded-[2.25rem] bg-shark px-[2.25rem] text-center">
                   <CtaColorAccents />

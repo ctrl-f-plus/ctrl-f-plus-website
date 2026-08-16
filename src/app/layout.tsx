@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     canonical: `${clientEnv.NEXT_PUBLIC_APP_URL}/`,
   },
   description:
-    'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
+    'Ctrl-F Plus is a productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl-Shift-F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and boost your productivity',
   openGraph: {
     title: 'Ctrl-F Plus: Ctrl + F Search Across All Tabs',
     description:
-      'Ctrl-F Plus is an open source productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl+Shift+F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and increase your productivity',
+      'Ctrl-F Plus is a productivity Chrome extension that enables you to search through all open tabs using the keyboard shortcut Ctrl+Shift+F. Effortlessly locate specific content, keywords, or phrases across multiple tabs and increase your productivity',
     url: clientEnv.NEXT_PUBLIC_APP_URL,
     siteName: 'Ctrl-F Plus Chrome Extension',
     locale: 'en-US',

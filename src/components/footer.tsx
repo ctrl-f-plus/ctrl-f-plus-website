@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Container from './ui/container';
 import LogoIconSecondary from './icons/logo-secondary';
 import { GithubIcon } from './icons/social-icons';
+import { BROWSERS } from '@/lib/browsers';
 
 const navigation = [
   {
@@ -39,38 +40,25 @@ const navigation = [
   },
   {
     title: 'Download',
-    links: [
-      {
-        title: 'Chrome',
-        href: process.env.NEXT_PUBLIC_CHROME_STORE_URL,
-        target: '_blank',
-      },
-      {
-        title: 'Brave',
-        href: process.env.NEXT_PUBLIC_CHROME_STORE_URL,
-        target: '_blank',
-      },
-    ],
+    links: Object.values(BROWSERS).map((browser) => ({
+      title: browser.displayName,
+      href: browser.storeUrl,
+      target: '_blank',
+    })),
   },
 ];
 
 function Navigation() {
   return (
     <nav>
-      <ul
-        role="list"
-        className=" grid grid-cols-2 gap-x-8 gap-y-10  laptop:grid-cols-3"
-      >
+      <ul className=" grid grid-cols-2 gap-x-8 gap-y-10  laptop:grid-cols-3">
         {navigation.map((section) => (
           <li key={section.title}>
             <div className="font-inter text-fs-base text-white">
               {section.title}
             </div>
 
-            <ul
-              role="list"
-              className="mt-4 font-open-sans text-fs-sm text-gray-300"
-            >
+            <ul className="mt-4 font-open-sans text-fs-sm text-gray-300">
               {section.links.map((link) => (
                 <li key={link.title} className="mt-2">
                   <Link
@@ -124,7 +112,9 @@ function OpenSource() {
   );
 }
 
-export default function Footer({ className }: Readonly<{ className?: string }>) {
+export default function Footer({
+  className,
+}: Readonly<{ className?: string }>) {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '');
 
@@ -132,7 +122,7 @@ export default function Footer({ className }: Readonly<{ className?: string }>) 
     <footer
       className={clsx(
         'mt-18 bg-shark tablet:mt-24 wide:mt-[7.625rem]',
-        className
+        className,
       )}
     >
       <Container className="">
@@ -146,9 +136,6 @@ export default function Footer({ className }: Readonly<{ className?: string }>) 
       <Container className=" mt-18 flex h-[5.375rem] w-full items-center justify-between border-t border-white/10 tablet:mt-24  ">
         <LogoIconSecondary />
 
-        {/* <p className="font-open-sans text-fs-lg leading-5 text-white">
-          &copy; {copyrightDate}
-        </p> */}
         <p className="font-open-sans text-fs-lg leading-5 text-white">
           copyright {copyrightDate}
         </p>

@@ -1,11 +1,11 @@
 // app/components/hero.tsx
 import 'server-only';
 
-import Button from './ui/Button';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
 import HeroAnimation from './icons/hero-animation';
 import QuickView from './quick-view';
+import { BrowserLabel, InstallButton } from '@/components/install-button';
 
 export default function Hero() {
   return (
@@ -37,17 +37,14 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col gap-6 tab-pro:flex-row">
-            <Button
+            <InstallButton
               intent="solid"
               size="thin"
               icon="puzzle"
               animation="slice"
-              href={process.env.NEXT_PUBLIC_CHROME_STORE_URL}
-              target={'_blank'}
-              aTag
             >
-              Add to Chrome for free
-            </Button>
+              Add to <BrowserLabel /> for free
+            </InstallButton>
 
             <QuickView />
           </div>
