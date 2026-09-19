@@ -1,6 +1,5 @@
-// Security headers (CSP, HSTS, X-Frame-Options, etc.) are handled by the
-// hosting layer — CloudFront Response Headers Policy in Phase 2. The Next.js
-// `headers()` config is inert when `output: 'export'` is set.
+// The Cloudflare Worker serves the security headers from public/_headers.
+// The Next.js `headers()` config is inert under `output: 'export'`.
 
 import createMDX from '@next/mdx';
 import { readFileSync } from 'node:fs';
