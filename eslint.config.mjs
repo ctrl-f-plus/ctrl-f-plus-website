@@ -3,7 +3,7 @@ import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config(
-  { ignores: ['.trash/**/*'] },
+  { ignores: ['.trash/**/*', 'dist/**', '.wrangler/**'] },
   ...nextConfig,
   ...tseslint.configs.recommended,
   eslintConfigPrettier,
