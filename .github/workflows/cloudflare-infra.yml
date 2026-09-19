@@ -1,0 +1,83 @@
+# .github/workflows/cloudflare-infra.yml
+
+name: Cloudflare Infrastructure
+
+on:
+  pull_request:
+    paths:
+      - 'infrastructure/cloudflare/**'
+      - '.github/workflows/cloudflare-infra.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'infrastructure/cloudflare/**'
+      - '.github/workflows/cloudflare-infra.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TERRAFORM_VERSION: 1.14.7
+  TERRAFORM_ROOT: infrastructure/cloudflare
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+
+      - name: Check formatting
+        run: terraform -chdir="$TERRAFORM_ROOT" fmt -check -recursive
+
+      - name: Initialize without a backend
+        run: terraform -chdir="$TERRAFORM_ROOT" init -backend=false
+
+      - name: Validate configuration
+        run: terraform -chdir="$TERRAFORM_ROOT" validate
+
+  plan:
+    name: Plan
+    if: github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_app_terraform_io }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_INFRA_API_TOKEN }}
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+
+      - name: Initialize
+        run: terraform -chdir="$TERRAFORM_ROOT" init
+
+      # Without pipefail the step would report tee's exit status, not Terraform's.
+      - name: Plan
+        run: |
+          set -euo pipefail
+          terraform -chdir="$TERRAFORM_ROOT" plan -no-color | tee "$RUNNER_TEMP/plan.txt"
+
+      - name: Upload the plan
+        uses: actions/upload-artifact@v5
+        with:
+          name: cloudflare-terraform-plan
+          path: ${{ runner.temp }}/plan.txt
+          retention-days: 7
