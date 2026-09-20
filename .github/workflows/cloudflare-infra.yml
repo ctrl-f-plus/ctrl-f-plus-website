@@ -25,8 +25,6 @@ jobs:
   validate:
     name: Validate
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
       - name: Check out repository code
         uses: actions/checkout@v5
@@ -51,8 +49,6 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     needs: validate
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     env:
       TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_app_terraform_io }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_INFRA_API_TOKEN }}
@@ -60,6 +56,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v5
 
+      # Jobs run on separate runners, so validate's install cannot be reused here.
+      # Merging the jobs would expose the secrets above to steps that only validate.
       - name: Install Terraform
         uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
         with:
