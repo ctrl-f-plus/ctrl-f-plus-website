@@ -8,7 +8,10 @@
     "dev:clear-cache": "rm -rf .next && next dev --webpack",
     "build": "tsx scripts/generate-og-images.tsx && next build --webpack",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "cf:dev": "wrangler dev",
+    "cf:check": "wrangler deploy --dry-run",
+    "cf:deploy": "wrangler deploy",
     "codemod:readonly-props": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts src/app/ mdx-components.tsx",
     "codemod:readonly-props:dry": "npx jscodeshift --parser tsx --extensions tsx --transform scripts/readonly-props-codemod.ts --dry --print src/app/ mdx-components.tsx"
   },
@@ -68,7 +71,8 @@
     "tailwindcss-debug-screens": "^2.2.1",
     "tsx": "^4.21.0",
     "typescript": "5.8.3",
-    "typescript-eslint": "^8.57.2"
+    "typescript-eslint": "^8.57.2",
+    "wrangler": "4.135.0"
   },
   "engines": {
     "node": ">=24",
