@@ -1,4 +1,4 @@
-// app/components/hero.tsx
+// src/components/hero.tsx
 import 'server-only';
 
 import Container from './ui/container';

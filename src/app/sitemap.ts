@@ -1,3 +1,5 @@
+// src/app/sitemap.ts
+
 export const dynamic = 'force-static';
 
 import { clientEnv } from '@/clientEnv';

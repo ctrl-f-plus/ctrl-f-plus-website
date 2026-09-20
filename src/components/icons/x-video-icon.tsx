@@ -1,4 +1,4 @@
-// app/components/icons/x-mark-icon.tsx
+// src/components/icons/x-video-icon.tsx
 
 export default function XVideoIcon({ className }: Readonly<{ className: string }>) {
   return (

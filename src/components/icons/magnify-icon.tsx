@@ -1,4 +1,4 @@
-// app/components/icons/MagnifyIcon.tsx
+// src/components/icons/magnify-icon.tsx
 
 export default function MagnifyIcon({ className }: Readonly<{ className?: string }>) {
   return (

@@ -1,3 +1,5 @@
+// .trash/plugins/mdxPlugins/attachRawStringToCodeContainers.ts
+
 // // plugins/mdxPlugins/attachRawStringToCodeContainers.ts
 
 // import { visit } from 'unist-util-visit';

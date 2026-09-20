@@ -1,5 +1,4 @@
-// app/components/page-title-card.tsx
-
+// src/components/page-title-card.tsx
 import 'server-only';
 
 import { FadeIn } from './fade-in';

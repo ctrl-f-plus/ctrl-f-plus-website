@@ -1,3 +1,5 @@
+// .trash/design-system/highlight-animation/page.tsx
+
 // // app/blog/page.tsx
 
 // import { allBlogs } from 'contentlayer/generated';

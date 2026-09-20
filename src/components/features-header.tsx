@@ -1,4 +1,4 @@
-// app/components/features-header.tsx
+// src/components/features-header.tsx
 'use client';
 
 import clsx from 'clsx';

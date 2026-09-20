@@ -1,4 +1,4 @@
-// app/components/quick-view.tsx
+// src/components/quick-view.tsx
 'use client';
 
 import dynamic from 'next/dynamic';

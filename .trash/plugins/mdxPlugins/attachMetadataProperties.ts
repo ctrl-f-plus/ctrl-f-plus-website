@@ -1,3 +1,5 @@
+// .trash/plugins/mdxPlugins/attachMetadataProperties.ts
+
 // // plugins/attachMetadataProperties.ts
 
 // import { visit } from 'unist-util-visit';

@@ -1,3 +1,5 @@
+// src/lib/browser.ts
+
 // // app/lib/browser.ts
 
 // // src/contentScripts/utils/browser/device.ts

@@ -1,3 +1,5 @@
+// infrastructure/aws/lib/config/types.ts
+
 export type EnvironmentName = 'prod';
 
 export interface EnvironmentConfig {

@@ -1,3 +1,5 @@
+// src/app/privacy/page.tsx
+
 import type { Metadata } from 'next';
 import Container from '@/components/ui/container';
 import { FadeInStagger } from '@/components/fade-in';

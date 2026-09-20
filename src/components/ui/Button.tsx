@@ -1,4 +1,4 @@
-// app/tab-hoarders/components/Button.tsx
+// src/components/ui/Button.tsx
 'use client';
 
 import { cva, cx } from '../../../cva.config';

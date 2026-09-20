@@ -1,3 +1,5 @@
+# infrastructure/cloudflare/analytics.tf
+
 # The provider documents the import id as "<account_id>/<site_id>", and the
 # site id is the site tag this root takes as a variable.
 import {

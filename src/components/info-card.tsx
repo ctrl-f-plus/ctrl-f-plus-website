@@ -1,4 +1,4 @@
-// app/components/info-card.tsx
+// src/components/info-card.tsx
 
 import { ReactNode } from 'react';
 import { FadeIn } from './fade-in';

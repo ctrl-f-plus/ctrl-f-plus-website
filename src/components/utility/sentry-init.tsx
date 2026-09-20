@@ -1,3 +1,4 @@
+// src/components/utility/sentry-init.tsx
 'use client';
 
 import { useEffect } from 'react';

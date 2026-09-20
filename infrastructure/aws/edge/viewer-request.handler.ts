@@ -1,3 +1,5 @@
+// infrastructure/aws/edge/viewer-request.handler.ts
+
 import cf from 'cloudfront';
 
 type QuerystringValue = {

@@ -1,3 +1,5 @@
+# infrastructure/cloudflare/outputs.tf
+
 output "name_servers" {
   description = "Cloudflare nameservers to enter at the registrar."
   value       = cloudflare_zone.site.name_servers

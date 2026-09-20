@@ -1,4 +1,4 @@
-// app/components/icons/feature1.tsx
+// src/components/icons/feature1.tsx
 
 // TODO: Review the xlinks to see what they actually do and if your solution of removing them will be okay.
 

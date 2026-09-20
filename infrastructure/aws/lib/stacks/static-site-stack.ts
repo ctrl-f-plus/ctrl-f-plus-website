@@ -1,4 +1,5 @@
 // infrastructure/aws/lib/stacks/static-site-stack.ts
+
 import * as cdk from 'aws-cdk-lib';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';
 import * as iam from 'aws-cdk-lib/aws-iam';

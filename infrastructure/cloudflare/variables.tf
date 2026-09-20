@@ -1,3 +1,5 @@
+# infrastructure/cloudflare/variables.tf
+
 variable "cloudflare_account_id" {
   description = "Cloudflare account that owns the zone, the Web Analytics site, and the release tokens."
   type        = string

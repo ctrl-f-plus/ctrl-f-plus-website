@@ -1,3 +1,5 @@
+// public/gradient2.js
+
 //Converting colors to proper format
 function normalizeColor(hexCode) {
   return [

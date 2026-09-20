@@ -1,3 +1,5 @@
+# infrastructure/cloudflare/zone-settings.tf
+
 resource "cloudflare_zone_setting" "ssl_mode" {
   zone_id    = cloudflare_zone.site.id
   setting_id = "ssl"

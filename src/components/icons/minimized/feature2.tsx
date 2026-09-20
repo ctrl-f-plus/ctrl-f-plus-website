@@ -1,4 +1,4 @@
-// app/components/icons/minimized/feature2.tsx
+// src/components/icons/minimized/feature2.tsx
 
 export default function FeatureIcon2() {
   return (

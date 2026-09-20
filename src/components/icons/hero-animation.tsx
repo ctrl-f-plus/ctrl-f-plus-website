@@ -1,4 +1,4 @@
-// app/components/icons/hero-animation.tsx
+// src/components/icons/hero-animation.tsx
 'use client';
 
 import Image from 'next/image';

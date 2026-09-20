@@ -1,3 +1,5 @@
+// src/components/icons/x-mark.tsx
+
 export default function XMarkIcon({ props }: any) {
   return (
     <svg

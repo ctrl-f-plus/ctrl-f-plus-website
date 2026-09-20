@@ -1,4 +1,4 @@
-// app/page.tsx
+// src/app/page.tsx
 import 'server-only';
 
 import CallToAction from '@/components/call-to-action';

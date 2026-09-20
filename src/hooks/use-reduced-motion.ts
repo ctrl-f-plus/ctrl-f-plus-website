@@ -1,3 +1,4 @@
+// src/hooks/use-reduced-motion.ts
 'use client';
 
 import { useEffect, useState } from 'react';

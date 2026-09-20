@@ -1,5 +1,4 @@
-// app/loading.tsx
-
+// src/app/loading.tsx
 'use client';
 
 import { useReducedMotion } from '@/hooks/use-reduced-motion';

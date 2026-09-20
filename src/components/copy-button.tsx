@@ -1,4 +1,4 @@
-// app/components/copy-button.tsx
+// src/components/copy-button.tsx
 'use client';
 
 import { cx } from '../../cva.config';

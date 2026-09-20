@@ -1,4 +1,4 @@
-// app/about/page.tsx
+// src/app/about/page.tsx
 import 'server-only';
 
 import benAvatar from '@/../public/images/ben-avatar.png';

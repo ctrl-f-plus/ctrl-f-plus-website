@@ -1,3 +1,5 @@
+// src/app/robots.ts
+
 export const dynamic = 'force-static';
 
 import { clientEnv } from '@/clientEnv';
