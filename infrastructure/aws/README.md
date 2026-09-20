@@ -1,7 +1,11 @@
-# Infrastructure
+# AWS infrastructure (CDK)
 
 AWS CDK infrastructure for `ctrl-f.plus`. Three stacks, deployed in sequence,
 with one account-level prerequisite (GitHub OIDC provider).
+
+This is the AWS half of the infrastructure. The Cloudflare zone is managed by a
+separate Terraform root; see [`../README.md`](../README.md) for how the two fit
+together.
 
 ## Stack layout
 
@@ -24,7 +28,7 @@ StaticSiteStack       (us-east-2)   → S3 bucket + CloudFront + OAC +
 - Stack names are derived from `cdk.json` context:
   `PascalCase(appName) + '-' + PascalCase(envName)`.
 
-Source: `infrastructure/bin/app.ts`.
+Source: `infrastructure/aws/bin/app.ts`.
 
 ## Region rationale
 
@@ -40,8 +44,8 @@ using an ACM certificate on CloudFront.
 
 ## Prerequisites
 
-- Node.js `24.x` (see [`../.nvmrc`](../.nvmrc))
-- pnpm `10.x` (see `packageManager` in [`../package.json`](../package.json))
+- Node.js `24.x` (see [`../../.nvmrc`](../../.nvmrc))
+- pnpm `10.x` (see `packageManager` in [`../../package.json`](../../package.json))
 - AWS CLI, authenticated against the target account
 - `jq`
 - `dig`
@@ -78,7 +82,7 @@ Create `.env.local` if it does not exist. At minimum set:
 NEXT_PUBLIC_APP_URL=https://ctrl-f.plus
 ```
 
-The client-side env schema in [`../src/clientEnv.ts`](../src/clientEnv.ts)
+The client-side env schema in [`../../src/clientEnv.ts`](../../src/clientEnv.ts)
 validates these `NEXT_PUBLIC_*` values at build time. Only `NEXT_PUBLIC_APP_URL`
 is required (defaults to `http://localhost:3000` in dev); the rest are
 optional:
@@ -89,8 +93,8 @@ optional:
 - `NEXT_PUBLIC_GITHUB_ORGANIZATION_URL`
 - `NEXT_PUBLIC_OPEN_COLLECTIVE_URL`
 - `NEXT_PUBLIC_CONTACT_EMAIL`
-- `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` — Cloudflare Web Analytics; see [monitoring/cloudflare-analytics.md](./monitoring/cloudflare-analytics.md)
-- `NEXT_PUBLIC_CW_RUM_APP_MONITOR_ID` / `NEXT_PUBLIC_CW_RUM_IDENTITY_POOL_ID` — CloudWatch RUM; see [monitoring/cloudwatch-rum.md](./monitoring/cloudwatch-rum.md)
+- `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` — Cloudflare Web Analytics; see [../monitoring/cloudflare-analytics.md](../monitoring/cloudflare-analytics.md)
+- `NEXT_PUBLIC_CW_RUM_APP_MONITOR_ID` / `NEXT_PUBLIC_CW_RUM_IDENTITY_POOL_ID` — CloudWatch RUM; see [../monitoring/cloudwatch-rum.md](../monitoring/cloudwatch-rum.md)
 - `NEXT_PUBLIC_SENTRY_DSN`
 - `NEXT_PUBLIC_AWS_REGION` — derived from `AWS_REGION` in the deploy scripts; does not need to be hardcoded
 
@@ -109,9 +113,9 @@ The script executes the following phases in order:
 1. **Preflight** — validates required commands (`aws`, `jq`, `pnpm`, `dig`),
    environment variables (`AWS_REGION`, `CLOUDFRONT_CERTIFICATE_REGION`), and
    `.env.local` presence.
-2. **Install dependencies** — runs `pnpm --dir infrastructure install
+2. **Install dependencies** — runs `pnpm --dir infrastructure/aws install
    --frozen-lockfile` if infrastructure deps are not already present.
-3. **CDK diff** — runs `pnpm --dir infrastructure run diff` to show pending
+3. **CDK diff** — runs `pnpm --dir infrastructure/aws run diff` to show pending
    changes (in `--check` mode the script exits here).
 4. **Bootstrap CDK** — bootstraps both `us-east-2` and `us-east-1`.
 5. **Ensure GitHub OIDC provider** — checks for and creates the account-level
@@ -143,7 +147,7 @@ The script executes the following phases in order:
 ## Routine deployment
 
 Production deploys run automatically via GitHub Actions on push to `master`.
-See [`../.github/CI-CD.md`](../.github/CI-CD.md) for the pipeline details.
+See [`../../.github/CI-CD.md`](../../.github/CI-CD.md) for the pipeline details.
 
 ### Content-only changes
 
@@ -158,22 +162,22 @@ CloudFront. Does NOT run `cdk deploy` or touch infrastructure.
 
 ### Infrastructure changes
 
-When files under `infrastructure/` change (CDK constructs, CSP, edge handlers,
+When files under `infrastructure/aws/` change (CDK constructs, CSP, edge handlers,
 CDK config):
 
 ```bash
 export AWS_REGION=us-east-2
 export CLOUDFRONT_CERTIFICATE_REGION=us-east-1
 
-pnpm --dir infrastructure run diff
-pnpm --dir infrastructure run deploy
+pnpm --dir infrastructure/aws run diff
+pnpm --dir infrastructure/aws run deploy
 ```
 
 CDK will prompt for approval on security-sensitive changes (IAM, security
 groups). To deploy a single stack instead of all three:
 
 ```bash
-pnpm --dir infrastructure exec cdk deploy CtrlFPlusWebsite-Prod
+pnpm --dir infrastructure/aws exec cdk deploy CtrlFPlusWebsite-Prod
 ```
 
 ### Reading stack outputs
@@ -209,7 +213,7 @@ When both have changed:
 export AWS_REGION=us-east-2
 export CLOUDFRONT_CERTIFICATE_REGION=us-east-1
 
-pnpm --dir infrastructure run deploy
+pnpm --dir infrastructure/aws run deploy
 scripts/deploy-content.sh --apply
 ```
 
@@ -218,7 +222,7 @@ scripts/deploy-content.sh --apply
 ```bash
 pnpm dev                                   # local dev server at http://localhost:3000
 pnpm build                                 # produce dist/ and inspect it
-pnpm --dir infrastructure run diff         # CloudFormation diff without deploying
+pnpm --dir infrastructure/aws run diff     # CloudFormation diff without deploying
 ```
 
 There is no staging environment.
@@ -259,7 +263,7 @@ scripts/deploy-content.sh --apply
 
 **Infrastructure rollback.** CloudFormation automatically rolls back failed
 stack updates. To revert a successful infrastructure deploy, check out the
-previous commit and re-run `pnpm --dir infrastructure run deploy`.
+previous commit and re-run `pnpm --dir infrastructure/aws run deploy`.
 
 The Route 53 hosted zone records and the S3 bucket have `RETAIN` removal
 policies, so accidental stack deletion will not destroy DNS records or site
@@ -268,7 +272,7 @@ content.
 ## Deployment tags
 
 Each successful production deploy creates a semver patch tag (e.g., `v1.0.1`).
-The bump logic lives in [`../.github/workflows/deploy-static-site.yml`](../.github/workflows/deploy-static-site.yml).
+The bump logic lives in [`../../.github/workflows/deploy-static-site.yml`](../../.github/workflows/deploy-static-site.yml).
 List deployment tags:
 
 ```bash
@@ -277,17 +281,17 @@ git tag -l 'v*' --sort=-v:refname
 
 ## Commands reference
 
-Run from the repo root with `pnpm --dir infrastructure run <script>`, or
+Run from the repo root with `pnpm --dir infrastructure/aws run <script>`, or
 change into this directory and run `pnpm run <script>`.
 
-| Command                                       | Purpose                                                               |
-|-----------------------------------------------|-----------------------------------------------------------------------|
-| `pnpm --dir infrastructure run build`         | Compiles the edge handler and the infrastructure TypeScript sources   |
-| `pnpm --dir infrastructure run build:edge`    | Compiles `edge/**/*.ts` into `dist/cloudfront/`                       |
-| `pnpm --dir infrastructure run synth`         | Rebuilds the edge handler and synthesizes the CloudFormation template |
-| `pnpm --dir infrastructure run diff`          | Rebuilds the edge handler and shows the CloudFormation diff           |
-| `pnpm --dir infrastructure run deploy`        | Rebuilds the edge handler and runs `cdk deploy --all`                 |
-| `pnpm --dir infrastructure run cdk -- <args>` | Runs the CDK CLI directly for package-local commands                  |
+| Command                                           | Purpose                                                               |
+|---------------------------------------------------|-----------------------------------------------------------------------|
+| `pnpm --dir infrastructure/aws run build`         | Compiles the edge handler and the infrastructure TypeScript sources   |
+| `pnpm --dir infrastructure/aws run build:edge`    | Compiles `edge/**/*.ts` into `dist/cloudfront/`                       |
+| `pnpm --dir infrastructure/aws run synth`         | Rebuilds the edge handler and synthesizes the CloudFormation template |
+| `pnpm --dir infrastructure/aws run diff`          | Rebuilds the edge handler and shows the CloudFormation diff           |
+| `pnpm --dir infrastructure/aws run deploy`        | Rebuilds the edge handler and runs `cdk deploy --all`                 |
+| `pnpm --dir infrastructure/aws run cdk -- <args>` | Runs the CDK CLI directly for package-local commands                  |
 
 ## Package layout
 
@@ -301,7 +305,6 @@ change into this directory and run `pnpm run <script>`.
 | [`lib/config/`](./lib/config)                                          | Shared infrastructure configuration and types                 |
 | [`edge/`](./edge)                                                      | CloudFront edge handler sources                               |
 | [`assets/cloudfront/`](./assets/cloudfront)                            | Static routing inputs (redirects, CloudFront assets)          |
-| [`monitoring/`](./monitoring)                                          | RUM / analytics / error-reporting setup docs                  |
 | [`cdk.json`](./cdk.json)                                               | Per-environment domain, region, and repo config               |
 
 ## GitHub Actions configuration
@@ -323,13 +326,13 @@ scripts/setup-github.sh --apply   # writes values via gh CLI
 
 The script is idempotent; secrets that already exist prompt before overwriting.
 
-See [`../.github/CI-CD.md`](../.github/CI-CD.md) for the full pipeline layout.
+See [`../../.github/CI-CD.md`](../../.github/CI-CD.md) for the full pipeline layout.
 
 ## Monitoring & analytics
 
 CloudWatch RUM, Cloudflare Web Analytics, Sentry, and Lighthouse CI are
 configured but inert until per-integration env vars are set. Setup docs and
-scripts live under [`monitoring/`](./monitoring/README.md).
+scripts live under [`../monitoring/`](../monitoring/README.md).
 
 ## Related files
 
@@ -338,15 +341,15 @@ scripts live under [`monitoring/`](./monitoring/README.md).
 - [`lib/constructs/static-site.ts`](./lib/constructs/static-site.ts) — CloudFront + S3 + CSP headers
 - [`lib/config/site-config.ts`](./lib/config/site-config.ts) — context loading, env resolution
 - [`cdk.json`](./cdk.json) — per-environment domain, region, and repo config
-- [`monitoring/`](./monitoring) — RUM / analytics / error-reporting setup
-- [`../scripts/initial-aws-deploy.sh`](../scripts/initial-aws-deploy.sh) — one-shot first deploy
-- [`../scripts/deploy-content.sh`](../scripts/deploy-content.sh) — content-only deploys
-- [`../scripts/setup-github.sh`](../scripts/setup-github.sh) — GitHub repo var/secret wiring
-- [`../scripts/setup-cloudwatch-rum.sh`](../scripts/setup-cloudwatch-rum.sh) — provision CloudWatch RUM resources
-- [`../scripts/setup-cloudflare-analytics.sh`](../scripts/setup-cloudflare-analytics.sh) — provision CF Web Analytics
+- [`../monitoring/`](../monitoring) — RUM / analytics / error-reporting setup
+- [`../../scripts/initial-aws-deploy.sh`](../../scripts/initial-aws-deploy.sh) — one-shot first deploy
+- [`../../scripts/deploy-content.sh`](../../scripts/deploy-content.sh) — content-only deploys
+- [`../../scripts/setup-github.sh`](../../scripts/setup-github.sh) — GitHub repo var/secret wiring
+- [`../../scripts/setup-cloudwatch-rum.sh`](../../scripts/setup-cloudwatch-rum.sh) — provision CloudWatch RUM resources
+- [`../../scripts/setup-cloudflare-analytics.sh`](../../scripts/setup-cloudflare-analytics.sh) — provision CF Web Analytics
   site
-- [`../.github/workflows/`](../.github/workflows) — CI build + deploy workflows
-- [`../.github/CI-CD.md`](../.github/CI-CD.md) — CI/CD pipeline reference
+- [`../../.github/workflows/`](../../.github/workflows) — CI build + deploy workflows
+- [`../../.github/CI-CD.md`](../../.github/CI-CD.md) — CI/CD pipeline reference
 
 See `.context/plans/cdk-infra-alignment/` for the alignment plan and follow-up
 improvements.

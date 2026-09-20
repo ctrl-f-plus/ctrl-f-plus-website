@@ -37,7 +37,7 @@ The script:
 3. Creates a RUM app monitor named `<appName>` for the configured domain.
 4. Prints the env-var values you need to set.
 
-It reads `appName` and `prod.domainName` from `infrastructure/cdk.json`, so the
+It reads `appName` and `prod.domainName` from `infrastructure/aws/cdk.json`, so the
 created resources stay in sync with what CDK deploys.
 
 ## Manual setup (if you'd rather do it in the AWS Console)

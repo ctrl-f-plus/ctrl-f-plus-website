@@ -7,17 +7,18 @@ AWS S3 + CloudFront. The deploy workflow assumes the infrastructure stack
 already exists and reads its deploy targets from CloudFormation outputs.
 
 For the infrastructure runbook (first deploy, routine deploys, rollback) see
-[`../infrastructure/INFRASTRUCTURE.md`](../infrastructure/INFRASTRUCTURE.md).
+[`../infrastructure/aws/README.md`](../infrastructure/aws/README.md).
 
 ### Workflow Layout
 
-| Workflow               | File                                                                               | Trigger                                                     | Purpose                                                                                                |
-|------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| CI                     | [`./workflows/ci.yml`](./workflows/ci.yml)                                         | Push to `master`, pull request to `master`, manual dispatch | Orchestrates workflow linting, build, and gated deploy                                                  |
-| GitHub Workflow Lint   | [`./workflows/github-workflow-lint.yml`](./workflows/github-workflow-lint.yml)     | `workflow_call`                                             | Installs actionlint and validates workflow files                                                        |
-| Build Static Site      | [`./workflows/build-static-site.yml`](./workflows/build-static-site.yml)           | `workflow_call`                                             | Builds the static site and uploads the deployable `dist/` artifact                                      |
-| Deploy Static Site     | [`./workflows/deploy-static-site.yml`](./workflows/deploy-static-site.yml)         | `workflow_call`                                             | Downloads the artifact, deploys it to AWS, invalidates CloudFront, and creates the next deployment tag  |
-| Lighthouse Static Site | [`./workflows/lighthouse-static-site.yml`](./workflows/lighthouse-static-site.yml) | `workflow_call`                                             | Reusable Lighthouse CI audit — **currently disabled** in `ci.yml` (commented out)                       |
+| Workflow                  | File                                                                               | Trigger                                                                                   | Purpose                                                                                                                                                           |
+|---------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CI                        | [`./workflows/ci.yml`](./workflows/ci.yml)                                         | Push to `master`, pull request to `master`, manual dispatch                               | Orchestrates workflow linting, build, and gated deploy                                                                                                            |
+| GitHub Workflow Lint      | [`./workflows/github-workflow-lint.yml`](./workflows/github-workflow-lint.yml)     | `workflow_call`                                                                           | Installs actionlint and validates workflow files                                                                                                                  |
+| Build Static Site         | [`./workflows/build-static-site.yml`](./workflows/build-static-site.yml)           | `workflow_call`                                                                           | Builds the static site and uploads the deployable `dist/` artifact                                                                                                |
+| Deploy Static Site        | [`./workflows/deploy-static-site.yml`](./workflows/deploy-static-site.yml)         | `workflow_call`                                                                           | Downloads the artifact, deploys it to AWS, invalidates CloudFront, and creates the next deployment tag                                                            |
+| Lighthouse Static Site    | [`./workflows/lighthouse-static-site.yml`](./workflows/lighthouse-static-site.yml) | `workflow_call`                                                                           | Reusable Lighthouse CI audit — **currently disabled** in `ci.yml` (commented out)                                                                                 |
+| Cloudflare Infrastructure | [`./workflows/cloudflare-infra.yml`](./workflows/cloudflare-infra.yml)             | Pull request or push to `master` touching `infrastructure/cloudflare/**`, manual dispatch | Standalone, not called from `ci.yml`: checks formatting, initializes without a backend and validates the Terraform root; runs `terraform plan` on manual dispatch |
 
 ### Live CI Flow
 
@@ -154,7 +155,7 @@ Environment validation in the app:
 The GitHub Actions pipeline deploys static assets only. The first `cdk deploy`
 stays manual and is documented here:
 
-- Runbook: [`../infrastructure/INFRASTRUCTURE.md`](../infrastructure/INFRASTRUCTURE.md)
+- Runbook: [`../infrastructure/aws/README.md`](../infrastructure/aws/README.md)
 - Helper script: [`../scripts/initial-aws-deploy.sh`](../scripts/initial-aws-deploy.sh)
 - Additional local env required for the first infrastructure deploy:
     - `AWS_REGION`

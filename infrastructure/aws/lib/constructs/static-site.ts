@@ -1,4 +1,4 @@
-// infrastructure/lib/constructs/static-site.ts
+// infrastructure/aws/lib/constructs/static-site.ts
 
 import * as cdk from 'aws-cdk-lib';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';

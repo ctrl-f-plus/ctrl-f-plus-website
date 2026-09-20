@@ -1,4 +1,4 @@
-// infrastructure/lib/stacks/certificate-stack.ts
+// infrastructure/aws/lib/stacks/certificate-stack.ts
 
 import * as cdk from 'aws-cdk-lib';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';

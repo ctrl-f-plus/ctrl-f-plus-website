@@ -11,6 +11,17 @@ silently no-ops, so it's safe to enable them one at a time.
 | Sentry (errors)                         | (manual — see below)                                 | —                                                                                      | `NEXT_PUBLIC_SENTRY_DSN`                                                   |
 | Lighthouse CI (build-time perf budgets) | (already wired)                                      | —                                                                                      | none                                                                       |
 
+## Cloudflare Web Analytics and Terraform
+
+`scripts/setup-cloudflare-analytics.sh` remains the bootstrap path: it creates
+the Web Analytics site once and prints the value it writes to
+`NEXT_PUBLIC_CF_ANALYTICS_TOKEN`. The Cloudflare Terraform root then adopts that
+same site through the `import` block in
+[`../cloudflare/analytics.tf`](../cloudflare/analytics.tf), keyed by
+`web_analytics_site_tag` in `production.auto.tfvars`, so neither the script
+(idempotent by host) nor Terraform creates a second site. After the import,
+changes to the site belong to Terraform.
+
 ## Sentry (manual, ~5 min)
 
 1. Create a Browser JavaScript project at https://sentry.io.

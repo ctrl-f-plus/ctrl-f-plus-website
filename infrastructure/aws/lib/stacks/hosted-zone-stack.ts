@@ -1,4 +1,4 @@
-// infrastructure/lib/stacks/hosted-zone-stack.ts
+// infrastructure/aws/lib/stacks/hosted-zone-stack.ts
 
 import * as cdk from 'aws-cdk-lib';
 import * as route53 from 'aws-cdk-lib/aws-route53';
