@@ -39,6 +39,13 @@ next-env.d.ts
 infrastructure/cdk.out/
 infrastructure/dist/
 
+# Terraform
+infrastructure/cloudflare/.terraform/
+infrastructure/cloudflare/terraform.tfvars
+infrastructure/cloudflare/*.tfstate
+infrastructure/cloudflare/*.tfstate.*
+infrastructure/cloudflare/*.tfplan
+
 .vscode
 
 
