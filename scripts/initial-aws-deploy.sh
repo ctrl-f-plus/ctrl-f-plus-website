@@ -86,10 +86,10 @@ read_stack_output() {
 if [[ -n "${CDK_STACK_NAME:-}" ]]; then
   STACK_NAME="$CDK_STACK_NAME"
 else
-  APP_NAME="$(jq -r '.context.appName' infrastructure/cdk.json)"
+  APP_NAME="$(jq -r '.context.appName' infrastructure/aws/cdk.json)"
   ENV_NAME="prod"
   if [[ -z "$APP_NAME" || "$APP_NAME" == "null" ]]; then
-    echo "Could not resolve appName from infrastructure/cdk.json" >&2
+    echo "Could not resolve appName from infrastructure/aws/cdk.json" >&2
     exit 1
   fi
   STACK_NAME="$(to_pascal_case "$APP_NAME")-$(to_pascal_case "$ENV_NAME")"
@@ -98,7 +98,7 @@ fi
 HOSTED_ZONE_STACK_NAME="${STACK_NAME}-HostedZone"
 CERT_STACK_NAME="${STACK_NAME}-Certificate"
 
-DOMAIN_NAME="$(jq -r '.context.environments.prod.domainName' infrastructure/cdk.json)"
+DOMAIN_NAME="$(jq -r '.context.environments.prod.domainName' infrastructure/aws/cdk.json)"
 
 require_file .env.local
 require_env_file_value NEXT_PUBLIC_APP_URL .env.local
@@ -116,16 +116,16 @@ echo "CDK site stack: $STACK_NAME"
 echo "Domain: $DOMAIN_NAME"
 
 echo
-if [[ ! -x infrastructure/node_modules/.bin/ts-node || ! -x infrastructure/node_modules/.bin/cdk ]]; then
+if [[ ! -x infrastructure/aws/node_modules/.bin/ts-node || ! -x infrastructure/aws/node_modules/.bin/cdk ]]; then
   echo "Installing infrastructure dependencies..."
-  CI=true pnpm --dir infrastructure install --frozen-lockfile
+  CI=true pnpm --dir infrastructure/aws install --frozen-lockfile
 else
   echo "Infrastructure dependencies already installed."
 fi
 
 echo
 echo "Checking infrastructure diff..."
-pnpm --dir infrastructure run diff
+pnpm --dir infrastructure/aws run diff
 
 if [[ "$MODE" == "--check" ]]; then
   echo
@@ -135,17 +135,17 @@ fi
 
 echo
 echo "Bootstrapping CDK (${CDK_DEFAULT_REGION})..."
-pnpm --dir infrastructure exec cdk bootstrap \
+pnpm --dir infrastructure/aws exec cdk bootstrap \
   "aws://$CDK_DEFAULT_ACCOUNT/$CDK_DEFAULT_REGION"
 
 echo
 echo "Bootstrapping CDK (${CLOUDFRONT_CERTIFICATE_REGION})..."
-pnpm --dir infrastructure exec cdk bootstrap \
+pnpm --dir infrastructure/aws exec cdk bootstrap \
   "aws://$CDK_DEFAULT_ACCOUNT/$CLOUDFRONT_CERTIFICATE_REGION"
 
 echo
 echo "Deploying Hosted Zone stack (${CLOUDFRONT_CERTIFICATE_REGION})..."
-pnpm --dir infrastructure exec cdk deploy "$HOSTED_ZONE_STACK_NAME" --require-approval never
+pnpm --dir infrastructure/aws exec cdk deploy "$HOSTED_ZONE_STACK_NAME" --require-approval never
 
 echo
 echo "Reading Hosted Zone stack outputs..."
@@ -203,7 +203,7 @@ done
 
 echo
 echo "Deploying Certificate stack (${CLOUDFRONT_CERTIFICATE_REGION})..."
-pnpm --dir infrastructure exec cdk deploy "$CERT_STACK_NAME" --require-approval never
+pnpm --dir infrastructure/aws exec cdk deploy "$CERT_STACK_NAME" --require-approval never
 
 echo
 echo "Reading Certificate stack outputs..."
@@ -240,7 +240,7 @@ fi
 
 echo
 echo "Deploying site stack (${AWS_REGION})..."
-pnpm --dir infrastructure exec cdk deploy "$STACK_NAME" --require-approval never
+pnpm --dir infrastructure/aws exec cdk deploy "$STACK_NAME" --require-approval never
 
 echo
 echo "Reading site stack outputs..."

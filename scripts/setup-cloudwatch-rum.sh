@@ -12,7 +12,7 @@
 #   --apply             Creates missing resources; prints final env-var values.
 #   --write-env         Also writes NEXT_PUBLIC_CW_RUM_* to .env.local on --apply.
 #
-# Reads context from infrastructure/cdk.json (appName, prod.domainName) so the
+# Reads context from infrastructure/aws/cdk.json (appName, prod.domainName) so the
 # created resources match the site's naming.
 
 set -euo pipefail
@@ -48,20 +48,20 @@ require_file() {
 
 require_command aws
 require_command jq
-require_file infrastructure/cdk.json
+require_file infrastructure/aws/cdk.json
 
 export AWS_REGION="${AWS_REGION:-us-east-2}"
 export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION:-$AWS_REGION}"
 
-APP_NAME="$(jq -r '.context.appName' infrastructure/cdk.json)"
-DOMAIN="$(jq -r '.context.environments.prod.domainName' infrastructure/cdk.json)"
+APP_NAME="$(jq -r '.context.appName' infrastructure/aws/cdk.json)"
+DOMAIN="$(jq -r '.context.environments.prod.domainName' infrastructure/aws/cdk.json)"
 
 if [[ -z "$APP_NAME" || "$APP_NAME" == "null" ]]; then
-  echo "Could not resolve appName from infrastructure/cdk.json" >&2
+  echo "Could not resolve appName from infrastructure/aws/cdk.json" >&2
   exit 1
 fi
 if [[ -z "$DOMAIN" || "$DOMAIN" == "null" ]]; then
-  echo "Could not resolve environments.prod.domainName from infrastructure/cdk.json" >&2
+  echo "Could not resolve environments.prod.domainName from infrastructure/aws/cdk.json" >&2
   exit 1
 fi
 

@@ -62,7 +62,7 @@ require_command aws
 require_command jq
 require_command pnpm
 require_file .env.local
-require_file infrastructure/cdk.json
+require_file infrastructure/aws/cdk.json
 
 export AWS_REGION="${AWS_REGION:-us-east-2}"
 export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION:-$AWS_REGION}"
@@ -75,16 +75,16 @@ require_env_or_env_file_value NEXT_PUBLIC_AWS_REGION .env.local
 if [[ -n "${CDK_STACK_NAME:-}" ]]; then
   STACK_NAME="$CDK_STACK_NAME"
 else
-  APP_NAME="$(jq -r '.context.appName' infrastructure/cdk.json)"
-  ENV_NAME="$(jq -r '.context.environments.prod.envName' infrastructure/cdk.json)"
+  APP_NAME="$(jq -r '.context.appName' infrastructure/aws/cdk.json)"
+  ENV_NAME="$(jq -r '.context.environments.prod.envName' infrastructure/aws/cdk.json)"
 
   if [[ -z "$APP_NAME" || "$APP_NAME" == "null" ]]; then
-    echo "Could not resolve appName from infrastructure/cdk.json" >&2
+    echo "Could not resolve appName from infrastructure/aws/cdk.json" >&2
     exit 1
   fi
 
   if [[ -z "$ENV_NAME" || "$ENV_NAME" == "null" ]]; then
-    echo "Could not resolve environments.prod.envName from infrastructure/cdk.json" >&2
+    echo "Could not resolve environments.prod.envName from infrastructure/aws/cdk.json" >&2
     exit 1
   fi
 

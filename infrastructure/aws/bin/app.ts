@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// infrastructure/bin/app.ts
+// infrastructure/aws/bin/app.ts
 
 import * as cdk from 'aws-cdk-lib';
 import {

@@ -8,7 +8,7 @@ loads its beacon script via a Next.js `<Script>` tag at
 |----------------------------------|----------------------------------------------------|
 | `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` | The site's `site_tag` (a short alphanumeric token) |
 
-The CSP at `infrastructure/lib/constructs/static-site.ts` already permits
+The CSP at `infrastructure/aws/lib/constructs/static-site.ts` already permits
 `https://static.cloudflareinsights.com` in `script-src` and `connect-src`, so
 no infra changes are needed when enabling this.
 
@@ -39,9 +39,14 @@ scripts/setup-cloudflare-analytics.sh --apply
 scripts/setup-cloudflare-analytics.sh --apply --write-env
 ```
 
-The script reads the host from `infrastructure/cdk.json`
+The script reads the host from `infrastructure/aws/cdk.json`
 (`prod.domainName` → `ctrl-f.plus`), calls the Cloudflare RUM API to create or
 look up the site, and prints the `site_tag` value.
+
+The Cloudflare Terraform root adopts the same site through the `import` block in
+`infrastructure/cloudflare/analytics.tf`, keyed by `web_analytics_site_tag`.
+After that import, changes to the site belong to Terraform; the script stays as
+the bootstrap path that creates the site the first time.
 
 ## Manual setup (if you'd rather do it in the Cloudflare dashboard)
 

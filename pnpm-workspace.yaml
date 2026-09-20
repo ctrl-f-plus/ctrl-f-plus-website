@@ -1,5 +1,5 @@
 packages:
-  - infrastructure
+  - infrastructure/aws
 
 allowBuilds:
   esbuild: true

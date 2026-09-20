@@ -172,7 +172,7 @@ importers:
         specifier: ^8.57.2
         version: 8.57.2(eslint@9.39.4(jiti@1.21.7))(typescript@5.8.3)
 
-  infrastructure:
+  infrastructure/aws:
     dependencies:
       aws-cdk-lib:
         specifier: ^2.180.0
