@@ -16,7 +16,7 @@
 #   CF_ACCOUNT_ID  Cloudflare account ID. Find at https://dash.cloudflare.com → right
 #                  sidebar of any zone, or via: scripts/setup-cloudflare-analytics.sh --whoami
 #
-# Reads the host from infrastructure/cdk.json (prod.domainName).
+# Reads the host from infrastructure/aws/cdk.json (prod.domainName).
 
 set -euo pipefail
 
@@ -77,14 +77,14 @@ fi
 require_env CF_ACCOUNT_ID
 require_command jq
 
-if [[ ! -f infrastructure/cdk.json ]]; then
-  echo "Missing infrastructure/cdk.json" >&2
+if [[ ! -f infrastructure/aws/cdk.json ]]; then
+  echo "Missing infrastructure/aws/cdk.json" >&2
   exit 1
 fi
 
-DOMAIN="$(jq -r '.context.environments.prod.domainName' infrastructure/cdk.json)"
+DOMAIN="$(jq -r '.context.environments.prod.domainName' infrastructure/aws/cdk.json)"
 if [[ -z "$DOMAIN" || "$DOMAIN" == "null" ]]; then
-  echo "Could not resolve environments.prod.domainName from infrastructure/cdk.json" >&2
+  echo "Could not resolve environments.prod.domainName from infrastructure/aws/cdk.json" >&2
   exit 1
 fi
 

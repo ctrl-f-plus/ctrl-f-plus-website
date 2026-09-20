@@ -114,7 +114,7 @@ gh_secret_set_if_new_or_confirmed() {
 require_command aws
 require_command jq
 require_command gh
-require_file infrastructure/cdk.json
+require_file infrastructure/aws/cdk.json
 
 if ! gh auth status >/dev/null 2>&1; then
   echo "gh CLI is not authenticated. Run: gh auth login" >&2
@@ -124,17 +124,17 @@ fi
 export AWS_REGION="${AWS_REGION:-us-east-2}"
 export AWS_DEFAULT_REGION="${AWS_DEFAULT_REGION:-$AWS_REGION}"
 
-GITHUB_REPO="$(jq -r '.context.githubRepository' infrastructure/cdk.json)"
+GITHUB_REPO="$(jq -r '.context.githubRepository' infrastructure/aws/cdk.json)"
 if [[ -z "$GITHUB_REPO" || "$GITHUB_REPO" == "null" ]]; then
-  echo "context.githubRepository not set in infrastructure/cdk.json" >&2
+  echo "context.githubRepository not set in infrastructure/aws/cdk.json" >&2
   exit 1
 fi
 
 if [[ -n "${CDK_STACK_NAME:-}" ]]; then
   STACK_NAME="$CDK_STACK_NAME"
 else
-  APP_NAME="$(jq -r '.context.appName' infrastructure/cdk.json)"
-  ENV_NAME="$(jq -r '.context.environments.prod.envName' infrastructure/cdk.json)"
+  APP_NAME="$(jq -r '.context.appName' infrastructure/aws/cdk.json)"
+  ENV_NAME="$(jq -r '.context.environments.prod.envName' infrastructure/aws/cdk.json)"
   STACK_NAME="$(to_pascal_case "$APP_NAME")-$(to_pascal_case "$ENV_NAME")"
 fi
 
@@ -165,7 +165,7 @@ if [[ -z "$DEPLOY_ROLE_ARN" || "$DEPLOY_ROLE_ARN" == "null" ]]; then
 fi
 
 # Resolve variables
-DOMAIN_NAME="$(jq -r '.context.environments.prod.domainName' infrastructure/cdk.json)"
+DOMAIN_NAME="$(jq -r '.context.environments.prod.domainName' infrastructure/aws/cdk.json)"
 APP_URL="https://$DOMAIN_NAME"
 
 echo
