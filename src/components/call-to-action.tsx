@@ -1,4 +1,4 @@
-// app/components/call-to-action.tsx
+// src/components/call-to-action.tsx
 'use client';
 
 import '@/styles/ctrl-atropos.css';

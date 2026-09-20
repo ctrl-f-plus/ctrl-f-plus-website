@@ -1,4 +1,4 @@
-// app/components/layout/navbar/Container.tsx
+// src/components/ui/container.tsx
 
 import clsx from 'clsx';
 

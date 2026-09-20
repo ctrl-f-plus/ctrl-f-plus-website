@@ -1,4 +1,4 @@
-// app/components/icons/menu.tsx
+// src/components/icons/menu.tsx
 
 export default function MenuIcon() {
   return (

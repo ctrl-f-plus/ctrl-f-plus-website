@@ -1,4 +1,4 @@
-// app/components/icons/github-icon.tsx
+// src/components/icons/social-icons.tsx
 import 'server-only';
 import clsx from 'clsx';
 

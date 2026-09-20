@@ -1,3 +1,4 @@
+// src/components/canvas-gradient-inner.tsx
 import 'server-only';
 // import '../../styles/canvas-gradient.css';
 

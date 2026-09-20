@@ -1,3 +1,5 @@
+# infrastructure/cloudflare/dns.tf
+
 # The Route 53 inventory taken in phase 5 may add more records to this file.
 # The API hostname is never declared here; its Worker Custom Domain owns it.
 resource "cloudflare_dns_record" "site_apex" {

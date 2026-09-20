@@ -1,5 +1,4 @@
-// app/components/fade-in.tsx
-
+// src/components/fade-in.tsx
 'use client';
 
 import { LazyMotion, domAnimation, m } from 'framer-motion';

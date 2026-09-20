@@ -1,4 +1,4 @@
-// app/tab-hoarders/components/FeatureCard.tsx
+// src/components/feature-card.tsx
 'use client';
 // TODO: I temporarily removed reduced motion functionality on these cards. Add it back.
 

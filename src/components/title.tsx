@@ -1,4 +1,4 @@
-// app/components/title.tsx
+// src/components/title.tsx
 import 'server-only';
 
 import CopyButton from './copy-button';

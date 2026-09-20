@@ -1,3 +1,5 @@
+# infrastructure/cloudflare/zone.tf
+
 resource "cloudflare_zone" "site" {
   account = {
     id = var.cloudflare_account_id

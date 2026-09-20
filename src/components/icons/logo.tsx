@@ -1,4 +1,4 @@
-// app/components/icons/logoIcon.tsx
+// src/components/icons/logo.tsx
 
 export default function LogoIcon({ className }: Readonly<{ className?: string }>) {
   return (

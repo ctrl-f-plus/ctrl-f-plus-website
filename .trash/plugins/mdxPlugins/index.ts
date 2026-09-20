@@ -1,3 +1,5 @@
+// .trash/plugins/mdxPlugins/index.ts
+
 // // plugins/mdxPlugins/index.ts
 
 // export { default as attachRawStringToCodeContainers } from './attachRawStringToCodeContainers';

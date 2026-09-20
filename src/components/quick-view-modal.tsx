@@ -1,3 +1,4 @@
+// src/components/quick-view-modal.tsx
 'use client';
 
 import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';

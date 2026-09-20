@@ -1,3 +1,5 @@
+// .lighthouserc.js
+
 module.exports = {
   ci: {
     collect: {

@@ -1,4 +1,4 @@
-// app/components/temp-components/color-accents.tsx
+// src/components/color-accents.tsx
 
 export function ColorAccents() {
   return (

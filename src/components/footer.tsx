@@ -1,4 +1,4 @@
-// app/components/layout/Footer.tsx
+// src/components/footer.tsx
 import 'server-only';
 
 import clsx from 'clsx';

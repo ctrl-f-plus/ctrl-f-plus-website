@@ -1,3 +1,5 @@
+// infrastructure/aws/lib/constructs/cloudfront-routing.ts
+
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import { Construct } from 'constructs';
 import type { EnvironmentName } from '../config/types';

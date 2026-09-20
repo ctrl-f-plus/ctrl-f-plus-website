@@ -1,4 +1,4 @@
-// app/components/icons/logo-secondary.tsx
+// src/components/icons/logo-secondary.tsx
 
 export default function LogoIconSecondary({
   className,

@@ -1,3 +1,5 @@
+// tailwind.config.ts
+
 import type { Config } from 'tailwindcss';
 
 /** @type {import('tailwindcss').Config} */

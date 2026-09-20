@@ -1,3 +1,4 @@
+// src/app/not-found.tsx
 import 'server-only';
 import Container from '@/components/ui/container';
 

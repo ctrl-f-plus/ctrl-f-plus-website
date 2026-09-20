@@ -1,3 +1,4 @@
+// src/components/utility/cloudwatch-rum.tsx
 'use client';
 
 import { useEffect } from 'react';

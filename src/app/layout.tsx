@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import 'server-only';
 
 // import '../styles/globals.css';

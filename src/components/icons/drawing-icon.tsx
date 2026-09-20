@@ -1,4 +1,4 @@
-// app/components/icons/drawing-icon.tsx
+// src/components/icons/drawing-icon.tsx
 
 export default function DrawingIcon({ className }: Readonly<{ className?: string }>) {
   return (

@@ -1,4 +1,4 @@
-// app/components/icons/elipse-blur-green.tsx
+// src/components/icons/elipse-blur-blue.tsx
 
 export default function ElipseBlurBlue() {
   return (

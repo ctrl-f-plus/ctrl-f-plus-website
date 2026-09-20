@@ -1,3 +1,5 @@
+// public/gradientWorker.js
+
 //Converting colors to proper format
 self.addEventListener('message', (event) => {
   const data = event.data;

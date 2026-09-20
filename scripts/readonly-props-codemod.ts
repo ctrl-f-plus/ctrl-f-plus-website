@@ -1,3 +1,5 @@
+// scripts/readonly-props-codemod.ts
+
 // scripts/readonly-props-codemod.ts — jscodeshift codemod
 // Wraps destructured function parameter type annotations with Readonly<>
 //

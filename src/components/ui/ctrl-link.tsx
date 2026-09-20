@@ -1,4 +1,4 @@
-// app/components/ctrl-link.tsx
+// src/components/ui/ctrl-link.tsx
 
 import Link from 'next/link';
 
