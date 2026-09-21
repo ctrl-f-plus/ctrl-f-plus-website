@@ -12,8 +12,8 @@ phase.
 2. Create a Cloudflare account API token for infrastructure use and export it
    as `CLOUDFLARE_API_TOKEN`. Export the HCP workspace token as
    `TF_TOKEN_app_terraform_io`.
-3. Fill in the three `FILLED_IN_PHASE_5` placeholders in
-   `production.auto.tfvars` and commit the result.
+3. Set `cloudflare_account_id` in `production.auto.tfvars` to the company
+   account's id and commit the result.
 4. `terraform -chdir=infrastructure/cloudflare init`
 5. `terraform -chdir=infrastructure/cloudflare plan`
 6. `terraform -chdir=infrastructure/cloudflare apply`
@@ -24,8 +24,8 @@ Validation without any credential runs `init -backend=false` followed by
 ## What this root owns
 
 The zone, its SSL and TLS settings, the apex and www DNS records, the rate
-limit ruleset that backstops the OTP endpoint, the import of the existing Web
-Analytics site, and the two release API tokens.
+limit ruleset that backstops the OTP endpoint, a fresh Web Analytics site
+whose token the website embeds, and the two release API tokens.
 
 ## What this root does not own
 

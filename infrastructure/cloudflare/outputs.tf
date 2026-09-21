@@ -15,6 +15,11 @@ output "account_id" {
   value       = var.cloudflare_account_id
 }
 
+output "web_analytics_site_token" {
+  description = "Beacon token the website embeds as NEXT_PUBLIC_CF_ANALYTICS_TOKEN."
+  value       = cloudflare_web_analytics_site.site.site_token
+}
+
 output "site_release_token" {
   description = "Token value the site Worker release workflow uses."
   value       = cloudflare_account_token.site_release.value
