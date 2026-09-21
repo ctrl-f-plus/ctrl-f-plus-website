@@ -18,8 +18,6 @@ concurrency:
   cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
 
 env:
-  AWS_REGION: ${{ vars.AWS_REGION }}
-  CDK_STACK_NAME: ${{ vars.CDK_STACK_NAME }}
   APP_URL: ${{ vars.APP_URL }}
   ARTIFACT_NAME: dist
   TAG_PREFIX: v
@@ -38,7 +36,6 @@ jobs:
     with:
       app_url: ${{ vars.APP_URL }}
       artifact_name: dist
-      aws_region: ${{ vars.AWS_REGION }}
     secrets: inherit
 
 #  lighthouse:
@@ -56,11 +53,8 @@ jobs:
     if: github.ref == 'refs/heads/master' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     permissions:
       contents: write
-      id-token: write
     uses: ./.github/workflows/deploy-static-site.yml
     with:
       artifact_name: dist
-      aws_region: ${{ vars.AWS_REGION }}
-      cdk_stack_name: ${{ vars.CDK_STACK_NAME }}
       tag_prefix: v
     secrets: inherit
