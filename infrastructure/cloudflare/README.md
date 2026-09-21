@@ -35,6 +35,33 @@ Worker's Custom Domain and is never declared here.
 
 ## Values the site cutover changes
 
-`site_dns_target` moves from the CloudFront distribution hostname to the site
-Worker origin hostname, and `site_dns_proxied` turns on. Both live in
-`production.auto.tfvars` so the change is a reviewable diff.
+`site_dns_target` is now the Worker origin `worker-origin.ctrl-f.plus` and
+`site_dns_proxied` is on, so a Worker route answers the apex and www hostnames
+before any origin is reached. Both values live in `production.auto.tfvars`, so
+either direction is a reviewable diff.
+
+## Rolling back to CloudFront
+
+Both values must change together: a DNS-only record that still points at the
+Worker origin serves nothing, because `100::` has no origin behind it. From a
+checkout with the infrastructure token in the environment:
+
+```bash
+terraform -chdir=infrastructure/cloudflare apply -var site_dns_target=d3l393pse9nhk2.cloudfront.net -var site_dns_proxied=false
+START=$(date +%s); until curl -sI https://ctrl-f.plus/ | grep -qi '^via'; do sleep 10; done; echo "CloudFront answering after $(( $(date +%s) - START )) seconds"
+```
+
+CloudFront adds a `via` header and the Worker does not, which is what the loop
+waits for. Resolvers keep the previous answer for up to 300 seconds; the drill
+on 2026-09-21 measured 244 seconds out and 81 seconds back. To return, apply
+the committed values and wait for the `via` header to disappear:
+
+```bash
+terraform -chdir=infrastructure/cloudflare apply
+START=$(date +%s); until ! curl -sI https://ctrl-f.plus/ | grep -qi '^via'; do sleep 10; done; echo "Worker answering after $(( $(date +%s) - START )) seconds"
+```
+
+The `-var` form leaves the committed file alone, which suits a drill or a short
+outage. A rollback that must survive the next apply belongs in
+`production.auto.tfvars` as a committed change. The lever exists only while the
+CloudFront distribution does; the AWS retirement phase deletes it.
