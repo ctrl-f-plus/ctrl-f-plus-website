@@ -5,6 +5,8 @@
   "workers_dev": false,
   "preview_urls": false,
   "routes": [
+    { "pattern": "ctrl-f.plus/*", "zone_name": "ctrl-f.plus" },
+    { "pattern": "www.ctrl-f.plus/*", "zone_name": "ctrl-f.plus" },
     { "pattern": "preview.ctrl-f.plus/*", "zone_name": "ctrl-f.plus" },
   ],
   "assets": {
