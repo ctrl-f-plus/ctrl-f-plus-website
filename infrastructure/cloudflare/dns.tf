@@ -20,6 +20,26 @@ resource "cloudflare_dns_record" "site_www" {
   ttl     = var.site_dns_proxied ? 1 : 300
 }
 
+# 100:: is the discard address, so a hostname pointed here has no origin and is
+# served by its Worker route alone.
+resource "cloudflare_dns_record" "worker_origin" {
+  zone_id = cloudflare_zone.site.id
+  name    = "worker-origin.${var.zone_name}"
+  type    = "AAAA"
+  content = "100::"
+  proxied = false
+  ttl     = 300
+}
+
+resource "cloudflare_dns_record" "site_preview" {
+  zone_id = cloudflare_zone.site.id
+  name    = "preview.${var.zone_name}"
+  type    = "CNAME"
+  content = "worker-origin.${var.zone_name}"
+  proxied = true
+  ttl     = 1
+}
+
 # ACM renews the CloudFront certificate through these records, so they must keep
 # answering after Cloudflare takes over DNS. Phase 9 removes them once AWS is gone.
 resource "cloudflare_dns_record" "acm_validation_apex" {
