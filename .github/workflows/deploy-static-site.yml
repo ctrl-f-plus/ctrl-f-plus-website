@@ -67,7 +67,10 @@ jobs:
           set -euo pipefail
           MARKER=$(grep -o 'src="/_next/static/chunks/[^"]*"' dist/index.html | head -n 1)
           test -n "$MARKER"
-          curl -fsS "https://$DOMAIN/" | grep -qF "$MARKER"
+          # grep -q would close the pipe on its first match and curl would then
+          # fail the pipeline under pipefail, so the page lands in a file first.
+          curl -fsS "https://$DOMAIN/" -o live-homepage.html
+          grep -qF "$MARKER" live-homepage.html
 
       - name: Tag deployment
         id: tag_deployment
