@@ -20,8 +20,3 @@ variable "site_dns_proxied" {
   description = "Whether the apex and www records pass through the Cloudflare proxy. Phase 6 turns this on."
   type        = bool
 }
-
-variable "web_analytics_site_tag" {
-  description = "Site tag of the Web Analytics site that already exists in the account. This is a different value from the NEXT_PUBLIC_CF_ANALYTICS_TOKEN beacon token."
-  type        = string
-}
