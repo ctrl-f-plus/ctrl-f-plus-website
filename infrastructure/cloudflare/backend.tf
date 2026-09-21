@@ -2,7 +2,7 @@
 
 terraform {
   cloud {
-    organization = "OWNER_HCP_ORGANIZATION"
+    organization = "Ctrl-F-Plus"
 
     workspaces {
       name = "ctrl-f-plus-cloudflare"

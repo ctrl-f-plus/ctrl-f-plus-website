@@ -6,9 +6,9 @@ phase.
 
 ## Bootstrap order
 
-1. Create the HCP Terraform workspace `ctrl-f-plus-cloudflare` in local
-   execution mode and replace `OWNER_HCP_ORGANIZATION` in `backend.tf` with the
-   organization name.
+1. State lives in the HCP Terraform workspace `ctrl-f-plus-cloudflare` of the
+   `Ctrl-F-Plus` organization, in local execution mode, named in `backend.tf`.
+   Run `terraform login` once on a new machine.
 2. Create a Cloudflare account API token for infrastructure use and export it
    as `CLOUDFLARE_API_TOKEN`. Export the HCP workspace token as
    `TF_TOKEN_app_terraform_io`.
