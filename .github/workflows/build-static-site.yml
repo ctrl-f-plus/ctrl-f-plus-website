@@ -12,10 +12,6 @@ on:
         required: false
         type: string
         default: dist
-      aws_region:
-        description: AWS region exposed to the client build.
-        required: true
-        type: string
 
 permissions:
   contents: read
@@ -26,7 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_APP_URL: ${{ inputs.app_url }}
-      NEXT_PUBLIC_AWS_REGION: ${{ inputs.aws_region }}
       NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ vars.NEXT_PUBLIC_CF_ANALYTICS_TOKEN }}
       NEXT_PUBLIC_CW_RUM_APP_MONITOR_ID: ${{ vars.NEXT_PUBLIC_CW_RUM_APP_MONITOR_ID }}
       NEXT_PUBLIC_CW_RUM_IDENTITY_POOL_ID: ${{ vars.NEXT_PUBLIC_CW_RUM_IDENTITY_POOL_ID }}
@@ -40,15 +35,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Validate required inputs
-        env:
-          INPUT_AWS_REGION: ${{ inputs.aws_region }}
-        run: |
-          if [ -z "$INPUT_AWS_REGION" ]; then
-            echo "Input 'aws_region' is required." >&2
-            exit 1
-          fi
-
       - uses: pnpm/action-setup@v4
 
       - uses: actions/setup-node@v6
@@ -60,6 +46,9 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Check the export
+        run: bash scripts/check-export.sh
 
       - uses: actions/upload-artifact@v5
         with:
