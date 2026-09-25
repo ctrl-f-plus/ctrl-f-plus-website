@@ -39,7 +39,7 @@ No source files under `src/` change in this phase.
 
 ## Acceptance
 
-- [ ] `npx tsc --noEmit` and `pnpm lint` pass.
+- [ ] `npx tsc --noEmit` passes and `pnpm lint` reports no new problems against the 62 left by phase 1.
 - [ ] `pnpm visual:check` passes: existing snapshots unchanged, new spec green.
 - [ ] The break-the-source check was performed and the relevant test went red, then green again after restoring.
 - [ ] The README sentence is updated.

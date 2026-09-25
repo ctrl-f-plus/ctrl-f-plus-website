@@ -84,10 +84,10 @@ Then in `src/components/call-to-action.tsx`: remove the hook import and the `let
 
 ## Acceptance
 
-- [ ] `npx tsc --noEmit` and `pnpm lint` pass after every commit.
-- [ ] `pnpm visual:check` passes with zero diffs and no re-record.
-- [ ] `grep -rn useReducedMotion src` lists only the hook, `hero-animation.tsx`, `features-header.tsx`, `ui/Button.tsx` and `app/loading.tsx`.
-- [ ] `grep -c 'transition:all 1.9s' dist/index.html` and `grep -c 'transition:all 1.3s' dist/index.html` are both 0 after `pnpm build`.
-- [ ] `grep -c "prefers-reduced-motion:no-preference" dist/_next/static/css/*.css` is above 0 and the built CSS contains the `reduce` block from `ctrl-atropos.css`.
-- [ ] Served `dist/` under DevTools reduced-motion emulation: FadeIn wrappers snap to `transform: none` while opacity fades; no hydration warning in the console; the feature cards and CTA fade in without translating; hovering the CTA at 1280px leaves `.atropos-rotate`, `.atropos-scale` and `[data-atropos-offset]` at `transform: none` and `.atropos-shadow` at `display: none`.
-- [ ] Served `dist/` with no preference: the same 24px and 500px entrances and the same Atropos tilt as before.
+- [x] `npx tsc --noEmit` passes after every commit, and `pnpm lint` reports no new problems. Master already fails `pnpm lint` with 66 pre-existing problems; this phase ends at 62.
+- [x] `pnpm visual:check` passes with zero diffs and no re-record.
+- [x] `grep -rn useReducedMotion src --include='*.ts' --include='*.tsx'` lists only the hook, `hero-animation.tsx`, `features-header.tsx`, `ui/Button.tsx` and `app/loading.tsx`. The unchanged draft `src/content/drafts/button-blog.md` also mentions it in code samples.
+- [x] `grep -c 'transition:all 1.9s' dist/index.html` and `grep -c 'transition:all 1.3s' dist/index.html` are both 0 after `pnpm build`.
+- [x] `grep -c "prefers-reduced-motion:no-preference" dist/_next/static/css/*.css` is above 0 and the built CSS contains the `reduce` block from `ctrl-atropos.css`.
+- [x] Served `dist/` under DevTools reduced-motion emulation: FadeIn wrappers snap to `transform: none` while opacity fades; no hydration warning in the console; the feature cards and CTA fade in without translating; hovering the CTA at 1280px leaves `.atropos-rotate`, `.atropos-scale` and `[data-atropos-offset]` at `transform: none` and `.atropos-shadow` at `display: none`.
+- [x] Served `dist/` with no preference: the same 24px and 500px entrances and the same Atropos tilt as before.
