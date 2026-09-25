@@ -140,6 +140,20 @@ module.exports = {
         'h1-blog': ['1.75rem', { lineHeight: '1.3', fontWeight: '600' }],
         'p-blog': ['1.125rem', { lineHeight: '2rem', fontWeight: '400' }],
         'button-18': ['1.125rem', { lineHeight: 'normal', fontWeight: '600' }], //
+        'button-label': [
+          '1.125rem',
+          { lineHeight: '1.5rem', fontWeight: '600' },
+        ],
+        'card-heading': ['1.125rem', { lineHeight: '2rem', fontWeight: '600' }],
+        'body-sm': ['1rem', { lineHeight: '1.75rem', fontWeight: '400' }],
+        'nav-mobile': ['1rem', { lineHeight: '1.75rem', fontWeight: '600' }],
+        label: ['1rem', { lineHeight: '1.5rem', fontWeight: '600' }],
+        footnote: ['0.875rem', { lineHeight: '1.25rem' }],
+        'code-title': [
+          '0.875rem',
+          { lineHeight: '1.25rem', fontWeight: '500' },
+        ],
+        copyright: ['1.125rem', { lineHeight: '1.25rem', fontWeight: '400' }],
       },
       maxWidth: {
         292: '73rem', // 1168px

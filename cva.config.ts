@@ -19,6 +19,14 @@ const CUSTOM_FONT_SIZE_TOKENS = [
   'h1-blog',
   'p-blog',
   'button-18',
+  'button-label',
+  'card-heading',
+  'body-sm',
+  'nav-mobile',
+  'label',
+  'footnote',
+  'code-title',
+  'copyright',
 ];
 
 const twMerge = extendTailwindMerge({

@@ -36,7 +36,7 @@ const btn = cva({
         'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-highlighter-950/70 w-full',
     },
     size: {
-      thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-lg leading-6 font-semibold',
+      thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-button-label',
       phat: 'inline-block w-[231px] text-fs-lg text-white justify-start rounded-full px-5 py-4 ',
     },
     animation: {

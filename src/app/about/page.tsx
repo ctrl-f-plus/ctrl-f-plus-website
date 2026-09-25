@@ -177,13 +177,13 @@ export default function Page() {
                       priority
                     />
 
-                    <h3 className="mt-6 font-inter text-lg font-semibold leading-8 text-shark">
+                    <h3 className="mt-6 font-inter text-card-heading text-shark">
                       {person.name}
                     </h3>
-                    <p className="font-arimo text-base leading-7 text-shark/80">
+                    <p className="font-arimo text-body-sm text-shark/80">
                       {person.role}
                     </p>
-                    <p className="mt-4 font-arimo text-base leading-7 text-shark/80">
+                    <p className="mt-4 font-arimo text-body-sm text-shark/80">
                       {person.bio}
                     </p>
                   </div>
