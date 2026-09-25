@@ -4,7 +4,7 @@ import 'server-only';
 import benAvatar from '@/../public/images/ben-avatar.png';
 import ighodaloAvatar from '@/../public/images/ighodalo-avatar.png';
 import { Metadata } from 'next';
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/container';
 import CtrlLink from '@/components/ui/ctrl-link';
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 interface Person {
   name: string;
   role: string;
-  avatar: React.ReactElement;
+  avatar: StaticImageData;
   width: number;
   height: number;
   bio: string;
