@@ -2,7 +2,6 @@
 'use client';
 
 import { LazyMotion, domAnimation, m } from 'framer-motion';
-import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { createContext, useContext } from 'react';
 
 const FadeInStaggerContext = createContext(false);
@@ -17,7 +16,6 @@ export function FadeIn({
   className?: string;
   props?: any;
 }>) {
-  let prefersReducedMotion = useReducedMotion();
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 
   return (
@@ -25,7 +23,7 @@ export function FadeIn({
       className={className}
       suppressHydrationWarning
       variants={{
-        hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 24 },
+        hidden: { opacity: 0, y: 24 },
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.5 }}
