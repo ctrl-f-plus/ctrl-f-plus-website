@@ -37,7 +37,7 @@ const btn = cva({
     },
     size: {
       thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-lg leading-6 font-semibold',
-      phat: 'inline-block w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full px-5 py-4 ',
+      phat: 'inline-block w-[231px] text-fs-lg text-white justify-start rounded-full px-5 py-4 ',
     },
     animation: {
       none: '',
@@ -181,7 +181,7 @@ function Button({
           <span
             className={
               animation === 'slice'
-                ? 'transition-colors duration-500 ease-linear tablet:group-hover:text-[#0C3440]'
+                ? 'transition-colors duration-500 ease-linear tablet:group-hover:text-highlighter-900'
                 : ''
             }
           >

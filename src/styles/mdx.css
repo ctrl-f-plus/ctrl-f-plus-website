@@ -63,15 +63,15 @@ table {
 }
 
 .prose h1 {
-  @apply font-inter text-h1-blog text-shark-500;
+  @apply font-inter text-h1-blog text-shark;
 }
 
 .prose h2 {
-  @apply font-inter text-subtitle text-shark-500;
+  @apply font-inter text-subtitle text-shark;
 }
 
 .prose p {
-  @apply font-arimo text-p-blog text-shark-500;
+  @apply font-arimo text-p-blog text-shark;
 }
 
 [data-rehype-pretty-code-fragment] code {
