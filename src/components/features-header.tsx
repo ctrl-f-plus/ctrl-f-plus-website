@@ -36,7 +36,7 @@ function CardText({
 
       <h3
         className={clsx(
-          'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
+          'max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
           !prefersReducedMotion && wideTextColor,
           !prefersReducedMotion &&
             'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
@@ -143,7 +143,7 @@ export default function FeaturesHeader() {
                   {/* Top Layer / Hover Layer  */}
                   <m.div
                     className={clsx(
-                      'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
+                      'absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
                       prefersReducedMotion && 'wide:hidden',
                     )}
                     style={style}

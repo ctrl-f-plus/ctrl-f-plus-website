@@ -125,11 +125,6 @@ module.exports = {
       fontSize: {
         'fs-base': ['1rem', { lineHeight: '1.3rem', fontWeight: '600' }],
         'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
-        'fs-md': ['1.125rem', { lineHeight: 'normal', fontWeight: '400' }],
-        'fs-md-bold': [
-          '1.125rem',
-          { lineHeight: '1.53125rem', fontWeight: '600' },
-        ], // text-lg leading-6 font-semibold
         'fs-lg-sm': ['1rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
         'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // text-lg leading-[1.6875rem] font-normal
         'fs-x0': ['2.0625rem', { lineHeight: '1', fontWeight: '800' }],
@@ -173,14 +168,6 @@ module.exports = {
       },
       transitionDuration: {
         '900': '900ms',
-      },
-      typography: {
-        quoteless: {
-          css: {
-            'blockquote p:first-of-type::before': { content: 'none' },
-            'blockquote p:first-of-type::after': { content: 'none' },
-          },
-        },
       },
     },
   },

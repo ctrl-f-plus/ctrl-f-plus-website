@@ -51,11 +51,6 @@
   margin-bottom: 1.25em !important;
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
-  @apply text-neutral-50;
-}
-
 table {
   display: block;
   max-width: fit-content;
@@ -105,9 +100,6 @@ table {
 
 [data-rehype-pretty-code-fragment] .line--highlighted {
   @apply w-full rounded-none border-l-4 border-[#03af7d]/70 bg-slate-500 bg-opacity-10;
-}
-[data-rehype-pretty-code-fragment] .line-highlighted span {
-  @apply relative;
 }
 [data-rehype-pretty-code-fragment] .word--highlighted {
   @apply rounded-md bg-slate-500 bg-opacity-10 p-1;

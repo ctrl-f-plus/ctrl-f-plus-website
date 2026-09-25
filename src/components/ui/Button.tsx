@@ -48,12 +48,6 @@ const btn = cva({
     {
       intent: 'solid',
       animation: 'slice',
-      className:
-        '[--color-from:#ffffff] tablet:[--color-to:#0C3440] active:[--color-from:#ffffffcc] active:tablet:[--color-to:#0a2b35b3] ',
-    },
-    {
-      intent: 'solid',
-      animation: 'slice',
       size: 'phat',
       className: '[--scale-from:100%] [--scale-to:93%]',
     },

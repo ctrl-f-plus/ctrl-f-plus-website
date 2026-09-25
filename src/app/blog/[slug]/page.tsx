@@ -120,7 +120,7 @@ export default async function Blog({
                     loading="lazy"
                   />
 
-                  <div className="text-sm leading-6">
+                  <div>
                     <p className="font-open-sans text-fs-lg-sm text-shark tab-pro:text-fs-lg">
                       {post.author}
                     </p>
