@@ -218,3 +218,7 @@ vite.config.ts.timestamp-*
 .wrangler/
 
 .idea/
+
+# Playwright visual baseline run output
+test-results/
+playwright-report/
