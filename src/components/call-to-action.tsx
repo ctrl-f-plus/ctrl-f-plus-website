@@ -8,7 +8,6 @@ import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import Container from './ui/container';
-import { FadeIn } from './fade-in';
 import { BrowserLabel, InstallButton } from '@/components/install-button';
 
 const Atropos = dynamic(() => import('atropos/react'));

@@ -1,4 +1,4 @@
-// src/components/feature-card.tsx
+// src/components/feature-cards.tsx
 'use client';
 // TODO: I temporarily removed reduced motion functionality on these cards. Add it back.
 
@@ -147,7 +147,7 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
   );
 }
 
-export default function FeatureCard() {
+export default function FeatureCards() {
   return (
     <>
       {features.map((feat, index) => {

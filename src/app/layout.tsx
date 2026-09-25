@@ -1,12 +1,10 @@
 // src/app/layout.tsx
 import 'server-only';
 
-// import '../styles/globals.css';
-
 import { clientEnv } from '@/clientEnv';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import '../styles/globals.css';
@@ -48,7 +46,6 @@ export const metadata: Metadata = {
     locale: 'en-US',
     type: 'website',
   },
-
   robots: {
     index: true,
     follow: true,

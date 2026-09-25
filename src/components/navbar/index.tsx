@@ -6,9 +6,9 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { isNavItemActive } from '@/lib/nav';
 import Container from '../ui/container';
 import logoIcon from '/public/svgs/logo-icon.min.svg';
-// import MobileMenu from './mobile-menu';
 const MobileMenu = dynamic(() => import('./mobile-menu'));
 const CtrlLink = dynamic(() => import('../ui/ctrl-link'));
 const MenuIcon = dynamic(() => import('../icons/menu'));
@@ -46,10 +46,7 @@ const navItems: Record<string, NavItem> = {
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  let pathname = usePathname() || '/';
-  if (pathname.includes('/blog/')) {
-    pathname = '/blog';
-  }
+  const pathname = usePathname() || '/';
 
   return (
     <header className="pt-5 wide:pt-12 ">
@@ -80,7 +77,7 @@ export default function Navbar() {
           <div className="hidden laptop:block">
             <div className="flex flex-row font-open-sans text-fs-lg laptop:gap-x-6">
               {Object.entries(navItems).map(([path, { name, linkTag }]) => {
-                const isActive = path === pathname;
+                const isActive = isNavItemActive(pathname, path);
 
                 return (
                   // FIXME: Change `aTag` to `Link` if smoothscroll is fixed in future Next.js version
@@ -95,6 +92,7 @@ export default function Navbar() {
                       },
                     )}
                     name={name}
+                    aria-current={isActive ? 'page' : undefined}
                     aTag={linkTag === 'a'}
                   >
                     <span className="text-fs-lg">{name}</span>
