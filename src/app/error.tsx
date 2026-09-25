@@ -28,7 +28,7 @@ export default function ErrorPage({ error, reset }: Readonly<ErrorPageProps>) {
             <h1 className="mt-4 font-inter text-fs-xl tracking-tight text-shark sm:text-5xl">
               Error
             </h1>
-            <p className="mt-6 text-base leading-7 text-gray-600">
+            <p className="mt-6 text-body-sm text-gray-600">
               Something went wrong...
             </p>
             <div className="mt-10 flex w-full items-center justify-center ">

@@ -90,7 +90,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     blockquote: ({ className, ...props }: any) => (
       <blockquote
         className={clsx(
-          '[&>*]:text-muted-foreground mt-6 border-l-2 pl-6 italic',
+          'mt-6 border-l-2 pl-6 italic',
           className
         )}
         {...props}
@@ -122,7 +122,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       ...props
     }: Readonly<React.HTMLAttributes<HTMLTableRowElement>>) => (
       <tr
-        className={clsx('even:bg-muted m-0 border-t p-0', className)}
+        className={clsx('m-0 border-t p-0', className)}
         {...props}
       />
     ),

@@ -27,6 +27,7 @@ module.exports = {
         'gradient-slate': '#dde3ee',
         'gradient-lavender': '#f2effb',
         'gradient-cyan': '#d4ece5',
+        'caption-gray': '#889397',
         'gradient-gray': {
           1: '#5A5A5A',
           2: '#606060',
@@ -56,6 +57,7 @@ module.exports = {
           700: '#07353C',
           800: '#01080A',
           900: '#0C3440', // primary1
+          950: '#0a2b35',
         },
         'cape-cod': {
           DEFAULT: '#434343',
@@ -125,11 +127,6 @@ module.exports = {
       fontSize: {
         'fs-base': ['1rem', { lineHeight: '1.3rem', fontWeight: '600' }],
         'fs-sm': ['0.875rem', { lineHeight: '1.5rem' }],
-        'fs-md': ['1.125rem', { lineHeight: 'normal', fontWeight: '400' }],
-        'fs-md-bold': [
-          '1.125rem',
-          { lineHeight: '1.53125rem', fontWeight: '600' },
-        ], // text-lg leading-6 font-semibold
         'fs-lg-sm': ['1rem', { lineHeight: '1.5', fontWeight: '400' }], // body18
         'fs-lg': ['1.125rem', { lineHeight: '1.5', fontWeight: '400' }], // text-lg leading-[1.6875rem] font-normal
         'fs-x0': ['2.0625rem', { lineHeight: '1', fontWeight: '800' }],
@@ -143,6 +140,20 @@ module.exports = {
         'h1-blog': ['1.75rem', { lineHeight: '1.3', fontWeight: '600' }],
         'p-blog': ['1.125rem', { lineHeight: '2rem', fontWeight: '400' }],
         'button-18': ['1.125rem', { lineHeight: 'normal', fontWeight: '600' }], //
+        'button-label': [
+          '1.125rem',
+          { lineHeight: '1.5rem', fontWeight: '600' },
+        ],
+        'card-heading': ['1.125rem', { lineHeight: '2rem', fontWeight: '600' }],
+        'body-sm': ['1rem', { lineHeight: '1.75rem', fontWeight: '400' }],
+        'nav-mobile': ['1rem', { lineHeight: '1.75rem', fontWeight: '600' }],
+        label: ['1rem', { lineHeight: '1.5rem', fontWeight: '600' }],
+        footnote: ['0.875rem', { lineHeight: '1.25rem' }],
+        'code-title': [
+          '0.875rem',
+          { lineHeight: '1.25rem', fontWeight: '500' },
+        ],
+        copyright: ['1.125rem', { lineHeight: '1.25rem', fontWeight: '400' }],
       },
       maxWidth: {
         292: '73rem', // 1168px
@@ -173,14 +184,6 @@ module.exports = {
       },
       transitionDuration: {
         '900': '900ms',
-      },
-      typography: {
-        quoteless: {
-          css: {
-            'blockquote p:first-of-type::before': { content: 'none' },
-            'blockquote p:first-of-type::after': { content: 'none' },
-          },
-        },
       },
     },
   },

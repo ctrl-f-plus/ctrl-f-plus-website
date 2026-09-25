@@ -11,6 +11,7 @@ import {
 } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { useEffect, useMemo } from 'react';
+import CardShell from './ui/card-shell';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
 import fastdom from 'fastdom';
@@ -36,7 +37,7 @@ function CardText({
 
       <h3
         className={clsx(
-          'gradient-text animate-gradient-x max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
+          'max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
           !prefersReducedMotion && wideTextColor,
           !prefersReducedMotion &&
             'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
@@ -110,10 +111,12 @@ export default function FeaturesHeader() {
       >
         <FadeIn>
           <Container className="flex w-full flex-col justify-center">
-            <div
+            <CardShell
+              variant="inverted"
+              shadow="xl"
               onMouseMove={handleMouseMove}
               className={clsx(
-                'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
+                'group relative wide:min-h-[584px]',
                 !prefersReducedMotion && 'wide:cursor-magnifying-glass',
               )}
             >
@@ -143,7 +146,7 @@ export default function FeaturesHeader() {
                   {/* Top Layer / Hover Layer  */}
                   <m.div
                     className={clsx(
-                      'opacity-1 absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
+                      'absolute inset-0 hidden items-center justify-center rounded-[2.25rem] mix-blend-overlay transition duration-900 group-hover:opacity-100 wide:flex',
                       prefersReducedMotion && 'wide:hidden',
                     )}
                     style={style}
@@ -155,7 +158,7 @@ export default function FeaturesHeader() {
                   </m.div>
                 </div>
               </div>
-            </div>
+            </CardShell>
           </Container>
         </FadeIn>
       </section>

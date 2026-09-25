@@ -28,16 +28,16 @@ const PuzzleIconWithBg = dynamic(() =>
 );
 
 const btn = cva({
-  base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-[#0a2b35] relative shadow-sm overflow-hidden',
+  base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-highlighter-950 relative shadow-sm overflow-hidden',
   variants: {
     intent: {
       solid: 'rounded-[37px] bg-highlighter-900 text-white w-full',
       outline:
-        'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-[#0a2b35]/70 w-full',
+        'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-highlighter-950/70 w-full',
     },
     size: {
-      thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-lg leading-6 font-semibold',
-      phat: 'inline-block w-[231px] text-lg leading-[1.6875rem] font-normal text-white justify-start rounded-full px-5 py-4 ',
+      thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-button-label',
+      phat: 'inline-block w-[231px] text-fs-lg text-white justify-start rounded-full px-5 py-4 ',
     },
     animation: {
       none: '',
@@ -48,12 +48,6 @@ const btn = cva({
     {
       intent: 'solid',
       animation: 'slice',
-      className:
-        '[--color-from:#ffffff] tablet:[--color-to:#0C3440] active:[--color-from:#ffffffcc] active:tablet:[--color-to:#0a2b35b3] ',
-    },
-    {
-      intent: 'solid',
-      animation: 'slice',
       size: 'phat',
       className: '[--scale-from:100%] [--scale-to:93%]',
     },
@@ -61,13 +55,13 @@ const btn = cva({
       intent: 'solid',
       animation: 'none',
       className:
-        'hover:bg-highlighter-900/90 active:bg-[#0a2b35] active:text-white/80 ',
+        'hover:bg-highlighter-900/90 active:bg-highlighter-950 active:text-white/80 ',
     },
     {
       intent: 'outline',
       animation: 'none',
       className:
-        'focus:outline-none hover:bg-highlighter-900/10 active:text-[#0a2b35]/70',
+        'focus:outline-none hover:bg-highlighter-900/10 active:text-highlighter-950/70',
     },
   ],
 });
@@ -187,7 +181,7 @@ function Button({
           <span
             className={
               animation === 'slice'
-                ? 'transition-colors duration-500 ease-linear tablet:group-hover:text-[#0C3440]'
+                ? 'transition-colors duration-500 ease-linear tablet:group-hover:text-highlighter-900'
                 : ''
             }
           >

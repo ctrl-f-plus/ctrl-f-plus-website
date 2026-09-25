@@ -23,7 +23,7 @@ export default async function Privacy() {
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
         <PageTitleCard>
-          <p className="font-open-sans text-[#889397] tab-pro:text-fs-lg">
+          <p className="font-open-sans text-caption-gray tab-pro:text-fs-lg">
             August 10, 2023
           </p>
           <h1 className="font-inter text-fs-xl text-shark">Privacy Policy</h1>

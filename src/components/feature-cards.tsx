@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
+import CardShell from './ui/card-shell';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
 
@@ -55,8 +56,8 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
     <>
       <div className="absolute top-1/3" ref={ref} />
 
-      <div
-        className=" flex min-h-154 items-center justify-center overflow-hidden rounded-[2.25rem] bg-white tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
+      <CardShell
+        className="min-h-154 overflow-hidden tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
         style={{
           // transform:
           //   isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
@@ -142,7 +143,7 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
             </div>
           </div>
         </div>
-      </div>
+      </CardShell>
     </>
   );
 }

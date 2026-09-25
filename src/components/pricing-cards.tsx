@@ -1,6 +1,7 @@
 // src/components/feature-cards.tsx
 'use client';
 
+import CardShell from './ui/card-shell';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
 import Button from '@/components/ui/Button';
@@ -58,7 +59,11 @@ export default function PricingCards() {
     <FadeIn className="">
       <Container className="relative mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
         <div className="laptop:text-left">
-          <div className="relative isolate flex h-[32.8125rem]  items-center justify-center overflow-hidden  rounded-[2.25rem] bg-shark px-[2.25rem] text-center shadow-xl">
+          <CardShell
+            variant="inverted"
+            shadow="xl"
+            className="relative isolate h-[32.8125rem] overflow-hidden px-[2.25rem] text-center"
+          >
             <div className="flex w-fit flex-col items-center justify-center gap-9">
               <h2>Pricing Section</h2>
               <div>Subtitle</div>
@@ -77,7 +82,7 @@ export default function PricingCards() {
                 </div>
               </div>
             </div>
-          </div>
+          </CardShell>
         </div>
       </Container>
     </FadeIn>

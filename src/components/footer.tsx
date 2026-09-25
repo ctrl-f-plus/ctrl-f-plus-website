@@ -92,7 +92,7 @@ function OpenSource() {
           <div className=" ">
             <GithubIcon className="h-12 w-12 fill-gray-300" />
           </div>
-          <p className="max-w-[14rem] font-open-sans text-sm text-gray-300 [text-wrap:balance]">
+          <p className="max-w-[14rem] font-open-sans text-footnote text-gray-300 [text-wrap:balance]">
             This project is open source and we welcome your contributions!
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function Footer({
       <Container className=" mt-18 flex h-[5.375rem] w-full items-center justify-between border-t border-white/10 tablet:mt-24  ">
         <LogoIconSecondary />
 
-        <p className="font-open-sans text-fs-lg leading-5 text-white">
+        <p className="font-open-sans text-copyright text-white">
           copyright {copyrightDate}
         </p>
       </Container>
