@@ -17,7 +17,19 @@ import {
 } from '@/components/icons/social-icons';
 import PageBodyCard from '@/components/page-body-card';
 import PageTitleCard from '@/components/page-title-card';
-// import InfoCard from '@/components/info-card';
+
+interface Person {
+  name: string;
+  role: string;
+  avatar: StaticImageData;
+  width: number;
+  height: number;
+  bio: string;
+  linkedinUrl: string;
+  githubUrl?: string;
+  email?: string;
+  website?: string;
+}
 
 export const metadata: Metadata = {
   title: 'About',
@@ -37,19 +49,6 @@ export const metadata: Metadata = {
     'Efficiency Tool',
   ],
 };
-
-interface Person {
-  name: string;
-  role: string;
-  avatar: StaticImageData;
-  width: number;
-  height: number;
-  bio: string;
-  linkedinUrl: string;
-  githubUrl?: string;
-  email?: string;
-  website?: string;
-}
 
 const team: Person[] = [
   {
@@ -161,14 +160,13 @@ export default function Page() {
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8  xl:grid-cols-2">
             <h2 className="font-inter text-fs-middle text-shark">Our Team</h2>
             <ul className="mx-auto mt-6 grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2">
-              {team.map((person: any) => (
+              {team.map((person: Person) => (
                 <li
                   key={person.name}
                   className="flex flex-col justify-between "
                 >
                   <div>
                     <Image
-                      // loading="lazy"
                       className="aspect-[3/2] w-full rounded-2xl bg-[#D3D7DA]/70 object-cover"
                       src={person.avatar}
                       alt={`Photo of ` + person.name}
@@ -211,24 +209,6 @@ export default function Page() {
             </div>
           </div>
         </PageBodyCard>
-
-        {/*<InfoCard*/}
-        {/*  title={`Proudly Open Source`}*/}
-        {/*  description={`Got a soft spot for browser extensions or daydream about Typescript? Then hey, if you're into it, slide into our codebase with your PRs...`}*/}
-        {/*  showAccents*/}
-        {/*>*/}
-        {/*  <Button*/}
-        {/*    intent="outline"*/}
-        {/*    size="thin"*/}
-        {/*    icon="filledStarIcon"*/}
-        {/*    className="group bg-white/[.68]"*/}
-        {/*    href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}*/}
-        {/*    target={'_blank'}*/}
-        {/*    aTag*/}
-        {/*  >*/}
-        {/*    Star us on GitHub!*/}
-        {/*  </Button>*/}
-        {/*</InfoCard>*/}
       </FadeInStagger>
     </Container>
   );
