@@ -31,7 +31,7 @@ Before claiming coverage, break the source once (for example remove the `motion-
 
 ## Step 2: `visual-baseline/README.md`
 
-Replace the sentence "Reduced motion is emulated, which the site's own hook honours, so no element carries an entrance transform" with one stating that entrances are decided by `motion-safe:` classes and `MotionConfig reducedMotion="user"`, the Atropos tilt by the media query in `ctrl-atropos.css`, and that the hook only drives interaction-only consumers.
+Replace the sentence "Reduced motion is emulated, which the site's own hook honours, so no element carries an entrance transform" with one stating that entrances are decided by `motion-safe:` classes and `MotionConfig reducedMotion="user"`, the Atropos tilt by the media query in `ctrl-atropos.css`, and that the hook only drives interaction-only and client-only consumers.
 
 ## Out of scope
 
@@ -39,7 +39,7 @@ No source files under `src/` change in this phase.
 
 ## Acceptance
 
-- [ ] `npx tsc --noEmit` passes and `pnpm lint` reports no new problems against the 62 left by phase 1.
-- [ ] `pnpm visual:check` passes: existing snapshots unchanged, new spec green.
-- [ ] The break-the-source check was performed and the relevant test went red, then green again after restoring.
-- [ ] The README sentence is updated.
+- [x] `npx tsc --noEmit` passes and `pnpm lint` reports no new problems against the 62 left by phase 1.
+- [x] `pnpm visual:check` passes: existing snapshots unchanged, new spec green.
+- [x] The break-the-source check was performed and the relevant test went red, then green again after restoring.
+- [x] The README sentence is updated.
