@@ -1,0 +1,52 @@
+[
+  {
+    "text": "Home",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 600 | 28px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      32,
+      90,
+      416,
+      44
+    ]
+  },
+  {
+    "text": "Features",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 600 | 28px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      32,
+      142,
+      416,
+      44
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 600 | 28px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      32,
+      194,
+      416,
+      44
+    ]
+  },
+  {
+    "text": "About",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 600 | 28px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      32,
+      246,
+      416,
+      44
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 600 | 28px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      32,
+      298,
+      416,
+      44
+    ]
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "text": "About",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      92,
+      220,
+      167.41,
+      66
+    ]
+  },
+  {
+    "text": "At",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      92,
+      310,
+      296,
+      297
+    ]
+  },
+  {
+    "text": "Ctrl-F Plus",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(72, 208, 168) | none | none | normal",
+    "rect": [
+      114.48,
+      311,
+      84.41,
+      24
+    ]
+  },
+  {
+    "text": "Our grand plan? Snatch those fleeting mo",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      92,
+      631,
+      296,
+      162
+    ]
+  },
+  {
+    "text": "Our Team",
+    "style": "Inter, \"Inter Fallback\" | 44px | 800 | 48.4px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      60,
+      945,
+      360,
+      48.39
+    ]
+  },
+  {
+    "text": "Ben Chavez",
+    "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      60,
+      1281.39,
+      360,
+      32
+    ]
+  },
+  {
+    "text": "Developer",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      60,
+      1313.39,
+      360,
+      28
+    ]
+  },
+  {
+    "text": "Ben is a full-stack software engineer wi",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      60,
+      1357.39,
+      360,
+      168
+    ]
+  },
+  {
+    "text": "Ighodalo I",
+    "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      60,
+      1913.39,
+      360,
+      32
+    ]
+  },
+  {
+    "text": "Designer",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      60,
+      1945.39,
+      360,
+      28
+    ]
+  },
+  {
+    "text": "Ighodalo is an experienced Product Desig",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      60,
+      1989.39,
+      360,
+      140
+    ]
+  },
+  {
+    "text": "Become a Sponsor!",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      171.27,
+      2289.39,
+      165.47,
+      24
+    ]
+  },
+  {
+    "text": "Company",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      2553.39,
+      188,
+      20.8
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2592.19,
+      39.42,
+      19
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2624.19,
+      28.61,
+      19
+    ]
+  },
+  {
+    "text": "Setup",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2656.19,
+      37.69,
+      19
+    ]
+  },
+  {
+    "text": "Privacy Policy",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2688.19,
+      87.45,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2720.19,
+      69.19,
+      19
+    ]
+  },
+  {
+    "text": "Contribute",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      256,
+      2553.39,
+      188,
+      20.8
+    ]
+  },
+  {
+    "text": "Star us on GitHub",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      256,
+      2592.19,
+      115.53,
+      19
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      256,
+      2624.19,
+      54.08,
+      19
+    ]
+  },
+  {
+    "text": "Download",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      2782.19,
+      188,
+      20.8
+    ]
+  },
+  {
+    "text": "Brave",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2820.98,
+      37.41,
+      19
+    ]
+  },
+  {
+    "text": "Chrome",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2852.98,
+      52.38,
+      19
+    ]
+  },
+  {
+    "text": "Firefox",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2884.98,
+      44.81,
+      19
+    ]
+  },
+  {
+    "text": "Let's improve it together!",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      2970.98,
+      284,
+      29.89
+    ]
+  },
+  {
+    "text": "This project is open source and we welco",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      96,
+      3020.88,
+      224,
+      40
+    ]
+  },
+  {
+    "text": "github.com/",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      3090.88,
+      84.92,
+      19
+    ]
+  },
+  {
+    "text": "ctrl-f-plus",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
+    "rect": [
+      120.92,
+      3088.88,
+      74.09,
+      22
+    ]
+  },
+  {
+    "text": "copyright",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      272.56,
+      3242.38,
+      171.44,
+      20
+    ]
+  }
+]

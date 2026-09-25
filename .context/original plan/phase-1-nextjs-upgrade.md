@@ -81,18 +81,23 @@ export interface Post {
 const CONTENT_DIR = path.join(process.cwd(), 'src/content');
 
 export function getAllPosts(): Post[] {
-  return fs.readdirSync(CONTENT_DIR)
-    .filter(f => f.endsWith('.mdx'))
-    .map(filename => {
+  return fs
+    .readdirSync(CONTENT_DIR)
+    .filter((f) => f.endsWith('.mdx'))
+    .map((filename) => {
       const slug = filename.replace(/\.mdx$/, '');
       const raw = fs.readFileSync(path.join(CONTENT_DIR, filename), 'utf-8');
       const { data, content } = matter(raw);
-      const rt = readingTime(content);  // body only, not frontmatter
+      const rt = readingTime(content); // body only, not frontmatter
 
       return {
         ...(data as Omit<Post, 'slug' | 'readingTime' | 'structuredData'>),
         slug,
-        readingTime: { text: rt.text, minutes: Math.ceil(rt.minutes), words: rt.words },
+        readingTime: {
+          text: rt.text,
+          minutes: Math.ceil(rt.minutes),
+          words: rt.words,
+        },
         structuredData: {
           '@context': 'https://schema.org',
           '@type': 'BlogPosting',
@@ -108,11 +113,14 @@ export function getAllPosts(): Post[] {
         },
       };
     })
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    );
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
-  return getAllPosts().find(p => p.slug === slug);
+  return getAllPosts().find((p) => p.slug === slug);
 }
 ```
 
@@ -127,6 +135,7 @@ See the full component map in `.conext/plans/vercel-to-aws-migration-v4.md` Step
 ### 1e. Create `next.config.mjs` (rename from `next.config.js`)
 
 Key points:
+
 - Replace `withContentlayer()` with `createMDX()` from `@next/mdx`
 - Add `remarkFrontmatter` as FIRST remark plugin (strips YAML)
 - Preserve exact rehype plugin order — `rehype-clipboard-prep-code` plugins bracket `rehype-pretty-code`:
@@ -151,7 +160,7 @@ See full config in `.conext/plans/vercel-to-aws-migration-v4.md` Step 1.1.
 - Replace `<Mdx code={post.body.code} />` with:
   ```tsx
   const { default: PostContent } = await import(`@/content/${slug}.mdx`);
-  <PostContent />
+  <PostContent />;
   ```
 - Preserve the BackButton component, title, dates, readingTime display
 
@@ -242,6 +251,7 @@ npx playwright screenshot --browser chromium --full-page "http://localhost:3000/
 ```
 
 ### Verification checklist
+
 - [ ] Build succeeds, `out/` directory populated
 - [ ] `out/index.html`, `out/blog/index.html`, `out/blog/{slug}/index.html` exist
 - [ ] `out/og/{slug}.png` exists for each post
@@ -269,7 +279,7 @@ Create an agent team with 3 reviewers to review the Phase 1 changes. Each review
 Reviewer perspectives:
 - **Migration Correctness Reviewer**: Verify the Contentlayer → @next/mdx migration is complete. Check that all contentlayer imports are removed, all data flows are wired correctly (getAllPosts, getPostBySlug, generateStaticParams, sitemap), MDX rendering works via dynamic import, and no dead references remain. Cross-reference against the plan at .conext/plans/phase-1-nextjs-upgrade.md.
 
-- **Framework Compatibility Reviewer**: Verify Next.js 16 + React 19 compatibility. Check async params usage, mdx-components.tsx API shape (no-argument useMDXComponents), static export compatibility (no server-only features leaked), remark/rehype plugin configuration, and that output: 'export' produces correct file structure.
+- **Framework Compatibility Reviewer**: Verify Next.js 16 + React 19 compatibility. Check async params usage, mdx-components.tsx API shape (no-argument useMDXComponents), static export compatibility (no server-only pricingTiers leaked), remark/rehype plugin configuration, and that output: 'export' produces correct file structure.
 
 - **Silent Failure Hunter**: Look for things that will fail silently in production. Check: CSP headers blocking the Cloudflare analytics script, rehype plugin ordering issues that would break copy-to-clipboard without visible errors, missing generateStaticParams that would cause 404s, incorrect OG image paths in metadata/structuredData, broken Cloudinary URLs in the banner replacement.
 ```
@@ -414,13 +424,13 @@ Create an agent team with 2 workers to resolve PR review findings:
 
 ## Deviations from original plan
 
-| Plan | Actual | Reason |
-|---|---|---|
-| `trailingSlash: false` | `trailingSlash: true` | Static export generates both `.html` files and RSC payload directories with same slug name; `serve` (and S3) can't resolve clean URLs when a directory exists. `trailingSlash: true` generates `/slug/index.html` which S3/CloudFront serves correctly. |
-| Turbopack (default in Next.js 16) | `--webpack` flag on dev and build | `rehype-pretty-code` config has non-serializable callback functions (`onVisitLine`, etc.) that Turbopack can't serialize. Also `remark-flexible-code-titles` `titleProperties` callback. |
-| `robots.ts` and `sitemap.ts` unchanged | Added `export const dynamic = 'force-static'` | Required for `output: 'export'` compatibility with Next.js metadata routes. |
-| `constants.ts` kept ("used in next.config.mjs") | Deleted | `next.config.mjs` hardcodes the value instead of importing it; no consumers remain. |
-| Keep `framer-motion` (upgrade to React 19 compat) | Removed entirely | Not imported anywhere in source code. |
+| Plan                                              | Actual                                        | Reason                                                                                                                                                                                                                                                  |
+| ------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `trailingSlash: false`                            | `trailingSlash: true`                         | Static export generates both `.html` files and RSC payload directories with same slug name; `serve` (and S3) can't resolve clean URLs when a directory exists. `trailingSlash: true` generates `/slug/index.html` which S3/CloudFront serves correctly. |
+| Turbopack (default in Next.js 16)                 | `--webpack` flag on dev and build             | `rehype-pretty-code` config has non-serializable callback functions (`onVisitLine`, etc.) that Turbopack can't serialize. Also `remark-flexible-code-titles` `titleProperties` callback.                                                                |
+| `robots.ts` and `sitemap.ts` unchanged            | Added `export const dynamic = 'force-static'` | Required for `output: 'export'` compatibility with Next.js metadata routes.                                                                                                                                                                             |
+| `constants.ts` kept ("used in next.config.mjs")   | Deleted                                       | `next.config.mjs` hardcodes the value instead of importing it; no consumers remain.                                                                                                                                                                     |
+| Keep `framer-motion` (upgrade to React 19 compat) | Removed entirely                              | Not imported anywhere in source code.                                                                                                                                                                                                                   |
 
 ---
 
@@ -442,22 +452,22 @@ Create an agent team with 2 workers to resolve PR review findings:
 
 ## Key files reference
 
-| File | Current role | Action |
-|---|---|---|
-| `contentlayer.config.js` | Contentlayer config | Delete |
-| `next.config.js` | Next.js config with `withContentlayer()` | Rename to `.mjs`, rewrite |
-| `src/app/blog/page.tsx` | Blog list, imports `allBlogs` | Update imports |
-| `src/app/blog/[slug]/page.tsx` | Single post, uses `post.body.code` | Rewrite rendering |
-| `src/app/sitemap.ts` | Sitemap, imports `allBlogs` | Update imports |
-| `src/app/layout.tsx` | Root layout, Vercel Analytics | Remove analytics, add CF |
-| `src/app/og/route.tsx` | Edge Runtime OG generation | Delete |
-| `src/components/mdx.tsx` | MDX renderer with `useMDXComponent` | Delete (move to mdx-components.tsx) |
-| `src/components/banner-image.tsx` | CldImage banner | Replace with `<img>` |
-| `src/components/code-block-title.tsx` | Code block title component | Keep (used in mdx-components.tsx) |
-| `src/components/code-copy-button.tsx` | Copy-to-clipboard | Keep |
-| `src/lib/mdxPlugins/` | Dead code (never imported) | Delete |
-| `src/styles/greenery-theme.json` | Shiki theme for rehype-pretty-code | Keep |
-| `tsconfig.json` | Has contentlayer paths | Remove contentlayer paths |
-| `package.json` | Dependencies, scripts | Update deps and build script |
-| `constants.ts` | `REMARK_CODE_TITLE_TAG_NAME` | Deleted (dead code, value hardcoded in next.config.mjs) |
-| `cva.config.ts` | Exports `cx` utility | Keep (used in mdx-components.tsx) |
+| File                                  | Current role                             | Action                                                  |
+| ------------------------------------- | ---------------------------------------- | ------------------------------------------------------- |
+| `contentlayer.config.js`              | Contentlayer config                      | Delete                                                  |
+| `next.config.js`                      | Next.js config with `withContentlayer()` | Rename to `.mjs`, rewrite                               |
+| `src/app/blog/page.tsx`               | Blog list, imports `allBlogs`            | Update imports                                          |
+| `src/app/blog/[slug]/page.tsx`        | Single post, uses `post.body.code`       | Rewrite rendering                                       |
+| `src/app/sitemap.ts`                  | Sitemap, imports `allBlogs`              | Update imports                                          |
+| `src/app/layout.tsx`                  | Root layout, Vercel Analytics            | Remove analytics, add CF                                |
+| `src/app/og/route.tsx`                | Edge Runtime OG generation               | Delete                                                  |
+| `src/components/mdx.tsx`              | MDX renderer with `useMDXComponent`      | Delete (move to mdx-components.tsx)                     |
+| `src/components/banner-image.tsx`     | CldImage banner                          | Replace with `<img>`                                    |
+| `src/components/code-block-title.tsx` | Code block title component               | Keep (used in mdx-components.tsx)                       |
+| `src/components/code-copy-button.tsx` | Copy-to-clipboard                        | Keep                                                    |
+| `src/lib/mdxPlugins/`                 | Dead code (never imported)               | Delete                                                  |
+| `src/styles/greenery-theme.json`      | Shiki theme for rehype-pretty-code       | Keep                                                    |
+| `tsconfig.json`                       | Has contentlayer paths                   | Remove contentlayer paths                               |
+| `package.json`                        | Dependencies, scripts                    | Update deps and build script                            |
+| `constants.ts`                        | `REMARK_CODE_TITLE_TAG_NAME`             | Deleted (dead code, value hardcoded in next.config.mjs) |
+| `cva.config.ts`                       | Exports `cx` utility                     | Keep (used in mdx-components.tsx)                       |

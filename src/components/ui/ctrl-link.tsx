@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 export default function CtrlLink({ aTag, button, ...props }: any) {
-  if (aTag == true) {
+  if (aTag) {
     return <a {...props}>{props.children}</a>;
   }
 

@@ -1,0 +1,512 @@
+[
+  {
+    "text": "Home",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(18, 141, 161) | none | none | normal",
+    "rect": [
+      443.23,
+      29,
+      50.88,
+      24
+    ]
+  },
+  {
+    "text": "Features",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      526.11,
+      29,
+      72.91,
+      24
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      631.02,
+      29,
+      36.78,
+      24
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      699.8,
+      29,
+      50.69,
+      24
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      782.48,
+      29,
+      69.52,
+      24
+    ]
+  },
+  {
+    "text": "Ctrl-F Plus:",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      36,
+      159,
+      365.06,
+      198
+    ]
+  },
+  {
+    "text": "For the",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      36,
+      225,
+      189.27,
+      66
+    ]
+  },
+  {
+    "text": "Tab Hoarders",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      28,
+      291,
+      381.06,
+      66
+    ]
+  },
+  {
+    "text": "Tab hoarders, your time has come. Ctrl-F",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      36,
+      389,
+      524.14,
+      81
+    ]
+  },
+  {
+    "text": "Add to",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      75.77,
+      542,
+      200.55,
+      24
+    ]
+  },
+  {
+    "text": "See how it works",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(12, 52, 64) | none | none | normal",
+    "rect": [
+      375.41,
+      542,
+      146.41,
+      24
+    ]
+  },
+  {
+    "text": "Tab Junkie? Meet Your New Best Friend.",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      294.3,
+      766,
+      311.39,
+      20.8
+    ]
+  },
+  {
+    "text": "Your Guiding Light in the Tab Chaos",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgba(0, 0, 0, 0) | none | none | normal",
+    "rect": [
+      161,
+      822.8,
+      578,
+      132
+    ]
+  },
+  {
+    "text": "Tab overload? We've got your back. Unear",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      178.5,
+      990.8,
+      543,
+      54
+    ]
+  },
+  {
+    "text": "All-Tab Search: The Panoramic View",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(12, 52, 64) | none | none | normal",
+    "rect": [
+      512,
+      1301.89,
+      280.88,
+      20.8
+    ]
+  },
+  {
+    "text": "Upgrade from One-Tab Searches",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      512,
+      1358.69,
+      288,
+      264
+    ]
+  },
+  {
+    "text": "Your CTRL+F only searches one tab? That'",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      512,
+      1658.69,
+      288,
+      81
+    ]
+  },
+  {
+    "text": "Familiar Interface: Revolutionary Yet Co",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(12, 52, 64) | none | none | normal",
+    "rect": [
+      99.11,
+      1991,
+      289.78,
+      41.59
+    ]
+  },
+  {
+    "text": "Innovation with Coziness",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      99.11,
+      2068.59,
+      289.78,
+      198
+    ]
+  },
+  {
+    "text": "Just because we've revolutionized search",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      99.11,
+      2302.59,
+      289.78,
+      108
+    ]
+  },
+  {
+    "text": "Easy Activation: CTRL+SHIFT+F",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(12, 52, 64) | none | none | normal",
+    "rect": [
+      512,
+      2694.89,
+      246.02,
+      20.8
+    ]
+  },
+  {
+    "text": "Simplicity at Your Fingertips",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      512,
+      2751.69,
+      288,
+      198
+    ]
+  },
+  {
+    "text": "CTRL+SHIFT+F. So easy a caveman could do",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      512,
+      2985.69,
+      288,
+      81
+    ]
+  },
+  {
+    "text": "Pricing Section",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
+    "rect": [
+      395.48,
+      3406.3,
+      109.02,
+      24
+    ]
+  },
+  {
+    "text": "Subtitle",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
+    "rect": [
+      422.19,
+      3466.3,
+      55.63,
+      24
+    ]
+  },
+  {
+    "text": "Pro",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
+    "rect": [
+      223.92,
+      3535.3,
+      452.16,
+      24
+    ]
+  },
+  {
+    "text": "$2.99 / Month",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
+    "rect": [
+      223.92,
+      3559.3,
+      452.16,
+      24
+    ]
+  },
+  {
+    "text": "The perfect plan if you're just getting ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
+    "rect": [
+      223.92,
+      3583.3,
+      452.16,
+      24
+    ]
+  },
+  {
+    "text": "Try Now",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
+    "rect": [
+      419.2,
+      3615.3,
+      61.59,
+      24
+    ]
+  },
+  {
+    "text": "Take your tab hoarding to the next level",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      72,
+      3984.3,
+      756,
+      132
+    ]
+  },
+  {
+    "text": "Tabs out of control? Nah, they're just m",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      207.56,
+      4152.3,
+      484.86,
+      27
+    ]
+  },
+  {
+    "text": "Add Ctrl-F Plus to your browser and let ",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      207.56,
+      4179.3,
+      484.86,
+      27
+    ]
+  },
+  {
+    "text": "Add to",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      414.31,
+      4264.8,
+      127.36,
+      27
+    ]
+  },
+  {
+    "text": "Company",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      4582.8,
+      111.33,
+      20.8
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      4621.59,
+      39.42,
+      19
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      4653.59,
+      28.61,
+      19
+    ]
+  },
+  {
+    "text": "Setup",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      4685.59,
+      37.69,
+      19
+    ]
+  },
+  {
+    "text": "Privacy Policy",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      4717.59,
+      87.45,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      4749.59,
+      69.19,
+      19
+    ]
+  },
+  {
+    "text": "Contribute",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      179.33,
+      4582.8,
+      111.33,
+      20.8
+    ]
+  },
+  {
+    "text": "Star us on GitHub",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      179.33,
+      4621.59,
+      65.72,
+      43
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      179.33,
+      4677.59,
+      54.08,
+      19
+    ]
+  },
+  {
+    "text": "Download",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      322.66,
+      4582.8,
+      111.34,
+      20.8
+    ]
+  },
+  {
+    "text": "Brave",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      4621.59,
+      37.41,
+      19
+    ]
+  },
+  {
+    "text": "Chrome",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      4653.59,
+      52.38,
+      19
+    ]
+  },
+  {
+    "text": "Firefox",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      4685.59,
+      44.81,
+      19
+    ]
+  },
+  {
+    "text": "Let's improve it together!",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      580,
+      4582.8,
+      284,
+      29.89
+    ]
+  },
+  {
+    "text": "This project is open source and we welco",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      640,
+      4632.69,
+      224,
+      40
+    ]
+  },
+  {
+    "text": "github.com/",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      642.48,
+      4702.69,
+      84.92,
+      19
+    ]
+  },
+  {
+    "text": "ctrl-f-plus",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
+    "rect": [
+      727.41,
+      4700.69,
+      74.09,
+      22
+    ]
+  },
+  {
+    "text": "copyright",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      692.56,
+      4901.09,
+      171.44,
+      20
+    ]
+  }
+]

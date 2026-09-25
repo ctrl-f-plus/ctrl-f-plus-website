@@ -4,7 +4,7 @@ import 'server-only';
 import benAvatar from '@/../public/images/ben-avatar.png';
 import ighodaloAvatar from '@/../public/images/ighodalo-avatar.png';
 import { Metadata } from 'next';
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import Button from '@/components/ui/Button';
 import Container from '@/components/ui/container';
 import CtrlLink from '@/components/ui/ctrl-link';
@@ -15,9 +15,9 @@ import {
   LinkedInIcon,
   WebsiteIcon,
 } from '@/components/icons/social-icons';
-import InfoCard from '@/components/info-card';
 import PageBodyCard from '@/components/page-body-card';
 import PageTitleCard from '@/components/page-title-card';
+// import InfoCard from '@/components/info-card';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -38,7 +38,20 @@ export const metadata: Metadata = {
   ],
 };
 
-const team = [
+interface Person {
+  name: string;
+  role: string;
+  avatar: StaticImageData;
+  width: number;
+  height: number;
+  bio: string;
+  linkedinUrl: string;
+  githubUrl?: string;
+  email?: string;
+  website?: string;
+}
+
+const team: Person[] = [
   {
     name: 'Ben Chavez',
     role: 'Developer',
@@ -62,9 +75,9 @@ const team = [
   },
 ];
 
-function SocialProfiles({ person }: any) {
+function SocialProfiles({ person }: Readonly<{ person: Person }>) {
   return (
-    <ul role="list" className="mt-6 flex gap-x-6">
+    <ul className="mt-6 flex gap-x-6">
       {person.linkedinUrl && (
         <li>
           <CtrlLink
@@ -91,7 +104,6 @@ function SocialProfiles({ person }: any) {
           </CtrlLink>
         </li>
       )}
-
       {person.email && (
         <li>
           <CtrlLink
@@ -122,7 +134,7 @@ function SocialProfiles({ person }: any) {
   );
 }
 
-export default function About() {
+export default function Page() {
   return (
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
@@ -145,13 +157,10 @@ export default function About() {
           </p>
         </PageTitleCard>
 
-        <PageBodyCard className={''}>
+        <PageBodyCard>
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8  xl:grid-cols-2">
             <h2 className="font-inter text-fs-middle text-shark">Our Team</h2>
-            <ul
-              role="list"
-              className="mx-auto mt-6 grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
-            >
+            <ul className="mx-auto mt-6 grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2">
               {team.map((person: any) => (
                 <li
                   key={person.name}
@@ -203,24 +212,23 @@ export default function About() {
           </div>
         </PageBodyCard>
 
-        <InfoCard
-          title={`Proudly Open Source`}
-          description={`Got a soft spot for browser extensions or daydream about Typescript? Then hey, if you're into it, slide into our
-              codebase with your PRs...`}
-          showAccents
-        >
-          <Button
-            intent="outline"
-            size="thin"
-            icon="filledStarIcon"
-            className="group bg-white/[.68]"
-            href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
-            target={'_blank'}
-            aTag
-          >
-            Star us on GitHub!
-          </Button>
-        </InfoCard>
+        {/*<InfoCard*/}
+        {/*  title={`Proudly Open Source`}*/}
+        {/*  description={`Got a soft spot for browser extensions or daydream about Typescript? Then hey, if you're into it, slide into our codebase with your PRs...`}*/}
+        {/*  showAccents*/}
+        {/*>*/}
+        {/*  <Button*/}
+        {/*    intent="outline"*/}
+        {/*    size="thin"*/}
+        {/*    icon="filledStarIcon"*/}
+        {/*    className="group bg-white/[.68]"*/}
+        {/*    href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}*/}
+        {/*    target={'_blank'}*/}
+        {/*    aTag*/}
+        {/*  >*/}
+        {/*    Star us on GitHub!*/}
+        {/*  </Button>*/}
+        {/*</InfoCard>*/}
       </FadeInStagger>
     </Container>
   );

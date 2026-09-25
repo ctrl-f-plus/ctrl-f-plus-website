@@ -1,0 +1,222 @@
+[
+  {
+    "text": "404",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 600 | 24px | normal | rgb(12, 52, 64) | none | none | normal",
+    "rect": [
+      138.05,
+      268,
+      363.89,
+      24
+    ]
+  },
+  {
+    "text": "Page not found",
+    "style": "Inter, \"Inter Fallback\" | 48px | 800 | 48px | -1.2px | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      138.05,
+      308,
+      363.89,
+      48
+    ]
+  },
+  {
+    "text": "Sorry, we couldn't find the page you're ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(75, 85, 99) | none | none | normal",
+    "rect": [
+      138.05,
+      380,
+      363.89,
+      28
+    ]
+  },
+  {
+    "text": "Go back home",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      257.86,
+      464,
+      124.25,
+      24
+    ]
+  },
+  {
+    "text": "Company",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      800,
+      268,
+      20.8
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      838.8,
+      39.42,
+      19
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      870.8,
+      28.61,
+      19
+    ]
+  },
+  {
+    "text": "Setup",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      902.8,
+      37.69,
+      19
+    ]
+  },
+  {
+    "text": "Privacy Policy",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      934.8,
+      87.45,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      966.8,
+      69.19,
+      19
+    ]
+  },
+  {
+    "text": "Contribute",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      336,
+      800,
+      268,
+      20.8
+    ]
+  },
+  {
+    "text": "Star us on GitHub",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      336,
+      838.8,
+      115.53,
+      19
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      336,
+      870.8,
+      54.08,
+      19
+    ]
+  },
+  {
+    "text": "Download",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      1028.8,
+      268,
+      20.8
+    ]
+  },
+  {
+    "text": "Brave",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1067.59,
+      37.41,
+      19
+    ]
+  },
+  {
+    "text": "Chrome",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1099.59,
+      52.38,
+      19
+    ]
+  },
+  {
+    "text": "Firefox",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1131.59,
+      44.81,
+      19
+    ]
+  },
+  {
+    "text": "Let's improve it together!",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      1217.59,
+      284,
+      29.89
+    ]
+  },
+  {
+    "text": "This project is open source and we welco",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      96,
+      1267.48,
+      224,
+      40
+    ]
+  },
+  {
+    "text": "github.com/",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1337.48,
+      84.92,
+      19
+    ]
+  },
+  {
+    "text": "ctrl-f-plus",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
+    "rect": [
+      120.92,
+      1335.48,
+      74.09,
+      22
+    ]
+  },
+  {
+    "text": "copyright",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      432.56,
+      1488.98,
+      171.44,
+      20
+    ]
+  }
+]

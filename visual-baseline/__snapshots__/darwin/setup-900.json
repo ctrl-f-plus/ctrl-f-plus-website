@@ -1,0 +1,472 @@
+[
+  {
+    "text": "Home",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      443.23,
+      29,
+      50.88,
+      24
+    ]
+  },
+  {
+    "text": "Features",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      526.11,
+      29,
+      72.91,
+      24
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      631.02,
+      29,
+      36.78,
+      24
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      699.8,
+      29,
+      50.69,
+      24
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      782.48,
+      29,
+      69.52,
+      24
+    ]
+  },
+  {
+    "text": "August 23, 2023",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(136, 147, 151) | none | none | normal",
+    "rect": [
+      100,
+      220.5,
+      134,
+      27
+    ]
+  },
+  {
+    "text": "Keyboard Shortcut Setup",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      100,
+      271.5,
+      686.41,
+      66
+    ]
+  },
+  {
+    "text": "Thank you for choosing to use",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      100,
+      361.5,
+      700,
+      54
+    ]
+  },
+  {
+    "text": "Ctrl-F Plus!",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(72, 208, 168) | none | none | normal",
+    "rect": [
+      356.88,
+      362.5,
+      89.16,
+      24
+    ]
+  },
+  {
+    "text": "Setup",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      68,
+      573,
+      764,
+      41
+    ]
+  },
+  {
+    "text": "Install \"Ctrl-F Plus\" in Chrome.",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      644,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Pin the extension:",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      680,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Click the puzzle piece icon (Extensions)",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      732,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Locate \"Ctrl-F Plus\" and click its pin i",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      768,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Right-click the \"Ctrl-F Plus\" icon and s",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      820,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Find \"Ctrl-F Plus\" in the list.",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      856,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Set the activation shortcut:",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      892,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Windows, Linux, ChromeOS:",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      944,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Ctrl",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      333.78,
+      947.81,
+      60.19,
+      22.38
+    ]
+  },
+  {
+    "text": "Shift",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      412.11,
+      947.81,
+      68.63,
+      22.38
+    ]
+  },
+  {
+    "text": "F",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      498.88,
+      947.81,
+      34.91,
+      22.38
+    ]
+  },
+  {
+    "text": "Mac:",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      980,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "⌘",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      163.45,
+      983.81,
+      34.91,
+      22.38
+    ]
+  },
+  {
+    "text": "Shift",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      216.5,
+      983.81,
+      68.63,
+      22.38
+    ]
+  },
+  {
+    "text": "F",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      303.27,
+      983.81,
+      34.91,
+      22.38
+    ]
+  },
+  {
+    "text": "Command",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      367.11,
+      983.81,
+      85.48,
+      22.38
+    ]
+  },
+  {
+    "text": "Shift",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      470.73,
+      983.81,
+      68.63,
+      22.38
+    ]
+  },
+  {
+    "text": "F",
+    "style": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace | 14px | 600 | 20px | normal | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      557.5,
+      983.81,
+      34.91,
+      22.38
+    ]
+  },
+  {
+    "text": "Close the window, and you're ready! Use ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      118,
+      1032,
+      714,
+      28
+    ]
+  },
+  {
+    "text": "Company",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      1308,
+      111.33,
+      20.8
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1346.8,
+      39.42,
+      19
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1378.8,
+      28.61,
+      19
+    ]
+  },
+  {
+    "text": "Setup",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1410.8,
+      37.69,
+      19
+    ]
+  },
+  {
+    "text": "Privacy Policy",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1442.8,
+      87.45,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1474.8,
+      69.19,
+      19
+    ]
+  },
+  {
+    "text": "Contribute",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      179.33,
+      1308,
+      111.33,
+      20.8
+    ]
+  },
+  {
+    "text": "Star us on GitHub",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      179.33,
+      1346.8,
+      65.72,
+      43
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      179.33,
+      1402.8,
+      54.08,
+      19
+    ]
+  },
+  {
+    "text": "Download",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      322.66,
+      1308,
+      111.34,
+      20.8
+    ]
+  },
+  {
+    "text": "Brave",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      1346.8,
+      37.41,
+      19
+    ]
+  },
+  {
+    "text": "Chrome",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      1378.8,
+      52.38,
+      19
+    ]
+  },
+  {
+    "text": "Firefox",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      1410.8,
+      44.81,
+      19
+    ]
+  },
+  {
+    "text": "Let's improve it together!",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      580,
+      1308,
+      284,
+      29.89
+    ]
+  },
+  {
+    "text": "This project is open source and we welco",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      640,
+      1357.89,
+      224,
+      40
+    ]
+  },
+  {
+    "text": "github.com/",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      642.48,
+      1427.89,
+      84.92,
+      19
+    ]
+  },
+  {
+    "text": "ctrl-f-plus",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
+    "rect": [
+      727.41,
+      1425.89,
+      74.09,
+      22
+    ]
+  },
+  {
+    "text": "copyright",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      692.56,
+      1626.3,
+      171.44,
+      20
+    ]
+  }
+]
