@@ -1,9 +1,8 @@
 // src/components/feature-cards.tsx
 'use client';
-// TODO: I temporarily removed reduced motion functionality on these cards. Add it back.
 
+import clsx from 'clsx';
 import { useInView } from 'framer-motion';
-import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 import CardShell from './ui/card-shell';
@@ -21,7 +20,7 @@ const features = [
     description: `Your CTRL+F only searches one tab? That's cute. We prefer the panoramic view.`,
     // icon: FeatureIcon1,
     icon: feature1,
-    initialOfset: '-500px',
+    hiddenOffsetClass: 'motion-safe:-translate-x-[500px]',
   },
   {
     title: `Familiar Interface: Revolutionary Yet Comfortable`,
@@ -29,7 +28,7 @@ const features = [
     description: `Just because we've revolutionized search doesn't mean we can't be cozy. Slip into something comfortable.`,
     // icon: FeatureIcon2,
     icon: feature2,
-    initialOfset: '500px',
+    hiddenOffsetClass: 'motion-safe:translate-x-[500px]',
   },
   {
     title: `Easy Activation: CTRL+SHIFT+F`,
@@ -37,7 +36,7 @@ const features = [
     description: `CTRL+SHIFT+F. So easy a caveman could do it. But don't worry, you'll probably get the hang of it too.`,
     // icon: FeatureIcon3,
     icon: feature3,
-    initialOfset: '-500px',
+    hiddenOffsetClass: 'motion-safe:-translate-x-[500px]',
   },
 ];
 // TODO: pass as param instead
@@ -46,7 +45,6 @@ const features = [
 // };
 
 function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
-  let prefersReducedMotion = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -57,14 +55,10 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
       <div className="absolute top-1/3" ref={ref} />
 
       <CardShell
-        className="min-h-154 overflow-hidden tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"
-        style={{
-          // transform:
-          //   isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
-          transform: isInView ? 'none' : 'translateY(24px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 1.3s',
-        }}
+        className={clsx(
+          'min-h-154 overflow-hidden [transition:all_1.3s] tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24',
+          !isInView && 'opacity-0 motion-safe:translate-y-[24px]',
+        )}
       >
         <div className="flex flex-col">
           <div className="flex flex-col gap-9 laptop:flex-row">
@@ -74,19 +68,10 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
               }`}
             >
               <span
-                className="block"
-                style={{
-                  opacity: isInView ? 1 : 0,
-                  transform: isInView
-                    ? 'none'
-                    : `translateX(${feat.initialOfset})`,
-                  // transform:
-                  //   isInView || prefersReducedMotion
-                  //     ? 'none'
-                  //     : `translateX(${feat.initialOfset})`,
-                  //// : `translateX(${calculateInitialOffset(index)})`,
-                  transition: 'all 1.9s',
-                }}
+                className={clsx(
+                  'block [transition:all_1.9s]',
+                  !isInView && ['opacity-0', feat.hiddenOffsetClass],
+                )}
               >
                 {
                   <>
@@ -114,17 +99,10 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
               } `}
             >
               <span
-                className="block"
-                style={{
-                  opacity: isInView ? 1 : 0,
-                  transform: isInView ? 'none' : 'translateY(500px)',
-
-                  // transform:
-                  //   isInView || prefersReducedMotion
-                  //     ? 'none'
-                  //     : 'translateY(500px)',
-                  transition: 'all 1.9s',
-                }}
+                className={clsx(
+                  'block [transition:all_1.9s]',
+                  !isInView && 'opacity-0 motion-safe:translate-y-[500px]',
+                )}
               >
                 <div className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start">
                   <h2 className="text-center font-inter text-fs-base text-highlighter-900 [text-wrap:balance] laptop:text-left">

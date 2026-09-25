@@ -3,8 +3,8 @@
 
 import '@/styles/ctrl-atropos.css';
 
+import clsx from 'clsx';
 import { domAnimation, LazyMotion, useInView } from 'framer-motion';
-import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 import CardShell from './ui/card-shell';
@@ -101,9 +101,6 @@ function CtaText() {
 }
 
 export default function CallToAction() {
-  let prefersReducedMotion = false;
-  useReducedMotion();
-
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -121,13 +118,10 @@ export default function CallToAction() {
           <div className="absolute top-1/3" ref={ref} />
 
           <div
-            className="h-full w-full"
-            style={{
-              transform:
-                isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
-              opacity: isInView ? 1 : 0,
-              transition: 'all 1.3s',
-            }}
+            className={clsx(
+              'h-full w-full [transition:all_1.3s]',
+              !isInView && 'opacity-0 motion-safe:translate-y-[24px]',
+            )}
           >
             <div className="laptop:hidden">
               <CardShell
@@ -148,12 +142,12 @@ export default function CallToAction() {
             <div className="hidden laptop:block">
               <Atropos
                 className="h-full w-full rounded-[2.25rem] "
-                shadow={!prefersReducedMotion}
-                activeOffset={prefersReducedMotion ? 0 : 50}
-                rotateTouch={!prefersReducedMotion}
-                rotateXMax={prefersReducedMotion ? 0 : 15}
-                rotateYMax={prefersReducedMotion ? 0 : 15}
-                rotate={!prefersReducedMotion}
+                shadow
+                activeOffset={50}
+                rotateTouch
+                rotateXMax={15}
+                rotateYMax={15}
+                rotate
               >
                 <CardShell
                   variant="inverted"
@@ -161,7 +155,7 @@ export default function CallToAction() {
                 >
                   <CtaColorAccents />
                   <div
-                    data-atropos-offset={prefersReducedMotion ? 0 : 10}
+                    data-atropos-offset={10}
                     className="flex flex-col items-center justify-center gap-9"
                   >
                     <CtaText />
