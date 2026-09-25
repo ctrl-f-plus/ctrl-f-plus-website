@@ -27,6 +27,7 @@ module.exports = {
         'gradient-slate': '#dde3ee',
         'gradient-lavender': '#f2effb',
         'gradient-cyan': '#d4ece5',
+        'caption-gray': '#889397',
         'gradient-gray': {
           1: '#5A5A5A',
           2: '#606060',
@@ -56,6 +57,7 @@ module.exports = {
           700: '#07353C',
           800: '#01080A',
           900: '#0C3440', // primary1
+          950: '#0a2b35',
         },
         'cape-cod': {
           DEFAULT: '#434343',
