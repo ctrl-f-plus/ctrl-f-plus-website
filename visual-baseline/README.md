@@ -24,7 +24,7 @@ Baselines live under `__snapshots__/<platform>/` because system-font metrics dif
 
 ## Controls that keep runs identical
 
-Reduced motion is emulated. Entrances are decided by `motion-safe:` classes and `MotionConfig reducedMotion="user"`, the Atropos tilt by the media query in `src/styles/ctrl-atropos.css`, and the site's own hook only drives interaction-only consumers, so no element carries an entrance transform. Each page is scrolled through once and the run waits for animations and inline fades to finish before reading anything. Fonts are awaited. Locale, time zone, colour scheme, and viewport are pinned in `playwright.config.ts`.
+Reduced motion is emulated. Entrances are decided by `motion-safe:` classes and `MotionConfig reducedMotion="user"`, the Atropos tilt by the media query in `src/styles/ctrl-atropos.css`, and the site's own hook only drives interaction-only and client-only consumers, so no element carries an entrance transform. Each page is scrolled through once and the run waits for animations and inline fades to finish before reading anything. Fonts are awaited. Locale, time zone, colour scheme, and viewport are pinned in `playwright.config.ts`.
 
 ## Not covered
 

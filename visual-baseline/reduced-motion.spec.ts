@@ -17,6 +17,8 @@ const VERTICAL_OFFSET_TRANSFORM = /^translateY\(/;
 
 const CTA_ROOT = '#call-to-action';
 const ATROPOS_ROOT = `${CTA_ROOT} .atropos`;
+// Atropos adds this class to its root when it attaches its pointer listeners.
+const ATROPOS_INITIALISED_ROOT = `${ATROPOS_ROOT}.atropos-rotate-touch`;
 const ATROPOS_ACTIVE_CLASS = /\batropos-active\b/;
 const ATROPOS_MOVING_LAYERS = [
   `${CTA_ROOT} .atropos-rotate`,
@@ -69,22 +71,27 @@ function installMotionRecorder(): void {
     true,
   );
 
+  const recordTransform = (element: Element, transform: string): void => {
+    let history = inlineTransformHistories.get(element);
+    if (!history) {
+      history = { element: describeElement(element), transforms: [] };
+      inlineTransformHistories.set(element, history);
+    }
+    if (!history.transforms.includes(transform)) {
+      history.transforms.push(transform);
+    }
+  };
+
   new MutationObserver((mutations) => {
+    const mutatedElements = new Set<Element>();
     for (const mutation of mutations) {
       if (!(mutation.target instanceof Element)) continue;
-      let history = inlineTransformHistories.get(mutation.target);
-      if (!history) {
-        // The first old value is the server-rendered style the element started with.
-        history = {
-          element: describeElement(mutation.target),
-          transforms: [transformOf(mutation.oldValue)],
-        };
-        inlineTransformHistories.set(mutation.target, history);
-      }
-      const transform = transformOf(mutation.target.getAttribute('style'));
-      if (!history.transforms.includes(transform)) {
-        history.transforms.push(transform);
-      }
+      // The first old value is the server-rendered style the element started with.
+      recordTransform(mutation.target, transformOf(mutation.oldValue));
+      mutatedElements.add(mutation.target);
+    }
+    for (const element of mutatedElements) {
+      recordTransform(element, transformOf(element.getAttribute('style')));
     }
   }).observe(document, {
     attributes: true,
@@ -175,7 +182,7 @@ test.beforeEach(async ({ page }) => {
 test.describe('the home page under reduced motion', () => {
   test.use({ reducedMotion: 'reduce' });
 
-  test('scrolling through the page fades every entrance in without moving it', async ({
+  test('scrolling through the page under reduced motion fades every entrance in without moving it', async ({
     page,
   }) => {
     await page.goto(HOME_PATH);
@@ -197,11 +204,11 @@ test.describe('the home page under reduced motion', () => {
     ).toEqual([]);
   });
 
-  test('hovering the call-to-action card leaves it untilted and unshadowed', async ({
+  test('hovering the call-to-action card under reduced motion leaves it untilted and unshadowed', async ({
     page,
   }) => {
     await page.goto(HOME_PATH);
-    await page.locator(ATROPOS_MOVING_LAYERS[0]).waitFor();
+    await page.locator(ATROPOS_INITIALISED_ROOT).waitFor();
 
     await sweepMouseAcross(page, ATROPOS_ROOT);
 
@@ -228,7 +235,7 @@ test.describe('the home page under reduced motion', () => {
 test.describe('the home page with no motion preference', () => {
   test.use({ reducedMotion: 'no-preference' });
 
-  test('scrolling through the page slides the entrances into place', async ({
+  test('scrolling through the page with no motion preference slides the entrances into place', async ({
     page,
   }) => {
     await page.goto(HOME_PATH);
