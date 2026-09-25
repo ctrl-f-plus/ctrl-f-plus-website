@@ -3,6 +3,7 @@
 
 import '@/styles/ctrl-atropos.css';
 
+import clsx from 'clsx';
 import { domAnimation, LazyMotion, useInView } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
@@ -121,13 +122,10 @@ export default function CallToAction() {
           <div className="absolute top-1/3" ref={ref} />
 
           <div
-            className="h-full w-full"
-            style={{
-              transform:
-                isInView || prefersReducedMotion ? 'none' : 'translateY(24px)',
-              opacity: isInView ? 1 : 0,
-              transition: 'all 1.3s',
-            }}
+            className={clsx(
+              'h-full w-full [transition:all_1.3s]',
+              !isInView && 'opacity-0 motion-safe:translate-y-[24px]',
+            )}
           >
             <div className="laptop:hidden">
               <CardShell
