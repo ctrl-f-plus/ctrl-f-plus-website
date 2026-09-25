@@ -3,10 +3,11 @@
 
 import '@/styles/ctrl-atropos.css';
 
-import { domAnimation, LazyMotion, m, useInView } from 'framer-motion';
+import { domAnimation, LazyMotion, useInView } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
 import { useRef } from 'react';
+import CardShell from './ui/card-shell';
 import Container from './ui/container';
 import { BrowserLabel, InstallButton } from '@/components/install-button';
 
@@ -129,7 +130,11 @@ export default function CallToAction() {
             }}
           >
             <div className="laptop:hidden">
-              <div className="relative isolate flex h-[32.8125rem]  items-center justify-center overflow-hidden  rounded-[2.25rem] bg-shark px-[2.25rem] text-center shadow-xl">
+              <CardShell
+                variant="inverted"
+                shadow="xl"
+                className="relative isolate h-[32.8125rem] overflow-hidden px-[2.25rem] text-center"
+              >
                 <div className="flex w-fit flex-col items-center justify-center gap-9">
                   <CtaColorAccents />
                   <div className="flex w-fit flex-col items-center justify-center gap-9">
@@ -137,7 +142,7 @@ export default function CallToAction() {
                     <CtaButtons />
                   </div>
                 </div>
-              </div>
+              </CardShell>
             </div>
 
             <div className="hidden laptop:block">
@@ -150,7 +155,10 @@ export default function CallToAction() {
                 rotateYMax={prefersReducedMotion ? 0 : 15}
                 rotate={!prefersReducedMotion}
               >
-                <m.div className="relative isolate flex h-[32.8125rem] w-full flex-col items-center justify-center rounded-[2.25rem] bg-shark px-[2.25rem] text-center">
+                <CardShell
+                  variant="inverted"
+                  className="relative isolate h-[32.8125rem] w-full flex-col px-[2.25rem] text-center"
+                >
                   <CtaColorAccents />
                   <div
                     data-atropos-offset={prefersReducedMotion ? 0 : 10}
@@ -159,7 +167,7 @@ export default function CallToAction() {
                     <CtaText />
                     <CtaButtons />
                   </div>
-                </m.div>
+                </CardShell>
               </Atropos>
             </div>
           </div>

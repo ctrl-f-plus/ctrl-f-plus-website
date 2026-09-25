@@ -11,6 +11,7 @@ import {
 } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { useEffect, useMemo } from 'react';
+import CardShell from './ui/card-shell';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
 import fastdom from 'fastdom';
@@ -110,10 +111,12 @@ export default function FeaturesHeader() {
       >
         <FadeIn>
           <Container className="flex w-full flex-col justify-center">
-            <div
+            <CardShell
+              variant="inverted"
+              shadow="xl"
               onMouseMove={handleMouseMove}
               className={clsx(
-                'group relative rounded-[2.25rem] bg-shark shadow-xl wide:min-h-[584px] ',
+                'group relative wide:min-h-[584px]',
                 !prefersReducedMotion && 'wide:cursor-magnifying-glass',
               )}
             >
@@ -155,7 +158,7 @@ export default function FeaturesHeader() {
                   </m.div>
                 </div>
               </div>
-            </div>
+            </CardShell>
           </Container>
         </FadeIn>
       </section>
