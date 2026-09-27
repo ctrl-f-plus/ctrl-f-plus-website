@@ -101,6 +101,7 @@ export default function BlogPage() {
               humble CTRL+F into the ultimate tool for tab enthusiasts:
               CTRL+Shift+F.
             </PageTitleCardDescription>
+
             <PageTitleCardDescription className="desktop:pr-[5rem]">
               Journey with us as we reveal how React, Next.js, Tailwind, and
               Typescript became our allies in our search for a better CTRL+F.

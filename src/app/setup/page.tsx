@@ -26,7 +26,7 @@ export default async function Setup() {
   return (
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
-        <PageTitleCard>
+        <PageTitleCard className="min-h-[318px]">
           <PageTitleCardDate>August 23, 2023</PageTitleCardDate>
           <PageTitleCardTitle>Keyboard Shortcut Setup</PageTitleCardTitle>
 

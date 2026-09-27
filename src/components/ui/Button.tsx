@@ -1,12 +1,13 @@
 // src/components/ui/Button.tsx
 'use client';
 
-import { cva, cx } from '../../../cva.config';
+import { cva } from '../../../cva.config';
 import { VariantProps } from 'cva';
 import { m } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import dynamic from 'next/dynamic';
 import { ButtonHTMLAttributes } from 'react';
+
 const CtrlLink = dynamic(() => import('./ctrl-link'));
 const FilledStarIcon = dynamic(() =>
   import('../icons/button-icons').then((mod) => mod.FilledStarIcon),
@@ -28,16 +29,16 @@ const PuzzleIconWithBg = dynamic(() =>
 );
 
 const btn = cva({
-  base: 'flex justify-center items-center py-2  font-open-sans group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  focus-visible:outline-highlighter-950 relative shadow-sm overflow-hidden',
+  base: 'group relative flex items-center justify-center overflow-hidden py-2 font-open-sans shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlighter-950',
   variants: {
     intent: {
-      solid: 'rounded-[37px] bg-highlighter-900 text-white w-full',
+      solid: 'w-full rounded-[37px] bg-highlighter-900 text-white',
       outline:
-        'border-2 rounded-[37px] border-highlighter-900 text-highlighter-900 focus:outline-none active:text-highlighter-950/70 w-full',
+        'w-full rounded-[37px] border-2 border-highlighter-900 text-highlighter-900 focus:outline-none active:text-highlighter-950/70',
     },
     size: {
-      thin: 'h-14 flex w-full items-center justify-center text-center flex-row text-button-label',
-      phat: 'inline-block w-[231px] text-fs-lg text-white justify-start rounded-full px-5 py-4 ',
+      thin: 'flex h-14 w-full flex-row items-center justify-center text-center text-button-label',
+      phat: 'inline-block w-[231px] justify-start rounded-full px-5 py-4 text-fs-lg text-white',
     },
     animation: {
       none: '',
@@ -55,13 +56,13 @@ const btn = cva({
       intent: 'solid',
       animation: 'none',
       className:
-        'hover:bg-highlighter-900/90 active:bg-highlighter-950 active:text-white/80 ',
+        'hover:bg-highlighter-900/90 active:bg-highlighter-950 active:text-white/80',
     },
     {
       intent: 'outline',
       animation: 'none',
       className:
-        'focus:outline-none hover:bg-highlighter-900/10 active:text-highlighter-950/70',
+        'hover:bg-highlighter-900/10 focus:outline-none active:text-highlighter-950/70',
     },
   ],
 });
@@ -71,36 +72,11 @@ function ColorFill({ animation }: Readonly<VariantProps<typeof btn>>) {
 
   return (
     <span
-      className="pointer-events-none absolute -translate-x-full rotate-[-68.566deg] bg-highlighter-focus-400 transition-transform duration-500 ease-in-out tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80 group-hover:translate-x-0"
+      className="pointer-events-none absolute -translate-x-full rotate-[-68.566deg] bg-highlighter-focus-400 transition-transform duration-500 ease-in-out group-hover:translate-x-0 tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80"
       aria-hidden="true"
     />
   );
 }
-
-// const ColorFill = m.create(function ColorFill({
-//   animation,
-// }: Readonly<VariantProps<typeof btn>>) {
-//   return (
-//     <m.span
-//       className={cx(
-//         animation === 'slice'
-//           ? 'pointer-events-none absolute bg-highlighter-focus-400 [--rotate-from:-68.566deg] [--x-to:0%] tablet:-left-18 tablet:-top-48 tablet:h-[700px] tablet:w-[650px] tablet:[--x-from:-110%] tab-pro:-left-12 tab-pro:-top-30 tab-pro:h-[375px] tab-pro:w-96 tab-pro:[--x-from:-100%] laptop:-left-10 laptop:-top-16 laptop:h-72 laptop:w-80'
-//           : '',
-//       )}
-//       variants={{
-//         initial: {
-//           rotate: 'var(--rotate-from)',
-//           x: 'var(--x-from)',
-//         },
-//         hover: {
-//           x: 'var(--x-to)',
-//         },
-//       }}
-//       transition={{ duration: 0.5, ease: 'easeInOut' }}
-//       aria-hidden="true"
-//     />
-//   );
-// });
 
 interface ButtonProps
   extends
@@ -174,9 +150,9 @@ function Button({
         <ColorFill aria-hidden="true" animation={animation} />
 
         <m.div className="relative flex w-full items-center justify-center gap-2 text-center">
-          {IconComponent && (
+          {IconComponent ? (
             <IconComponent animation={animation} intent={intent} size={size} />
-          )}
+          ) : null}
 
           <span
             className={

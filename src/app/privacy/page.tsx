@@ -27,7 +27,7 @@ export default async function Privacy() {
   return (
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
-        <PageTitleCard>
+        <PageTitleCard className="min-h-[318px]">
           <PageTitleCardDate>August 10, 2023</PageTitleCardDate>
           <PageTitleCardTitle>Privacy Policy</PageTitleCardTitle>
 

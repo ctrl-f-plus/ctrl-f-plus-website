@@ -21,7 +21,12 @@ import {
   PageTitleCardDescription,
   PageTitleCardTitle,
 } from '@/components/page-title-card';
-
+import {
+  InfoCard,
+  InfoCardAction,
+  InfoCardDescription,
+  InfoCardTitle,
+} from '@/components/info-card';
 
 interface Person {
   name: string;
@@ -142,7 +147,7 @@ export default function Page() {
   return (
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
-        <PageTitleCard>
+        <PageTitleCard className="min-h-[318px]">
           <PageTitleCardTitle>About</PageTitleCardTitle>
           <PageTitleCardDescription>
             At <span className="text-highlighter-focus-400">Ctrl-F Plus</span>{' '}
@@ -212,11 +217,31 @@ export default function Page() {
         </PageBodyCard>
 
         {/* InfoCard */}
+        <InfoCard showAccents>
+          <InfoCardTitle>Proudly Open Source</InfoCardTitle>
+          <InfoCardDescription>
+            Got a soft spot for browser extensions or daydream about Typescript?
+            Then hey, if you&apos;re into it, slide into our codebase with your
+            PRs...
+          </InfoCardDescription>
+          <InfoCardAction>
+            <Button
+              intent="outline"
+              size="thin"
+              icon="filledStarIcon"
+              className="group bg-white/[.68]"
+              href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
+              target="_blank"
+              aTag
+            >
+              Star us on GitHub!
+            </Button>
+          </InfoCardAction>
+        </InfoCard>
       </FadeInStagger>
     </Container>
   );
 }
-
 
 // <InfoCard showAccents>
 //   <InfoCardTitle>Proudly Open Source</InfoCardTitle>

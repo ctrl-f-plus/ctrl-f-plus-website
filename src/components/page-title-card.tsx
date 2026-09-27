@@ -43,8 +43,9 @@ function PageTitleCard({
 }>) {
   return (
     <FadeIn
+      //min-h-[318px]
       className={cx(
-        'flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20',
+        'flex w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20',
         className,
       )}
     >
@@ -52,11 +53,12 @@ function PageTitleCard({
         <div className="flex flex-col items-start justify-center gap-6">
           {children}
         </div>
-        {illustration && (
+
+        {illustration ? (
           <div className="hidden flex-col justify-center desktop:flex">
             {illustration}
           </div>
-        )}
+        ) : null}
       </div>
     </FadeIn>
   );
