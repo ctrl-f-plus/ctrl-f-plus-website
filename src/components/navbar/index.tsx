@@ -36,7 +36,6 @@ const navItems: Record<string, NavItem> = {
     linkTag: 'link',
   },
   // [process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL]: {
-  // [process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL]: {
   'https://opencollective.com/ctrl-f-plus-chrome-extension': {
     name: 'Sponsor',
     linkTag: 'a',
