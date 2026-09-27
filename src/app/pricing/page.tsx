@@ -12,7 +12,6 @@ import {
 } from '@/components/page-title-card';
 import { FadeInStagger } from '@/components/fade-in';
 import Container from '@/components/ui/container';
-import PageBodyCard from '@/components/page-body-card';
 
 const API_URL = process.env.API_URL;
 
@@ -33,13 +32,13 @@ export default async function Page() {
   const pricingTiers = await listListings();
 
   return (
-    <Container className="mt-18 flex flex-col tablet:mt-24">
+    <Container className="mt-18 flex w-full flex-col tablet:mt-24">
       <FadeInStagger>
-        <PageTitleCard>
+        <PageTitleCard className="justify-start">
           <PageTitleCardTitle>Pricing</PageTitleCardTitle>
 
           <PageTitleCardDescription>
-            Pick a plan for your tab habit
+            Start free, or choose a paid plan that fits your tab habit.
           </PageTitleCardDescription>
         </PageTitleCard>
 

@@ -1,49 +1,55 @@
 // src/components/feature-cards.tsx
 'use client';
 
-import CardShell from './ui/card-shell';
-import Container from './ui/container';
 import { Listing } from '@/listing.schema';
 import { CheckIcon } from '@/components/icons/check-icon';
-import React from 'react';
-import {
-  FeatureCardDescription,
-  FeatureCardDescription2,
-  FeatureCardSubtitle,
-  FeatureCardTitle,
-} from '@/components/feature-cards';
-import Button from '@/components/ui/Button';
+import { FadeIn } from '@/components/fade-in';
+import React, { useId, useState } from 'react';
+import { cx } from '../../cva.config';
 
-export function PricingFieldSet() {
+type PaymentFrequency = keyof Listing['price'];
+
+export function PricingFieldSet({
+  paymentFrequency,
+  onFrequencyChange,
+}: Readonly<{
+  paymentFrequency: PaymentFrequency;
+  onFrequencyChange: (paymentFrequency: PaymentFrequency) => void;
+}>) {
+  const frequencyGroupId = useId();
+
   return (
     <div
       //mt-16
-      className="flex justify-center"
+      className="ml-auto flex shrink-0"
     >
       <fieldset aria-label="Payment frequency">
-        <div className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-gray-200">
+        <div className="grid grid-cols-2 gap-x-1 rounded-full bg-white/[.68] p-0.5 text-center text-xs/5 font-semibold ring-1 ring-inset ring-highlighter-900/10">
           <label
             //bg-highlighter-900 text-white
-            className="group relative rounded-full px-2.5 py-1 [&:has(:checked)]:bg-highlighter-900"
+            className="group relative flex min-h-[28px] items-center justify-center rounded-full px-2.5 py-1 hover:bg-highlighter-900/5 [&:has(:checked)]:bg-highlighter-900"
           >
             <input
-              defaultValue="monthly"
-              defaultChecked
-              name="frequency"
+              value="monthly"
+              checked={paymentFrequency === 'monthly'}
+              onChange={() => onFrequencyChange('monthly')}
+              name={frequencyGroupId}
               type="radio"
-              className="absolute inset-0 cursor-pointer appearance-none rounded-full"
+              className="absolute inset-0 cursor-pointer appearance-none rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-highlighter-500"
             />
             <span className="text-gray-500 group-[:has(:checked)]:text-white">
               Monthly
             </span>
           </label>
 
-          <label className="group relative rounded-full px-2.5 py-1 [&:has(:checked)]:bg-highlighter-900">
+          <label className="group relative flex min-h-[28px] items-center justify-center rounded-full px-2.5 py-1 hover:bg-highlighter-900/5 [&:has(:checked)]:bg-highlighter-900">
             <input
-              defaultValue="annually"
-              name="frequency"
+              value="annually"
+              checked={paymentFrequency === 'annually'}
+              onChange={() => onFrequencyChange('annually')}
+              name={frequencyGroupId}
               type="radio"
-              className="absolute inset-0 cursor-pointer appearance-none rounded-full"
+              className="absolute inset-0 cursor-pointer appearance-none rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-highlighter-500"
             />
             <span className="text-gray-500 group-[:has(:checked)]:text-white">
               Annually
@@ -55,69 +61,78 @@ export function PricingFieldSet() {
   );
 }
 
-function PricingCard({ tier }: Readonly<{ tier: Listing }>) {
+function PricingCard({
+  tier,
+  paymentFrequency,
+}: Readonly<{ tier: Listing; paymentFrequency: PaymentFrequency }>) {
   return (
-    <div
-      key={tier.id}
+    <article
+      aria-labelledby={`tier-${tier.id}`}
       data-featured={tier.isFeatured ? 'true' : undefined}
       // data-[featured]:ring-highlighter-focus-400
       // data-[featured]:ring-highlighter-900
       // data-[featured]:ring-highlighter-500
-      className="group/tier rounded-3xl bg-white/[.68] p-8 ring-1 ring-gray-200 data-[featured]:ring-2 data-[featured]:ring-highlighter-500 xl:p-10"
+      className="group/tier flex min-w-0 flex-col rounded-3xl bg-white/[.68] p-6 text-shark ring-1 ring-highlighter-900/10 data-[featured]:bg-highlighter-focus-50 data-[featured]:ring-highlighter-focus-400 tablet:p-7 laptop:p-6 wide:p-7"
     >
       {/* -------------------------------------------- */}
-      <FeatureCardTitle>{tier.name}</FeatureCardTitle>
-      <FeatureCardDescription>
-        {tier.price.monthly} / Month
-      </FeatureCardDescription>
-      <FeatureCardDescription>{tier.description}</FeatureCardDescription>
+      <div className="flex min-h-[28px] flex-wrap items-center justify-between gap-2">
+        <h3
+          id={`tier-${tier.id}`}
+          className="font-inter text-card-heading text-shark"
+        >
+          {tier.name}
+        </h3>
+        {tier.isFeatured && (
+          <span className="rounded-full bg-highlighter-focus-100 px-2.5 font-arimo text-body-sm text-shark/80">
+            Featured plan
+          </span>
+        )}
+      </div>
+      <p className="mt-2 font-arimo text-body-sm text-shark/80 laptop:min-h-[3.5rem]">
+        {tier.description}
+      </p>
+      <p
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1"
+      >
+        <span className="font-inter text-subtitle text-shark">
+          {tier.price[paymentFrequency]}
+        </span>
+        <span className="font-arimo text-body-sm text-shark/80">
+          / {paymentFrequency === 'monthly' ? 'month' : 'year'}
+        </span>
+      </p>
 
-      {/*<div className="rounded-xl border p-2">*/}
-      {/* -------------------------------------------- */}
-      {/*<h3 className="mt-6 font-inter text-card-heading text-shark">*/}
-      {/*  {tier.name}*/}
-      {/*</h3>*/}
-      {/*<p className="font-arimo text-body-sm text-shark/80">*/}
-      {/*  {tier.price.monthly} / Month*/}
-      {/*</p>*/}
-      {/*<p className="mt-4 font-arimo text-body-sm text-shark/80">*/}
-      {/*  {tier.description}*/}
-      {/*</p>*/}
-      {/*<button*/}
-      {/*  value={tier.id}*/}
-      {/*  name="tier"*/}
-      {/*  type="submit"*/}
-      {/*  aria-describedby={`tier-${tier.id}`}*/}
-      {/*  className="shadow-xs group-data-featured/tier:bg-white/10 group-data-featured/tier:inset-ring group-data-featured/tier:inset-ring-white/5 group-data-featured/tier:hover:bg-white/20 group-data-featured/tier:focus-visible:outline-white/75 mt-6 block w-full rounded-md bg-highlighter-900 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"*/}
-      {/*>*/}
-      {/*  {tier.cta}*/}
-      {/*</button>*/}
-
-      <Button
-        intent={tier.isFeatured ? 'solid' : 'outline'}
-        size="thin"
-        className="mt-6"
+      <a
+        className={cx(
+          'mt-6 flex min-h-[44px] w-full items-center justify-center rounded-full border px-4 py-2.5 text-center font-open-sans text-button-label focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 motion-safe:transition-colors',
+          tier.isFeatured
+            ? 'border-highlighter-900 bg-highlighter-900 text-white hover:bg-highlighter-900/90 focus-visible:outline-highlighter-500 active:bg-highlighter-950 active:text-white/80'
+            : 'border-highlighter-900/30 text-highlighter-900 hover:bg-highlighter-900/5 focus-visible:outline-highlighter-500 active:text-highlighter-950/70',
+        )}
         href={process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL}
-        aTag
-        target={'_blank'}
+        aria-describedby={`tier-${tier.id}`}
+        target="_blank"
+        rel="noreferrer"
       >
         {tier.cta}
-      </Button>
+      </a>
 
-      <ul className="mt-8 space-y-3 text-sm/6 text-gray-600 xl:mt-10">
+      <ul className="mt-5 space-y-2.5 border-t border-highlighter-900/10 pt-5 font-arimo text-body-sm text-shark/80">
         {tier.features.map((feature) => (
-          <li key={feature} className="flex gap-x-3">
+          <li key={feature} className="flex gap-x-2.5">
             <CheckIcon
               aria-hidden="true"
-              className="h-6 w-5 flex-none text-highlighter-900"
+              className="h-6 w-4 flex-none text-highlighter-500"
             />
-            {feature}
+            <span>{feature}</span>
           </li>
         ))}
       </ul>
 
       {/*</div>*/}
-    </div>
+    </article>
   );
 }
 
@@ -126,9 +141,13 @@ export function PricingCards({
 }: Readonly<{
   pricingTiers: Listing[];
 }>) {
+  const pricingHeadingId = useId();
+  const [paymentFrequency, setPaymentFrequency] =
+    useState<PaymentFrequency>('monthly');
+
   return (
     // <Container className="relative mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
-    <div className="laptop:text-left">
+    <section aria-labelledby={pricingHeadingId} className="mt-8 text-left">
       {/*<CardShell*/}
       {/*  // variant="inverted"*/}
       {/*  shadow="xl"*/}
@@ -138,33 +157,36 @@ export function PricingCards({
       {/*  //*/}
       {/*  className="min-h-154 overflow-hidden tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24"*/}
       {/*>*/}
-      <div
+      <FadeIn
         // gap-9
-        className="flex w-fit flex-col items-center justify-center"
+        className="flex w-full flex-col items-center justify-center"
       >
-        <PricingFieldSet />
-        {/*-------------*/}
-        {/*<FeatureCardTitle>Pricing</FeatureCardTitle>*/}
-        {/*<FeatureCardSubtitle>*/}
-        {/*  Pick a plan for your tab habit*/}
-        {/*</FeatureCardSubtitle>*/}
-        {/*<FeatureCardDescription2>*/}
-        {/*  <PricingFieldSet />*/}
-        {/*</FeatureCardDescription2>*/}
-        {/*-------------*/}
+        <div className="flex w-full max-w-lg flex-wrap items-center justify-between gap-x-2 gap-y-3 laptop:max-w-none">
+          <h2
+            id={pricingHeadingId}
+            className="font-inter text-card-heading text-shark"
+          >
+            Compare plans
+          </h2>
+          <PricingFieldSet
+            paymentFrequency={paymentFrequency}
+            onFrequencyChange={setPaymentFrequency}
+          />
+        </div>
 
         {/* Pricing Tier Cards */}
-        <div
-          // TODO: Review `mt-10` vs `mt-9`
-          className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-        >
+        <div className="isolate mx-auto mt-4 grid w-full max-w-lg grid-cols-1 gap-5 laptop:max-w-none laptop:grid-cols-3">
           {pricingTiers.map((tier: Listing) => (
-            <PricingCard tier={tier} key={tier.id} />
+            <PricingCard
+              tier={tier}
+              paymentFrequency={paymentFrequency}
+              key={tier.id}
+            />
           ))}
         </div>
-      </div>
+      </FadeIn>
       {/*</CardShell>*/}
-    </div>
+    </section>
     // </Container>
   );
 }
