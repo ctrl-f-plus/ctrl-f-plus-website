@@ -39,6 +39,8 @@ const btn = cva({
     size: {
       thin: 'flex h-14 w-full flex-row items-center justify-center text-center text-button-label',
       phat: 'inline-block w-[231px] justify-start rounded-full px-5 py-4 text-fs-lg text-white',
+      compact:
+        'flex min-h-[44px] w-full rounded-full px-4 py-2.5 text-center text-button-label',
     },
     animation: {
       none: '',
@@ -63,6 +65,11 @@ const btn = cva({
       animation: 'none',
       className:
         'hover:bg-highlighter-900/10 focus:outline-none active:text-highlighter-950/70',
+    },
+    {
+      intent: 'outline',
+      size: 'compact',
+      className: 'border border-highlighter-900/20 shadow-none',
     },
   ],
 });
@@ -151,7 +158,11 @@ function Button({
 
         <m.div className="relative flex w-full items-center justify-center gap-2 text-center">
           {IconComponent ? (
-            <IconComponent animation={animation} intent={intent} size={size} />
+            <IconComponent
+              animation={animation}
+              intent={intent}
+              size={size === 'compact' ? 'thin' : size}
+            />
           ) : null}
 
           <span

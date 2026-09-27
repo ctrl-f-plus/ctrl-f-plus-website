@@ -1,10 +1,11 @@
 // src/components/pricing-cards.tsx
 'use client';
 
-import { useId, useState } from 'react';
+import React, { useId, useState } from 'react';
 import { Listing } from '@/listing.schema';
 import { CheckIcon } from '@/components/icons/check-icon';
 import { FadeIn } from '@/components/fade-in';
+import Button from '@/components/ui/Button';
 import { cva } from '../../cva.config';
 
 type PaymentFrequency = keyof Listing['price'];
@@ -29,19 +30,6 @@ const pricingCardVariants = cva({
   defaultVariants: { variant: 'default' },
 });
 
-const pricingCardCtaVariants = cva({
-  base: 'min-h-11 mt-6 flex w-full items-center justify-center rounded-full border px-4 py-2.5 text-center font-open-sans text-button-label focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-highlighter-500 motion-safe:transition-colors',
-  variants: {
-    variant: {
-      default:
-        'border-highlighter-900/30 text-highlighter-900 hover:bg-highlighter-900/5 active:text-highlighter-950/70',
-      inverted:
-        'border-highlighter-900 bg-highlighter-900 text-white hover:bg-highlighter-900/90 active:bg-highlighter-950 active:text-white/80',
-    },
-  },
-  defaultVariants: { variant: 'default' },
-});
-
 export function PaymentFrequencyToggle({
   value,
   onChange,
@@ -54,11 +42,11 @@ export function PaymentFrequencyToggle({
   return (
     <fieldset className="ml-auto shrink-0">
       <legend className="sr-only">Payment frequency</legend>
-      <div className="grid grid-cols-2 gap-x-1 rounded-full bg-white/[.68] p-0.5 text-center text-xs/5 font-semibold ring-1 ring-inset ring-highlighter-900/10">
+      <div className="grid grid-cols-2 gap-x-1 rounded-full bg-white/[.68] p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-highlighter-900/10">
         {paymentFrequencyKeys.map((frequency) => (
           <label
             key={frequency}
-            className="min-h-7 has-[:checked]:bg-highlighter-900 group relative flex items-center justify-center rounded-full px-2.5 py-1 hover:bg-highlighter-900/5"
+            className="group relative flex min-h-[28px] items-center justify-center rounded-full px-2.5 py-1 hover:bg-highlighter-900/5 [&:has(:checked)]:bg-highlighter-900"
           >
             <input
               type="radio"
@@ -68,7 +56,7 @@ export function PaymentFrequencyToggle({
               onChange={() => onChange(frequency)}
               className="absolute inset-0 cursor-pointer appearance-none rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-highlighter-500"
             />
-            <span className="group-has-[:checked]:text-white text-gray-500">
+            <span className="text-gray-500 group-[:has(:checked)]:text-white">
               {paymentFrequencies[frequency].label}
             </span>
           </label>
@@ -81,11 +69,9 @@ export function PaymentFrequencyToggle({
 function PricingCard({
   tier,
   paymentFrequency,
-  ctaHref,
 }: Readonly<{
   tier: Listing;
   paymentFrequency: PaymentFrequency;
-  ctaHref: string;
 }>) {
   const headingId = useId();
   const variant = tier.isFeatured ? 'inverted' : 'default';
@@ -95,7 +81,7 @@ function PricingCard({
       aria-labelledby={headingId}
       className={pricingCardVariants({ variant })}
     >
-      <div className="min-h-7 flex flex-wrap items-center justify-between gap-2">
+      <div className="flex min-h-[28px] flex-wrap items-center justify-between gap-2">
         <h3 id={headingId} className="font-inter text-card-heading text-shark">
           {tier.name}
         </h3>
@@ -106,7 +92,7 @@ function PricingCard({
         )}
       </div>
 
-      <p className="laptop:min-h-14 mt-2 font-arimo text-body-sm text-shark/80">
+      <p className="mt-2 font-arimo text-body-sm text-shark/80 laptop:min-h-[56px]">
         {tier.description}
       </p>
 
@@ -119,15 +105,19 @@ function PricingCard({
         </span>
       </p>
 
-      <a
-        href={ctaHref}
-        target="_blank"
-        rel="noreferrer"
-        aria-describedby={headingId}
-        className={pricingCardCtaVariants({ variant })}
-      >
-        {tier.cta}
-      </a>
+      <div className="mt-3">
+        <Button
+          aTag
+          href={tier.href}
+          target="_blank"
+          rel="noreferrer"
+          aria-describedby={headingId}
+          intent={tier.isFeatured ? 'solid' : 'outline'}
+          size="compact"
+        >
+          {tier.cta}
+        </Button>
+      </div>
 
       <ul className="mt-5 space-y-2.5 border-t border-highlighter-900/10 pt-5 font-arimo text-body-sm text-shark/80">
         {tier.features.map((feature) => (
@@ -146,10 +136,8 @@ function PricingCard({
 
 export function PricingCards({
   pricingTiers,
-  ctaHref,
 }: Readonly<{
   pricingTiers: Listing[];
-  ctaHref: string;
 }>) {
   const headingId = useId();
   const [paymentFrequency, setPaymentFrequency] =
@@ -165,10 +153,12 @@ export function PricingCards({
           >
             Compare plans
           </h2>
-          <PaymentFrequencyToggle
-            value={paymentFrequency}
-            onChange={setPaymentFrequency}
-          />
+          <div>
+            <PaymentFrequencyToggle
+              value={paymentFrequency}
+              onChange={setPaymentFrequency}
+            />
+          </div>
         </div>
 
         <div className="isolate mx-auto mt-4 grid w-full max-w-lg grid-cols-1 gap-5 laptop:max-w-none laptop:grid-cols-3">
@@ -177,7 +167,6 @@ export function PricingCards({
               key={tier.id}
               tier={tier}
               paymentFrequency={paymentFrequency}
-              ctaHref={ctaHref}
             />
           ))}
         </div>
