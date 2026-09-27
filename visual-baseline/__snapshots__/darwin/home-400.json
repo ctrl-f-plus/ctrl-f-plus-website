@@ -180,71 +180,11 @@
     ]
   },
   {
-    "text": "Pricing Section",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
-    "rect": [
-      145.48,
-      3462.3,
-      109.02,
-      24
-    ]
-  },
-  {
-    "text": "Subtitle",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
-    "rect": [
-      172.19,
-      3522.3,
-      55.63,
-      24
-    ]
-  },
-  {
-    "text": "Pro",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
-    "rect": [
-      61,
-      3591.3,
-      278,
-      24
-    ]
-  },
-  {
-    "text": "$2.99 / Month",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
-    "rect": [
-      61,
-      3615.3,
-      278,
-      24
-    ]
-  },
-  {
-    "text": "The perfect plan if you're just getting ",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
-    "rect": [
-      61,
-      3639.3,
-      278,
-      48
-    ]
-  },
-  {
-    "text": "Try Now",
-    "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 400 | 24px | normal | rgb(0, 0, 0) | none | none | normal",
-    "rect": [
-      169.2,
-      3695.3,
-      61.59,
-      24
-    ]
-  },
-  {
     "text": "Take your tab hoarding to the next level",
     "style": "Inter, \"Inter Fallback\" | 33px | 800 | 33px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       52,
-      4035.8,
+      3438.8,
       296,
       99
     ]
@@ -254,7 +194,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       52,
-      4170.8,
+      3573.8,
       296,
       54
     ]
@@ -264,7 +204,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       52,
-      4224.8,
+      3627.8,
       296,
       54
     ]
@@ -274,7 +214,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       164.31,
-      4337.3,
+      3740.3,
       127.36,
       27
     ]
@@ -284,7 +224,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       16,
-      4602.8,
+      4005.8,
       168,
       20.8
     ]
@@ -294,7 +234,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4641.59,
+      4044.59,
       39.42,
       19
     ]
@@ -304,7 +244,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4673.59,
+      4076.59,
       28.61,
       19
     ]
@@ -314,7 +254,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4705.59,
+      4108.59,
       37.69,
       19
     ]
@@ -324,7 +264,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4737.59,
+      4140.59,
       87.45,
       19
     ]
@@ -334,7 +274,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4769.59,
+      4172.59,
       69.19,
       19
     ]
@@ -344,7 +284,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       216,
-      4602.8,
+      4005.8,
       168,
       20.8
     ]
@@ -354,7 +294,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       216,
-      4641.59,
+      4044.59,
       115.53,
       19
     ]
@@ -364,7 +304,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       216,
-      4673.59,
+      4076.59,
       54.08,
       19
     ]
@@ -374,7 +314,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       16,
-      4831.59,
+      4234.59,
       168,
       20.8
     ]
@@ -384,7 +324,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4870.39,
+      4273.39,
       37.41,
       19
     ]
@@ -394,7 +334,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4902.39,
+      4305.39,
       52.38,
       19
     ]
@@ -404,7 +344,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      4934.39,
+      4337.39,
       44.81,
       19
     ]
@@ -414,7 +354,7 @@
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       16,
-      5020.39,
+      4423.39,
       284,
       29.89
     ]
@@ -424,7 +364,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       76,
-      5070.28,
+      4473.28,
       224,
       40
     ]
@@ -434,7 +374,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       16,
-      5140.28,
+      4543.28,
       84.92,
       19
     ]
@@ -444,7 +384,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
     "rect": [
       100.92,
-      5138.28,
+      4541.28,
       74.09,
       22
     ]
@@ -454,7 +394,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       212.56,
-      5267.78,
+      4670.78,
       171.44,
       20
     ]

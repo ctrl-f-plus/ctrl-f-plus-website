@@ -1,0 +1,552 @@
+[
+  {
+    "text": "Home",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      443.23,
+      29,
+      50.88,
+      24
+    ]
+  },
+  {
+    "text": "Features",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      526.11,
+      29,
+      72.91,
+      24
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      631.02,
+      29,
+      36.78,
+      24
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      699.8,
+      29,
+      50.69,
+      24
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      782.48,
+      29,
+      69.52,
+      24
+    ]
+  },
+  {
+    "text": "Pricing",
+    "style": "Inter, \"Inter Fallback\" | 55px | 800 | 66px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      100,
+      215,
+      193.08,
+      66
+    ]
+  },
+  {
+    "text": "Start free, or choose a paid plan that f",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      100,
+      305,
+      464.03,
+      27
+    ]
+  },
+  {
+    "text": "Compare plans",
+    "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      36,
+      422,
+      131.3,
+      32
+    ]
+  },
+  {
+    "text": "Monthly",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 12px | 600 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      725.19,
+      428,
+      47.91,
+      20
+    ]
+  },
+  {
+    "text": "Annually",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 12px | 600 | 20px | normal | rgb(107, 114, 128) | none | none | normal",
+    "rect": [
+      798.77,
+      428,
+      51.23,
+      20
+    ]
+  },
+  {
+    "text": "Free",
+    "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      60,
+      496,
+      38.23,
+      32
+    ]
+  },
+  {
+    "text": "The essentials to provide your best work",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      60,
+      536,
+      214.66,
+      56
+    ]
+  },
+  {
+    "text": "$0",
+    "style": "Inter, \"Inter Fallback\" | 23px | 600 | 29.9px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      60,
+      612,
+      30.14,
+      29.89
+    ]
+  },
+  {
+    "text": "/",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      98.14,
+      615,
+      53.36,
+      28
+    ]
+  },
+  {
+    "text": "Add to Chrome for free",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(12, 52, 64) | none | none | normal",
+    "rect": [
+      77,
+      666,
+      180.66,
+      48
+    ]
+  },
+  {
+    "text": "Cross-tab search",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      86,
+      766,
+      121.83,
+      28
+    ]
+  },
+  {
+    "text": "Native-style find bar in each tab",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      86,
+      804,
+      188.66,
+      56
+    ]
+  },
+  {
+    "text": "Customizable keyboard shortcut",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      86,
+      870,
+      188.66,
+      56
+    ]
+  },
+  {
+    "text": "PDF Viewer",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      86,
+      936,
+      85.06,
+      28
+    ]
+  },
+  {
+    "text": "Pro",
+    "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      342.66,
+      496,
+      29.33,
+      32
+    ]
+  },
+  {
+    "text": "Featured plan",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      438.59,
+      498,
+      118.73,
+      28
+    ]
+  },
+  {
+    "text": "The essentials to provide your best work",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      342.66,
+      536,
+      214.67,
+      56
+    ]
+  },
+  {
+    "text": "$3",
+    "style": "Inter, \"Inter Fallback\" | 23px | 600 | 29.9px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      342.66,
+      612,
+      29.59,
+      29.89
+    ]
+  },
+  {
+    "text": "/",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      380.25,
+      615,
+      53.36,
+      28
+    ]
+  },
+  {
+    "text": "Buy plan",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      412.14,
+      665,
+      75.7,
+      24
+    ]
+  },
+  {
+    "text": "Cross-tab PDF Search",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      368.66,
+      740,
+      160.94,
+      28
+    ]
+  },
+  {
+    "text": "PDF search with case, whole-word, and di",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      368.66,
+      778,
+      188.67,
+      84
+    ]
+  },
+  {
+    "text": "Up to 3 devices",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      368.66,
+      872,
+      110.28,
+      28
+    ]
+  },
+  {
+    "text": "Lifetime",
+    "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      625.33,
+      496,
+      70.02,
+      32
+    ]
+  },
+  {
+    "text": "The essentials to provide your best work",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      625.33,
+      536,
+      214.66,
+      56
+    ]
+  },
+  {
+    "text": "$19",
+    "style": "Inter, \"Inter Fallback\" | 23px | 600 | 29.9px | normal | rgb(27, 37, 40) | none | none | normal",
+    "rect": [
+      625.33,
+      612,
+      39.41,
+      29.89
+    ]
+  },
+  {
+    "text": "/",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      672.73,
+      615,
+      53.36,
+      28
+    ]
+  },
+  {
+    "text": "Buy plan",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(12, 52, 64) | none | none | normal",
+    "rect": [
+      694.8,
+      666,
+      75.7,
+      24
+    ]
+  },
+  {
+    "text": "5 products",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      651.33,
+      742,
+      74.72,
+      28
+    ]
+  },
+  {
+    "text": "Up to 1,000 subscribers",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      651.33,
+      780,
+      168.98,
+      28
+    ]
+  },
+  {
+    "text": "Basic analytics",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      651.33,
+      818,
+      105.83,
+      28
+    ]
+  },
+  {
+    "text": "48-hour support response time",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      651.33,
+      856,
+      188.66,
+      56
+    ]
+  },
+  {
+    "text": "Company",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      36,
+      1156,
+      111.33,
+      20.8
+    ]
+  },
+  {
+    "text": "About",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1194.8,
+      39.42,
+      19
+    ]
+  },
+  {
+    "text": "Blog",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1226.8,
+      28.61,
+      19
+    ]
+  },
+  {
+    "text": "Setup",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1258.8,
+      37.69,
+      19
+    ]
+  },
+  {
+    "text": "Privacy Policy",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1290.8,
+      87.45,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1322.8,
+      69.19,
+      19
+    ]
+  },
+  {
+    "text": "Contribute",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      179.33,
+      1156,
+      111.33,
+      20.8
+    ]
+  },
+  {
+    "text": "Star us on GitHub",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      179.33,
+      1194.8,
+      65.72,
+      43
+    ]
+  },
+  {
+    "text": "Sponsor",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      179.33,
+      1250.8,
+      54.08,
+      19
+    ]
+  },
+  {
+    "text": "Download",
+    "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      322.66,
+      1156,
+      111.34,
+      20.8
+    ]
+  },
+  {
+    "text": "Brave",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      1194.8,
+      37.41,
+      19
+    ]
+  },
+  {
+    "text": "Chrome",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      1226.8,
+      52.38,
+      19
+    ]
+  },
+  {
+    "text": "Firefox",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      322.66,
+      1258.8,
+      44.81,
+      19
+    ]
+  },
+  {
+    "text": "Let's improve it together!",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      580,
+      1156,
+      284,
+      29.89
+    ]
+  },
+  {
+    "text": "This project is open source and we welco",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      640,
+      1205.89,
+      224,
+      40
+    ]
+  },
+  {
+    "text": "github.com/",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      642.48,
+      1275.89,
+      84.92,
+      19
+    ]
+  },
+  {
+    "text": "ctrl-f-plus",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
+    "rect": [
+      727.41,
+      1273.89,
+      74.09,
+      22
+    ]
+  },
+  {
+    "text": "copyright",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
+    "rect": [
+      692.56,
+      1474.3,
+      171.44,
+      20
+    ]
+  }
+]
