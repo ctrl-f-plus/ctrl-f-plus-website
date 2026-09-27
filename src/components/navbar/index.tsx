@@ -36,9 +36,10 @@ const navItems: Record<string, NavItem> = {
     linkTag: 'link',
   },
   // [process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL]: {
-  'https://opencollective.com/ctrl-f-plus-chrome-extension': {
-    name: 'Sponsor',
-    linkTag: 'a',
+  // 'https://opencollective.com/ctrl-f-plus-chrome-extension': {
+  '/pricing': {
+    name: 'Pricing',
+    linkTag: 'link',
   },
 };
 
@@ -49,8 +50,8 @@ export default function Navbar() {
   const pathname = usePathname() || '/';
 
   return (
-    <header className="pt-5 wide:pt-12 ">
-      <Container className=" flex w-full items-center justify-between ">
+    <header className="pt-5 wide:pt-12">
+      <Container className="flex w-full items-center justify-between">
         <nav
           className="mx-auto flex h-auto w-full items-center justify-between p-2"
           aria-label="Global"
@@ -86,7 +87,7 @@ export default function Navbar() {
                     href={path}
                     target={name === 'Sponsor' ? '_blank' : '_self'}
                     className={clsx(
-                      'mx-1 text-highlighter-500 transition-all ',
+                      'mx-1 text-highlighter-500 transition-all',
                       {
                         '!text-shark hover:!text-shark/80': !isActive,
                       },

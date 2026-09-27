@@ -77,7 +77,7 @@ export default async function Blog({
     <section>
       <Container className="mt-18 flex flex-col tablet:mt-24">
         <FadeInStagger>
-          <FadeIn className="relative flex min-h-[318px] w-full items-center justify-start rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20 ">
+          <FadeIn className="relative flex min-h-[318px] w-full items-center justify-start rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20">
             <Link
               href="/blog"
               className="group absolute -top-10 left-0 flex w-fit items-center justify-start gap-2 font-open-sans text-button-18 text-mongo-black"
@@ -98,8 +98,8 @@ export default async function Blog({
               </span>
             </Link>
 
-            <div className="flex justify-start gap-[9.375rem] ">
-              <div className="flex flex-col items-start justify-center gap-6 ">
+            <div className="flex justify-start gap-[9.375rem]">
+              <div className="flex flex-col items-start justify-center gap-6">
                 <div className="flex flex-col gap-3">
                   <p className="font-open-sans text-caption-gray tab-pro:text-fs-lg">
                     {formatDate(post.publishedAt)}
@@ -110,7 +110,7 @@ export default async function Blog({
                   </h1>
                 </div>
 
-                <div className="relative flex items-center space-x-2 ">
+                <div className="relative flex items-center space-x-2">
                   <Image
                     src="/images/ben-avatar.png"
                     width={1024}

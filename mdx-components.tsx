@@ -159,7 +159,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     code: ({ className, ...props }: any) => (
       <code
         className={clsx(
-          'relative rounded  px-[0.3rem] py-[0.2rem] font-mono text-sm',
+          'relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm',
           className
         )}
         {...props}

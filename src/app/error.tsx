@@ -31,7 +31,7 @@ export default function ErrorPage({ error, reset }: Readonly<ErrorPageProps>) {
             <p className="mt-6 text-body-sm text-gray-600">
               Something went wrong...
             </p>
-            <div className="mt-10 flex w-full items-center justify-center ">
+            <div className="mt-10 flex w-full items-center justify-center">
               <div className="w-3/4">
                 <Button
                   intent="solid"

@@ -30,14 +30,14 @@ function CardText({
     : `wide:text-cape-cod`;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18 ">
+    <div className="flex flex-col items-center justify-center gap-9 px-5 py-24 text-center tablet:py-22 wide:py-18">
       <h2 className={clsx('font-inter text-fs-base text-white', textColor)}>
         Tab Junkie? Meet Your New Best Friend.
       </h2>
 
       <h3
         className={clsx(
-          'max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl ',
+          'max-w-[36.125rem] bg-gradient-to-r from-gradient-blue via-gradient-cyan to-gradient-lavender bg-clip-text font-inter text-fs-x0 text-transparent tab-pro:text-fs-xl',
           !prefersReducedMotion && wideTextColor,
           !prefersReducedMotion &&
             'wide:bg-transparent wide:from-gradient-gray-1 wide:via-gradient-gray-2 wide:to-gradient-gray-2',
@@ -47,7 +47,7 @@ function CardText({
       </h3>
       <p
         className={clsx(
-          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white ',
+          'h-auto max-w-[33.9375rem] font-open-sans text-fs-lg text-white',
           textColor,
         )}
       >

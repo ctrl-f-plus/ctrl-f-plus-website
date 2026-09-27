@@ -5,7 +5,7 @@
 import { useInView } from 'framer-motion';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import Image from 'next/image';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import CardShell from './ui/card-shell';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
@@ -45,12 +45,55 @@ const features = [
 //   return index % 2 === 1 ? '500px' : '-500px';
 // };
 
-function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
+function FeatureCardTitle({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <h2 className="text-center font-inter text-fs-base text-highlighter-900 [text-wrap:balance] laptop:text-left">
+      {children}
+    </h2>
+  );
+}
+
+function FeatureCardSubtitle({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-shark tablet:max-w-[525px] tab-pro:text-fs-xl laptop:max-w-[521px] laptop:text-left">
+      {children}
+    </h3>
+  );
+}
+
+function FeatureCardDescription({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-shark [text-wrap:balance] tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
+      {children}
+    </p>
+  );
+}
+
+function FeatureCardDescription2({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <div className="max-w-[19rem] text-center font-open-sans text-fs-lg text-shark [text-wrap:balance] tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
+      {children}
+    </div>
+  );
+}
+
+function AnimateCard({
+  children,
+  feat,
+  index,
+}: Readonly<{ children: React.ReactNode; feat: any; index: number }>) {
   let prefersReducedMotion = useReducedMotion();
+
   const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-  });
+  const isInView = useInView(ref, { once: true });
 
   return (
     <>
@@ -69,7 +112,7 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
         <div className="flex flex-col">
           <div className="flex flex-col gap-9 laptop:flex-row">
             <div
-              className={`flex items-center justify-center   ${
+              className={`flex items-center justify-center ${
                 index % 2 === 1 ? 'laptop:order-last' : ''
               }`}
             >
@@ -109,7 +152,7 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
             </div>
 
             <div
-              className={`flex w-full  ${
+              className={`flex w-full ${
                 index % 2 === 1 ? '' : 'laptop:justify-end'
               } `}
             >
@@ -118,7 +161,6 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
                 style={{
                   opacity: isInView ? 1 : 0,
                   transform: isInView ? 'none' : 'translateY(500px)',
-
                   // transform:
                   //   isInView || prefersReducedMotion
                   //     ? 'none'
@@ -127,17 +169,7 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
                 }}
               >
                 <div className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start">
-                  <h2 className="text-center font-inter text-fs-base text-highlighter-900 [text-wrap:balance] laptop:text-left">
-                    {feat.title}
-                  </h2>
-
-                  <h3 className="max-w-[305px] text-center font-inter text-fs-x0 text-shark tablet:max-w-[525px] tab-pro:text-fs-xl laptop:max-w-[521px] laptop:text-left">
-                    {feat.subTitle}
-                  </h3>
-
-                  <p className="max-w-[19rem] text-center font-open-sans text-fs-lg text-shark [text-wrap:balance] tablet:max-w-[23.6875rem] laptop:max-w-[491px] laptop:text-left">
-                    {feat.description}
-                  </p>
+                  {children}
                 </div>
               </span>
             </div>
@@ -148,7 +180,7 @@ function AnimateCard({ feat, index }: Readonly<{ feat: any; index: number }>) {
   );
 }
 
-export default function FeatureCards() {
+function FeatureCards() {
   return (
     <>
       {features.map((feat, index) => {
@@ -156,7 +188,13 @@ export default function FeatureCards() {
           <FadeIn key={feat.title} className="">
             <Container className="relative mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
               <div className="laptop:text-left">
-                <AnimateCard feat={feat} index={index} />
+                <AnimateCard feat={feat} index={index}>
+                  <FeatureCardTitle>{feat.title}</FeatureCardTitle>
+                  <FeatureCardSubtitle>{feat.subTitle}</FeatureCardSubtitle>
+                  <FeatureCardDescription>
+                    {feat.description}
+                  </FeatureCardDescription>
+                </AnimateCard>
               </div>
             </Container>
           </FadeIn>
@@ -165,3 +203,12 @@ export default function FeatureCards() {
     </>
   );
 }
+
+export {
+  FeatureCardTitle,
+  FeatureCardSubtitle,
+  FeatureCardDescription,
+  AnimateCard,
+  FeatureCards,
+  FeatureCardDescription2,
+};

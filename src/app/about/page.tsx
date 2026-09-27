@@ -16,7 +16,12 @@ import {
   WebsiteIcon,
 } from '@/components/icons/social-icons';
 import PageBodyCard from '@/components/page-body-card';
-import PageTitleCard from '@/components/page-title-card';
+import {
+  PageTitleCard,
+  PageTitleCardDescription,
+  PageTitleCardTitle,
+} from '@/components/page-title-card';
+
 
 interface Person {
   name: string;
@@ -138,33 +143,29 @@ export default function Page() {
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
         <PageTitleCard>
-          <h1 className="font-inter text-fs-xl text-shark">About</h1>
-
-          <p className="font-open-sans text-fs-lg text-shark">
-            At <span className="text-highlighter-focus-400 ">Ctrl-F Plus</span>{' '}
+          <PageTitleCardTitle>About</PageTitleCardTitle>
+          <PageTitleCardDescription>
+            At <span className="text-highlighter-focus-400">Ctrl-F Plus</span>{' '}
             we&apos;re not just pixel pushers; we&apos;re certified tab
             hoarders, just like you! Lost in the abyss of endless tabs? Been
             there, done that, got the T-shirt. That&apos;s why we&apos;re
             letting our tabs run wild as we transform the old school CTRL F
             shortcut (Cmd F for our Apple buddies) into the productivity tool
             that you&apos;ve been searching for.
-          </p>
-          <p className="font-open-sans text-fs-lg text-shark">
+          </PageTitleCardDescription>
+          <PageTitleCardDescription>
             Our grand plan? Snatch those fleeting moments from the jaws of tab
             chaos and gift them back to you. So you can get back to
             binge-watching cat videos or, you know, other important stuff.
-          </p>
+          </PageTitleCardDescription>
         </PageTitleCard>
 
         <PageBodyCard>
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8  xl:grid-cols-2">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 xl:grid-cols-2">
             <h2 className="font-inter text-fs-middle text-shark">Our Team</h2>
             <ul className="mx-auto mt-6 grid grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2">
               {team.map((person: Person) => (
-                <li
-                  key={person.name}
-                  className="flex flex-col justify-between "
-                >
+                <li key={person.name} className="flex flex-col justify-between">
                   <div>
                     <Image
                       className="aspect-[3/2] w-full rounded-2xl bg-[#D3D7DA]/70 object-cover"
@@ -191,9 +192,9 @@ export default function Page() {
               ))}
             </ul>
           </div>
-          <div className=" flex w-full items-center justify-center overflow-hidden ">
-            <div className="isolate mt-5 flex  w-full flex-col items-center justify-center laptop:w-3/4">
-              <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5 ">
+          <div className="flex w-full items-center justify-center overflow-hidden">
+            <div className="isolate mt-5 flex w-full flex-col items-center justify-center laptop:w-3/4">
+              <div className="flex w-full flex-col justify-self-center tablet:justify-self-start laptop:w-2/5">
                 <Button
                   intent="solid"
                   size="thin"
@@ -209,7 +210,32 @@ export default function Page() {
             </div>
           </div>
         </PageBodyCard>
+
+        {/* InfoCard */}
       </FadeInStagger>
     </Container>
   );
 }
+
+
+// <InfoCard showAccents>
+//   <InfoCardTitle>Proudly Open Source</InfoCardTitle>
+//   <InfoCardDescription>
+//     Got a soft spot for browser extensions or daydream about Typescript?
+//     Then hey, if you&apos;re into it, slide into our codebase with your
+//     PRs...
+//   </InfoCardDescription>
+//   <InfoCardAction>
+//     <Button
+//       intent="outline"
+//       size="thin"
+//       icon="filledStarIcon"
+//       className="group bg-white/[.68]"
+//       href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
+//       target="_blank"
+//       aTag
+//     >
+//       Star us on GitHub!
+//     </Button>
+//   </InfoCardAction>
+// </InfoCard>

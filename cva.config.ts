@@ -16,6 +16,8 @@ const CUSTOM_FONT_SIZE_TOKENS = [
   'fs-xx',
   'fs-xl',
   'subtitle',
+  'status',
+  'status-lg',
   'h1-blog',
   'p-blog',
   'button-18',
