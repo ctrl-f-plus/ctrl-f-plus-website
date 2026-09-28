@@ -68,7 +68,7 @@ export class StaticSiteStack extends cdk.Stack {
         ).withConditions({
           StringEquals: {
             'token.actions.githubusercontent.com:aud': 'sts.amazonaws.com',
-            'token.actions.githubusercontent.com:sub': `repo:${githubRepository}:ref:refs/heads/master`,
+            'token.actions.githubusercontent.com:sub': `repo:${githubRepository}:ref:refs/heads/main`,
           },
         }),
       },

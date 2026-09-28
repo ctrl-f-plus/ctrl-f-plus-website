@@ -146,7 +146,7 @@ The script executes the following phases in order:
 
 ## Routine deployment
 
-Production deploys run automatically via GitHub Actions on push to `master`.
+Production deploys run automatically via GitHub Actions on push to `main`.
 See [`../../.github/CI-CD.md`](../../.github/CI-CD.md) for the pipeline details.
 
 ### Content-only changes

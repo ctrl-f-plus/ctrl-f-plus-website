@@ -8,7 +8,7 @@ on:
       - 'infrastructure/cloudflare/**'
       - '.github/workflows/cloudflare-infra.yml'
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - 'infrastructure/cloudflare/**'
       - '.github/workflows/cloudflare-infra.yml'

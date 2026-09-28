@@ -13,12 +13,12 @@ For the infrastructure runbook (first deploy, routine deploys, rollback) see
 
 | Workflow                  | File                                                                               | Trigger                                                                                   | Purpose                                                                                                                                                           |
 |---------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CI                        | [`./workflows/ci.yml`](./workflows/ci.yml)                                         | Push to `master`, pull request to `master`, manual dispatch                               | Orchestrates workflow linting, build, and gated deploy                                                                                                            |
+| CI                        | [`./workflows/ci.yml`](./workflows/ci.yml)                                         | Push to `main`, pull request to `main`, manual dispatch                                   | Orchestrates workflow linting, build, and gated deploy                                                                                                            |
 | GitHub Workflow Lint      | [`./workflows/github-workflow-lint.yml`](./workflows/github-workflow-lint.yml)     | `workflow_call`                                                                           | Installs actionlint and validates workflow files                                                                                                                  |
 | Build Static Site         | [`./workflows/build-static-site.yml`](./workflows/build-static-site.yml)           | `workflow_call`                                                                           | Builds the static site and uploads the deployable `dist/` artifact                                                                                                |
 | Deploy Static Site        | [`./workflows/deploy-static-site.yml`](./workflows/deploy-static-site.yml)         | `workflow_call`                                                                           | Downloads the artifact, deploys it to AWS, invalidates CloudFront, and creates the next deployment tag                                                            |
 | Lighthouse Static Site    | [`./workflows/lighthouse-static-site.yml`](./workflows/lighthouse-static-site.yml) | `workflow_call`                                                                           | Reusable Lighthouse CI audit — **currently disabled** in `ci.yml` (commented out)                                                                                 |
-| Cloudflare Infrastructure | [`./workflows/cloudflare-infra.yml`](./workflows/cloudflare-infra.yml)             | Pull request or push to `master` touching `infrastructure/cloudflare/**`, manual dispatch | Standalone, not called from `ci.yml`: checks formatting, initializes without a backend and validates the Terraform root; runs `terraform plan` on manual dispatch |
+| Cloudflare Infrastructure | [`./workflows/cloudflare-infra.yml`](./workflows/cloudflare-infra.yml)             | Pull request or push to `main` touching `infrastructure/cloudflare/**`, manual dispatch   | Standalone, not called from `ci.yml`: checks formatting, initializes without a backend and validates the Terraform root; runs `terraform plan` on manual dispatch |
 
 ### Live CI Flow
 
@@ -34,7 +34,7 @@ the reusable workflows together with the current repo defaults:
 | `TAG_PREFIX`     | `v`                                        |
 
 Concurrency group `ci-${{ github.ref }}`; `cancel-in-progress` is `true` on
-non-`master` branches and `false` on `master` (master runs always complete so
+non-`main` branches and `false` on `main` (main runs always complete so
 every commit that reaches the default branch produces a deployable artifact).
 
 Jobs run in this order:
@@ -43,7 +43,7 @@ Jobs run in this order:
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub Workflow Lint | Checks out the repo, installs the pinned actionlint binary, and validates `.github/workflows/*.yml`                                                         |
 | Build                | Checks out the repo, installs pnpm, sets up Node from [`../.nvmrc`](../.nvmrc), runs `pnpm install --frozen-lockfile`, runs `pnpm build`, and uploads `dist/` |
-| Deploy               | Runs only after GitHub Workflow Lint and Build succeed, and only for `push` or `workflow_dispatch` on `refs/heads/master`                                   |
+| Deploy               | Runs only after GitHub Workflow Lint and Build succeed, and only for `push` or `workflow_dispatch` on `refs/heads/main`                                     |
 
 Workflow linting is intentionally scoped to workflow files only. It does not
 validate repo-local composite action metadata under `.github/actions/`.
