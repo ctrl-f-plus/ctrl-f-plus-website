@@ -120,7 +120,8 @@ export default function CallToAction() {
           <div
             className={clsx(
               'h-full w-full [transition:all_1.3s]',
-              !isInView && 'opacity-0 motion-safe:translate-y-[24px]',
+              !isInView &&
+                'motion-safe:translate-y-[24px] motion-safe:opacity-0',
             )}
           >
             <div className="laptop:hidden">

@@ -99,7 +99,7 @@ function AnimateCard({
       <CardShell
         className={clsx(
           'min-h-154 overflow-hidden [transition:all_1.3s] tablet:p-9 tab-pro:p-14 laptop:min-h-146 laptop:p-16 desktop:p-20 wide:p-24',
-          !isInView && 'opacity-0 motion-safe:translate-y-[24px]',
+          !isInView && 'motion-safe:translate-y-[24px] motion-safe:opacity-0',
         )}
       >
         <div className="flex flex-col">
@@ -112,7 +112,10 @@ function AnimateCard({
               <span
                 className={clsx(
                   'block [transition:all_1.9s]',
-                  !isInView && ['opacity-0', feat.hiddenOffsetClass],
+                  !isInView && [
+                    'motion-safe:opacity-0',
+                    feat.hiddenOffsetClass,
+                  ],
                 )}
               >
                 {
@@ -143,7 +146,8 @@ function AnimateCard({
               <span
                 className={clsx(
                   'block [transition:all_1.9s]',
-                  !isInView && 'opacity-0 motion-safe:translate-y-[500px]',
+                  !isInView &&
+                    'motion-safe:translate-y-[500px] motion-safe:opacity-0',
                 )}
               >
                 <div className="flex w-fit flex-col items-center justify-center gap-9 px-1 mobile-md:px-0 laptop:items-start">
