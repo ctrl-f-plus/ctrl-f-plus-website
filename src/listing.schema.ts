@@ -2,24 +2,43 @@
 
 import { z } from 'zod';
 
-export const LISTING_ID = {
+// Upstream imports this from @repo/toolbox-validators, which the website cannot depend on.
+export const CURRENCY = {
+  USD: 'usd',
+} as const;
+
+export const PRICING_TIER_ID = {
   FREE: 'tier-free',
   PRO: 'tier-pro',
   LIFETIME: 'tier-lifetime',
 } as const;
 
-export const listingIdSchema = z.enum(LISTING_ID);
-export type ListingId = z.infer<typeof listingIdSchema>;
+export const BILLING_PERIOD = {
+  MONTH: 'month',
+  YEAR: 'year',
+} as const;
 
-export const listingSchema = z.object({
-  id: listingIdSchema,
-  name: z.string(),
+export const currencySchema = z.enum(CURRENCY);
+export const pricingTierIdSchema = z.enum(PRICING_TIER_ID);
+export const billingPeriodSchema = z.enum(BILLING_PERIOD);
+export const pricingPlanSchema = z.object({
+  billingPeriod: billingPeriodSchema.nullable(),
+  amount: z.number().int().nonnegative(),
+  currency: currencySchema,
   href: z.string(),
-  price: z.object({ monthly: z.string(), annually: z.string() }),
+});
+export const pricingTierSchema = z.object({
+  id: pricingTierIdSchema,
+  name: z.string(),
   description: z.string(),
   features: z.array(z.string()),
   isFeatured: z.boolean(),
   cta: z.string(),
+  plans: z.array(pricingPlanSchema).min(1),
 });
 
-export type Listing = z.infer<typeof listingSchema>;
+export type Currency = z.infer<typeof currencySchema>;
+export type PricingPlan = z.infer<typeof pricingPlanSchema>;
+export type PricingTier = z.infer<typeof pricingTierSchema>;
+export type BillingPeriod = z.infer<typeof billingPeriodSchema>;
+export type PricingTierId = z.infer<typeof pricingTierIdSchema>;

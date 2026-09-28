@@ -2,22 +2,23 @@
 'use client';
 
 import React, { useId, useState } from 'react';
-import { Listing } from '@/listing.schema';
+import { BILLING_PERIOD, BillingPeriod, PricingTier } from '@/listing.schema';
+import {
+  describePlanBillingPeriod,
+  formatPlanPrice,
+  selectPlanForBillingPeriod,
+} from '@/lib/pricing';
 import { CheckIcon } from '@/components/icons/check-icon';
 import { FadeIn } from '@/components/fade-in';
 import Button from '@/components/ui/Button';
 import { cva } from '../../cva.config';
 
-type PaymentFrequency = keyof Listing['price'];
+const billingPeriodOptions = {
+  [BILLING_PERIOD.MONTH]: { label: 'Monthly' },
+  [BILLING_PERIOD.YEAR]: { label: 'Annually' },
+} satisfies Record<BillingPeriod, { label: string }>;
 
-const paymentFrequencies = {
-  monthly: { label: 'Monthly', unit: 'month' },
-  annually: { label: 'Annually', unit: 'year' },
-} satisfies Record<PaymentFrequency, { label: string; unit: string }>;
-
-const paymentFrequencyKeys = Object.keys(
-  paymentFrequencies,
-) as PaymentFrequency[];
+const billingPeriodKeys = Object.keys(billingPeriodOptions) as BillingPeriod[];
 
 const pricingCardVariants = cva({
   base: 'flex min-w-0 flex-col rounded-3xl p-6 text-shark ring-1 tablet:p-7 laptop:p-6 wide:p-7',
@@ -30,12 +31,12 @@ const pricingCardVariants = cva({
   defaultVariants: { variant: 'default' },
 });
 
-export function PaymentFrequencyToggle({
+export function BillingPeriodToggle({
   value,
   onChange,
 }: Readonly<{
-  value: PaymentFrequency;
-  onChange: (value: PaymentFrequency) => void;
+  value: BillingPeriod;
+  onChange: (value: BillingPeriod) => void;
 }>) {
   const groupName = useId();
 
@@ -43,21 +44,21 @@ export function PaymentFrequencyToggle({
     <fieldset className="ml-auto shrink-0">
       <legend className="sr-only">Payment frequency</legend>
       <div className="grid grid-cols-2 gap-x-1 rounded-full bg-white/[.68] p-1 text-center text-xs/5 font-semibold ring-1 ring-inset ring-highlighter-900/10">
-        {paymentFrequencyKeys.map((frequency) => (
+        {billingPeriodKeys.map((billingPeriod) => (
           <label
-            key={frequency}
+            key={billingPeriod}
             className="group relative flex min-h-[28px] items-center justify-center rounded-full px-2.5 py-1 hover:bg-highlighter-900/5 [&:has(:checked)]:bg-highlighter-900"
           >
             <input
               type="radio"
               name={groupName}
-              value={frequency}
-              checked={value === frequency}
-              onChange={() => onChange(frequency)}
+              value={billingPeriod}
+              checked={value === billingPeriod}
+              onChange={() => onChange(billingPeriod)}
               className="absolute inset-0 cursor-pointer appearance-none rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-highlighter-500"
             />
             <span className="text-gray-500 group-[:has(:checked)]:text-white">
-              {paymentFrequencies[frequency].label}
+              {billingPeriodOptions[billingPeriod].label}
             </span>
           </label>
         ))}
@@ -68,13 +69,15 @@ export function PaymentFrequencyToggle({
 
 function PricingCard({
   tier,
-  paymentFrequency,
+  billingPeriod,
 }: Readonly<{
-  tier: Listing;
-  paymentFrequency: PaymentFrequency;
+  tier: PricingTier;
+  billingPeriod: BillingPeriod;
 }>) {
   const headingId = useId();
   const variant = tier.isFeatured ? 'inverted' : 'default';
+  const selectedPlan = selectPlanForBillingPeriod(tier.plans, billingPeriod);
+  const billingPeriodSuffix = describePlanBillingPeriod(selectedPlan);
 
   return (
     <article
@@ -98,17 +101,19 @@ function PricingCard({
 
       <p className="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
         <span className="font-inter text-subtitle text-shark">
-          {tier.price[paymentFrequency]}
+          {formatPlanPrice(selectedPlan)}
         </span>
-        <span className="font-arimo text-body-sm text-shark/80">
-          / {paymentFrequencies[paymentFrequency].unit}
-        </span>
+        {billingPeriodSuffix && (
+          <span className="font-arimo text-body-sm text-shark/80">
+            {billingPeriodSuffix}
+          </span>
+        )}
       </p>
 
       <div className="mt-3">
         <Button
           aTag
-          href={tier.href}
+          href={selectedPlan.href}
           target="_blank"
           rel="noreferrer"
           aria-describedby={headingId}
@@ -137,11 +142,12 @@ function PricingCard({
 export function PricingCards({
   pricingTiers,
 }: Readonly<{
-  pricingTiers: Listing[];
+  pricingTiers: PricingTier[];
 }>) {
   const headingId = useId();
-  const [paymentFrequency, setPaymentFrequency] =
-    useState<PaymentFrequency>('monthly');
+  const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>(
+    BILLING_PERIOD.MONTH,
+  );
 
   return (
     <section aria-labelledby={headingId} className="mt-8 text-left">
@@ -154,9 +160,9 @@ export function PricingCards({
             Compare plans
           </h2>
           <div>
-            <PaymentFrequencyToggle
-              value={paymentFrequency}
-              onChange={setPaymentFrequency}
+            <BillingPeriodToggle
+              value={billingPeriod}
+              onChange={setBillingPeriod}
             />
           </div>
         </div>
@@ -166,7 +172,7 @@ export function PricingCards({
             <PricingCard
               key={tier.id}
               tier={tier}
-              paymentFrequency={paymentFrequency}
+              billingPeriod={billingPeriod}
             />
           ))}
         </div>

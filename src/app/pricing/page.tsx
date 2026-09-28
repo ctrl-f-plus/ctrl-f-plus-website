@@ -1,10 +1,10 @@
-// src/app/page.tsx
+// src/app/pricing/page.tsx
 import 'server-only';
 
 import { PricingCards } from '@/components/pricing-cards';
 import React from 'react';
 import { z } from 'zod';
-import { Listing, listingSchema } from '@/listing.schema';
+import { PricingTier, pricingTierSchema } from '@/listing.schema';
 import {
   PageTitleCard,
   PageTitleCardDescription,
@@ -15,7 +15,11 @@ import Container from '@/components/ui/container';
 
 const API_URL = process.env.API_URL;
 
-async function listListings(): Promise<Listing[]> {
+const listingsResponseSchema = z.object({
+  data: z.array(pricingTierSchema),
+});
+
+async function listListings(): Promise<PricingTier[]> {
   const res = await fetch(`${API_URL}/v1/listings`, {
     next: { revalidate: 3600 },
   });
@@ -24,8 +28,7 @@ async function listListings(): Promise<Listing[]> {
       `Failed to fetch listings: ${res.status} ${res.statusText}`,
     );
   }
-  const resJson = await res.json();
-  return z.array(listingSchema).parse(resJson.data);
+  return listingsResponseSchema.parse(await res.json()).data;
 }
 
 export default async function Page() {
