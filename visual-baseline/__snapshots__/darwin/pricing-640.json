@@ -80,21 +80,11 @@
     ]
   },
   {
-    "text": "/",
-    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
-    "rect": [
-      130.14,
-      623,
-      53.36,
-      28
-    ]
-  },
-  {
     "text": "Add to Chrome for free",
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(12, 52, 64) | none | none | normal",
     "rect": [
       219.73,
-      674,
+      672.89,
       200.53,
       24
     ]
@@ -104,7 +94,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      750,
+      748.89,
       121.83,
       28
     ]
@@ -114,7 +104,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      788,
+      786.89,
       224.13,
       28
     ]
@@ -124,7 +114,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      826,
+      824.89,
       228.56,
       28
     ]
@@ -134,7 +124,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      864,
+      862.89,
       85.06,
       28
     ]
@@ -144,7 +134,7 @@
     "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
     "rect": [
       92,
-      968,
+      966.89,
       29.33,
       32
     ]
@@ -154,7 +144,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       429.27,
-      970,
+      968.89,
       118.73,
       28
     ]
@@ -164,27 +154,27 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       92,
-      1008,
+      1006.89,
       456,
       28
     ]
   },
   {
-    "text": "$3",
+    "text": "$2.99",
     "style": "Inter, \"Inter Fallback\" | 23px | 600 | 29.9px | normal | rgb(27, 37, 40) | none | none | normal",
     "rect": [
       92,
-      1056,
-      29.59,
+      1054.89,
+      65.81,
       29.89
     ]
   },
   {
-    "text": "/",
+    "text": "/ month",
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
-      129.59,
-      1059,
+      165.81,
+      1057.89,
       53.36,
       28
     ]
@@ -194,7 +184,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       282.14,
-      1109,
+      1107.89,
       75.7,
       24
     ]
@@ -204,7 +194,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      1184,
+      1182.89,
       160.94,
       28
     ]
@@ -214,7 +204,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      1222,
+      1220.89,
       404.63,
       28
     ]
@@ -224,7 +214,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      1260,
+      1258.89,
       110.28,
       28
     ]
@@ -234,7 +224,7 @@
     "style": "Inter, \"Inter Fallback\" | 18px | 600 | 32px | normal | rgb(27, 37, 40) | none | none | normal",
     "rect": [
       92,
-      1364,
+      1362.89,
       70.02,
       32
     ]
@@ -244,28 +234,28 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       92,
-      1404,
+      1402.89,
       456,
       28
     ]
   },
   {
-    "text": "$19",
+    "text": "$49.99",
     "style": "Inter, \"Inter Fallback\" | 23px | 600 | 29.9px | normal | rgb(27, 37, 40) | none | none | normal",
     "rect": [
       92,
-      1452,
-      39.41,
+      1450.89,
+      80.88,
       29.89
     ]
   },
   {
-    "text": "/",
+    "text": "one-time",
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
-      139.41,
-      1455,
-      53.36,
+      180.88,
+      1453.89,
+      62.25,
       28
     ]
   },
@@ -274,7 +264,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(12, 52, 64) | none | none | normal",
     "rect": [
       282.14,
-      1506,
+      1504.89,
       75.7,
       24
     ]
@@ -284,7 +274,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      1582,
+      1580.89,
       74.72,
       28
     ]
@@ -294,7 +284,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      1620,
+      1618.89,
       168.98,
       28
     ]
@@ -304,7 +294,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      1658,
+      1656.89,
       105.83,
       28
     ]
@@ -314,7 +304,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       118,
-      1696,
+      1694.89,
       217.91,
       28
     ]
@@ -324,7 +314,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      1920,
+      1918.89,
       268,
       20.8
     ]
@@ -334,7 +324,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1958.8,
+      1957.69,
       39.42,
       19
     ]
@@ -344,7 +334,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1990.8,
+      1989.69,
       28.61,
       19
     ]
@@ -354,7 +344,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2022.8,
+      2021.69,
       37.69,
       19
     ]
@@ -364,7 +354,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2054.8,
+      2053.69,
       87.45,
       19
     ]
@@ -374,7 +364,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2086.8,
+      2085.69,
       69.19,
       19
     ]
@@ -384,7 +374,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       336,
-      1920,
+      1918.89,
       268,
       20.8
     ]
@@ -394,7 +384,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       336,
-      1958.8,
+      1957.69,
       115.53,
       19
     ]
@@ -404,7 +394,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       336,
-      1990.8,
+      1989.69,
       54.08,
       19
     ]
@@ -414,7 +404,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      2148.8,
+      2147.69,
       268,
       20.8
     ]
@@ -424,7 +414,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2187.59,
+      2186.48,
       37.41,
       19
     ]
@@ -434,7 +424,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2219.59,
+      2218.48,
       52.38,
       19
     ]
@@ -444,7 +434,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2251.59,
+      2250.48,
       44.81,
       19
     ]
@@ -454,7 +444,7 @@
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      2337.59,
+      2336.48,
       284,
       29.89
     ]
@@ -464,7 +454,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       96,
-      2387.48,
+      2386.38,
       224,
       40
     ]
@@ -474,7 +464,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2457.48,
+      2456.38,
       84.92,
       19
     ]
@@ -484,7 +474,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
     "rect": [
       120.92,
-      2455.48,
+      2454.38,
       74.09,
       22
     ]
@@ -494,7 +484,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       432.56,
-      2608.98,
+      2607.88,
       171.44,
       20
     ]

@@ -130,21 +130,11 @@
     ]
   },
   {
-    "text": "/",
-    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
-    "rect": [
-      250.14,
-      647,
-      53.36,
-      28
-    ]
-  },
-  {
     "text": "Add to Chrome for free",
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 600 | 24px | normal | rgb(12, 52, 64) | none | none | normal",
     "rect": [
       271.73,
-      698,
+      696.89,
       200.53,
       24
     ]
@@ -154,7 +144,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       238,
-      774,
+      772.89,
       121.83,
       28
     ]
@@ -164,7 +154,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       238,
-      812,
+      810.89,
       224.13,
       28
     ]
@@ -174,7 +164,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       238,
-      850,
+      848.89,
       228.56,
       28
     ]
@@ -184,7 +174,7 @@
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
       238,
-      888,
+      886.89,
       85.06,
       28
     ]
@@ -220,20 +210,20 @@
     ]
   },
   {
-    "text": "$3",
+    "text": "$2.99",
     "style": "Inter, \"Inter Fallback\" | 23px | 600 | 29.9px | normal | rgb(27, 37, 40) | none | none | normal",
     "rect": [
       608,
       644,
-      29.59,
+      65.81,
       29.89
     ]
   },
   {
-    "text": "/",
+    "text": "/ month",
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
-      645.59,
+      681.81,
       647,
       53.36,
       28
@@ -300,22 +290,22 @@
     ]
   },
   {
-    "text": "$19",
+    "text": "$49.99",
     "style": "Inter, \"Inter Fallback\" | 23px | 600 | 29.9px | normal | rgb(27, 37, 40) | none | none | normal",
     "rect": [
       1004,
       644,
-      39.41,
+      80.88,
       29.89
     ]
   },
   {
-    "text": "/",
+    "text": "one-time",
     "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
     "rect": [
-      1051.41,
+      1092.88,
       647,
-      53.36,
+      62.25,
       28
     ]
   },
