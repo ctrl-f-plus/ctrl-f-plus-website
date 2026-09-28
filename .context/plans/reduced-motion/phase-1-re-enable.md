@@ -21,7 +21,10 @@ Toolchain facts, verified against the installed packages (tailwindcss 3.3.3, tai
 - `transition-[...]` plus `duration-[...]` would switch the easing to Tailwind's cubic-bezier. The arbitrary property `[transition:all_1.3s]` reproduces today's inline declaration and its `ease` timing exactly.
 - tailwind-merge (through `cva.config.ts`) keys conflicts by modifier plus group, so `motion-safe:translate-y-[24px]` conflicts only with another `motion-safe:translate-y-*`. `cardShellVariants` base classes collide with none of the classes below.
 - framer's `MotionConfig` module carries a `"use client"` directive; with `reducedMotion="user"` it resolves the preference on the client at mount and makes positional keys instant while opacity keeps its tween. Markup is unchanged, so there is no hydration mismatch.
-- Atropos writes only inline, non-important styles, so `!important` stylesheet rules under the media query beat all of them.
+- Atropos writes only inline, non-important styles, so `!important` stylesheet rules under the media query beat all of them. Framer's inline styles are non-important too, so the same trick removes the opacity tween that `MotionConfig` keeps.
+- Tailwind's `!` modifier sits after the variant, as in `motion-reduce:!opacity-100`, and emits the declaration with `!important` inside the media query.
+
+Steps 1 to 4 stop every entrance from moving. Steps 5 to 7 then remove what still animated under reduced motion afterwards: the FadeIn opacity tween, the feature card and CTA fades, and the loading spinner, which the hook hid only after it had painted once.
 
 ## Conventions
 
@@ -78,16 +81,33 @@ The third block restores what `rotateTouch={false}` meant: `.atropos-rotate-touc
 
 Then in `src/components/call-to-action.tsx`: remove the hook import and the `let prefersReducedMotion = false; useReducedMotion();` pair, set the Atropos props to their animation-on literals (`shadow`, `activeOffset={50}`, `rotateTouch`, `rotateXMax={15}`, `rotateYMax={15}`, `rotate`) and `data-atropos-offset={10}`. Keep them explicit even though they equal Atropos defaults. `LazyMotion` stays because the install button uses `m.div`.
 
+## Step 5: Keep FadeIn wrappers visible and still under reduced motion
+
+`src/components/fade-in.tsx`, `FadeIn` only, since `FadeInStagger` carries no opacity or `y` of its own. Import `clsx` and set the `m.div` className to `clsx('motion-reduce:!opacity-100 motion-reduce:!transform-none', className)`, with a two-line comment giving the why: framer still tweens opacity under reduced motion and the exported HTML starts hidden, so the stylesheet overrides its inline styles as `ctrl-atropos.css` does for Atropos.
+
+Both classes are needed. Forcing opacity alone would expose the 24px snap that step 1 tolerated because it happened while the element was invisible. Framer keeps writing its tween inline, unseen; the phase 2 recorder and both `settlePage` helpers rely on that inline history, so it must stay. No FadeIn consumer passes a transform class of its own.
+
+## Step 6: Stop the feature card and CTA fades under reduced motion
+
+Change `opacity-0` to `motion-safe:opacity-0` in the four hidden-state class strings: the CardShell, image span and text span in `src/components/feature-cards.tsx`, and the outer entrance div in `src/components/call-to-action.tsx`. With no computed value differing between the hidden and settled states, `[transition:all_1.3s]` and `[transition:all_1.9s]` have nothing to transition, so the cards and CTA are simply present at first paint.
+
+## Step 7: Hide the loading spinner in CSS
+
+`src/app/loading.tsx`: remove the hook import, the hook call, the ternary and the `'use client'` directive that existed only for the hook. Return the `Container` unconditionally with `motion-reduce:hidden` appended to its className. Tailwind emits variant utilities after plain ones, so `hidden` under the media query beats the `flex` on the same element. The `aria-live` region and the sr-only text are hidden with it, which is what the empty fragment did before.
+
 ## Out of scope
 
-`src/hooks/use-reduced-motion.ts`, `src/components/icons/hero-animation.tsx`, `src/components/features-header.tsx`, `src/components/ui/Button.tsx`, `src/app/loading.tsx`, `src/components/ui/card-shell.tsx` and `visual-baseline/` are unchanged in this phase. The Playwright guard and the README sentence are phase 2.
+`src/hooks/use-reduced-motion.ts`, `src/components/icons/hero-animation.tsx`, `src/components/features-header.tsx`, `src/components/ui/Button.tsx`, `src/components/ui/card-shell.tsx` and `visual-baseline/` are unchanged in this phase. The Playwright guard and the README sentence are phase 2.
 
 ## Acceptance
 
 - [x] `npx tsc --noEmit` passes after every commit, and `pnpm lint` reports no new problems. Master already fails `pnpm lint` with 66 pre-existing problems; this phase ends at 62.
 - [x] `pnpm visual:check` passes with zero diffs and no re-record.
-- [x] `grep -rn useReducedMotion src --include='*.ts' --include='*.tsx'` lists only the hook, `hero-animation.tsx`, `features-header.tsx`, `ui/Button.tsx` and `app/loading.tsx`. The unchanged draft `src/content/drafts/button-blog.md` also mentions it in code samples.
+- [x] `grep -rn useReducedMotion src --include='*.ts' --include='*.tsx'` lists only the hook, `hero-animation.tsx`, `features-header.tsx` and `ui/Button.tsx`. The unchanged draft `src/content/drafts/button-blog.md` also mentions it in code samples.
 - [x] `grep -c 'transition:all 1.9s' dist/index.html` and `grep -c 'transition:all 1.3s' dist/index.html` are both 0 after `pnpm build`.
 - [x] `grep -c "prefers-reduced-motion:no-preference" dist/_next/static/css/*.css` is above 0 and the built CSS contains the `reduce` block from `ctrl-atropos.css`.
 - [x] Served `dist/` under DevTools reduced-motion emulation: FadeIn wrappers snap to `transform: none` while opacity fades; no hydration warning in the console; the feature cards and CTA fade in without translating; hovering the CTA at 1280px leaves `.atropos-rotate`, `.atropos-scale` and `[data-atropos-offset]` at `transform: none` and `.atropos-shadow` at `display: none`.
 - [x] Served `dist/` with no preference: the same 24px and 500px entrances and the same Atropos tilt as before.
+- [x] After steps 5 to 7, the built CSS carries `opacity:1!important` and `transform:none!important` for the FadeIn classes and `display:none` for the loading container, all under the `reduce` query, and `pnpm visual:check` still passes with zero diffs.
+- [x] Served `dist/` under reduced-motion emulation: every FadeIn wrapper has computed `opacity: 1` and `transform: none` on load, the feature cards and CTA are present without fading, and no `transitionrun` fires for `opacity` or `transform` while scrolling through the page.
+- [x] Served `dist/` under reduced-motion emulation: a client-side navigation shows no spinner while the route loads. With no preference the spinner and every fade behave as before.
