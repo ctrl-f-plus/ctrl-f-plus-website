@@ -40,6 +40,10 @@ const navItems: Record<string, NavItem> = {
     name: 'Sponsor',
     linkTag: 'a',
   },
+  // '/pricing': {
+  //   name: 'Pricing',
+  //   linkTag: 'link',
+  // },
 };
 
 // TODO: Fix Mobile menu
@@ -49,8 +53,8 @@ export default function Navbar() {
   const pathname = usePathname() || '/';
 
   return (
-    <header className="pt-5 wide:pt-12 ">
-      <Container className=" flex w-full items-center justify-between ">
+    <header className="pt-5 wide:pt-12">
+      <Container className="flex w-full items-center justify-between">
         <nav
           className="mx-auto flex h-auto w-full items-center justify-between p-2"
           aria-label="Global"
@@ -86,7 +90,7 @@ export default function Navbar() {
                     href={path}
                     target={name === 'Sponsor' ? '_blank' : '_self'}
                     className={clsx(
-                      'mx-1 text-highlighter-500 transition-all ',
+                      'mx-1 text-highlighter-500 transition-all',
                       {
                         '!text-shark hover:!text-shark/80': !isActive,
                       },

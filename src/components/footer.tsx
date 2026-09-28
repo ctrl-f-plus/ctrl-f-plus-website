@@ -51,7 +51,7 @@ const navigation = [
 function Navigation() {
   return (
     <nav>
-      <ul className=" grid grid-cols-2 gap-x-8 gap-y-10  laptop:grid-cols-3">
+      <ul className="grid grid-cols-2 gap-x-8 gap-y-10 laptop:grid-cols-3">
         {navigation.map((section) => (
           <li key={section.title}>
             <div className="font-inter text-fs-base text-white">
@@ -66,7 +66,7 @@ function Navigation() {
                     href={link.href}
                     // @ts-ignore
                     target={link.target ?? '_self'}
-                    className=" hover:text-white"
+                    className="hover:text-white"
                   >
                     {link.title}
                   </Link>
@@ -82,13 +82,13 @@ function Navigation() {
 
 function OpenSource() {
   return (
-    <div className="flex  laptop:justify-end ">
-      <div className="flex w-fit flex-col  ">
+    <div className="flex laptop:justify-end">
+      <div className="flex w-fit flex-col">
         <h3 className="text-subtitle text-white [text-wrap:balance]">
           Let&apos;s improve it together!
         </h3>
 
-        <div className="mt-4 flex w-auto flex-row  items-center justify-center gap-3  ">
+        <div className="mt-4 flex w-auto flex-row items-center justify-center gap-3">
           <div className=" ">
             <GithubIcon className="h-12 w-12 fill-gray-300" />
           </div>
@@ -100,10 +100,10 @@ function OpenSource() {
         <a
           href={process.env.NEXT_PUBLIC_GITHUB_EXT_URL}
           target="_blank"
-          className="group mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance]  laptop:text-center"
+          className="group mt-6 font-open-sans text-fs-sm text-gray-300 [text-wrap:balance] laptop:text-center"
         >
           <span className="font-bold group-hover:text-white">github.com/</span>
-          <span className="text-fs-base  text-highlighter-focus-400 group-hover:text-highlighter-focus">
+          <span className="text-fs-base text-highlighter-focus-400 group-hover:text-highlighter-focus">
             ctrl-f-plus
           </span>
         </a>
@@ -126,14 +126,14 @@ export default function Footer({
       )}
     >
       <Container className="">
-        <div className="mt-18 grid grid-cols-1 gap-x-8 gap-y-16 tab-pro:grid-cols-2  lg:grid-cols-2">
+        <div className="mt-18 grid grid-cols-1 gap-x-8 gap-y-16 tab-pro:grid-cols-2 lg:grid-cols-2">
           <Navigation />
 
           <OpenSource />
         </div>
       </Container>
 
-      <Container className=" mt-18 flex h-[5.375rem] w-full items-center justify-between border-t border-white/10 tablet:mt-24  ">
+      <Container className="mt-18 flex h-[5.375rem] w-full items-center justify-between border-t border-white/10 tablet:mt-24">
         <LogoIconSecondary />
 
         <p className="font-open-sans text-copyright text-white">

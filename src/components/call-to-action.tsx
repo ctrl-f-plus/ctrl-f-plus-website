@@ -58,10 +58,10 @@ function CtaColorAccents() {
         </svg>
       </div>
 
-      <div className=" hidden laptop:block">
+      <div className="hidden laptop:block">
         {' '}
-        <div className="absolute -top-24 right-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 translate-x-1/2 rounded-full bg-[#8DBEDA] blur-[43.5px] filter " />
-        <div className="absolute -bottom-24 left-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter " />
+        <div className="absolute -top-24 right-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 translate-x-1/2 rounded-full bg-[#8DBEDA] blur-[43.5px] filter" />
+        <div className="absolute -bottom-24 left-10 h-[14.6875rem] w-[17.875rem] flex-shrink-0 -translate-x-1/2 rounded-full bg-[#03AF7D] blur-[43.5px] filter" />
       </div>
     </>
   );
@@ -84,7 +84,7 @@ function CtaButtons() {
 function CtaText() {
   return (
     <>
-      <h2 className="max-w-[26.75rem] font-inter text-fs-x0 text-white  tablet:max-w-[25.8125rem] tab-pro:text-fs-xl laptop:max-w-3xl ">
+      <h2 className="max-w-[26.75rem] font-inter text-fs-x0 text-white tablet:max-w-[25.8125rem] tab-pro:text-fs-xl laptop:max-w-3xl">
         Take your tab hoarding to the next level.
       </h2>
 
@@ -147,7 +147,7 @@ export default function CallToAction() {
 
             <div className="hidden laptop:block">
               <Atropos
-                className="h-full w-full rounded-[2.25rem] "
+                className="h-full w-full rounded-[2.25rem]"
                 shadow={!prefersReducedMotion}
                 activeOffset={prefersReducedMotion ? 0 : 50}
                 rotateTouch={!prefersReducedMotion}

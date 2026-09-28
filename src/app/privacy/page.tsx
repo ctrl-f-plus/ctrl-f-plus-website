@@ -4,7 +4,12 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/container';
 import { FadeInStagger } from '@/components/fade-in';
 import PageBodyCard from '@/components/page-body-card';
-import PageTitleCard from '@/components/page-title-card';
+import {
+  PageTitleCard,
+  PageTitleCardDate,
+  PageTitleCardDescription,
+  PageTitleCardTitle,
+} from '@/components/page-title-card';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -22,19 +27,17 @@ export default async function Privacy() {
   return (
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
-        <PageTitleCard>
-          <p className="font-open-sans text-caption-gray tab-pro:text-fs-lg">
-            August 10, 2023
-          </p>
-          <h1 className="font-inter text-fs-xl text-shark">Privacy Policy</h1>
+        <PageTitleCard className="min-h-[318px]">
+          <PageTitleCardDate>August 10, 2023</PageTitleCardDate>
+          <PageTitleCardTitle>Privacy Policy</PageTitleCardTitle>
 
-          <p className="font-open-sans text-fs-lg text-shark">
+          <PageTitleCardDescription>
             Thank you for choosing to use{' '}
-            <span className="text-highlighter-focus-400">Ctrl-F Plus!</span>. We
+            <span className="text-highlighter-focus-400">Ctrl-F Plus!</span> We
             respect your privacy and are committed to protecting any personal
             information you may share with us. As such, Our browser extension
             does not collect any of your personal data.
-          </p>
+          </PageTitleCardDescription>
         </PageTitleCard>
 
         <PageBodyCard>

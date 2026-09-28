@@ -18,7 +18,7 @@ export default function QuickViewModal({
     <>
       <Transition show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={setIsOpen}>
-          <div className="relative z-50 flex aspect-[3/2] w-full items-center ">
+          <div className="relative z-50 flex aspect-[3/2] w-full items-center">
             <TransitionChild
               as={Fragment}
               enter="ease-out duration-300"
@@ -32,7 +32,7 @@ export default function QuickViewModal({
             </TransitionChild>
 
             <div className="fixed inset-0 z-10 overflow-y-auto">
-              <div className="flex min-h-full items-center justify-center ">
+              <div className="flex min-h-full items-center justify-center">
                 <TransitionChild
                   as={Fragment}
                   enter="ease-out duration-300"
@@ -45,9 +45,9 @@ export default function QuickViewModal({
                   <DialogPanel className="relative flex transform flex-col transition">
                     <div className="mt-2 h-full w-full overflow-hidden">
                       <div className="relative flex aspect-video h-full w-full items-center justify-center">
-                        <div className="flex h-full w-full ">
-                          <div className="relative flex  w-screen max-w-screen-xl flex-col items-center justify-center">
-                            <div className="mb-2 ml-2 flex w-[85%]  flex-col items-end pt-2">
+                        <div className="flex h-full w-full">
+                          <div className="relative flex w-screen max-w-screen-xl flex-col items-center justify-center">
+                            <div className="mb-2 ml-2 flex w-[85%] flex-col items-end pt-2">
                               <button
                                 onClick={() => setIsOpen(false)}
                                 type="button"

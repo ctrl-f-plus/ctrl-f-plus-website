@@ -8,7 +8,7 @@ import Button from '@/components/ui/Button';
 export default function NotFoundPage() {
   return (
     <FadeInStagger>
-      <Container className=" mt-18">
+      <Container className="mt-18">
         <FadeIn className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
           <div className="text-center">
             <p className="text-label text-highlighter-900">404</p>
@@ -18,7 +18,7 @@ export default function NotFoundPage() {
             <p className="mt-6 text-body-sm text-gray-600">
               Sorry, we couldn&apos;t find the page you&apos;re looking for.
             </p>
-            <div className="mt-10 flex w-full items-center justify-center ">
+            <div className="mt-10 flex w-full items-center justify-center">
               <div className="w-1/2">
                 <Button
                   intent="solid"

@@ -1,14 +1,24 @@
 // src/app/blog/page.tsx
 
 import { clientEnv } from '@/clientEnv';
-import { getPublishedPosts } from '@/lib/posts';
+import { getPublishedPosts, type Post } from '@/lib/posts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/container';
 import { FadeIn, FadeInStagger } from '@/components/fade-in';
 import DrawingIcon from '@/components/icons/drawing-icon';
 import { BrowserLabel, InstallButton } from '@/components/install-button';
-import InfoCard from '@/components/info-card';
+import {
+  InfoCard,
+  InfoCardAction,
+  InfoCardDescription,
+  InfoCardTitle,
+} from '@/components/info-card';
+import {
+  PageTitleCard,
+  PageTitleCardDescription,
+  PageTitleCardTitle,
+} from '@/components/page-title-card';
 import { formatDate } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -20,71 +30,85 @@ export const metadata: Metadata = {
   },
 };
 
+function EmptyBlogState() {
+  return (
+    <InfoCard showAccents>
+      <InfoCardTitle>Yeah, We&apos;re Making You Wait...</InfoCardTitle>
+      <InfoCardDescription>
+        Patience, tab hoarder. We&apos;re busy cooking up some stories that
+        might just be worth your precious tab space. Until then, Check out the
+        tool that understands your tab obsession!
+      </InfoCardDescription>
+      <InfoCardAction>
+        <InstallButton intent="solid" size="thin" icon="puzzle2">
+          Get the <BrowserLabel /> extension!
+        </InstallButton>
+      </InfoCardAction>
+    </InfoCard>
+  );
+}
+
+function PostGrid({ posts }: Readonly<{ posts: Post[] }>) {
+  return (
+    <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10 laptop:grid-cols-2">
+      {posts.map((post: Post) => (
+        <FadeIn key={post.slug}>
+          <Link
+            href={`/blog/${post.slug}/`}
+            aria-label={`Read blog post: ${post.title}`}
+            className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] hover:opacity-75 mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]"
+          >
+            <div className="flex min-h-[96px] flex-col items-start gap-2">
+              <h2 className="transform font-inter text-subtitle text-shark">
+                {post.title}
+              </h2>
+
+              <p className="font-open-sans text-fs-lg text-shark">
+                {formatDate(post.publishedAt)}
+              </p>
+            </div>
+          </Link>
+        </FadeIn>
+      ))}
+    </div>
+  );
+}
+
+function BlogPosts({ posts }: Readonly<{ posts: Post[] }>) {
+  if (posts.length === 0) return <EmptyBlogState />;
+  return <PostGrid posts={posts} />;
+}
+
 export default function BlogPage() {
-  const publicPosts = getPublishedPosts();
+  const posts = getPublishedPosts();
 
   return (
     <section>
       <Container className="mt-18 flex flex-col tablet:mt-24">
         <FadeInStagger>
-          <FadeIn className="flex min-h-[318px] w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tab-pro:px-14 laptop:px-16 desktop:px-20">
-            <div className="flex justify-start">
-              <div className="flex flex-col items-start justify-center gap-6">
-                <h1 className="  font-inter text-fs-xl text-shark">
-                  <span className="block">Behind the Tabs: </span>
-                  <span className="block">The Ctrl-F Plus Story</span>
-                </h1>
+          <PageTitleCard
+            className="tablet:px-8"
+            illustration={<DrawingIcon aria-hidden="true" />}
+          >
+            <PageTitleCardTitle>
+              <span className="block">Behind the Tabs: </span>
+              <span className="block">The Ctrl-F Plus Story</span>
+            </PageTitleCardTitle>
 
-                <p className="font-open-sans text-fs-lg text-shark desktop:pr-[5rem]">
-                  Ever wondered what fuels the madness of a proud tab hoarder?
-                  We&apos;re pulling back the curtain to show how we transformed
-                  the humble CTRL+F into the ultimate tool for tab enthusiasts:
-                  CTRL+Shift+F.
-                </p>
-                <p className="font-open-sans text-fs-lg text-shark desktop:pr-[5rem]">
-                  Journey with us as we reveal how React, Next.js, Tailwind, and
-                  Typescript became our allies in our search for a better
-                  CTRL+F.
-                </p>
-              </div>
-              <div className="hidden flex-col justify-center desktop:flex">
-                <DrawingIcon aria-hidden="true" />
-              </div>
-            </div>
-          </FadeIn>
+            <PageTitleCardDescription className="desktop:pr-[5rem]">
+              Ever wondered what fuels the madness of a proud tab hoarder?
+              We&apos;re pulling back the curtain to show how we transformed the
+              humble CTRL+F into the ultimate tool for tab enthusiasts:
+              CTRL+Shift+F.
+            </PageTitleCardDescription>
 
-          {publicPosts.length === 0 ? (
-            <InfoCard
-              title={`Yeah, We're Making You Wait...`}
-              description={`Patience, tab hoarder. We're busy cooking up some stories that might just be worth your precious tab space. Until then, Check out  the tool that understands your tab obsession!`}
-              showAccents
-            >
-              <InstallButton intent="solid" size="thin" icon="puzzle2">
-                Get the <BrowserLabel /> extension!
-              </InstallButton>
-            </InfoCard>
-          ) : (
-            <div className="mt-10 grid grid-cols-1 gap-3 gap-x-10  laptop:grid-cols-2 ">
-              {publicPosts.map((post) => (
-                <FadeIn key={post.slug}>
-                  <Link
-                    href={`/blog/${post.slug}/`}
-                    className="flex items-start gap-2 rounded-3xl bg-white/[.68] px-4 py-6 shadow-sm backdrop-blur-[23px] hover:opacity-75 mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px] "
-                    aria-label={`Read blog post: ${post.title}`}
-                  >
-                    <div className="flex min-h-[96px] flex-col items-start gap-2 ">
-                      <h2 className="transform font-inter text-subtitle text-shark ">
-                        {post.title}
-                      </h2>
-                      <p className="font-open-sans text-fs-lg text-shark">
-                        {formatDate(post.publishedAt)}
-                      </p>
-                    </div>
-                  </Link>
-                </FadeIn>
-              ))}
-            </div>
-          )}
+            <PageTitleCardDescription className="desktop:pr-[5rem]">
+              Journey with us as we reveal how React, Next.js, Tailwind, and
+              Typescript became our allies in our search for a better CTRL+F.
+            </PageTitleCardDescription>
+          </PageTitleCard>
+
+          <BlogPosts posts={posts} />
         </FadeInStagger>
       </Container>
     </section>

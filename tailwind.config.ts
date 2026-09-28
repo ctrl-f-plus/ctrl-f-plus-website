@@ -136,6 +136,8 @@ module.exports = {
         'fs-xl': ['3.4375rem', { lineHeight: '1.2', fontWeight: '800' }], // INTRO
 
         subtitle: ['1.4375rem', { lineHeight: '1.3', fontWeight: '600' }],
+        status: ['1.5rem', { lineHeight: '1.875rem', fontWeight: '700' }],
+        'status-lg': ['2.0625rem', { lineHeight: '2.5rem', fontWeight: '700' }],
 
         'h1-blog': ['1.75rem', { lineHeight: '1.3', fontWeight: '600' }],
         'p-blog': ['1.125rem', { lineHeight: '2rem', fontWeight: '400' }],

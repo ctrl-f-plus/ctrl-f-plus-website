@@ -13,13 +13,8 @@ export default function PageBodyCard({
   className,
 }: Readonly<PageBodyCardProps>) {
   return (
-    // className={className}
     <FadeIn className="mt-10">
-      <div
-        // py-6
-        // py-14
-        className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]"
-      >
+      <div className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]">
         {children}
       </div>
     </FadeIn>

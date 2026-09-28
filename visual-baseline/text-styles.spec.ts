@@ -21,6 +21,7 @@ const ROUTES = [
   { slug: 'blog', path: '/blog/' },
   { slug: 'setup', path: '/setup/' },
   { slug: 'privacy', path: '/privacy/' },
+  { slug: 'pricing', path: '/pricing/' },
   { slug: '404', path: '/404.html' },
 ] as const;
 

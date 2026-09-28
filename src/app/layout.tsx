@@ -82,7 +82,7 @@ export default function RootLayout({
         className="debug-screens mx-auto flex min-h-full flex-col"
         suppressHydrationWarning
       >
-        <div className="relative flex flex-auto ">
+        <div className="relative flex flex-auto">
           <div className="flex h-auto w-full flex-col backdrop-blur-md">
             <Navbar />
 
