@@ -1,16 +1,10 @@
 // src/app/loading.tsx
-'use client';
 
-import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import Container from '@/components/ui/container';
 
 function Loading() {
-  const prefersReducedMotion = useReducedMotion();
-
-  return prefersReducedMotion ? (
-    <></>
-  ) : (
-    <Container className="flex h-full w-full items-center justify-center">
+  return (
+    <Container className="flex h-full w-full items-center justify-center motion-reduce:hidden">
       <div
         className="flex h-full w-full items-center justify-center"
         aria-live="polite"
