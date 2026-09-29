@@ -17,9 +17,8 @@ export type ContractOperation = {
   status: string;
 };
 
-const NON_CONTRACT_KEYS = [
+const ANNOTATION_KEYS = [
   '$schema',
-  'additionalProperties',
   'description',
   'title',
   'example',
@@ -27,7 +26,9 @@ const NON_CONTRACT_KEYS = [
 ];
 const UNORDERED_LIST_KEYS = ['required', 'enum'];
 const FIELD_SCHEMAS_KEY = 'properties';
+const STRICTNESS_KEY = 'additionalProperties';
 const NULL_TYPE = 'null';
+const INTEGER_TYPE = 'integer';
 
 function isJsonObject(value: JsonValue | undefined): value is JsonObject {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
@@ -62,46 +63,87 @@ function resolveReferences(value: JsonValue, document: JsonObject): JsonValue {
   if (!isJsonObject(value)) {
     return value;
   }
-  if (typeof value.$ref === 'string') {
-    const referencedValue = readNestedValue(
-      document,
-      parseJsonPointer(value.$ref),
-    );
-    return resolveReferences(referencedValue, document);
-  }
 
-  return Object.fromEntries(
-    Object.entries(value).map(([key, nestedValue]) => [
+  const { $ref: jsonPointer, ...siblingKeys } = value;
+  const resolvedSiblings = Object.fromEntries(
+    Object.entries(siblingKeys).map(([key, nestedValue]) => [
       key,
       resolveReferences(nestedValue, document),
     ]),
   );
+  if (typeof jsonPointer !== 'string') {
+    return resolvedSiblings;
+  }
+
+  const referencedValue = resolveReferences(
+    readNestedValue(document, parseJsonPointer(jsonPointer)),
+    document,
+  );
+  // OpenAPI 3.1 lets constraints sit beside a reference, and they still apply.
+  return isJsonObject(referencedValue)
+    ? { ...referencedValue, ...resolvedSiblings }
+    : referencedValue;
 }
 
-// The API and zod write "this or null" differently, so both become one nullable flag.
-function mergeNullability(schemaNode: JsonObject): JsonObject {
-  const { anyOf, ...otherKeys } = schemaNode;
-  const alternatives = Array.isArray(anyOf) ? anyOf.filter(isJsonObject) : [];
-  const nonNullAlternatives = alternatives.filter(
-    (alternative) => alternative.type !== NULL_TYPE,
+function isBareNullSchema(schemaNode: JsonValue): boolean {
+  return (
+    isJsonObject(schemaNode) &&
+    schemaNode.type === NULL_TYPE &&
+    Object.keys(schemaNode).length === 1
   );
-  const isNullableUnion =
-    alternatives.length === 2 && nonNullAlternatives.length === 1;
-  if (isNullableUnion) {
-    return { ...otherKeys, ...nonNullAlternatives[0], nullable: true };
-  }
+}
 
-  if (!Array.isArray(schemaNode.type) || !schemaNode.type.includes(NULL_TYPE)) {
+// zod writes "this or null" as a two-member union with nothing else beside it.
+function mergeNullableUnion(schemaNode: JsonObject): JsonObject {
+  const { anyOf, ...siblingKeys } = schemaNode;
+  if (!Array.isArray(anyOf) || anyOf.length !== 2) {
     return schemaNode;
   }
-  const nonNullTypes = schemaNode.type.filter((type) => type !== NULL_TYPE);
+
+  const nonNullAlternatives = anyOf.filter(
+    (alternative) => !isBareNullSchema(alternative),
+  );
+  const [nonNullAlternative] = nonNullAlternatives;
+  const hasOnlyAnnotationsBeside = Object.keys(siblingKeys).every((key) =>
+    ANNOTATION_KEYS.includes(key),
+  );
+  const isNullableUnion =
+    nonNullAlternatives.length === 1 &&
+    isJsonObject(nonNullAlternative) &&
+    hasOnlyAnnotationsBeside;
+
+  return isNullableUnion
+    ? { ...nonNullAlternative, nullable: true }
+    : schemaNode;
+}
+
+// The API writes "this or null" as a type list, with null repeated in any enum.
+function mergeNullableTypeList(schemaNode: JsonObject): JsonObject {
+  const {
+    type: types,
+    enum: allowedValues,
+    nullable,
+    ...otherKeys
+  } = schemaNode;
+  if (!Array.isArray(types) || !types.includes(NULL_TYPE)) {
+    return schemaNode;
+  }
+
+  const nonNullTypes = types.filter((type) => type !== NULL_TYPE);
   const mergedNode: JsonObject = {
-    ...schemaNode,
+    ...otherKeys,
     type: nonNullTypes.length === 1 ? nonNullTypes[0] : nonNullTypes,
-    nullable: true,
   };
-  if (Array.isArray(schemaNode.enum)) {
-    mergedNode.enum = schemaNode.enum.filter((allowed) => allowed !== null);
+  if (!Array.isArray(allowedValues)) {
+    return { ...mergedNode, nullable: true };
+  }
+
+  // An enum decides on its own whether null is allowed, whatever the types say.
+  mergedNode.enum = allowedValues.filter((allowed) => allowed !== null);
+  if (allowedValues.includes(null)) {
+    mergedNode.nullable = true;
+  } else if (nullable !== undefined) {
+    mergedNode.nullable = nullable;
   }
   return mergedNode;
 }
@@ -109,6 +151,21 @@ function mergeNullability(schemaNode: JsonObject): JsonObject {
 function sortByJson(values: JsonValue[]): JsonValue[] {
   return [...values].sort((left, right) =>
     JSON.stringify(left).localeCompare(JSON.stringify(right)),
+  );
+}
+
+// zod states the safe-integer bounds that every JSON integer already has.
+function isImpliedIntegerBound(
+  schemaNode: JsonObject,
+  key: string,
+  value: JsonValue,
+): boolean {
+  if (schemaNode.type !== INTEGER_TYPE) {
+    return false;
+  }
+  return (
+    (key === 'maximum' && value === Number.MAX_SAFE_INTEGER) ||
+    (key === 'minimum' && value === Number.MIN_SAFE_INTEGER)
   );
 }
 
@@ -120,12 +177,17 @@ function normalizeSchemaNode(value: JsonValue): JsonValue {
     return value;
   }
 
+  const schemaNode = mergeNullableTypeList(mergeNullableUnion(value));
   const normalizedNode: JsonObject = {};
-  for (const [key, nestedValue] of Object.entries(mergeNullability(value))) {
-    // zod states the safe-integer ceiling that every JSON integer already has.
-    const isImpliedIntegerBound =
-      key === 'maximum' && nestedValue === Number.MAX_SAFE_INTEGER;
-    if (NON_CONTRACT_KEYS.includes(key) || isImpliedIntegerBound) {
+  for (const [key, nestedValue] of Object.entries(schemaNode)) {
+    // A true or false here only says how strictly extra fields are rejected.
+    const isStrictnessFlag =
+      key === STRICTNESS_KEY && typeof nestedValue === 'boolean';
+    if (
+      ANNOTATION_KEYS.includes(key) ||
+      isStrictnessFlag ||
+      isImpliedIntegerBound(schemaNode, key, nestedValue)
+    ) {
       continue;
     }
 
@@ -157,6 +219,10 @@ function describeValue(value: JsonValue | undefined): string {
   return value === undefined ? 'nothing' : JSON.stringify(value);
 }
 
+function isListOfSchemas(value: JsonValue | undefined): value is JsonValue[] {
+  return Array.isArray(value) && value.some(isJsonObject);
+}
+
 function collectDifferences(
   publishedValue: JsonValue | undefined,
   websiteValue: JsonValue | undefined,
@@ -176,6 +242,20 @@ function collectDifferences(
           schemaPath === '' ? key : `${schemaPath}.${key}`,
         ),
       );
+  }
+
+  const areSchemaListsOfEqualLength =
+    isListOfSchemas(publishedValue) &&
+    isListOfSchemas(websiteValue) &&
+    publishedValue.length === websiteValue.length;
+  if (areSchemaListsOfEqualLength) {
+    return publishedValue.flatMap((publishedItem, index) =>
+      collectDifferences(
+        publishedItem,
+        websiteValue[index],
+        `${schemaPath}[${index}]`,
+      ),
+    );
   }
 
   if (JSON.stringify(publishedValue) === JSON.stringify(websiteValue)) {
