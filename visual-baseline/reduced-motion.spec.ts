@@ -14,6 +14,13 @@ const HOVER_SETTLE_MS = 400;
 const FADE_IN_HIDDEN_TRANSFORM = 'translateY(24px)';
 const SETTLED_TRANSFORM = 'none';
 const VERTICAL_OFFSET_TRANSFORM = /^translateY\(/;
+const EXPORTED_ENTRANCE_SELECTORS = [
+  `[style*="${FADE_IN_HIDDEN_TRANSFORM}"]`,
+  '[class*="[transition:all_"]',
+] as const;
+const CTA_HOVER_COLOR = 'rgb(38, 72, 83)';
+const BUTTON_PRESSED_COLOR = 'rgb(10, 43, 53)';
+const LOADING_RING = 'main [aria-live="polite"] > div';
 
 const CTA_ROOT = '#call-to-action';
 const ATROPOS_ROOT = `${CTA_ROOT} .atropos`;
@@ -28,12 +35,14 @@ const ATROPOS_MOVING_LAYERS = [
 const ATROPOS_SHADOW = `${CTA_ROOT} .atropos-shadow`;
 
 type InlineTransformHistory = {
-  element: string;
+  elementDescription: string;
   transforms: string[];
+  computedStyles: { opacity: string; transform: string }[];
 };
 
 type MotionRecorder = {
   transformTransitions: string[];
+  opacityTransitions: string[];
   inlineTransformHistories: Map<Element, InlineTransformHistory>;
 };
 
@@ -45,6 +54,7 @@ declare global {
 
 function installMotionRecorder(): void {
   const transformTransitions: string[] = [];
+  const opacityTransitions: string[] = [];
   const inlineTransformHistories = new Map<Element, InlineTransformHistory>();
   const styleParser = document.createElement('div');
 
@@ -67,18 +77,25 @@ function installMotionRecorder(): void {
       ) {
         transformTransitions.push(describeElement(event.target));
       }
+      if (event.propertyName === 'opacity' && event.target instanceof Element) {
+        opacityTransitions.push(describeElement(event.target));
+      }
     },
     true,
   );
 
   const recordTransform = (element: Element, transform: string): void => {
-    let history = inlineTransformHistories.get(element);
-    if (!history) {
-      history = { element: describeElement(element), transforms: [] };
-      inlineTransformHistories.set(element, history);
+    let transformHistory = inlineTransformHistories.get(element);
+    if (!transformHistory) {
+      transformHistory = {
+        elementDescription: describeElement(element),
+        transforms: [],
+        computedStyles: [],
+      };
+      inlineTransformHistories.set(element, transformHistory);
     }
-    if (!history.transforms.includes(transform)) {
-      history.transforms.push(transform);
+    if (!transformHistory.transforms.includes(transform)) {
+      transformHistory.transforms.push(transform);
     }
   };
 
@@ -92,6 +109,11 @@ function installMotionRecorder(): void {
     }
     for (const element of mutatedElements) {
       recordTransform(element, transformOf(element.getAttribute('style')));
+      const computedStyle = getComputedStyle(element);
+      inlineTransformHistories.get(element)?.computedStyles.push({
+        opacity: computedStyle.opacity,
+        transform: computedStyle.transform,
+      });
     }
   }).observe(document, {
     attributes: true,
@@ -100,13 +122,15 @@ function installMotionRecorder(): void {
     subtree: true,
   });
 
-  window.motionRecorder = { transformTransitions, inlineTransformHistories };
+  window.motionRecorder = {
+    transformTransitions,
+    opacityTransitions,
+    inlineTransformHistories,
+  };
 }
 
-// Scrolls once through the page so every in-view entrance has fired, then
-// waits until no finite animation is running and no inline fade is mid-way.
 async function settlePage(page: Page): Promise<void> {
-  // The layout sets scroll-behavior smooth, so each jump must be instant or
+  // The control run uses smooth scrolling, so each jump must be instant or
   // the next one interrupts it before the in-view sentinels are reached.
   await page.evaluate(async (pauseMs) => {
     await document.fonts.ready;
@@ -120,17 +144,21 @@ async function settlePage(page: Page): Promise<void> {
 
   await page.waitForFunction(
     () => {
-      const running = document.getAnimations().some((animation) => {
-        const iterations = animation.effect?.getTiming().iterations ?? 1;
-        return animation.playState === 'running' && Number.isFinite(iterations);
-      });
-      const fading = Array.from(
+      const hasRunningAnimations = document
+        .getAnimations()
+        .some((animation) => {
+          const iterations = animation.effect?.getTiming().iterations ?? 1;
+          return (
+            animation.playState === 'running' && Number.isFinite(iterations)
+          );
+        });
+      const hasUnsettledFades = Array.from(
         document.querySelectorAll<HTMLElement>('[style*="opacity"]'),
       ).some(
         (element) =>
           element.style.opacity !== '' && element.style.opacity !== '1',
       );
-      return !running && !fading;
+      return !hasRunningAnimations && !hasUnsettledFades;
     },
     undefined,
     { timeout: SETTLE_TIMEOUT_MS },
@@ -144,25 +172,28 @@ async function readTransformTransitions(page: Page): Promise<string[]> {
 async function readFadeInTransformHistories(
   page: Page,
 ): Promise<InlineTransformHistory[]> {
-  const histories = await page.evaluate(() =>
+  const transformHistories = await page.evaluate(() =>
     Array.from(window.motionRecorder.inlineTransformHistories.values()),
   );
-  return histories.filter(
-    (history) => history.transforms[0] === FADE_IN_HIDDEN_TRANSFORM,
+  return transformHistories.filter(
+    (transformHistory) =>
+      transformHistory.transforms[0] === FADE_IN_HIDDEN_TRANSFORM,
   );
 }
 
 async function sweepMouseAcross(page: Page, selector: string): Promise<void> {
-  const target = page.locator(selector);
-  await target.scrollIntoViewIfNeeded();
-  const box = await target.boundingBox();
-  if (!box) throw new Error(`${selector} has no bounding box to hover`);
+  const targetLocator = page.locator(selector);
+  await targetLocator.scrollIntoViewIfNeeded();
+  const targetBoundingBox = await targetLocator.boundingBox();
+  if (!targetBoundingBox)
+    throw new Error(`${selector} has no bounding box to hover`);
+  const { x, y, width, height } = targetBoundingBox;
 
-  await page.mouse.move(box.x + box.width * 0.1, box.y + box.height * 0.1);
-  await page.mouse.move(box.x + box.width * 0.9, box.y + box.height * 0.9, {
+  await page.mouse.move(x + width * 0.1, y + height * 0.1);
+  await page.mouse.move(x + width * 0.9, y + height * 0.9, {
     steps: HOVER_STEPS,
   });
-  await page.mouse.move(box.x + box.width * 0.9, box.y + box.height * 0.1, {
+  await page.mouse.move(x + width * 0.9, y + height * 0.1, {
     steps: HOVER_STEPS,
   });
   await page.waitForTimeout(HOVER_SETTLE_MS);
@@ -182,26 +213,80 @@ test.beforeEach(async ({ page }) => {
 test.describe('the home page under reduced motion', () => {
   test.use({ reducedMotion: 'reduce' });
 
-  test('scrolling through the page under reduced motion fades every entrance in without moving it', async ({
+  test('scrolling through the page under reduced motion keeps every entrance visible and still', async ({
     page,
   }) => {
     await page.goto(HOME_PATH);
+    await expect(page.locator('html')).toHaveCSS('scroll-behavior', 'auto');
     await settlePage(page);
 
     const transformTransitions = await readTransformTransitions(page);
     const fadeInHistories = await readFadeInTransformHistories(page);
 
     expect(transformTransitions).toEqual([]);
-    expect(fadeInHistories.length).toBeGreaterThan(0);
     expect(
-      fadeInHistories.filter((history) =>
-        history.transforms.some(
-          (transform) =>
-            transform !== FADE_IN_HIDDEN_TRANSFORM &&
-            transform !== SETTLED_TRANSFORM,
-        ),
-      ),
+      await page.evaluate(() => window.motionRecorder.opacityTransitions),
     ).toEqual([]);
+    expect(fadeInHistories.length).toBeGreaterThan(0);
+    for (const transformHistory of fadeInHistories) {
+      expect(transformHistory.computedStyles.length).toBeGreaterThan(0);
+      expect(
+        transformHistory.computedStyles.filter(
+          (computedStyle) =>
+            computedStyle.opacity !== '1' ||
+            computedStyle.transform !== SETTLED_TRANSFORM,
+        ),
+        transformHistory.elementDescription,
+      ).toEqual([]);
+    }
+  });
+
+  test('hovering and pressing the install buttons under reduced motion preserves their colour feedback without movement', async ({
+    page,
+  }) => {
+    await page.goto(HOME_PATH);
+    await settlePage(page);
+    const heroButton = page
+      .getByRole('link', { name: 'Add to Chrome for free', exact: true })
+      .locator(':scope > div');
+    const ctaButton = page.locator(`${CTA_ROOT} a:visible > .group`);
+
+    for (const buttonLocator of [heroButton, ctaButton]) {
+      const restColor = await buttonLocator.evaluate(
+        (element) => getComputedStyle(element).backgroundColor,
+      );
+      await expect(buttonLocator).toHaveCSS('transition-duration', '0.2s');
+      const transitionProperties = await buttonLocator.evaluate((element) =>
+        getComputedStyle(element).transitionProperty.split(', '),
+      );
+      expect(transitionProperties).toContain('background-color');
+      expect(transitionProperties).not.toContain('transform');
+      expect(transitionProperties).not.toContain('all');
+
+      await buttonLocator.hover();
+      if (buttonLocator === ctaButton) {
+        await expect(buttonLocator).toHaveCSS(
+          'background-color',
+          CTA_HOVER_COLOR,
+        );
+      } else {
+        await expect(buttonLocator).not.toHaveCSS(
+          'background-color',
+          restColor,
+        );
+      }
+      await page.mouse.down();
+      try {
+        await expect(buttonLocator).toHaveCSS(
+          'background-color',
+          BUTTON_PRESSED_COLOR,
+        );
+      } finally {
+        await page.mouse.move(0, 0);
+        await page.mouse.up();
+      }
+    }
+    expect(await readTransformTransitions(page)).toEqual([]);
   });
 
   test('hovering the call-to-action card under reduced motion leaves it untilted and unshadowed', async ({
@@ -239,6 +324,7 @@ test.describe('the home page with no motion preference', () => {
     page,
   }) => {
     await page.goto(HOME_PATH);
+    await expect(page.locator('html')).toHaveCSS('scroll-behavior', 'smooth');
     await settlePage(page);
 
     const transformTransitions = await readTransformTransitions(page);
@@ -246,13 +332,87 @@ test.describe('the home page with no motion preference', () => {
 
     expect(transformTransitions.length).toBeGreaterThan(0);
     expect(
-      fadeInHistories.filter((history) =>
-        history.transforms.some(
+      (await page.evaluate(() => window.motionRecorder.opacityTransitions))
+        .length,
+    ).toBeGreaterThan(0);
+    expect(
+      fadeInHistories.filter((transformHistory) =>
+        transformHistory.transforms.some(
           (transform) =>
             VERTICAL_OFFSET_TRANSFORM.test(transform) &&
             transform !== FADE_IN_HIDDEN_TRANSFORM,
         ),
       ).length,
     ).toBeGreaterThan(0);
+  });
+});
+
+test.describe('the static export before hydration under reduced motion', () => {
+  test.use({ reducedMotion: 'reduce' });
+
+  test('loading the static export under reduced motion gives every entrance visible and still styles before hydration', async ({
+    page,
+  }) => {
+    // Next's inline script reveals streamed HTML before the external bundles hydrate it.
+    await page.route('**/_next/**/*.js', (route) => route.abort());
+    await page.goto(HOME_PATH);
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+    for (const entranceSelector of EXPORTED_ENTRANCE_SELECTORS) {
+      const entranceStyles = await page
+        .locator(entranceSelector)
+        .evaluateAll((elements) =>
+          elements.map((element) => ({
+            elementDescription: element.outerHTML.slice(0, 180),
+            opacity: getComputedStyle(element).opacity,
+            transform: getComputedStyle(element).transform,
+          })),
+        );
+
+      expect(entranceStyles.length, entranceSelector).toBeGreaterThan(0);
+      expect(
+        entranceStyles.filter(
+          (entranceStyle) =>
+            entranceStyle.opacity !== '1' ||
+            entranceStyle.transform !== SETTLED_TRANSFORM,
+        ),
+      ).toEqual([]);
+    }
+  });
+});
+
+test.describe('the exported loading boundary under reduced motion', () => {
+  test.use({ reducedMotion: 'reduce', javaScriptEnabled: false });
+
+  test('loading the static export under reduced motion keeps the loading indicator visible without spinning', async ({
+    page,
+  }) => {
+    await page.goto(HOME_PATH);
+
+    await expect(page.locator(LOADING_RING)).toBeVisible();
+    await expect(page.locator(LOADING_RING)).toHaveCSS(
+      'animation-name',
+      'none',
+    );
+    await expect(page.getByText('Loading...', { exact: true })).toBeVisible();
+    await expect(page.locator('main')).toMatchAriaSnapshot(
+      '- text: Loading...',
+    );
+  });
+});
+
+test.describe('the exported loading boundary with no motion preference', () => {
+  test.use({ reducedMotion: 'no-preference', javaScriptEnabled: false });
+
+  test('loading the static export with no motion preference keeps the loading ring spinning', async ({
+    page,
+  }) => {
+    await page.goto(HOME_PATH);
+
+    await expect(page.locator(LOADING_RING)).toBeVisible();
+    await expect(page.locator(LOADING_RING)).toHaveCSS(
+      'animation-name',
+      'spin',
+    );
+    await expect(page.getByText('Loading...', { exact: true })).toBeVisible();
   });
 });
