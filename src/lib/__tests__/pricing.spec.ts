@@ -8,12 +8,15 @@ import {
 } from '@/listing.schema';
 import { formatPlanPrice } from '../pricing';
 
+const MONTHLY_AMOUNT = 299;
+const CHECKOUT_URL = 'https://example.com/checkout';
+
 function buildPricingPlan(overrides: Partial<PricingPlan> = {}): PricingPlan {
   const pricingPlan = {
     billingPeriod: null,
-    amount: 299,
+    amount: MONTHLY_AMOUNT,
     currency: CURRENCY.USD,
-    href: 'https://example.com/checkout',
+    href: CHECKOUT_URL,
     ...overrides,
   };
   return pricingPlanSchema.parse(pricingPlan);
@@ -21,7 +24,7 @@ function buildPricingPlan(overrides: Partial<PricingPlan> = {}): PricingPlan {
 
 describe('formatPlanPrice', () => {
   test.each([
-    [299, '$2.99'],
+    [MONTHLY_AMOUNT, '$2.99'],
     [450, '$4.50'],
     [500, '$5'],
     [0, '$0'],
