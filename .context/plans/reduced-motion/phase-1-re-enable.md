@@ -24,7 +24,9 @@ Toolchain facts, verified against the installed packages (tailwindcss 3.3.3, tai
 - Atropos writes only inline, non-important styles, so `!important` stylesheet rules under the media query beat all of them. Framer's inline styles are non-important too, so the same trick removes the opacity tween that `MotionConfig` keeps.
 - Tailwind's `!` modifier sits after the variant, as in `motion-reduce:!opacity-100`, and emits the declaration with `!important` inside the media query.
 
-Steps 1 to 4 stop every entrance from moving. Steps 5 to 7 then remove what still animated under reduced motion afterwards: the FadeIn opacity tween, the feature card and CTA fades, and the loading spinner, which the hook hid only after it had painted once.
+Steps 1 to 4 stop every entrance from moving. Steps 5 to 7 then remove what still animated under reduced motion afterwards: the FadeIn opacity tween, the feature card and CTA fades, and the spin of the loading ring, which the hook hid only after it had painted once. Steps 8 to 10 cover what an audit of the result found: a call-to-action hover that could not be seen, smooth scrolling that still glided, and plain button hovers that snapped.
+
+The second rule: reduced motion removes movement, never information. A loading state, a hover, a pressed state and a focus outline each tell the user something, so each keeps a still form.
 
 ## Conventions
 
@@ -91,13 +93,31 @@ Both classes are needed. Forcing opacity alone would expose the 24px snap that s
 
 Change `opacity-0` to `motion-safe:opacity-0` in the four hidden-state class strings: the CardShell, image span and text span in `src/components/feature-cards.tsx`, and the outer entrance div in `src/components/call-to-action.tsx`. With no computed value differing between the hidden and settled states, `[transition:all_1.3s]` and `[transition:all_1.9s]` have nothing to transition, so the cards and CTA are simply present at first paint.
 
-## Step 7: Hide the loading spinner in CSS
+## Step 7: Show a still loader under reduced motion
 
-`src/app/loading.tsx`: remove the hook import, the hook call, the ternary and the `'use client'` directive that existed only for the hook. Return the `Container` unconditionally with `motion-reduce:hidden` appended to its className. Tailwind emits variant utilities after plain ones, so `hidden` under the media query beats the `flex` on the same element. The `aria-live` region and the sr-only text are hidden with it, which is what the empty fragment did before.
+`src/app/loading.tsx`: remove the hook import, the hook call, the ternary and the `'use client'` directive that existed only for the hook. Return the `Container` unconditionally, and add `motion-reduce:animate-none` to the ring `div` that carries `animate-spin`.
+
+An earlier revision of this step hid the whole container with `motion-reduce:hidden`. That removed the spin, but also every sign that the page was loading, including the `aria-live` region and the sr-only "Loading..." text inside the same container. The ring now renders still and the text is exposed again.
+
+## Step 8: Give the call-to-action button a hover that shows on the dark card
+
+`src/components/call-to-action.tsx`, the `InstallButton` className: add `motion-reduce:hover:bg-[color-mix(in_srgb,theme(colors.highlighter.900)_90%,white)]` and `motion-reduce:active:bg-highlighter-950`.
+
+Under reduced motion the button falls back to the plain solid hover, `hover:bg-highlighter-900/90`. That is a transparent tint, so it lightens the button over the light hero and disappears over the dark card. Mixing the same 90% toward white inside the colour paints the hero's hover on any backdrop. The pressed colour is restated because the hover rule sits later in the stylesheet and would otherwise win while the button is held.
+
+## Step 9: Apply smooth scrolling only when motion is allowed
+
+`src/app/layout.tsx`, the `<html>` className: replace `scroll-smooth` with `motion-safe:scroll-smooth`. Under reduced motion no `scroll-behavior` is set, so anchor jumps are instant. Leave `data-scroll-behavior="smooth"` in place; Next reads it to suspend smooth scrolling during route changes, and it is harmless when the class does not apply.
+
+## Step 10: Give the plain button hovers a short colour transition
+
+`src/components/ui/Button.tsx`, in `compoundVariants`: add `transition-colors duration-200` to the className of the `intent: 'solid', animation: 'none'` entry and of the `intent: 'outline', animation: 'none'` entry.
+
+A colour change moves nothing, so it may ease under either motion setting. Use `transition-colors`, not `transition-all`: framer drives the button's scale through an inline transform on the same element, and `transition-all` would fight it. 200 milliseconds matches `src/components/copy-button.tsx` and sits well under the 500 milliseconds of the slice label. Under reduced motion the hook in `Button` maps `slice` to `none`, so the hero, quick-view and call-to-action buttons all pick these classes up, and the step 8 tint eases with them. This changes hover for every visitor on every plain button, which is intended.
 
 ## Out of scope
 
-`src/hooks/use-reduced-motion.ts`, `src/components/icons/hero-animation.tsx`, `src/components/features-header.tsx`, `src/components/ui/Button.tsx`, `src/components/ui/card-shell.tsx` and `visual-baseline/` are unchanged in this phase. The Playwright guard and the README sentence are phase 2.
+`src/hooks/use-reduced-motion.ts`, `src/components/icons/hero-animation.tsx`, `src/components/features-header.tsx`, `src/components/ui/card-shell.tsx` and `visual-baseline/` are unchanged in this phase. In `src/components/ui/Button.tsx` only the two class strings of step 10 change; its hook stays. The unused gradient stylesheets and canvas gradient components are imported nowhere and reach no built CSS, so they need no reduced-motion guard. The Playwright guard and the README sentence are phase 2.
 
 ## Acceptance
 
@@ -108,6 +128,10 @@ Change `opacity-0` to `motion-safe:opacity-0` in the four hidden-state class str
 - [x] `grep -c "prefers-reduced-motion:no-preference" dist/_next/static/css/*.css` is above 0 and the built CSS contains the `reduce` block from `ctrl-atropos.css`.
 - [x] Served `dist/` under DevTools reduced-motion emulation: FadeIn wrappers snap to `transform: none` while opacity fades; no hydration warning in the console; the feature cards and CTA fade in without translating; hovering the CTA at 1280px leaves `.atropos-rotate`, `.atropos-scale` and `[data-atropos-offset]` at `transform: none` and `.atropos-shadow` at `display: none`.
 - [x] Served `dist/` with no preference: the same 24px and 500px entrances and the same Atropos tilt as before.
-- [x] After steps 5 to 7, the built CSS carries `opacity:1!important` and `transform:none!important` for the FadeIn classes and `display:none` for the loading container, all under the `reduce` query, and `pnpm visual:check` still passes with zero diffs.
+- [x] After steps 5 to 7, the built CSS carries `opacity:1!important` and `transform:none!important` for the FadeIn classes under the `reduce` query, and `pnpm visual:check` still passes with zero diffs.
 - [x] Served `dist/` under reduced-motion emulation: every FadeIn wrapper has computed `opacity: 1` and `transform: none` on load, the feature cards and CTA are present without fading, and no `transitionrun` fires for `opacity` or `transform` while scrolling through the page.
-- [x] Served `dist/` under reduced-motion emulation: a client-side navigation shows no spinner while the route loads. With no preference the spinner and every fade behave as before.
+- [ ] Served `dist/` under reduced-motion emulation: while a route loads, the loading container is displayed, the ring's computed `animation-name` is `none`, and the "Loading..." text is exposed to assistive technology. With no preference the ring's `animation-name` is `spin`. The built CSS has no `motion-reduce:hidden` rule.
+- [ ] Served `dist/` under reduced-motion emulation at 1280px: hovering the call-to-action button paints within two points per channel of the hero button's hover colour, and pressing it paints `rgb(10, 43, 53)`.
+- [ ] Computed `scroll-behavior` on `<html>` is `auto` under reduced-motion emulation and `smooth` with no preference.
+- [ ] Under reduced-motion emulation the hero and call-to-action button roots report a `transition-property` that covers `background-color` and excludes `transform`, with a `0.2s` duration, and hovering either fires no `transitionrun` for `transform`. With no preference the slice animation and the Atropos tilt are unchanged.
+- [ ] After steps 8 to 10, `npx tsc --noEmit` passes, `pnpm lint` reports no more problems than before the steps, and `pnpm visual:check` passes with zero diffs and no re-record.
