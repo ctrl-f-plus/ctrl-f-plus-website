@@ -74,7 +74,7 @@ function CtaButtons() {
       size="phat"
       icon="puzzleIconWithBg"
       animation="slice"
-      className="relative isolate z-50"
+      className="relative isolate z-50 motion-reduce:hover:bg-[color-mix(in_srgb,theme(colors.highlighter.900)_90%,white)] motion-reduce:active:bg-highlighter-950"
     >
       Add to <BrowserLabel />
     </InstallButton>
