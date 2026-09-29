@@ -77,7 +77,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth bg-gradient-cyan/50 antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full bg-gradient-cyan/50 antialiased motion-safe:scroll-smooth`}
     >
       <body
         className="debug-screens mx-auto flex min-h-full flex-col"
