@@ -24,8 +24,10 @@ Baselines live under `__snapshots__/<platform>/` because system-font metrics dif
 
 ## Controls that keep runs identical
 
-Reduced motion is emulated, which the site's own hook honours, so no element carries an entrance transform. Each page is scrolled through once and the run waits for animations and inline fades to finish before reading anything. Fonts are awaited. Locale, time zone, colour scheme, and viewport are pinned in `playwright.config.ts`.
+Reduced motion is emulated. The `motion-safe:` entrance classes and the `motion-reduce:` opacity and transform overrides keep content visible and still before hydration. `MotionConfig reducedMotion="user"` also makes Framer's positional updates instant. The media query in `src/styles/ctrl-atropos.css` suppresses the Atropos tilt, and the site's hook only drives interaction-only and client-only effects. Each page is scrolled through once and the run waits for animations and inline fades to finish before reading anything. Fonts are awaited. Locale, time zone, colour scheme, and viewport are pinned in `playwright.config.ts`.
+
+The home-page checks in `reduced-motion.spec.ts` also cover entrance styles before hydration, opacity and transform transitions during scrolling, the CTA card's tilt, the install buttons' colour feedback, and the root's scroll behaviour. The final CTA hover colour is pinned to `#264853`; a translucent hero hover can render differently across browser environments. With scripts disabled, the exported loading boundary stays visible so the tests can check its ring and accessible text against the built CSS. Control runs with no motion preference confirm that entrances still animate, scrolling remains smooth, and the loading ring spins.
 
 ## Not covered
 
-Hover, focus, and active colours. The runtime error page, which a static export cannot reach. Blog post pages, which stay dormant until a post is dated in the past. Verify those by reading the CSS diff.
+Hover and active colours beyond the two home-page install buttons, and focus colours. The runtime error page, which a static export cannot reach. Blog post pages, which stay dormant until a post is dated in the past. Verify those by reading the CSS diff.
