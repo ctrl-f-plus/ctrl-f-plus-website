@@ -48,6 +48,9 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: Check the listings contract
+        run: pnpm contract:check
+
       - name: Build
         run: pnpm build
 
