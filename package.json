@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest run",
+    "contract:check": "tsx src/cli/check-listings-contract.ts",
     "visual:check": "pnpm build && playwright test",
     "visual:baseline": "pnpm build && playwright test --update-snapshots",
     "cf:dev": "wrangler dev",

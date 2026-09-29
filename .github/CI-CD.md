@@ -42,7 +42,7 @@ Jobs run in this order:
 | Job                  | What it does                                                                                                                                                |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | GitHub Workflow Lint | Checks out the repo, installs the pinned actionlint binary, and validates `.github/workflows/*.yml`                                                         |
-| Build                | Checks out the repo, installs pnpm, sets up Node from [`../.nvmrc`](../.nvmrc), runs `pnpm install --frozen-lockfile`, runs `pnpm build`, and uploads `dist/` |
+| Build                | Checks out the repo, installs pnpm, sets up Node from [`../.nvmrc`](../.nvmrc), runs `pnpm install --frozen-lockfile`, runs `pnpm contract:check` to compare the schema copy with the API's published contract, runs `pnpm build`, and uploads `dist/` |
 | Deploy               | Runs only after GitHub Workflow Lint and Build succeed, and only for `push` or `workflow_dispatch` on `refs/heads/main`                                     |
 
 Workflow linting is intentionally scoped to workflow files only. It does not
