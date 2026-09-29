@@ -2,6 +2,7 @@
 import 'server-only';
 
 import { clientEnv } from '@/clientEnv';
+import { MotionConfig } from 'framer-motion';
 import { Metadata } from 'next';
 import { Arimo, Inter, Open_Sans } from 'next/font/google';
 import React, { Suspense } from 'react';
@@ -76,23 +77,27 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full scroll-smooth bg-gradient-cyan/50 antialiased`}
+      className={`${inter.variable} ${open_sans.variable} ${arimo.variable} h-full bg-gradient-cyan/50 antialiased motion-safe:scroll-smooth`}
     >
       <body
         className="debug-screens mx-auto flex min-h-full flex-col"
         suppressHydrationWarning
       >
-        <div className="relative flex flex-auto">
-          <div className="flex h-auto w-full flex-col backdrop-blur-md">
-            <Navbar />
+        {/* Framer's own reduced-motion hook mismatches the exported HTML at hydration,
+            so transforms are switched off at animation time instead. */}
+        <MotionConfig reducedMotion="user">
+          <div className="relative flex flex-auto">
+            <div className="flex h-auto w-full flex-col backdrop-blur-md">
+              <Navbar />
 
-            <main className="isolate z-10 flex-auto">{children}</main>
+              <main className="isolate z-10 flex-auto">{children}</main>
 
-            <Suspense fallback={<></>}>
-              <Footer className="relative z-20" />
-            </Suspense>
+              <Suspense fallback={<></>}>
+                <Footer className="relative z-20" />
+              </Suspense>
+            </div>
           </div>
-        </div>
+        </MotionConfig>
 
         {/*<CloudWatchRUM />*/}
         {/*<SentryInit />*/}

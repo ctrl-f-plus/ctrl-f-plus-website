@@ -113,3 +113,23 @@
 [data-atropos-offset][data-atropos-opacity] {
   transition-property: transform, opacity;
 }
+
+/* Atropos reads its params once on mount, so its props cannot follow the
+   reduced-motion preference. These rules beat its inline styles instead. */
+@media (prefers-reduced-motion: reduce) {
+  .atropos-rotate,
+  .atropos-scale,
+  [data-atropos-offset] {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .atropos-shadow,
+  .atropos-highlight {
+    display: none !important;
+  }
+
+  .atropos-rotate-touch {
+    touch-action: auto !important;
+  }
+}

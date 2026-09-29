@@ -58,13 +58,13 @@ const btn = cva({
       intent: 'solid',
       animation: 'none',
       className:
-        'hover:bg-highlighter-900/90 active:bg-highlighter-950 active:text-white/80',
+        'transition-colors duration-200 hover:bg-highlighter-900/90 active:bg-highlighter-950 active:text-white/80',
     },
     {
       intent: 'outline',
       animation: 'none',
       className:
-        'hover:bg-highlighter-900/10 focus:outline-none active:text-highlighter-950/70',
+        'transition-colors duration-200 hover:bg-highlighter-900/10 focus:outline-none active:text-highlighter-950/70',
     },
     {
       intent: 'outline',
