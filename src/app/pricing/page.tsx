@@ -3,8 +3,11 @@ import 'server-only';
 
 import { PricingCards } from '@/components/pricing-cards';
 import React from 'react';
-import { z } from 'zod';
-import { PricingTier, pricingTierSchema } from '@/listing.schema';
+import { PricingTier } from '@/listing.schema';
+import {
+  LISTINGS_OPERATION,
+  listingsResponseSchema,
+} from '@/listings-response.schema';
 import {
   PageTitleCard,
   PageTitleCardDescription,
@@ -15,12 +18,8 @@ import Container from '@/components/ui/container';
 
 const API_URL = process.env.API_URL;
 
-const listingsResponseSchema = z.object({
-  data: z.array(pricingTierSchema),
-});
-
 async function listListings(): Promise<PricingTier[]> {
-  const res = await fetch(`${API_URL}/v1/listings`, {
+  const res = await fetch(`${API_URL}${LISTINGS_OPERATION.path}`, {
     next: { revalidate: 3600 },
   });
   if (!res.ok) {
