@@ -1,7 +1,9 @@
 // src/components/page-body-card.tsx
 import 'server-only';
 
+import React from 'react';
 import { FadeIn } from './fade-in';
+import { cx } from 'cva';
 
 interface PageBodyCardProps {
   children: React.ReactNode;
@@ -13,7 +15,7 @@ export default function PageBodyCard({
   className,
 }: Readonly<PageBodyCardProps>) {
   return (
-    <FadeIn className="mt-10">
+    <FadeIn className={cx('mt-10', className)}>
       <div className="rounded-3xl bg-white/[.68] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-6 tab-pro:px-14 laptop:px-8 desktop:px-[40px]">
         {children}
       </div>

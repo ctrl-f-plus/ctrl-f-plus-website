@@ -35,15 +35,19 @@ const navItems: Record<string, NavItem> = {
     name: 'About',
     linkTag: 'link',
   },
-  // [process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL]: {
-  'https://opencollective.com/ctrl-f-plus-chrome-extension': {
-    name: 'Sponsor',
-    linkTag: 'a',
-  },
-  // '/pricing': {
-  //   name: 'Pricing',
-  //   linkTag: 'link',
+  // // [process.env.NEXT_PUBLIC_OPEN_COLLECTIVE_URL]: {
+  // 'https://opencollective.com/ctrl-f-plus-chrome-extension': {
+  //   name: 'Sponsor',
+  //   linkTag: 'a',
   // },
+  '/pricing': {
+    name: 'Pricing',
+    linkTag: 'link',
+  },
+  '/success': {
+    name: 'Success',
+    linkTag: 'link',
+  },
 };
 
 // TODO: Fix Mobile menu

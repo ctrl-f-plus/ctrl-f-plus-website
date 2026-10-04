@@ -43,7 +43,6 @@ function PageTitleCard({
 }>) {
   return (
     <FadeIn
-      //min-h-[318px]
       className={cx(
         'flex w-full items-center justify-center rounded-3xl bg-white/[.47] px-4 py-14 shadow-sm backdrop-blur-[23px] mobile-md:px-8 tablet:p-14 tab-pro:px-14 laptop:px-16 desktop:px-20',
         className,
