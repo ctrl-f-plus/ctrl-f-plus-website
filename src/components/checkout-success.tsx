@@ -9,12 +9,12 @@ import { InfoCard } from '@/components/info-card';
 import { CheckIcon } from '@/components/icons/check-icon';
 import { DoubleCheckIcon } from '@/components/icons/double-check-icon';
 import { BrowserLabel, InstallButton } from '@/components/install-button';
+import Button from '@/components/ui/Button';
 
 const EXTENSION_DETECTION_TIMEOUT_MS = 5000;
 const OPEN_SETTINGS_TIMEOUT_MS = 5000;
 const OPEN_SETTINGS_FAILURE_TEXT =
   'Could not open Settings. Reload this page and try again.';
-const SETTINGS_LINK_TEXT = 'Settings';
 
 const CHECKOUT_BRIDGE_MESSAGE_TYPE = {
   READY: 'ctrl-f-plus:checkout:ready',
@@ -31,6 +31,15 @@ const CHECKOUT_STATUS_STATES = new Set([
   'seatClaimFailed',
   'licenseLocked',
   'failed',
+]);
+
+const PENDING_ACTIVATION_STATES = new Set(['idle', 'checking']);
+
+const SETTINGS_BUTTON_LABELS_BY_STATE = new Map([
+  ['alreadyActivated', 'Open Settings'],
+  ['seatClaimFailed', 'Retry in Settings'],
+  ['licenseLocked', 'See why in Settings'],
+  ['failed', 'Sign in from Settings'],
 ]);
 
 function ExtensionActivationStatus({
@@ -194,50 +203,71 @@ function ExtensionActivationStatus({
     );
   }
 
-  const settingsTextIndex = activationStatus.text.indexOf(SETTINGS_LINK_TEXT);
-  const shouldLinkSettings =
-    activationStatus.canOpenSettings && settingsTextIndex !== -1;
+  const isActivationPending = PENDING_ACTIVATION_STATES.has(
+    activationStatus.state,
+  );
+  const settingsButtonLabel = activationStatus.canOpenSettings
+    ? SETTINGS_BUTTON_LABELS_BY_STATE.get(activationStatus.state)
+    : undefined;
+  const isInstallButtonShown = activationStatus.state === 'noExtension';
+  const isShortcutHintShown = activationStatus.state === 'activated';
 
   return (
-    <div className="flex flex-col items-center gap-2 rounded-3xl border border-highlighter-focus-200 bg-highlighter-focus-50 px-5 py-2 font-inter text-label text-shark tablet:flex-row tablet:gap-3">
-      <span className="flex flex-none items-center gap-3">
-        <DoubleCheckIcon className="h-5 w-5 text-highlighter-900" />
-        Ctrl-F Plus Pro
-      </span>
-      <span
-        aria-hidden="true"
-        className="hidden h-5 w-px flex-none bg-shark/10 tablet:block"
-      />
-      <div className="text-center tablet:text-left">
-        <p id="ext-activation" data-state={activationStatus.state}>
-          {shouldLinkSettings ? (
-            <>
-              {activationStatus.text.slice(0, settingsTextIndex)}
-              <button
-                type="button"
-                onClick={openSettings}
-                disabled={isOpeningSettings}
-                aria-busy={isOpeningSettings}
-                aria-label="Open extension Settings in a new tab"
-                className="cursor-pointer rounded-sm underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-wait disabled:opacity-60"
-              >
-                {SETTINGS_LINK_TEXT}
-              </button>
-              {activationStatus.text.slice(
-                settingsTextIndex + SETTINGS_LINK_TEXT.length,
-              )}
-            </>
-          ) : (
-            activationStatus.text
-          )}
+    <>
+      <div className="flex flex-col items-center gap-2 rounded-3xl border border-highlighter-focus-200 bg-highlighter-focus-50 px-5 py-2 font-inter text-label text-shark tablet:flex-row tablet:gap-3">
+        <span className="flex flex-none items-center gap-3">
+          <DoubleCheckIcon className="h-5 w-5 text-highlighter-900" />
+          Ctrl-F Plus Pro
+        </span>
+        <span
+          aria-hidden="true"
+          className="hidden h-5 w-px flex-none bg-shark/10 tablet:block"
+        />
+        <p
+          id="ext-activation"
+          data-state={activationStatus.state}
+          className="text-center tablet:text-left"
+        >
+          {activationStatus.text}
         </p>
-        {settingsError && (
-          <p role="alert" className="mt-1 text-sm">
-            {settingsError}
-          </p>
-        )}
       </div>
-    </div>
+
+      {isActivationPending && <div className="h-14" />}
+
+      {settingsButtonLabel && (
+        <div className="flex w-72 flex-col items-center gap-2">
+          <Button
+            intent="solid"
+            size="thin"
+            type="button"
+            target=""
+            onClick={openSettings}
+            aria-busy={isOpeningSettings}
+          >
+            {settingsButtonLabel}
+          </Button>
+          {settingsError && (
+            <p role="alert" className="text-center font-inter text-sm">
+              {settingsError}
+            </p>
+          )}
+        </div>
+      )}
+
+      {isInstallButtonShown && (
+        <div className="w-72">
+          <InstallButton intent="solid" size="thin" icon="puzzle">
+            Add to <BrowserLabel />
+          </InstallButton>
+        </div>
+      )}
+
+      {isShortcutHintShown && (
+        <p className="font-open-sans text-fs-lg-sm text-shark-400">
+          Press Ctrl+Shift+F in any tab to start.
+        </p>
+      )}
+    </>
   );
 }
 
@@ -261,7 +291,7 @@ export function CheckoutSuccess() {
     <div data-checkout-id={checkoutId ?? undefined}>
       <FadeInStagger>
         <InfoCard className="mt-0">
-          <SuccessCheckBadge />
+          {/*<SuccessCheckBadge />*/}
 
           <div className="flex flex-col items-center gap-4">
             <h1 className="font-inter text-sm font-semibold uppercase tracking-widest text-shark">
@@ -285,17 +315,6 @@ export function CheckoutSuccess() {
             key={checkoutId ?? 'missing'}
             checkoutId={checkoutId}
           />
-
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-72">
-              <InstallButton intent="solid" size="thin" icon="puzzle">
-                Add to <BrowserLabel /> for free
-              </InstallButton>
-            </div>
-            <p className="font-open-sans text-fs-lg-sm text-shark-400">
-              A few clicks. Then back to your tabs.
-            </p>
-          </div>
 
           {checkoutId && (
             <div className="mt-4 flex items-center gap-2 font-arimo text-footnote tabular-nums text-shark-400">

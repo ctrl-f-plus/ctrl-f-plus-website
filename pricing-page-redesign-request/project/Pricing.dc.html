@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#EBF4F0;}
+*{box-sizing:border-box;}
+a{color:inherit;text-decoration:none;}
+a:hover{color:#1E8FA3;}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#EBF4F0;font-family:'Open Sans',system-ui,sans-serif;color:#1C2A2E;display:flex;flex-direction:column;">
+  <header style="width:100%;max-width:1128px;margin:0 auto;padding:40px 24px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px 32px;">
+    <a href="#" style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:27px;font-weight:500;letter-spacing:-0.035em;color:#1C2A2E;">Ctrl-F Plus</a>
+    <nav style="display:flex;flex-wrap:wrap;gap:12px 32px;font-size:19px;color:#22303A;">
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#" style="color:#1E8FA3;">Pricing</a>
+      <a href="#">Success</a>
+    </nav>
+  </header>
+
+  <main style="width:100%;max-width:1128px;margin:0 auto;padding:0 24px;flex:1;">
+    <section style="margin-top:clamp(48px,8vw,96px);background:#F4FAF7;border:1px solid #E1EBE7;border-radius:28px;padding:clamp(36px,6vw,68px) clamp(28px,7vw,80px);">
+      <h1 style="margin:0;font-size:clamp(44px,7vw,68px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;color:#1A2A2F;">Pricing</h1>
+      <p style="margin:24px 0 0;font-size:20px;line-height:1.5;color:#1F2D33;text-wrap:pretty;">Start free, or choose a paid plan that fits your tab habit.</p>
+    </section>
+
+    <div style="margin-top:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <h2 style="margin:0;font-size:20px;font-weight:600;color:#1C2A2E;">Compare plans</h2>
+      <div style="display:flex;gap:2px;padding:3px;border:1px solid #DCE6E2;background:#F4FAF7;border-radius:999px;">
+        <button onClick="{{ setMonthly }}" style="border:0;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;background:{{ monthlyBg }};color:{{ monthlyFg }};transition:background .15s,color .15s;">Monthly</button>
+        <button onClick="{{ setAnnual }}" style="border:0;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;padding:7px 15px;border-radius:999px;background:{{ annualBg }};color:{{ annualFg }};transition:background .15s,color .15s;">Annually</button>
+      </div>
+    </div>
+
+    <div ref="{{ gridRef }}" style="margin-top:24px;display:grid;grid-template-columns:{{ gridCols }};align-items:center;">
+      <div style="background:rgba(248,252,250,0.6);border-style:solid;border-color:#DCE6E2;border-width:{{ freeBorder }};border-radius:{{ freeRadius }};margin:{{ freeMargin }};padding:clamp(28px,4vw,40px);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+        <h3 style="margin:0;font-size:20px;font-weight:600;color:#1C2A2E;line-height:32px;">Free</h3>
+        <p style="margin:12px 0 0;font-size:17px;line-height:1.65;color:#4A585D;text-wrap:pretty;">The essentials to provide your best work for clients.</p>
+        <p style="margin:20px 0 0;display:flex;align-items:baseline;gap:8px;">
+          <span style="font-size:30px;font-weight:700;color:#1C2A2E;letter-spacing:-0.01em;">$0</span>
+        </p>
+        <a href="#" style="margin-top:20px;display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:999px;border:1.5px solid #D5DEDB;color:#0B3546;font-family:'Open Sans',sans-serif;font-size:18px;font-weight:600;text-align:center;transition:border-color .15s,background .15s;" style-hover="border-color:#9FB4B0;background:#F0F7F4;color:#0B3546;">Add to Chrome for free</a>
+        <div style="height:1px;background:#E0E8E5;margin:26px 0 24px;"></div>
+        <ul role="list" style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;font-size:16.5px;line-height:1.55;color:#3A474C;">
+          <li style="display:flex;gap:12px;"><svg width="18" height="26" viewBox="0 0 18 26" fill="none" style="flex:none;"><path d="M3 13.5l4 4 8-9" stroke="#2AA198" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Cross-tab search</span></li>
+          <li style="display:flex;gap:12px;"><svg width="18" height="26" viewBox="0 0 18 26" fill="none" style="flex:none;"><path d="M3 13.5l4 4 8-9" stroke="#2AA198" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Native-style find bar in each tab</span></li>
+          <li style="display:flex;gap:12px;"><svg width="18" height="26" viewBox="0 0 18 26" fill="none" style="flex:none;"><path d="M3 13.5l4 4 8-9" stroke="#2AA198" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Customizable keyboard shortcut</span></li>
+          <li style="display:flex;gap:12px;"><svg width="18" height="26" viewBox="0 0 18 26" fill="none" style="flex:none;"><path d="M3 13.5l4 4 8-9" stroke="#2AA198" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>PDF Viewer</span></li>
+        </ul>
+      </div>
+
+      <div style="position:relative;z-index:1;background:#EEFBF5;border:1.5px solid #74D6B5;border-radius:28px;padding:clamp(36px,5vw,60px) clamp(28px,4.5vw,48px);box-shadow:0 40px 80px -24px rgba(11,53,70,0.22),0 16px 32px -12px rgba(11,53,70,0.10);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <h3 style="margin:0;font-size:22px;font-weight:600;color:#1C2A2E;line-height:32px;">Pro</h3>
+          <sc-if value="{{ showBadge }}" hint-placeholder-val="{{ true }}">
+            <span style="background:#D9F4E8;color:#2D4A42;font-size:15px;padding:5px 13px;border-radius:999px;">Featured plan</span>
+          </sc-if>
+        </div>
+        <p style="margin:12px 0 0;font-size:17px;line-height:1.65;color:#4A585D;text-wrap:pretty;">The essentials to provide your best work for clients.</p>
+        <p style="margin:24px 0 0;display:flex;align-items:baseline;gap:10px;">
+          <sc-if value="{{ isMonthly }}" hint-placeholder-val="{{ true }}">
+            <span style="font-size:42px;font-weight:700;color:#1C2A2E;letter-spacing:-0.02em;">$2.99</span>
+            <span style="font-size:17px;color:#3E4C51;">/ month</span>
+          </sc-if>
+          <sc-if value="{{ isAnnual }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:42px;font-weight:700;color:#1C2A2E;letter-spacing:-0.02em;">{{ annualPrice }}</span>
+            <span style="font-size:17px;color:#3E4C51;">/ year</span>
+          </sc-if>
+        </p>
+        <a href="#" style="margin-top:24px;display:flex;align-items:center;justify-content:center;min-height:56px;padding:0 20px;border-radius:999px;background:#0B3546;color:#FFFFFF;font-family:'Open Sans',sans-serif;font-size:19px;font-weight:600;text-align:center;box-shadow:0 6px 16px -6px rgba(11,53,70,0.45);transition:background .15s;" style-hover="background:#134A5E;color:#FFFFFF;">Buy plan</a>
+        <div style="height:1px;background:#D3E9DF;margin:30px 0 26px;"></div>
+        <ul role="list" style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;font-size:16.5px;line-height:1.55;color:#3A474C;">
+          <li style="display:flex;gap:12px;"><svg width="18" height="26" viewBox="0 0 18 26" fill="none" style="flex:none;"><path d="M3 13.5l4 4 8-9" stroke="#2AA198" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Cross-tab PDF Search</span></li>
+          <li style="display:flex;gap:12px;"><svg width="18" height="26" viewBox="0 0 18 26" fill="none" style="flex:none;"><path d="M3 13.5l4 4 8-9" stroke="#2AA198" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>PDF search with case, whole-word, and diacritics options</span></li>
+          <li style="display:flex;gap:12px;"><svg width="18" height="26" viewBox="0 0 18 26" fill="none" style="flex:none;"><path d="M3 13.5l4 4 8-9" stroke="#2AA198" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Up to 3 devices</span></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer style="margin-top:clamp(96px,12vw,152px);background:#1B2428;color:#C3CCCE;padding:80px 24px 36px;">
+    <div style="max-width:1080px;margin:0 auto;">
+      <div style="display:flex;flex-wrap:wrap;gap:48px 88px;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <h4 style="margin:0 0 6px;font-size:19px;font-weight:700;color:#F2F5F5;">Company</h4>
+          <a href="#" style="font-size:17px;">About</a>
+          <a href="#" style="font-size:17px;">Blog</a>
+          <a href="#" style="font-size:17px;">Setup</a>
+          <a href="#" style="font-size:17px;">Privacy Policy</a>
+          <a href="#" style="font-size:17px;">Contact us</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <h4 style="margin:0 0 6px;font-size:19px;font-weight:700;color:#F2F5F5;">Contribute</h4>
+          <a href="#" style="font-size:17px;">Star us on GitHub</a>
+          <a href="#" style="font-size:17px;">Sponsor</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <h4 style="margin:0 0 6px;font-size:19px;font-weight:700;color:#F2F5F5;">Download</h4>
+          <a href="#" style="font-size:17px;">Brave</a>
+          <a href="#" style="font-size:17px;">Chrome</a>
+          <a href="#" style="font-size:17px;">Firefox</a>
+        </div>
+        <div style="margin-left:auto;display:flex;flex-direction:column;gap:20px;max-width:300px;">
+          <h4 style="margin:0;font-size:26px;font-weight:700;color:#F2F5F5;line-height:1.2;">Let's improve it together!</h4>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <img src="https://cdn.simpleicons.org/github/E6ECEC" alt="GitHub" width="52" height="52" style="flex:none;display:block;">
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#C3CCCE;">This project is open source and we welcome your contributions!</p>
+          </div>
+          <a href="#" style="align-self:center;font-size:18px;font-weight:700;color:#E6ECEC;">github.com/<span style="color:#4FD1A5;font-weight:500;">ctrl-f-plus</span></a>
+        </div>
+      </div>
+      <div style="margin-top:96px;padding-top:32px;border-top:1px solid #33403F;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <span style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:27px;font-weight:500;letter-spacing:-0.035em;color:#F2F5F5;">Ctrl-F Plus</span>
+        <span style="font-size:20px;color:#E6ECEC;">copyright 2023-2026</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultBilling&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;monthly&quot;,&quot;annually&quot;],&quot;default&quot;:&quot;monthly&quot;,&quot;tsType&quot;:&quot;'monthly' | 'annually'&quot;},&quot;annualPrice&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$29.99&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showBadge&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { billing: null, wide: true };
+  gridRef = React.createRef();
+  componentDidMount() {
+    const el = this.gridRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    this.ro = new ResizeObserver(([e]) => {
+      const wide = e.contentRect.width >= 720;
+      if (wide !== this.state.wide) this.setState({ wide });
+    });
+    this.ro.observe(el);
+  }
+  componentWillUnmount() { if (this.ro) this.ro.disconnect(); }
+  renderVals() {
+    const billing = this.state.billing ?? this.props.defaultBilling ?? 'monthly';
+    const annual = billing === 'annually';
+    const wide = this.state.wide;
+    const on = ['#0B3546', '#FFFFFF'], off = ['transparent', '#5B686C'];
+    return {
+      gridRef: this.gridRef,
+      setMonthly: () => this.setState({ billing: 'monthly' }),
+      setAnnual: () => this.setState({ billing: 'annually' }),
+      isMonthly: !annual,
+      isAnnual: annual,
+      monthlyBg: annual ? off[0] : on[0],
+      monthlyFg: annual ? off[1] : on[1],
+      annualBg: annual ? on[0] : off[0],
+      annualFg: annual ? on[1] : off[1],
+      annualPrice: this.props.annualPrice ?? '$29.99',
+      showBadge: this.props.showBadge ?? true,
+      gridCols: wide ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)',
+      freeRadius: wide ? '28px 0 0 28px' : '28px 28px 0 0',
+      freeBorder: wide ? '1px 0 1px 1px' : '1px 1px 0 1px',
+      freeMargin: wide ? '0' : '0 20px',
+    };
+  }
+}
+</script>
+</body>
+</html>

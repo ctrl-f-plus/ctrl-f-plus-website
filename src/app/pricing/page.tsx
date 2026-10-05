@@ -30,8 +30,16 @@ async function listListings(): Promise<PricingTier[]> {
   return listingsResponseSchema.parse(await res.json()).data;
 }
 
+// The two-card layout expects one plain tier followed by the featured tier.
+function selectDisplayedPricingTiers(
+  pricingTiers: PricingTier[],
+): PricingTier[] {
+  // TODO(Ben): choose which of the API's tiers this page shows.
+  return pricingTiers;
+}
+
 export default async function Page() {
-  const pricingTiers = await listListings();
+  const pricingTiers = selectDisplayedPricingTiers(await listListings());
 
   return (
     <Container className="mt-18 flex w-full flex-col tablet:mt-24">
