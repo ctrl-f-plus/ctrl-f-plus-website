@@ -1,7 +1,7 @@
 // src/components/checkout-success.tsx
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import CopyButton from '@/components/copy-button';
 import { FadeInStagger } from '@/components/fade-in';
@@ -11,26 +11,192 @@ import { DoubleCheckIcon } from '@/components/icons/double-check-icon';
 import { BrowserLabel, InstallButton } from '@/components/install-button';
 
 const EXTENSION_DETECTION_TIMEOUT_MS = 5000;
+const OPEN_SETTINGS_TIMEOUT_MS = 5000;
+const OPEN_SETTINGS_FAILURE_TEXT =
+  'Could not open Settings. Reload this page and try again.';
+const SETTINGS_LINK_TEXT = 'Settings';
 
-function ExtensionActivationStatus() {
-  const statusRef = useRef<HTMLParagraphElement>(null);
+const CHECKOUT_BRIDGE_MESSAGE_TYPE = {
+  READY: 'ctrl-f-plus:checkout:ready',
+  REQUEST: 'ctrl-f-plus:checkout:request',
+  STATUS: 'ctrl-f-plus:checkout:status',
+  OPEN_SETTINGS: 'ctrl-f-plus:checkout:open-settings',
+  OPEN_SETTINGS_RESULT: 'ctrl-f-plus:checkout:open-settings-result',
+} as const;
+
+const CHECKOUT_STATUS_STATES = new Set([
+  'checking',
+  'activated',
+  'alreadyActivated',
+  'seatClaimFailed',
+  'licenseLocked',
+  'failed',
+]);
+
+function ExtensionActivationStatus({
+  checkoutId,
+}: Readonly<{ checkoutId: string | null }>) {
+  const [activationStatus, setActivationStatus] = useState(() =>
+    checkoutId
+      ? {
+          state: 'idle',
+          text: 'Checking for the Ctrl-F Plus extension…',
+          canOpenSettings: false,
+        }
+      : {
+          state: 'missingCheckout',
+          text: 'This link has no checkout reference. Open the extension’s Settings and sign in with your purchase email.',
+          canOpenSettings: false,
+        },
+  );
+  const [isOpeningSettings, setIsOpeningSettings] = useState(false);
+  const [settingsError, setSettingsError] = useState<string | null>(null);
+  const settingsRequestIdRef = useRef<string | null>(null);
+  const settingsTimeoutIdRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      const statusElement = statusRef.current;
+    if (!checkoutId) return;
 
-      if (statusElement?.dataset.state !== 'idle') {
+    const requestId = crypto.randomUUID();
+    let receivedStatus = false;
+    let receivedFinalStatus = false;
+
+    function requestCheckoutStatus(): void {
+      window.postMessage(
+        {
+          type: CHECKOUT_BRIDGE_MESSAGE_TYPE.REQUEST,
+          checkoutId,
+          requestId,
+        },
+        location.origin,
+      );
+    }
+
+    const detectionTimeoutId = window.setTimeout(() => {
+      if (receivedStatus) return;
+      setActivationStatus({
+        state: 'noExtension',
+        text: 'Could not connect to Ctrl-F Plus. Check that it is enabled in this browser, then reload this page.',
+        canOpenSettings: false,
+      });
+    }, EXTENSION_DETECTION_TIMEOUT_MS);
+
+    function handleCheckoutMessage(event: MessageEvent<unknown>): void {
+      if (event.source !== window || event.origin !== location.origin) return;
+
+      const messageData = event.data;
+      if (
+        typeof messageData !== 'object' ||
+        messageData === null ||
+        !('type' in messageData)
+      ) {
         return;
       }
 
-      statusElement.dataset.state = 'noExtension';
-      statusElement.textContent =
-        'We could not find the Ctrl-F Plus extension in this browser. ' +
-        'Install it, then open its Settings and sign in with your email to retrieve your license.';
-    }, EXTENSION_DETECTION_TIMEOUT_MS);
+      if (messageData.type === CHECKOUT_BRIDGE_MESSAGE_TYPE.READY) {
+        if (!receivedStatus) requestCheckoutStatus();
+        return;
+      }
 
-    return () => window.clearTimeout(timeoutId);
-  }, []);
+      if (
+        messageData.type === CHECKOUT_BRIDGE_MESSAGE_TYPE.OPEN_SETTINGS_RESULT
+      ) {
+        if (
+          !('checkoutId' in messageData) ||
+          messageData.checkoutId !== checkoutId ||
+          !('requestId' in messageData) ||
+          typeof messageData.requestId !== 'string' ||
+          messageData.requestId !== settingsRequestIdRef.current ||
+          !('success' in messageData) ||
+          typeof messageData.success !== 'boolean'
+        ) {
+          return;
+        }
+
+        window.clearTimeout(settingsTimeoutIdRef.current);
+        settingsTimeoutIdRef.current = undefined;
+        settingsRequestIdRef.current = null;
+        setIsOpeningSettings(false);
+        setSettingsError(
+          messageData.success ? null : OPEN_SETTINGS_FAILURE_TEXT,
+        );
+        return;
+      }
+
+      if (
+        receivedFinalStatus ||
+        messageData.type !== CHECKOUT_BRIDGE_MESSAGE_TYPE.STATUS ||
+        !('requestId' in messageData) ||
+        messageData.requestId !== requestId ||
+        !('checkoutId' in messageData) ||
+        messageData.checkoutId !== checkoutId ||
+        !('state' in messageData) ||
+        typeof messageData.state !== 'string' ||
+        !CHECKOUT_STATUS_STATES.has(messageData.state) ||
+        !('text' in messageData) ||
+        typeof messageData.text !== 'string'
+      ) {
+        return;
+      }
+
+      receivedStatus = true;
+      receivedFinalStatus = messageData.state !== 'checking';
+      window.clearTimeout(detectionTimeoutId);
+      setActivationStatus({
+        state: messageData.state,
+        text: messageData.text,
+        canOpenSettings:
+          'canOpenSettings' in messageData &&
+          messageData.canOpenSettings === true,
+      });
+    }
+
+    window.addEventListener('message', handleCheckoutMessage);
+    requestCheckoutStatus();
+
+    return () => {
+      window.removeEventListener('message', handleCheckoutMessage);
+      window.clearTimeout(detectionTimeoutId);
+      window.clearTimeout(settingsTimeoutIdRef.current);
+      settingsTimeoutIdRef.current = undefined;
+      settingsRequestIdRef.current = null;
+    };
+  }, [checkoutId]);
+
+  function openSettings(): void {
+    if (
+      !checkoutId ||
+      !activationStatus.canOpenSettings ||
+      settingsRequestIdRef.current !== null
+    ) {
+      return;
+    }
+
+    const requestId = crypto.randomUUID();
+    settingsRequestIdRef.current = requestId;
+    setIsOpeningSettings(true);
+    setSettingsError(null);
+
+    settingsTimeoutIdRef.current = window.setTimeout(() => {
+      settingsTimeoutIdRef.current = undefined;
+      settingsRequestIdRef.current = null;
+      setIsOpeningSettings(false);
+      setSettingsError(OPEN_SETTINGS_FAILURE_TEXT);
+    }, OPEN_SETTINGS_TIMEOUT_MS);
+
+    window.postMessage(
+      {
+        type: CHECKOUT_BRIDGE_MESSAGE_TYPE.OPEN_SETTINGS,
+        checkoutId,
+        requestId,
+      },
+      location.origin,
+    );
+  }
+
+  const settingsTextIndex = activationStatus.text.indexOf(SETTINGS_LINK_TEXT);
+  const shouldLinkSettings =
+    activationStatus.canOpenSettings && settingsTextIndex !== -1;
 
   return (
     <div className="flex flex-col items-center gap-2 rounded-3xl border border-highlighter-focus-200 bg-highlighter-focus-50 px-5 py-2 font-inter text-label text-shark tablet:flex-row tablet:gap-3">
@@ -42,14 +208,35 @@ function ExtensionActivationStatus() {
         aria-hidden="true"
         className="hidden h-5 w-px flex-none bg-shark/10 tablet:block"
       />
-      <p
-        ref={statusRef}
-        id="ext-activation"
-        data-state="idle"
-        className="text-center tablet:text-left"
-      >
-        Checking for the Ctrl-F Plus extension…
-      </p>
+      <div className="text-center tablet:text-left">
+        <p id="ext-activation" data-state={activationStatus.state}>
+          {shouldLinkSettings ? (
+            <>
+              {activationStatus.text.slice(0, settingsTextIndex)}
+              <button
+                type="button"
+                onClick={openSettings}
+                disabled={isOpeningSettings}
+                aria-busy={isOpeningSettings}
+                aria-label="Open extension Settings in a new tab"
+                className="cursor-pointer rounded-sm underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-wait disabled:opacity-60"
+              >
+                {SETTINGS_LINK_TEXT}
+              </button>
+              {activationStatus.text.slice(
+                settingsTextIndex + SETTINGS_LINK_TEXT.length,
+              )}
+            </>
+          ) : (
+            activationStatus.text
+          )}
+        </p>
+        {settingsError && (
+          <p role="alert" className="mt-1 text-sm">
+            {settingsError}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
@@ -69,7 +256,6 @@ function SuccessCheckBadge() {
 
 export function CheckoutSuccess() {
   const checkoutId = useSearchParams().get('checkout_id');
-  // const checkoutId = 'd612aeaa-f1c0-4067-9e20-ce783cb7717d';
 
   return (
     <div data-checkout-id={checkoutId ?? undefined}>
@@ -95,7 +281,10 @@ export function CheckoutSuccess() {
             Ctrl-F Plus to the next level.
           </p>
 
-          <ExtensionActivationStatus />
+          <ExtensionActivationStatus
+            key={checkoutId ?? 'missing'}
+            checkoutId={checkoutId}
+          />
 
           <div className="flex flex-col items-center gap-4">
             <div className="w-72">

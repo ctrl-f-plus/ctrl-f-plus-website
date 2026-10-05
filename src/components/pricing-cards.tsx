@@ -12,6 +12,7 @@ import { CheckIcon } from '@/components/icons/check-icon';
 import { FadeIn } from '@/components/fade-in';
 import Button from '@/components/ui/Button';
 import { cva } from '../../cva.config';
+import { Badge } from '@/components/ui/badge';
 
 const billingPeriodOptions = {
   [BILLING_PERIOD.MONTH]: { label: 'Monthly' },
@@ -88,11 +89,13 @@ function PricingCard({
         <h3 id={headingId} className="font-inter text-card-heading text-shark">
           {tier.name}
         </h3>
-        {tier.isFeatured && (
-          <span className="rounded-full bg-highlighter-focus-100 px-2.5 font-arimo text-body-sm text-shark/80">
-            Featured plan
-          </span>
-        )}
+        {/*{tier.isFeatured && (*/}
+        {/*  <span className="rounded-full bg-highlighter-focus-100 px-2.5 font-arimo text-body-sm text-shark/80">*/}
+        {/*    Featured plan*/}
+        {/*  </span>*/}
+        {/*)}*/}
+        {tier.isFeatured && <Badge variant="brand1">Featured Plan</Badge>}
+        {tier.isFeatured && <Badge variant="brand2">Featured Plan</Badge>}
       </div>
 
       <p className="mt-2 font-arimo text-body-sm text-shark/80 laptop:min-h-[56px]">

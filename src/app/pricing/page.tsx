@@ -44,9 +44,7 @@ export default async function Page() {
           </PageTitleCardDescription>
         </PageTitleCard>
 
-        {/*<PageBodyCard>*/}
         <PricingCards pricingTiers={pricingTiers} />
-        {/*</PageBodyCard>*/}
       </FadeInStagger>
     </Container>
   );

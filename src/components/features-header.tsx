@@ -60,7 +60,6 @@ function CardText({
 
 export default function FeaturesHeader() {
   const prefersReducedMotion = !!useReducedMotion();
-  // const [prefersReduced, setPrefersReduced] = useState(false);
 
   let stiffness = 80;
   let damping = 30;
@@ -68,15 +67,8 @@ export default function FeaturesHeader() {
   let mouseX = useSpring(-500, { stiffness: stiffness, damping: damping });
   let mouseY = useSpring(0, { stiffness: stiffness, damping: damping });
 
-  // let mouseX = useSpring(-500);
-  // let mouseY = useSpring(0);
-
-  // let mouseX = useMotionValue(-500);
-  // let mouseY = useMotionValue(0);
-
   let maskImage = useMotionTemplate`radial-gradient(200px at ${mouseX}px ${mouseY}px, white, transparent)`;
 
-  // let style = { maskImage, WebkitMaskImage: maskImage };
   const style = useMemo(
     () => ({ maskImage, WebkitMaskImage: maskImage }),
     [maskImage],
@@ -139,7 +131,6 @@ export default function FeaturesHeader() {
                       'absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block',
                       prefersReducedMotion && 'wide:hidden',
                     )}
-                    // className="absolute inset-0 hidden rounded-[2.25rem] bg-[#03af7d] opacity-0 transition duration-900 group-hover:opacity-100 wide:block"
                     style={style}
                   />
 
