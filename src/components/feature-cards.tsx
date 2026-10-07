@@ -3,17 +3,30 @@
 
 import clsx from 'clsx';
 import { useInView } from 'framer-motion';
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import React, { useRef } from 'react';
 import CardShell from './ui/card-shell';
 import Container from './ui/container';
 import { FadeIn } from './fade-in';
+import { Badge } from './ui/badge';
+import CtrlLink from './ui/ctrl-link';
 
 import feature1 from '/public/svgs/feature1.min.svg';
 import feature2 from '/public/svgs/feature2.min.svg';
 import feature3 from '/public/svgs/feature3.min.svg';
+import feature4 from '/public/svgs/feature4.min.svg';
 
-const features = [
+type FeatureCardContent = {
+  title: string;
+  subTitle: string;
+  description: string;
+  icon: StaticImageData;
+  hiddenOffsetClass: string;
+  badge?: string;
+  link?: { href: string; label: string };
+};
+
+const features: FeatureCardContent[] = [
   {
     title: `All-Tab Search: The Panoramic View`,
     subTitle: `Upgrade from One-Tab Searches`,
@@ -37,6 +50,15 @@ const features = [
     // icon: FeatureIcon3,
     icon: feature3,
     hiddenOffsetClass: 'motion-safe:-translate-x-[500px]',
+  },
+  {
+    title: `PDF Search: Your Tabs Aren't the Only Hoard`,
+    subTitle: `Now in Pro`,
+    description: `Your PDFs have been sitting out the search party. Pro brings them in, right alongside your tabs.`,
+    icon: feature4,
+    hiddenOffsetClass: 'motion-safe:translate-x-[500px]',
+    badge: 'Pro',
+    link: { href: '/pricing', label: 'See Pro pricing' },
   },
 ];
 // TODO: pass as param instead
@@ -171,11 +193,26 @@ function FeatureCards() {
             <Container className="relative mt-18 flex w-full flex-col tablet:mt-24 wide:mt-[7.625rem]">
               <div className="laptop:text-left">
                 <AnimateCard feat={feat} index={index}>
-                  <FeatureCardTitle>{feat.title}</FeatureCardTitle>
+                  {feat.badge ? (
+                    <div className="flex flex-wrap items-center justify-center gap-3 laptop:justify-start">
+                      <FeatureCardTitle>{feat.title}</FeatureCardTitle>
+                      <Badge variant="brand2">{feat.badge}</Badge>
+                    </div>
+                  ) : (
+                    <FeatureCardTitle>{feat.title}</FeatureCardTitle>
+                  )}
                   <FeatureCardSubtitle>{feat.subTitle}</FeatureCardSubtitle>
                   <FeatureCardDescription>
                     {feat.description}
                   </FeatureCardDescription>
+                  {feat.link && (
+                    <CtrlLink
+                      href={feat.link.href}
+                      className="font-open-sans text-fs-lg text-shark/70 underline underline-offset-4 hover:text-highlighter-900"
+                    >
+                      {feat.link.label}
+                    </CtrlLink>
+                  )}
                 </AnimateCard>
               </div>
             </Container>

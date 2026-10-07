@@ -83,9 +83,6 @@ importers:
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
-      tailwind-variants:
-        specifier: ^3.3.1
-        version: 3.3.1(tailwind-merge@1.14.0)(tailwindcss@3.3.3(ts-node@10.9.2(@types/node@22.19.15)(typescript@5.8.3)))
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.1.0
@@ -4808,18 +4805,6 @@ packages:
 
   tailwind-merge@1.14.0:
     resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
-
-  tailwind-variants@3.3.1:
-    resolution: {integrity: sha512-4pAvwUtM4HKBiRZftncAbpn6V9Hhwoa5Fl7O2u5zbp7Z5Cvu+/o/6+176WY3WCEES209543quG8zFIcXCsc5Jw==}
-    engines: {node: '>=16.9.x', pnpm: '>=7.x'}
-    peerDependencies:
-      tailwind-merge: '>=3.0.0'
-      tailwindcss: '*'
-    peerDependenciesMeta:
-      tailwind-merge:
-        optional: true
-      tailwindcss:
-        optional: true
 
   tailwindcss-debug-screens@2.2.1:
     resolution: {integrity: sha512-EMyA0CYBzqcZJHtVDvBfmYzfx3NxuK4qDyVO5wnzcGOrmJsv25D9xPpWefVTORTvhE6pCh90Z1WYnLUKsg3yMw==}
@@ -10491,11 +10476,6 @@ snapshots:
   tabbable@6.4.0: {}
 
   tailwind-merge@1.14.0: {}
-
-  tailwind-variants@3.3.1(tailwind-merge@1.14.0)(tailwindcss@3.3.3(ts-node@10.9.2(@types/node@22.19.15)(typescript@5.8.3))):
-    optionalDependencies:
-      tailwind-merge: 1.14.0
-      tailwindcss: 3.3.3(ts-node@10.9.2(@types/node@22.19.15)(typescript@5.8.3))
 
   tailwindcss-debug-screens@2.2.1(tailwindcss@3.3.3(ts-node@10.9.2(@types/node@22.19.15)(typescript@5.8.3))):
     dependencies:
