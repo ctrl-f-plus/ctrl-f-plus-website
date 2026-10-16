@@ -6,10 +6,12 @@ import { BILLING_PERIOD, BillingPeriod, PricingTier } from '@/listing.schema';
 import {
   describePlanBillingPeriod,
   formatPlanPrice,
+  forwardAttributionParams,
   selectPlanForBillingPeriod,
 } from '@/lib/pricing';
 import { CheckIcon } from '@/components/icons/check-icon';
 import { FadeIn } from '@/components/fade-in';
+import { usePageSearchParams } from '@/hooks/use-page-search-params';
 import Button from '@/components/ui/Button';
 import { cva } from '../../cva.config';
 
@@ -75,9 +77,14 @@ function PricingCard({
   billingPeriod: BillingPeriod;
 }>) {
   const headingId = useId();
+  const pageSearchParams = usePageSearchParams();
   const variant = tier.isFeatured ? 'inverted' : 'default';
   const selectedPlan = selectPlanForBillingPeriod(tier.plans, billingPeriod);
   const billingPeriodSuffix = describePlanBillingPeriod(selectedPlan);
+  const checkoutHref = forwardAttributionParams(
+    selectedPlan.href,
+    pageSearchParams,
+  );
 
   return (
     <article
@@ -113,7 +120,7 @@ function PricingCard({
       <div className="mt-3">
         <Button
           aTag
-          href={selectedPlan.href}
+          href={checkoutHref}
           target="_blank"
           rel="noreferrer"
           aria-describedby={headingId}
