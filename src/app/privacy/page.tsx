@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Learn about Ctrl-F Plus, the Chrome extension that redefines productivity by extending the native Ctrl-F functionality to search across all tabs in your browser window.',
+    'What Ctrl-F Plus keeps on your device, what it sends to deliver a Pro license, and what the ctrl-f.plus website records.',
   alternates: {
     canonical: 'https://ctrl-f.plus/privacy/',
   },
@@ -28,15 +28,14 @@ export default async function Privacy() {
     <Container className="mt-18 flex flex-col tablet:mt-24">
       <FadeInStagger>
         <PageTitleCard className="min-h-[318px]">
-          <PageTitleCardDate>August 10, 2023</PageTitleCardDate>
+          <PageTitleCardDate>October 16, 2026</PageTitleCardDate>
           <PageTitleCardTitle>Privacy Policy</PageTitleCardTitle>
 
           <PageTitleCardDescription>
             Thank you for choosing to use{' '}
-            <span className="text-highlighter-focus-400">Ctrl-F Plus!</span> We
-            respect your privacy and are committed to protecting any personal
-            information you may share with us. As such, Our browser extension
-            does not collect any of your personal data.
+            <span className="text-highlighter-focus-400">Ctrl-F Plus!</span>{' '}
+            This page says what stays on your device, what the extension sends
+            when you buy or sign in to Pro, and what our website records.
           </PageTitleCardDescription>
         </PageTitleCard>
 
