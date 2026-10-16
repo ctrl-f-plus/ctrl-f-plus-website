@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.updatedAt,
   }));
 
-  const routes = ['', '/blog', '/about', '/privacy', '/setup'].map(
+  const routes = ['', '/blog', '/about', '/privacy', '/setup', '/terms'].map(
     (route) => ({
       url: `${clientEnv.NEXT_PUBLIC_APP_URL}${route}`,
       lastModified: new Date().toISOString().split('T')[0],

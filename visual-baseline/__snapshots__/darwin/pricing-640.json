@@ -310,11 +310,41 @@
     ]
   },
   {
+    "text": "Pro is sold by Chavez Consulting Corp th",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | none | none | normal",
+    "rect": [
+      64,
+      1770.89,
+      512,
+      112
+    ]
+  },
+  {
+    "text": "terms of sale",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | underline | none | normal",
+    "rect": [
+      391.31,
+      1831.89,
+      91.59,
+      17
+    ]
+  },
+  {
+    "text": "privacy policy",
+    "style": "Arimo, \"Arimo Fallback\" | 16px | 400 | 28px | normal | rgba(27, 37, 40, 0.8) | underline | none | normal",
+    "rect": [
+      64,
+      1859.89,
+      94.84,
+      17
+    ]
+  },
+  {
     "text": "Company",
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      1918.89,
+      2050.89,
       268,
       20.8
     ]
@@ -324,7 +354,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1957.69,
+      2089.69,
       39.42,
       19
     ]
@@ -334,7 +364,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1989.69,
+      2121.69,
       28.61,
       19
     ]
@@ -344,7 +374,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2021.69,
+      2153.69,
       37.69,
       19
     ]
@@ -354,8 +384,18 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2053.69,
+      2185.69,
       87.45,
+      19
+    ]
+  },
+  {
+    "text": "Terms of Sale",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      2217.69,
+      88.19,
       19
     ]
   },
@@ -364,7 +404,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2085.69,
+      2249.69,
       69.19,
       19
     ]
@@ -374,7 +414,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       336,
-      1918.89,
+      2050.89,
       268,
       20.8
     ]
@@ -384,7 +424,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       336,
-      1957.69,
+      2089.69,
       115.53,
       19
     ]
@@ -394,7 +434,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       336,
-      1989.69,
+      2121.69,
       54.08,
       19
     ]
@@ -404,7 +444,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      2147.69,
+      2311.69,
       268,
       20.8
     ]
@@ -414,7 +454,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2186.48,
+      2350.48,
       37.41,
       19
     ]
@@ -424,7 +464,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2218.48,
+      2382.48,
       52.38,
       19
     ]
@@ -434,7 +474,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2250.48,
+      2414.48,
       44.81,
       19
     ]
@@ -444,7 +484,7 @@
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      2336.48,
+      2500.48,
       284,
       29.89
     ]
@@ -454,7 +494,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       96,
-      2386.38,
+      2550.38,
       224,
       40
     ]
@@ -464,7 +504,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2456.38,
+      2620.38,
       84.92,
       19
     ]
@@ -474,7 +514,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
     "rect": [
       120.92,
-      2454.38,
+      2618.38,
       74.09,
       22
     ]
@@ -484,7 +524,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       432.56,
-      2607.88,
+      2771.88,
       171.44,
       20
     ]

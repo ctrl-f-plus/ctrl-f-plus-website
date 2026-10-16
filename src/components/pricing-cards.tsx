@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useId, useState } from 'react';
+import Link from 'next/link';
 import { BILLING_PERIOD, BillingPeriod, PricingTier } from '@/listing.schema';
 import {
   describePlanBillingPeriod,
@@ -176,6 +177,20 @@ export function PricingCards({
             />
           ))}
         </div>
+
+        <p className="mt-5 w-full max-w-lg font-arimo text-body-sm text-shark/80 laptop:max-w-none">
+          Pro is sold by Chavez Consulting Corp through Polar, the merchant of
+          record. Prices are in US dollars; tax may be added at checkout.
+          Subscriptions renew until you cancel. See the{' '}
+          <Link href="/terms" className="underline hover:text-shark">
+            terms of sale
+          </Link>{' '}
+          and the{' '}
+          <Link href="/privacy" className="underline hover:text-shark">
+            privacy policy
+          </Link>
+          .
+        </p>
       </FadeIn>
     </section>
   );

@@ -170,11 +170,21 @@
     ]
   },
   {
-    "text": "Contact us",
+    "text": "Terms of Sale",
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
       1875.84,
+      88.19,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      1907.84,
       69.19,
       19
     ]
@@ -214,7 +224,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      1937.84,
+      1969.84,
       150,
       20.8
     ]
@@ -224,7 +234,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1976.64,
+      2008.64,
       37.41,
       19
     ]
@@ -234,7 +244,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2008.64,
+      2040.64,
       52.38,
       19
     ]
@@ -244,7 +254,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      2040.64,
+      2072.64,
       44.81,
       19
     ]
@@ -294,7 +304,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       560.56,
-      2192.14,
+      2224.14,
       171.44,
       20
     ]
