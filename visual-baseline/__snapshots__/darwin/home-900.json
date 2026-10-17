@@ -320,11 +320,21 @@
     ]
   },
   {
-    "text": "Contact us",
+    "text": "Terms of Sale",
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
       4128.59,
+      88.19,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      4160.59,
       69.19,
       19
     ]
@@ -444,7 +454,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       692.56,
-      4280.09,
+      4312.09,
       171.44,
       20
     ]

@@ -16,6 +16,7 @@ const navigation = [
       { title: 'Blog', href: '/blog' },
       { title: 'Setup', href: '/setup' },
       { title: 'Privacy Policy', href: '/privacy' },
+      { title: 'Terms of Sale', href: '/terms' },
       {
         title: 'Contact us',
         href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`,

@@ -90,11 +90,21 @@
     ]
   },
   {
-    "text": "Contact us",
+    "text": "Terms of Sale",
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
       966.8,
+      88.19,
+      19
+    ]
+  },
+  {
+    "text": "Contact us",
+    "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
+    "rect": [
+      36,
+      998.8,
       69.19,
       19
     ]
@@ -134,7 +144,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      1028.8,
+      1060.8,
       268,
       20.8
     ]
@@ -144,7 +154,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1067.59,
+      1099.59,
       37.41,
       19
     ]
@@ -154,7 +164,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1099.59,
+      1131.59,
       52.38,
       19
     ]
@@ -164,7 +174,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1131.59,
+      1163.59,
       44.81,
       19
     ]
@@ -174,7 +184,7 @@
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       36,
-      1217.59,
+      1249.59,
       284,
       29.89
     ]
@@ -184,7 +194,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       96,
-      1267.48,
+      1299.48,
       224,
       40
     ]
@@ -194,7 +204,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       36,
-      1337.48,
+      1369.48,
       84.92,
       19
     ]
@@ -204,7 +214,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
     "rect": [
       120.92,
-      1335.48,
+      1367.48,
       74.09,
       22
     ]
@@ -214,7 +224,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       432.56,
-      1488.98,
+      1520.98,
       171.44,
       20
     ]
