@@ -50,12 +50,12 @@
     ]
   },
   {
-    "text": "August 10, 2023",
+    "text": "October 16, 2026",
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 27px | normal | rgb(136, 147, 151) | none | none | normal",
     "rect": [
       136,
       248.5,
-      134,
+      144.11,
       27
     ]
   },
@@ -90,153 +90,573 @@
     ]
   },
   {
-    "text": "No Data Collection",
+    "text": "Effective: October 16, 2026",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | italic",
+    "rect": [
+      96,
+      606,
+      199.83,
+      18
+    ]
+  },
+  {
+    "text": "The short version",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
     "rect": [
       96,
-      601,
+      669,
       1088,
       41
     ]
   },
   {
-    "text": "Ctrl-F Plus does not collect, store, use",
+    "text": "Searching happens on your device. Your s",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
     "rect": [
-      96,
-      672,
-      1088,
-      56
-    ]
-  },
-  {
-    "text": "Changes to this Privacy Policy",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
-    "rect": [
-      96,
-      768,
-      1088,
-      41
-    ]
-  },
-  {
-    "text": "We may update our Privacy Policy from ti",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
-    "rect": [
-      96,
-      839,
-      1088,
-      56
-    ]
-  },
-  {
-    "text": "Local Storage of Data",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
-    "rect": [
-      96,
-      935,
-      1088,
-      41
-    ]
-  },
-  {
-    "text": "Ctrl-F Plus utilizes your browser's exte",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
-    "rect": [
-      96,
-      1006,
-      1088,
-      112
-    ]
-  },
-  {
-    "text": "Please note that if you uninstall the ex",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
-    "rect": [
-      96,
-      1142,
-      1088,
+      146,
+      740,
+      1038,
       28
     ]
   },
   {
-    "text": "Analytics on Our Website",
+    "text": "The extension has no analytics, no telem",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      776,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "If you buy Pro, Polar handles the paymen",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      812,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "To deliver and check a Pro license, the ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      848,
+      1038,
+      56
+    ]
+  },
+  {
+    "text": "Our website uses Cloudflare Web Analytic",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      912,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "Who we are",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
     "rect": [
       96,
-      1210,
+      980,
       1088,
       41
     ]
   },
   {
-    "text": "While the Ctrl-F Plus extension does not",
+    "text": "Ctrl-F Plus is made by Chavez Consulting",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
     "rect": [
       96,
-      1281,
+      1051,
       1088,
-      140
+      56
     ]
   },
   {
-    "text": "We will never use these analytics servic",
+    "text": "support@ctrl-f.plus",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      96,
+      1056,
+      1050.38,
+      46
+    ]
+  },
+  {
+    "text": "Searching stays on your device",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      1147,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "Ctrl-F Plus searches the tabs in your br",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
     "rect": [
       96,
-      1445,
+      1218,
       1088,
       84
     ]
   },
   {
-    "text": "For more information on the privacy prac",
+    "text": "When the PDF viewer opens a PDF, it down",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
     "rect": [
       96,
-      1553,
+      1326,
       1088,
       56
     ]
   },
   {
-    "text": "Google Privacy & Terms",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
-    "rect": [
-      621.73,
-      1558,
-      176.59,
-      18
-    ]
-  },
-  {
-    "text": "Vercel Privacy & Compliance",
-    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
-    "rect": [
-      398.25,
-      1586,
-      212.05,
-      18
-    ]
-  },
-  {
-    "text": "Contact Us",
+    "text": "What the extension stores on your device",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
     "rect": [
       96,
-      1649,
+      1422,
       1088,
       41
     ]
   },
   {
-    "text": "If you have any questions about this Pri",
+    "text": "The extension keeps its data in your bro",
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
     "rect": [
       96,
-      1720,
+      1493,
       1088,
       28
+    ]
+  },
+  {
+    "text": "Your settings, such as whether PDFs open",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      1545,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "If you have Pro: your license key, a dev",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      1581,
+      1038,
+      56
+    ]
+  },
+  {
+    "text": "While you are signing in on the Settings",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      1645,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "When the PDF viewer opens a scanned docu",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      1697,
+      1088,
+      168
+    ]
+  },
+  {
+    "text": "Highlights, notes, and drawings you add ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      1889,
+      1088,
+      28
+    ]
+  },
+  {
+    "text": "Uninstalling the extension deletes every",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      1941,
+      1088,
+      56
+    ]
+  },
+  {
+    "text": "Buying Pro",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      2037,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "Pro is sold by Chavez Consulting Corp th",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      2108,
+      1088,
+      84
+    ]
+  },
+  {
+    "text": "Polar's privacy policy",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      430.61,
+      2169,
+      157.23,
+      18
+    ]
+  },
+  {
+    "text": "buyer terms",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      623.28,
+      2169,
+      89.52,
+      18
+    ]
+  },
+  {
+    "text": "After you pay, Polar sends you to a conf",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      2216,
+      1088,
+      56
+    ]
+  },
+  {
+    "text": "When you reach the pricing page from a \"",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      2296,
+      1088,
+      56
+    ]
+  },
+  {
+    "text": "Signing in with your email",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      2392,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "To use Pro on another device, or to get ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      2463,
+      1088,
+      140
+    ]
+  },
+  {
+    "text": "Your license and your devices",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      2643,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "Pro works on up to three devices. When y",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      2714,
+      1088,
+      112
+    ]
+  },
+  {
+    "text": "About once a day, the extension sends yo",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      2850,
+      1088,
+      56
+    ]
+  },
+  {
+    "text": "Polar customer portal",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      907.28,
+      2883,
+      159.86,
+      18
+    ]
+  },
+  {
+    "text": "Our licensing service",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      2946,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "Our licensing service runs at api.ctrl-f",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      3017,
+      1088,
+      140
+    ]
+  },
+  {
+    "text": "Our website",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      3197,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "ctrl-f.plus is hosted on Cloudflare and ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      3268,
+      1088,
+      112
+    ]
+  },
+  {
+    "text": "Cloudflare Web Analytics",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      410.89,
+      3273,
+      186.2,
+      18
+    ]
+  },
+  {
+    "text": "Google's privacy policy",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      510.11,
+      3357,
+      172.23,
+      18
+    ]
+  },
+  {
+    "text": "Who receives your data",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      3420,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "Polar Software Inc., the merchant of rec",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      3491,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "Cloudflare hosts our licensing service a",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      3527,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "YouTube, only when you open the \"See how",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      3563,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "We do not sell your data, do not share i",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      3615,
+      1088,
+      28
+    ]
+  },
+  {
+    "text": "Keeping and deleting your data",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      3683,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "Data on your device is deleted when you ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      3754,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "Device activations stay on your license ",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      3790,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "Polar keeps your customer and order reco",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      3826,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "Our licensing service keeps nothing beyo",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      146,
+      3862,
+      1038,
+      28
+    ]
+  },
+  {
+    "text": "To ask us about your data, email",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      3914,
+      1088,
+      28
+    ]
+  },
+  {
+    "text": "support@ctrl-f.plus",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      333.28,
+      3919,
+      145.06,
+      18
+    ]
+  },
+  {
+    "text": "support@polar.sh",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
+    "rect": [
+      876.45,
+      3919,
+      131.47,
+      18
+    ]
+  },
+  {
+    "text": "Chrome Web Store",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      3982,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "The extension's use of the data describe",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      4053,
+      1088,
+      56
+    ]
+  },
+  {
+    "text": "Changes to this policy",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      4149,
+      1088,
+      41
+    ]
+  },
+  {
+    "text": "We may update this policy from time to t",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
+    "rect": [
+      96,
+      4220,
+      1088,
+      28
+    ]
+  },
+  {
+    "text": "Contact",
+    "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 30px | 600 | 36px | -0.75px | rgb(17, 24, 39) | none | none | normal",
+    "rect": [
+      96,
+      4288,
+      1088,
+      41
     ]
   },
   {
@@ -244,7 +664,7 @@
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 400 | 28px | normal | rgb(55, 65, 81) | none | none | normal",
     "rect": [
       96,
-      1772,
+      4359,
       1088,
       28
     ]
@@ -254,7 +674,7 @@
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 16px | 500 | 28px | normal | rgb(17, 24, 39) | underline | none | normal",
     "rect": [
       165.72,
-      1777,
+      4364,
       145.06,
       18
     ]
@@ -264,7 +684,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       56,
-      2050,
+      4637,
       168,
       20.8
     ]
@@ -274,7 +694,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       56,
-      2088.8,
+      4675.8,
       39.42,
       19
     ]
@@ -284,7 +704,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       56,
-      2120.8,
+      4707.8,
       28.61,
       19
     ]
@@ -294,7 +714,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       56,
-      2152.8,
+      4739.8,
       37.69,
       19
     ]
@@ -304,7 +724,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       56,
-      2184.8,
+      4771.8,
       87.45,
       19
     ]
@@ -314,7 +734,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       56,
-      2216.8,
+      4803.8,
       69.19,
       19
     ]
@@ -324,7 +744,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       256,
-      2050,
+      4637,
       168,
       20.8
     ]
@@ -334,7 +754,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       256,
-      2088.8,
+      4675.8,
       115.53,
       19
     ]
@@ -344,7 +764,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       256,
-      2120.8,
+      4707.8,
       54.08,
       19
     ]
@@ -354,7 +774,7 @@
     "style": "Inter, \"Inter Fallback\" | 16px | 600 | 20.8px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       456,
-      2050,
+      4637,
       168,
       20.8
     ]
@@ -364,7 +784,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       456,
-      2088.8,
+      4675.8,
       37.41,
       19
     ]
@@ -374,7 +794,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       456,
-      2120.8,
+      4707.8,
       52.38,
       19
     ]
@@ -384,7 +804,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       456,
-      2152.8,
+      4739.8,
       44.81,
       19
     ]
@@ -394,7 +814,7 @@
     "style": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\" | 23px | 600 | 29.9px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       940,
-      2050,
+      4637,
       284,
       29.89
     ]
@@ -404,7 +824,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 400 | 20px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       1000,
-      2099.89,
+      4686.89,
       224,
       40
     ]
@@ -414,7 +834,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 14px | 700 | 24px | normal | rgb(209, 213, 219) | none | none | normal",
     "rect": [
       1002.48,
-      2169.89,
+      4756.89,
       84.92,
       19
     ]
@@ -424,7 +844,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 16px | 600 | 20.8px | normal | rgb(72, 208, 168) | none | none | normal",
     "rect": [
       1087.41,
-      2167.89,
+      4754.89,
       74.09,
       22
     ]
@@ -434,7 +854,7 @@
     "style": "\"Open Sans\", \"Open Sans Fallback\" | 18px | 400 | 20px | normal | rgb(255, 255, 255) | none | none | normal",
     "rect": [
       1052.56,
-      2368.3,
+      4955.3,
       171.44,
       20
     ]
