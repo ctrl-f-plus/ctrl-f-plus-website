@@ -2,6 +2,15 @@
 
 import type { BillingPeriod, PricingPlan } from '@/listing.schema';
 
+// Polar copies these from the checkout link onto the order's metadata.
+export const ATTRIBUTION_PARAM_NAMES = [
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_content',
+  'utm_term',
+] as const;
+
 // A tier with one period-less plan (Free, Lifetime) shows that plan whatever the toggle says.
 export function selectPlanForBillingPeriod(
   plans: readonly PricingPlan[],
@@ -33,4 +42,26 @@ export function describePlanBillingPeriod(plan: PricingPlan): string | null {
   }
 
   return plan.amount === 0 ? null : 'one-time';
+}
+
+function parseAbsoluteUrl(href: string): URL | null {
+  try {
+    return new URL(href);
+  } catch {
+    return null;
+  }
+}
+
+export function forwardAttributionParams(
+  checkoutHref: string,
+  pageSearchParams: URLSearchParams,
+): string {
+  const checkoutUrl = parseAbsoluteUrl(checkoutHref);
+  if (checkoutUrl === null) return checkoutHref;
+
+  for (const paramName of ATTRIBUTION_PARAM_NAMES) {
+    const paramValue = pageSearchParams.get(paramName);
+    if (paramValue) checkoutUrl.searchParams.set(paramName, paramValue);
+  }
+  return checkoutUrl.toString();
 }
