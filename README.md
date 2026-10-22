@@ -1,5 +1,7 @@
 # Ctrl-F.Plus
 
+> **Archived.** The site now lives in the [ctrl-f-plus/extension-rewrite](https://github.com/ctrl-f-plus/extension-rewrite) monorepo under `apps/web` and deploys from there. This repository is kept for history only.
+
 <div align="center">
   <img src="public/images/Screenshots/ctrl-f-plus_screenshot2-800x450.png" alt="ctrl-f.plus application screenshot">
 </div>
